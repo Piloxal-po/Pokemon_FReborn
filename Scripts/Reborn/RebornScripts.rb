@@ -149,7 +149,7 @@ class PokemonGlobalMetadata
           loop do
             iMon=screen.pbChoosePokemon
             if iMon>=0 && ($Trainer.party[iMon].knowsMove?(:CUT) || $Trainer.party[iMon].knowsMove?(:ROCKSMASH) || $Trainer.party[iMon].knowsMove?(:STRENGTH) || $Trainer.party[iMon].knowsMove?(:SURF) || $Trainer.party[iMon].knowsMove?(:WATERFALL) || $Trainer.party[iMon].knowsMove?(:DIVE) || $Trainer.party[iMon].knowsMove?(:ROCKCLIMB) || $Trainer.party[iMon].knowsMove?(:FLASH) || $Trainer.party[iMon].knowsMove?(:FLY))
-              Kernel.pbMessage("You can't return a Pokémon that knows a TMX move to the PC.") 
+              Kernel.pbMessage("Vous ne pouvez pas déposer dans le PC un Pokémon qui connaît une CS.") 
               iMon=-2
             elsif unusablecount<=1 && !($Trainer.party[iMon].isEgg?) && $Trainer.party[iMon].hp>0 && pokemon.isEgg?
               Kernel.pbMessage("That's your last Pokémon!") 
@@ -180,9 +180,9 @@ class PokemonGlobalMetadata
         creator=nil
         creator=Kernel.pbGetStorageCreator if $PokemonGlobal.seenStorageCreator
         if creator
-          Kernel.pbMessage(_INTL("{1} was transferred to {2}'s PC.\1",pokemon.name,creator))
+          Kernel.pbMessage(_INTL("{1} est transféré dans le PC de {2}.\1",pokemon.name,creator))
         else
-          Kernel.pbMessage(_INTL("{1} was transferred to someone's PC.\1",pokemon.name))
+          Kernel.pbMessage(_INTL("{1} est transféré dans le PC de ???.\1",pokemon.name))
         end
         Kernel.pbMessage(_INTL("It was stored in box \"{1}\".",boxname))
       end   

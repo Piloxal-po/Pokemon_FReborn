@@ -998,27 +998,27 @@ def pbLearnMove(pokemon,move,ignoreifknown=false,bymachine=false)
     end
   end
   loop do
-    Kernel.pbMessage(_INTL("{1} is trying to\r\nlearn {2}.\1",pkmnname,movename))
-    Kernel.pbMessage(_INTL("But {1} can't learn more than four moves.\1",pkmnname))
-    if Kernel.pbConfirmMessage(_INTL("Delete a move to make\r\nroom for {1}?",movename))
-      Kernel.pbMessage(_INTL("Which move should be forgotten?"))
+    Kernel.pbMessage(_INTL("{1} essaie\r\nd'apprendre {2}.\1",pkmnname,movename))
+    Kernel.pbMessage(_INTL("Mais {1} ne peut pas connaître plus de quatre capacités.\1",pkmnname))
+    if Kernel.pbConfirmMessage(_INTL("Oublier une capacité\r\npour {1}?",movename))
+      Kernel.pbMessage(_INTL("Quelle capacité doit être oubliée?"))
       forgetmove=pbForgetMove(pokemon,move)
       if forgetmove>=0
         oldmovename=PBMoves.getName(pokemon.moves[forgetmove].id)
         oldmovepp=pokemon.moves[forgetmove].pp
         pokemon.moves[forgetmove]=PBMove.new(move) # Replaces current/total PP
         pokemon.moves[forgetmove].pp=[oldmovepp,pokemon.moves[forgetmove].totalpp].min if bymachine
-        Kernel.pbMessage(_INTL("\\se[]1,\\wt[4] 2,\\wt[4] and...\\wt[8] ...\\wt[8] ...\\wt[8] Poof!\\se[balldrop]\1"))
-        Kernel.pbMessage(_INTL("{1} forgot how to\r\nuse {2}.\1",pkmnname,oldmovename))
-        Kernel.pbMessage(_INTL("And...\1"))
-        Kernel.pbMessage(_INTL("\\se[]{1} learned {2}!\\se[itemlevel]",pkmnname,movename))
+        Kernel.pbMessage(_INTL("\\se[]1,\\wt[4] 2,\\wt[4] et...\\wt[8] ...\\wt[8] ...\\wt[8] Hop!\\se[balldrop]\1"))
+        Kernel.pbMessage(_INTL("{1} a oublié\r\n{2}.\1",pkmnname,oldmovename))
+        Kernel.pbMessage(_INTL("Et...\1"))
+        Kernel.pbMessage(_INTL("\\se[]{1} apprend {2}!\\se[itemlevel]",pkmnname,movename))
         return true
-      elsif Kernel.pbConfirmMessage(_INTL("Should {1} stop learning {2}?",pkmnname,movename))
-        Kernel.pbMessage(_INTL("{1} did not learn {2}.",pkmnname,movename))
+      elsif Kernel.pbConfirmMessage(_INTL("Arrêter d'apprendre {1}?",movename))
+        Kernel.pbMessage(_INTL("{1} n'a pas appris {2}.",pkmnname,movename))
         return false
       end
-    elsif Kernel.pbConfirmMessage(_INTL("Should {1} stop learning {2}?",pkmnname,movename))
-      Kernel.pbMessage(_INTL("{1} did not learn {2}.",pkmnname,movename))
+    elsif Kernel.pbConfirmMessage(_INTL("Arrêter d'apprendre {1}?",movename))
+      Kernel.pbMessage(_INTL("{1} n'a pas appris {2}.",pkmnname,movename))
       return false
     end
   end
@@ -1047,11 +1047,11 @@ def pbUseItemOnPokemon(item,pokemon,scene)
       Kernel.pbMessage(_INTL("{1} can't be learned.",movename))
     else
       if pbIsHiddenMachine?(item)
-        Kernel.pbMessage(_INTL("\\se[accesspc]Booted up a TMX."))
-        Kernel.pbMessage(_INTL("It contained {1}.\1",movename))
+        Kernel.pbMessage(_INTL("\\se[accesspc]CS enclenchée."))
+        Kernel.pbMessage(_INTL("Elle contient {1}.\1",movename))
       else
-        Kernel.pbMessage(_INTL("\\se[accesspc]Booted up a TM."))
-        Kernel.pbMessage(_INTL("It contained {1}.\1",movename))
+        Kernel.pbMessage(_INTL("\\se[accesspc]CT enclenchée."))
+        Kernel.pbMessage(_INTL("Elle contient {1}.\1",movename))
       end
       if Kernel.pbConfirmMessage(_INTL("Teach {1} to {2}?",movename,pokemon.name))
         if pbLearnMove(pokemon,machine,false,true)
@@ -1088,10 +1088,10 @@ def pbUseItem(bag,item,bagscene=nil)
     movename=PBMoves.getName(machine)
     if pbIsHiddenMachine?(item)
       Kernel.pbMessage(_INTL("\\se[accesspc]Booted up a TMX."))
-      Kernel.pbMessage(_INTL("It contained {1}.\1",movename))
+      Kernel.pbMessage(_INTL("Elle contient {1}.\1",movename))
     else
       Kernel.pbMessage(_INTL("\\se[accesspc]Booted up a TM."))
-      Kernel.pbMessage(_INTL("It contained {1}.\1",movename))
+      Kernel.pbMessage(_INTL("Elle contient {1}.\1",movename))
     end
     if !Kernel.pbConfirmMessage(_INTL("Teach {1} to a Pokémon?",movename))
       return 0

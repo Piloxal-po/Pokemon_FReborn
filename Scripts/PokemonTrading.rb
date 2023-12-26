@@ -175,18 +175,18 @@ class PokemonTradeScene
          _ISPRINTF("EGG\r\nID: {2:05d}   OT: {3:s}\1",
          @pokemon2.name,@pokemon2.publicID,@pokemon2.ot))
       Kernel.pbMessageDisplay(@sprites["msgwindow"],
-         _INTL("Take good care of it!",speciesname2))      
+         _INTL("Prends-en bien soin!",speciesname2))      
     else
       Kernel.pbMessageDisplay(@sprites["msgwindow"],
          _INTL("For {1}'s {2},\r\n{3} sends {4}.\1",@trader1,speciesname1,@trader2,speciesname2))
       Kernel.pbMessageDisplay(@sprites["msgwindow"],
-         _INTL("{1} bids farewell to {2}.",@trader2,speciesname2))
+         _INTL("{1} souhaite bon voyage à {2}.",@trader2,speciesname2))
       pbScene2
       Kernel.pbMessageDisplay(@sprites["msgwindow"],
          _ISPRINTF("{1:s}\r\nID: {2:05d}   OT: {3:s}\1",
          @pokemon2.name,@pokemon2.publicID,@pokemon2.ot))
       Kernel.pbMessageDisplay(@sprites["msgwindow"],
-         _INTL("Take good care of {1}.",speciesname2))
+         _INTL("Prends bien soin de {1}.",speciesname2))
     end
     pbBGMStop()
   end

@@ -705,7 +705,7 @@ class PokemonPokedexScene
           end
         end
       end
-      textpos.push([_ISPRINTF("{1:s} Pokémon",kind),244,74,0,basecolor,shadowcolor])
+      textpos.push([_ISPRINTF("Pokémon {1:s}",kind),244,74,0,basecolor,shadowcolor])
       if pbGetCountry()==0xF4 # If the user is in the United States
         textpos.push([_ISPRINTF("{1:d}'{2:02d}\"",inches/12,inches%12),456,158,1,basecolor,shadowcolor])
         textpos.push([_ISPRINTF("{1:4.1f} lbs.",pounds/10.0),490,190,1,basecolor,shadowcolor])

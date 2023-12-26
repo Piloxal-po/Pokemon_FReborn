@@ -491,7 +491,7 @@ ITEMS = [ # Item, probability, graphic x, graphic y, width, height, pattern
 
   def pbMain
     pbSEPlay("MiningPing")
-   Kernel.pbMessage(_INTL("Something pinged in the rock!\n{1} confirmed!",@items.length))    
+   Kernel.pbMessage(_INTL("La roche sonne creux!\n{1} confirmés!",@items.length))    
    loop do
       update
       Graphics.update
@@ -509,7 +509,7 @@ ITEMS = [ # Item, probability, graphic x, graphic y, width, height, pattern
              Graphics.width,Graphics.height*i/32,Color.new(0,0,0))
           Graphics.update
         end
-        Kernel.pbMessage(_INTL("The wall collapsed!"))
+        Kernel.pbMessage(_INTL("Le rocher s'est effondré!"))
         break
       end
       foundall=true
@@ -521,7 +521,7 @@ ITEMS = [ # Item, probability, graphic x, graphic y, width, height, pattern
         @sprites["cursor"].visible=false
         pbWait(10)
         pbSEPlay("MiningAllFound")
-        Kernel.pbMessage(_INTL("Everything was dug up!"))
+        Kernel.pbMessage(_INTL("Tout a été déterré!"))
         break
       end
       # Input
@@ -554,7 +554,7 @@ ITEMS = [ # Item, probability, graphic x, graphic y, width, height, pattern
       elsif Input.trigger?(Input::C) # Hit
         pbHit
       elsif Input.trigger?(Input::B) # Quit
-        break if Kernel.pbConfirmMessage(_INTL("Are you sure you want to give up?"))
+        break if Kernel.pbConfirmMessage(_INTL("Voulez-vous vraiment abandonner?"))
       end
     end
     pbGiveItems
@@ -564,7 +564,7 @@ ITEMS = [ # Item, probability, graphic x, graphic y, width, height, pattern
     if @itemswon.length>0
       for i in @itemswon
         if $PokemonBag.pbStoreItem(i)
-          Kernel.pbMessage(_INTL("One {1} was obtained.\\se[itemlevel]\\wtnp[30]",
+          Kernel.pbMessage(_INTL("Obtient {1}.\\se[itemlevel]\\wtnp[30]",
              PBItems.getName(i)))
         else
           Kernel.pbMessage(_INTL("One {1} was found, but you have no room for it.",

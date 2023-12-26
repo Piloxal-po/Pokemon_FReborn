@@ -150,9 +150,9 @@ class Scene_Map
         for event in $game_map.events.values
           event.minilock
         end
-        if Kernel.pbConfirmMessage(_INTL("Would you like to save the game?"))
+        if Kernel.pbConfirmMessage(_INTL("Voulez-vous sauvegarder la partie?"))
           if pbSave
-            Kernel.pbMessage("Saved the game!")
+            Kernel.pbMessage("Partie sauvegardée!")
           else
             Kernel.pbMessage("Save failed.")
           end

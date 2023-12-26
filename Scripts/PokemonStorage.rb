@@ -260,7 +260,7 @@ class PokemonStorageScreen
       pbDisplay(_INTL("That's your last Pokémon!"))
       return
     end
-    command=pbShowCommands(_INTL("Release this Pokémon?"),[_INTL("No"),_INTL("Yes")])
+    command=pbShowCommands(_INTL("Relâcher ce Pokémon?"),[_INTL("Non"),_INTL("Oui")])
     if command==1
       pkmnname=pokemon.name
       @scene.pbRelease(selected,heldpoke)
@@ -270,8 +270,8 @@ class PokemonStorageScreen
         @storage.pbDelete(box,index)
       end
       @scene.pbRefresh
-      pbDisplay(_INTL("{1} was released.",pkmnname))
-      pbDisplay(_INTL("Bye-bye, {1}!",pkmnname))
+      pbDisplay(_INTL("{1} a été relâché.",pkmnname))
+      pbDisplay(_INTL("Bye bye, {1}!",pkmnname))
       $game_variables[37] += 1 # she's watching.
       @scene.pbRefresh
     end
@@ -454,11 +454,11 @@ class PokemonStorageScreen
     end
     if pokemon.item>0
       itemname=PBItems.getName(pokemon.item)
-      if pbConfirm(_INTL("Take this {1}?",itemname))
+      if pbConfirm(_INTL("Prendre {1}?",itemname))
         if !$PokemonBag.pbStoreItem(pokemon.item)
           pbDisplay(_INTL("Can't store the {1}.",itemname))
         else
-          pbDisplay(_INTL("Took the {1}.",itemname))
+          pbDisplay(_INTL("{1} récupéré.",itemname))
           pokemon.setItem(0)
           pokemon.form=pokemon.getForm(pokemon)
           @scene.pbHardRefresh
@@ -3325,7 +3325,7 @@ module PokemonPCList
         commands.push(pc.name)
       end
     end
-    commands.push(_INTL("Log Off"))
+    commands.push(_INTL("Se déconnecter"))
     return commands
   end
 
@@ -3350,7 +3350,7 @@ end
 
 
 def pbTrainerPC
-  Kernel.pbMessage(_INTL("\\se[computeropen]{1} booted up the PC.",$Trainer.name))
+  Kernel.pbMessage(_INTL("\\se[computeropen]{1} allume le PC.",$Trainer.name))
   pbTrainerPCMenu
   pbSEPlay("computerclose")
 end
@@ -3367,7 +3367,7 @@ class TrainerPC
   end
 
   def access
-    Kernel.pbMessage(_INTL("\\se[accesspc]Accessed {1}'s PC.",$Trainer.name))
+    Kernel.pbMessage(_INTL("\\se[accesspc]Accès au PC de {1}.",$Trainer.name))
     pbTrainerPCMenu
   end
 end
@@ -3378,11 +3378,11 @@ class PasswordPC
   end
 
   def name
-    return _INTL("Add Password")
+    return _INTL("Ajouter Mot de Passe")
   end
 
   def access
-    Kernel.pbMessage(_INTL('Accessed the Password Menu.'))
+    Kernel.pbMessage(_INTL('Accès au Menu Mots de Passe.'))
     costToBePaid=pbPasswordsMenu($PokemonBag.pbQuantity(PBItems::DATACHIP))
     $PokemonBag.pbDeleteItem(PBItems::DATACHIP, costToBePaid) if costToBePaid > 0
   end
@@ -3437,9 +3437,9 @@ class StorageSystemPC
 
   def name
     if $PokemonGlobal.seenStorageCreator
-      return _INTL("{1}'s PC",Kernel.pbGetStorageCreator)
+      return _INTL("PC de {1}",Kernel.pbGetStorageCreator)
     else
-      return _INTL("Someone's PC")
+      return _INTL("PC de ???")
     end
   end
 
@@ -3447,18 +3447,18 @@ class StorageSystemPC
     Kernel.pbMessage(_INTL("\\se[accesspc]The Pokémon Storage System was opened."))
     loop do
       command=Kernel.pbShowCommandsWithHelp(nil,
-         [_INTL("Move Pokémon"),
-         _INTL("Deposit Pokémon"),
-         _INTL("Withdraw Pokémon"),
-         _INTL("See ya!")],
-         [_INTL("Organize the Pokémon in Boxes and in your party."),
-         _INTL("Store Pokémon in your party in Boxes."),
-         _INTL("Move Pokémon stored in Boxes to your party."),
-         _INTL("Return to the previous menu.")],-1
+         [_INTL("Déplacer Pokémon"),
+         _INTL("Déposer Pokémon"),
+         _INTL("Retirer Pokémon"),
+         _INTL("Salut!")],
+         [_INTL("Organiser les Pokémon de votre équipe et de vos Boîtes."),
+         _INTL("Stocker dans les Boîtes des Pokémon de votre équipe."),
+         _INTL("Retirer des Pokémon stockés dans vos Boîtes."),
+         _INTL("Retourner au menu précédent.")],-1
       )
       if command>=0 && command<3
         if command==2 && $PokemonStorage.party.length>=6
-          Kernel.pbMessage(_INTL("Your party is full!"))
+          Kernel.pbMessage(_INTL("Votre équipe est pleine!"))
           next
         end
         count=0
@@ -3466,7 +3466,7 @@ class StorageSystemPC
           count+=1 if p && p.hp>0
         end
         if command==1 && count<=1
-          Kernel.pbMessage(_INTL("Can't deposit the last Pokémon!"))
+          Kernel.pbMessage(_INTL("C'est votre dernier Pokémon!"))
           next
         end
         pbFadeOutIn(99999){
@@ -3484,10 +3484,10 @@ end
 
 
 def pbPokeCenterPC
-  Kernel.pbMessage(_INTL("\\se[computeropen]{1} booted up the PC.",$Trainer.name))
+  Kernel.pbMessage(_INTL("\\se[computeropen]{1} allume le PC.",$Trainer.name))
   loop do
     commands=PokemonPCList.getCommandList()
-    command=Kernel.pbMessage(_INTL("Which PC should be accessed?"),
+    command=Kernel.pbMessage(_INTL("Accéder à quel PC ?"),
        commands,commands.length)
     if !PokemonPCList.callCommand(command)
       break

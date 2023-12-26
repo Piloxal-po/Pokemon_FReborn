@@ -100,7 +100,7 @@ class PokeBattle_OnlineBattle < PokeBattle_Battle
     for i in 0..3
       @priority[i] = @battlers[priorityarray[i][3]]
       if (@battlers[i].itemWorks? && @battlers[i].item == PBItems::QUICKCLAW)
-        pbDisplayBrief(_INTL("{1}'s Quick Claw let it move first!",@priority[i].pbThis)) if priorityarray[i][1] == 1 && !ignorequickclaw
+        pbDisplayBrief(_INTL("Vive Griffe de {1} lui permet d'agir en premier!",@priority[i].pbThis)) if priorityarray[i][1] == 1 && !ignorequickclaw
       end
     end
     @usepriority=true

@@ -1334,9 +1334,9 @@ def Kernel.pbPickup(pokemon)
       end
       itemname = PBItems.getName(items[i])
       if itemname =~ /\A[aeiou]/
-        Kernel.pbMessage(_INTL("{1} picked up an {2}!", pokemon.name, itemname))
+        Kernel.pbMessage(_INTL("{1} a ramassé {2}!", pokemon.name, itemname))
       else
-        Kernel.pbMessage(_INTL("{1} picked up a {2}!", pokemon.name, itemname))
+        Kernel.pbMessage(_INTL("{1} a ramassé {2}!", pokemon.name, itemname))
       end
       break
     end
@@ -1545,13 +1545,13 @@ Events.onStepTakenTransferPossible+=proc {|sender,e|
         end
         if i.hp==1 && !POISONFAINTINFIELD
           i.status=0
-          Kernel.pbMessage(_INTL("{1} survived the poisoning.\\nThe poison faded away!\\1",i.name))
+          Kernel.pbMessage(_INTL("{1} a survécu au poison.\\nLe poison s'est dissipé!\\1",i.name))
           next
         end
         i.hp-=1
         if i.hp==1 && !POISONFAINTINFIELD
           i.status=0
-          Kernel.pbMessage(_INTL("{1} survived the poisoning.\\nThe poison faded away!\\1",i.name))
+          Kernel.pbMessage(_INTL("{1} a survécu au poison.\\nLe poison s'est dissipé!\\1",i.name))
           next
         end
         handled[0]=true if pbAllFainted
@@ -1778,21 +1778,21 @@ def pbFishing(hasencounter,rodtype=1)
     if pbWaitMessage(msgwindow,time)
       pbFishingEnd
       $game_player.setDefaultCharName(nil,oldpattern)
-      Kernel.pbMessageDisplay(msgwindow,_INTL("Not even a nibble..."))
+      Kernel.pbMessageDisplay(msgwindow,_INTL("Rien de rien..."))
       Kernel.pbDisposeMessageWindow(msgwindow)
       return false
     end
     if rand(100)<bitechance && hasencounter
       frames=rand(21)+25
-      if !pbWaitForInput(msgwindow,message+_INTL("\r\nOh!  A bite!"),frames)
+      if !pbWaitForInput(msgwindow,message+_INTL("\r\nOh! Une prise!"),frames)
         pbFishingEnd
         $game_player.setDefaultCharName(nil,oldpattern)
-        Kernel.pbMessageDisplay(msgwindow,_INTL("The Pokémon got away..."))
+        Kernel.pbMessageDisplay(msgwindow,_INTL("Le Pokémon s'est échappé..."))
         Kernel.pbDisposeMessageWindow(msgwindow)
         return false
       end
       if rand(100)<hookchance || FISHINGAUTOHOOK
-        Kernel.pbMessageDisplay(msgwindow,_INTL("Landed a Pokémon!"))
+        Kernel.pbMessageDisplay(msgwindow,_INTL("Un Pokémon a mordu à l'hameçon!"))
         Kernel.pbDisposeMessageWindow(msgwindow)
         pbFishingEnd
         $game_player.setDefaultCharName(nil,oldpattern)
@@ -1801,7 +1801,7 @@ def pbFishing(hasencounter,rodtype=1)
     else
       pbFishingEnd
       $game_player.setDefaultCharName(nil,oldpattern)
-      Kernel.pbMessageDisplay(msgwindow,_INTL("Not even a nibble..."))
+      Kernel.pbMessageDisplay(msgwindow,_INTL("Rien de rien..."))
       Kernel.pbDisposeMessageWindow(msgwindow)
       return false
     end
@@ -2195,32 +2195,32 @@ def Kernel.pbItemBall(item,quantity=1,plural=nil)
   pocket=pbGetPocket(item)
   if $PokemonBag.pbStoreItem(item,quantity)   # If item can be picked up
     if $cache.items[item][ITEMUSE]==3 || $cache.items[item][ITEMUSE]==4
-      Kernel.pbMessage(_INTL("\\se[itemlevel]{1} found \\c[1]{2}\\c[0]!\\nIt contained \\c[1]{3}\\c[0].\\wtnp[30]",
+      Kernel.pbMessage(_INTL("\\se[itemlevel]{1} trouve la \\c[1]{2}\\c[0]!\\nElle contient \\c[1]{3}\\c[0].\\wtnp[30]",
          $Trainer.name,itemname,PBMoves.getName($cache.items[item][ITEMMACHINE])))
-      Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}\\c[0]\r\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.",
+      Kernel.pbMessage(_INTL("{1} met \\c[1]{2}\\c[0]\r\ndans la poche <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] du Sac.",
          $Trainer.name,itemname,PokemonBag.pocketNames()[pocket]))
     elsif (item == PBItems::LEFTOVERS)
-      Kernel.pbMessage(_INTL("\\se[itemlevel]{1} found some \\c[1]{2}\\c[0]!\\wtnp[30]",
+      Kernel.pbMessage(_INTL("\\se[itemlevel]{1} trouve des \\c[1]{2}\\c[0]!\\wtnp[30]",
          $Trainer.name,itemname))
-      Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}\\c[0]\r\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.",
+      Kernel.pbMessage(_INTL("{1} met \\c[1]{2}\\c[0]\r\ndans la poche <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] du Sac.",
          $Trainer.name,itemname,PokemonBag.pocketNames()[pocket]))
     else
       if quantity>1
         if plural
-          Kernel.pbMessage(_INTL("\\se[itemlevel]{1} found {2} \\c[1]{3}\\c[0]!\\wtnp[30]",
+          Kernel.pbMessage(_INTL("\\se[itemlevel]{1} trouve {2} \\c[1]{3}\\c[0]!\\wtnp[30]",
              $Trainer.name,quantity,plural))
-          Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}\\c[0]\r\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.",
+          Kernel.pbMessage(_INTL("{1} met \\c[1]{2}\\c[0]\r\ndans la poche <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] du Sac.",
              $Trainer.name,plural,PokemonBag.pocketNames()[pocket]))
         else
-          Kernel.pbMessage(_INTL("\\se[itemlevel]{1} found {2} \\c[1]{3}s\\c[0]!\\wtnp[30]",
+          Kernel.pbMessage(_INTL("\\se[itemlevel]{1} trouve {2} \\c[1]{3}s\\c[0]!\\wtnp[30]",
              $Trainer.name,quantity,itemname))
-          Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}s\\c[0]\r\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.",
+          Kernel.pbMessage(_INTL("{1} met \\c[1]{2}s\\c[0]\r\ndans la poche <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] du Sac.",
              $Trainer.name,itemname,PokemonBag.pocketNames()[pocket]))
         end
       else
-        Kernel.pbMessage(_INTL("\\se[itemlevel]{1} found one \\c[1]{2}\\c[0]!\\wtnp[30]",
+        Kernel.pbMessage(_INTL("\\se[itemlevel]{1} trouve \\c[1]{2}\\c[0]!\\wtnp[30]",
            $Trainer.name,itemname))
-        Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}\\c[0]\r\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.",
+        Kernel.pbMessage(_INTL("{1} met \\c[1]{2}\\c[0]\r\ndans la poche <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] du Sac.",
            $Trainer.name,itemname,PokemonBag.pocketNames()[pocket]))
       end
     end
@@ -2259,34 +2259,34 @@ def Kernel.pbReceiveItem(item,quantity=1,plural=nil)
   itemname=PBItems.getName(item)
   pocket=pbGetPocket(item)
   if $cache.items[item][ITEMUSE]==3 || $cache.items[item][ITEMUSE]==4
-    Kernel.pbMessage(_INTL("\\se[itemlevel]Obtained \\c[1]{1}\\c[0]!\\nIt contained \\c[1]{2}\\c[0].\\wtnp[30]",
+    Kernel.pbMessage(_INTL("\\se[itemlevel]Obtient la \\c[1]{1}\\c[0]!\\nElle contient \\c[1]{2}\\c[0].\\wtnp[30]",
        itemname,PBMoves.getName($cache.items[item][ITEMMACHINE])))
   elsif (item == PBItems::LEFTOVERS)
-    Kernel.pbMessage(_INTL("\\se[itemlevel]Obtained some \\c[1]{1}\\c[0]!\\wtnp[30]",
+    Kernel.pbMessage(_INTL("\\se[itemlevel]Obtient des \\c[1]{1}\\c[0]!\\wtnp[30]",
        itemname))
   elsif quantity>1
     if plural
-      Kernel.pbMessage(_INTL("\\se[itemlevel]Obtained {2} \\c[1]{1}\\c[0]!\\wtnp[30]",
+      Kernel.pbMessage(_INTL("\\se[itemlevel]Obtient {2} \\c[1]{1}\\c[0]!\\wtnp[30]",
          plural,quantity))
     else
-      Kernel.pbMessage(_INTL("\\se[itemlevel]Obtained {2} \\c[1]{1}s\\c[0]!\\wtnp[30]",
+      Kernel.pbMessage(_INTL("\\se[itemlevel]Obtient {2} \\c[1]{1}s\\c[0]!\\wtnp[30]",
          itemname,quantity))
     end
   else
-    Kernel.pbMessage(_INTL("\\se[itemlevel]Obtained \\c[1]{1}\\c[0]!\\wtnp[30]",
+    Kernel.pbMessage(_INTL("\\se[itemlevel]Obtient \\c[1]{1}\\c[0]!\\wtnp[30]",
        itemname))
   end
   if $PokemonBag.pbStoreItem(item,quantity)   # If item can be added
     if quantity>1
       if plural
-        Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}\\c[0]\r\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.",
+        Kernel.pbMessage(_INTL("{1} met \\c[1]{2}\\c[0]\r\ndans la poche <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] du Sac.",
            $Trainer.name,plural,PokemonBag.pocketNames()[pocket]))
       else
-        Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}s\\c[0]\r\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.",
+        Kernel.pbMessage(_INTL("{1} met \\c[1]{2}s\\c[0]\r\ndans la poche <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] du Sac.",
            $Trainer.name,itemname,PokemonBag.pocketNames()[pocket]))
       end
     else
-      Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}\\c[0]\r\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.",
+      Kernel.pbMessage(_INTL("{1} met \\c[1]{2}\\c[0]\r\ndans la poche <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] du Sac.",
          $Trainer.name,itemname,PokemonBag.pocketNames()[pocket]))
     end
     return true

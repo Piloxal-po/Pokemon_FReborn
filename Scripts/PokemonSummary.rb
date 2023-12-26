@@ -290,10 +290,10 @@ class PokemonSummaryScene
       mapname=pokemon.obtainText
     end
     if mapname && mapname!=""
-      memo+=_INTL("<c3=404040,B0B0B0>A mysterious Pokémon Egg received from <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.\n",mapname)
+      memo+=_INTL("<c3=404040,B0B0B0>Un mystérieux Œuf de Pokémon trouvé à <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.\n",mapname)
     end
     memo+="<c3=404040,B0B0B0>\n"
-    memo+=_INTL("<c3=404040,B0B0B0>\"The Egg Watch\"\n")
+    memo+=_INTL("<c3=404040,B0B0B0>\"Surveillance de l'Œuf\"\n")
     eggstate=_INTL("It looks like this Egg will take a long time to hatch.")
     eggstate=_INTL("What will hatch from this? It doesn't seem close to hatching.") if pokemon.eggsteps<10200
     eggstate=_INTL("It appears to move occasionally. It may be close to hatching.") if pokemon.eggsteps<2550
@@ -346,7 +346,7 @@ class PokemonSummaryScene
     memo=""
     shownature=(!(pokemon.isShadow? rescue false)) || pokemon.heartStage<=3
     if shownature
-      memo+=_INTL("<c3=F83820,E09890>{1}<c3=404040,B0B0B0> nature.\n",naturename)
+      memo+=_INTL("Nature <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.\n",naturename)
     end
     if pokemon.timeReceived
       month=pbGetAbbrevMonthName(pokemon.timeReceived.mon)

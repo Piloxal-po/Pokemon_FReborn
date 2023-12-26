@@ -814,7 +814,7 @@ class PokemonDataBox < SpriteWrapper
     end
     pbDrawTextPositions(self.bitmap,textpos)
     pbSetSmallFont(self.bitmap)
-    textpos=[[_INTL("Lv{1}",$game_switches[:Level_999] && (@battler.index%2)==1 ? 999 : @battler.level),@spritebaseX+202,@spritebaseY+12,true,base,shadow]]
+    textpos=[[_INTL("Niv{1}",$game_switches[:Level_999] && (@battler.index%2)==1 ? 999 : @battler.level),@spritebaseX+202,@spritebaseY+12,true,base,shadow]]
     if @showhp
       hpstring=_ISPRINTF("{1: 2d}/{2: 2d}",self.hp,@battler.totalhp)
       textpos.push([hpstring,@spritebaseX+188,@spritebaseY+52,true,base,shadow])

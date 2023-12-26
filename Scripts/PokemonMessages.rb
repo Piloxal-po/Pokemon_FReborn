@@ -887,11 +887,11 @@ def Kernel.pbMessageChooseNumber(message,params,&block)
 end
 
 def Kernel.pbConfirmMessage(message,&block)
-  return (Kernel.pbMessage(message,[_INTL("Yes"),_INTL("No")],2,&block)==0)
+  return (Kernel.pbMessage(message,[_INTL("Oui"),_INTL("Non")],2,&block)==0)
 end
 
 def Kernel.pbConfirmMessageSerious(message,&block)
-  return (Kernel.pbMessage(message,[_INTL("No"),_INTL("Yes")],1,&block)==1)
+  return (Kernel.pbMessage(message,[_INTL("Non"),_INTL("Oui")],1,&block)==1)
 end
 
 def Kernel.pbCreateStatusWindow(viewport=nil)

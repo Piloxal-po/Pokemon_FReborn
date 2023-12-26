@@ -175,7 +175,7 @@ def Kernel.pbUseKeyItem
 			realitems.push(i) if $PokemonBag.pbHasItem?(i)
 		end
 		if realitems.length==0 && realmoves.length==0
-			Kernel.pbMessage(_INTL("An item in the Bag can be registered to this key for instant use."))
+			Kernel.pbMessage(_INTL("Un Objet du Sac peut être associé à cette touche pour l'utiliser instantanément."))
 		elsif realitems.length == 1 && realmoves.length==0
 			Kernel.pbUseKeyItemInField(realitems[0])
 		else

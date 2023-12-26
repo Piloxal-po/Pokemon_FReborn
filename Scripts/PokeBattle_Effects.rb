@@ -596,8 +596,8 @@ class PokeBattle_Battler
       end
 
       # Battle message
-      arrStatTexts=[_INTL("{1}'s {2} rose!",pbThis,pbGetStatName(stat)), _INTL("{1}'s {2} rose sharply!",pbThis,pbGetStatName(stat)),
-         _INTL("{1}'s {2} rose drastically!",pbThis,pbGetStatName(stat)), _INTL("{1}'s {2} went way up!",pbThis,pbGetStatName(stat))]
+      arrStatTexts=[_INTL("{2} de {1} augmente!",pbThis,pbGetStatName(stat)), _INTL("{2} de {1} augmente beaucoup!",pbThis,pbGetStatName(stat)),
+         _INTL("{2} de {1} augmente énormément!",pbThis,pbGetStatName(stat)), _INTL("{2} de {1} augmente énormément!",pbThis,pbGetStatName(stat))]
       increment*=2 if (self.ability == PBAbilities::SIMPLE) && !(self.moldbroken)
       if increment>3
         @battle.pbDisplay(arrStatTexts[3]) if statmessage
@@ -714,9 +714,9 @@ class PokeBattle_Battler
       # Battle message
       increment*=2 if (self.ability == PBAbilities::SIMPLE) && !(self.moldbroken)
       harsh = ""
-      harsh = "harshly " if increment==2
-      harsh = "dramatically " if increment>=3
-      stat_text = _INTL("{1}'s {2} {3}fell!",pbThis,pbGetStatName(stat),harsh)
+      harsh = " beaucoup" if increment==2
+      harsh = " énormément" if increment>=3
+      stat_text = _INTL("{2} de {1} baisse{3}!",pbThis,pbGetStatName(stat),harsh)
       @battle.pbDisplay(stat_text) if statmessage
 
       # Defiant/Competitive boost
@@ -837,6 +837,6 @@ class PokeBattle_Battler
 
   def pbGetStatName(stat)
     #can't use STATSTRINGS for this bc that doesn't have Acc and Eva 
-    return ["HP","Attack", "Defense", "Speed", "Sp. Attack", "Sp. Defense", "Accuracy", "Evasion"][stat]
+    return ["PV","Attaque", "Défense", "Vitesse", "Att.Spé.", "Déf.Spé.", "Précision", "Esquive"][stat]
   end
 end

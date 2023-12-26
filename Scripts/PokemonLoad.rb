@@ -436,14 +436,14 @@ class PokemonLoad
       commands[cmdChooseSaveFile=commands.length]=_INTL("Other Save Files")
       commands[cmdDeleteSaveFile=commands.length]=_INTL("Delete This Save File")
       commands[cmdOption=commands.length]=_INTL("Options")
-      commands[cmdSaveDir=commands.length]=_INTL("Open Save Folder")
+      commands[cmdSaveDir=commands.length]=_INTL("Dossier Sauvegardes")
       commands[cmdControls=commands.length]=_INTL("Controls")
       trainer, framecount, $game_system, mapid = pbTryLoadFile(savefile,false)
     else
       commands[cmdNewGame=commands.length]=_INTL("New Game")
       commands[cmdChooseSaveFile=commands.length]=_INTL("Other Save Files")
       commands[cmdOption=commands.length]=_INTL("Options")
-      commands[cmdSaveDir=commands.length]=_INTL("Open Save Folder")
+      commands[cmdSaveDir=commands.length]=_INTL("Dossier Sauvegardes")
       commands[cmdControls=commands.length]=_INTL("Controls")
     end
     if LANGUAGES.length>=2

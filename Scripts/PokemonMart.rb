@@ -540,11 +540,11 @@ class PokemonMartScreen
       itemname=@adapter.getDisplayName(item)
       price=@adapter.getPrice(item)
       if @adapter.getMoney()<price
-        pbDisplayPaused(_INTL("You don't have enough money."))
+        pbDisplayPaused(_INTL("Vous n'avez pas assez d'argent."))
         next
       end
       if pbIsImportantItem?(item)
-        if !pbConfirm(_INTL("Certainly. You want {1}.\r\nThat will be ${2}. OK?",itemname,pbCommaNumber(price)))
+        if !pbConfirm(_INTL("Certainement. Vous voulez {1}.\r\nÇa fera {2}$. Ça vous va?",itemname,pbCommaNumber(price)))
           next
         end
         quantity=1
@@ -552,12 +552,12 @@ class PokemonMartScreen
         maxafford=(price<=0) ? BAGMAXPERSLOT : @adapter.getMoney()/price
         maxafford=BAGMAXPERSLOT if maxafford>BAGMAXPERSLOT
         quantity=@scene.pbChooseNumber(
-           _INTL("{1}?  Certainly.\r\nHow many would you like?",itemname),item,maxafford)
+           _INTL("{1}?  Certainement.\r\nCombien en voulez-vous?",itemname),item,maxafford)
         if quantity==0
           next
         end
         price*=quantity
-        if !pbConfirm(_INTL("{1}, and you want {2}.\r\nThat will be ${3}. OK?",itemname,quantity,pbCommaNumber(price)))
+        if !pbConfirm(_INTL("{1}, et vous en voulez {2}.\r\nÇa fera {3}$. Ça vous va?",itemname,quantity,pbCommaNumber(price)))
           next
         end
       end
@@ -587,12 +587,12 @@ class PokemonMartScreen
           end
         end
         @stock.compact!
-        pbDisplayPaused(_INTL("Here you are!\r\nThank you!"))
+        pbDisplayPaused(_INTL("Et voilà!\r\nMerci beaucoup!"))
         if $PokemonBag && quantity>=10 && pbIsPokeBall?(item)
           if quantity < 20 && @adapter.addItem(PBItems::PREMIERBALL) 
-            pbDisplayPaused(_INTL("I'll throw in a Premier Ball, too.")) 
+            pbDisplayPaused(_INTL("Vous gagnez une Honor Ball en cadeau.")) 
           elsif quantity >=20 && $PokemonBag.pbStoreItem(PBItems::PREMIERBALL,(quantity/10).floor)
-            pbDisplayPaused(_INTL("I'll throw in a few Premier Balls, too."))
+            pbDisplayPaused(_INTL("Vous gagnez des Honor Balls en cadeau."))
           end
         end
       end
@@ -654,7 +654,7 @@ def pbPokemonMart(stock,speech=nil,cantsell=false)
   commands[cmdSell=commands.length]=_INTL("Sell") if !cantsell
   commands[cmdQuit=commands.length]=_INTL("Quit")
   cmd=Kernel.pbMessage(
-     speech ? speech : _INTL("Welcome!\r\nHow may I serve you?"),
+     speech ? speech : _INTL("Bienvenue!\r\nQue puis-je pour vous?"),
      commands,cmdQuit+1)
   loop do
     if cmdBuy>=0 && cmd==cmdBuy
@@ -713,7 +713,7 @@ def pbDefaultMart(speech=nil,cantsell=false)
   commands[cmdSell=commands.length]=_INTL("Sell") if !cantsell
   commands[cmdQuit=commands.length]=_INTL("Quit")
   cmd=Kernel.pbMessage(
-     speech ? speech : _INTL("Welcome!\r\nHow may I serve you?"),
+     speech ? speech : _INTL("Bienvenue!\r\nQue puis-je pour vous?"),
      commands,cmdQuit+1)
   loop do
     if cmdBuy>=0 && cmd==cmdBuy

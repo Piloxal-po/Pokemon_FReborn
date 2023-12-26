@@ -83,7 +83,7 @@ class PokemonEggHatchScene
     frames.times do
       Graphics.update
     end
-    Kernel.pbMessage(_INTL("\\se[]{1} hatched from the Egg!\\wt[80]",@pokemon.name))
+    Kernel.pbMessage(_INTL("\\se[]{1} sort de l'Œuf!\\wt[80]",@pokemon.name))
     if Kernel.pbConfirmMessage(_INTL("Would you like to nickname the newly hatched {1}?",@pokemon.name))
       species=PBSpecies.getName(@pokemon.species)
       nickname=pbEnterPokemonName(_INTL("{1}'s nickname?",@pokemon.name),0,12,"",@pokemon)
@@ -179,13 +179,13 @@ def pbHatch(pokemon)
   pbSeenForm(pokemon)
   pokemon.pbRecordFirstMoves
   if !pbHatchAnimation(pokemon)
-    Kernel.pbMessage(_INTL("Huh?\1"))
+    Kernel.pbMessage(_INTL("Hein?\1"))
     Kernel.pbMessage(_INTL("...\1"))
     Kernel.pbMessage(_INTL("... .... .....\1"))
-    Kernel.pbMessage(_INTL("{1} hatched from the Egg!",speciesname))
-    if Kernel.pbConfirmMessage(_INTL("Would you like to nickname the newly hatched {1}?",speciesname))
+    Kernel.pbMessage(_INTL("{1} sort de l'Œuf!",speciesname))
+    if Kernel.pbConfirmMessage(_INTL("Voulez-vous donner un surnom au {1} nouveau-né?",speciesname))
       species=PBSpecies.getName(pokemon.species)
-      nickname=pbEnterPokemonName(_INTL("{1}'s nickname?",speciesname),0,12,"",pokemon)
+      nickname=pbEnterPokemonName(_INTL("Surnom de {1}?",speciesname),0,12,"",pokemon)
       pokemon.name=nickname if nickname!=""
     end
   end

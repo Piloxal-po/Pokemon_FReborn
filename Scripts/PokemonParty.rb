@@ -525,7 +525,7 @@ class PokeSelectionSprite < SpriteWrapper
       pbDrawTextPositions(self.bitmap,textpos)
       if !@pokemon.isEgg?
         pbSetSmallFont(self.bitmap)
-        leveltext=[([_INTL("Lv.{1}",@pokemon.level),@levelX,@levelY,0,base,shadow])]
+        leveltext=[([_INTL("Niv.{1}",@pokemon.level),@levelX,@levelY,0,base,shadow])]
         pbDrawTextPositions(self.bitmap,leveltext)
       end
       if @text && @text.length>0
@@ -1017,7 +1017,7 @@ class PokemonScreen
     else
       $PokemonBag.pbStoreItem(pkmn.item)
       itemname=PBItems.getName(pkmn.item)
-      pbDisplay(_INTL("Received the {1} from {2}.",itemname,pkmn.name))
+      pbDisplay(_INTL("Reçu {1} de {2}.",itemname,pkmn.name))
       pkmn.setItem(0)
       pkmn.form = pkmn.getForm(pkmn)
     end
@@ -1043,8 +1043,8 @@ class PokemonScreen
     end
     if pkmn.item!=0
       itemname=PBItems.getName(pkmn.item)
-      pbDisplay(_INTL("{1} is already holding one {2}.\1",pkmn.name,itemname))
-      if pbConfirm(_INTL("Would you like to switch the two items?"))
+      pbDisplay(_INTL("{1} tient déjà {2}.\1",pkmn.name,itemname))
+      if pbConfirm(_INTL("Voulez-vous échanger les deux objets?"))
         $PokemonBag.pbDeleteItem(item)
         if !$PokemonBag.pbStoreItem(pkmn.item)
           if !$PokemonBag.pbStoreItem(item) # Compensate
@@ -2187,13 +2187,13 @@ class PokemonScreen
         end
       elsif cmdRename>=0 && command==cmdRename
         species=PBSpecies.getName(pkmn.species)
-        $game_variables[5]=Kernel.pbMessageFreeText("#{species}'s nickname?",_INTL(""),false,12)
+        $game_variables[5]=Kernel.pbMessageFreeText("Surnom de #{species}?",_INTL(""),false,12)
         if pbGet(5)==""
           pkmn.name=PBSpecies.getName(pkmn.species)
           pbSet(5,pkmn.name)
         end
         pkmn.name=pbGet(5)
-        pbDisplay(_INTL("{1} was renamed to {2}.",species,pkmn.name))
+        pbDisplay(_INTL("{1} se nomme désormais {2}.",species,pkmn.name))
       end
     end
     @scene.pbEndScene

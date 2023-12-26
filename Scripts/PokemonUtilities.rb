@@ -1356,9 +1356,9 @@ end
 
 def pbNickname(pokemon)
   speciesname=PBSpecies.getName(pokemon.species)
-  return "" if !Kernel.pbConfirmMessage(_INTL("Would you like to give a nickname to {1}?",speciesname))
+  return "" if !Kernel.pbConfirmMessage(_INTL("Voulez-vous donner un surnom à {1}?",speciesname))
   
-  helptext=_INTL("{1}'s nickname?",speciesname)
+  helptext=_INTL("Surnom de {1}?",speciesname)
   newname=pbEnterText(helptext,0,12,"",2,pokemon)
   pokemon.name=newname if newname!=""
   return newname
@@ -1391,7 +1391,7 @@ def pbStorePokemon(pokemon)
           loop do
             iMon=screen.pbChoosePokemon
             if iMon>=0 && ($Trainer.party[iMon].knowsMove?(:CUT) || $Trainer.party[iMon].knowsMove?(:ROCKSMASH) || $Trainer.party[iMon].knowsMove?(:STRENGTH) || $Trainer.party[iMon].knowsMove?(:SURF) || $Trainer.party[iMon].knowsMove?(:WATERFALL) || $Trainer.party[iMon].knowsMove?(:DIVE) || $Trainer.party[iMon].knowsMove?(:ROCKCLIMB) || $Trainer.party[iMon].knowsMove?(:FLASH) || $Trainer.party[iMon].knowsMove?(:FLY))
-              Kernel.pbMessage("You can't return a Pokémon that knows a TMX move to the PC.") 
+              Kernel.pbMessage("Vous ne pouvez pas déposer dans le PC un Pokémon qui connaît une CS.") 
               iMon=-2
             elsif unusablecount<=1 && !($Trainer.party[iMon].isEgg?) && $Trainer.party[iMon].hp>0 && pokemon.isEgg?
               Kernel.pbMessage("That's your last Pokémon!") 
@@ -1429,12 +1429,12 @@ def pbStorePokemon(pokemon)
           else
             Kernel.pbMessage(_INTL("Box \"{1}\" on someone's PC was full.\1",curboxname))
           end
-          Kernel.pbMessage(_INTL("{1} was transferred to box \"{2}.\"",pokemon.name,boxname))
+          Kernel.pbMessage(_INTL("{1} est envoyé dans la boîte \"{2}.\"",pokemon.name,boxname))
         else
           if creator
-            Kernel.pbMessage(_INTL("{1} was transferred to {2}'s PC.\1",pokemon.name,creator))
+            Kernel.pbMessage(_INTL("{1} est transféré dans le PC de {2}\1",pokemon.name,creator))
           else
-            Kernel.pbMessage(_INTL("{1} was transferred to someone's PC.\1",pokemon.name))
+            Kernel.pbMessage(_INTL("{1} est transféré dans le PC de ???\1",pokemon.name))
           end
           Kernel.pbMessage(_INTL("It was stored in box \"{1}\".",boxname))
         end
@@ -1483,7 +1483,7 @@ def pbAddPokemon(pokemon,level=nil,seeform=true)
     end
   end 
   
-  Kernel.pbMessage(_INTL("{1} obtained {2}!\\se[itemlevel]\1",$Trainer.name,speciesname))
+  Kernel.pbMessage(_INTL("{1} obtient {2}!\\se[itemlevel]\1",$Trainer.name,speciesname))
   pbNicknameAndStore(pokemon)
   pbSeenForm(pokemon) if seeform
   return true
@@ -1528,7 +1528,7 @@ def pbAddPokemonSilent(pokemon,level=nil,seeform=true,originaltime=nil)
           loop do
             iMon=screen.pbChoosePokemon
             if iMon>=0 && ($Trainer.party[iMon].knowsMove?(:CUT) || $Trainer.party[iMon].knowsMove?(:ROCKSMASH) || $Trainer.party[iMon].knowsMove?(:STRENGTH) || $Trainer.party[iMon].knowsMove?(:SURF) || $Trainer.party[iMon].knowsMove?(:WATERFALL) || $Trainer.party[iMon].knowsMove?(:DIVE) || $Trainer.party[iMon].knowsMove?(:ROCKCLIMB) || $Trainer.party[iMon].knowsMove?(:FLASH) || $Trainer.party[iMon].knowsMove?(:FLY))
-              Kernel.pbMessage("You can't return a Pokémon that knows a TMX move to the PC.") 
+              Kernel.pbMessage("Vous ne pouvez pas déposer dans le PC un Pokémon qui connaît une CS.") 
               iMon=-2
             elsif unusablecount<=1 && !($Trainer.party[iMon].isEgg?) && $Trainer.party[iMon].hp>0 && pokemon.isEgg?
               Kernel.pbMessage("That's your last Pokémon!") 
@@ -1567,12 +1567,12 @@ def pbAddPokemonSilent(pokemon,level=nil,seeform=true,originaltime=nil)
             else
               Kernel.pbMessage(_INTL("Box \"{1}\" on someone's PC was full.\1",curboxname))
             end
-            Kernel.pbMessage(_INTL("{1} was transferred to box \"{2}.\"",pokemon.name,boxname))
+            Kernel.pbMessage(_INTL("{1} est envoyé dans la boîte \"{2}.\"",pokemon.name,boxname))
           else
             if creator
-              Kernel.pbMessage(_INTL("{1} was transferred to {2}'s PC.\1",pokemon.name,creator))
+              Kernel.pbMessage(_INTL("{1} est transféré dans le PC de {2}.\1",pokemon.name,creator))
             else
-              Kernel.pbMessage(_INTL("{1} was transferred to someone's PC.\1",pokemon.name))
+              Kernel.pbMessage(_INTL("{1} est transféré dans le PC de ???.\1",pokemon.name))
             end
             Kernel.pbMessage(_INTL("It was stored in box \"{1}\".",boxname))
           end
@@ -1613,7 +1613,7 @@ def pbAddToParty(pokemon,level=nil,seeform=true)
     pokemon=PokeBattle_Pokemon.new(pokemon,level,$Trainer)
   end
   speciesname=PBSpecies.getName(pokemon.species)
-  Kernel.pbMessage(_INTL("{1} obtained {2}!\\se[itemlevel]\1",$Trainer.name,speciesname))
+  Kernel.pbMessage(_INTL("{1} obtient {2}!\\se[itemlevel]\1",$Trainer.name,speciesname))
   pbNicknameAndStore(pokemon)
   pbSeenForm(pokemon) if seeform
   return true

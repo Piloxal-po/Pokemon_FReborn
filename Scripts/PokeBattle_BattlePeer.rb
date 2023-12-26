@@ -25,7 +25,7 @@ class PokeBattle_RealBattlePeer
                 break
               end
               if iMon>=0 && [:CUT, :ROCKSMASH, :STRENGTH, :SURF, :WATERFALL, :DIVE, :ROCKCLIMB, :FLASH, :FLY].any? {|tmmove| $Trainer.party[iMon].knowsMove?(tmmove)} && !$game_switches[:EasyHMs_Password]
-                Kernel.pbMessage("You can't return a Pokémon that knows a TMX move to the PC.") 
+                Kernel.pbMessage("Vous ne pouvez pas déposer dans le PC un Pokémon qui connaît une CS.") 
                 iMon=-2
               elsif unusablecount<=1 && !($Trainer.party[iMon].isEgg?) && $Trainer.party[iMon].hp>0 && pokemon.isEgg?
                 Kernel.pbMessage("That's your last Pokémon!") 

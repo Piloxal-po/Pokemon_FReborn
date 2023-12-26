@@ -1262,14 +1262,14 @@ class PokeBattle_Move
           if (opponent.ability == PBAbilities::OBLIVIOUS) || (opponent.ability == PBAbilities::KLUTZ) || (opponent.ability == PBAbilities::UNAWARE) || (opponent.ability == PBAbilities::SIMPLE) || opponent.effects[PBEffects::Confusion]>0
             damagemult=(damagemult*2).round
           end
-          @battle.pbDisplay("The chess piece slammed forward!") if !@fieldmessageshown
+          @battle.pbDisplay("La pièce avance d'un coup!") if !@fieldmessageshown
           @fieldmessageshown = true
         end
         # Queen piece boost
         if attacker.pokemon.piece==:QUEEN || attacker.ability == PBAbilities::QUEENLYMAJESTY
           damagemult=(damagemult*1.5).round
           if attacker.pokemon.piece==:QUEEN
-            @battle.pbDisplay("The Queen is dominating the board!")  && !@fieldmessageshown
+            @battle.pbDisplay("La Dame domine le plateau!")  && !@fieldmessageshown
             @fieldmessageshown = true
           end
         end
@@ -1277,7 +1277,7 @@ class PokeBattle_Move
         #Knight piece boost
         if attacker.pokemon.piece==:KNIGHT && opponent.pokemon.piece==:QUEEN
           damagemult=(damagemult*3.0).round
-          @battle.pbDisplay("An unblockable attack on the Queen!") if !@fieldmessageshown
+          @battle.pbDisplay("Une attaque imparable sur la Dame!") if !@fieldmessageshown
           @fieldmessageshown = true
         end
       when 6 # Big Top
@@ -1295,24 +1295,24 @@ class PokeBattle_Move
           strikermod = attacker.stages[PBStats::ATTACK]
           striker = striker + strikermod
           if striker >= 15
-            @battle.pbDisplay("...OVER 9000!!!")
+            @battle.pbDisplay("...PLUS DE 9000!!!")
             damagemult=(damagemult*3).round
           elsif striker >=13
-            @battle.pbDisplay("...POWERFUL!")
+            @battle.pbDisplay("...PUISSANT!")
             damagemult=(damagemult*2).round
           elsif striker >=9
-            @battle.pbDisplay("...NICE!")
+            @battle.pbDisplay("...PAS MAL!")
             damagemult=(damagemult*1.5).round
           elsif striker >=3
             @battle.pbDisplay("...OK!")
           else
-            @battle.pbDisplay("...WEAK!")
+            @battle.pbDisplay("...FAIBLE!")
             damagemult=(damagemult*0.5).round
           end
         end
         if (@flags&0x400)!= 0
           damagemult=(damagemult*1.5).round
-          @battle.pbDisplay("Loud and clear!") if !@fieldmessageshown
+          @battle.pbDisplay("Clair et puissant!") if !@fieldmessageshown
           @fieldmessageshown = true
         end
       when 13 # Icy Field
@@ -1321,7 +1321,7 @@ class PokeBattle_Move
             if attacker.pbCanIncreaseStatStage?(PBStats::SPEED)
               attacker.pbIncreaseStatBasic(PBStats::SPEED,1)
               @battle.pbCommonAnimation("StatUp",attacker,nil)
-              @battle.pbDisplay(_INTL("{1} gained momentum on the ice!",attacker.pbThis)) if !@fieldmessageshown
+              @battle.pbDisplay(_INTL("{1} prend la priorité sur la glace!",attacker.pbThis)) if !@fieldmessageshown
               @fieldmessageshown = true
             end
           end
@@ -2181,7 +2181,7 @@ class PokeBattle_Move
   # 1 if the attack should exit as a success
   # 0 if the attack should proceed its effect
   # 2 if Bide is storing energy
-    @battle.pbDisplayBrief(_INTL("{1} used\r\n{2}!",attacker.pbThis,name))
+    @battle.pbDisplayBrief(_INTL("{1} utilise\r\n{2}!",attacker.pbThis,name))
     return 0
   end
 

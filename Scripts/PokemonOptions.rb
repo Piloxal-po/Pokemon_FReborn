@@ -368,58 +368,58 @@ end
 
 class PokemonOptionScene
   OptionList=[
-    EnumOption.new(_INTL("Autorunning"),[_INTL("On"),_INTL("Off")],
+    EnumOption.new(_INTL("Course Auto"),[_INTL("On"),_INTL("Off")],
         proc { $idk[:settings].autorunning },
         proc {|value|  $idk[:settings].autorunning = value }
     ),
-    EnumOption.new(_INTL("Text Speed"),[_INTL("Normal"),_INTL("Fast"),_INTL("Max")],
+    EnumOption.new(_INTL("Vitesse texte"),[_INTL("Normale"),_INTL("Rapide"),_INTL("Max")],
        proc { $idk[:settings].textspeed },
        proc {|value|  
           $idk[:settings].textspeed=value 
           MessageConfig.pbSetTextSpeed(pbSettingToTextSpeed(value)) 
        }
     ),
-    NumberOption.new(_INTL("BGM Volume"),_INTL("Type %d"),0,100,
+    NumberOption.new(_INTL("Volume BGM"),_INTL("Type %d"),0,100,
        proc { $idk[:settings].volume },
        proc {|value|  $idk[:settings].volume=value
        if $game_map
           $game_map.autoplay
        end
       },
-      "Volume of Background Music."
+      "Volume de la musique d'arrière-plan."
     ),       
-    NumberOption.new(_INTL("SE Volume"),_INTL("Type %d"),0,100,
+    NumberOption.new(_INTL("Volume ES"),_INTL("Type %d"),0,100,
        proc { $idk[:settings].sevolume },
        proc {|value|  $idk[:settings].sevolume=value
        if $game_map
           $game_map.autoplay
        end
       },
-      "Volume of Sound Effects."
+      "Volume des Effets Sonores."
     ),
-    EnumOption.new(_INTL("Bike and Surf Music"),[_INTL("Off"),_INTL("On")],
+    EnumOption.new(_INTL("Musique Vélo/Surf"),[_INTL("Off"),_INTL("On")],
        proc { $idk[:settings].bike_and_surf_music },
        proc {|value| $idk[:settings].bike_and_surf_music=value },
-       "Enables bike and surf music to play"
+       "Autorise la musique en vélo et en Surf."
     ),
-    EnumOption.new(_INTL("Bag Sorting"),[_INTL("By Name"),_INTL("By Type")],
+    EnumOption.new(_INTL("Tri Sac"),[_INTL("Par nom"),_INTL("Par Type")],
        proc { $idk[:settings].bagsorttype },
        proc {|value| $idk[:settings].bagsorttype=value },
-       "How to sort items in the bag."
+       "Manière de trier les obets du sac."
     ),
-    EnumOption.new(_INTL("Battle Scene"),[_INTL("On"),_INTL("Off")],
+    EnumOption.new(_INTL("Anim. Combat"),[_INTL("On"),_INTL("Off")],
        proc { $idk[:settings].battlescene },
        proc {|value|  $idk[:settings].battlescene=value },
-       "Show animations during battle."
+       "Affiche les animations en combat."
     ),
     EnumOption.new(_INTL("Battle Style"),[_INTL("Shift"),_INTL("Set")],
        proc { $idk[:settings].battlestyle },
        proc {|value|  $idk[:settings].battlestyle=value }
     ),
-    EnumOption.new(_INTL("Photosensitivity"),[_INTL("Off"),_INTL("On")],
+    EnumOption.new(_INTL("Photosensitivité"),[_INTL("Off"),_INTL("On")],
        proc { $idk[:settings].photosensitive },
        proc {|value|  $idk[:settings].photosensitive=value },
-       "Disables battle animations, screen flashes and shakes for photosensitivity."
+       "Désactive les animations et les flashs de l'écran."
     ),
     EnumOption.new(_INTL("Streamer mode"),[_INTL("Off"),_INTL("On")],
        proc { $idk[:settings].streamermode },
@@ -433,13 +433,13 @@ class PokemonOptionScene
              "Graphics/Windowskins/"+SpeechFrames[value]) },
        proc { _INTL("Speech frame {1}.",1+$idk[:settings].textskin) }
     ),
-    NumberOption.new(_INTL("Menu Frame"),_INTL("Type %d"),1,TextFrames.length,
+    NumberOption.new(_INTL("Type de fenêtre"),_INTL("Type %d"),1,TextFrames.length,
        proc { $idk[:settings].frame },
        proc {|value|  
           $idk[:settings].frame=value
           MessageConfig.pbSetSystemFrame(TextFrames[value]) 
        },
-       proc { _INTL("Menu frame {1}.",1+$idk[:settings].frame) }
+       proc { _INTL("Type de fenêtre {1}.",1+$idk[:settings].frame) }
     ),
     EnumOption.new(_INTL("Field UI highlights"),[_INTL("On"),_INTL("Off")],
        proc { $idk[:settings].field_effects_highlights},
@@ -461,7 +461,7 @@ class PokemonOptionScene
        proc {|value| value == 100 ? $idk[:settings].maxBackup=999_999 : $idk[:settings].maxBackup=value }, #+1 
       "The maximum number of backup save files to keep. (101 is infinite)"
     ),
-    EnumOption.new(_INTL("Screen Size"),[_INTL("S"),_INTL("M"),_INTL("L"),_INTL("XL"),_INTL("Full")],
+    EnumOption.new(_INTL("Taille de l'écran"),[_INTL("S"),_INTL("M"),_INTL("L"),_INTL("XL"),_INTL("Plein")],
        proc { $idk[:settings].screensize },
        proc {|value|
           oldvalue=$idk[:settings].screensize

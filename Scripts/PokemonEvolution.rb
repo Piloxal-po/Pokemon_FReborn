@@ -594,7 +594,7 @@ class PokemonEvolutionScene
     
     pbPlayCry(@pokemon)
     Kernel.pbMessageDisplay(@sprites["msgwindow"],
-       _INTL("\\se[]What?\r\n{1} is evolving!\\^",@pokemon.name))
+       _INTL("\\se[]Quoi?\r\n{1} évolue!\\^",@pokemon.name))
     Kernel.pbMessageWaitForInput(@sprites["msgwindow"],100,true)
     pbPlayDecisionSE()
     oldstate=pbSaveSpriteState(@sprites["rsprite1"])
@@ -633,7 +633,7 @@ class PokemonEvolutionScene
       end
       pbPlayCancelSE()
       Kernel.pbMessageDisplay(@sprites["msgwindow"],
-         _INTL("Huh?\r\n{1} stopped evolving!",@pokemon.name))
+         _INTL("Hein?\r\n{1} n'évolue plus!",@pokemon.name))
       pbBGMStop()
       
     else

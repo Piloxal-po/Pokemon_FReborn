@@ -1391,21 +1391,21 @@ def Kernel.pbItemBall(item,quantity=1,plural=nil)
   pocket=pbGetPocket(item)
   if $PokemonBag.pbStoreItem(item,quantity)   # If item can be picked up
     if $cache.items[item][ITEMUSE]==3 || $cache.items[item][ITEMUSE]==4
-      Kernel.pbMessage(_INTL("\\se[itemlevel]{1} found \\c[1]{2}\\c[0]!\\nIt contained \\c[1]{3}\\c[0].\\wtnp[30]",
+      Kernel.pbMessage(_INTL("\\se[itemlevel]{1} trouve la \\c[1]{2}\\c[0]!\\nElle contient \\c[1]{3}\\c[0].\\wtnp[30]",
          $Trainer.name,itemname,PBMoves.getName($cache.items[item][ITEMMACHINE])))
-      Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}\\c[0]\r\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.",
+      Kernel.pbMessage(_INTL("{1} met \\c[1]{2}\\c[0]\r\ndans la poche <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] du Sac.",
          $Trainer.name,itemname,PokemonBag.pocketNames()[pocket]))
     elsif (item == PBItems::LEFTOVERS)
       Kernel.pbMessage(_INTL("\\se[itemlevel]{1} found some \\c[1]{2}\\c[0]!\\wtnp[30]",
          $Trainer.name,itemname))
-      Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}\\c[0]\r\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.",
+      Kernel.pbMessage(_INTL("{1} met \\c[1]{2}\\c[0]\r\ndans la poche <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] du Sac.",
          $Trainer.name,itemname,PokemonBag.pocketNames()[pocket]))
     else
       if quantity>1
         if plural
           Kernel.pbMessage(_INTL("\\se[itemlevel]{1} found {2} \\c[1]{3}\\c[0]!\\wtnp[30]",
              $Trainer.name,quantity,plural))
-          Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}\\c[0]\r\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.",
+          Kernel.pbMessage(_INTL("{1} met \\c[1]{2}\\c[0]\r\ndans la poche <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] du Sac.",
              $Trainer.name,plural,PokemonBag.pocketNames()[pocket]))
         else
           Kernel.pbMessage(_INTL("\\se[itemlevel]{1} found {2} \\c[1]{3}s\\c[0]!\\wtnp[30]",
@@ -1416,7 +1416,7 @@ def Kernel.pbItemBall(item,quantity=1,plural=nil)
       else
         Kernel.pbMessage(_INTL("\\se[itemlevel]{1} found one \\c[1]{2}\\c[0]!\\wtnp[30]",
            $Trainer.name,itemname))
-        Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}\\c[0]\r\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.",
+        Kernel.pbMessage(_INTL("{1} met \\c[1]{2}\\c[0]\r\ndans la poche <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] du Sac.",
            $Trainer.name,itemname,PokemonBag.pocketNames()[pocket]))
       end
     end
@@ -1467,7 +1467,7 @@ def Kernel.pbReceiveItem(item,quantity=1,plural=nil)
   itemname=PBItems.getName(item)
   pocket=pbGetPocket(item)
   if $cache.items[item][ITEMUSE]==3 || $cache.items[item][ITEMUSE]==4
-    Kernel.pbMessage(_INTL("\\se[itemlevel]Obtained \\c[1]{1}\\c[0]!\\nIt contained \\c[1]{2}\\c[0].\\wtnp[30]",
+    Kernel.pbMessage(_INTL("\\se[itemlevel]Obtient la \\c[1]{1}\\c[0]!\\nElle contient \\c[1]{2}\\c[0].\\wtnp[30]",
        itemname,PBMoves.getName($cache.items[item][ITEMMACHINE])))
   elsif (item == PBItems::LEFTOVERS)
     Kernel.pbMessage(_INTL("\\se[itemlevel]Obtained some \\c[1]{1}\\c[0]!\\wtnp[30]",
@@ -1487,14 +1487,14 @@ def Kernel.pbReceiveItem(item,quantity=1,plural=nil)
   if $PokemonBag.pbStoreItem(item,quantity)   # If item can be added
     if quantity>1
       if plural
-        Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}\\c[0]\r\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.",
+        Kernel.pbMessage(_INTL("{1} met \\c[1]{2}\\c[0]\r\ndans la poche <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] du Sac.",
            $Trainer.name,plural,PokemonBag.pocketNames()[pocket]))
       else
         Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}s\\c[0]\r\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.",
            $Trainer.name,itemname,PokemonBag.pocketNames()[pocket]))
       end
     else
-      Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}\\c[0]\r\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.",
+      Kernel.pbMessage(_INTL("{1} met \\c[1]{2}\\c[0]\r\ndans la poche <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] du Sac.",
          $Trainer.name,itemname,PokemonBag.pocketNames()[pocket]))
     end
     return true
