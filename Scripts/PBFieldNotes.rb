@@ -892,7 +892,7 @@ def pbCompileFieldNotes
 
   ]
 
-  File.open("Data/fieldnotes.dat","wb"){|file|
+  File.open("Data/fieldnotes_" + LANGUAGES[$idk[:settings].language][1] + ".dat","wb"){|file|
     Marshal.dump(all_field_notes,file)
   }
 end
