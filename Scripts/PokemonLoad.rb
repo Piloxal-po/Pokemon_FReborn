@@ -639,7 +639,7 @@ class PokemonLoad
       elsif cmdLanguage>=0 && command==cmdLanguage
         @scene.pbEndScene
         $idk[:settings].language=pbChooseLanguage
-        pbLoadMessages("Data/"+LANGUAGES[$idk[:settings].language][1])
+        pbLoadMessages("Data/"+LANGUAGES[$idk[:settings].language][1] + ".dat")
         $scene=pbCallTitle
         return    
       end

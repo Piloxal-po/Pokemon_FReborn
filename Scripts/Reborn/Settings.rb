@@ -315,9 +315,9 @@ PLANT_SPARKLE_ANIMATION_ID   = 31
 #      message file in the Data folder.  Edit only if you have 2 or more
 #      languages to choose from.
 #===============================================================================
-LANGUAGES = [  
-   ["Français","french.dat"],  
-   ["English","english.dat"]
+LANGUAGES = [    
+   ["English","en"],
+   ["Français","fr"]
 ]
 
 #===============================================================================

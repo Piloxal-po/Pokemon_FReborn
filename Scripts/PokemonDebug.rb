@@ -139,13 +139,35 @@ end
 def pbExtractText
   msgwindow=Kernel.pbCreateMessageWindow
   Kernel.pbMessageDisplay(msgwindow,_INTL("Please wait.\\wtnp[0]"))
-  MessageTypes.extract("intl.txt")
+  MessageTypes.extract
   Kernel.pbMessageDisplay(msgwindow,
      _INTL("All text in the game was extracted and saved to intl.txt.\1"))
   Kernel.pbMessageDisplay(msgwindow,
      _INTL("To localize the text for a particular language, translate every second line in the file.\1"))
   Kernel.pbMessageDisplay(msgwindow,
      _INTL("After translating, choose \"Compile Text.\""))
+  Kernel.pbDisposeMessageWindow(msgwindow)
+end
+
+def pbExtractTextFr
+  msgwindow=Kernel.pbCreateMessageWindow
+  Kernel.pbMessageDisplay(msgwindow,_INTL("Please wait.\\wtnp[0]"))
+  MessageTypes.extractFr
+  Kernel.pbMessageDisplay(msgwindow,
+     _INTL("All text in the game was extracted and saved to intl.txt.\1"))
+  Kernel.pbMessageDisplay(msgwindow,
+     _INTL("To localize the text for a particular language, translate every second line in the file.\1"))
+  Kernel.pbMessageDisplay(msgwindow,
+     _INTL("After translating, choose \"Compile Text.\""))
+  Kernel.pbDisposeMessageWindow(msgwindow)
+end
+
+def pbCompileNotes
+  msgwindow=Kernel.pbCreateMessageWindow
+  Kernel.pbMessageDisplay(msgwindow,_INTL("Please wait.\\wtnp[0]"))
+  pbCompileFieldNotes()
+  Kernel.pbMessageDisplay(msgwindow,
+     _INTL("Is OK.\1"))
   Kernel.pbDisposeMessageWindow(msgwindow)
 end
 
@@ -165,7 +187,21 @@ def pbCompileTextUI
   Kernel.pbDisposeMessageWindow(msgwindow)
 end
 
-
+def pbCompileTextUIFr
+  msgwindow=Kernel.pbCreateMessageWindow
+  Kernel.pbMessageDisplay(msgwindow,_INTL("Please wait.\\wtnp[0]"))
+  begin
+    pbCompileTextFr
+    Kernel.pbMessageDisplay(msgwindow,
+       _INTL("Successfully compiled text and saved it to intl.dat."))
+    Kernel.pbMessageDisplay(msgwindow,
+       _INTL("To use the file in a game, place the file in the Data folder under a different name, and edit the LANGUAGES array in the Settings script."))
+    rescue RuntimeError
+    Kernel.pbMessageDisplay(msgwindow,
+       _INTL("Failed to compile text:  {1}",$!.message))
+  end
+  Kernel.pbDisposeMessageWindow(msgwindow)
+end
 
 class CommandList
   def initialize
@@ -276,6 +312,9 @@ def pbDebugMenu
   commands.add("purifychamber",_INTL("Purify Chamber"))
   commands.add("extracttext",_INTL("Extract Text"))
   commands.add("compiletext",_INTL("Compile Text"))
+  commands.add("extracttextFr",_INTL("Extract Text FR"))
+  commands.add("compiletextFr",_INTL("Compile Text FR"))
+  commands.add("compileNotes",_INTL("Compile Notes"))
   commands.add("compiletrainers", _INTL("Compile Trainers"))
   commands.add("compiledata",_INTL("Compile All Data"))
   commands.add("mapconnections",_INTL("Map Connections"))
@@ -705,6 +744,12 @@ def pbDebugMenu
       pbExtractText
     elsif cmd=="compiletext"
       pbCompileTextUI
+    elsif cmd=="extracttextFr"
+      pbExtractTextFr
+    elsif cmd=="compiletextFr"
+      pbCompileTextUIFr
+    elsif cmd=="compileNotes"
+      pbCompileNotes
     elsif cmd=="compiletrainers"
       begin
         pbCompileTrainers
