@@ -503,7 +503,7 @@ def pbChooseField
   fields=[_INTL("No Field")]
   fields.push(_INTL("Random"))
   for i in 1..37
-    fields.push(pbGetMessage(MessageTypes::FieldName, i))
+    fields.push(_INTL(getFieldRootName(i)))
   end
   choose=Kernel.pbMessage(_INTL("What field would you like to battle on?"),fields)   
   choose -= 1 

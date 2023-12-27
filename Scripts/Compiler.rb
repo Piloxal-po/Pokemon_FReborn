@@ -2161,7 +2161,7 @@ def pbCompileFields
 		next if !rawfield
 		currentfield = FEData.new
 		#Basic data copying
-		currentfield.fieldname 			= pbGetMessage(MessageTypes::FieldName, i) 		  if rawfield[:FIELDNAME]
+		currentfield.fieldname 			= _INTL(getFieldRootName(i))		  if rawfield[:FIELDNAME]
 		currentfield.intromessage 		= rawfield[:INTROMESSAGE] 	  if rawfield[:INTROMESSAGE] 
 		currentfield.fieldgraphics 		= rawfield[:FIELDGRAPHICS] 	  if rawfield[:FIELDGRAPHICS] 
 		currentfield.secretpoweranim 	= rawfield[:SECRETPOWERANIM]  if rawfield[:SECRETPOWERANIM] 

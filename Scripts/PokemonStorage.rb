@@ -641,7 +641,7 @@ class PokemonStorageScreen
   end
   
   def pbFindPokemon
-    iIsNickName = Kernel.pbMessage("What do you want to find?", ["Name", "Species", "Item"], 0) #0 prevents exiting without selecting an option
+    iIsNickName = Kernel.pbMessage(_INTL("What do you want to find?"), [_INTL("Name"), _INTL("Species"), _INTL("Item")], 0) #0 prevents exiting without selecting an option
     #iFindEggs:
     #0 = Name
     #1 = Species
@@ -649,18 +649,18 @@ class PokemonStorageScreen
     
     if iIsNickName == 0
       iFindEggs = 1
-      sSearch = pbEnterPokemonName("Nickname of the Pokémon?",0,15,"")
+      sSearch = pbEnterPokemonName(_INTL("Nickname of the Pokémon?"),0,15,"")
     elsif iIsNickName == 1
-      iFindEggs = Kernel.pbMessage("Include eggs in the search?", ["Yes", "No eggs", "Eggs only"], 0)  #0 prevents exiting without selecting an option
+      iFindEggs = Kernel.pbMessage(_INTL("Include eggs in the search?"), [_INTL("Yes"), _INTL("No eggs"), _INTL("Eggs only")], 0)  #0 prevents exiting without selecting an option
       #iFindEggs:
       #0 = eggs too
       #1 = no eggs
       #2 = eggs only
       
-      sSearch = pbEnterPokemonName("Name of the species?",0,15,"")
+      sSearch = pbEnterPokemonName(_INTL("Name of the species?"),0,15,"")
     else
       iFindEggs = 1
-      sSearch = pbEnterPokemonName("Item name?",0,15,"")
+      sSearch = pbEnterPokemonName(_INTL("Item name?"),0,15,"")
     end
     sName = sSearch.downcase
     
@@ -2745,7 +2745,7 @@ class PokemonStorageScene
                   @screen.pbHold(ret,true)
                   @sprites["tooltip"].dispose if @aMultiSelectedMons.length <= 0
                 elsif iCh==1
-                  iCh = Kernel.pbMessage(_INTL("Are you sure you want to mass release {1} Pokémon?",numSelected), ["Yes", "No"], 2)
+                  iCh = Kernel.pbMessage(_INTL("Are you sure you want to mass release {1} Pokémon?",numSelected), [_INTL("Yes"), _INTL("No")], 2)
                   if iCh==0
                     # Mass Release
                     for aEntry in @aMultiSelectedMons

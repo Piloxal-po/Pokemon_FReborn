@@ -627,7 +627,6 @@ module MessageTypes
   MapNames          = 20
   PhoneMessages     = 21
   ScriptTexts       = 22
-  FieldName         = 23
   @@messages         = Messages.new
   @@messagesFallback = Messages.new("Data/messages.dat",true)
 

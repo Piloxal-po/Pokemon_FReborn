@@ -31,7 +31,7 @@ class BattleSwapScene
         return "Swap Pokémon"
       end
     else
-      return pbGetMessage(MessageTypes::FieldName, $game_variables[:Forced_Field_Effect])
+      return _INTL(getFieldRootName($game_variables[:Forced_Field_Effect]))
     end
   end
 

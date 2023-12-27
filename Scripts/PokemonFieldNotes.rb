@@ -98,7 +98,7 @@ class Scene_FieldNotes
     fieldSeen = []
     for i in 1..37
       if $game_switches[i+599]
-        fieldname = (i).to_s + ". " + pbGetMessage(MessageTypes::FieldName, i)
+        fieldname = (i).to_s + ". " + _INTL(getFieldRootName(i))
       else
         fieldname = "???"
       end
@@ -230,7 +230,7 @@ class Scene_FieldNotes_Info
     @sprites["background"] = IconSprite.new(0,0)
     @sprites["background"].setBitmap("Graphics/Pictures/fieldapp")
     @sprites["background"].z=255
-    @sprites["header"]=Window_UnformattedTextPokemon.newWithSize(pbGetMessage(MessageTypes::FieldName, @fieldeffect),
+    @sprites["header"]=Window_UnformattedTextPokemon.newWithSize(_INTL(getFieldRootName(@fieldeffect)),
         2,-18,256,64,@viewport)
     @sprites["header"].baseColor=Color.new(248,248,248)
     @sprites["header"].shadowColor=Color.new(0,0,0)
