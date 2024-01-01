@@ -19,7 +19,7 @@ def getTypeRootName(id)
     when PBTypes::STEEL
         return "Steel"
     when PBTypes::QMARKS
-        return "???"
+        return "Qmark"
     when PBTypes::FIRE
         return "Fire"
     when PBTypes::WATER

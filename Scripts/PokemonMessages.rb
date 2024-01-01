@@ -534,7 +534,7 @@ class Interpreter   # Used by RMXP
 
   def command_102
     @message_waiting=true
-    command=Kernel.pbShowCommands(nil, @list[@index].parameters[0].map { |string| _INTL(string) },@list[@index].parameters[1])
+    command=Kernel.pbShowCommands(nil, @list[@index].parameters[0].map { |string| _MAPINTL($game_map.map_id,string) },@list[@index].parameters[1])
     @message_waiting=false
     @branch[@list[@index].indent] = command
     Input.update # Must call Input.update again to avoid extra triggers
