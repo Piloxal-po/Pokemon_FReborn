@@ -346,8 +346,8 @@ class PokemonBag_Scene
                while index > 0
                  indexPrev = index - 1
                  if itemwindow.pocket==4
-                   firstName  = (((PBItems.getName(pocket[indexPrev][0])).sub("TM","00")).sub("X","100")).to_i
-                   secondName = (((PBItems.getName(pocket[index][0])).sub("TM","00")).sub("X","100")).to_i                 
+                   firstName  = (((PBItems.getName(pocket[indexPrev][0])).sub(_INTL("TMX"),"100")).sub(_INTL("TM"),"00")).to_i
+                   secondName = (((PBItems.getName(pocket[index][0])).sub(_INTL("TMX"),"100")).sub(_INTL("TM"),"00")).to_i                 
                  else                 
                    firstName  = PBItems.getName(pocket[indexPrev][0])
                    secondName = PBItems.getName(pocket[index][0])               

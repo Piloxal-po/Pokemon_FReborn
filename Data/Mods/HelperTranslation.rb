@@ -21,6 +21,34 @@ def pushInHistory(base, transform)
     end
 end
 
+def appendErrorTranslationFile(type, key)
+    type = 0 if !type
+    text = type.to_s() + " : " + key.to_s()
+    errorTranslationFile = File.open("errorTranslation.txt", "a+")
+    if (!errorTranslationFile.each_line.any?{|line| line.include?(text)})
+        errorTranslationFile.write(type.to_s() + " : " + key.to_s() + "\n")
+    end
+    errorTranslationFile.close()
+end
+
+class Messages
+    def getFromMapHash(type,key)
+        delayedLoad
+        if (!@messages || !@messages[0] || !@messages[0][0])
+            appendErrorTranslationFile("ERROR LOAD FILE", key)
+            return key
+        end
+        id=Messages.stringToKey(key)
+        if @messages[0][type] &&  @messages[0][type][id]
+          return @messages[0][type][id]
+        elsif @messages[0][0] && @messages[0][0][id]
+          return @messages[0][0][id]
+        end
+        appendErrorTranslationFile(type, key)
+        return key
+      end
+end
+
 module Input
     unless defined?(update_KGC_ScreenCapture)
       class << Input
@@ -64,8 +92,9 @@ module Input
         end
       end
       if triggerex?(:F3)
-        for i in 0...HISTORY.length
-            Kernel.pbMessage(i.to_s() + " : " + HISTORY[i].to_s())
+        reverse = HISTORY.reverse()
+        for i in 0...reverse.length
+            Kernel.pbMessage(i.to_s() + " : " + reverse[i].to_s())
         end
       end
     end
