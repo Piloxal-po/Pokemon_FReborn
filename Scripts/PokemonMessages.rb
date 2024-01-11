@@ -853,7 +853,7 @@ def pbGetBasicMapNameFromId(id)
 end
 
 def pbGetMapNameFromId(id)
-  map=pbGetBasicMapNameFromId(id)
+  map=pbGetMessage(MessageTypes::MapNames, id)
   if $Trainer
     map.gsub!(/\\PN/,$Trainer.name)
   end

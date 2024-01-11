@@ -290,7 +290,7 @@ class PokemonSummaryScene
       mapname=pokemon.obtainText
     end
     if mapname && mapname!=""
-      memo+=_INTL("<c3=404040,B0B0B0>A mysterious Pokémon Egg received from <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.", pbGetMessage(MessageTypes::MapNames, pokemon.obtainMap))
+      memo+=_INTL("<c3=404040,B0B0B0>A mysterious Pokémon Egg received from <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.", mapname)
     end
     memo+="<c3=404040,B0B0B0>\n"
     memo+=_INTL("<c3=404040,B0B0B0>\"The Egg Watch\"")
@@ -356,10 +356,10 @@ class PokemonSummaryScene
     end
     mapname=pbGetMapNameFromId(pokemon.obtainMap)
     if (pokemon.obtainText rescue false) && pokemon.obtainText!=""
-      mapname=pokemon.obtainText
+      mapname=_INTL(pokemon.obtainText)
     end
     if mapname && mapname!=""
-      memo+=sprintf("<c3=F83820,E09890>%s\n", pbGetMessage(MessageTypes::MapNames, pokemon.obtainMap))
+      memo+=sprintf("<c3=F83820,E09890>%s\n", mapname)
     else
       memo+=_INTL("<c3=F83820,E09890>Faraway place\n")
     end
@@ -380,7 +380,7 @@ class PokemonSummaryScene
         end
         mapname=pbGetMapNameFromId(pokemon.hatchedMap)
         if mapname && mapname!=""
-          memo+=sprintf("<c3=F83820,E09890>%s\n", pbGetMessage(MessageTypes::MapNames, pokemon.hatchedMap))
+          memo+=sprintf("<c3=F83820,E09890>%s\n", mapname)
         else
           memo+=_INTL("<c3=F83820,E09890>Faraway place\n")
         end
