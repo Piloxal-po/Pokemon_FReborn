@@ -316,6 +316,7 @@ def pbDebugMenu
   commands.add("compiletextFr",_INTL("Compile Text FR"))
   commands.add("compileNotes",_INTL("Compile Notes"))
   commands.add("compiletrainers", _INTL("Compile Trainers"))
+  commands.add("compiletrainersFr", _INTL("Compile Trainers FR"))
   commands.add("compiledata",_INTL("Compile All Data"))
   commands.add("mapconnections",_INTL("Map Connections"))
   commands.add("animeditor",_INTL("Animation Editor"))
@@ -752,8 +753,16 @@ def pbDebugMenu
       pbCompileNotes
     elsif cmd=="compiletrainers"
       begin
-        pbCompileTrainers
+        pbCompileTrainers("trainertypes.dat", "trainer.dat")
         $cache.trainers=load_data("Data/trainers.dat")
+        Kernel.pbMessage(_INTL("Trainers have been compiled."))
+      rescue
+        pbPrintException($!)
+      end
+    elsif cmd=="compiletrainersFr"
+      begin
+        pbCompileTrainersWithInput("trainertypes.txt", "trainertypes.dat", "trainers_fr.txt", "trainers_fr.dat")
+        $cache.trainers=load_data("Data/trainers_fr.dat")
         Kernel.pbMessage(_INTL("Trainers have been compiled."))
       rescue
         pbPrintException($!)

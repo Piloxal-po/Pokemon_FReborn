@@ -640,6 +640,7 @@ class PokemonLoad
         @scene.pbEndScene
         $idk[:settings].language=pbChooseLanguage
         pbLoadMessages("Data/"+LANGUAGES[$idk[:settings].language][1] + ".dat")
+        $cache.trainers = load_data("Data/trainers" + getSuffixFile() + ".dat") if !@trainers
         $scene=pbCallTitle
         return    
       end
