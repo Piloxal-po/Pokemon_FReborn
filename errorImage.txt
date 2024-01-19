@@ -1,0 +1,13 @@
+Graphics/Icons/fieldChange_fr
+Graphics/Icons/fieldUp_fr
+Graphics/Icons/fieldPlus_fr
+Graphics/Icons/fieldDown_fr
+Graphics/Icons/fieldTabStarEmpty_fr
+Graphics/Icons/bagPocket3_fr
+Graphics/Icons/bagPocket1_fr
+Graphics/Icons/bagPocket2_fr
+Graphics/Icons/bagPocket7_fr
+Graphics/Icons/bagPocket8_fr
+Graphics/Icons/bagPocket6_fr
+Graphics/Icons/bagPocket5_fr
+Graphics/Icons/bagPocket4_fr
