@@ -53,13 +53,13 @@ class PokeBattle_ZMoves < PokeBattle_Move
     end
   end
 
-  ZMOVENAMES = ["Turbo-Charge Bulldozer","Combo Hyper-Furie","Piqué Supersonique","Déluge Causti-Toxique","Éruption Géo-Sismique",
-  "Apocalypse Gigalithique","Cocon Fatal","Appel des Ombres Éternelles","Vrille Maximum","Pyro-Explosion Cataclysmique",
-  "Super Tourbillon Abyssal","Pétalexplosion Éblouissante","Fulguro-Lance Gigavolt","Psycho-Pulvérisation EX","Laser Cryogénique",
-  "Chaos Draconique","Trou Noir des Ombres","Impact Choupinova","Électro-Surf Survolté","Fureur des Plumes Spectrales",
-  "Dark Body Press","Symphonie des Ondines","Neuf pour Un","Pikachute Foudroyante","Gare au Ronflex",
-  "Supernova Originelle","Colère du Gardien d'Alola","Fauche-Âme des Sept Étoiles","Dracacophonie Flamboyante","Hurlements des Roches-Lames",
-  "Patati-Patattrape","Hélio-Choc Dévastateur","Rayons Séléno-Explosifs","Apocalypsis Luminis"]
+  ZMOVENAMES = ["Breakneck Blitz","All-Out Pummeling","Supersonic Skystrike","Acid Downpour","Tectonic Rage",
+  "Continental Crush","Savage Spin-Out","Never-Ending Nightmare","Corkscrew Crash","Inferno Overdrive",
+  "Hydro Vortex","Bloom Doom","Gigavolt Havoc","Shattered Psyche","Subzero Slammer",
+  "Devastating Drake","Black Hole Eclipse","Twinkle Tackle","Stoked Sparksurfer","Sinister Arrow Raid",
+  "Malicious Moonsault","Oceanic Operetta","Extreme Evoboost","Catastropika","Pulverizing Pancake",
+  "Genesis Supernova","Guardian of Alola","Soul-Stealing 7-Star Strike","Clangorous Soulblaze","Splintered Stormshards",
+  "Let's Snuggle Forever","Searing Sunraze Smash","Menacing Moonraze Maelstrom","Light That Burns The Sky"]
 
   ZMOVEFLAGS = ["f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","f","af","f","","","af","af","","af","kf","f","f","f","f","f"] #good luck
 
@@ -100,7 +100,7 @@ class PokeBattle_ZMoves < PokeBattle_Move
     end
     battler.pbBeginTurn(self)
     if !@status
-      @battle.pbDisplayBrief(_INTL("{1} déploie toute la puissance de sa force Z!",battler.pbThis))
+      @battle.pbDisplayBrief(_INTL("{1} unleashed its full force Z-Move!",battler.pbThis))
       @battle.pbDisplayBrief(_INTL("{1}!",@name))
     end
     zchoice=@battle.choices[battler.index] #[0,0,move,move.target]
@@ -142,7 +142,7 @@ class PokeBattle_ZMoves < PokeBattle_Move
         battler.type1=protype
         battler.type2=protype
         typename=PBTypes.getName(protype)
-        @battle.pbDisplay(_INTL("{1} change son type en {3}!",battler.pbThis,PBAbilities.getName(battler.ability),typename))
+        @battle.pbDisplay(_INTL("{1} had its type changed to {3}!",battler.pbThis,PBAbilities.getName(battler.ability),typename))
       end
     end
     if isConst?(battler.ability, PBAbilities, :STANCECHANGE)
@@ -262,7 +262,7 @@ class PokeBattle_ZMoves < PokeBattle_Move
     if @status
       return "Z-" + oldmove.name
     else
-      PokeBattle_ZMoves::ZMOVENAMES[id-10001]
+      return _INTL(PokeBattle_ZMoves::ZMOVENAMES[id-10001])
     end
   end
 

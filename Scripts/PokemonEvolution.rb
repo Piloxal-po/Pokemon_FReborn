@@ -633,7 +633,7 @@ class PokemonEvolutionScene
       end
       pbPlayCancelSE()
       Kernel.pbMessageDisplay(@sprites["msgwindow"],
-         _INTL("Hein?\r\n{1} n'évolue plus!",@pokemon.name))
+         _INTL("Huh?\r\n{1} stopped evolving!",@pokemon.name))
       pbBGMStop()
       
     else

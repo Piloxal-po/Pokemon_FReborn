@@ -920,7 +920,7 @@ def pbCompileMoves
   for rec in records
     code+="#{rec[1]}=#{rec[0]}\n"
   end
-  code+="\ndef self.getName(id)\nreturn pbGetMessage(MessageTypes::Moves,id) if id < 10000 \nreturn PokeBattle_ZMoves::ZMOVENAMES[id-10001]\nend"
+  code+="\ndef self.getName(id)\nreturn pbGetMessage(MessageTypes::Moves,id) if id < 10000 \nreturn _INTL(PokeBattle_ZMoves::ZMOVENAMES[id-10001])\nend"
   code+="\ndef self.getCount\nreturn #{records.length}\nend"
   code+="\ndef self.maxValue\nreturn #{maxValue}\nend\nend"
   eval(code)

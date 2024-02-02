@@ -1262,14 +1262,14 @@ class PokeBattle_Move
           if (opponent.ability == PBAbilities::OBLIVIOUS) || (opponent.ability == PBAbilities::KLUTZ) || (opponent.ability == PBAbilities::UNAWARE) || (opponent.ability == PBAbilities::SIMPLE) || opponent.effects[PBEffects::Confusion]>0
             damagemult=(damagemult*2).round
           end
-          @battle.pbDisplay("La pièce avance d'un coup!") if !@fieldmessageshown
+          @battle.pbDisplay(_INTL("The chess piece slammed forward!")) if !@fieldmessageshown
           @fieldmessageshown = true
         end
         # Queen piece boost
         if attacker.pokemon.piece==:QUEEN || attacker.ability == PBAbilities::QUEENLYMAJESTY
           damagemult=(damagemult*1.5).round
           if attacker.pokemon.piece==:QUEEN
-            @battle.pbDisplay("La Dame domine le plateau!")  && !@fieldmessageshown
+            @battle.pbDisplay(_INTL("The Queen is dominating the board!"))  && !@fieldmessageshown
             @fieldmessageshown = true
           end
         end
@@ -1277,13 +1277,13 @@ class PokeBattle_Move
         #Knight piece boost
         if attacker.pokemon.piece==:KNIGHT && opponent.pokemon.piece==:QUEEN
           damagemult=(damagemult*3.0).round
-          @battle.pbDisplay("Une attaque imparable sur la Dame!") if !@fieldmessageshown
+          @battle.pbDisplay(_INTL("An unblockable attack on the Queen!")) if !@fieldmessageshown
           @fieldmessageshown = true
         end
       when 6 # Big Top
         if ((type == PBTypes::FIGHTING && pbIsPhysical?(type)) || (PBFields::STRIKERMOVES).include?(@id)) # Continental Crush
           striker = 1+@battle.pbRandom(14)
-          @battle.pbDisplay("WHAMMO!") if !@fieldmessageshown
+          @battle.pbDisplay(_INTL("WHAMMO!")) if !@fieldmessageshown
           @fieldmessageshown = true
           if attacker.ability == PBAbilities::HUGEPOWER || attacker.ability == PBAbilities::GUTS || attacker.ability == PBAbilities::PUREPOWER || attacker.ability == PBAbilities::SHEERFORCE
             if striker >=9
@@ -1295,24 +1295,24 @@ class PokeBattle_Move
           strikermod = attacker.stages[PBStats::ATTACK]
           striker = striker + strikermod
           if striker >= 15
-            @battle.pbDisplay("...PLUS DE 9000!!!")
+            @battle.pbDisplay(_INTL("...OVER 9000!!!"))
             damagemult=(damagemult*3).round
           elsif striker >=13
-            @battle.pbDisplay("...PUISSANT!")
+            @battle.pbDisplay(_INTL("...POWERFUL!"))
             damagemult=(damagemult*2).round
           elsif striker >=9
-            @battle.pbDisplay("...PAS MAL!")
+            @battle.pbDisplay(_INTL("...NICE!"))
             damagemult=(damagemult*1.5).round
           elsif striker >=3
-            @battle.pbDisplay("...OK!")
+            @battle.pbDisplay(_INTL("...OK!"))
           else
-            @battle.pbDisplay("...FAIBLE!")
+            @battle.pbDisplay(_INTL("...WEAK!"))
             damagemult=(damagemult*0.5).round
           end
         end
         if (@flags&0x400)!= 0
           damagemult=(damagemult*1.5).round
-          @battle.pbDisplay("Clair et puissant!") if !@fieldmessageshown
+          @battle.pbDisplay(_INTL("Loud and clear!")) if !@fieldmessageshown
           @fieldmessageshown = true
         end
       when 13 # Icy Field
@@ -1321,14 +1321,14 @@ class PokeBattle_Move
             if attacker.pbCanIncreaseStatStage?(PBStats::SPEED)
               attacker.pbIncreaseStatBasic(PBStats::SPEED,1)
               @battle.pbCommonAnimation("StatUp",attacker,nil)
-              @battle.pbDisplay(_INTL("{1} prend la priorité sur la glace!",attacker.pbThis)) if !@fieldmessageshown
+              @battle.pbDisplay(_INTL("{1} gained momentum on the ice!",attacker.pbThis)) if !@fieldmessageshown
               @fieldmessageshown = true
             end
           end
         end
       when 18 # Shortcircuit Field
         if type == PBTypes::ELECTRIC
-          messageroll = ["Bzzt.", "Bzzapp!" , "Bzt...", "Bzap!", "BZZZAPP!"][@battle.field.roll]
+          messageroll = [_INTL("Bzzt."), _INTL("Bzzapp!"), _INTL("Bzt..."), _INTL("Bzap!"), _INTL("BZZZAPP!")][@battle.field.roll]
           damageroll = @battle.field.getRoll()
 
           @battle.pbDisplay(messageroll) if !@fieldmessageshown
@@ -2181,7 +2181,7 @@ class PokeBattle_Move
   # 1 if the attack should exit as a success
   # 0 if the attack should proceed its effect
   # 2 if Bide is storing energy
-    @battle.pbDisplayBrief(_INTL("{1} utilise\r\n{2}!",attacker.pbThis,name))
+    @battle.pbDisplayBrief(_INTL("{1} used\r\n{2}!",attacker.pbThis,name))
     return 0
   end
 
