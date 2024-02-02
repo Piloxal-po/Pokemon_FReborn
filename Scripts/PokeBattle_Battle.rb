@@ -2166,7 +2166,7 @@ class PokeBattle_Battle
       if opponent.fullname.length < 30    #bennett and laura potion usage line break (their length = 35)
         pbDisplayBrief(_INTL("{1} used the\r\n{2}!",opponent.fullname,itemname))
       else
-        pbDisplayBrief(_INTL("{1} used the\r{2}.",opponent.fullname,itemname))
+        pbDisplayBrief(_INTL("{1} used the\r\n{2}!",opponent.fullname,itemname))
       end
     end
     case item

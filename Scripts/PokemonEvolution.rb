@@ -594,7 +594,7 @@ class PokemonEvolutionScene
     
     pbPlayCry(@pokemon)
     Kernel.pbMessageDisplay(@sprites["msgwindow"],
-       _INTL("\\se[]Quoi?\r\n{1} évolue!\\^",@pokemon.name))
+       _INTL("\\se[]What?\r\n{1} is evolving!\\^",@pokemon.name))
     Kernel.pbMessageWaitForInput(@sprites["msgwindow"],100,true)
     pbPlayDecisionSE()
     oldstate=pbSaveSpriteState(@sprites["rsprite1"])
