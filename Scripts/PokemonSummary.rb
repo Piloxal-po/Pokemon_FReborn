@@ -235,7 +235,12 @@ class PokemonSummaryScene
     else
       ownerbase=Color.new(64,64,64)
       ownershadow=Color.new(176,176,176)
-      textpos.push([pokemon.ot,435,176,2,ownerbase,ownershadow])
+      pokemonOt = MessageTypes.pbGetMessage(MessageTypes::TrainerNames, pokemon.ot)
+      if (pokemonOt == "")
+        textpos.push([pokemon.ot,435,176,2,ownerbase,ownershadow])
+      else 
+        textpos.push([pokemonOt,435,176,2,ownerbase,ownershadow])
+      end
     end
     if pokemon.isMale?
       textpos.push([_INTL("♂"),178,62,0,Color.new(24,112,216),Color.new(136,168,208)])
