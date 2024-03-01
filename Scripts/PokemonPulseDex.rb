@@ -131,7 +131,7 @@ class Scene_PulseDex_Info
     @viewport=Viewport.new(0,0,Graphics.width,Graphics.height)
     @viewport.z=99999
     @sprites["background"] = IconSprite.new(0,0)
-    @sprites["background"].setBitmap(background)
+    @sprites["background"].setBitmap(background + getSuffixFile())
     @sprites["background"].z=255
     # Execute transition
     Graphics.transition

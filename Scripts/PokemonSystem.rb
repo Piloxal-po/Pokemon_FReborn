@@ -35,10 +35,7 @@ def pbSetUpSystem(tempsave=0,autosave=nil)
   MessageConfig.pbSetSystemFontName("PokemonEmerald")
 
   if LANGUAGES.length>=2
-    if true
-      $idk[:settings].language=pbChooseLanguage
-    end
-    pbLoadMessages("Data/"+LANGUAGES[$idk[:settings].language][1])
+    pbLoadMessages("Data/"+LANGUAGES[$idk[:settings].language][1] + ".dat")
   end
 end
 

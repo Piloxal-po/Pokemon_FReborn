@@ -910,7 +910,7 @@ class Connect
         fields=[_INTL("No Field")]
         fields.push(_INTL("Random"))
         for i in 1..37
-          fields.push(FIELDEFFECTS[i][:FIELDNAME])
+          fields.push(_INTL(getFieldRootName(i)))
         end
         choose=Kernel.pbMessage(_INTL("What field would you like to battle on?"),fields)
         $network.send("<BATHOST user=#{name} trainer=#{$onlineChallengee} field=#{choose} name=#{player}>")      
@@ -985,11 +985,11 @@ class Connect
     when 1 #Random field
       mess = "Your opponent has chosen to battle in a random field. Do you accept?"              
     when 5, 24, 26 #Dark Crystal Cavern, Cave, Cystal Cavern
-      mess = "Your opponent has chosen to battle in the " + FIELDEFFECTS[field][:FIELDNAME] + ". Do you accept?"
+      mess = "Your opponent has chosen to battle in the " + _INTL(getFieldRootName(field)) + ". Do you accept?"
     when 23 #Underwater
-      mess = "Your opponent has chosen to battle " + FIELDEFFECTS[field][:FIELDNAME] + ". Do you accept?"
+      mess = "Your opponent has chosen to battle " + _INTL(getFieldRootName(field)) + ". Do you accept?"
     else
-      mess = "Your opponent has chosen to battle on the " + FIELDEFFECTS[field][:FIELDNAME] + ". Do you accept?"
+      mess = "Your opponent has chosen to battle on the " + _INTL(getFieldRootName(field)) + ". Do you accept?"
     end
     choice=Kernel.pbMessage(_INTL(mess),commands)                  
     if choice==0

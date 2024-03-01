@@ -282,9 +282,17 @@ def pbGetText(infile)
 end
 
 def pbCompileText
-  outfile=File.open("intl.dat","wb")
+  pbCompileTextWithInput("en.txt", "Data/en.dat")
+end
+
+def pbCompileTextFr
+  pbCompileTextWithInput("fr.txt", "Data/fr.dat")
+end
+
+def pbCompileTextWithInput(infile, output)
+  outfile=File.open(output,"wb")
   begin
-    intldat=pbGetText("intl.txt")
+    intldat=pbGetText(infile)
     Marshal.dump(intldat,outfile)
   rescue
     raise
@@ -440,9 +448,17 @@ class Messages
     return @messages || []
   end
 
-  def extract(outfile)
+  def extract
+    extractWithInput("Data/en.dat", "en.txt")
+  end
+
+  def extractFr
+    extractWithInput("Data/fr.dat", "fr.txt")
+  end
+
+  def extractWithInput(infile, outfile)
 #    return if !@messages
-    origMessages=Messages.new("Data/messages.dat")
+    origMessages=Messages.new(infile)
     File.open(outfile,"wb"){|f|
        f.write("# To localize this text for a particular language, please\r\n")
        f.write("# translate every second line of this file.\r\n")
@@ -630,8 +646,12 @@ module MessageTypes
     Messages.denormalizeValue(str)
   end
 
-  def self.extract(outfile)
-    @@messages.extract(outfile)
+  def self.extract
+    @@messages.extract
+  end
+
+  def self.extractFr
+    @@messages.extractFr
   end
 
   def self.setMessages(type,array)

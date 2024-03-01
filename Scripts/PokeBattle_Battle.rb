@@ -92,9 +92,9 @@ end
 module PokeBattle_BattleCommon
   def pbStorePokemon(pokemon)
     if !(pokemon.isShadow? rescue false)
-      if pbDisplayConfirm(_INTL("Voulez-vous donner un surnom à {1}?",pokemon.name))
+      if pbDisplayConfirm(_INTL("Would you like to give a nickname to {1}?",pokemon.name))
         species=PBSpecies.getName(pokemon.species)
-        nickname=@scene.pbNameEntry(_INTL("Surnom de {1}?",species),pokemon)
+        nickname=@scene.pbNameEntry(_INTL("{1}'s nickname?",species),pokemon)
         pokemon.name=nickname if nickname!=""
       end
     end
@@ -106,18 +106,18 @@ module PokeBattle_BattleCommon
     boxname=@peer.pbBoxName(storedbox)
     if storedbox!=oldcurbox
       if creator
-        pbDisplayPaused(_INTL("La boîte \"{1}\" du PC de {2} est pleine.",curboxname,creator))
+        pbDisplayPaused(_INTL("Box \"{1}\" on {2}'s PC was full.",curboxname,creator))
       else
-        pbDisplayPaused(_INTL("La boîte \"{1}\" du PC de ??? est pleine.",curboxname))
+        pbDisplayPaused(_INTL("Box \"{1}\" on someone's PC was full.",curboxname))
       end
-      pbDisplayPaused(_INTL("{1} est transféré dans la boîte \"{2}\".",pokemon.name,boxname))
+      pbDisplayPaused(_INTL("{1} was transferred to box \"{2}\".",pokemon.name,boxname))
     else
       if creator
-        pbDisplayPaused(_INTL("{1} est transféré dans le PC de {2}.",pokemon.name,creator))
+        pbDisplayPaused(_INTL("{1} was transferred to {2}'s PC.",pokemon.name,creator))
       else
-        pbDisplayPaused(_INTL("{1} est transféré dans le PC de ???.",pokemon.name))
+        pbDisplayPaused(_INTL("{1} was transferred to someone's PC.",pokemon.name))
       end
-      pbDisplayPaused(_INTL("It est stocké dans la boîte \"{1}\".",boxname))
+      pbDisplayPaused(_INTL("It was stored in box \"{1}\".",boxname))
     end
   end
 
@@ -144,22 +144,22 @@ module PokeBattle_BattleCommon
     end
     oldform=battler.form
     battler.form=battler.pokemon.getForm(battler.pokemon)
-    pbDisplayBrief(_INTL("{1} jette une {2}!",self.pbPlayer.name,itemname))
+    pbDisplayBrief(_INTL("{1} threw one {2}!",self.pbPlayer.name,itemname))
     if battler.isFainted?
-      pbDisplay(_INTL("Mais il n'y a pas de cible..."))
+      pbDisplay(_INTL("But there was no target..."))
       pbBallFetch(ball)
       return
     end
     if @opponent && (!pbIsSnagBall?(ball) || !battler.isShadow?)
       @scene.pbThrowAndDeflect(ball,1)
       if $game_switches[:No_Catching]==false
-        pbDisplay(_INTL("Le Dresseur dévie la Ball!\nLe vol, c'est mal!"))
+        pbDisplay(_INTL("The Trainer blocked the Ball!\nDon't be a thief!"))
       else
-        pbDisplay(_INTL("Le Pokémon renvoie la Ball!"))
+        pbDisplay(_INTL("The Pokémon knocked the ball away!"))
       end
     else
       if $game_switches[:No_Catching]==true
-        pbDisplay(_INTL("Le Pokémon renvoie la Ball!"))
+        pbDisplay(_INTL("The Pokémon knocked the ball away!"))
         pbBallFetch(ball)
         return
       end
@@ -229,28 +229,28 @@ module PokeBattle_BattleCommon
       @scene.pbThrow(ball,(critical) ? 1 : shakes,critical,critsuccess,battler.index,showplayer)
       case shakes
         when 0
-          pbDisplay(_INTL("Oh non! Le Pokémon s'est libéré!"))
+          pbDisplay(_INTL("Oh no! The Pokémon broke free!"))
           pbBallFetch(ball)
           BallHandlers.onFailCatch(ball,self,pokemon)
           battler.form=oldform
         when 1
-          pbDisplay(_INTL("Oh... Il était presque capturé!"))
+          pbDisplay(_INTL("Aww... It appeared to be caught!"))
           pbBallFetch(ball)
           BallHandlers.onFailCatch(ball,self,pokemon)
           battler.form=oldform
         when 2
-          pbDisplay(_INTL("Aaah! Presque!"))
+          pbDisplay(_INTL("Aargh! Almost had it!"))
           pbBallFetch(ball)
           BallHandlers.onFailCatch(ball,self,pokemon)
           battler.form=oldform
         when 3
-          pbDisplay(_INTL("Mince! Ça y était presque!"))
+          pbDisplay(_INTL("Shoot! It was so close, too!"))
           pbBallFetch(ball)
           BallHandlers.onFailCatch(ball,self,pokemon)
           battler.form=oldform
         when 4
           @scene.pbWildBattleSuccess
-          pbDisplayBrief(_INTL("Et hop! {1} est attrapé!",pokemon.name))
+          pbDisplayBrief(_INTL("Gotcha! {1} was caught!",pokemon.name))
           @scene.pbThrowSuccess
           if pbIsSnagBall?(ball) && @opponent
             pbRemoveFromParty(battler.index,battler.pokemonIndex)
@@ -269,7 +269,7 @@ module PokeBattle_BattleCommon
           if !self.pbPlayer.owned[species]
             self.pbPlayer.owned[species]=true
             if $Trainer.pokedex
-              pbDisplayPaused(_INTL("Les données de {1} sont ajoutées au Pokédex.",pokemon.name))
+              pbDisplayPaused(_INTL("{1}'s data was added to the Pokédex.",pokemon.name))
               if $dexForms == nil
                 $dexForms = []
                 802.times do
@@ -304,7 +304,7 @@ class PokeBattle_Battle
   attr_accessor(:decision)        # Decision: 0=undecided; 1=win; 2=loss; 3=escaped; 4=caught
   attr_accessor(:internalbattle)  # Internal battle flag
   attr_accessor(:doublebattle)    # Double battle flag
-  attr_accessor(:cantescape)      # True if player Fuite impossible
+  attr_accessor(:cantescape)      # True if player can't escape
   attr_accessor(:shiftStyle)      # Shift/Set "battle style" option
   attr_accessor(:battlescene)     # "Battle scene" option
   attr_accessor(:debug)           # Debug flag
@@ -569,7 +569,7 @@ class PokeBattle_Battle
       next if !battler.itemWorks?
       seeddata = @field.seeds
       next if battler.item != seeddata[:seedtype]
-      boostlevel = ["","","beaucoup ", "énormément "]
+      boostlevel = ["","",_INTL("sharply "), _INTL("drastically ")]
 
       # Stat boost from seed
       statupanimplayed=false
@@ -580,12 +580,12 @@ class PokeBattle_Battle
           battler.pbIncreaseStatBasic(stat,statval)
           @battle.pbCommonAnimation("StatUp",battler) if !statupanimplayed
           statupanimplayed=true
-          pbDisplay(_INTL("{2} de {1} fait {3}augmenter {4}!", battler.pbThis,PBItems.getName(battler.item),boostlevel[statval.abs],battler.pbGetStatName(stat)))
+          pbDisplay(_INTL("{1}'s {2} {3}boosted its {4}!", battler.pbThis,PBItems.getName(battler.item),boostlevel[statval.abs],battler.pbGetStatName(stat)))
         elsif statval < 0 && !battler.pbTooLow?(stat)
           battler.pbReduceStatBasic(stat,-statval)
           @battle.pbCommonAnimation("StatDown",battler) if !statdownanimplayed
           statdownanimplayed=true
-          pbDisplay(_INTL("{2} de {1} fait {3}baisser {4}!", battler.pbThis,PBItems.getName(battler.item),boostlevel[statval.abs],battler.pbGetStatName(stat)))
+          pbDisplay(_INTL("{1}'s {2} {3}lowered its {4}!", battler.pbThis,PBItems.getName(battler.item),boostlevel[statval.abs],battler.pbGetStatName(stat)))
         end
       }
 
@@ -609,7 +609,7 @@ class PokeBattle_Battle
         when PBFields::CORROSIVEMISTF, PBFields::MURKWATERS
           if battler.pbCanPoison?(true)
             battler.pbPoison(battler,true)
-            pbDisplay(_INTL("{1} est gravement empoisonné!",battler.pbThis))
+            pbDisplay(_INTL("{1} was badly poisoned!",battler.pbThis))
           end
           battler.pbDisposeItem(false)
           return if @field.effect == PBFields::CORROSIVEMISTF
@@ -646,7 +646,7 @@ class PokeBattle_Battle
           battler.pbDisposeItem(false)
           battler.pbOwnSide.effects[PBEffects::StealthRock]=true
           battler.pbOpposingSide.effects[PBEffects::StealthRock]=true
-          pbDisplay(_INTL("{1} répand un Piège de Roc!", battler.pbThis))
+          pbDisplay(_INTL("{1} laid Stealth Rocks everywhere!", battler.pbThis))
           return
 
         when PBFields::UNDERWATER
@@ -682,7 +682,7 @@ class PokeBattle_Battle
           if battler.pbCanConfuse?(false)
             battler.effects[PBEffects::Confusion]=2+pbRandom(4)
             pbCommonAnimation("Confusion",battler,nil)
-            pbDisplay(_INTL("{1} est confus!",battler.pbThis))
+            pbDisplay(_INTL("{1} became confused!",battler.pbThis))
           end
           battler.pbDisposeItem(false)
           return
@@ -727,7 +727,7 @@ class PokeBattle_Battle
       if @opponent
         return _INTL("{1} adverse",party[pokemonindex].name)
       else
-        return _INTL("{1} sauvage",party[pokemonindex].name)
+        return _INTL("The wild {1}",party[pokemonindex].name)
       end
     else
       return _INTL("{1}",party[pokemonindex].name)
@@ -1460,14 +1460,14 @@ class PokeBattle_Battle
     end
     if thismove.pp<=0 && thismove.totalpp>0 && !sleeptalk
       if showMessages
-        pbDisplayPaused(_INTL("Il n'y a plus de PP pour cette capacité!"))
+        pbDisplayPaused(_INTL("There's no PP left for this move!"))
       end
       return false
     end
     if thispkmn.effects[PBEffects::ChoiceBand]>=0 && thispkmn.itemWorks? && (thispkmn.item == PBItems::CHOICEBAND || thispkmn.item == PBItems::CHOICESPECS || thispkmn.item == PBItems::CHOICESCARF) || thispkmn.ability == PBAbilities::GORILLATACTICS
       if thispkmn.moves.any? {|moveloop| moveloop.id==thispkmn.effects[PBEffects::ChoiceBand]} && (thismove.id!=thispkmn.effects[PBEffects::ChoiceBand] && sleeptalk == false)
         if showMessages
-          pbDisplayPaused(_INTL("{1} oblige à utiliser {2}!",
+          pbDisplayPaused(_INTL("{1} allows the use of only {2}!",
              PBItems.getName(thispkmn.item),
              PBMoves.getName(thispkmn.effects[PBEffects::ChoiceBand])))
         end
@@ -1476,14 +1476,14 @@ class PokeBattle_Battle
     end
     if (thispkmn.item == PBItems::ASSAULTVEST && thispkmn.itemWorks?) && !instructed && thismove.category == 2
         if showMessages
-          pbDisplayPaused(_INTL("{1} empêche d'utiliser cette capacité!", PBItems.getName(thispkmn.item)))
+          pbDisplayPaused(_INTL("{1} doesn't allow use of non-attacking moves!", PBItems.getName(thispkmn.item)))
         end
         return false
     end
     if opp1.effects[PBEffects::Imprison]
       if thismove.id==opp1.moves[0].id || thismove.id==opp1.moves[1].id || thismove.id==opp1.moves[2].id || thismove.id==opp1.moves[3].id
         if showMessages
-          pbDisplayPaused(_INTL("{1} ne peut plus utiliser {2}!",thispkmn.pbThis,thismove.name))
+          pbDisplayPaused(_INTL("{1} can't use the sealed {2}!",thispkmn.pbThis,thismove.name))
         end
         return false
       end
@@ -1491,35 +1491,35 @@ class PokeBattle_Battle
     if opp2.effects[PBEffects::Imprison]
       if thismove.id==opp2.moves[0].id || thismove.id==opp2.moves[1].id || thismove.id==opp2.moves[2].id || thismove.id==opp2.moves[3].id
         if showMessages
-          pbDisplayPaused(_INTL("{1} ne peut plus utiliser {2}!",thispkmn.pbThis,thismove.name))
+          pbDisplayPaused(_INTL("{1} can't use the sealed {2}!",thispkmn.pbThis,thismove.name))
         end
         return false
       end
     end
     if thispkmn.effects[PBEffects::Taunt]>0 && thismove.basedamage==0 && !zmove
       if showMessages
-        pbDisplayPaused(_INTL("{1} ne peut pas utiliser {2} après Provoc!",thispkmn.pbThis,thismove.name))
+        pbDisplayPaused(_INTL("{1} can't use {2} after the Taunt!",thispkmn.pbThis,thismove.name))
       end
       return false
     end
     if thispkmn.effects[PBEffects::Torment] && !instructed
       if thismove.id==thispkmn.lastMoveUsed
         if showMessages
-          pbDisplayPaused(_INTL("{1} ne peut pas utiliser la même capacité deux fois!",thispkmn.pbThis))
+          pbDisplayPaused(_INTL("{1} can't use the same move in a row due to the torment!",thispkmn.pbThis))
         end
         return false
       end
     end
     if thismove.id==thispkmn.effects[PBEffects::DisableMove] && !sleeptalk
       if showMessages
-        pbDisplayPaused(_INTL("{2} de {1} est sous entrave!",thispkmn.pbThis,thismove.name))
+        pbDisplayPaused(_INTL("{1}'s {2} is disabled!",thispkmn.pbThis,thismove.name))
       end
       return false
     end
     if thispkmn.effects[PBEffects::Encore]>0 && idxMove!=thispkmn.effects[PBEffects::EncoreIndex] && !zmove
       if showMessages
         encoredmove = thispkmn.moves[thispkmn.effects[PBEffects::EncoreIndex]]
-        pbDisplayPaused(_INTL("{2} de {1} est sous Encore!",thispkmn.pbThis,encoredmove.name))
+        pbDisplayPaused(_INTL("{1} is encored into {2}!",thispkmn.pbThis,encoredmove.name))
       end
       return false
     end
@@ -1535,7 +1535,7 @@ class PokeBattle_Battle
       return
     end
     if !pbIsOpposing?(idxPokemon)
-      pbDisplayPaused(_INTL("{1} n'a plus de capacités!",thispkmn.name)) if showMessages
+      pbDisplayPaused(_INTL("{1} has no moves left!",thispkmn.name)) if showMessages
     end
     @choices[idxPokemon][0]=1           # "Use move"
     @choices[idxPokemon][1]=-1          # Index of move to be used
@@ -1640,7 +1640,7 @@ class PokeBattle_Battle
     for i in 0..3
       @priority[i] = @battlers[priorityarray[i][3]]
       if (@battlers[i].itemWorks? && @battlers[i].item == PBItems::QUICKCLAW)
-        pbDisplayBrief(_INTL("Vive Griffe de {1} lui permet d'agir en premier!",@priority[i].pbThis)) if priorityarray[i][1] == 1 && !ignorequickclaw
+        pbDisplayBrief(_INTL("{1}'s Quick Claw let it move first!",@priority[i].pbThis)) if priorityarray[i][1] == 1 && !ignorequickclaw
       end
     end
 
@@ -1737,7 +1737,7 @@ class PokeBattle_Battle
         return false
       end
       if party[pkmnidxTo].isEgg?
-        pbDisplayPaused(_INTL("Un Œuf ne peut pas se battre!")) if showMessages
+        pbDisplayPaused(_INTL("An Egg can't battle!")) if showMessages
         return false
       end
       if !pbIsOwner?(idxPokemon,pkmnidxTo)
@@ -1746,15 +1746,15 @@ class PokeBattle_Battle
         return false
       end
       if party[pkmnidxTo].hp<=0
-        pbDisplayPaused(_INTL("{1} n'a plus d'énergie pour se battre!",party[pkmnidxTo].name)) if showMessages
+        pbDisplayPaused(_INTL("{1} has no energy left to battle!",party[pkmnidxTo].name)) if showMessages
         return false
       end
       if @battlers[idxPokemon].pokemonIndex==pkmnidxTo
-        pbDisplayPaused(_INTL("{1} est déjà au combat!",party[pkmnidxTo].name)) if showMessages
+        pbDisplayPaused(_INTL("{1} is already in battle!",party[pkmnidxTo].name)) if showMessages
         return false
       end
       if @battlers[idxPokemon].pbPartner.pokemonIndex==pkmnidxTo
-        pbDisplayPaused(_INTL("{1} est déjà au combat!",party[pkmnidxTo].name)) if showMessages
+        pbDisplayPaused(_INTL("{1} is already in battle!",party[pkmnidxTo].name)) if showMessages
         return false
       end
     end
@@ -1781,19 +1781,19 @@ class PokeBattle_Battle
       return true
     end
     if thispkmn.effects[PBEffects::SkyDrop] #lía
-      pbDisplayPaused(_INTL("{1} ne peut pas être retiré!",thispkmn.pbThis)) if showMessages
+      pbDisplayPaused(_INTL("{1} can't be switched out!",thispkmn.pbThis)) if showMessages
       return false
     end
     if thispkmn.hasWorkingItem(:SHEDSHELL)
       return true
     end
     if thispkmn.effects[PBEffects::MultiTurn]>0 || thispkmn.effects[PBEffects::MeanLook]>=0 || @state.effects[PBEffects::FairyLock]==1
-      pbDisplayPaused(_INTL("{1} ne peut pas être retiré!",thispkmn.pbThis)) if showMessages
+      pbDisplayPaused(_INTL("{1} can't be switched out!",thispkmn.pbThis)) if showMessages
       return false
     end
     # Ingrain
     if thispkmn.effects[PBEffects::Ingrain]
-      pbDisplayPaused(_INTL("{1} ne peut pas être retiré!",thispkmn.pbThis)) if showMessages
+      pbDisplayPaused(_INTL("{1} can't be switched out!",thispkmn.pbThis)) if showMessages
       return false
     end
     opp1=thispkmn.pbOpposing1
@@ -1813,8 +1813,8 @@ class PokeBattle_Battle
     end
     if opp
       abilityname=PBAbilities.getName(opp.ability)
-      pbDisplayPaused(_INTL("{2} de {1} empêche de quitter le terrain!",opp.pbThis,abilityname)) if showMessages
-      pbDisplayPaused(_INTL("{1} empêche la fuite avec {2}!", opp.pbThis, abilityname)) if (showMessages || running) && pkmnidxTo == -1
+      pbDisplayPaused(_INTL("{1}'s {2} prevents switching!",opp.pbThis,abilityname)) if showMessages
+      pbDisplayPaused(_INTL("{1} prevents escaping with {2}!", opp.pbThis, abilityname)) if (showMessages || running) && pkmnidxTo == -1
       return false
     end
     return true
@@ -1881,11 +1881,11 @@ class PokeBattle_Battle
 
           opponent=pbGetOwner(index)
           if !@doublebattle && firstbattlerhp>0 && @shiftStyle && @opponent && @internalbattle && pbCanChooseNonActive?(0) && pbIsOpposing?(index) && @battlers[0].effects[PBEffects::Outrage]==0
-            pbDisplayPaused(_INTL("{1} est sur le point d'envoyer {2}.",opponent.fullname,newname)) 
-            if pbDisplayConfirm(_INTL("Voulez-vous changer de Pokémon?",self.pbPlayer.name))
+            pbDisplayPaused(_INTL("{1} is about to send in {2}.",opponent.fullname,newname)) 
+            if pbDisplayConfirm(_INTL("Will {1} change Pokémon?",self.pbPlayer.name))
               newpoke=pbSwitchPlayer(0,true,true)
               if newpoke>=0
-                pbDisplayBrief(_INTL("{1}, ça suffit! Reviens!",@battlers[0].name))
+                pbDisplayBrief(_INTL("{1}, that's enough!  Come back!",@battlers[0].name))
                 pbRecallAndReplace(0,newpoke)
                 switched.push(0)
               end
@@ -1900,7 +1900,7 @@ class PokeBattle_Battle
         switched.push(index)
       else
         switch=false
-        if !pbDisplayConfirm(_INTL("Utiliser le Pokémon suivant?"))
+        if !pbDisplayConfirm(_INTL("Use next Pokémon?"))
           switch=(pbRun(index,true)<=0)
         else
           switch=true
@@ -2003,17 +2003,17 @@ class PokeBattle_Battle
     if pbOwnedByPlayer?(index)
       opposing=@battlers[index].pbOppositeOpposing
       if opposing.hp<=0 || opposing.hp==opposing.totalhp
-        pbDisplayBrief(_INTL("{1}! Go!",newname))
+        pbDisplayBrief(_INTL("Go! {1}!",newname))
       elsif opposing.hp>=(opposing.totalhp/2.0)
-        pbDisplayBrief(_INTL("Fais-le! {1}!",newname))
+        pbDisplayBrief(_INTL("Do it! {1}!",newname))
       elsif opposing.hp>=(opposing.totalhp/4.0)
-        pbDisplayBrief(_INTL("À toi de jouer, {1}!",newname))
+        pbDisplayBrief(_INTL("Go for it, {1}!",newname))
       else
-        pbDisplayBrief(_INTL("L'ennemi est faible!\nÀ toi, {1}!",newname))
+        pbDisplayBrief(_INTL("Your foe's weak!\nGet 'em",newname))
       end
     else
       owner=pbGetOwner(index)
-      pbDisplayBrief(_INTL("{1} envoie\r\n{2}!",owner.fullname,newname))
+      pbDisplayBrief(_INTL("{1} sent\r\nout {2}!",owner.fullname,newname))
     end
   end
 
@@ -2062,7 +2062,7 @@ class PokeBattle_Battle
     battler=nil
     name=pbGetOwner(userPkmn.index).fullname
     name=pbGetOwner(userPkmn.index).name if pbBelongsToPlayer?(userPkmn.index)
-    pbDisplayBrief(_INTL("{1} utilise\r\n{2}.",name,PBItems.getName(item)))
+    pbDisplayBrief(_INTL("{1} used the<<n>>{2}.",name,PBItems.getName(item)))
     PBDebug.log("[Player used #{PBItems.getName(item)}]")
     ret=false
     if pokemon.isEgg?
@@ -2164,54 +2164,54 @@ class PokeBattle_Battle
     itemname=PBItems.getName(item)
     if opponent && opponent.fullname
       if opponent.fullname.length < 30    #bennett and laura potion usage line break (their length = 35)
-        pbDisplayBrief(_INTL("{1} utilise\r\n{2}!",opponent.fullname,itemname))
+        pbDisplayBrief(_INTL("{1} used the\r\n{2}!",opponent.fullname,itemname))
       else
-        pbDisplayBrief(_INTL("{1} utilise\r{2}!",opponent.fullname,itemname))
+        pbDisplayBrief(_INTL("{1} used the\r\n{2}!",opponent.fullname,itemname))
       end
     end
     case item
     when PBItems::POTION
       battler.pbRecoverHP(20,true)
-      pbDisplay(_INTL("Les PV de {1} sont restaurés.",battler.pbThis))
+      pbDisplay(_INTL("{1}'s HP was restored.",battler.pbThis))
     when PBItems::SUPERPOTION
       battler.pbRecoverHP(60,true)
-      pbDisplay(_INTL("Les PV de {1} sont restaurés.",battler.pbThis))
+      pbDisplay(_INTL("{1}'s HP was restored.",battler.pbThis))
     when PBItems::HYPERPOTION
       battler.pbRecoverHP(120,true)
-      pbDisplay(_INTL("Les PV de {1} sont restaurés.",battler.pbThis))
+      pbDisplay(_INTL("{1}'s HP was restored.",battler.pbThis))
     when PBItems::ULTRAPOTION
       battler.pbRecoverHP(200,true)
-      pbDisplay(_INTL("Les PV de {1} sont restaurés.",battler.pbThis))
+      pbDisplay(_INTL("{1}'s HP was restored.",battler.pbThis))
     when PBItems::MOOMOOMILK
       battler.pbRecoverHP(100,true)
-      pbDisplay(_INTL("Les PV de {1} sont restaurés.",battler.pbThis))
+      pbDisplay(_INTL("{1}'s HP was restored.",battler.pbThis))
     when PBItems::STRAWBIC
       battler.pbRecoverHP(90,true)
-      pbDisplay(_INTL("Les PV de {1} sont restaurés.",battler.pbThis))
+      pbDisplay(_INTL("{1}'s HP was restored.",battler.pbThis))
     when PBItems::CHOCOLATEIC
       battler.pbRecoverHP(70,true)
-      pbDisplay(_INTL("Les PV de {1} sont restaurés.",battler.pbThis))
+      pbDisplay(_INTL("{1}'s HP was restored.",battler.pbThis))
     when PBItems::MAXPOTION
       battler.pbRecoverHP(battler.totalhp-battler.hp,true)
-      pbDisplay(_INTL("Les PV de {1} sont restaurés.",battler.pbThis))
+      pbDisplay(_INTL("{1}'s HP was restored..",battler.pbThis))
     when PBItems::FULLRESTORE
       fullhp=(battler.hp==battler.totalhp)
       battler.pbRecoverHP(battler.totalhp-battler.hp,true)
       battler.status=0; battler.statusCount=0
       battler.effects[PBEffects::Confusion]=0
       if fullhp
-        pbDisplay(_INTL("{1} retrouve la forme!",battler.pbThis))
+        pbDisplay(_INTL("{1} became healthy!",battler.pbThis))
       else
-        pbDisplay(_INTL("Les PV de {1} sont restaurés.",battler.pbThis))
+        pbDisplay(_INTL("{1}'s HP was restored.",battler.pbThis))
       end
     when PBItems::FULLHEAL
       battler.status=0; battler.statusCount=0
       battler.effects[PBEffects::Confusion]=0
-      pbDisplay(_INTL("{1} retrouve la forme!",battler.pbThis))
+      pbDisplay(_INTL("{1} became healthy!",battler.pbThis))
     when PBItems::MEDICINE
       battler.status=0; battler.statusCount=0
       battler.effects[PBEffects::Confusion]=0
-      pbDisplay(_INTL("{1} retrouve la forme!",battler.pbThis))
+      pbDisplay(_INTL("{1} became healthy!!",battler.pbThis))
     when PBItems::XATTACK
       if battler.pbCanIncreaseStatStage?(PBStats::ATTACK)
         battler.pbIncreaseStat(PBStats::ATTACK,2)
@@ -2270,8 +2270,8 @@ class PokeBattle_Battle
           return 1
         end
       elsif @internalbattle
-        if pbDisplayConfirm(_INTL("Voulez-vous abondonner le combat?"))
-          pbDisplay(_INTL("{1} abandonne le combat!",self.pbPlayer.name))
+        if pbDisplayConfirm(_INTL("Would you like to forfeit the battle?"))
+          pbDisplay(_INTL("{1} forfeited the match!",self.pbPlayer.name))
           @decision=2
           return 1
         end
@@ -2284,7 +2284,7 @@ class PokeBattle_Battle
     end
     if $DEBUG && Input.press?(Input::CTRL)
       pbSEPlay("escape",100)
-      pbDisplayPaused(_INTL("Vous prenez la fuite!"))
+      pbDisplayPaused(_INTL("Got away safely!"))
       @decision=3
       return 1
     end
@@ -2294,14 +2294,14 @@ class PokeBattle_Battle
     end
     if thispkmn.pbHasType?(:GHOST)
       pbSEPlay("escape",100)
-      pbDisplayPaused(_INTL("Vous prenez la fuite!"))
+      pbDisplayPaused(_INTL("Can't escape!"))
       @decision=3
       return 1
     end
     if thispkmn.hasWorkingItem(:SMOKEBALL) || thispkmn.hasWorkingItem(:MAGNETICLURE) 
       if duringBattle
         pbSEPlay("escape",100)
-        pbDisplayPaused(_INTL("Vous prenez la fuite!"))
+        pbDisplayPaused(_INTL("Got away safely!"))
       else
         pbSEPlay("escape",100)
         pbDisplayPaused(_INTL("{1} fled using its {2}!",thispkmn.pbThis,PBItems.getName(thispkmn.item)))
@@ -2312,16 +2312,16 @@ class PokeBattle_Battle
     if thispkmn.ability == PBAbilities::RUNAWAY
       if duringBattle
         pbSEPlay("escape",100)
-        pbDisplayPaused(_INTL("Vous prenez la fuite!"))
+        pbDisplayPaused(_INTL("Got away safely!"))
       else
         pbSEPlay("escape",100)
-        pbDisplayPaused(_INTL("{1} utilise Fuite!",thispkmn.pbThis))
+        pbDisplayPaused(_INTL("{1} fled using Run Away!",thispkmn.pbThis))
       end
       @decision=3
       return 1
     end
     if !duringBattle && !pbCanSwitch?(idxPokemon,-1,false, running: true) # TODO: Use real messages
-      pbDisplayPaused(_INTL("Fuite impossible!"))
+      pbDisplayPaused(_INTL("Can't escape!"))
       return 0
     end
     # Note: not pbSpeed, because using unmodified Speed
@@ -2346,10 +2346,10 @@ class PokeBattle_Battle
     ret=1
     if pbAIRandom(256)<rate
       pbSEPlay("escape",100)
-      pbDisplayPaused(_INTL("Vous prenez la fuite!"))
+      pbDisplayPaused(_INTL("Got away safely!"))
       @decision=3
     else
-      pbDisplayPaused(_INTL("Fuite impossible!"))
+      pbDisplayPaused(_INTL("Can't escape!"))
       ret=-1
     end
     if !duringBattle

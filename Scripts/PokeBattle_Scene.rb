@@ -162,7 +162,7 @@ class PokeBattle_DebugScene
   def pbDisplayConfirmMessage(msg)
     dw = Window_SimpleText.new(msg,4)
     dw.y=256
-    commands=["YES","NO"]
+    commands=[_INTL("Yes"),_INTL("No")]
     cw = Window_Command.new(96, commands)
     cw.x=384
     cw.y=160

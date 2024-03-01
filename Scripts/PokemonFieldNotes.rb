@@ -98,7 +98,7 @@ class Scene_FieldNotes
     fieldSeen = []
     for i in 1..37
       if $game_switches[i+599]
-        fieldname = (i).to_s + ". " + FIELDEFFECTS[i][:FIELDNAME]
+        fieldname = (i).to_s + ". " + _INTL(getFieldRootName(i))
       else
         fieldname = "???"
       end
@@ -203,13 +203,18 @@ class Scene_FieldNotes_Info
     @from_index = from_index
     @menu_index = 0
     @fieldeffect = fieldeffect + 1
+    if LANGUAGES.length >= 2
+      @FENotes = load_data("Data/fieldnotes_" + LANGUAGES[$idk[:settings].language][1] + ".dat")
+    else
+      @FENotes= load_data("Data/fieldnotes.dat")
+    end
   end
   #-----------------------------------------------------------------------------
   # * Main Processing
   #-----------------------------------------------------------------------------
   def main
     fadein = true
-    @fieldnotes = $cache.FENotes.find_all {|note| note.fieldeffect==@fieldeffect}
+    @fieldnotes = @FENotes.find_all {|note| note.fieldeffect==@fieldeffect}
     f = []; @fieldnotes.each {|note| f.push(note.text)}
     @choices= f
     # Makes the text window
@@ -225,7 +230,7 @@ class Scene_FieldNotes_Info
     @sprites["background"] = IconSprite.new(0,0)
     @sprites["background"].setBitmap("Graphics/Pictures/fieldapp")
     @sprites["background"].z=255
-    @sprites["header"]=Window_UnformattedTextPokemon.newWithSize(FIELDEFFECTS.dig(@fieldeffect, :FIELDNAME),
+    @sprites["header"]=Window_UnformattedTextPokemon.newWithSize(_INTL(getFieldRootName(@fieldeffect)),
         2,-18,256,64,@viewport)
     @sprites["header"].baseColor=Color.new(248,248,248)
     @sprites["header"].shadowColor=Color.new(0,0,0)

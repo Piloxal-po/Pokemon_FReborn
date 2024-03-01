@@ -734,14 +734,14 @@ class PokeBattle_Battler
   def pbThis(lowercase=false)
     if @battle.pbIsOpposing?(@index)
       if @battle.opponent
-        return lowercase ? _INTL("{1} adverse",PBSpecies.getName(self.species)) : _INTL("{1} adverse",PBSpecies.getName(self.species))
+        return lowercase ? _INTL("the foe {1}",PBSpecies.getName(self.species)) : _INTL("The foe {1}",PBSpecies.getName(self.species))
       else
-        return lowercase ? _INTL("{1} sauvage",self.name) : _INTL("{1} sauvage",self.name)
+        return lowercase ? _INTL("the wild {1}",self.name) : _INTL("The wild {1}",self.name)
       end
     elsif @battle.pbOwnedByPlayer?(@index)
       return _INTL("{1}",self.name)
     else
-      return lowercase ? _INTL("{1} allié",self.name) : _INTL("{1} allié",self.name)
+      return lowercase ? _INTL("the ally {1}",self.name) : _INTL("The ally {1}",self.name)
     end
   end
 
@@ -1775,7 +1775,7 @@ class PokeBattle_Battler
         self.type1=camotype
         self.type2=camotype
         typename=PBTypes.getName(camotype)
-        @battle.pbDisplay(_INTL("{1} change son type en {2}!",pbThis,typename))
+        @battle.pbDisplay(_INTL("{1} had its type changed to {2}!",pbThis,typename))
       end
     end
     # Pastel Veil
@@ -3729,7 +3729,7 @@ class PokeBattle_Battler
         self.type1=protype
         self.type2=protype
         typename=PBTypes.getName(protype)
-        @battle.pbDisplay(_INTL("{1} change son type en {3}!",pbThis,PBAbilities.getName(self.ability),typename))
+        @battle.pbDisplay(_INTL("{1} had its type changed to {3}!",pbThis,PBAbilities.getName(self.ability),typename))
       end
     end # end of update
     if (self.ability == PBAbilities::STANCECHANGE)
@@ -4495,7 +4495,7 @@ class PokeBattle_Battler
           if PBFields::QUAKEMOVES.include?(thismove.id)
             if @battle.field.backup == PBFields::WATERS
               @battle.setField(PBFields::WATERS)
-              @battle.pbDisplay(_INTL("La secousse brise la glace et révèle l'eau en-dessous!"))
+              @battle.pbDisplay(_INTL("The quake broke up the ice and revealed the water beneath!"))
             else
               spikevar=false
               if @battle.battlers[0].pbOwnSide.effects[PBEffects::Spikes]<3
@@ -4507,7 +4507,7 @@ class PokeBattle_Battler
                 spikevar=true
               end
               if spikevar == true
-                @battle.pbDisplay(_INTL("La secousse brise la glace en éclats pointus!"))
+                @battle.pbDisplay(_INTL("The quake broke up the ice into spiky pieces!"))
               end
             end
           end
@@ -4515,10 +4515,10 @@ class PokeBattle_Battler
             @battle.field.counter += 1
             case @battle.field.counter
             when 1
-              @battle.pbDisplay(_INTL("Des morceaux de glace fondent!"))
+              @battle.pbDisplay(_INTL("Parts of the ice melted!"))
             when 2
               @battle.setField(PBFields::WATERS)
-              @battle.pbDisplay(_INTL("L'eau brûlante fait fondre la glace!"))
+              @battle.pbDisplay(_INTL("The hot water melted the ice!"))
             end
           end
         when PBFields::SUPERHEATEDF # Superheated Steam
@@ -4526,7 +4526,7 @@ class PokeBattle_Battler
            thismove.id == PBMoves::WATERPLEDGE || thismove.id == PBMoves::WATERSPOUT ||
            thismove.id == PBMoves::SPARKLINGARIA || thismove.id == PBMoves::OCEANICOPERETTA ||
            thismove.id == PBMoves::HYDROVORTEX)
-            @battle.pbDisplay(_INTL("De la vapeur se dégage du terrain!"))
+            @battle.pbDisplay(_INTL("Steam shot up from the field!"))
             for i in 0...4
               canthit = PBStuff::TWOTURNMOVE.include?(@battle.battlers[i].effects[PBEffects::TwoTurnAttack])
               canthit = true if @battle.battlers[i].effects[PBEffects::SkyDrop]
@@ -4537,7 +4537,7 @@ class PokeBattle_Battler
           end
         when PBFields::ASHENB # Ashen Beach Ash
           if ((thismove.type == PBTypes::FLYING) && thismove.pbIsSpecial?(thismove.type)) || (thismove.id == PBMoves::LEAFTORNADO || thismove.id == PBMoves::FIRESPIN || thismove.id == PBMoves::TWISTER || thismove.id == PBMoves::RAZORWIND || thismove.id == PBMoves::WHIRLPOOL)
-            @battle.pbDisplay(_INTL("L'attaque fait s'envoler des cendres du sol!"))
+            @battle.pbDisplay(_INTL("The attack stirred up the ash on the ground!"))
             for i in 0...4
               canthit = PBStuff::TWOTURNMOVE.include?(@battle.battlers[i].effects[PBEffects::TwoTurnAttack])
               canthit = true if @battle.battlers[i].effects[PBEffects::SkyDrop]
@@ -4551,9 +4551,9 @@ class PokeBattle_Battler
             @battle.field.counter += 1
             case @battle.field.counter
               when 1
-                @battle.pbDisplay(_INTL("Le poison se propage dans l'eau!"))
+                @battle.pbDisplay(_INTL("Poison spread through the water!"))
               when 2
-                @battle.pbDisplay(_INTL("L'eau est polluée!"))
+                @battle.pbDisplay(_INTL("The water was polluted!"))
                 for i in 0...4
                   toxicdrown = @battle.battlers[i].totalhp
                   next if toxicdrown==0
@@ -4565,7 +4565,7 @@ class PokeBattle_Battler
                   @battle.field.counter = 0
                 end
                 @battle.setField(PBFields::MURKWATERS)
-                @battle.pbDisplay(_INTL("La saleté coule sous les combattants!"))
+                @battle.pbDisplay(_INTL("The grime sank beneath the battlers!"))
             end
           end
       end

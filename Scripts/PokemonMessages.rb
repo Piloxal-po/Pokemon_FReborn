@@ -534,7 +534,7 @@ class Interpreter   # Used by RMXP
 
   def command_102
     @message_waiting=true
-    command=Kernel.pbShowCommands(nil,@list[@index].parameters[0],@list[@index].parameters[1])
+    command=Kernel.pbShowCommands(nil, @list[@index].parameters[0].map { |string| _MAPINTL($game_map.map_id,string) },@list[@index].parameters[1])
     @message_waiting=false
     @branch[@list[@index].indent] = command
     Input.update # Must call Input.update again to avoid extra triggers
@@ -853,7 +853,7 @@ def pbGetBasicMapNameFromId(id)
 end
 
 def pbGetMapNameFromId(id)
-  map=pbGetBasicMapNameFromId(id)
+  map=pbGetMessage(MessageTypes::MapNames, id)
   if $Trainer
     map.gsub!(/\\PN/,$Trainer.name)
   end
@@ -1157,7 +1157,15 @@ def Kernel.pbMessageDisplay(msgwindow,message,letterbyletter=true,commandProc=ni
   }
   begin
     last_text = text.clone
-    text.gsub!(/\\[Vv]\[([0-9]+)\]/) { $game_variables[$1.to_i] }
+    text.gsub!(/\\[Vv]\[([0-9]+)\]/) { 
+      varText = $game_variables[$1.to_i]
+      if ($1.to_i == 719 && (varText.include? "/"))
+        varArray = varText.split("/")
+        next _INTL(varArray[0]) + "/" +  _INTL(varArray[1])
+      else
+        next _INTL(varText)
+      end
+    }
   end until text == last_text
   begin
     last_text = text.clone

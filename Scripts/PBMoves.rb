@@ -773,7 +773,7 @@ JUDGMENTQMARKS=771
 
 def self.getName(id)
 return pbGetMessage(MessageTypes::Moves,id) if id < 10000 
-return PokeBattle_ZMoves::ZMOVENAMES[id-10001]
+return _INTL(PokeBattle_ZMoves::ZMOVENAMES[id-10001])
 end
 def self.getCount
 return 731

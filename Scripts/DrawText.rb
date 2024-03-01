@@ -637,7 +637,16 @@ def getFormattedText(bitmap,xDst,yDst,widthDst,heightDst,text,lineheight=32,
         elsif control=="icon" # Icon
           if !endtag
             param=param.sub(/\s+$/,"")
-            graphic="Graphics/Icons/#{param}"
+            if (File.exists?("Graphics/Icons/#{param}#{getSuffixFile()}.png")) 
+              graphic="Graphics/Icons/#{param}#{getSuffixFile()}"
+            else
+              errorImageFile = File.open("errorImage.txt", "a+")
+              if (!errorImageFile.each_line.any?{|line| line.include?("Graphics/Icons/#{param}#{getSuffixFile()}")})
+                errorImageFile.write("Graphics/Icons/#{param}#{getSuffixFile()}" + "\n")
+              end
+              errorImageFile.close()
+              graphic="Graphics/Icons/#{param}"
+            end
             controls[i]=nil
             break
           end

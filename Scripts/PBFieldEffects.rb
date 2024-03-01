@@ -31,7 +31,7 @@ FIELDEFFECTS = {
 	# 1 Electric Terrain
 	PBFields::ELECTRICT => {
 		:FIELDNAME => "Champ Électrifié",
-		:INTROMESSAGE => "Le Terrain est surchargé!",
+		:INTROMESSAGE => "De l'électricité parcourt le terrain!",
 		:FIELDGRAPHICS => "Electric",
 		:SECRETPOWERANIM => PBMoves::SHOCKWAVE,
 		:NATUREMOVES => PBMoves::THUNDERBOLT,
@@ -66,7 +66,7 @@ FIELDEFFECTS = {
 	# 2 Grassy Terrain
 	PBFields::GRASSYT => {
 		:FIELDNAME => "Champ Herbu",
-		:INTROMESSAGE => "Le terrain est un beau gazon.",
+		:INTROMESSAGE => "Un beau gazon pousse sur le terrain!",
 		:FIELDGRAPHICS =>  "Grassy",
 		:SECRETPOWERANIM => PBMoves::SEEDBOMB,
 		:NATUREMOVES => PBMoves::ENERGYBALL,
@@ -109,7 +109,7 @@ FIELDEFFECTS = {
 	# 3 Misty Terrain
 	PBFields::MISTYT => {
 		:FIELDNAME => "Champ Brumeux",
-		:INTROMESSAGE => "La brume s'installe sur le terrain.",
+		:INTROMESSAGE => "La brume recouvre le terrain!",
 		:FIELDGRAPHICS =>  "Misty",
 		:SECRETPOWERANIM => PBMoves::MISTBALL,
 		:NATUREMOVES => PBMoves::MISTBALL,
@@ -1232,7 +1232,7 @@ FIELDEFFECTS = {
 		:MOVEDAMAGEBOOST => {}, #fuck
 		:MOVEMESSAGES => {}, #fuck
 		:FIELDCHANGE => {PBFields::BURNINGF => PBFields::IGNITEMOVES},
-		:CHANGEMESSAGE => {"The garden caught fire!" => PBFields::IGNITEMOVES},
+		:CHANGEMESSAGE => {"Le jardin prend feu!" => PBFields::IGNITEMOVES},
 		:CHANGECONDITION => {PBFields::BURNINGF => "ignitecheck && @battle.field.counter > 1"},
 		:DONTCHANGEBACKUP => PBFields::IGNITEMOVES,
 		:STATUSMOVEBOOST => [PBMoves::GROWTH, PBMoves::ROTOTILLER, PBMoves::RAINDANCE, 
@@ -1249,7 +1249,7 @@ FIELDEFFECTS = {
 	# 34 Starlight Arena
 	PBFields::STARLIGHTA => {
 		:FIELDNAME => "Piste aux Étoiles",
-		:INTROMESSAGE => "Starlight fills the battlefield.",
+		:INTROMESSAGE => "Cette obscure clarté qui tombe des étoiles...",
 		:FIELDGRAPHICS =>  "Starlight",
 		:SECRETPOWERANIM => PBMoves::SWIFT,
 		:NATUREMOVES => PBMoves::MOONBLAST,
@@ -1265,33 +1265,33 @@ FIELDEFFECTS = {
 				PBMoves::BLACKHOLEECLIPSE, PBMoves::SEARINGSUNRAZESMASH, PBMoves::MENACINGMOONRAZEMAELSTROM],
 		4.0 => [PBMoves::DOOMDUMMY]},
 		:MOVEMESSAGES => {
-		"Starlight surged through the attack!" => [PBMoves::AURORABEAM, PBMoves::SIGNALBEAM, 
+		"La lumière des étoiles renforce l'attaque!" => [PBMoves::AURORABEAM, PBMoves::SIGNALBEAM, 
 			PBMoves::FLASHCANNON, PBMoves::LUSTERPURGE, PBMoves::DAZZLINGGLEAM, PBMoves::MIRRORSHOT, 
 			PBMoves::TECHNOBLAST, PBMoves::SOLARBEAM, PBMoves::PHOTONGEYSER],
-		"Lunar energy surged through the attack!" => [PBMoves::MOONBLAST],
-		"The astral energy boosted the attack!" => [PBMoves::DRACOMETEOR, PBMoves::METEORMASH, 
+		"Au clair de la lune!" => [PBMoves::MOONBLAST],
+		"L'énergie astrale renforce l'attaque!" => [PBMoves::DRACOMETEOR, PBMoves::METEORMASH, 
 			PBMoves::COMETPUNCH, PBMoves::SPACIALREND, PBMoves::SWIFT,  
 			PBMoves::HYPERSPACEFURY, PBMoves::MOONGEISTBEAM, PBMoves::SUNSTEELSTRIKE, 
 			PBMoves::BLACKHOLEECLIPSE, PBMoves::SEARINGSUNRAZESMASH, PBMoves::MENACINGMOONRAZEMAELSTROM],
-		"The astral vortex accelerated the attack!" => [PBMoves::HYPERSPACEHOLE],
-		"A star came crashing down!" => [PBMoves::DOOMDUMMY]},
+		"Le vortex astral accélère l'attaque!" => [PBMoves::HYPERSPACEHOLE],
+		"Une météorite s'écrase!" => [PBMoves::DOOMDUMMY]},
 		:MOVETYPEMOD => {PBTypes::FIRE => [PBMoves::DOOMDUMMY]},
 		:TYPETYPEMOD => {PBTypes::FAIRY => [PBTypes::DARK]},
 		:TYPEDAMAGEBOOST => {
 		1.5 => [PBTypes::DARK,PBTypes::PSYCHIC],
 		1.3 => [PBTypes::FAIRY]},
 		:TYPEMESSAGES => {
-		"Starlight supercharged the attack!" => [PBTypes::FAIRY],
-		"The night sky boosted the attack!" => [PBTypes::DARK],
-		"The astral energy boosted the attack!" => [PBTypes::PSYCHIC]},
+		"Le pouvoir des étoiles renforce l'attaque!" => [PBTypes::FAIRY],
+		"La noirceur du ciel renforce l'attaque!" => [PBTypes::DARK],
+		"L'énergie astrale renforce l'attaque!" => [PBTypes::PSYCHIC]},
 		:FIELDCHANGE => {0 => [PBMoves::LIGHTTHATBURNSTHESKY]},
-		:CHANGEMESSAGE => {"The cosmic light was consumed!" => [PBMoves::LIGHTTHATBURNSTHESKY]},
+		:CHANGEMESSAGE => {"La lumière des astres est consumée!" => [PBMoves::LIGHTTHATBURNSTHESKY]},
 		:STATUSMOVEBOOST => [PBMoves::COSMICPOWER, PBMoves::FLASH, PBMoves::WISH, PBMoves::HEALINGWISH, PBMoves::LUNARDANCE, PBMoves::MOONLIGHT],
 		:CHANGEEFFECTS => {},
 		:SEED => PBItems::MAGICALSEED,
 		:SEEDEFFECT => PBEffects::Wish,
 		:SEEDEFFECTVAL => 2,
-		:SEEDEFFECTSTR => "A wish was made for {1}!",
+		:SEEDEFFECTSTR => "{1} fait un vœu!",
 		:SEEDANIM => PBMoves::WISH,
 		:SEEDSTATS => {PBStats::SPATK => 1}
 		},
@@ -1392,14 +1392,14 @@ FIELDEFFECTS = {
 		:SEED => PBItems::MAGICALSEED,
 		:SEEDEFFECT => PBEffects::HyperBeam,
 		:SEEDEFFECTVAL => 1,
-		:SEEDEFFECTSTR => "{1} must recharge!",
+		:SEEDEFFECTSTR => "{1} doit se recharger!",
 		:SEEDANIM => 0,
 		:SEEDSTATS => {PBStats::ATTACK => 1,PBStats::DEFENSE => 1,PBStats::SPEED => 1,PBStats::SPATK => 1,PBStats::SPDEF => 1}
 		},
 	# 37 Psychic Terrain
 	PBFields::PSYCHICT => {
-		:FIELDNAME => "Psychic Terrain",
-		:INTROMESSAGE => "The field became mysterious!",
+		:FIELDNAME => "Champ Psychique",
+		:INTROMESSAGE => "Le sol se met à réagir de façon bizarre...",
 		:FIELDGRAPHICS =>  "Psychic",
 		:SECRETPOWERANIM => PBMoves::PSYCHIC,
 		:NATUREMOVES => PBMoves::PSYCHIC,

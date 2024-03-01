@@ -920,7 +920,7 @@ def pbCompileMoves
   for rec in records
     code+="#{rec[1]}=#{rec[0]}\n"
   end
-  code+="\ndef self.getName(id)\nreturn pbGetMessage(MessageTypes::Moves,id) if id < 10000 \nreturn PokeBattle_ZMoves::ZMOVENAMES[id-10001]\nend"
+  code+="\ndef self.getName(id)\nreturn pbGetMessage(MessageTypes::Moves,id) if id < 10000 \nreturn _INTL(PokeBattle_ZMoves::ZMOVENAMES[id-10001])\nend"
   code+="\ndef self.getCount\nreturn #{records.length}\nend"
   code+="\ndef self.maxValue\nreturn #{maxValue}\nend\nend"
   eval(code)
@@ -976,13 +976,17 @@ def pbExtractTrainers
   }
 end
 
-def pbCompileTrainers
+def pbCompileTrainers(trainerTypeOutput, trainerOutput)
+  pbCompileTrainersWithInput("trainertypes.txt", trainerTypeOutput, "trainers.txt", trainerOutput)
+end
+
+def pbCompileTrainersWithInput(trainerTypeInput, trainerTypeOutput, trainerInput, trainerOutput)
   # Trainer types
   records=[]
   trainernames=[]
   count=0
   maxValue=0
-  pbCompilerEachPreppedLine("PBS/trainertypes.txt"){|line,lineno|
+  pbCompilerEachPreppedLine("PBS/" + trainerTypeInput){|line,lineno|
      record=pbGetCsvRecord(line,lineno,[0,"unsUSSSeU", # ID can be 0
         nil,nil,nil,nil,nil,nil,nil,{
         ""=>2,"Male"=>0,"M"=>0,"0"=>0,"Female"=>1,"F"=>1,"1"=>1,"Mixed"=>2,"X"=>2,"2"=>2
@@ -1016,15 +1020,15 @@ def pbCompileTrainers
   code+="\ndef self.maxValue\nreturn #{maxValue}\nend\nend"
   eval(code)
   pbAddScript(code,"PBTrainers")
-  File.open("Data/trainertypes.dat","wb"){|f|
+  File.open("Data/" + trainerTypeOutput,"wb"){|f|
      Marshal.dump(records,f)
   }
   # Individual trainers
   lines=[]
   linenos=[]
   lineno=1
-  File.open("PBS/trainers.txt","rb"){|f|
-     FileLineData.file="PBS/trainers.txt"
+  File.open("PBS/" + trainerInput,"rb"){|f|
+     FileLineData.file="PBS/" + trainerInput
      f.each_line {|line|
         if lineno==1 && line[0]==0xEF && line[1]==0xBB && line[2]==0xBF
           line=line[3,line.length-3]
@@ -1207,7 +1211,7 @@ def pbCompileTrainers
     end
     fulltrainerdata[i] = classhash
   end
-  save_data(fulltrainerdata,"Data/trainers.dat")
+  save_data(fulltrainerdata,"Data/" + trainerOutput)
   $cache.trainers = fulltrainerdata
 end
 
@@ -2096,7 +2100,7 @@ def pbCompileAllData(mustcompile)
     pbCompileMachines
     # Depends on PBSpecies, PBItems, PBMoves
     yield(_INTL("Compiling Trainer data"))
-    pbCompileTrainers
+    pbCompileTrainers("trainertypes.dat", "trainers.dat")
     # Depends on PBTrainers
     yield(_INTL("Compiling phone data"))
     #pbCompilePhoneData
@@ -2130,7 +2134,7 @@ def pbCompileAllData(mustcompile)
   #pbCombineScripts
   MessageTypes.saveMessages
   if !$INEDITOR && LANGUAGES.length>=2
-    pbLoadMessages("Data/"+LANGUAGES[$idk[:settings].language][1])
+    pbLoadMessages("Data/"+LANGUAGES[$idk[:settings].language][1] + ".dat")
   end
   totalcompilertime = Time.now - compilerruntime
   #print totalcompilertime
@@ -2161,7 +2165,7 @@ def pbCompileFields
 		next if !rawfield
 		currentfield = FEData.new
 		#Basic data copying
-		currentfield.fieldname 			= rawfield[:FIELDNAME] 		  if rawfield[:FIELDNAME]
+		currentfield.fieldname 			= _INTL(getFieldRootName(i))		  if rawfield[:FIELDNAME]
 		currentfield.intromessage 		= rawfield[:INTROMESSAGE] 	  if rawfield[:INTROMESSAGE] 
 		currentfield.fieldgraphics 		= rawfield[:FIELDGRAPHICS] 	  if rawfield[:FIELDGRAPHICS] 
 		currentfield.secretpoweranim 	= rawfield[:SECRETPOWERANIM]  if rawfield[:SECRETPOWERANIM] 
