@@ -519,10 +519,6 @@ def getFormattedText(bitmap,xDst,yDst,widthDst,heightDst,text,lineheight=32,
   fontnamestack=[]
   fontsizestack=[]
   defaultcolors=[oldfont.color.clone,nil]
-  suffix = ""
-  if (LANGUAGES.length>=2 && LANGUAGES[$idk[:settings].language][1] != "en")
-    suffix = "_" + LANGUAGES[$idk[:settings].language][1]
-  end
   if defaultfontname.is_a?(Array)
     defaultfontname=defaultfontname.find{|i| Font.exist?(i)} || "Arial"
   elsif !Font.exist?(defaultfontname)
@@ -641,12 +637,12 @@ def getFormattedText(bitmap,xDst,yDst,widthDst,heightDst,text,lineheight=32,
         elsif control=="icon" # Icon
           if !endtag
             param=param.sub(/\s+$/,"")
-            if (File.exists?("Graphics/Icons/#{param}#{suffix}.png")) 
-              graphic="Graphics/Icons/#{param}#{suffix}"
+            if (File.exists?("Graphics/Icons/#{param}#{getSuffixFile()}.png")) 
+              graphic="Graphics/Icons/#{param}#{getSuffixFile()}"
             else
               errorImageFile = File.open("errorImage.txt", "a+")
-              if (!errorImageFile.each_line.any?{|line| line.include?("Graphics/Icons/#{param}#{suffix}")})
-                errorImageFile.write("Graphics/Icons/#{param}#{suffix}" + "\n")
+              if (!errorImageFile.each_line.any?{|line| line.include?("Graphics/Icons/#{param}#{getSuffixFile()}")})
+                errorImageFile.write("Graphics/Icons/#{param}#{getSuffixFile()}" + "\n")
               end
               errorImageFile.close()
               graphic="Graphics/Icons/#{param}"
