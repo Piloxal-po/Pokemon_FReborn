@@ -2062,7 +2062,7 @@ class PokeBattle_Battle
     battler=nil
     name=pbGetOwner(userPkmn.index).fullname
     name=pbGetOwner(userPkmn.index).name if pbBelongsToPlayer?(userPkmn.index)
-    pbDisplayBrief(_INTL("{1} used the\r\n{2}.",name,PBItems.getName(item)))
+    pbDisplayBrief(_INTL("{1} used the<<n>>{2}.",name,PBItems.getName(item)))
     PBDebug.log("[Player used #{PBItems.getName(item)}]")
     ret=false
     if pokemon.isEgg?
