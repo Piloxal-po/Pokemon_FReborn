@@ -5052,7 +5052,7 @@ class PokeBattle_Battle
         if !i.pbTooHigh?(PBStats::SPEED)
           i.pbIncreaseStatBasic(PBStats::SPEED,1)
           pbCommonAnimation("StatUp",i,nil)
-          pbDisplay(_INTL("{2} de {1} raised its Speed!",i.pbThis, PBAbilities.getName(i.ability)))
+          pbDisplay(_INTL("{1} augmente sa Vitesse grâce à {2}.",i.pbThis, PBAbilities.getName(i.ability)))
         end
       end
       if @field.effect == PBFields::SWAMPF && !(i.ability == PBAbilities::WHITESMOKE) && !(i.ability == PBAbilities::CLEARBODY) && !(i.ability == PBAbilities::QUICKFEET) && !(i.ability == PBAbilities::SWIFTSWIM)
