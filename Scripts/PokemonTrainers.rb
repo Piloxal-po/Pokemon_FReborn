@@ -258,6 +258,7 @@ end
 
 def pbTrainerBattle(trainerid,trainername,endspeech, doublebattle=false,trainerparty=0,canlose=false,variable=nil,opponent_team: [],recorded:false, items_overwrite: nil)
   $game_switches[:In_Battle] = true
+  endspeech = _INTL(endspeech)
   if $Trainer.pokemonCount==0
     Kernel.pbMessage(_INTL("SKIPPING BATTLE...")) if $DEBUG
     $game_switches[:In_Battle] = false
