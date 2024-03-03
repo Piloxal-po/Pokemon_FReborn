@@ -7,20 +7,20 @@ class Scene_PulseDex
   def initialize(menu_index = 0)
     @menu_index = menu_index
     @switch_picture_links = [
-      [$game_switches[587],"navpulse00","0. Garbodor"],
-      [$game_switches[588],"navpulse01","1. Magnezone"],
-      [$game_switches[589],"navpulse02","2. Avalugg"],
-      [$game_switches[590],"navpulse03","3. Swalot"],
-      [$game_switches[591],"navpulse04","4. Muk"],
-      [$game_switches[1778],"navpulse05c","5A. Tangrowth"],
-      [$game_switches[1777],"navpulse05b","5B. Tangrowth"],
-      [$game_switches[592],"navpulse05","5C. Tangrowth"],
-      [$game_switches[593],"navpulse06","6. Camerupt"],
-      [$game_switches[594],"navpulse07","7. Abra"],
-      [$game_switches[595],"navpulse08","8. Hypno"],
-      [$game_switches[596],"navpulse09","9. Mr. Mime"],
-      [$game_switches[597],"navpulse10","10. Clawitzer"],
-      [$game_switches[598],"navpulse11","11. Arceus"]
+      [$game_switches[587],"navpulse00",_INTL("0. Garbodor")],
+      [$game_switches[588],"navpulse01",_INTL("1. Magnezone")],
+      [$game_switches[589],"navpulse02",_INTL("2. Avalugg")],
+      [$game_switches[590],"navpulse03",_INTL("3. Swalot")],
+      [$game_switches[591],"navpulse04",_INTL("4. Muk")],
+      [$game_switches[1778],"navpulse05c",_INTL("5A. Tangrowth")],
+      [$game_switches[1777],"navpulse05b",_INTL("5B. Tangrowth")],
+      [$game_switches[592],"navpulse05",_INTL("5C. Tangrowth")],
+      [$game_switches[593],"navpulse06",_INTL("6. Camerupt")],
+      [$game_switches[594],"navpulse07",_INTL("7. Abra")],
+      [$game_switches[595],"navpulse08",_INTL("8. Hypno")],
+      [$game_switches[596],"navpulse09",_INTL("9. Mr. Mime")],
+      [$game_switches[597],"navpulse10",_INTL("10. Clawitzer")],
+      [$game_switches[598],"navpulse11",_INTL("11. Arceus")]
     ]
   end
   #-----------------------------------------------------------------------------
