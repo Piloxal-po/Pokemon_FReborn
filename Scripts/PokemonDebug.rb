@@ -194,8 +194,20 @@ def pbCompileTextUIFr
     pbCompileTextFr
     Kernel.pbMessageDisplay(msgwindow,
        _INTL("Successfully compiled text and saved it to intl.dat."))
+    rescue RuntimeError
     Kernel.pbMessageDisplay(msgwindow,
-       _INTL("To use the file in a game, place the file in the Data folder under a different name, and edit the LANGUAGES array in the Settings script."))
+       _INTL("Failed to compile text:  {1}",$!.message))
+  end
+  Kernel.pbDisposeMessageWindow(msgwindow)
+end
+
+def pbCompileFieldUIFr
+  msgwindow=Kernel.pbCreateMessageWindow
+  Kernel.pbMessageDisplay(msgwindow,_INTL("Please wait.\\wtnp[0]"))
+  begin
+    pbCompileFields("Data/fields_fr.dat")
+    Kernel.pbMessageDisplay(msgwindow,
+       _INTL("Successfully compiled text and saved it to fields_fr.dat."))
     rescue RuntimeError
     Kernel.pbMessageDisplay(msgwindow,
        _INTL("Failed to compile text:  {1}",$!.message))
@@ -314,6 +326,7 @@ def pbDebugMenu
   commands.add("compiletext",_INTL("Compile Text"))
   commands.add("extracttextFr",_INTL("Extract Text FR"))
   commands.add("compiletextFr",_INTL("Compile Text FR"))
+  commands.add("compilefieldFr",_INTL("Compile field FR"))
   commands.add("compileNotes",_INTL("Compile Notes"))
   commands.add("compiletrainers", _INTL("Compile Trainers"))
   commands.add("compiletrainersFr", _INTL("Compile Trainers FR"))
@@ -749,6 +762,8 @@ def pbDebugMenu
       pbExtractTextFr
     elsif cmd=="compiletextFr"
       pbCompileTextUIFr
+    elsif cmd=="compilefieldFr"
+      pbCompileFieldUIFr
     elsif cmd=="compileNotes"
       pbCompileNotes
     elsif cmd=="compiletrainers"
