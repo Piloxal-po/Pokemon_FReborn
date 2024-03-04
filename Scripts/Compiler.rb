@@ -2159,6 +2159,10 @@ def quickCompile
 end
 
 def pbCompileFields
+	pbCompileFields("Data/fields.dat")
+end
+
+def pbCompileFields(out)
 	fields = []
 	for i in 0...43
 		rawfield = FIELDEFFECTS[i]
@@ -2265,6 +2269,6 @@ def pbCompileFields
 		#all done!
 		fields.push(currentfield)
 	end
-	save_data(fields,"Data/fields.dat")
+	save_data(fields, out)
 	$cache.FEData = fields
 end

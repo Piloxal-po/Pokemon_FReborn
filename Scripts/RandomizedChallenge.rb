@@ -1490,8 +1490,8 @@ def Kernel.pbReceiveItem(item,quantity=1,plural=nil)
         Kernel.pbMessage(_INTL("{1} met \\c[1]{2}\\c[0]\r\ndans la poche <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] du Sac.",
            $Trainer.name,plural,PokemonBag.pocketNames()[pocket]))
       else
-        Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}s\\c[0]\r\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.",
-           $Trainer.name,itemname,PokemonBag.pocketNames()[pocket]))
+        Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}s\\c[0]\r\nin the <icon=bagPocket{4}>\\c[1]{3}\\c[0] Pocket.",
+           $Trainer.name,itemname,PokemonBag.pocketNames()[pocket], pocket))
       end
     else
       Kernel.pbMessage(_INTL("{1} met \\c[1]{2}\\c[0]\r\ndans la poche <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] du Sac.",
