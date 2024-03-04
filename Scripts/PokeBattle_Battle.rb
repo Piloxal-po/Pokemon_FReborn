@@ -2009,7 +2009,7 @@ class PokeBattle_Battle
       elsif opposing.hp>=(opposing.totalhp/4.0)
         pbDisplayBrief(_INTL("Go for it, {1}!",newname))
       else
-        pbDisplayBrief(_INTL("Your foe's weak!\nGet 'em",newname))
+        pbDisplayBrief(_INTL("Your foe's weak!\n\rGet 'em, {1}!",newname))
       end
     else
       owner=pbGetOwner(index)
@@ -2062,7 +2062,7 @@ class PokeBattle_Battle
     battler=nil
     name=pbGetOwner(userPkmn.index).fullname
     name=pbGetOwner(userPkmn.index).name if pbBelongsToPlayer?(userPkmn.index)
-    pbDisplayBrief(_INTL("{1} used the<<n>>{2}.",name,PBItems.getName(item)))
+    pbDisplayBrief(_INTL("{1} used the\r\n{2}.",name,PBItems.getName(item)))
     PBDebug.log("[Player used #{PBItems.getName(item)}]")
     ret=false
     if pokemon.isEgg?
