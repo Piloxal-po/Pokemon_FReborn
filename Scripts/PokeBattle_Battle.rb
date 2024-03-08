@@ -2289,12 +2289,12 @@ class PokeBattle_Battle
       return 1
     end
     if @cantescape || $game_switches[:Never_Escape] == true
-      pbDisplayPaused(_INTL("Fuite impossible!"))
+      pbDisplayPaused(_INTL("Can't escape!"))
       return 0
     end
     if thispkmn.pbHasType?(:GHOST)
       pbSEPlay("escape",100)
-      pbDisplayPaused(_INTL("Can't escape!"))
+      pbDisplayPaused(_INTL("Got away safely!"))
       @decision=3
       return 1
     end
