@@ -2491,7 +2491,7 @@ class PokemonStorageScene
     end
     @sprites["pokemon"].visible=true
     speciesname=PBSpecies.getName(pokemon.species)
-    itemname="No item"
+    itemname=_INTL("No item")
     if pokemon.item>0
       itemname=PBItems.getName(pokemon.item)
     end
