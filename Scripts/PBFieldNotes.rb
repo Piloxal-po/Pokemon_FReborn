@@ -90,7 +90,7 @@ def pbCompileFieldNotes
     PBFieldNote.new(3,"Pokémon au sol <c=red>immunisés</c> au statut"),
     PBFieldNote.new(3,"<c=green>Créé</c> par . . .","Créa-Brume, Champ Brumeux (5 tours), Brume (3 tours), si l'attaquant ne tient pas de Pierre Stase."),
     PBFieldNote.new(3,"Attaques <icon=FieldDragon> <icon=fieldDown> <c=red>x0.5</c> "),
-    PBFieldNote.new(3,"Attaques <icon=FieldFairy> <icon=fieldUp> <c=green>x1.5</c> Déf.Spé. "),
+    PBFieldNote.new(3,"Pokémon <icon=FieldFairy> <icon=fieldUp> <c=green>x1.5</c> Déf.Spé. "),
     PBFieldNote.new(3,"<c=green>Active</c> Écaille Spéciale"),
     PBFieldNote.new(3,"Peau Sèche <c=green>rend des PV</c> chaque tour"),
     PBFieldNote.new(3,"Boost de Peau Féérique <icon=fieldChange> <c=green>x1.5</c> "),
@@ -308,7 +308,7 @@ def pbCompileFieldNotes
     PBFieldNote.new(11,"Active <c=orange>Graine Élémentaire</c> . . .","Augmente l'Attaque et l'Att.Spé. et empoisonne gravement."),
   #Desert Field
     PBFieldNote.new(12,"<c=orange>\"#{FIELDEFFECTS.dig(PBFields::DESERTF, :INTROMESSAGE)}\"</c> "),
-    PBFieldNote.new(12,"Attaques <icon=FieldGround> <icon=fieldUp> <c=green>x1.5</c> Déf.Spé."),
+    PBFieldNote.new(12,"Pokémon <icon=FieldGround> <icon=fieldUp> <c=green>x1.5</c> Déf.Spé."),
     PBFieldNote.new(12,"<c=green>Active </c> certains talents . . .","Force Sable, Baigne Sable, Voile Sable."),
     PBFieldNote.new(12,"Le Soleil et le Sable durent <c=green>8</c> tours"),
     PBFieldNote.new(12,"Certaines attaques <icon=fieldUp> <c=green>x1.5</c> . . . ",feToStringName(PBFields::DESERTF, :MOVEDAMAGEBOOST, 1.5)),

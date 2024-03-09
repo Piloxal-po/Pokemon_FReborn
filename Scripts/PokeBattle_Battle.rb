@@ -3462,7 +3462,9 @@ class PokeBattle_Battle
       fieldmessage = @field.introMessage
       if fieldmessage.kind_of?(Array)
         pbDisplay(_INTL(fieldmessage[0]))
-        pbDisplay(_INTL(fieldmessage[1]))
+        if fieldmessage[1]
+          pbDisplay(_INTL(fieldmessage[1]))
+        end
       else
         pbDisplay(_INTL(fieldmessage))
       end
