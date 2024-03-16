@@ -231,12 +231,12 @@ class Scene_TimeWeather
   
   def pbRerollWeather
     $game_screen.RerollWeather
-    Kernel.pbMessage("Next week's weather: dry spell") if $game_variables[:Next_Weather_Archetype] == 1
-    Kernel.pbMessage("Next week's weather: showers") if $game_variables[:Next_Weather_Archetype] == 2
-    Kernel.pbMessage("Next week's weather: chilly") if $game_variables[:Next_Weather_Archetype] == 3
-    Kernel.pbMessage("Next week's weather: wet") if $game_variables[:Next_Weather_Archetype] == 4
-    Kernel.pbMessage("Next week's weather: blizzard") if $game_variables[:Next_Weather_Archetype] == 5
-    Kernel.pbMessage("Next week's weather: variety") if $game_variables[:Next_Weather_Archetype] == 6 
+    Kernel.pbMessage(_INTL("Next week's weather: dry spell")) if $game_variables[:Next_Weather_Archetype] == 1
+    Kernel.pbMessage(_INTL("Next week's weather: showers")) if $game_variables[:Next_Weather_Archetype] == 2
+    Kernel.pbMessage(_INTL("Next week's weather: chilly")) if $game_variables[:Next_Weather_Archetype] == 3
+    Kernel.pbMessage(_INTL("Next week's weather: wet")) if $game_variables[:Next_Weather_Archetype] == 4
+    Kernel.pbMessage(_INTL("Next week's weather: blizzard")) if $game_variables[:Next_Weather_Archetype] == 5
+    Kernel.pbMessage(_INTL("Next week's weather: variety")) if $game_variables[:Next_Weather_Archetype] == 6 
   end  
 
   #-----------------------------------------------------------------------------

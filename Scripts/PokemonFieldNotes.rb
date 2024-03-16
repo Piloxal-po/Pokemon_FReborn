@@ -104,7 +104,7 @@ class Scene_FieldNotes
       end
       fieldSeen.push(fieldname)
     end
-    fieldSeen.push("Back")
+    fieldSeen.push(_INTL("Back"))
   end
 end
 

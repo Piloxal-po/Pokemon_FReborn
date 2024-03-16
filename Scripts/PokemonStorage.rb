@@ -1074,7 +1074,7 @@ class PokemonStorageScreen
             oldabil=PBAbilities.getName(pkmn.ability)
             commands=[]
             for i in abils.keys
-              commands.push((abils[1][i]<2 ? "" : "(H) ")+PBAbilities.getName(abils[i]))
+              commands.push((abils[1][i]<2 ? "" : _INTL("(H)") + " ")+PBAbilities.getName(abils[i]))
             end
             commands.push(_INTL("Remove override"))
             msg=[_INTL("Ability {1} is natural.",oldabil),
@@ -2696,7 +2696,7 @@ class PokemonStorageScene
           ## Multi Select start##
           if (ret != nil) && defined?(@aMultiSelectedMons)
             if (ret[0] >= 0) && !@storage[ret[0],ret[1]] && @aMultiSelectedMons.length > 0  && !@sprites["arrow"].heldPokemon
-              iCh = Kernel.pbMessage("What do you want to do?", ["Move multiselection", "Clear multiselection", "Cancel"], 3)
+              iCh = Kernel.pbMessage(_INTL("What do you want to do?"), [_INTL("Move multiselection"), _INTL("Clear multiselection"), _INTL("Cancel")], 3)
               
               if iCh != 2
                 if iCh == 0
@@ -2740,7 +2740,7 @@ class PokemonStorageScene
             end
             if @aMultiSelectedMons.include?(ret)
               numSelected = @aMultiSelectedMons.length
-              iCh = Kernel.pbMessage("What do you want to do?", ["Deselect", "Mass Release", "Cancel"], 3)
+              iCh = Kernel.pbMessage(_INTL("What do you want to do?"), [_INTL("Deselect"), _INTL("Mass Release"), _INTL("Cancel")], 3)
                 if iCh==0
                   @screen.pbHold(ret,true)
                   @sprites["tooltip"].dispose if @aMultiSelectedMons.length <= 0

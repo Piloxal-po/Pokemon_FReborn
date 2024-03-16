@@ -2397,12 +2397,12 @@ ItemHandlers::UseOnPokemon.add(:ABILITYCAPSULE,proc{|item,pokemon,scene|
   for i in abillist.keys
     next if abillist[i] == abilid
     next if abils.include?(abillist[i])
-    commands.push((i < 2 ? "" : "(H) ") + PBAbilities.getName(abillist[i]))
+    commands.push((i < 2 ? "" : _INTL("(H)") + " ") + PBAbilities.getName(abillist[i]))
     command_option.push(i)
     abils.push(abillist[i])
   end
   
-  cmd=scene.pbShowCommands("Which ability would you like to change to?",commands)
+  cmd=scene.pbShowCommands(_INTL("Which ability would you like to change to?"),commands)
   next false if cmd==-1
   
   pokemon.setAbility(command_option[cmd])
