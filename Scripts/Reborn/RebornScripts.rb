@@ -861,12 +861,12 @@ def teamWhatPieces(doublebattle)
     pkmn.piece = :ROOK   if [pkmn.speed,pkmn.attack,pkmn.spatk,pkmn.defense,pkmn.spdef].max == [pkmn.defense,pkmn.spdef].max
   end
   namehash = {
-    :QUEEN =>   "Queen",
-    :PAWN =>    "Pawn",
-    :KING =>    "King",
-    :KNIGHT =>  "Knight",
-    :BISHOP =>  "Bishop",
-    :ROOK =>    "Rook"
+    :QUEEN =>   _INTL("Queen"),
+    :PAWN =>    _INTL("Pawn"),
+    :KING =>    _INTL("King"),
+    :KNIGHT =>  _INTL("Knight"),
+    :BISHOP =>  _INTL("Bishop"),
+    :ROOK =>    _INTL("Rook")
   }
   pkmnparty.each do |pkmn|
     Kernel.pbMessage(_INTL("{1} will be a {2}.", pkmn.name, namehash[pkmn.piece]))

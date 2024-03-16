@@ -518,7 +518,7 @@ class TilePuzzleScene
             (@game==7 && Input.trigger?(Input::C))
         pbRotateTile(@sprites["cursor"].position)
       elsif Input.trigger?(Input::B)
-        if Kernel.pbConfirmMessage("Are you sure you want to quit?")
+        if Kernel.pbConfirmMessage(_INTL("Are you sure you want to quit?"))
           return false
         end
       end

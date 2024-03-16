@@ -1514,7 +1514,7 @@ class PokemonScreen
             oldabil=PBAbilities.getName(pkmn.ability)
             commands=[]
             for i in abils.keys
-              commands.push(( i < 2 ? "" : "(H) ")+PBAbilities.getName(abils[i]))
+              commands.push(( i < 2 ? "" : _INTL("(H)") + " ")+PBAbilities.getName(abils[i]))
             end
             commands.push(_INTL("Remove override"))
             msg=[_INTL("Ability {1} is natural.",oldabil),
@@ -1976,8 +1976,8 @@ class PokemonScreen
         firstName  = PBMoves.getName(aMoves[indexPrev])
         secondName = PBMoves.getName(aMoves[index])  
         
-        firstName = "AAAA" if firstName == "Fly"
-        secondName = "AAAA" if secondName == "Fly"
+        firstName = "AAAA" if firstName == PBMoves.getName(156)  
+        secondName = "AAAA" if secondName == PBMoves.getName(156)  
         
         if firstName > secondName
           aux               = aCmds[index]
@@ -1995,7 +1995,7 @@ class PokemonScreen
     
     #Add "None"
     aMoves = aMoves+[-1]
-    aCmds = aCmds+["None"]
+    aCmds = aCmds+[_INTL("None")]
     
     iC = Kernel.pbMessage(_INTL("Which TM should be used?"), aCmds, aCmds.length)
     if !(aCmds[iC] == "None")

@@ -2929,7 +2929,7 @@ class PokeBattle_Scene
       command=itemscene.pbShowCommands(_INTL("{1} is selected.",itemname),commands)
       if cmdUse>=0 && command==cmdUse
         if $game_switches[:No_Items_Password]==true && (usetype==1 || usetype==3 || $cache.items[item][ITEMPOCKET] == 7)
-          Kernel.pbMessage("The 'No Items' password is on, so items can't be used in battle.")
+          Kernel.pbMessage(_INTL("The 'No Items' password is on, so items can't be used in battle."))
         elsif usetype==1 || usetype==3
           modparty=[]
           for i in 0...6
