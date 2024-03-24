@@ -6,7 +6,7 @@ class PokemonSaveScene
     totalsec = Graphics.time_passed / 40 + (Process.clock_gettime(Process::CLOCK_MONOTONIC) - Graphics.start_playing).to_i
     hour = totalsec / 60 / 60
     min = totalsec / 60 % 60
-    mapname=$game_map.name
+        mapname=$game_map.name
     textColor=["0070F8,78B8E8","E82010,F8A8B8","0070F8,78B8E8"][$Trainer.gender]
     loctext=_INTL("<ac><c2=06644bd2>{1}</c2></ac>",mapname)
     loctext+=_INTL("Player<r><c3={1}>{2}</c3><br>",textColor,$Trainer.name)
@@ -99,13 +99,13 @@ def pbSave(safesave=false)
         end
       end
 
-      # Giving the current save a different name
+      # Giving the current save a different name  
       totalsec = framecount / 40 #Graphics.frame_rate  #Because Turbo exists
       hour = totalsec / 60 / 60
       min = totalsec / 60 % 60
-      mapname = pbGetMapNameFromId(mapid)
+      mapname = $game_map.name.clone
       mapname.gsub!(/[^0-9A-Za-z ]/, '')
-      trainame = trainer.name
+      trainame = trainer.name.clone
       trainame.gsub!(/[^0-9A-Za-z ]/, '')
       savename = "Game" + ($idk[:saveslot] == 1 ? "" : "_" + $idk[:saveslot].to_s)
       savename += " - #{trainame} - #{number} - #{hour}h #{min}m - #{trainer.numbadges} badges - #{mapname}.rxdata"
@@ -127,9 +127,9 @@ def pbSave(safesave=false)
 end
 
 def pbSaveOld(safesave=false)
-  $Trainer.metaID=$PokemonGlobal.playerID
+    $Trainer.metaID=$PokemonGlobal.playerID
   saveClientData
-  begin
+    begin
     File.open(RTP.getSaveSlotPath($idk[:saveslot]),"wb"){|f|
       Marshal.dump($Trainer,f)
       playtime = Graphics.time_passed + 40*(Process.clock_gettime(Process::CLOCK_MONOTONIC) - Graphics.start_playing).to_i #turn into frames
@@ -159,7 +159,7 @@ def pbSaveOld(safesave=false)
   rescue
     return false
   end
-  return true
+    return true
 end
  
 
