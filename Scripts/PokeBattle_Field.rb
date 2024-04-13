@@ -503,7 +503,7 @@ class PokeBattle_Battle
     return if @field.counter == 4 || @field.effect != PBFields::FLOWERGARDENF
     @field.counter += 1
     pbChangeBGSprite
-    pbDisplay(_INTL("{1} grew the garden!",text))
+    pbDisplay(_INTL("{1} grew the garden!", _INTL(text)))
   end
 
   def NWTypeRoll(mon)

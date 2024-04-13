@@ -564,7 +564,7 @@ class PokeBattle_Battler
   def pbCanIncreaseStatStage?(stat,showMessages=false)
     return false if isFainted?
     if pbTooHigh?(stat)
-      @battle.pbDisplay(_INTL("{1}'s {2} won't go any higher!",pbThis,pbGetStatName(stat))) if showMessages
+      @battle.pbDisplay(_INTL("{1}'s " + pbGetStatName(stat) + " won't go any higher!",pbThis)) if showMessages
       return false
     end
     return true
