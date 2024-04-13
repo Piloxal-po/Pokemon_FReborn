@@ -2404,7 +2404,7 @@ class PokeBattle_Battle
     elsif @battlers[index].species == PBSpecies::RAYQUAZA
       pbDisplay(_INTL("{1}'s fervent wish has reached {2}!", ownername, @battlers[index].pbThis))
     else
-      pbDisplay(_INTL("{2} de {1} is reacting to {3}'s {4}!", @battlers[index].pbThis,PBItems.getName(@battlers[index].item), ownername,pbGetMegaRingName(index)))
+      pbDisplay(_INTL("{1}'s {2} is reacting to {3}'s {4}!", @battlers[index].pbThis,PBItems.getName(@battlers[index].item), ownername,pbGetMegaRingName(index)))
     end
 
     # Animation
@@ -4412,7 +4412,7 @@ class PokeBattle_Battle
       # Hydration
       if i.ability == PBAbilities::HYDRATION && ((pbWeather==PBWeather::RAINDANCE && !i.hasWorkingItem(:UTILITYUMBRELLA)) || @field.effect == PBFields::WATERS || @field.effect == PBFields::UNDERWATER)
         if i.status>0
-          pbDisplay(_INTL("{1}'s Hydration cured its {2} problem!",i.pbThis,STATUSTEXTS[i.status]))
+          pbDisplay(_INTL("{1}'s Hydration cured its " + STATUSTEXTS[i.status] + " problem!",i.pbThis))
           i.status=0
           i.statusCount=0
         end
