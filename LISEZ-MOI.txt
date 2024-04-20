@@ -1,0 +1,69 @@
+‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐
+┈                    POKEMON REBORN
+                     VF BETA 1.0
+‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐
+
+A PROPOS DU JEU ET DU DOSSIER
+﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋
+Ceci est le fruit de trois années de travail, nous sommes émus et fiers de vous proposer cette VF, et nous espérons que vous prendrez autant de plaisir à lire les dialogues que nous en avons pris à les traduire !
+
+Ce dossier contient le jeu Pokemon Reborn et la traduction française du jeu. La traduction est encore pour l'instant en BETA. Notez bien que le jeu n'est traduit que jusqu'à la fin du scénario principal. Le postgame (c'est-à-dire tous les événements qui suivent la victoire contre le Maître de la Ligue) reste non traduit. De plus certains détails mineurs restent à ce jour non traduits. Une V1 sortira ultérieurement.
+
+Pokemon Reborn est à jour de la Septième Génération de Pokémon et utilise ses données.
+
+PREREQUIS
+﹋﹋﹋﹋﹋
+  ⋄ Un ordinateur sous Windows
+  ⋄ Le dossier susnommé
+
+JOUER AU JEU
+﹋﹋﹋﹋﹋﹋﹋
+Pour lancer le jeu, double-cliquez sur Game.exe dans le dossier que vous avez téléchargé.
+Le jeu étant à l'origine en anglais, vous devez sélectionner dans le menu principal "Language" puis "Français".
+
+PARTICIPER AU PROJET
+﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋
+Si vous repérez du texte non traduit, une coquille, ou si vous rencontrez un problème quelconque, n'hésitez pas à le signaler sur le serveur Discord, capture d'écran à l'appui si possible.
+
+LIENS UTILES
+﹋﹋﹋﹋﹋﹋﹋
+  ⋄ Discord de l'équipe de traduction : https://discord.com/invite/WkrqS2XT3n
+  ⋄ Site officiel de Pokemon Reborn : https://www.rebornevo.com/pr/index.html/
+  ⋄ Wiki de Pokemon Reborn : https://pokemon-reborn.fandom.com/wiki/Home
+
+EQUIPE DU PROJET
+﹋﹋﹋﹋﹋﹋﹋﹋﹋
+【direction du projet】
+  ⋄ Pragorius
+  ⋄ Teto-Tourtangeau
+
+【développement】
+  ⋄ OxaL
+
+【traduction】
+  ⋄ Teto-Tourtangeau
+  ⋄ Pragorius
+  ⋄ Aphelli
+  ⋄ MaxPoisson
+  ⋄ Lufio
+  ⋄ Blatha
+
+【gestion du fichier de traduction】
+  ⋄ Teto-Tourtangeau
+  ⋄ Qoetsche
+
+【gestion du serveur discord】
+  ⋄ Blatha
+
+【alpha-test】
+  ⋄ Teto-Tourtangeau
+  ⋄ Pragorius
+  ⋄ OxaL
+  ⋄ Torre
+  ⋄ Floriane
+  ⋄ Blatha
+  ⋄ Q-Jei
+
+REMERCIEMENTS
+﹋﹋﹋﹋﹋﹋﹋
+À toutes celles et tous ceux qui ont contribué de près ou de loin à ce projet de fou, à toutes celles et tous ceux qui nous ont remotivés dans les moments difficiles, merci du fond du cœur, vous êtes tous des personnes merveilleuses.
