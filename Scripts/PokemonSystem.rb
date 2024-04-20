@@ -39,7 +39,7 @@ def pbSetUpSystem(tempsave=0,autosave=nil)
     for lang in LANGUAGES
       commands.push(lang[0])
     end
-    if ($idk[:settings].firstTime) 
+    if ($idk[:settings].firstTime == nil) 
       $idk[:settings].firstTime = false
       $idk[:settings].language = Kernel.pbShowCommands(nil,commands)
       saveClientData
