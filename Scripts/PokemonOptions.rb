@@ -226,6 +226,7 @@ class PokemonOptions
   attr_accessor :unrealTimeDiverge
   attr_accessor :unrealTimeClock
   attr_accessor :unrealTimeTimeScale
+  attr_accessor :firstTime
 
   def initialize(system=nil)
     @textspeed   = (system != nil ? system.textspeed : 1)   # Text speed (0=slow, 1=mid, 2=fast)
@@ -251,6 +252,7 @@ class PokemonOptions
     @unrealTimeDiverge        = (system != nil ? system.unrealTimeDiverge : 0)   # Unreal Time on/off
     @unrealTimeClock          = (system != nil ? system.unrealTimeClock : 2)    # Unreal Time Clock (0=always, 1=pause menu, 2=pokegear only)
     @unrealTimeTimeScale      = (system != nil ? system.unrealTimeTimeScale : 30)   # Unreal Time Timescale (default 30x real time)
+    @firstTime      = (system != nil ? system.firstTime : true)   # Unreal Time Timescale (default 30x real time)
   end
 end
 
@@ -280,6 +282,7 @@ class PokemonSystem
   attr_accessor :unrealTimeDiverge
   attr_accessor :unrealTimeClock
   attr_accessor :unrealTimeTimeScale
+  attr_accessor :firstTime
 
   def language
     return (!@language) ? 0 : @language
@@ -319,6 +322,10 @@ class PokemonSystem
     return (!@unrealTimeTimeScale) ? 30 : @unrealTimeTimeScale
   end
 
+  def firstTime
+    return (!@firstTime) ? true : @firstTime
+  end
+
   def autorunning
     return (!@autorunning) ? 0 : @autorunning
   end
@@ -356,6 +363,7 @@ class PokemonSystem
     @unrealTimeDiverge = 0   # Unreal Time on/off
     @unrealTimeClock = 2    # Unreal Time Clock (0=always, 1=pause menu, 2=pokegear only)
     @unrealTimeTimeScale = 30   # Unreal Time Timescale (default 30x real time)
+    @firstTime = true
   end
 
   def reload
