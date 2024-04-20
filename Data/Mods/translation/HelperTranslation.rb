@@ -28,7 +28,7 @@ def _MAPINTL(mapid,*arg)
     end
     pushInHistory(HISTORY_MAPINTL, base, transform)
     return transform
-  end
+end
 
 def pushInHistory(array, base, transform)
     if (!array.include? [base, transform])
@@ -53,7 +53,7 @@ class Messages
     def getFromMapHash(type,key)
         delayedLoad
         if (!@messages || !@messages[0] || !@messages[0][0])
-            appendErrorTranslationFile("errorTranslation.txt", "ERROR LOAD FILE", key)
+            #appendErrorTranslationFile("errorTranslation.txt", "ERROR LOAD FILE", key)
             return key
         end
         id=Messages.stringToKey(key)
@@ -62,7 +62,7 @@ class Messages
         elsif @messages[0][0] && @messages[0][0][id]
           return @messages[0][0][id]
         end
-        appendErrorTranslationFile("errorTranslation.txt", type, key)
+        #appendErrorTranslationFile("errorTranslation.txt", type, key)
         return key
       end
 end
