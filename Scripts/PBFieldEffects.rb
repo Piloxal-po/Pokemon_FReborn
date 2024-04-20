@@ -1044,7 +1044,7 @@ FIELDEFFECTS = {
 		:TYPEMESSAGES => {
 		"La montagne enneigée renforce l'attaque!" => [PBTypes::ROCK,PBTypes::ICE],
 		"Le grand air renforce l'attaque!" => [PBTypes::FLYING],
-		"Le froid affaiblit l'attaque!" => [PBTypes::FIRE]},
+		"TLe froid affaiblit l'attaque!" => [PBTypes::FIRE]},
 		:FIELDCHANGE => {PBFields::MOUNTAIN => PBFields::IGNITEMOVES},
 		:CHANGEMESSAGE => {"La neige fond!" => PBFields::IGNITEMOVES},
 		:STATUSMOVEBOOST => [PBMoves::TAILWIND, PBMoves::SUNNYDAY, PBMoves::HAIL],
