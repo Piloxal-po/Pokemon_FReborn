@@ -23,6 +23,7 @@ def _MAPINTL(mapid,*arg)
     base = arg[0]
     translate=MessageTypes.getFromMapHash(mapid,arg[0])
     transform=translate.clone
+    transform.gsub!(/\[#\]/,"")
     for i in 1...arg.length
         transform.gsub!(/\{#{i}\}/,"#{arg[i]}")
     end
@@ -61,6 +62,10 @@ class Messages
           return @messages[0][type][id]
         elsif @messages[0][0] && @messages[0][0][id]
           return @messages[0][0][id]
+        elsif @messages[0][type] &&  @messages[0][type]["[#]" + id]
+          return @messages[0][type]["[#]" + id]
+        elsif @messages[0][0] && @messages[0][0]["[#]" + id]
+          return @messages[0][0]["[#]" + id]
         end
         appendErrorTranslationFile("errorTranslation.txt", type, key)
         return key
