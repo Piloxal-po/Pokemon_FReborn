@@ -14,35 +14,40 @@ class Game_CommonEvent
     @interpreter = nil
     refresh
   end
+
   #-----------------------------------------------------------------------------
   # * Get Name
   #-----------------------------------------------------------------------------
   def name
     return $cache.RXevents[@common_event_id].name
   end
+
   #-----------------------------------------------------------------------------
   # * Get Trigger
   #-----------------------------------------------------------------------------
   def trigger
     return $cache.RXevents[@common_event_id].trigger
   end
+
   #-----------------------------------------------------------------------------
   # * Get Condition Switch ID
   #-----------------------------------------------------------------------------
   def switch_id
     return $cache.RXevents[@common_event_id].switch_id
   end
+
   #-----------------------------------------------------------------------------
   # * Get List of Event Commands
   #-----------------------------------------------------------------------------
   def list
     return $cache.RXevents[@common_event_id].list
   end
+
   #-----------------------------------------------------------------------------
   # * Checks if switch is on
   #-----------------------------------------------------------------------------
   def switchIsOn?(id)
-    switchname=$cache.RXsystem.switches[id]
+    switchname = $cache.RXsystem.switches[id]
     return false if !switchname
     if switchname[/^s\:/]
       return eval($~.post_match)
@@ -50,6 +55,7 @@ class Game_CommonEvent
       return $game_switches[id]
     end
   end
+
   #-----------------------------------------------------------------------------
   # * Refresh
   #-----------------------------------------------------------------------------
@@ -63,10 +69,11 @@ class Game_CommonEvent
       @interpreter = nil
     end
   end
-  
+
   def interpreter
     return @interpreter
   end
+
   #-----------------------------------------------------------------------------
   # * Frame Update
   #-----------------------------------------------------------------------------

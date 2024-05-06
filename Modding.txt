@@ -1,0 +1,12 @@
+Modding
+-------
+
+Files in the patch directory override the files from the base game. This should work for all files in Audio, Graphics, Fonts and Data directories.
+
+Scripts cannot be overrided this way, but you can add extra scripts by adding them into patch/Mods directory (works exactly the same as the old Data/Mods folder, just in a different location).
+
+For example, patch/Graphics/Battlers/bulbasaur.png would take precedence over the normal Graphics/Battlers/bulbasaur.png.
+You can use this for custom shinies or any other mods, instead of replacing the files in-game. 
+Note that any file structure beyond the main directory (reborn folder / patch directory) has to be copied exactly, in addition to the file name, for the game to recognize your changes.
+
+This should be the preferred way to install mods from now on. Do not replace base game files if you don't have to.

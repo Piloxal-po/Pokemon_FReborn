@@ -2,29 +2,31 @@ class Game_Character
   attr_reader   :id
   attr_reader   :x
   attr_reader   :y
-  attr_reader   :real_x 
+  attr_reader   :real_x
   attr_reader   :real_y
-  attr_reader   :tile_id  
+  attr_reader   :tile_id
   attr_accessor :character_name
-  attr_accessor :character_hue 
-  attr_accessor   :opacity   
-  attr_reader   :blend_type 
-  attr_reader   :direction  
-  attr_reader   :pattern    
-  attr_reader   :move_route_forcing   
-  attr_accessor :through            
-  attr_accessor :animation_id       
-  attr_accessor :transparent        
+  attr_accessor :character_hue
+  attr_accessor :opacity
+  attr_reader   :blend_type
+  attr_reader   :direction
+  attr_reader   :pattern
+  attr_reader   :move_route_forcing
+  attr_accessor :through
+  attr_accessor :animation_id
+  attr_accessor :transparent
   attr_reader   :map
   attr_accessor :move_speed
   attr_accessor :walk_anime
+  attr_accessor :step_anime
+  attr_accessor :direction_fix
 
   def map
     return @map
   end
 
-  def initialize(map=nil)
-    @map=map
+  def initialize(map = nil)
+    @map = map
     @id = 0
     @x = 0
     @y = 0
@@ -63,8 +65,27 @@ class Game_Character
     @prelock_direction = 0
   end
 
+  # @width and @height replaced by 1s for compatibility
+  def at_coordinate?(check_x, check_y)
+    return check_x >= @x && check_x < @x + 1 &&
+           check_y > @y - 1 && check_y <= @y
+  end
+
+  def in_line_with_coordinate?(check_x, check_y)
+    return (check_x >= @x && check_x < @x + 1) ||
+           (check_y > @y - 1 && check_y <= @y)
+  end
+
+  def each_occupied_tile
+    for i in @x...(@x + 1)
+      for j in (@y - 1 + 1)..@y
+        yield i, j
+      end
+    end
+  end
+
   def moving?
-    return (@real_x != @x*128 || @real_y != @y*128)
+    return (@real_x != @x * 128 || @real_y != @y * 128)
   end
 
   def jumping?
@@ -72,7 +93,7 @@ class Game_Character
   end
 
   def pattern=(value)
-    @pattern=value
+    @pattern = value
   end
 
   def straighten
@@ -96,11 +117,12 @@ class Game_Character
     move_type_custom
   end
 
-  def passableEx?(x, y, d, strict=false)
+  def passableEx?(x, y, d, strict = false)
     new_x = x + (d == 6 ? 1 : d == 4 ? -1 : 0)
     new_y = y + (d == 2 ? 1 : d == 8 ? -1 : 0)
     return false unless self.map.valid?(new_x, new_y)
     return true if @through
+
     if strict
       return false unless self.map.passableStrict?(x, y, d, self)
       return false unless self.map.passableStrict?(new_x, new_y, 10 - d, self)
@@ -123,18 +145,19 @@ class Game_Character
     return true
   end
 
-  def passable?(x,y,d)
-    return passableEx?(x,y,d,false)
+  def passable?(x, y, d)
+    return passableEx?(x, y, d, false)
   end
 
-  def passableStrict?(x,y,d)
-    return passableEx?(x,y,d,true)
+  def passableStrict?(x, y, d)
+    return passableEx?(x, y, d, true)
   end
 
   def lock
     if @locked
       return
     end
+
     @prelock_direction = @direction
     turn_toward_player
     @locked = true
@@ -148,6 +171,7 @@ class Game_Character
     unless @locked
       return
     end
+
     @locked = false
     unless @direction_fix
       if @prelock_direction != 0
@@ -158,12 +182,12 @@ class Game_Character
 
   def triggerLeaveTile
     if @oldX && @oldY && @oldMap &&
-         (@oldX!=self.x || @oldY!=self.y || @oldMap!=self.map.map_id)
-      Events.onLeaveTile.trigger(self,self,@oldMap,@oldX,@oldY)
-     end
-     @oldX=self.x
-     @oldY=self.y
-     @oldMap=self.map.map_id
+       (@oldX != self.x || @oldY != self.y || @oldMap != self.map.map_id)
+      Events.onLeaveTile.trigger(self, self, @oldMap, @oldX, @oldY)
+    end
+    @oldX = self.x
+    @oldY = self.y
+    @oldMap = self.map.map_id
   end
 
   def moveto(x, y)
@@ -194,13 +218,14 @@ class Game_Character
   end
 
   def screen_y_ground
-    return ( @real_y / 4 - self.map.display_y.to_i / 4) + 32
+    return (@real_y / 4 - self.map.display_y.to_i / 4) + 32
   end
 
   def screen_z(height = 0)
     if @always_on_top
       return 999
     end
+
     z = screen_y_ground
     if @tile_id > 0
       return z + self.map.priorities[@tile_id] * 32
@@ -214,8 +239,9 @@ class Game_Character
     if @tile_id > 0 || @always_on_top
       return 0
     end
-    xbehind=(@direction==4) ? @x+1 : (@direction==6) ? @x-1 : @x
-    ybehind=(@direction==8) ? @y+1 : (@direction==2) ? @y-1 : @y
+
+    xbehind = (@direction == 4) ? @x + 1 : (@direction == 6) ? @x - 1 : @x
+    ybehind = (@direction == 8) ? @y + 1 : (@direction == 2) ? @y - 1 : @y
     if @jump_count <= 0 && self.map.deepBush?(@x, @y) && self.map.deepBush?(xbehind, ybehind)
       return 32
     elsif @jump_count <= 0 && self.map.bush?(@x, @y) && !moving?
@@ -229,15 +255,16 @@ class Game_Character
     return self.map.terrain_tag(@x, @y)
   end
 
-# Updating stuff ###############################################################
+  # Updating stuff ###############################################################
   def update
     return if $game_temp.menu_calling
-    #cass note: pulled from Walk_Run
+
+    # cass note: pulled from Walk_Run
     if @dependentEvents
       for i in 0...@dependentEvents.length
-        if @dependentEvents[i][0]==$game_map.map_id &&
-           @dependentEvents[i][1]==self.id
-          @move_speed=$game_player.move_speed
+        if @dependentEvents[i][0] == $game_map.map_id &&
+           @dependentEvents[i][1] == self.id
+          @move_speed = $game_player.move_speed
           break
         end
       end
@@ -246,11 +273,13 @@ class Game_Character
       update_jump
     elsif moving?
       update_move
-    elsif !(self==$game_player && $PokemonGlobal.fishing)
+    elsif self != $game_player || !$PokemonGlobal.fishing
       update_stop
     end
 
-    update_pattern unless self==$game_player && $PokemonGlobal.fishing
+    Blindstep.character_update() if $game_switches[:Blindstep] && self == $game_player
+
+    update_pattern if self != $game_player || !$PokemonGlobal.fishing
     if @wait_count > 0
       @wait_count -= 1
       return
@@ -262,6 +291,7 @@ class Game_Character
     if @starting || @locked
       return
     end
+
     if @stop_count > (40 - @move_frequency * 2) * (6 - @move_frequency)
       case @move_type
         when 1 then move_type_random
@@ -270,15 +300,16 @@ class Game_Character
       end
     end
   end
-  
+
   def update_pattern
     return if @lock_pattern
-    @anime_count = 20 if !@step_anime && @stop_count>0
-    if @anime_count > 18-@move_speed*3
-      if !@step_anime && @stop_count>0
+
+    @anime_count = 20 if !@step_anime && @stop_count > 0
+    if @anime_count > 18 - @move_speed * 3
+      if !@step_anime && @stop_count > 0
         @pattern = @original_pattern
       else
-        @pattern = (@pattern+1)%4
+        @pattern = (@pattern + 1) % 4
       end
       @anime_count = 0
     end
@@ -289,12 +320,12 @@ class Game_Character
     @real_x = (@real_x * @jump_count + @x * 128) / (@jump_count + 1)
     @real_y = (@real_y * @jump_count + @y * 128) / (@jump_count + 1)
     if !jumping? && !moving?
-      Events.onStepTakenFieldMovement.trigger(self,self)
+      Events.onStepTakenFieldMovement.trigger(self, self)
     end
   end
 
   def update_move
-    distance = 2 ** @move_speed
+    distance = 2**@move_speed
     at_x = @x * 128
     at_y = @y * 128
     if at_y > @real_y
@@ -309,7 +340,7 @@ class Game_Character
     end
     if !jumping?
       if !moving?
-        Events.onStepTakenFieldMovement.trigger(self,self)
+        Events.onStepTakenFieldMovement.trigger(self, self)
       end
     end
     if @walk_anime
@@ -323,8 +354,8 @@ class Game_Character
     if @step_anime
       @anime_count += 1
     elsif @pattern != @original_pattern
-      @pattern=@original_pattern
-      @anime_count=0
+      @pattern = @original_pattern
+      @anime_count = 0
     end
     unless @starting || lock?
       @stop_count += 1
@@ -335,7 +366,7 @@ class Game_Character
     case rand(6)
       when 0..3
         move_random
-      when 4 
+      when 4
         move_forward
       when 5
         @stop_count = 0
@@ -352,11 +383,11 @@ class Game_Character
       return
     end
     case rand(6)
-      when 0..3 
+      when 0..3
         move_toward_player
-      when 4 
+      when 4
         move_random
-      when 5  
+      when 5
         move_forward
     end
   end
@@ -365,111 +396,111 @@ class Game_Character
     if jumping? || moving?
       return
     end
+
     while @move_route_index < @move_route.list.size
-      #KotH wait
+      # KotH wait
       if $game_switches[:In_Battle] || $game_switches[:Mid_quicksave]
-        @wait_count +=1
+        @wait_count += 1
         return
       else
         command = @move_route.list[@move_route_index]
       end
-      if command.code == 0
-        if @move_route.repeat
-          @move_route_index = 0
+      apply_move_command(command)
+      return if command.code <= 26
+    end
+  end
+
+  def apply_move_command(command)
+    if command.code == 0
+      if @move_route.repeat
+        @move_route_index = 0
+      end
+      unless @move_route.repeat
+        if @move_route_forcing && !@move_route.repeat
+          @move_route_forcing = false
+          @move_route = @original_move_route
+          @move_route_index = @original_move_route_index
+          @original_move_route = nil
         end
-        unless @move_route.repeat
-          if @move_route_forcing && !@move_route.repeat 
-            @move_route_forcing = false
-            @move_route = @original_move_route
-            @move_route_index = @original_move_route_index 
-            @original_move_route = nil
+        @stop_count = 0
+      end
+      return
+    elsif command.code <= 14
+      case command.code
+        when 1 then move_down
+        when 2 then move_left
+        when 3 then move_right
+        when 4 then move_up
+        when 5 then move_lower_left
+        when 6 then move_lower_right
+        when 7 then move_upper_left
+        when 8 then move_upper_right
+        when 9 then move_random
+        when 10 then move_toward_player
+        when 11 then move_away_from_player
+        when 12 then move_forward(true)
+        when 13 then move_backward
+        when 14 then jump(command.parameters[0], command.parameters[1])
+      end
+      if !@move_route.skippable && !moving? && !jumping?
+        return
+      end
+    elsif command.code == 15
+      @wait_count = command.parameters[0] * 2 - 1
+    elsif command.code >= 16 && command.code <= 26
+      case command.code
+        when 16 then turn_down
+        when 17 then turn_left
+        when 18 then turn_right
+        when 19 then turn_up
+        when 20 then turn_right_90
+        when 21 then turn_left_90
+        when 22 then turn_180
+        when 23 then turn_right_or_left_90
+        when 24 then turn_random
+        when 25 then turn_toward_player
+        when 26 then turn_away_from_player
+      end
+    elsif command.code >= 27
+      case command.code
+        when 27 then $game_switches[command.parameters[0]] = true; self.map.need_refresh = true
+        when 28 then $game_switches[command.parameters[0]] = false; self.map.need_refresh = true
+        when 29 then @move_speed = command.parameters[0]
+        when 30 then @move_frequency = command.parameters[0]
+        when 31 then @walk_anime = true
+        when 32 then @walk_anime = false
+        when 33 then @step_anime = true
+        when 34 then @step_anime = false
+        when 35 then @direction_fix = true
+        when 36 then @direction_fix = false
+        when 37 then @through = true
+        when 38 then @through = false
+        when 39 then @always_on_top = true
+        when 40 then @always_on_top = false
+        when 41
+          @tile_id = 0
+          @character_name = command.parameters[0]
+          @character_hue = command.parameters[1]
+          if @original_direction != command.parameters[2]
+            @direction = command.parameters[2]
+            @original_direction = @direction
+            @prelock_direction = 0
           end
-          @stop_count = 0
-        end
-        return
-      end
-      if command.code <= 14
-        case command.code
-          when 1 then move_down
-          when 2 then move_left
-          when 3 then move_right
-          when 4 then move_up
-          when 5 then move_lower_left
-          when 6 then move_lower_right
-          when 7 then move_upper_left
-          when 8 then move_upper_right
-          when 9 then move_random
-          when 10 then move_toward_player
-          when 11 then move_away_from_player
-          when 12 then move_forward(true)
-          when 13 then move_backward
-          when 14 then jump(command.parameters[0], command.parameters[1])
-        end
-        if !@move_route.skippable && !moving? && !jumping?
-          return
-        end
-        @move_route_index += 1
-        return
-      end
-      if command.code == 15
-        @wait_count = command.parameters[0] * 2 - 1
-        @move_route_index += 1
-        return
-      end
-      if command.code >= 16 && command.code <= 26
-        case command.code
-          when 16 then turn_down
-          when 17 then turn_left
-          when 18 then turn_right
-          when 19 then turn_up
-          when 20 then turn_right_90
-          when 21 then turn_left_90
-          when 22 then turn_180
-          when 23 then turn_right_or_left_90
-          when 24 then turn_random
-          when 25 then turn_toward_player
-          when 26 then turn_away_from_player
-        end
-        @move_route_index += 1
-        return
-      end
-      if command.code >= 27
-        case command.code
-          when 27 then $game_switches[command.parameters[0]] = true; self.map.need_refresh = true
-          when 28 then $game_switches[command.parameters[0]] = false; self.map.need_refresh = true
-          when 29 then @move_speed = command.parameters[0]
-          when 30 then @move_frequency = command.parameters[0]
-          when 31 then @walk_anime = true
-          when 32 then @walk_anime = false
-          when 33 then @step_anime = true
-          when 34 then @step_anime = false
-          when 35 then @direction_fix = true
-          when 36 then @direction_fix = false
-          when 37 then @through = true
-          when 38 then @through = false
-          when 39 then @always_on_top = true
-          when 40 then @always_on_top = false
-          when 41
-            @tile_id = 0
-            @character_name = command.parameters[0]
-            @character_hue = command.parameters[1]
-            if @original_direction != command.parameters[2]
-              @direction = command.parameters[2]
-              @original_direction = @direction
-              @prelock_direction = 0
-            end
-            if @original_pattern != command.parameters[3]
-              @pattern = command.parameters[3]
-              @original_pattern = @pattern
-            end
-          when 42 then @opacity = command.parameters[0]
-          when 43 then @blend_type = command.parameters[0]
-          when 44 then pbSEPlay(command.parameters[0])
-          when 45 then result = eval(command.parameters[0])
-        end
-        @move_route_index += 1
+          if @original_pattern != command.parameters[3]
+            @pattern = command.parameters[3]
+            @original_pattern = @pattern
+          end
+        when 42
+          @opacity = command.parameters[0]
+          if $PokemonMap && !self.is_a?(Game_Player)
+            $PokemonMap.addMovedEvent(self.id)
+          end
+        when 43 then @blend_type = command.parameters[0]
+        when 44 then pbSEPlay(command.parameters[0])
+        when 45 then result = eval(command.parameters[0])
       end
     end
+    @move_route_index += 1
   end
 
   def increase_steps
@@ -477,7 +508,7 @@ class Game_Character
     triggerLeaveTile()
   end
 
-# Movement stuff ###############################################################
+  # Movement stuff ###############################################################
   def move_down(turn_enabled = true)
     if turn_enabled
       turn_down
@@ -487,7 +518,7 @@ class Game_Character
       @y += 1
       increase_steps
     else
-      check_event_trigger_touch(@x, @y+1)
+      check_event_trigger_touch(@x, @y + 1)
     end
   end
 
@@ -500,7 +531,7 @@ class Game_Character
       @x -= 1
       increase_steps
     else
-      check_event_trigger_touch(@x-1, @y)
+      check_event_trigger_touch(@x - 1, @y)
     end
   end
 
@@ -513,7 +544,7 @@ class Game_Character
       @x += 1
       increase_steps
     else
-      check_event_trigger_touch(@x+1, @y)
+      check_event_trigger_touch(@x + 1, @y)
     end
   end
 
@@ -526,7 +557,7 @@ class Game_Character
       @y -= 1
       increase_steps
     else
-      check_event_trigger_touch(@x, @y-1)
+      check_event_trigger_touch(@x, @y - 1)
     end
   end
 
@@ -539,7 +570,7 @@ class Game_Character
       @x -= 1
       @y += 1
       if self.is_a?(Game_Player)
-        $PokemonTemp.dependentEvents.pbMoveDependentEvents(@x+1,@y-1)
+        $PokemonTemp.dependentEvents.pbMoveDependentEvents(@x + 1, @y - 1)
       end
       increase_steps
     end
@@ -554,7 +585,7 @@ class Game_Character
       @x += 1
       @y += 1
       if self.is_a?(Game_Player)
-        $PokemonTemp.dependentEvents.pbMoveDependentEvents(@x-1,@y-1)
+        $PokemonTemp.dependentEvents.pbMoveDependentEvents(@x - 1, @y - 1)
       end
       increase_steps
     end
@@ -569,7 +600,7 @@ class Game_Character
       @x -= 1
       @y -= 1
       if self.is_a?(Game_Player)
-        $PokemonTemp.dependentEvents.pbMoveDependentEvents(@x+1,@y+1)
+        $PokemonTemp.dependentEvents.pbMoveDependentEvents(@x + 1, @y + 1)
       end
       increase_steps
     end
@@ -584,7 +615,7 @@ class Game_Character
       @x += 1
       @y -= 1
       if self.is_a?(Game_Player)
-        $PokemonTemp.dependentEvents.pbMoveDependentEvents(@x-1,@y+1)
+        $PokemonTemp.dependentEvents.pbMoveDependentEvents(@x - 1, @y + 1)
       end
       increase_steps
     end
@@ -605,6 +636,7 @@ class Game_Character
     if sx == 0 && sy == 0
       return
     end
+
     abs_sx = sx.abs
     abs_sy = sy.abs
     if abs_sx == abs_sy
@@ -629,6 +661,7 @@ class Game_Character
     if sx == 0 && sy == 0
       return
     end
+
     abs_sx = sx.abs
     abs_sy = sy.abs
     if abs_sx == abs_sy
@@ -647,7 +680,7 @@ class Game_Character
     end
   end
 
-  def move_forward(turn_enabled_overwrite=false)
+  def move_forward(turn_enabled_overwrite = false)
     case @direction
       when 2
         move_down(turn_enabled_overwrite)
@@ -664,14 +697,13 @@ class Game_Character
     last_direction_fix = @direction_fix
     @direction_fix = true
     case @direction
-      when 2 
+      when 2
         move_up(false)
-      when 4 
+      when 4
         move_right(false)
-      when 6 
+      when 6
         move_left(false)
-        
-      when 8 
+      when 8
         move_down(false)
     end
     @direction_fix = last_direction_fix
@@ -687,8 +719,8 @@ class Game_Character
     end
     new_x = @x + x_plus
     new_y = @y + y_plus
-    oldX=@x
-    oldY=@y
+    oldX = @x
+    oldY = @y
     if (x_plus == 0 && y_plus == 0) || passable?(new_x, new_y, 0)
       straighten
       @x = new_x
@@ -696,12 +728,12 @@ class Game_Character
       distance = [4, x_plus * x_plus + y_plus * y_plus].max
       @jump_peak = 6 + distance - @move_speed
       @jump_peak = @jump_peak.floor
-      #print @jump_peak
-      @jump_peak = [@jump_peak,18].min #maybe don't yeet the player off the entire top of the screen if that's cool with everyone?
+      # print @jump_peak
+      @jump_peak = [@jump_peak, 18].min # maybe don't yeet the player off the entire top of the screen if that's cool with everyone?
       @jump_count = @jump_peak * 2
       @stop_count = 0
       if self.is_a?(Game_Player)
-        $PokemonTemp.dependentEvents.pbMoveDependentEvents(oldX,oldY)
+        $PokemonTemp.dependentEvents.pbMoveDependentEvents(oldX, oldY)
       end
       triggerLeaveTile()
     end
@@ -709,10 +741,10 @@ class Game_Character
 
   def turnGeneric(dir)
     unless @direction_fix
-      oldDirection=@direction
-      @direction=dir
-      @stop_count=0
-      if dir!=oldDirection
+      oldDirection = @direction
+      @direction = dir
+      @stop_count = 0
+      if dir != oldDirection
         pbCheckEventTriggerAfterTurning
       end
     end
@@ -792,6 +824,7 @@ class Game_Character
     if sx == 0 && sy == 0
       return
     end
+
     if sx.abs > sy.abs
       sx > 0 ? turn_left : turn_right
     else
@@ -805,6 +838,7 @@ class Game_Character
     if sx == 0 && sy == 0
       return
     end
+
     if sx.abs > sy.abs
       sx > 0 ? turn_right : turn_left
     else

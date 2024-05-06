@@ -1,17 +1,18 @@
 class Hangup < Exception; end
 
-def strsplit(str,re)
-  ret=[]
-  tstr=str
-  while re=~tstr
-    ret[ret.length]=$~.pre_match
-    tstr=$~.post_match
+def strsplit(str, re)
+  ret = []
+  tstr = str
+  while re =~ tstr
+    ret[ret.length] = $~.pre_match
+    tstr = $~.post_match
   end
-  ret[ret.length]=tstr if ret.length
+  ret[ret.length] = tstr if ret.length
   return ret
 end
 
 def canonicalize(c)
+  return c
   return System.normalize(c)
 end
 
@@ -40,8 +41,10 @@ module RPG
 
     def self.fromCache(i)
       return nil if !@cache.include?(i)
+
       obj = @cache[i]
       return nil if obj && obj.disposed?
+
       return obj
     end
 
@@ -126,26 +129,27 @@ class BitmapWrapper < Bitmap
 
   def dispose
     return if self.disposed?
+
     @refcount -= 1
     super if @refcount <= 0 && !never_dispose
   end
 
   def initialize(*arg)
     super
-    @refcount=1
+    @refcount = 1
   end
 
   def resetRef # internal
-    @refcount=1
+    @refcount = 1
   end
 
   def copy
-    bm=self.clone
+    bm = self.clone
     bm.resetRef
     return bm
   end
 
   def addRef
-    @refcount+=1
+    @refcount += 1
   end
 end

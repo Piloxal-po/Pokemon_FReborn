@@ -2,10 +2,11 @@ RandData/*
 PBS/*
 Game.rxproj
 Data/debuglog.txt
-Data/Mods/PokeRadar.rb
-Data/Mods/SWM - ItemRadar.png
-Data/Mods/SWM - ItemRadar.rb
-Data/Mods/SWM - TypeBattleIcons.png
-Data/Mods/SWM - TypeBattleIcons.rb
+patch/Mods/PokeRadar.rb
+patch/Mods/SWM - ItemRadar.png
+patch/Mods/SWM - ItemRadar.rb
+patch/Mods/SWM - TypeBattleIcons.png
+patch/Mods/SWM - TypeBattleIcons.rb
+patch/Mods/Debug.rb
 Graphics/Pictures/Pokedex/pokedexTypesTINY.png
 errorTranslation.txt

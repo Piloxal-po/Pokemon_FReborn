@@ -4,38 +4,40 @@ class Game_Player
       when 2
         return self.pattern
       when 4
-        return 4+self.pattern
+        return 4 + self.pattern
       when 6
-        return 8+self.pattern
+        return 8 + self.pattern
       when 8
-        return 12+self.pattern
+        return 12 + self.pattern
       else
         return 0
     end
   end
 
-  def setDefaultCharName(chname,pattern)
-    return if pattern<0 || pattern>=16
-    @defaultCharacterName=chname
-    @direction=[2,4,6,8][pattern/4]
-    @pattern=pattern%4
+  def setDefaultCharName(chname, pattern)
+    return if pattern < 0 || pattern >= 16
+
+    @defaultCharacterName = chname
+    @direction = [2, 4, 6, 8][pattern / 4]
+    @pattern = pattern % 4
   end
 
   def pbCanRun?
-    return false if $game_temp.menu_calling 
-    terrain=pbGetTerrainTag
-    $idk[:settings].autorunning = 0 if $idk[:settings].autorunning.nil?
-    autorunning = $idk[:settings].autorunning == 0 ? true : false
-    if (autorunning != Input.press?(Input::A)) 
-      if !pbMapInterpreterRunning? && !@move_route_forcing &&
-        $PokemonGlobal.runningShoes && $PokemonGlobal &&
-        !$PokemonGlobal.diving && !$PokemonGlobal.surfing &&
-        !$PokemonGlobal.bicycle && terrain!=PBTerrain::TallGrass &&
-        terrain!=PBTerrain::Ice && !$game_switches[:Riding_Tauros]
-        return true
-      end
+    return false if $game_temp.menu_calling
+
+    terrain = pbGetTerrainTag
+    autorunning = $Settings.autorunning == 0 ? true : false
+
+    # Flip autorunning if Gamepad R2 button is pressed.
+    if !$joiplay && Input::Controller.axes_trigger[1] >= 0.1
+      autorunning = !autorunning
     end
-    return false
+
+    return autorunning && !pbMapInterpreterRunning? && !@move_route_forcing &&
+           $PokemonGlobal && $PokemonGlobal.runningShoes &&
+           !$PokemonGlobal.diving && !$PokemonGlobal.surfing && !$PokemonGlobal.lavasurfing &&
+           !$PokemonGlobal.bicycle && !$game_switches[:Riding_Tauros] &&
+           terrain != PBTerrain::TallGrass && terrain != PBTerrain::Ice
   end
 
   def pbIsRunning?
@@ -44,26 +46,27 @@ class Game_Player
 
   def character_name
     if !@defaultCharacterName
-      @defaultCharacterName=""
+      @defaultCharacterName = ""
     end
-    if @defaultCharacterName!=""
+    if @defaultCharacterName != ""
       return @defaultCharacterName
     end
-    if !moving? && !@move_route_forcing 
-      meta=pbGetMetadata(0,MetadataPlayerA+$PokemonGlobal.playerID)
-      if $PokemonGlobal.playerID>=0 && meta && !$PokemonGlobal.bicycle && !$PokemonGlobal.diving && !$PokemonGlobal.surfing
+
+    if !moving? && !@move_route_forcing
+      if $PokemonGlobal.playerID >= 0 && !$PokemonGlobal.bicycle && !$PokemonGlobal.diving && !$PokemonGlobal.surfing && !$PokemonGlobal.lavasurfing
         input_dir4 = Input.dir4
-        if meta[4] && meta[4]!="" && input_dir4!=0 
-          if passable?(@x,@y,input_dir4) && pbCanRun?
-            # Display running character sprite
-            @character_name=pbGetPlayerCharset(meta,4)
-          else
-            # Display normal character sprite 
-            @character_name=pbGetPlayerCharset(meta,1)
+        if input_dir4 != 0 && passable?(@x, @y, input_dir4) && pbCanRun?
+          # Display running character sprite
+          unless @lastGraphic == :run
+            @character_name = pbGetPlayerCharset(:run)
+            @lastGraphic = :run
           end
         else
-          # Display normal character sprite 
-          @character_name=pbGetPlayerCharset(meta,1)
+          # Display normal character sprite
+          unless @lastGraphic == :walk
+            @character_name = pbGetPlayerCharset(:walk)
+            @lastGraphic = :walk
+          end
         end
       end
     end
@@ -73,27 +76,29 @@ class Game_Player
   alias update_old update
 
   def update
-    if pbGetTerrainTag==PBTerrain::Ice
+    if pbGetTerrainTag == PBTerrain::Ice
       @move_speed = 5.0
     elsif !moving? && !@move_route_forcing && $PokemonGlobal
-      if $PokemonGlobal.bicycle        
+      if $PokemonGlobal.bicycle
         @move_speed = 6.0
       elsif $PokemonGlobal.surfing
         @move_speed = 5.0
-      elsif $game_switches[291]
+      elsif $PokemonGlobal.lavasurfing
+        @move_speed = 5.0
+      elsif $game_switches[:Riding_Tauros]
         @move_speed = 5.5
       elsif pbCanRun?
-        if (Kernel.pbFacingTerrainTag==PBTerrain::SandDune)
+        if (Kernel.pbFacingTerrainTag == PBTerrain::SandDune)
           @move_speed = 3.8
-        else          
+        else
           @move_speed = 5.0
-        end                
+        end
       else
-        if (Kernel.pbFacingTerrainTag==PBTerrain::SandDune)
+        if (Kernel.pbFacingTerrainTag == PBTerrain::SandDune)
           @move_speed = 3.0
-        else          
+        else
           @move_speed = 4.0
-        end                
+        end
       end
     end
     update_old

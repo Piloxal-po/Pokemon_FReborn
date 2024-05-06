@@ -1,10 +1,10 @@
-$boottime = Time.now
 #===============================================================================
 # * The maximum level Pokémon can reach.
 # * The level of newly hatched Pokémon.
 # * The odds of a newly generated Pokémon being shiny (out of 65536).
 # * The odds of a wild Pokémon/bred egg having Pokérus (out of 65536).
 #===============================================================================
+
 MAXIMUMLEVEL       = 150
 EGGINITIALLEVEL    = 1
 SHINYPOKEMONCHANCE = 700
@@ -27,7 +27,7 @@ DEFAULTSCREENZOOM   = 1.0
 FULLSCREENBORDERCROP = false
 BORDERWIDTH          = 80
 BORDERHEIGHT         = 80
-MAPVIEWMODE         = 1
+MAPVIEWMODE = 1
 # To forbid the player from changing the screen size themselves, quote out or
 # delete the relevant bit of code in the PokemonOptions script section.
 
@@ -65,9 +65,9 @@ NEWBERRYPLANTS        = true
 #   Moving between two maps that have the exact same name won't show the
 #      location signpost anyway, so you don't need to list those maps here.
 #===============================================================================
- NOSIGNPOSTS =  [119,125,   119,124,   124,120, 120,121, 85,87,   94,95,   
-     238,545,   238,546,    638,639,    638,647,   85,88,     85,91,    85,89,
-     85,90] 
+NOSIGNPOSTS = [119, 125, 119, 124, 124, 120, 120, 121, 85, 87, 94, 95,
+               238, 545, 238, 546, 638, 639, 638, 647, 85, 88, 85, 91, 85, 89,
+               85, 90]
 
 #===============================================================================
 # * Whether outdoor maps should be shaded according to the time of day.
@@ -113,20 +113,24 @@ BADGEFORROCKCLIMB      = 16
 # * The pocket number containing all berries.  Is opened when choosing one to
 #      plant, and cannot view a different pocket while doing so.
 #===============================================================================
-def pbPocketNames; return ["",
-   _INTL("Items"),
-   _INTL("Medicine"),
-   _INTL("Poké Balls"),
-   _INTL("TMs & HMs"),
-   _INTL("Berries"),
-   _INTL("Crystals"),
-   _INTL("Battle Items"),
-   _INTL("Key Items")
-]; end
-MAXPOCKETSIZE  = [0,-1,-1,-1,-1,-1,-1,-1,-1]
+def pbPocketNames
+  return [
+    "",
+    _INTL("Items"),
+    _INTL("Medicine"),
+    _INTL("Poké Balls"),
+    _INTL("TMs & HMs"),
+    _INTL("Berries"),
+    _INTL("Crystals"),
+    _INTL("Favorite Items"),
+    _INTL("Key Items")
+  ]
+end
 BAGMAXPERSLOT  = 999
-POCKETAUTOSORT = [0,false,false,false,true,true,false,false,false]
+POCKETAUTOSORT = [0, false, false, false, true, true, false, false, false]
+TMPOCKET       = 4
 BERRYPOCKET    = 5
+FAVORITEPOCKET = 7
 
 #===============================================================================
 # * The name of the person who created the Pokémon storage system.
@@ -162,10 +166,12 @@ STORAGEBOXES = 50
 #      of 0 (e.g. Victini).
 #===============================================================================
 DEXDEPENDSONLOCATION = false
-def pbDexNames; return [
-   [_INTL("Reborn Pokédex"),0],
-   _INTL("National Pokédex")
-]; end
+def pbDexNames
+  return [
+    [_INTL("Reborn Pokédex"), 0],
+    _INTL("National Pokédex")
+  ]
+end
 ALWAYSSHOWALLFORMS = false
 DEXINDEXOFFSETS    = []
 
@@ -194,42 +200,43 @@ MAXCOINS     = 99_999
 #      - Roaming areas specifically for this Pokémon (optional). (areas:)
 #===============================================================================
 RoamingAreas = {
-   794 => [ 715, 412],
-   715 => [ 412, 794],
-   412 => [ 715, 404, 794],
-   404 => [ 412, 360, 439],
-   360 => [ 439, 288],
-   439 => [ 404, 360, 688],
-   290 => [ 288, 282, 527, 291],
-   291 => [ 288, 282, 335, 290],
-   288 => [ 291, 290, 360],
-   282 => [ 291, 290, 232, 292 ],
-   292 => [ 288, 291, 335],
-   335 => [ 292, 291],
-   232 => [ 282, 234, 573],
-   234 => [ 840, 232, 209],
-   840 => [ 234, 209],
-   209 => [ 234, 840, 526],
-   526 => [ 586, 520],
-   586 => [ 526, 519],
-   522 => [ 530, 523, 524],
-   530 => [ 522, 524, 519],
-   520 => [ 519, 526, 573],
-   519 => [ 586, 520, 527, 530],
-   527 => [ 573, 290, 524, 519],
-   573 => [ 232, 520, 527],
-   524 => [ 530, 522, 527, 523],
-   523 => [ 522, 544, 533, 524],
-   544 => [ 523, 150, 687],
-   533 => [ 523, 150],
-   150 => [ 544, 150],
-   687 => [ 688, 646, 544, 663],
-   646 => [ 687, 663],
-   663 => [ 687, 646, 688],
-   688 => [ 687, 663, 439]
+  794 => [715, 412],
+  715 => [412, 794],
+  412 => [715, 404, 794],
+  404 => [412, 360, 439],
+  360 => [439, 288],
+  439 => [404, 360, 688],
+  290 => [288, 282, 527, 291],
+  291 => [288, 282, 335, 290],
+  288 => [291, 290, 360],
+  282 => [291, 290, 232, 292],
+  292 => [288, 291, 335],
+  335 => [292, 291],
+  232 => [282, 234, 573],
+  234 => [840, 232, 209],
+  840 => [234, 209],
+  209 => [234, 840, 526],
+  526 => [586, 520],
+  586 => [526, 519],
+  522 => [530, 523, 524],
+  530 => [522, 524, 519],
+  520 => [519, 526, 573],
+  519 => [586, 520, 527, 530],
+  527 => [573, 290, 524, 519],
+  573 => [232, 520, 527],
+  524 => [530, 522, 527, 523],
+  523 => [522, 544, 533, 524],
+  544 => [523, 150, 687],
+  533 => [523, 150],
+  150 => [544, 150],
+  687 => [688, 646, 544, 663],
+  646 => [687, 663],
+  663 => [687, 646, 688],
+  688 => [687, 663, 439]
 }
 RoamingSpecies = [
-   {species: :RAYQUAZA, level: 145, switch: 1870, type: 0, variable: 698, caughtswitch: 1871, roamgraphic: "Graphics/Pictures/rayquazaMarker" }
+  { species: :RAYQUAZA, level: 145, switch: 1870, type: 0, variable: 698, caughtswitch: 1871,
+    roamgraphic: "Graphics/Pictures/rayquazaMarker" }
 ]
 
 #===============================================================================
@@ -241,11 +248,11 @@ RoamingSpecies = [
 #      - Minimum possible level.
 #      - Maximum possible level (optional).
 #===============================================================================
-POKERADAREXCLUSIVES=[
-   [5,  20, :STARLY,     12, 15],
-   [21, 10, :STANTLER,   14],
-   [28, 20, :BUTTERFREE, 15, 18],
-   [28, 20, :BEEDRILL,   15, 18]
+POKERADAREXCLUSIVES = [
+  [5, 20, :STARLY, 12, 15],
+  [21, 10, :STANTLER,   14],
+  [28, 20, :BUTTERFREE, 15, 18],
+  [28, 20, :BEEDRILL,   15, 18]
 ]
 
 #===============================================================================
@@ -258,8 +265,7 @@ POKERADAREXCLUSIVES=[
 #      - Name of the graphic, found in the Graphics/Pictures folder.
 #      - The graphic will always (true) or never (false) be shown on a wall map.
 #===============================================================================
-REGIONMAPEXTRAS = [
-]
+REGIONMAPEXTRAS = []
 
 #===============================================================================
 # * The number of steps allowed before a Safari Zone game is over (0=infinite).
@@ -309,22 +315,23 @@ RUSTLE_NORMAL_ANIMATION_ID   = 1
 RUSTLE_VIGOROUS_ANIMATION_ID = 5
 RUSTLE_SHINY_ANIMATION_ID    = 6
 PLANT_SPARKLE_ANIMATION_ID   = 31
+POISON_ANIMATION_ID          = 20
 
 #===============================================================================
 # * An array of available languages in the game, and their corresponding
 #      message file in the Data folder.  Edit only if you have 2 or more
 #      languages to choose from.
 #===============================================================================
-LANGUAGES = [  
-#  ["English","english.dat"],
-#  ["Deutsch","deutsch.dat"]
+LANGUAGES = [
+  #  ["English","english.dat"],
+  #  ["Deutsch","deutsch.dat"]
 ]
 
 #===============================================================================
 # * Whether names can be typed using the keyboard (true) or chosen letter by
 #      letter as in the official games (false).
 #===============================================================================
-USEKEYBOARDTEXTENTRY = true
-#Fixes an issue where the sheer number of variable redeclarations causes ruby 
-#to crash on f12 reset.
+USEKEYBOARD = true
+# Fixes an issue where the sheer number of variable redeclarations causes ruby
+# to crash on f12 reset.
 $VERBOSE = nil

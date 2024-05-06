@@ -1,11 +1,12 @@
 ﻿#==============================================================================#
 Pokémon Reborn
 X-- Episode 19: Final --X
-5/27/22 - 19.16
+%version%
 http://www.rebornevo.com/
 #==============================================================================#
 This game contains some sequences with flashing effects, as well as mature content 
-and themes that may be unsuitable for some people. Please take care!
+	and themes that may be unsuitable for some people, including death, child abuse, 
+	sexual assault, blood and dismemberment. Please take care!
 
 
 Pokémon Reborn is updated to Generation 7 only and uses 
@@ -14,17 +15,23 @@ Pokémon Reborn is updated to Generation 7 only and uses
 
 WINDOWS USERS: 
 	To start the game, run Game.exe. 
-	
+
 LINUX USERS:
+	To start the game, run Game.AppImage.
+	In case it doesn't work:
+	Install FUSE if you don't have it installed.
 	Right click Game.AppImage, choose Properties > Permissions > Allow executing file as program
 		OR
 	Navigate to the directory via command line and run the following command:
 		chmod +x Game.AppImage
-		
+
 MAC USERS:
 	Move the game to the Applications folder before running the package.
-		
-	
+
+JOIPLAY USERS:
+	Use the Install Package option in JoiPlay.
+
+
 Players continuing from E18 will begin the E19 story from Calcenon City.
 
 If you find any bugs, please check for existing reports and post them at:
@@ -44,224 +51,35 @@ Community:
 Table of Contents
 #==============================================================================#
 --- [I.] Notable Changes
------- [I-A.] Field Effect changes
 --- [II.] Links
 --- [III.] Controls
 --- [IV.] Passwords
---- [V.] Passwords
---- [VI.] Credits
+--- [V.] Troubleshooting
+--- [VI.] Randomizer
+--- [VII.] Credits
 #==============================================================================#
 [I.] Notable Changes:
 #==============================================================================#
-*	Visuals for the Department Store Sticker Card have been added, however many stickers will not properly appear for pre-E19 save files until speaking to their respective NPCs an additional time. 
-* 	Evolution stones added after 4th gen have been added to the mining minigame.
-*	A multi-move mod for the PC has been added to the main game. Thanks Waynolt!
-* 	Partner trainers now avoid attacking wild shiny Pokémon 
-* 	Various improvements to the AI have continued
-* 	Wild Pokémon now spawn with a preference to one of their four moves
-* 	Implemented a password system at the start of new games. See the [IV.] Passwords section below.
-*	TM placement has been swapped around for balance. Most TMs have been reset for older save files.
-* 	Trainer battles can now be forfeited for the run commands.
-*	Pokemarts have been standardized, each selling the same items, upgrading at several badge checkpoints
-* 	Repeatable Trainers all give less money, but give EXP candy instead
-*	Power items now add 32 EVs per hit rather than 8.
-* 	The Exp Share has been replaced with an EXP All. The EXP All prevents over-levelling. Files that already collected the EXP Share can return to the same place to get the EXP All.
-*	The Exp Share now creates additional EXP instead of splitting it.
-*	The EXP curve at higher levels has been adjusted.
-*	The Mega Ring can now be obtained slightly earlier than before.
-*	Online play now supports doubles, Mac and Linux.
-*	Eviolite now doubles as an everstone
-*	Move tutors now charge a one time fee per move, and can be used freely for that move afterwards
-*	Reset discs are no longer consumable
-*	All Repels have been doubled in length
-*	Added a photosensitive mode option, disabling screen flashes and animations.
-*	Added the gen 8 QoL allowing Vitamins to work regardless of existing EVs
-* 	Autorun is now a menu option rather than a toggle button. The button previously used for it is now for registered items and the newly-added Ready Menu.
-*	Added a familiar quiz to the Peridot Ward
-*	All stats now have a guaranteed 100% EV grinding spot somewhere in the game
-*	Shade's entire gym can once again be used for magnetized evolutions
-*	Grinding trainers now auto-heal after fighting them
-*	The Randomizer feature has been expanded with additional options!
-*	Included a patcher to simplify future update processes
-*	Added an option to sort the bag by item type. Thanks again Waynolt!
-*   Added a togglable option to display stat boosts in battle. Thanks a third time, Waynolt! Toggle it with the CTRL key.
-*	Added a togglable quick-mute button to F7.
 
-
-#----------------------------[I-A.] Field Effect Changes------------------------------#
-* -- Electric Field
-	-	Created for 3 turns by Plasma Fists
-	-	Elemental Seed now boosts Speed instead of Defense
-	-	Motor Drive activates each turn 
-	- 	No longer boosts Plasma Fists
-	- 	Slow Start ticks down twice per turn
-	-	Cancels Wild Charge recoil 
-	
-* -- Grassy Terrain 
-
-* -- Misty Terrain 
-	- 	No longer buffs Sweet Kiss, as sleep is prevented
-	-	Magical Seed now applies Wish instead of Healing Wish
-
-* -- Dark Crystal Cavern
-	- 	Becomes Cave when any of Magnitude, Bulldoze, Earthquake, Tectonic Rage, or Fissure are used.
-	-	Boosts Dark and Ghost Pokemon's Def + Sp.Def 1.5x
-	-	Boosts Diamond Storm
-
-* -- Chess Arena
-	-	Boosts Sucker Punch, Shadow Sneak, Smart Strike, First Impression
-	-	King's Shield now lowers Sp.Atk as well as Atk, and protects from status moves.
-	-	Secret Power and Shattered Psyche are now Chess Attacks
-	-	Now assigns Piece Roles to each battler, boosting them a particular amount based on their role. 
-
-* -- Big Top Arena
-	-	Blaze Kick activates the High Striker
-
-* -- Burning Field 
-	- 	Boosts Fire Spin's end of turn damage
-	-	Extinguished by Twister
-
-* -- Swamp Field 
-	-	Magnitude, Bulldoze, Earthquake damage decreases x0.25
-
-* -- Rainbow Field 
-	-	Boosts Oceanic Operetta, Dazzling Gleam, Solar Blade and Solar Beam
-	-	Solar Beam and Solar Blade charge and fires in one turn
-	-	Magical Seed now applies Wish instead of Healing Wish
-
-* -- Corrosive Field 
-	-	Telluric Seed now applies Baneful Bunker without a stat boost
-
-* -- Corrosive Mist Field 
-	- 	Seed Flare transforms into Misty Terrain
-
-* -- Desert Field 
-	-	Boosts Solar Beam and Solar Blade
-	
-* -- Icy Field 
-	- 	Transformed into Water Surface by two uses of Scald
-	- 	Magnitude, Bulldoze, Earthquake, Tectonic Rage, or Fissure create a layer of icy spikes, unless above Water Surface in which case the field is destroyed to Water Surface.
-	-	Elemental Seed additionally applies spikes damage
-	- 	Boosts Ice Types' Def 1.5x when hailing
-	- 	No longer doubles chance of freeze
-	
-* -- Rocky Field
-	-	Telluric Seed no longer boosts Evasion
-	-	Bulletproof's effect is now given to Pokemon with boosted Defense instead of boosted Evasion
-	-	Having boosted Defense now prevents flinches
-	-	Flinches now do 1/4 max hp damage, up from 1/16
-
-* -- Forest Field 
-	-	Telluric Seed now applies Spiky Shield without a stat boost
-	-	Boosts Cut and Electroweb
-	- 	Cut no longer becomes Grass Type, but deals super-effective damage to Grass Types instead
-
-* -- Super-heated Field 	
-	- 	Becomes Burning Field after Inferno Overdrive
-
-* -- Factory Field 
-	- 	Becomes Short-circuit when any of Magnitude, Bulldoze, Earthquake, Tectonic Rage, or Fissure are used.
-
-* -- Short-Circuit Field 
-	- 	Attacks no longer change in power randomly, but based on a sequential order.
-
-* -- Wasteland Field
-	- Telluric Seed no longer applies a random status to the user, but lays Stealth Rocks on both sides.
-
-* -- Ashen Beach
-	- 	Activates Zen Mode at all times
-	-	Boosts Shell Bell recovery
-	- 	Telluric Seed no longer applies Laser Focus
-	-	Focus Blast now has 90 accuracy
-	-	Pokémon with Inner Focus can now no longer be confused or lose Accuracy
-	
-* -- Water Surface
-	-	Reduces grounded, non-water speed by 3/4 instead of 1/2
-	
-* -- Underwater
-	-	Reduces non-water speed by 1/2 instead of 1/4
-	-	Boosts Anchor Shot
-	-	Pokémon with Steelworker no longer suffer speed or attack penalties
-	- 	Can be transformed into Murkwater Surface, immediately KOing all active Pokémon 
-	- 	Prevents fields from being generated
-	-	Electric attacks now never miss
-		
-* -- Cave
-	-	Collapses when two of any of Magnitude, Bulldoze, Earthquake, Tectonic Rage, or Fissure are used.
-	- 	Telluric Seed now sharply boosts Defense 
-
-* -- Glitch
-	- 	Hyper Beam and similar attacks no longer recharge if the target is KO'd
-	-	Camouflage becomes ??? Type
-	-	Synthetic Seed no longer boosts Sp. Def
-
-* -- Crystal Cavern 
-	- 	Becomes Cave when any of Magnitude, Bulldoze, Earthquake, Tectonic Rage, or Fissure are used.
-	-	Attacks no longer change in type randomly, but based on a set sequential order.
-	
-* -- Murkwater Surface
-	-	Reduces grounded, non-water speed by 3/4 instead of 1/2
-	-	Electric attacks are now boosted only vs grounded Pokémon 
-	-	Elemental Seed now boosts speed, poisons and activats Aqua Ring on the user
-
-* -- Mountain 
-	-	Aerilate boosts up to x1.5
-	- 	Boosts Hyper Voice
-	- 	Transformed into Snowy Mountain by Glaciate
-	- 	Telluric Seed now sharply boosts Attack 
-	
-* -- Snowy Mountain 
-	-	Aerilate boosts up to x1.5
-	- 	Boosts Hyper Voice, Glaciate
-	- 	Telluric Seed now sharply boosts Special Attack 
-	- 	Boosts Ice Types' Def 1.5x when hailing
-	
-* -- Holy Field 
-	-	Boosts Diamond Storm, Sacred Sword, Extremespeed and Return
-	- 	Allies cannot damage partners with AoE attacks, a la Telepathy
-
-* -- Mirror Arena 
-	-	Provides additional Evasion to Illusion Pokémon 	
-	- 	Destroyed by Explosion and Selfdestruct or when any of Magnitude, Bulldoze, Earthquake, Tectonic Rage, or Fissure are used.
-	-	Synthetic Seed boosts Evasion by 1 stage, down from 2, and now applies Magic Coat
-	-	Boosts Accuracy and activates Laser Focus when a mon with Compound Eyes, Tinted Lens, Keen Eye, Zoom Lens or Wide Lens switches in
-	-	When a physical attack shatters a mirror, target evasion is decreased one stage, if raised
-		
-* -- Fairy Tale Field 
-	- 	Boosts Oceanic Operetta and Air Slash
-	-	Magical Seed now applies King's Shield without a stat boost
-	-	Fairy Aura Pokémon can now never miss
-
-* -- Dragon's Den
-	-	Transforms into Cave by Oceanic Operetta after one turn rather than two
-	-	Shed Skin now restores HP on activation, boosts Sp. Atk and Speed and lowers Def/Sp.Def, and activates every turn when there is status.
-	- 	Now boosts Dragon Type attacks 1.5x, from 2. 
-	- 	Boosts Dragon Type's Def and Sp.Def 1.3x
-
-* -- Flower Garden Field 
-	-	Synthetic Seed now activates Ingrain, growing the field 1 stage
-	-	Now only boosts Grass Moves, Overgrow and Swarm up to x2 at max each, down from 3.
-	-	X-Scissor reduces Field Stage
-	
-* -- Starlight Arena 	
-	- 	Weather now nullifies boosts instead of destroying the field
-	- 	Geomancy now activates in one turn
-	-	Magical Seed now applies Wish instead of Healing Wish
-	-	Adaptability no longer becomes Trace :[
-	- 	Lunar Dance no longer boosts Accuracy or Evasion
-
-* -- New World 
-	-	Reduces grounded speed by 3/4 instead of 1/2
-	-	Magnitude, Bulldoze, Earthquake, Tectonic Rage damage decreases x0.25
-	- 	Black Hole Eclipse is boosted x2, down from x4
-	-	Dark Void's accuracy is now set to 85, down from 100
-	- 	Lunar Dance no longer boosts Accuracy or Evasion
-	-	Airborne Pokemon defenses reduced x0.9
-		
-* -- Psychic Terrain	
-	- 	Telluric Seed now sharply boosts Special Attack only and confuses the user 
-	
-	
+*	Many many bug fixes
+*	Added built-in updater
+*	The NewGame++ Mod has been integrated. Thanks, stardust!
+*	Added experimental JoiPlay support
+*	Favorite Items pocket
+*	Improved keyboard & gamepad controls
+*	Faster menu navigation using Home, End, Ctrl+Q/W/PageUp/PageDown
+*	Added Discord integration
+*	Added Portable Mode
+*	Added Rainbow Scent key item
+*	Added debug password
+*	Added nopuzzles password
+*	Added blindstep password
+*	Added sound and animation to jumps
+*	Added animation to rock climbs
+*	Turbo speed is configurable
+*	Evolution animation can be skipped
+*	Field notes are now accessible during battle
+*	Updated some shinies
 
 
 #==============================================================================#
@@ -291,17 +109,41 @@ Support development of future projects!
 [III.] Controls
 #==============================================================================#
 
-Arrow Keys: Move
-C key: A button; Talk/Select
-X key: B button; Open Menu; Skip Text
-Space: Run
-S: Registered item; Rotate Tile Puzzle
-A: Mega-Evolve; Dismount Pokémon ; Sort Bag
-D: Quick-Save
-F1: Program Options (Mute sound/music/controls)
-F7: Mute/Unmute
-F12: Soft-Reset
-Alt, M, or A+S at the same time: Speed Up
+Press F1 to open the rebinding menu.
+
+Keyboard:
+
+Arrows: Move
+C / Enter / Space: Interact, Select
+X / Escape: Menu, Back, Skip Text
+A: Mega, Z-Move, Sort, Misc.
+S: Use Item, Battle Field Notes
+D: Quick Save, Battle PULSE Notes
+M / Alt: Toggle Turbo Mode
+Shift: Toggle Run
+Q / Page Up: Previous Page, Self Inspect
+W / Page Down: Next Page, Foe Inspect
+Ctrl + Q / W: Skip 10 pages up or down
+Home / End: Jump to the first or last item
+F1: Configure controls
+F7: Mute, Unmute
+F12: Soft Reset
+
+Gamepad:
+
+D-pad: Move
+Cross / A: Interact, Select
+Circle / B: Menu, Back, Skip Text
+Square / X: Use Item, Battle Field Notes
+Triangle / Y: Mega, Z-Move, Sort, Misc.
+L2 (hold) / Back (toggle): Turbo Mode
+R2 (hold) / Back (toggle): Run
+L1: Previous Page, Self Inspect
+R1: Next Page, Foe Inspect
+R2 + L1 / R1: Skip 10 pages up or down
+Left Stick: Mute, Unmute
+Right Stick: Quick Save, Battle PULSE Notes
+Guide: Soft Reset
 
 #==============================================================================#
 [IV.] Passwords
@@ -336,7 +178,7 @@ Cause randomized early game Pokémon events to bias towards a specific type:
 	Password: monofairy
 
 Prevent Pokémon from being healed after their HP drops to 0:
-	Pasword: nuzlocke
+	Password: nuzlocke
 	
 Randomly reshuffles species and moves as rolled at game start:
 	Password: randomizer
@@ -358,6 +200,9 @@ Makes all Field	Notes visible immediately
 	
 Remove some randomness by making all attacks do consistent damage rather than a roll:
 	Password: nodamageroll
+	
+Enable audio accessibility features for visually impaired players (partial support only):
+	Password: blindstep
 	
 Multiple passwords, including differing monotypes, may be used in tandem with 
 each other, but progress at your own risk~
@@ -393,12 +238,6 @@ WINDOWS:
 		However, in most cases you will need to install Linux on an external drive and play the game via Linux.
 		Sorry, we don't like this either, blame Microsoft :C
 		
-	Issue:	
-		When running updater, program can't start because api-ms-win-core-path-1l-1-0.dll is missing.
-	Fix: 
-		Unfortunately, Windows 7 does not support our updater. You'll need to patch manually using this link: 
-		https://www.rebornevo.com/downloads/rebornremote/patch.zip
-		
 		
 		
 MACINTOSH:
@@ -412,7 +251,97 @@ MACINTOSH:
 		
 		
 #==============================================================================#
-[VI.] Credits
+[VI.] Randomizer
+#==============================================================================#
+
+Here is an in-depth breakdown of all present options in the Randomizer.
+You can search them by using the tab header as they appear in game or through letters [a-i.].
+All loggable changes on a save will be saved as a text file in the Randomizer Data directory.
+
+To condense the list, the Follow Evolutions option for many different traits will dictate whether 
+the changes to the pre-evolution will apply to all further evolutions. Split evolutions will have
+completely new traits, but always share at least one of their types.
+
+	[a.] Species Traits
+		Base Stats:
+			Random - Randomly assigns new base stats where each stat is weighted based on the original stat percentage.
+			Shuffle - Takes the current base stats and shuffles the order. Attack may be the new Speed, Defense may be the new HP.
+			Flipped! - Follows the Flipped! OM on Smogon. Flips the base stats so HP <> Speed, Attack <> Special Defense, Defense <> Special Attack.
+		Abilities:
+			Each Pokemon receives 3 random abilities.
+			Allow Wonder Guard? - Allows the generation of the ability Wonder Guard.
+			Ban Trapping Abilities - Prevents the generation of abilities such as Arena Trap or Shadow Tag.
+			Abilities that impose restrictions (Stall, Slow Start, Klutz) will not generate.
+		Types:
+			Generates 1-2 new types.
+			Dual Type Chance - The percent chance to generate a second type.
+	[b.] Evolutions
+		Each Pokemon will have one evolution. All non-level based evolutions are changed to level based on BST
+		of the Evolution.
+		Force Different? - Prevents generation of evolutions that already exist.
+		Limit Evolutions? - Prevents evolutions from potentially having no end or having more than 2 evolutions
+		Same Typing? - Forces evolution to have the same typing, provided sufficient valid picks still exist.
+		Similar Strength? - Forces evolution to have a similar BST as the original, provided sufficient valid picks still exist.
+	[c.] Move & Movesets
+		Move Data:
+			Typing - Randomly assigns new types to all moves. There is a hidden setting in Scripts/Randomizer/RandomizerSettings 
+			that will change move names to match their new type as well!
+			Base Power - Randomly assigns new base power to moves. Usually assigned from 50-100, small chance for 20-150, even smaller chances
+			for moves to gain +50 or +100 base power.
+			Accuracy - Randomly assigns new accuracies to moves. Typically within 20 accuracy of the base move, and moves with less than
+			50 accuracy have a small chance to receive a slight boost.
+			Move Category - Physical/Special will be randomly generated.
+		Movesets:
+			Random - Completely random selection of moves
+			Prefer Type - Generates new movesets, influenced by the Pokemon's typings.
+			Metronome - All Pokemon only learn Metronome.
+			Force Good Move % - Ensures a certain percentage of the new moveset is greater than 70BP.
+			Scale Moves with Level - Rearranges the moveset so lower BP moves are learned first and higher BP moves are learned last.
+			Ban Set Damage Moves - Prevents generation of Dragon Rage and Sonic Boom
+			Learn Moves On Evolution? - Adds an evolution move to every Pokemon
+	[d.] Encounters
+		Encounter Options:
+			Random - Completely random Pokemon every time.
+			Area - Each route has the same set of random Pokemon each time.
+			Global - Each Pokemon will generate into a set Pokemon every time.
+		Similar Strength? - Matches the encounter to one with a similar BST.
+		Match Types? - Ensures Pokemon have the same type as the original encounter. This will be removed later in favor of type theming areas.
+		Dsiable Legendaries? - Prevents Legendary Pokemon from generating.
+		Starters:
+			Randomly assigns replaces each starter with a new Pokemon. These can be legendaries.
+			Option to force starters to have 2 evolutions.
+		Have static Pokemon randomize - Pokemon directly given to you, including eggs, will be completely random.
+	[e.] Trainers
+		Have all trainers randomize - Trainers will have completely random Pokemon.
+	[f.] TMs & Tutors
+		You will not have moves needed for progression randomize, or appear before/after you're intended to get them through these options.
+		Both options have the same descriptions:
+			Randomly generated moves, with their graphics and other display information being properly updated on TMs.
+			Compatibility:
+				Unchanged - If a Pokemon could learn the old move, it can learn the new one.
+				Random - Completely randomized compatibility
+				Type - Randomizes compatibility based on the move type and Pokemon type. Each type should learn the majority of similarly typed moves,
+				Normal types get about half of all non-Normal type moves, and a low chance to learn moves that don't match.
+				Full - All Pokemon learn every move.
+			Force Good Move % - Ensures a certain percentage of moves generated contain a move with at least 70BP.
+	[g.] Items
+		You will not have items needed for progression randomize, or appear before/after you're intended to get them through these options.
+		Field Items:
+			Procedurally generates items as you obtain them.
+			Option to ensure the item would be the same type of item.
+		PokeMarts:
+			Randomly generates a new shop for each shop.
+			Option to ensure the item would be the same type of item.
+	[h.] Types
+		Allow ??? Type? - Allows the ??? type to generate for Pokemon or Move typings.
+		Allow Shadow Type? - Allows the Shadow type to generate for Pokemon or Move typings.
+	[i.] Misc Settings
+		Allow Mega Pokemon? - Allows static Mega Pokemon to generate as encounters or evolutions that do not revert after battle.
+		Allow Trainer Esclusives? - Allows unobtainable Pokemon that do not appear in the Pokedex to generate as encounters or evolutions.
+
+		
+#==============================================================================#
+[VII.] Credits
 #==============================================================================#
 If we've missed your contribution, please feel free to contact us so we can fix 
 	that!
@@ -442,6 +371,14 @@ Crim
 Azzie
 
 
+--Ongoing Development:
+Amethyst
+enumag
+Haru
+Lucent Flash
+Stardust
+Cad48
+
 --Prior Developers:
 Kurotsune
 Blind Guardian
@@ -451,7 +388,7 @@ Walpurgis
 Mde2001
 Azery
 Kanaya
-Jan															
+Jan
 Koyoss
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
@@ -514,8 +451,8 @@ Calvius			Flux	Thirdbird	Mike		Bazaro	Azery
 Bakerlite		Gamien	Rielly987	smeargletail	Nsuprem
 15gamer2000		dragon in night		Nova		Night Fighter
 Serythe		MetalKing1417	roqi	Jan			MMM		Kelazi5
-Player_Name_Null	Khrona 		Sir_Bagel	Pixl	Crim
-
+Player_Name_Null	Khrona 		Sir_Bagel	Pixl	Crim 
+ghostchanuwu
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 --Animations:
@@ -586,7 +523,8 @@ Crim
 Featuring GlitchxCity ( http://www.youtube.com/user/GlitchxCity )
 Amethyst
 --Guest Composers:
-Dragon-Tamer795		O Colosso		RichViola		Darius		
+Dragon-Tamer795		O Colosso		RichViola		Darius
+djtheS
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 --External Resources:
@@ -597,6 +535,10 @@ germy21 (Swirlix)				Macuarrorro (Spritzee)
 Ramiro Maldini (Conkeldurr)		Otonashi (Froakie)
 iamherecozidraw (Carracosta)	syansyan (Archeops)
 Sires J Black (Turtwig)
+--Rock Climb Animation:
+Ulithium_Dragon		DarrylBD99
+-- Accessibility Sounds:
+aaron_vgstorm
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 --Community Support:
@@ -608,6 +550,7 @@ Guigui			DarkLucario79		grasssnake485		Acquiescence
 SonOfRed			Rimmintine	Arkhidon	Mike		Tacos&Flowers
 Vinny				chase_breaker	Sheep!	Kalzuna		Pyrolusite
 Alex			cybershell12		BIGJRA		Haru	TheInsurgent
+Stardust		housecarpenter		rainefall
 Many, many, many more!
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
@@ -685,7 +628,7 @@ DefaultDevers	Blaze_Lumini		Sham (Wilson)
 RocketRiddle	SkabbtheHunter109 	Dasuper11		SmK
 Potwom		McZ		Tempest		Nadrel		BLaZn
 Andrew Parekh		Mastercatcher00X	ProjectIceman
-Kevin Silva		LucasDukas 		andracass		BIGJRA
+Kevin Silva		Lucent Flash 		andracass		BIGJRA
 Archinblade3	Launce		Dark_Absol		CielDiVine
 Posty		Valerie		Mimon Hamed Mohamed 	E.L.Y
 RubyRed		chaoticangel97		Kirixah
@@ -754,7 +697,7 @@ Saraphimwolf		Azrael		evilginger27		NS Flash-Fire
 Matty		Lindinator666	Fezzdog		Nick D			王 サゲル
 Ainsley Robbins		Spiff		Mahendran		Katurayan
 Michal		Raven Dragon		Tom Sayer		Haze
-Kino		enzzzzzz		Josh Peck		Martijn Spiegels
+Kino		enzzzzzz		Josh Peck		Macspie
 Ben Knight			Dan		violet thunder		Ngoc Nguyen		Tim
 OverlordMatt
 

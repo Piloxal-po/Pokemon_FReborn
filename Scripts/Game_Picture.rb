@@ -20,6 +20,7 @@ class Game_Picture
   attr_reader   :blend_type               # blend method
   attr_reader   :tone                     # color tone
   attr_reader   :angle                    # rotation angle
+
   #-----------------------------------------------------------------------------
   # * Object Initialization
   #     number : picture number
@@ -46,6 +47,7 @@ class Game_Picture
     @angle = 0
     @rotate_speed = 0
   end
+
   #-----------------------------------------------------------------------------
   # * Show Picture
   #     name       : file name
@@ -78,6 +80,7 @@ class Game_Picture
     @angle = 0
     @rotate_speed = 0
   end
+
   #-----------------------------------------------------------------------------
   # * Move Picture
   #     duration   : time
@@ -99,6 +102,7 @@ class Game_Picture
     @target_opacity = opacity.to_f
     @blend_type = blend_type ? blend_type : 0
   end
+
   #-----------------------------------------------------------------------------
   # * Change Rotation Speed
   #     speed : rotation speed
@@ -106,6 +110,7 @@ class Game_Picture
   def rotate(speed)
     @rotate_speed = speed
   end
+
   #-----------------------------------------------------------------------------
   # * Start Change of Color Tone
   #     tone     : color tone
@@ -118,12 +123,14 @@ class Game_Picture
       @tone = @tone_target.clone
     end
   end
+
   #-----------------------------------------------------------------------------
   # * Erase Picture
   #-----------------------------------------------------------------------------
   def erase
     @name = ""
   end
+
   #-----------------------------------------------------------------------------
   # * Frame Update
   #-----------------------------------------------------------------------------

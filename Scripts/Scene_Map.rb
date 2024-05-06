@@ -1,32 +1,33 @@
 #===============================================================================
 # ** Modified Scene_Map class for Pokémon.
 #-------------------------------------------------------------------------------
-#  
+#
 #===============================================================================
 class Scene_Map
   def spriteset
     for i in @spritesets.values
-      return i if i.map==$game_map
+      return i if i.map == $game_map
     end
     return @spritesets.values[0]
   end
 
   def disposeSpritesets
     return if !@spritesets
+
     for i in @spritesets.keys
       if @spritesets[i]
         @spritesets[i].dispose
-        @spritesets[i]=nil
+        @spritesets[i] = nil
       end
     end
     @spritesets.clear
-    @spritesets={}
+    @spritesets = {}
   end
 
   def createSpritesets
-    @spritesets={}
+    @spritesets = {}
     for map in $MapFactory.maps
-      @spritesets[map.map_id]=Spriteset_Map.new(map)
+      @spritesets[map.map_id] = Spriteset_Map.new(map)
     end
     $MapFactory.setSceneStarted(self)
     updateSpritesets
@@ -40,20 +41,20 @@ class Scene_Map
   end
 
   def updateSpritesets
-    @spritesets={} if !@spritesets
-    keys=@spritesets.keys.clone
+    @spritesets = {} if !@spritesets
+    keys = @spritesets.keys.clone
     for i in keys
-     if !$MapFactory.hasMap?(i)
-       @spritesets[i].dispose if @spritesets[i]
-       @spritesets[i]=nil
-       @spritesets.delete(i)
-     else
-       @spritesets[i].update
-     end
+      if !$MapFactory.hasMap?(i)
+        @spritesets[i].dispose if @spritesets[i]
+        @spritesets[i] = nil
+        @spritesets.delete(i)
+      else
+        @spritesets[i].update
+      end
     end
     for map in $MapFactory.maps
       if !@spritesets[map.map_id]
-        @spritesets[map.map_id]=Spriteset_Map.new(map)
+        @spritesets[map.map_id] = Spriteset_Map.new(map)
       end
     end
     Events.onMapUpdate.trigger(self)
@@ -79,7 +80,7 @@ class Scene_Map
   end
 
   def miniupdate
-    $PokemonTemp.miniupdate=true if $PokemonTemp
+    $PokemonTemp.miniupdate = true if $PokemonTemp
     loop do
       updateMaps
       $game_player.update
@@ -88,13 +89,14 @@ class Scene_Map
       unless $game_temp.player_transferring
         break
       end
+
       transfer_player
       if $game_temp.transition_processing
         break
       end
     end
     updateSpritesets
-    $PokemonTemp.miniupdate=false if $PokemonTemp
+    $PokemonTemp.miniupdate = false if $PokemonTemp
   end
 
   def update
@@ -107,6 +109,7 @@ class Scene_Map
       unless $game_temp.player_transferring
         break
       end
+
       transfer_player
       if $game_temp.transition_processing
         break
@@ -128,9 +131,10 @@ class Scene_Map
     if $game_temp.message_window_showing
       return
     end
+
     if Input.trigger?(Input::C)
       unless pbMapInterpreterRunning?
-        $PokemonTemp.hiddenMoveEventCalling=true
+        $PokemonTemp.hiddenMoveEventCalling = true
       end
     end
 
@@ -141,12 +145,24 @@ class Scene_Map
         $game_temp.menu_beep = true
       end
     end
-    
+
+    # Autorun
+    if Input.trigger?(Input::A)
+      unless pbMapInterpreterRunning?
+        if $Settings.autorunning == 1
+          $Settings.autorunning = 0
+        else
+          $Settings.autorunning = 1
+        end
+      end
+    end
+
     # Quicksave
-    if $game_switches[:Disable_Quicksave]==false
-      if Input.trigger?(Input::Z)
-        $game_switches[:Mid_quicksave]=true
-        $game_switches[:Stop_Icycle_Falling]=true
+
+    if Input.trigger?(Input::Z)
+      if $game_switches[:Disable_Quicksave] == false # && !pbMapInterpreterRunning?
+        $game_switches[:Mid_quicksave] = true
+        $game_switches[:Stop_Icycle_Falling] = true
         for event in $game_map.events.values
           event.minilock
         end
@@ -160,8 +176,8 @@ class Scene_Map
         for event in $game_map.events.values
           event.unlock
         end
-        $game_switches[:Mid_quicksave]=false
-        $game_switches[:Stop_Icycle_Falling]=false
+        $game_switches[:Mid_quicksave] = false
+        $game_switches[:Stop_Icycle_Falling] = false
       end
     end
 
@@ -172,8 +188,17 @@ class Scene_Map
       end
     end
 
+    if (!$DEBUG || Input.press?(Input::CTRL)) && Input.trigger?(Input::F9) && $game_player && $game_map
+      coordinates = sprintf("X %d, Y %d, map %d, %s", $game_player.x, $game_player.y, $game_map.map_id, $game_map.name)
+      if $game_switches[:Blindstep]
+        tts(coordinates)
+      else
+        Kernel.pbMessage(coordinates)
+      end
+    end
+
     # Debug menu
-    if $DEBUG && Input.press?(Input::F9)
+    if $DEBUG && Input.press?(Input::F9) && !Input.press?(Input::CTRL)
       $game_temp.debug_calling = true
     end
 
@@ -192,11 +217,11 @@ class Scene_Map
       elsif $game_temp.debug_calling
         call_debug
       elsif $PokemonTemp && $PokemonTemp.keyItemCalling
-        $PokemonTemp.keyItemCalling=false
+        $PokemonTemp.keyItemCalling = false
         $game_player.straighten
         Kernel.pbUseKeyItem
       elsif $PokemonTemp && $PokemonTemp.hiddenMoveEventCalling
-        $PokemonTemp.hiddenMoveEventCalling=false
+        $PokemonTemp.hiddenMoveEventCalling = false
         $game_player.straighten
         Events.onAction.trigger(self)
       end
@@ -212,8 +237,8 @@ class Scene_Map
   def call_menu
     $game_player.straighten
     $game_map.update
-    sscene=PokemonMenu_Scene.new
-    sscreen=PokemonMenu.new(sscene) 
+    sscene = PokemonMenu_Scene.new
+    sscreen = PokemonMenu.new(sscene)
     sscreen.pbStartPokemonMenu
     $game_temp.menu_calling = false
     $game_screen.getTimeCurrent(true)
@@ -227,49 +252,50 @@ class Scene_Map
   end
 
   def autofade(mapid)
-    #Fades music on the map if it is not the same as the previous map.
-    #Also saves the previous map
-    playingBGM=$game_system.playing_bgm
-    playingBGS=$game_system.playing_bgs
+    # Fades music on the map if it is not the same as the previous map.
+    # Also saves the previous map
+    playingBGM = $game_system.playing_bgm
+    playingBGS = $game_system.playing_bgs
     if !playingBGM && !playingBGS
-      $previous_map=nil
+      $previous_map = nil
       return
     end
-    $previous_map=$cache.map_load(mapid)
+    $previous_map = $cache.map_load(mapid)
     $previous_map_id = mapid
-    
+
     actual_bgm_name = $previous_map.bgm.name.clone
-    if actual_bgm_name.include?("Reborn- ") && $game_switches[:Reborn_City_Restore] == true
+    if actual_bgm_name.include?("Reborn- ") && $game_switches[:Reborn_City_Restore]
       actual_bgm_name["Reborn- "] = "White- "
     end
-    actual_bgm_name = $previous_map.bgm.name if !FileTest.audio_exist?("Audio/BGM/"+ actual_bgm_name)
+    actual_bgm_name = $previous_map.bgm.name if !FileTest.audio_exist?("Audio/BGM/" + actual_bgm_name)
 
     if playingBGM && $previous_map.autoplay_bgm
       if (PBDayNight.isNight?(pbGetTimeNow) rescue false)
-        if playingBGM.name!=actual_bgm_name && playingBGM.name!=actual_bgm_name + "n"
+        if playingBGM.name != actual_bgm_name && playingBGM.name != actual_bgm_name + "n"
           pbBGMFade(0.8)
         end
       else
-        if playingBGM.name!=actual_bgm_name
+        if playingBGM.name != actual_bgm_name
           pbBGMFade(0.8)
         end
       end
     end
     if playingBGS && $previous_map.autoplay_bgs
-      if playingBGS.name!=$previous_map.bgs.name
+      if playingBGS.name != $previous_map.bgs.name
         pbBGMFade(0.8)
       end
     end
     Graphics.frame_reset
   end
 
-  def transfer_player(cancelVehicles=true)
+  def transfer_player(cancelVehicles = true)
+    # cancelVehicles = !($PokemonGlobal && ($PokemonGlobal.surfing || $PokemonGlobal.lavasurfing || $PokemonGlobal.diving))
     $game_temp.player_transferring = false
-    if cancelVehicles && $game_switches[:Retain_Surf] == false
+    if cancelVehicles && !$game_switches[:Retain_Surf]
       Kernel.pbCancelVehicles($game_temp.player_new_map_id)
     end
-    autofade($game_temp.player_new_map_id) if $game_switches[:Disable_Signposts_Music] == false
-    #pbBridgeOff
+    autofade($game_temp.player_new_map_id) if !$game_switches[:Disable_Signposts_Music]
+    # pbBridgeOff
     if $game_map.map_id != $game_temp.player_new_map_id
       $MapFactory.setup($game_temp.player_new_map_id)
     end
@@ -293,9 +319,13 @@ class Scene_Map
       $game_temp.transition_processing = false
       Graphics.transition(20)
     end
-    $game_map.autoplay if $game_switches[:Disable_Signposts_Music] == false
+    $game_map.autoplay if !$game_switches[:Disable_Signposts_Music]
     $game_screen.setWeather
     Graphics.frame_reset
     Input.update
+
+    $game_variables[:Field_Effect_End_Of_Battle] = 0
+    $game_variables[:Field_Counter_End_Of_Battle] = 0
+    $game_variables[:Weather_End_Of_Battle] = 0
   end
 end

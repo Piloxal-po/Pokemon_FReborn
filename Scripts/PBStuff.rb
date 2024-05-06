@@ -1,565 +1,774 @@
-def deep_copy(obj)
-  Marshal.load(Marshal.dump(obj))
-end
-
-def pbHashConverter(mod,hash)
+def pbHashConverter(mod, hash)
   newhash = {}
-  hash.each {|key, value|
-      for i in value
-          newhash[mod.const_get(i.to_sym)]=key
-      end
+  hash.each { |key, value|
+    for i in value
+      newhash[mod.const_get(i.to_sym)] = key
+    end
   }
   return newhash
 end
 
-def pbHashForwardizer(hash) #one-stop shop for your hash debackwardsing needs!
+def pbHashForwardizer(hash) # one-stop shop for your hash debackwardsing needs!
   return if !hash.is_a?(Hash)
+
   newhash = {}
-  hash.each {|key, value|
-      for i in value
-          newhash[i]=key
-      end
+  hash.each { |key, value|
+    for i in value
+      newhash[i] = key
+    end
   }
   return newhash
 end
-
-def arrayToConstant(mod,array)
-  newarray = []
-  for symbol in array
-    const = mod.const_get(symbol.to_sym) rescue nil
-    newarray.push(const) if const
-  end
-  return newarray
-end
-
-def hashToConstant(mod,hash)
-  for key in hash.keys
-    const = mod.const_get(hash[key].to_sym) rescue nil
-    hash.merge!(key=>const) if const
-  end
-  return hash
-end
-
-def hashArrayToConstant(mod,hash)
-  for key in hash.keys
-    array = hash[key]
-    newarray = arrayToConstant(mod,array)
-    hash.merge!(key=>newarray) if !newarray.empty?
-  end
-  return hash
-end
-
 
 STATUSTEXTS = ["status", "sleep", "poison", "burn", "paralysis", "ice"]
-STATSTRINGS = ["HP", "Attack", "Defense", "Speed", "Sp. Attack", "Sp. Defense"]
+STATSTRINGS = ["HP", "Attack", "Defense", "Sp. Attack", "Sp. Defense", "Speed"]
 
 class PBStuff
-  #rejuv stuff while we work out the kinks
-  #massive arrays of stuff that no one wants to see
-  #List of Abilities that either prevent or co-opt Intimidate
-  TRACEABILITIES = arrayToConstant(PBAbilities,[:PROTEAN,:CONTRARY,:INTIMIDATE, :WONDERGUARD,:MAGICGUARD,
-    :SWIFTSWIM,:SLUSHRUSH, :SANDRUSH,:TELEPATHY,:SURGESURFER, :SOLARPOWER,:DRYSKIN,:DOWNLOAD, :LEVITATE,
-    :LIGHTNINGROD,:MOTORDRIVE, :VOLTABSORB,:FLASHFIRE,:MAGMAARMOR, :ADAPTABILITY,:DEFIANT,:COMPETITIVE, 
-    :PRANKSTER,:SPEEDBOOST,:MULTISCALE, :SHADOWSHIELD,:SAPSIPPER,:FURCOAT, :FLUFFY,:MAGICBOUNCE,
-    :REGENERATOR, :DAZZLING,:QUEENLYMAJESTY,:SOUNDPROOF, :TECHNICIAN,:SPEEDBOOST,:STEAMENGINE, 
-    :ICESCALES,:BEASTBOOST,:SHEDSKIN, :CLEARBODY,:WHITESMOKE,:MOODY, :THICKFAT,:STORMDRAIN,
-    :SIMPLE,:PUREPOWER,:MARVELSCALE,:STURDY,:MEGALAUNCHER,:LIBERO,:SHEERFORCE,:UNAWARE,:CHLOROPHYLL])
-  NEGATIVEABILITIES = arrayToConstant(PBAbilities,[:TRUANT,:DEFEATIST,:SLOWSTART,:KLUTZ,:STALL,:GORILLATACTICS,:RIVALRY])
+  # rejuv stuff while we work out the kinks
+  # massive arrays of stuff that no one wants to see
+  # List of Abilities that either prevent or co-opt Intimidate
+  TRACEABILITIES = [
+    :PROTEAN, :CONTRARY, :INTIMIDATE, :WONDERGUARD, :MAGICGUARD,
+    :SWIFTSWIM, :SLUSHRUSH, :SANDRUSH, :TELEPATHY, :SURGESURFER, :SOLARPOWER, :DRYSKIN, :DOWNLOAD, :LEVITATE,
+    :LIGHTNINGROD, :MOTORDRIVE, :VOLTABSORB, :FLASHFIRE, :MAGMAARMOR, :ADAPTABILITY, :DEFIANT, :COMPETITIVE,
+    :PRANKSTER, :SPEEDBOOST, :MULTISCALE, :SHADOWSHIELD, :SAPSIPPER, :FURCOAT, :FLUFFY, :MAGICBOUNCE,
+    :REGENERATOR, :DAZZLING, :QUEENLYMAJESTY, :SOUNDPROOF, :TECHNICIAN, :SPEEDBOOST, :STEAMENGINE,
+    :ICESCALES, :BEASTBOOST, :SHEDSKIN, :CLEARBODY, :WHITESMOKE, :MOODY, :THICKFAT, :STORMDRAIN,
+    :SIMPLE, :PUREPOWER, :MARVELSCALE, :STURDY, :MEGALAUNCHER, :LIBERO, :SHEERFORCE, :UNAWARE, :CHLOROPHYLL
+  ]
+  NEGATIVEABILITIES = [:TRUANT, :DEFEATIST, :SLOWSTART, :KLUTZ, :STALL, :GORILLATACTICS, :RIVALRY]
 
-#Standardized lists of moves or abilities which are sometimes called
-  #Blacklisted abilities USUALLY can't be copied.
-###--------------------------------------ABILITYBLACKLIST-------------------------------------------------------###
-ABILITYBLACKLIST = arrayToConstant(PBAbilities,[:MULTITYPE, :COMATOSE,:DISGUISE, :SCHOOLING, 
-  :RKSSYSTEM, :IMPOSTER,:SHIELDSDOWN, :POWEROFALCHEMY,:RECEIVER,:TRACE, :FORECAST, :FLOWERGIFT,
-  :ILLUSION,:WONDERGUARD, :ZENMODE, :STANCECHANGE,:POWERCONSTRUCT,:ICEFACE])
+  # Standardized lists of moves or abilities which are sometimes called
+  # Blacklisted abilities USUALLY can't be copied.
+  # ##--------------------------------------ABILITYBLACKLIST-------------------------------------------------------###
+  ABILITYBLACKLIST = [
+    :MULTITYPE, :COMATOSE, :DISGUISE, :SCHOOLING, :RESUSCITATION, :PRISMPOWER,
+    :RKSSYSTEM, :IMPOSTER, :SHIELDSDOWN, :POWEROFALCHEMY, :RECEIVER, :TRACE, :FORECAST, :FLOWERGIFT,
+    :ILLUSION, :WONDERGUARD, :ZENMODE, :STANCECHANGE, :POWERCONSTRUCT, :ICEFACE, :ASONE, :NEUTRALIZINGGAS
+  ]
 
-###--------------------------------------FIXEDABILITIES---------------------------------------------------------###
-#Fixed abilities USUALLY can't be changed.
-FIXEDABILITIES = arrayToConstant(PBAbilities,[:MULTITYPE, :ZENMODE, :STANCECHANGE, :SCHOOLING, 
-  :COMATOSE,:SHIELDSDOWN, :DISGUISE, :RKSSYSTEM, :POWERCONSTRUCT,:ICEFACE, :GULPMISSILE])
+  # ##--------------------------------------FIXEDABILITIES---------------------------------------------------------###
+  # Fixed abilities USUALLY can't be changed.
+  FIXEDABILITIES = [
+    :MULTITYPE, :ZENMODE, :STANCECHANGE, :SCHOOLING, :RESUSCITATION,
+    :COMATOSE, :SHIELDSDOWN, :DISGUISE, :RKSSYSTEM, :POWERCONSTRUCT, :ICEFACE, :GULPMISSILE
+  ]
 
-#Standardized lists of moves with similar purposes/characteristics
-#(mostly just "stuff that gets called together")
+  # ##--------------------------------------TRAPPINGABILITIES------------------------------------------------------###
+  # Trapping abilities to influence AI. Separate array for Magnet Pull on account of it being Steel-type only
+  TRAPPINGABILITIES = [:ARENATRAP, :MAGNETPULL, :SHADOWTAG]
+  TRAPPINGABILITIESAI = [:ARENATRAP, :SHADOWTAG]
 
-###--------------------------------------UNFREEZEMOVE-----------------------------------------------------------###
-UNFREEZEMOVE = arrayToConstant(PBMoves,[:FLAMEWHEEL,:SACREDFIRE,:FLAREBLITZ, :FUSIONFLARE, 
-  :SCALD, :STEAMERUPTION, :BURNUP])
+  # Standardized lists of moves with similar purposes/characteristics
+  # (mostly just "stuff that gets called together")
 
-###--------------------------------------SETUPMOVE--------------------------------------------------------------###
-SETUPMOVE = arrayToConstant(PBMoves,[:SWORDSDANCE, :DRAGONDANCE, :CALMMIND, :WORKUP,:NASTYPLOT, 
-  :TAILGLOW,:BELLYDRUM, :BULKUP,:COIL,:CURSE, :GROWTH, :HONECLAWS, :QUIVERDANCE, :SHELLSMASH])
+  # ##--------------------------------------UNFREEZEMOVE-----------------------------------------------------------###
+  UNFREEZEMOVE = [
+    :FLAMEWHEEL, :SACREDFIRE, :FLAREBLITZ, :FUSIONFLARE,
+    :SCALD, :STEAMERUPTION, :BURNUP, :PYROBALL, :SCORCHINGSANDS
+  ]
 
-###--------------------------------------PROTECTMOVE------------------------------------------------------------###
-PROTECTMOVE = arrayToConstant(PBMoves,[:PROTECT, :DETECT,:KINGSSHIELD, :SPIKYSHIELD, :BANEFULBUNKER])
+  # ##--------------------------------------SETUPMOVE--------------------------------------------------------------###
+  SETUPMOVE = [
+    :SWORDSDANCE, :DRAGONDANCE, :CALMMIND, :WORKUP, :NASTYPLOT,
+    :TAILGLOW, :BELLYDRUM, :BULKUP, :COIL, :CURSE, :GROWTH, :HONECLAWS, :QUIVERDANCE, :SHELLSMASH,
+    :NORETREAT, :STUFFCHEEKS
+  ]
 
-###--------------------------------------PROTECTIGNORINGMOVE----------------------------------------------------###
-PROTECTIGNORINGMOVE = arrayToConstant(PBMoves,[:FEINT, :HYPERSPACEHOLE,:HYPERSPACEFURY, :SHADOWFORCE, :PHANTOMFORCE])
+  # ##--------------------------------------STATNERFMOVE-----------------------------------------------------------###
+  # moves with a 100% chance to lower an opponents stats on direct use (mainly for Lash Out AI stuff)
+  STATNERFMOVE = [
+    :SCREECH, :METALSOUND, :FAKETEARS, :CHARM, :BABYDOLLEYES, :CAPTIVATE, :FEATHERDANCE,
+    :EERIEIMPULSE, :NOBLEROAR, :PARTINGSHOT, :STRENGTHSAP, :DEFOG, :GROWL, :PLAYNICE, :TEARFULOOK,
+    :TICKLE, :LEER, :TAILWHIP, :TARSHOT, :TOXICTHREAD, :COTTONSPORE, :STRINGSHOT, :SCARYFACE, :FLASH,
+    :KINESIS, :SANDATTACK, :SMOKESCREEN, :BREAKINGSWIPE, :LUNGE, :FIRELASH, :GRAVAPPLE, :THUNDEROUSKICK,
+    :MYSTICALFIRE, :SKITTERSMACK, :STRUGGLEBUG, :SPIRITBREAK, :APPLEACID, :ACIDSPRAY, :BULLDOZE,
+    :DRUMBEATING, :GLACIATE, :ELECTROWEB, :ICYWIND, :MUDSHOT, :ROCKTOMB, :MUDSLAP
+  ]
 
-###--------------------------------------SCREENBREAKERMOVE------------------------------------------------------###
-SCREENBREAKERMOVE = arrayToConstant(PBMoves,[:DEFOG, :BRICKBREAK,:PSYCHICFANGS])
+  # ##--------------------------------------PROTECTMOVE------------------------------------------------------------###
+  PROTECTMOVE = [:PROTECT, :DETECT, :KINGSSHIELD, :SPIKYSHIELD, :BANEFULBUNKER, :OBSTRUCT]
 
-###--------------------------------------CONTRARYBAITMOVE-------------------------------------------------------###
-CONTRARYBAITMOVE = arrayToConstant(PBMoves,[:SUPERPOWER,:OVERHEAT,:DRACOMETEOR, :LEAFSTORM, 
-  :FLEURCANNON, :PSYCHOBOOST])
+  # ##--------------------------------------PROTECTIGNORINGMOVE----------------------------------------------------###
+  PROTECTIGNORINGMOVE = [:FEINT, :HYPERSPACEHOLE, :HYPERSPACEFURY, :SHADOWFORCE, :PHANTOMFORCE]
 
-###--------------------------------------TWOTURNAIRMOVE---------------------------------------------------------###
-TWOTURNAIRMOVE = arrayToConstant(PBMoves,[:BOUNCE,:FLY, :SKYDROP])
+  # ##--------------------------------------SCREENBREAKERMOVE------------------------------------------------------###
+  SCREENBREAKERMOVE = [:DEFOG, :BRICKBREAK, :PSYCHICFANGS]
 
-###--------------------------------------PIVOTMOVE--------------------------------------------------------------###
-PIVOTMOVE = arrayToConstant(PBMoves,[:UTURN, :VOLTSWITCH,:PARTINGSHOT])
+  # ##--------------------------------------CONTRARYBAITMOVE-------------------------------------------------------###
+  CONTRARYBAITMOVE = [:SUPERPOWER, :OVERHEAT, :DRACOMETEOR, :LEAFSTORM, :FLEURCANNON, :PSYCHOBOOST]
 
-###--------------------------------------DANCEMOVE--------------------------------------------------------------###
-DANCEMOVE = arrayToConstant(PBMoves,[:QUIVERDANCE, :DRAGONDANCE, :FIERYDANCE, 
-  :FEATHERDANCE,:PETALDANCE,:SWORDSDANCE, :TEETERDANCE, :LUNARDANCE,:REVELATIONDANCE])
+  # ##--------------------------------------TWOTURNAIRMOVE---------------------------------------------------------###
+  TWOTURNAIRMOVE = [:BOUNCE, :FLY, :SKYDROP]
 
-###--------------------------------------BULLETMOVE-------------------------------------------------------------###
-BULLETMOVE = arrayToConstant(PBMoves,[:ACIDSPRAY, :AURASPHERE,:BARRAGE, :BULLETSEED,
-  :EGGBOMB, :ELECTROBALL, :ENERGYBALL, :FOCUSBLAST,:GYROBALL,:ICEBALL, :MAGNETBOMB, 
-  :MISTBALL,:MUDBOMB, :OCTAZOOKA, :ROCKWRECKER, :SEARINGSHOT, :SEEDBOMB,:SHADOWBALL,
-  :SLUDGEBOMB, :WEATHERBALL, :ZAPCANNON, :BEAKBLAST])
+  # ##--------------------------------------PIVOTMOVE--------------------------------------------------------------###
+  PIVOTMOVE = [:UTURN, :VOLTSWITCH, :PARTINGSHOT, :FLIPTURN]
 
-###--------------------------------------BITEMOVE---------------------------------------------------------------###
-BITEMOVE = arrayToConstant(PBMoves,[:BITE,:CRUNCH,:THUNDERFANG, :FIREFANG,:ICEFANG,
-  :POISONFANG,:HYPERFANG, :PSYCHICFANGS])
+  # ##--------------------------------------DANCEMOVE--------------------------------------------------------------###
+  DANCEMOVE = [
+    :QUIVERDANCE, :DRAGONDANCE, :FIERYDANCE,
+    :FEATHERDANCE, :PETALDANCE, :SWORDSDANCE, :TEETERDANCE, :LUNARDANCE, :REVELATIONDANCE
+  ]
 
-###--------------------------------------PHASEMOVE--------------------------------------------------------------###
-PHASEMOVE = arrayToConstant(PBMoves,[:ROAR,:WHIRLWIND, :CIRCLETHROW, :DRAGONTAIL,:YAWN,:PERISHSONG])
+  # ##--------------------------------------BULLETMOVE-------------------------------------------------------------###
+  BULLETMOVE = [
+    :ACIDSPRAY, :AURASPHERE, :BARRAGE, :BULLETSEED,
+    :EGGBOMB, :ELECTROBALL, :ENERGYBALL, :FOCUSBLAST, :GYROBALL, :ICEBALL, :MAGNETBOMB,
+    :MISTBALL, :MUDBOMB, :OCTAZOOKA, :POLLENPUFF, :ROCKWRECKER, :SEARINGSHOT, :SEEDBOMB, :SHADOWBALL,
+    :SLUDGEBOMB, :WEATHERBALL, :ZAPCANNON, :BEAKBLAST, :PYROBALL
+  ]
 
-###--------------------------------------SCREENMOVE-------------------------------------------------------------###
-SCREENMOVE = arrayToConstant(PBMoves,[:LIGHTSCREEN, :REFLECT, :AURORAVEIL])
+  # ##--------------------------------------BITEMOVE---------------------------------------------------------------###
+  BITEMOVE = [
+    :BITE, :CRUNCH, :THUNDERFANG, :FIREFANG, :ICEFANG, :POISONFANG, :HYPERFANG, :PSYCHICFANGS, :FISHIOUSREND
+  ]
 
-###--------------------------------------OHKOMOVE-------------------------------------------------------------###
-OHKOMOVE = arrayToConstant(PBMoves,[:FISSURE,:SHEERCOLD,:GUILLOTINE,:HORNDRILL])
+  # ##--------------------------------------STABBINGMOVE-----------------------------------------------------------###
+  # Alex really seems to like this idea so here you go
+  STABBINGMOVE = [
+    :HORNATTACK, :FURYATTACK, :POISONSTING, :TWINEEDLE, :PINMISSILE,
+    :PECK, :DRILLPECK, :MEGAHORN, :POISONJAB, :NEEDLEARM, :PLUCK,
+    :DRILLRUN, :HORNLEECH, :FELLSTINGER, :SMARTSTRIKE, :BRANCHPOKE,
+    :FALSESURRENDER, :GLACIALLANCE, :GILDEDARROW, :GILDEDHELIX, :QUICKSILVERSPEAR
+  ]
 
-#Moves that inflict statuses with at least a 50% of hitting
-###--------------------------------------BURNMOVE---------------------------------------------------------------###
-BURNMOVE = arrayToConstant(PBMoves,[:WILLOWISP, :SACREDFIRE,:INFERNO])
+  # ##--------------------------------------PHASEMOVE--------------------------------------------------------------###
+  PHASEMOVE = [:ROAR, :WHIRLWIND, :CIRCLETHROW, :DRAGONTAIL, :YAWN, :PERISHSONG]
 
-###--------------------------------------PARAMOVE---------------------------------------------------------------###
-PARAMOVE = arrayToConstant(PBMoves,[:THUNDERWAVE, :STUNSPORE, :GLARE, :NUZZLE,:ZAPCANNON])
+  # ##--------------------------------------SCREENMOVE-------------------------------------------------------------###
+  SCREENMOVE = [:LIGHTSCREEN, :REFLECT, :AURORAVEIL, :BADDYBAD, :GLITZYGLOW, :ARENITEWALL]
 
-###--------------------------------------SLEEPMOVE--------------------------------------------------------------###
-SLEEPMOVE = arrayToConstant(PBMoves,[:SPORE, :SLEEPPOWDER, :HYPNOSIS, :DARKVOID,:GRASSWHISTLE,
-  :LOVELYKISS,:SING, :YAWN])
+  # ##--------------------------------------OHKOMOVE-------------------------------------------------------------###
+  OHKOMOVE = [:FISSURE, :SHEERCOLD, :GUILLOTINE, :HORNDRILL]
 
-###--------------------------------------POISONMOVE-------------------------------------------------------------###
-POISONMOVE = arrayToConstant(PBMoves,[:TOXIC, :POISONPOWDER,:POISONGAS, :TOXICTHREAD])
+  # Moves that inflict statuses with at least a 50% of hitting
+  # ##--------------------------------------BURNMOVE---------------------------------------------------------------###
+  BURNMOVE = [:WILLOWISP, :SACREDFIRE, :INFERNO, :SIZZLYSLIDE, :BURNINGJEALOUSY]
 
-###--------------------------------------CONFUMOVE--------------------------------------------------------------###
-CONFUMOVE = arrayToConstant(PBMoves,[:CONFUSERAY,:SUPERSONIC,:FLATTER, :SWAGGER, :SWEETKISS, 
-  :TEETERDANCE, :CHATTER, :DYNAMICPUNCH])
+  # ##--------------------------------------PARAMOVE---------------------------------------------------------------###
+  PARAMOVE = [:THUNDERWAVE, :STUNSPORE, :GLARE, :NUZZLE, :ZAPCANNON, :BUZZYBUZZ]
 
-#all the status inflicting moves
-###--------------------------------------STATUSCONDITIONMOVE----------------------------------------------------###
-STATUSCONDITIONMOVE = arrayToConstant(PBMoves,[:WILLOWISP, :DARKVOID,:GRASSWHISTLE, :HYPNOSIS,
-  :LOVELYKISS,:SING,:SLEEPPOWDER, :SPORE, :YAWN,:POISONGAS, :POISONPOWDER, :TOXIC, :NUZZLE,
-  :STUNSPORE, :THUNDERWAVE])
+  # ##--------------------------------------SLEEPMOVE--------------------------------------------------------------###
+  SLEEPMOVE = [:SPORE, :SLEEPPOWDER, :HYPNOSIS, :DARKVOID, :GRASSWHISTLE, :LOVELYKISS, :SING, :YAWN]
+
+  # ##--------------------------------------POISONMOVE-------------------------------------------------------------###
+  POISONMOVE = [:TOXIC, :POISONPOWDER, :POISONGAS, :TOXICTHREAD]
+
+  # ##--------------------------------------CONFUMOVE--------------------------------------------------------------###
+  CONFUMOVE = [:CONFUSERAY, :SUPERSONIC, :FLATTER, :SWAGGER, :SWEETKISS, :TEETERDANCE, :CHATTER, :DYNAMICPUNCH]
+
+  # moves that are learned by almost all pokemon via TM/Tutor
+  # ##--------------------------------------NEAR-UNIVERSAL-TMS-----------------------------------------------------###
+  UNIVERSALTMS = [
+    :ATTRACT, :CAPTIVATE, :CONFIDE, :DOUBLETEAM, :ENDURE, :FACADE, :FRUSTRATION, :HIDDENPOWER,
+    :NATURALGIFT, :PROTECT, :REST, :RETURN, :ROUND, :SECRETPOWER, :SLEEPTALK, :SNORE, :SUBSTITUTE, :SWAGGER, :TOXIC
+  ]
+
+  # all the status inflicting moves
+  # ##--------------------------------------STATUSCONDITIONMOVE----------------------------------------------------###
+  STATUSCONDITIONMOVE = [
+    :WILLOWISP, :DARKVOID, :GRASSWHISTLE, :HYPNOSIS,
+    :LOVELYKISS, :SING, :SLEEPPOWDER, :SPORE, :YAWN, :POISONGAS, :POISONPOWDER, :TOXIC, :NUZZLE,
+    :STUNSPORE, :THUNDERWAVE, :SIZZLYSLIDE, :BUZZYBUZZ
+  ]
 
 
-#Odd groups of moves/effects with similar behavior
-###--------------------------------------HEALFUNCTIONS----------------------------------------------------------###
-HEALFUNCTIONS =[0xD5,0xD6,0xD7,0xD8,0xD9,0xDD,0xDE,0xDF,0xE3,0xE4,0x114,0x139,0x158,0x162,0x169,0x16C,0x172]
+  # Odd groups of moves/effects with similar behavior
+  # ##--------------------------------------HEALFUNCTIONS----------------------------------------------------------###
+  HEALFUNCTIONS = [
+    0xD5, 0xD6, 0xD7, 0xD8, 0xD9, 0xDD, 0xDE, 0xDF, 0xE3, 0xE4, 0x114, 0x139, 0x158, 0x162, 0x169,
+    0x16C, 0x172, 0x318
+  ]
 
-###--------------------------------------RATESHARERS------------------------------------------------------------###
-RATESHARERS = arrayToConstant(PBMoves,[:PROTECT, :DETECT,:QUICKGUARD, :WIDEGUARD, :ENDURE,
-  :KINGSSHIELD, :SPIKYSHIELD, :BANEFULBUNKER, :CRAFTYSHIELD])
+  # ##--------------------------------------RATESHARERS------------------------------------------------------------###
+  RATESHARERS = [
+    :PROTECT, :DETECT, :QUICKGUARD, :WIDEGUARD, :ENDURE,
+    :KINGSSHIELD, :SPIKYSHIELD, :BANEFULBUNKER, :CRAFTYSHIELD, :OBSTRUCT
+  ]
 
-###--------------------------------------INVULEFFECTS-----------------------------------------------------------###
-INVULEFFECTS = arrayToConstant(PBEffects,[:Protect, :Endure,:Obstruct, :KingsShield, :SpikyShield, :MatBlock, 
-  :BanefulBunker])
+  # ##--------------------------------------INVULEFFECTS-----------------------------------------------------------###
+  INVULEFFECTS = [
+    :Protect, :Endure, :MatBlock
+  ]
 
-###--------------------------------------POWDERMOVES------------------------------------------------------------###
-POWDERMOVES = arrayToConstant(PBMoves,[:COTTONSPORE, :SLEEPPOWDER, :STUNSPORE, :SPORE, :RAGEPOWDER,
-  :POISONPOWDER,:POWDER])
+  # ##--------------------------------------POWDERMOVES------------------------------------------------------------###
+  POWDERMOVES = [
+    :COTTONSPORE, :SLEEPPOWDER, :STUNSPORE, :SPORE, :RAGEPOWDER,
+    :POISONPOWDER, :POWDER, :MAGICPOWDER
+  ]
 
-###--------------------------------------AIRHITMOVES------------------------------------------------------------###
-AIRHITMOVES = arrayToConstant(PBMoves,[:THUNDER, :HURRICANE, :GUST, :TWISTER, :SKYUPPERCUT, 
-  :SMACKDOWN, :THOUSANDARROWS])
+  # ##--------------------------------------AIRHITMOVES------------------------------------------------------------###
+  AIRHITMOVES = [
+    :THUNDER, :HURRICANE, :GUST, :TWISTER, :SKYUPPERCUT,
+    :SMACKDOWN, :THOUSANDARROWS
+  ]
 
-# Blacklist stuff
-###--------------------------------------NOCOPYMOVE-------------------------------------------------------------###
-NOCOPYMOVE = arrayToConstant(PBMoves,[:ASSIST,:COPYCAT, :MEFIRST, :METRONOME, :MIMIC, :MIRRORMOVE,
-  :NATUREPOWER, :SHELLTRAP, :SKETCH,:SLEEPTALK, :STRUGGLE, :BEAKBLAST, :FOCUSPUNCH,:TRANSFORM, 
-  :BELCH, :CHATTER, :KINGSSHIELD, :BANEFULBUNKER, :BESTOW, :COUNTER, :COVET, :DESTINYBOND, :DETECT, 
-  :ENDURE,:FEINT, :FOLLOWME,:HELPINGHAND, :MATBLOCK,:MIRRORCOAT,:PROTECT, :RAGEPOWDER, :SNATCH,
-  :SPIKYSHIELD, :SPOTLIGHT, :SWITCHEROO, :THIEF, :TRICK])
+  # Blacklist stuff
+  # ##--------------------------------------NOCOPYMOVE-------------------------------------------------------------###
+  NOCOPYMOVE = [
+    :ASSIST, :COPYCAT, :MEFIRST, :METRONOME, :MIMIC, :MIRRORMOVE,
+    :NATUREPOWER, :SHELLTRAP, :SKETCH, :SLEEPTALK, :STRUGGLE, :BEAKBLAST, :FOCUSPUNCH, :TRANSFORM,
+    :BELCH, :CHATTER, :KINGSSHIELD, :BANEFULBUNKER, :BESTOW, :COUNTER, :COVET, :DESTINYBOND, :DETECT,
+    :ENDURE, :FEINT, :FOLLOWME, :HELPINGHAND, :MATBLOCK, :MIRRORCOAT, :PROTECT, :RAGEPOWDER, :SNATCH,
+    :SPIKYSHIELD, :SPOTLIGHT, :SWITCHEROO, :THIEF, :TRICK, :OBSTRUCT, :COMEUPPANCE
+  ]
 
-###--------------------------------------NOAUTOMOVE-------------------------------------------------------------###
-NOAUTOMOVE = arrayToConstant(PBMoves,[:ASSIST,:COPYCAT, :MEFIRST, :METRONOME, :MIMIC, :MIRRORMOVE,
-  :NATUREPOWER, :SHELLTRAP, :SKETCH,:SLEEPTALK, :STRUGGLE])
+  # ##--------------------------------------ZMOVES-----------------------------------------------------------------###
+  ZMOVES = [
+    :BREAKNECKBLITZ, :ALLOUTPUMMELING, :SUPERSONICSKYSTRIKE, :ACIDDOWNPOUR, :TECTONICRAGE, :CONTINENTALCRUSH,
+    :SAVAGESPINOUT, :NEVERENDINGNIGHTMARE, :CORKSCREWCRASH, :INFERNOOVERDRIVE, :HYDROVORTEX, :BLOOMDOOM,
+    :GIGAVOLTHAVOC, :SHATTEREDPSYCHE, :SUBZEROSLAMMER, :DEVASTATINGDRAKE, :BLACKHOLEECLIPSE, :TWINKLETACKLE,
+    :STOKEDSPARKSURFER, :SINISTERARROWRAID, :MALICIOUSMOONSAULT, :OCEANICOPERETTA, :EXTREMEEVOBOOST, :CATASTROPIKA,
+    :PULVERIZINGPANCAKE, :GENESISSUPERNOVA, :GUARDIANOFALOLA, :SOULSTEALING7STARSTRIKE, :CLANGOROUSSOULBLAZE,
+    :SPLINTEREDSTORMSHARDS, :LETSSNUGGLEFOREVER, :SEARINGSUNRAZESMASH, :MENACINGMOONRAZEMAELSTROM, :LIGHTTHATBURNSTHESKY,
+    :UNLEASHEDPOWER, :BLINDINGSPEED, :ELYSIANSHIELD, :CHTHONICMALADY, :DOMAINSHIFT
+  ]
 
-###--------------------------------------DELAYEDMOVE------------------------------------------------------------###
-DELAYEDMOVE = arrayToConstant(PBMoves,[:BEAKBLAST, :FOCUSPUNCH])
+  # ##--------------------------------------ANIMATIONDUMMIES--------------------------------------------------------###
+  ANIMATIONDUMMIES = [
+    :TECHNOBLASTELECTRIC, :TECHNOBLASTFIRE, :TECHNOBLASTICE, :TECHNOBLASTWATER,
+    :MULTIATTACKBUG, :MULTIATTACKDARK, :MULTIATTACKDRAGON, :MULTIATTACKELECTRIC, :MULTIATTACKFAIRY,
+    :MULTIATTACKFIGHTING, :MULTIATTACKFIRE, :MULTIATTACKFLYING, :MULTIATTACKGHOST, :MULTIATTACKGLITCH,
+    :MULTIATTACKGRASS, :MULTIATTACKGROUND, :MULTIATTACKICE, :MULTIATTACKPOISON, :MULTIATTACKPSYCHIC,
+    :MULTIATTACKROCK, :MULTIATTACKSTEEL, :MULTIATTACKWATER, :JUDGMENTBUG, :JUDGMENTDARK, :JUDGMENTDRAGON,
+    :JUDGMENTELECTRIC, :JUDGMENTFAIRY, :JUDGMENTFIGHTING, :JUDGMENTFIRE, :JUDGMENTFLYING, :JUDGMENTGHOST,
+    :JUDGMENTQMARKS, :JUDGMENTGRASS, :JUDGMENTGROUND, :JUDGMENTICE, :JUDGMENTPOISON, :JUDGMENTPSYCHIC,
+    :JUDGMENTROCK, :JUDGMENTSTEEL, :JUDGMENTWATER, :HIDDENPOWERNOR, :HIDDENPOWERFIR, :HIDDENPOWERFIG,
+    :HIDDENPOWERWAT, :HIDDENPOWERFLY, :HIDDENPOWERGRA, :HIDDENPOWERPOI, :HIDDENPOWERELE, :HIDDENPOWERGRO,
+    :HIDDENPOWERPSY, :HIDDENPOWERROC, :HIDDENPOWERICE, :HIDDENPOWERBUG, :HIDDENPOWERDRA, :HIDDENPOWERGHO,
+    :HIDDENPOWERDAR, :HIDDENPOWERSTE, :HIDDENPOWERFAI, :FUTUREDUMMY, :DOOMDUMMY, :HEXDUMMY, :SPLINTERSDARK, :SPLINTERSROCK,
+    :WEATHERBALLSUN, :WEATHERBALLRAIN, :WEATHERBALLHAIL, :WEATHERBALLSAND, :AURAWHEELMINUS, :ULTRAMEGAHAMMER,
+    :GUARDIANOFALOLALELE, :GUARDIANOFALOLABULU, :GUARDIANOFALOLAFINI, :THUNDERRAID2, :THUNDERRAID3
+  ]
 
-###--------------------------------------TWOTURNMOVE------------------------------------------------------------###
-TWOTURNMOVE = arrayToConstant(PBMoves,[:BOUNCE,:DIG, :DIVE, :FLY, :PHANTOMFORCE,:SHADOWFORCE, :SKYDROP])
+  # ##--------------------------------------NOAUTOMOVE-------------------------------------------------------------###
+  NOAUTOMOVE = [
+    :ASSIST, :COPYCAT, :MEFIRST, :METRONOME, :MIMIC, :MIRRORMOVE,
+    :NATUREPOWER, :SHELLTRAP, :SKETCH, :SLEEPTALK, :STRUGGLE
+  ]
 
-###--------------------------------------FORCEOUTMOVE-----------------------------------------------------------###
-FORCEOUTMOVE = arrayToConstant(PBMoves,[:CIRCLETHROW, :DRAGONTAIL,:ROAR, :WHIRLWIND])
-###--------------------------------------REPEATINGMOVE----------------------------------------------------------###
-REPEATINGMOVE = arrayToConstant(PBMoves,[:ICEBALL, :OUTRAGE, :PETALDANCE, :ROLLOUT, :THRASH])
+  # ##--------------------------------------DELAYEDMOVE------------------------------------------------------------###
+  DELAYEDMOVE = [:BEAKBLAST, :FOCUSPUNCH]
 
-###--------------------------------------CHARGEMOVE-------------------------------------------------------------###
-CHARGEMOVE = arrayToConstant(PBMoves,[:BIDE, :GEOMANCY,:RAZORWIND, :SKULLBASH,:SKYATTACK,:SOLARBEAM, 
-  :SOLARBLADE, :FREEZESHOCK, :ICEBURN])
+  # ##--------------------------------------TWOTURNMOVE------------------------------------------------------------###
+  TWOTURNMOVE = [:BOUNCE, :DIG, :DIVE, :FLY, :PHANTOMFORCE, :SHADOWFORCE, :SKYDROP]
 
-###---------------------------------------ITEMLISTS-------------------------------------------------------------###
-HPITEMS = arrayToConstant(PBItems,[:POTION, :SUPERPOTION, :ULTRAPOTION, :HYPERPOTION,:MAXPOTION,
-  :FULLRESTORE, :BERRYJUICE, :RAGECANDYBAR, :SWEETHEART, :FRESHWATER,:SODAPOP, :LEMONADE, 
-  :BUBBLETEA,:MEMEONADE, :MOOMOOMILK, :ENERGYPOWDER, :ENERGYROOT, :ORANBERRY, :SITRUSBERRY, 
-  :CHOCOLATEIC,:VANILLAIC,:STRAWBIC,:BLUEMIC])
+  # ##--------------------------------------FORCEOUTMOVE-----------------------------------------------------------###
+  FORCEOUTMOVE = [:CIRCLETHROW, :DRAGONTAIL, :ROAR, :WHIRLWIND]
+  # ##--------------------------------------REPEATINGMOVE----------------------------------------------------------###
+  REPEATINGMOVE = [:ICEBALL, :OUTRAGE, :PETALDANCE, :ROLLOUT, :THRASH]
 
-STATUSITEMS = arrayToConstant(PBItems,[:FULLRESTORE,:PERSIMBERRY, :FULLHEAL, :MEDICINE, :LAVACOOKIE, 
-  :OLDGATEAU, :CASTELIACONE, :HEALPOWDER, :LUMBERRY, :LUMIOSEGALETTE,:BIGMALASADA])
+  # ##--------------------------------------CHARGEMOVE-------------------------------------------------------------###
+  CHARGEMOVE = [
+    :BIDE, :GEOMANCY, :RAZORWIND, :SKULLBASH, :SKYATTACK, :METEORBEAM, :SOLARBEAM,
+    :SOLARBLADE, :FREEZESHOCK, :ICEBURN
+  ]
 
-BURNITEMS = STATUSITEMS | arrayToConstant(PBItems,[:BURNHEAL, :RAWSTBERRY, :SALTWATERTAFFY])
+  # ##---------------------------------------ITEMLISTS-------------------------------------------------------------###
+  HPITEMS = [
+    :POTION, :SUPERPOTION, :ULTRAPOTION, :HYPERPOTION, :MAXPOTION,
+    :FULLRESTORE, :BERRYJUICE, :RAGECANDYBAR, :SWEETHEART, :FRESHWATER, :SODAPOP, :LEMONADE,
+    :BUBBLETEA, :MEMEONADE, :MOOMOOMILK, :ENERGYPOWDER, :ENERGYROOT, :ORANBERRY, :SITRUSBERRY,
+    :CHOCOLATEIC, :VANILLAIC, :STRAWBIC, :BLUEMIC, :STRAWCAKE, :CHINESEFOOD
+  ]
 
-FREEZEITEMS = STATUSITEMS | arrayToConstant(PBItems,[:ICEHEAL, :ASPEARBERRY, :REDHOTS])
+  STATUSITEMS = [
+    :FULLRESTORE, :PERSIMBERRY, :FULLHEAL, :MEDICINE, :LAVACOOKIE,
+    :OLDGATEAU, :CASTELIACONE, :HEALPOWDER, :LUMBERRY, :LUMIOSEGALETTE, :BIGMALASADA
+  ]
 
-PARAITEMS = STATUSITEMS | arrayToConstant(PBItems,[:PARLYZHEAL, :CHERIBERRY, :CHEWINGGUM])
+  BURNITEMS = STATUSITEMS | [:BURNHEAL, :RAWSTBERRY, :SALTWATERTAFFY]
 
-SLEEPITEMS = STATUSITEMS | arrayToConstant(PBItems,[:AWAKENING, :CHESTOBERRY, :POPROCKS, :BLUEFLUTE])
+  FREEZEITEMS = STATUSITEMS | [:ICEHEAL, :ASPEARBERRY, :REDHOTS]
 
-POISONITEMS = STATUSITEMS | arrayToConstant(PBItems,[:ANTIDOTE, :PECHABERRY, :PEPPERMINT])
+  PARAITEMS = STATUSITEMS | [:PARLYZHEAL, :CHERIBERRY, :CHEWINGGUM]
 
-CONFUITEMS = STATUSITEMS | arrayToConstant(PBItems,[:PERSIMBERRY, :YELLOWFLUTE])
+  SLEEPITEMS = STATUSITEMS | [:AWAKENING, :CHESTOBERRY, :POPROCKS, :BLUEFLUTE, :POKEFLUTE]
 
-REVIVEITEMS = arrayToConstant(PBItems,[:REVIVE,:MAXREVIVE,:REVIVALHERB,:COTTONCANDY])
+  POISONITEMS = STATUSITEMS | [:ANTIDOTE, :PECHABERRY, :PEPPERMINT]
 
-PPITEMS = arrayToConstant(PBItems,[:ETHER,:MAXETHER,:ELIXIR,:MAXELIXIR,:LEPPABERRY])
+  CONFUITEMS = STATUSITEMS | [:PERSIMBERRY, :YELLOWFLUTE]
 
-INFATUATIONITEMS = arrayToConstant(PBItems, [:REDFLUTE])
+  PETRIFYITEMS = STATUSITEMS
 
-###-------------------------------------------------------------------------------------------------------------###
+  REVIVEITEMS = [:REVIVE, :MAXREVIVE, :REVIVALHERB, :COTTONCANDY, :FUNNELCAKE, :HERBALTEA]
 
-BLACKLISTS = {
-:MEFIRST => NOCOPYMOVE | arrayToConstant(PBMoves,[:METALBURST]),
-###-------------------------------------------------------------------------------------------------------------###
-:METRONOME => NOCOPYMOVE | arrayToConstant(PBMoves,[:AFTERYOU, 
-  :DIAMONDSTORM,:FLEURCANNON, :HYPERSPACEFURY, :HYPERSPACEHOLE,:MINDBLOWN, :PHOTONGEYSER,:PLASMAFISTS,
-  :QUASH, :QUICKGUARD,:RELICSONG, :SECRETSWORD, :SNORE, :SPECTRALTHIEF, :STEAMERUPTION, :TECHNOBLAST,
-  :THOUSANDARROWS,:THOUSANDWAVES, :VCREATE, :WIDEGUARD, :CRAFTYSHIELD,:INSTRUCT,:FREEZESHOCK, 
-  :ICEBURN, :WEATHERBALLSUN,:WEATHERBALLRAIN, :WEATHERBALLHAIL, :WEATHERBALLSAND, :SNARL, 
-  :CELEBRATE, :TECHNOBLASTELECTRIC, :TECHNOBLASTFIRE, :TECHNOBLASTICE, :TECHNOBLASTWATER,
-  :MULTIATTACKBUG, :MULTIATTACKDARK, :MULTIATTACKDRAGON, :MULTIATTACKELECTRIC, :MULTIATTACKFAIRY,
-  :MULTIATTACKFIGHTING, :MULTIATTACKFIRE, :MULTIATTACKFLYING, :MULTIATTACKGHOST, :MULTIATTACKGLITCH,
-  :MULTIATTACKGRASS, :MULTIATTACKGROUND, :MULTIATTACKICE, :MULTIATTACKPOISON, :MULTIATTACKPSYCHIC,
-  :MULTIATTACKROCK, :MULTIATTACKSTEEL, :MULTIATTACKWATER,
-  :JUDGMENTBUG, :JUDGMENTDARK, :JUDGMENTDRAGON, :JUDGMENTELECTRIC, :JUDGMENTFAIRY,
-  :JUDGMENTFIGHTING, :JUDGMENTFIRE, :JUDGMENTFLYING, :JUDGMENTGHOST, :JUDGMENTQMARKS,
-  :JUDGMENTGRASS, :JUDGMENTGROUND, :JUDGMENTICE, :JUDGMENTPOISON, :JUDGMENTPSYCHIC,
-  :JUDGMENTROCK, :JUDGMENTSTEEL, :JUDGMENTWATER,:FUTUREDUMMY, :DOOMDUMMY]) |
-  (PBMoves::HIDDENPOWERNOR..PBMoves::HIDDENPOWERFAI).to_a,
-###-------------------------------------------------------------------------------------------------------------###
-:COPYCAT => NOCOPYMOVE | FORCEOUTMOVE | arrayToConstant(PBMoves,[:CRAFTYSHIELD]),
-###-------------------------------------------------------------------------------------------------------------###
-:ASSIST =>NOCOPYMOVE | FORCEOUTMOVE | TWOTURNMOVE,
-###-------------------------------------------------------------------------------------------------------------###
-:INSTRUCT =>NOAUTOMOVE | DELAYEDMOVE| TWOTURNMOVE | REPEATINGMOVE |
-arrayToConstant(PBMoves,[:TRANSFORM,:BELCH, :KINGSSHIELD, :BIDE, :INSTRUCT]),
-###-------------------------------------------------------------------------------------------------------------###
-:SLEEPTALK => NOAUTOMOVE | DELAYEDMOVE| TWOTURNMOVE | CHARGEMOVE | arrayToConstant(PBMoves,[:BELCH,:CHATTER]),
-###-------------------------------------------------------------------------------------------------------------###
-:ENCORE =>NOAUTOMOVE | arrayToConstant(PBMoves,[:TRANSFORM])
-}
+  PPITEMS = [:ETHER, :MAXETHER, :ELIXIR, :MAXELIXIR, :LEPPABERRY, :ROSETEA]
 
-#massive arrays of stuff that no one wants to see
-NATURALGIFTDAMAGE=pbHashConverter(PBItems,{
-###-------------------------------------------------------------------------------------------------------------###
-  100 => [:WATMELBERRY, :DURINBERRY,  :BELUEBERRY,  :LIECHIBERRY, :GANLONBERRY, :SALACBERRY,
-          :PETAYABERRY, :APICOTBERRY, :LANSATBERRY, :STARFBERRY,  :ENIGMABERRY, :MICLEBERRY,
-          :CUSTAPBERRY, :JABOCABERRY, :ROWAPBERRY],
-###-------------------------------------------------------------------------------------------------------------###
-   90 => [:BLUKBERRY,   :NANABBERRY,  :WEPEARBERRY, :PINAPBERRY,  :POMEGBERRY,  :KELPSYBERRY,
-          :QUALOTBERRY, :HONDEWBERRY, :GREPABERRY,  :TAMATOBERRY, :CORNNBERRY,  :MAGOSTBERRY,
-          :RABUTABERRY, :NOMELBERRY,  :SPELONBERRY, :PAMTREBERRY],
-###-------------------------------------------------------------------------------------------------------------###
-   80 => [:CHERIBERRY,  :CHESTOBERRY, :PECHABERRY,  :RAWSTBERRY,  :ASPEARBERRY, :LEPPABERRY,
-          :ORANBERRY,   :PERSIMBERRY, :LUMBERRY,    :SITRUSBERRY, :FIGYBERRY,   :WIKIBERRY,
-          :MAGOBERRY,   :AGUAVBERRY,  :IAPAPABERRY, :RAZZBERRY,   :OCCABERRY,   :PASSHOBERRY,
-          :WACANBERRY,  :RINDOBERRY,  :YACHEBERRY,  :CHOPLEBERRY, :KEBIABERRY,  :SHUCABERRY,
-          :COBABERRY,   :PAYAPABERRY, :TANGABERRY,  :CHARTIBERRY, :KASIBBERRY,  :HABANBERRY,
-          :COLBURBERRY, :BABIRIBERRY, :CHILANBERRY]})
-###-------------------------------------------------------------------------------------------------------------###
-NATURALGIFTTYPE=pbHashConverter(PBItems,{
-  PBTypes::NORMAL   => [:CHILANBERRY],
-  PBTypes::FIRE     => [:CHERIBERRY,  :BLUKBERRY,   :WATMELBERRY, :OCCABERRY],
-  PBTypes::WATER    => [:CHESTOBERRY, :NANABBERRY,  :DURINBERRY,  :PASSHOBERRY],
-  PBTypes::ELECTRIC => [:PECHABERRY,  :WEPEARBERRY, :BELUEBERRY,  :WACANBERRY],
-  PBTypes::GRASS    => [:RAWSTBERRY,  :PINAPBERRY,  :RINDOBERRY,  :LIECHIBERRY],
-  PBTypes::ICE      => [:ASPEARBERRY, :POMEGBERRY,  :YACHEBERRY,  :GANLONBERRY],
-  PBTypes::FIGHTING => [:LEPPABERRY,  :KELPSYBERRY, :CHOPLEBERRY, :SALACBERRY],
-  PBTypes::POISON   => [:ORANBERRY,   :QUALOTBERRY, :KEBIABERRY,  :PETAYABERRY],
-  PBTypes::GROUND   => [:PERSIMBERRY, :HONDEWBERRY, :SHUCABERRY,  :APICOTBERRY],
-  PBTypes::FLYING   => [:LUMBERRY,    :GREPABERRY,  :COBABERRY,   :LANSATBERRY],
-  PBTypes::PSYCHIC  => [:SITRUSBERRY, :TAMATOBERRY, :PAYAPABERRY, :STARFBERRY],
-  PBTypes::BUG      => [:FIGYBERRY,   :CORNNBERRY,  :TANGABERRY,  :ENIGMABERRY],
-  PBTypes::ROCK     => [:WIKIBERRY,   :MAGOSTBERRY, :CHARTIBERRY, :MICLEBERRY],
-  PBTypes::GHOST    => [:MAGOBERRY,   :RABUTABERRY, :KASIBBERRY,  :CUSTAPBERRY],
-  PBTypes::DRAGON   => [:AGUAVBERRY,  :NOMELBERRY,  :HABANBERRY,  :JABOCABERRY],
-  PBTypes::DARK     => [:IAPAPABERRY, :SPELONBERRY, :COLBURBERRY, :ROWAPBERRY],
-  PBTypes::FAIRY    => [:ROSELIBERRY, :KEEBERRY],
-  PBTypes::STEEL    => [:RAZZBERRY,   :PAMTREBERRY,:BABIRIBERRY]})
-FLINGDAMAGE=pbHashConverter(PBItems,{
-  300 => [:MEMEONADE],
-  130 => [:IRONBALL],
-  100 => [:ARMORFOSSIL,:CLAWFOSSIL,:COVERFOSSIL,:DOMEFOSSIL,:HARDSTONE,:HELIXFOSSIL,
-          :OLDAMBER,:PLUMEFOSSIL,:RAREBONE,:ROOTFOSSIL,:SKULLFOSSIL],
-   90 => [:DEEPSEATOOTH,:DRACOPLATE,:DREADPLATE,:EARTHPLATE,:FISTPLATE,:FLAMEPLATE,
-          :GRIPCLAW,:ICICLEPLATE,:INSECTPLATE,:IRONPLATE,:MEADOWPLATE,:MINDPLATE,
-          :SKYPLATE,:SPLASHPLATE,:SPOOKYPLATE,:STONEPLATE,:THICKCLUB,:TOXICPLATE,
-          :ZAPPLATE],
-   80 => [:DAWNSTONE,:DUSKSTONE,:ELECTIRIZER,:MAGMARIZER,:ODDKEYSTONE,:OVALSTONE,
-          :PROTECTOR,:QUICKCLAW,:RAZORCLAW,:SHINYSTONE,:STICKYBARB,:ASSAULTVEST],
-   70 => [:BURNDRIVE,:CHILLDRIVE,:DOUSEDRIVE,:DRAGONFANG,:POISONBARB,:POWERANKLET,
-          :POWERBAND,:POWERBELT,:POWERBRACER,:POWERLENS,:POWERWEIGHT,:SHOCKDRIVE],
-   60 => [:ADAMANTORB,:DAMPROCK,:HEATROCK,:LUSTROUSORB,:MACHOBRACE,:ROCKYHELMET,
-          :STICK,:AMPLIFIELDROCK,:ADRENALINEORB],
-   50 => [:DUBIOUSDISC,:SHARPBEAK],
-   40 => [:EVIOLITE,:ICYROCK,:LUCKYPUNCH,:PROTECTIVEPADS],
-   30 => [:ABILITYURGE,:ABSORBBULB,:AMULETCOIN,:ANTIDOTE,:AWAKENING,:BALMMUSHROOM,
-          :BERRYJUICE,:BIGMUSHROOM,:BIGNUGGET,:BIGPEARL,:BINDINGBAND,:BLACKBELT,
-          :BLACKFLUTE,:BLACKGLASSES,:BLACKSLUDGE,:BLUEFLUTE,:BLUESHARD,:BUBBLETEA,:BURNHEAL,
-          :CALCIUM,:CARBOS,:CASTELIACONE,:CELLBATTERY,:CHARCOAL,:CLEANSETAG,
-          :COMETSHARD,:DAMPMULCH,:DEEPSEASCALE,:DIREHIT,
-          :DRAGONSCALE,:EJECTBUTTON,:ELIXIR,:ENERGYPOWDER,:ENERGYROOT,:ESCAPEROPE,
-          :ETHER,:EVERSTONE,:EXPSHARE,:FIRESTONE,:FLAMEORB,:FLOATSTONE,:FLUFFYTAIL,
-          :FRESHWATER,:FULLHEAL,:FULLRESTORE,:GOOEYMULCH,:GREENSHARD,:GROWTHMULCH,
-          :GUARDSPEC,:HEALPOWDER,:HEARTSCALE,:HONEY,:HPUP,:HYPERPOTION,:ICEHEAL,
-          :IRON,:ITEMDROP,:ITEMURGE,:KINGSROCK,:LAVACOOKIE,:LEAFSTONE,:LEMONADE,
-          :LIFEORB,:LIGHTBALL,:LIGHTCLAY,:LUCKYEGG,:MAGNET,:MAGNETICLURE,:MAXELIXIR,:MAXETHER,
-          :MAXPOTION,:MAXREPEL,:MAXREVIVE,:MEDICINE,:METALCOAT,:METRONOME,:MIRACLESEED,
-          :MOOMOOMILK,:MOONSTONE,:MYSTICWATER,:NEVERMELTICE,:NUGGET,:OLDGATEAU,
-          :PARLYZHEAL,:PEARL,:PEARLSTRING,:POKEDOLL,:POKETOY,:POTION,:PPALL,:PPMAX,:PPUP,
-          :PRISMSCALE,:PROTEIN,:RAGECANDYBAR,:RARECANDY,:RAZORFANG,:REDFLUTE,
-          :REDSHARD,:RELICBAND,:RELICCOPPER,:RELICCROWN,:RELICGOLD,:RELICSILVER,
-          :RELICSTATUE,:RELICVASE,:REPEL,:RESETURGE,:REVIVALHERB,:REVIVE,:SACREDASH,
-          :SCOPELENS,:SHELLBELL,:SHOALSALT,:SHOALSHELL,:SMOKEBALL,:SODAPOP,:SOULDEW,
-          :SPELLTAG,:STABLEMULCH,:STARDUST,:STARPIECE,:SUNSTONE,:SUPERPOTION,
-          :SUPERREPEL,:SWEETHEART,:THUNDERSTONE,:TINYMUSHROOM,:TOXICORB,
-          :TWISTEDSPOON,:UPGRADE,:WATERSTONE,:WHITEFLUTE,:XACCURACY,:XATTACK,:XDEFEND,
-          :XSPDEF,:XSPECIAL,:XSPEED,:YELLOWFLUTE,:YELLOWSHARD,:ZINC,:BIGMALASADA,:ICESTONE],
-   20 => [:CLEVERWING,:GENIUSWING,:HEALTHWING,:MUSCLEWING,:PRETTYWING,
-          :RESISTWING,:SWIFTWING],
-   10 => [:AIRBALLOON,:BIGROOT,:BLUESCARF,:BRIGHTPOWDER,:CHOICEBAND,:CHOICESCARF,
-          :CHOICESPECS,:DESTINYKNOT,:EXPERTBELT,:FOCUSBAND,:FOCUSSASH,:FULLINCENSE,
-          :GREENSCARF,:LAGGINGTAIL,:LAXINCENSE,:LEFTOVERS,:LUCKINCENSE,:MENTALHERB,
-          :METALPOWDER,:MUSCLEBAND,:ODDINCENSE,:PINKSCARF,:POWERHERB,:PUREINCENSE,
-          :QUICKPOWDER,:REAPERCLOTH,:REDCARD,:REDSCARF,:RINGTARGET,:ROCKINCENSE,
-          :ROSEINCENSE,:SEAINCENSE,:SHEDSHELL,:SILKSCARF,:SILVERPOWDER,:SMOOTHROCK,
-          :SOFTSAND,:SOOTHEBELL,:WAVEINCENSE,:WHITEHERB,:WIDELENS,:WISEGLASSES,
-          :YELLOWSCARF,:ZOOMLENS,:BLUEMIC,:VANILLAIC,:STRAWBIC,:CHOCOLATEIC]})
+  INFATUATIONITEMS = [:REDFLUTE]
 
-  STATUSDAMAGE = pbHashConverter(PBMoves,{
-   0 => [:AFTERYOU,     :BESTOW,          :CRAFTYSHIELD,:LUCKYCHANT,:MEMENTO,:QUASH,:SAFEGUARD,
-         :SPITE,        :SPLASH,          :SWEETSCENT,:TELEKINESIS,:TELEPORT],
-   5 => [:ALLYSWITCH,   :AROMATICMIST,    :CAMOUFLAGE, :CONVERSION,:ENDURE,:ENTRAINMENT,:FLOWERSHIELD,
-         :FORESIGHT,    :FORESTSCURSE,    :GRAVITY,:DEFOG,:GUARDSWAP,:HEALBLOCK,:IMPRISON,
-         :INSTRUCT,     :FAIRYLOCK,       :LASERFOCUS,:HELPINGHAND,:MAGICROOM,:MAGNETRISE,:SOAK,
-         :LOCKON,       :MINDREADER,      :MIRACLEEYE,:MUDSPORT,:NIGHTMARE,:ODORSLEUTH,:POWERSPLIT,
-         :POWERSWAP,    :GRUDGE,          :GUARDSPLIT,:POWERTRICK,:QUICKGUARD,:RECYCLE,:REFLECTTYPE,
-         :ROTOTILLER,   :SKILLSWAP,       :SNATCH,:MAGICCOAT,:SPEEDSWAP,:SPOTLIGHT,
-         :SWALLOW,      :TEETERDANCE,     :WATERSPORT,:WIDEGUARD,:WONDERROOM],
-  10 => [:ACIDARMOR,    :ACUPRESSURE,     :AGILITY,:AMNESIA,:AUTOTOMIZE,:BABYDOLLEYES,:BARRIER,:BELLYDRUM,:BULKUP,
-         :CALMMIND,     :CAPTIVATE,:CHARGE,:CHARM,:COIL,:CONFIDE,:COSMICPOWER,:COTTONGUARD,
-         :COTTONSPORE,  :CURSE,           :DEFENDORDER,:DEFENSECURL,:DRAGONDANCE,:DOUBLETEAM,:EERIEIMPULSE,:EMBARGO,
-         :FAKETEARS,    :FEATHERDANCE,    :FLASH,:FOCUSENERGY,:GEOMANCY,:GROWL,:GROWTH,:GEARUP,:HARDEN,:HAZE,
-         :HONECLAWS,    :HOWL,            :IRONDEFENSE,:KINESIS,:LEER,:MAGNETICFLUX,:MEDITATE,:METALSOUND,:MINIMIZE, :NASTYPLOT,
-         :NOBLEROAR,    :PLAYNICE,        :POWDER,:PSYCHUP,:PROTECT,:QUIVERDANCE,:ROCKPOLISH,:SANDATTACK,:SCARYFACE,:SCREECH,
-         :SHARPEN,      :SHELLSMASH,      :SHIFTGEAR,:SMOKESCREEN, :STOCKPILE, :STRINGSHOT,:SUPERSONIC,:SWORDSDANCE,:TAILGLOW,
-         :TAILWHIP,     :TEARFULLOOK,     :TICKLE,:TORMENT,:VENOMDRENCH,:WISH,:WITHDRAW,:WORKUP],
-  15 => [:ASSIST,       :BATONPASS,       :DARKVOID, :FLORALHEALING,:GRASSWHISTLE,:HEALPULSE, :HEALINGWISH,:HYPNOSIS,:INGRAIN,
-         :LUNARDANCE,   :MEFIRST,:MIMIC,  :PARTINGSHOT,:POISONPOWDER,:REFRESH,:ROLEPLAY,:SING, :SKETCH,
-         :TRICKORTREAT, :TOXICTHREAD,     :SANDSTORM,:HAIL,:SUNNYDAY,:RAINDANCE],
-  20 => [:AQUARING,     :BLOCK,           :CONVERSION2, :DETECT, :ELECTRIFY,:FLATTER,:GASTROACID,:HEALORDER, :HEARTSWAP,
-         :IONDELUGE,    :MEANLOOK,        :LOVELYKISS,:MILKDRINK,:METRONOME,:MOONLIGHT,  :MORNINGSUN,:COPYCAT,:MIRRORMOVE,:MIST,
-         :PERISHSONG,   :RECOVER, :REST,:ROAR,     :ROOST, :SIMPLEBEAM,:SHOREUP,:SPIDERWEB,
-         :SLEEPPOWDER,  :SLACKOFF,        :SOFTBOILED,:STRENGTHSAP, :SWAGGER, 
-         :SWEETKISS,    :SYNTHESIS,        :POISONGAS, :TRANSFORM,:WHIRLWIND,:WORRYSEED,:YAWN],
-  25 => [:ATTRACT,      :CONFUSERAY,      :DESTINYBOND, :DISABLE,:FOLLOWME, :LEECHSEED,
-         :PAINSPLIT,    :PSYCHOSHIFT,:RAGEPOWDER, :STUNSPORE,
-         :SUBSTITUTE,   :SWITCHEROO,      :TAUNT,:TOPSYTURVY, :TOXIC,:TRICK,:WILLOWISP],
-  30 => [:ELECTRICTERRAIN, :ENCORE,:GLARE,
-         :GRASSYTERRAIN,:MISTYTERRAIN,    :NATUREPOWER,:PSYCHICTERRAIN,:PURIFY,:SLEEPTALK,
-         :SPIKES,       :STEALTHROCK,     :SPIKYSHIELD,:THUNDERWAVE,:TOXICSPIKES,:TRICKROOM],
-  35 => [:AROMATHERAPY, :BANEFULBUNKER,   :HEALBELL,:KINGSSHIELD,:LIGHTSCREEN,:MATBLOCK,
-         :REFLECT,      :TAILWIND],
-  40 => [],
-  60 => [:AURORAVEIL,:STICKYWEB,:SPORE]})
+  PLATEITEMS = [
+    :FISTPLATE, :SKYPLATE, :TOXICPLATE, :EARTHPLATE, :STONEPLATE,
+    :INSECTPLATE, :SPOOKYPLATE, :IRONPLATE,   :FLAMEPLATE,  :SPLASHPLATE,
+    :MEADOWPLATE, :ZAPPLATE,    :MINDPLATE,   :ICICLEPLATE, :DRACOPLATE,
+    :PIXIEPLATE,  :DREADPLATE
+  ]
 
-TYPETOZCRYSTAL= hashToConstant(PBItems,{
-  PBTypes::NORMAL     => :NORMALIUMZ2,    PBTypes::FIGHTING   => :FIGHTINIUMZ2,
-  PBTypes::FLYING     => :FLYINIUMZ2,     PBTypes::POISON     => :POISONIUMZ2, 
-  PBTypes::GROUND     => :GROUNDIUMZ2,    PBTypes::ROCK       => :ROCKIUMZ2,
-  PBTypes::BUG        => :BUGINIUMZ2,     PBTypes::GHOST      => :GHOSTIUMZ2,
-  PBTypes::STEEL      => :STEELIUMZ2,     PBTypes::FIRE       => :FIRIUMZ2, 
-  PBTypes::WATER      => :WATERIUMZ2,     PBTypes::GRASS      => :GRASSIUMZ2, 
-  PBTypes::ELECTRIC   => :ELECTRIUMZ2,    PBTypes::PSYCHIC    => :PSYCHIUMZ2,
-  PBTypes::ICE        => :ICIUMZ2,        PBTypes::DRAGON     => :DRAGONIUMZ2, 
-  PBTypes::DARK       => :DARKINIUMZ2,    PBTypes::FAIRY      => :FAIRIUMZ2 
-})
+  # ##-------------------------------------------------------------------------------------------------------------###
 
-POKEMONTOMEGASTONE = hashArrayToConstant(PBItems,{
-  PBSpecies::CHARIZARD  => [:CHARIZARDITEX, :CHARIZARDITEY],
-  PBSpecies::MEWTWO     => [:MEWTWONITEX,   :MEWTWONITEY],
-  PBSpecies::VENUSAUR   => [:VENUSAURITE],    PBSpecies::BLASTOISE  => [:BLASTOISINITE],
-  PBSpecies::ABOMASNOW  => [:ABOMASITE],      PBSpecies::ABSOL      => [:ABSOLITE],
-  PBSpecies::AERODACTYL => [:AERODACTYLITE],  PBSpecies::AGGRON     => [:AGGRONITE],
-  PBSpecies::ALAKAZAM   => [:ALAKAZITE],      PBSpecies::AMPHAROS   => [:AMPHAROSITE],
-  PBSpecies::BANETTE    => [:BANETTITE],      PBSpecies::BLAZIKEN   => [:BLAZIKENITE],
-  PBSpecies::GARCHOMP   => [:GARCHOMPITE],    PBSpecies::GARDEVOIR  => [:GARDEVOIRITE],
-  PBSpecies::GENGAR     => [:GENGARITE],      PBSpecies::GYARADOS   => [:GYARADOSITE],
-  PBSpecies::HERACROSS  => [:HERACRONITE],    PBSpecies::HOUNDOOM   => [:HOUNDOOMINITE],
-  PBSpecies::KANGASKHAN => [:KANGASKHANITE],  PBSpecies::LUCARIO    => [:LUCARIONITE],
-  PBSpecies::MANECTRIC  => [:MANECTITE],      PBSpecies::MAWILE     => [:MAWILITE],
-  PBSpecies::MEDICHAM   => [:MEDICHAMITE],    PBSpecies::PINSIR     => [:PINSIRITE],  
-  PBSpecies::SCIZOR     => [:SCIZORITE],      PBSpecies::TYRANITAR  => [:TYRANITARITE],
-  PBSpecies::BEEDRILL   => [:BEEDRILLITE],    PBSpecies::PIDGEOT    => [:PIDGEOTITE],
-  PBSpecies::SLOWBRO    => [:SLOWBRONITE],    PBSpecies::STEELIX    => [:STEELIXITE],
-  PBSpecies::SCEPTILE   => [:SCEPTILITE],     PBSpecies::SWAMPERT   => [:SWAMPERTITE],
-  PBSpecies::SHARPEDO   => [:SHARPEDONITE],   PBSpecies::SABLEYE    => [:SABLENITE],
-  PBSpecies::CAMERUPT   => [:CAMERUPTITE],    PBSpecies::ALTARIA    => [:ALTARIANITE],
-  PBSpecies::GLALIE     => [:GLALITITE],      PBSpecies::SALAMENCE  => [:SALAMENCITE],
-  PBSpecies::METAGROSS  => [:METAGROSSITE],   PBSpecies::LOPUNNY    => [:LOPUNNITE],
-  PBSpecies::GALLADE    => [:GALLADITE],      PBSpecies::AUDINO     => [:AUDINITE],
-  PBSpecies::DIANCIE    => [:DIANCITE],       PBSpecies::TANGROWTH  => [:PULSEHOLD],
-  PBSpecies::LATIAS     => [:LATIASITE],      PBSpecies::LATIOS     => [:LATIOSITE],
-})
-POKEMONTOMEGASTONE.default = []
+  BLACKLISTS = {
+    :MEFIRST => NOCOPYMOVE | ZMOVES | [:METALBURST],
+    # ##-------------------------------------------------------------------------------------------------------------###
+    :METRONOME => NOCOPYMOVE | ZMOVES | ANIMATIONDUMMIES | [
+      :AFTERYOU, :DIAMONDSTORM, :FLEURCANNON, :HYPERSPACEFURY, :HYPERSPACEHOLE, :MINDBLOWN, :PHOTONGEYSER, :PLASMAFISTS,
+      :QUASH, :QUICKGUARD, :RELICSONG, :SECRETSWORD, :SNORE, :SPECTRALTHIEF, :STEAMERUPTION, :TECHNOBLAST,
+      :THOUSANDARROWS, :THOUSANDWAVES, :VCREATE, :WIDEGUARD, :CRAFTYSHIELD, :INSTRUCT, :FREEZESHOCK,
+      :ICEBURN, :SNARL, :CELEBRATE, :APPLEACID, :ASTRALBARRAGE, :AURAWHEEL, :BEHEMOTHBASH, :BEHEMOTHBLADE,
+      :BODYPRESS, :BRANCHPOKE, :BREAKINGSWIPE, :CLANGOROUSSOUL, :DECORATE, :DOUBLEIRONBASH, :DRAGONENERGY,
+      :DRUMBEATING, :DYNAMAXCANNON, :ETERNABEAM, :FALSESURRENDER, :FIERYWRATH, :FREEZINGGLARE, :GLACIALLANCE,
+      :GRAVAPPLE, :JUNGLEHEALING, :LIFEDEW, :LIGHTOFRUIN, :METEORASSAULT, :MOONGEISTBEAM, :NATURESMADNESS,
+      :OVERDRIVE, :PYROBALL, :SNAPTRAP, :SPIRITBREAK, :STEELBEAM, :STRANGESTEAM, :SUNSTEELSTRIKE, :SURGINGSTRIKES,
+      :THUNDERCAGE, :THUNDEROUSKICK, :WICKEDBLOW
+    ],
 
-LEGENDARYLIST =                [PBSpecies::CRESSELIA,     PBSpecies::REGICE,      PBSpecies::REGIROCK,
-  PBSpecies::REGISTEEL,         PBSpecies::SUICUNE,       PBSpecies::ENTEI,       PBSpecies::RAIKOU,
-  PBSpecies::MESPRIT,           PBSpecies::AZELF,         PBSpecies::UXIE,        PBSpecies::ARTICUNO,
-  PBSpecies::ZAPDOS,            PBSpecies::MOLTRES,       PBSpecies::LANDORUS,    PBSpecies::THUNDURUS,
-  PBSpecies::TORNADUS,          PBSpecies::TERRAKION,     PBSpecies::VIRIZION,    PBSpecies::COBALION,
-  PBSpecies::KELDEO,            PBSpecies::REGIGIGAS,     PBSpecies::CELEBI,      PBSpecies::MELOETTA,
-  PBSpecies::VICTINI,           PBSpecies::VOLCANION,     PBSpecies::HOOPA,       PBSpecies::ZERAORA,
-  PBSpecies::MAGEARNA,          PBSpecies::ZYGARDE,       PBSpecies::TAPUBULU,    PBSpecies::TAPUKOKO,
-  PBSpecies::TAPULELE,          PBSpecies::TAPUFINI,      PBSpecies::DIANCIE,     PBSpecies::JIRACHI,
-  PBSpecies::HEATRAN,           PBSpecies::LATIAS,        PBSpecies::LATIOS,      PBSpecies::MANAPHY,
-  PBSpecies::DARKRAI,           PBSpecies::MARSHADOW,     PBSpecies::SHAYMIN,     PBSpecies::MEW,
-  PBSpecies::GENESECT,          PBSpecies::DIALGA,        PBSpecies::PALKIA,      PBSpecies::HOOH,
-  PBSpecies::LUGIA,             PBSpecies::RESHIRAM,      PBSpecies::ZEKROM,      PBSpecies::KYUREM,
-  PBSpecies::XERNEAS,           PBSpecies::YVELTAL,       PBSpecies::COSMOG,      PBSpecies::COSMOEM,
-  PBSpecies::LUNALA,            PBSpecies::SOLGALEO,      PBSpecies::DEOXYS,      PBSpecies::GROUDON,
-  PBSpecies::KYOGRE,            PBSpecies::GIRATINA,      PBSpecies::RAYQUAZA,    PBSpecies::NECROZMA,  
-  PBSpecies::MEWTWO,            PBSpecies::ARCEUS  ]
+    # ##-------------------------------------------------------------------------------------------------------------###
+    :COPYCAT => NOCOPYMOVE | ZMOVES | FORCEOUTMOVE | [:CRAFTYSHIELD],
+    # ##-------------------------------------------------------------------------------------------------------------###
+    :ASSIST => NOCOPYMOVE | ZMOVES | FORCEOUTMOVE | TWOTURNMOVE,
+    # ##-------------------------------------------------------------------------------------------------------------###
+    :INSTRUCT => NOAUTOMOVE | ZMOVES | DELAYEDMOVE | TWOTURNMOVE | REPEATINGMOVE |
+                 [:TRANSFORM, :BELCH, :KINGSSHIELD, :BIDE, :INSTRUCT],
+    # ##-------------------------------------------------------------------------------------------------------------###
+    :SLEEPTALK => NOAUTOMOVE | ZMOVES | DELAYEDMOVE | TWOTURNMOVE | CHARGEMOVE | [:BELCH, :CHATTER],
+    # ##-------------------------------------------------------------------------------------------------------------###
+    :ENCORE => NOAUTOMOVE | ZMOVES | [:TRANSFORM]
+  }
 
-SHORTCIRCUITROLLS = [0.8, 1.5, 0.5, 1.2, 2.0]
+  # massive arrays of stuff that no one wants to see
+  NATURALGIFTDAMAGE = pbHashForwardizer(
+    {
+      # ##-------------------------------------------------------------------------------------------------------------###
+      100 => [:WATMELBERRY, :DURINBERRY,  :BELUEBERRY,  :LIECHIBERRY, :GANLONBERRY, :SALACBERRY,
+              :PETAYABERRY, :APICOTBERRY, :LANSATBERRY, :STARFBERRY,  :ENIGMABERRY, :MICLEBERRY,
+              :CUSTAPBERRY, :JABOCABERRY, :ROWAPBERRY,  :KEEBERRY,    :MARANGABERRY],
+      # ##-------------------------------------------------------------------------------------------------------------###
+      90 => [:BLUKBERRY,   :NANABBERRY,  :WEPEARBERRY, :PINAPBERRY,  :POMEGBERRY,  :KELPSYBERRY,
+             :QUALOTBERRY, :HONDEWBERRY, :GREPABERRY,  :TAMATOBERRY, :CORNNBERRY, :MAGOSTBERRY,
+             :RABUTABERRY, :NOMELBERRY,  :SPELONBERRY, :PAMTREBERRY],
+      # ##-------------------------------------------------------------------------------------------------------------###
+      80 => [:CHERIBERRY,  :CHESTOBERRY, :PECHABERRY,  :RAWSTBERRY,  :ASPEARBERRY, :LEPPABERRY,
+             :ORANBERRY,   :PERSIMBERRY, :LUMBERRY,    :SITRUSBERRY, :FIGYBERRY,   :WIKIBERRY,
+             :MAGOBERRY,   :AGUAVBERRY,  :IAPAPABERRY, :RAZZBERRY,   :OCCABERRY,   :PASSHOBERRY,
+             :WACANBERRY,  :RINDOBERRY,  :YACHEBERRY,  :CHOPLEBERRY, :KEBIABERRY,  :SHUCABERRY,
+             :COBABERRY,   :PAYAPABERRY, :TANGABERRY,  :CHARTIBERRY, :KASIBBERRY,  :HABANBERRY,
+             :COLBURBERRY, :BABIRIBERRY, :ROSELIBERRY, :CHILANBERRY]
+    }
+  )
+  # ##-------------------------------------------------------------------------------------------------------------###
+  NATURALGIFTTYPE = pbHashForwardizer(
+    {
+      :NORMAL => [:CHILANBERRY],
+      :FIRE => [:CHERIBERRY, :BLUKBERRY, :WATMELBERRY, :OCCABERRY],
+      :WATER => [:CHESTOBERRY, :NANABBERRY, :DURINBERRY, :PASSHOBERRY],
+      :ELECTRIC => [:PECHABERRY, :WEPEARBERRY, :BELUEBERRY, :WACANBERRY],
+      :GRASS => [:RAWSTBERRY, :PINAPBERRY, :RINDOBERRY, :LIECHIBERRY],
+      :ICE => [:ASPEARBERRY, :POMEGBERRY, :YACHEBERRY, :GANLONBERRY],
+      :FIGHTING => [:LEPPABERRY, :KELPSYBERRY, :CHOPLEBERRY, :SALACBERRY],
+      :POISON => [:ORANBERRY,   :QUALOTBERRY, :KEBIABERRY,  :PETAYABERRY],
+      :GROUND => [:PERSIMBERRY, :HONDEWBERRY, :SHUCABERRY,  :APICOTBERRY],
+      :FLYING => [:LUMBERRY,    :GREPABERRY,  :COBABERRY,   :LANSATBERRY],
+      :PSYCHIC => [:SITRUSBERRY, :TAMATOBERRY, :PAYAPABERRY, :STARFBERRY],
+      :BUG => [:FIGYBERRY, :CORNNBERRY, :TANGABERRY, :ENIGMABERRY],
+      :ROCK => [:WIKIBERRY, :MAGOSTBERRY, :CHARTIBERRY, :MICLEBERRY],
+      :GHOST => [:MAGOBERRY, :RABUTABERRY, :KASIBBERRY, :CUSTAPBERRY],
+      :DRAGON => [:AGUAVBERRY, :NOMELBERRY, :HABANBERRY, :JABOCABERRY],
+      :DARK => [:IAPAPABERRY, :SPELONBERRY, :COLBURBERRY, :ROWAPBERRY],
+      :FAIRY => [:ROSELIBERRY, :KEEBERRY],
+      :STEEL => [:RAZZBERRY,   :PAMTREBERRY, :BABIRIBERRY]
+    }
+  )
+  FLINGDAMAGE = pbHashForwardizer(
+    {
+      300 => [:MEMEONADE],
+      130 => [*(Gen7 ? [] : [:BIGNUGGET]), :IRONBALL],
+      100 => [:ARMORFOSSIL, :CLAWFOSSIL, :COVERFOSSIL, :DOMEFOSSIL, :FOSSILIZEDBIRD, :FOSSILIZEDDINO,
+              :FOSSILIZEDDRAKE, :FOSSILIZEDFISH, :HARDSTONE, :HELIXFOSSIL, :JAWFOSSIL, :OLDAMBER,
+              :PLUMEFOSSIL, :RAREBONE, :ROOMSERVICE, :ROOTFOSSIL, :SAILFOSSIL, :SKULLFOSSIL],
+      90 => [:DEEPSEATOOTH, :DRACOPLATE, :DREADPLATE, :EARTHPLATE, :FISTPLATE, :FLAMEPLATE,
+             :GRIPCLAW, :ICICLEPLATE, :INSECTPLATE, :IRONPLATE, :MEADOWPLATE, :MINDPLATE, :PIXIEPLATE,
+             :SKYPLATE, :SPLASHPLATE, :SPOOKYPLATE, :STONEPLATE, :THICKCLUB, :TOXICPLATE, :ZAPPLATE],
+      80 => [:ASSAULTVEST, :BLUNDERPOLICY, :CHIPPEDPOT, :CRACKEDPOT, :DAWNSTONE, :DUSKSTONE,
+             :ELECTIRIZER, :HEAVYDUTYBOOTS, :MAGMARIZER, :ODDKEYSTONE, :OVALSTONE, :PROTECTOR,
+             :QUICKCLAW, :RAZORCLAW, :SACHET, :SAFETYGOGGLES, :SHINYSTONE, :STICKYBARB, :WEAKNESSPOLICY,
+             :WHIPPEDDREAM],
+      70 => [:BURNDRIVE, :CHILLDRIVE, :DOUSEDRIVE, :DRAGONFANG, :POISONBARB, :POWERANKLET,
+             :POWERBAND, :POWERBELT, :POWERBRACER, :POWERLENS, :POWERWEIGHT, :SHOCKDRIVE],
+      60 => [:ADAMANTORB, :DAMPROCK, :GRISEOUSORB, :HEATROCK, :LUSTROUSORB, :MACHOBRACE, :ROCKYHELMET,
+             :STICK, :UTILITYUMBRELLA, :AMPLIFIELDROCK],
+      50 => [:BUGMEMORY, :DARKMEMORY, :DRAGONMEMORY, :DUBIOUSDISC, :EJECTPACK, :ELECTRICMEMORY,
+             :FAIRYMEMORY, :FIGHTINGMEMORY, :FIREMEMORY, :FLYINGMEMORY, :GHOSTMEMORY, :GRASSMEMORY,
+             :GROUNDMEMORY, :ICEMEMORY, :POISONMEMORY, :PSYCHICMEMORY, :ROCKMEMORY, :SHARPBEAK,
+             :STEELMEMORY, :WATERMEMORY, :WISHINGPIECE],
+      40 => [:EVIOLITE, :ICYROCK, :LUCKYPUNCH],
+      30 => [:ABILITYURGE, :ABSORBBULB, :ADRENALINEORB, :AMULETCOIN, :ANTIDOTE, :AWAKENING,
+             :BALMMUSHROOM, :BERRYJUICE, :BIGMALASADA, :BIGMUSHROOM, *(Gen7 ? [:BIGNUGGET] : []), :BIGPEARL,
+             :BINDINGBAND, :BLACKBELT, :BLACKFLUTE, :BLACKGLASSES, :BLACKSLUDGE, :BLUEFLUTE,
+             :BLUESHARD, :BUBBLETEA, :BURNHEAL, :CALCIUM, :CARBOS, :CASTELIACONE, :CELLBATTERY,
+             :CHARCOAL, :CHERISHBALL, :CLEANSETAG, :COMETSHARD, :DAMPMULCH, :DEEPSEASCALE, :DIREHIT,
+             :DIVEBALL, :DRAGONSCALE, :DUSKBALL, :EJECTBUTTON, :ELIXIR, :ENERGYPOWDER, :ENERGYROOT,
+             :ESCAPEROPE, :ETHER, :EVERSTONE, :EXPCANDYL, :EXPCANDYM, :EXPCANDYS, :EXPCANDYXL, :EXPCANDYXS,
+             :EXPSHARE, :FIRESTONE, :FLAMEORB, :FLOATSTONE, :FLUFFYTAIL, :FRESHWATER, :FULLHEAL,
+             :FULLRESTORE, :GALARICACUFF, :GALARICAWREATH, :GLITTERBALL, :GOOEYMULCH, :GRASSMAIL,
+             :GREATBALL, :GREENSHARD, :GROWTHMULCH, :GUARDSPEC, :HEALBALL, :HEALPOWDER, :HEARTSCALE,
+             :HONEY, :HPUP, :HYPERPOTION, :ICEHEAL, :ICESTONE, :IRON, :ITEMDROP, :ITEMURGE, :KINGSROCK,
+             :LAVACOOKIE, :LEAFSTONE, :LEMONADE, :LIFEORB, :LIGHTBALL, :LIGHTCLAY, :LUCKYEGG,
+             :LUMINOUSMOSS, :LUMIOSEGALETTE, :LUXURYBALL, :MAGNET, :MASTERBALL, :MAGNETICLURE,
+             :MAXELIXIR, :MAXETHER, :MAXPOTION, :MAXREPEL, :MAXREVIVE, :MEDICINE, :METALCOAT, :METRONOME,
+             :MIRACLESEED, :MOOMOOMILK, :MOONSTONE, :MYSTICWATER, :NESTBALL, :NETBALL, :NEVERMELTICE,
+             :NUGGET, :OLDGATEAU, :PARLYZHEAL, :PEARL, :PEARLSTRING, :POKEBALL, :POKEDOLL, :POKETOY,
+             :POTION, :PPALL, :PPMAX, :PPUP, :PREMIERBALL, :PRISMSCALE, :PROTECTIVEPADS, :PROTEIN,
+             :PURPLESHARD, :QUICKBALL, :RAGECANDYBAR, :RARECANDY, :RAZORFANG, :REDFLUTE, :REDSHARD,
+             :RELICBAND, :RELICCOPPER, :RELICCROWN, :RELICGOLD, :RELICSILVER, :RELICSTATUE, :RELICVASE,
+             :REPEATBALL, :REPEL, :RESETURGE, :REVIVALHERB, :REVIVE, :SACREDASH, :SAFARIBALL,
+             :SCOPELENS, :SHELLBELL, :SHOALSALT, :SHOALSHELL, :SMOKEBALL, :SNOWBALL, :SODAPOP, :SOULDEW,
+             :SPELLTAG, :STABLEMULCH, :STARDUST, :STARPIECE, :SUNSTONE, :SUPERPOTION, :SUPERREPEL,
+             :SWEETAPPLE, :SWEETHEART, :TARTAPPLE, :THROATSPRAY, :THUNDERSTONE, :TIMERBALL,
+             :TINYMUSHROOM, :TOXICORB, :TWISTEDSPOON, :ULTRABALL, :UPGRADE, :WATERSTONE, :WHITEFLUTE,
+             :XACCURACY, :XATTACK, :XDEFEND, :XSPDEF, :XSPECIAL, :XSPEED, :YELLOWFLUTE, :YELLOWSHARD,
+             :ZINC],
+      20 => [:CLEVERWING, :GENIUSWING, :HEALTHWING, :MUSCLEWING, :PRETTYWING,
+             :RESISTWING, :SWIFTWING],
+      10 => [:AIRBALLOON, :BIGROOT, :BLUESCARF, :BRIGHTPOWDER, :CHOICEBAND, :CHOICESCARF,
+             :CHOICESPECS, :DESTINYKNOT, :EXPERTBELT, :FOCUSBAND, :FOCUSSASH, :FULLINCENSE,
+             :GREENSCARF, :LAGGINGTAIL, :LAXINCENSE, :LEFTOVERS, :LUCKINCENSE, :MENTALHERB,
+             :METALPOWDER, :MUSCLEBAND, :ODDINCENSE, :PINKSCARF, :POWERHERB, :PUREINCENSE,
+             :QUICKPOWDER, :REAPERCLOTH, :REDCARD, :REDSCARF, :RINGTARGET, :ROCKINCENSE,
+             :ROSEINCENSE, :SEAINCENSE, :SHEDSHELL, :SILKSCARF, :SILVERPOWDER, :SMOOTHROCK,
+             :SOFTSAND, :SOOTHEBELL, :WAVEINCENSE, :WHITEHERB, :WIDELENS, :WISEGLASSES,
+             :YELLOWSCARF, :ZOOMLENS, :BLUEMIC, :VANILLAIC, :STRAWBIC, :CHOCOLATEIC]
+    }
+  )
 
-CCROLLS = [PBTypes::FIRE, PBTypes::WATER, PBTypes::GRASS, PBTypes::PSYCHIC]
-end
+  STATUSDAMAGE = pbHashForwardizer(
+    {
+      0 => [:AFTERYOU,     :BESTOW,          :CRAFTYSHIELD, :LUCKYCHANT, :MEMENTO, :QUASH, :SAFEGUARD,
+            :SPITE,        :SPLASH,          :SWEETSCENT, :TELEKINESIS, :TELEPORT],
+      5 => [:ALLYSWITCH,   :AROMATICMIST,    :CAMOUFLAGE, :CONVERSION, :ENDURE, :ENTRAINMENT, :FLOWERSHIELD,
+            :FORESIGHT,    :FORESTSCURSE,    :GRAVITY, :DEFOG, :GUARDSWAP, :HEALBLOCK, :IMPRISON,
+            :INSTRUCT,     :FAIRYLOCK,       :LASERFOCUS, :HELPINGHAND, :MAGICROOM, :MAGNETRISE, :SOAK,
+            :LOCKON,       :MINDREADER,      :MIRACLEEYE, :MUDSPORT, :NIGHTMARE, :ODORSLEUTH, :POWERSPLIT,
+            :POWERSWAP,    :GRUDGE,          :GUARDSPLIT, :POWERTRICK, :QUICKGUARD, :RECYCLE, :REFLECTTYPE,
+            :ROTOTILLER,   :SKILLSWAP,       :SNATCH, :MAGICCOAT, :SPEEDSWAP, :SPOTLIGHT,
+            :SWALLOW,      :TEETERDANCE,     :WATERSPORT, :WIDEGUARD, :WONDERROOM, :MAGICPOWDER, :TEATIME, :POWERSHIFT],
+      10 => [:ACIDARMOR,    :ACUPRESSURE,     :AGILITY, :AMNESIA, :AUTOTOMIZE, :BABYDOLLEYES, :BARRIER, :BELLYDRUM, :BULKUP,
+             :CALMMIND,     :CAPTIVATE, :CHARGE, :CHARM, :COIL, :CONFIDE, :COSMICPOWER, :COTTONGUARD,
+             :COTTONSPORE,  :CURSE,           :DEFENDORDER, :DEFENSECURL, :DRAGONDANCE, :DOUBLETEAM, :EERIEIMPULSE, :EMBARGO,
+             :FAKETEARS,    :FEATHERDANCE,    :FLASH, :FOCUSENERGY, :GEOMANCY, :GROWL, :GROWTH, :GEARUP, :HARDEN, :HAZE,
+             :HONECLAWS,    :HOWL,            :IRONDEFENSE, :KINESIS, :LEER, :MAGNETICFLUX, :MEDITATE, :METALSOUND, :MINIMIZE, :NASTYPLOT,
+             :NOBLEROAR,    :PLAYNICE,        :POWDER, :PSYCHUP, :PROTECT, :QUIVERDANCE, :ROCKPOLISH, :SANDATTACK, :SCARYFACE, :SCREECH,
+             :SHARPEN,      :SHELLSMASH,      :SHIFTGEAR, :SMOKESCREEN, :STOCKPILE, :STRINGSHOT, :SUPERSONIC, :SWORDSDANCE, :TAILGLOW,
+             :TAILWHIP,     :TEARFULLOOK,     :TICKLE, :TORMENT, :VENOMDRENCH, :WISH, :WITHDRAW, :WORKUP, :TARSHOT, :CLANGOROUSSOUL,
+             :DECORATE,     :COACHING,        :EXTREMEEVOBOOST, :VICTORYDANCE, :AQUABATICS, :TAKEHEART, :SHELTER],
+      15 => [:ASSIST,       :BATONPASS,       :DARKVOID, :FLORALHEALING, :GRASSWHISTLE, :HEALPULSE, :HEALINGWISH, :HYPNOSIS, :INGRAIN,
+             :LUNARDANCE,   :MEFIRST, :MIMIC, :PARTINGSHOT, :POISONPOWDER, :REFRESH, :ROLEPLAY, :SING, :SKETCH,
+             :TRICKORTREAT, :TOXICTHREAD,     :SANDSTORM, :HAIL, :SUNNYDAY, :RAINDANCE, :LIFEDEW],
+      20 => [:AQUARING,     :BLOCK,           :CONVERSION2, :DETECT, :ELECTRIFY, :FLATTER, :GASTROACID, :HEALORDER, :HEARTSWAP,
+             :IONDELUGE,    :MEANLOOK,        :LOVELYKISS, :MILKDRINK, :METRONOME, :MOONLIGHT, :MORNINGSUN, :COPYCAT, :MIRRORMOVE, :MIST,
+             :PERISHSONG,   :RECOVER, :REST, :ROAR, :ROOST, :SIMPLEBEAM, :SHOREUP, :SPIDERWEB,
+             :SLEEPPOWDER,  :SLACKOFF, :SOFTBOILED, :STRENGTHSAP, :SWAGGER,
+             :SWEETKISS,    :SYNTHESIS, :POISONGAS, :TRANSFORM, :WHIRLWIND, :WORRYSEED, :YAWN, :JUNGLEHEALING, :LUNARBLESSING],
+      25 => [:ATTRACT,      :CONFUSERAY,      :DESTINYBOND, :DISABLE, :FOLLOWME, :LEECHSEED,
+             :PAINSPLIT,    :PSYCHOSHIFT, :RAGEPOWDER, :STUNSPORE, :DESERTSMARK,
+             :SUBSTITUTE,   :SWITCHEROO, :TAUNT, :TOPSYTURVY, :TOXIC, :TRICK, :WILLOWISP, :CORROSIVEGAS, :OCTOLOCK],
+      30 => [:ELECTRICTERRAIN, :ENCORE, :GLARE,
+             :GRASSYTERRAIN, :MISTYTERRAIN, :NATUREPOWER, :PSYCHICTERRAIN, :PURIFY, :SLEEPTALK,
+             :SPIKES,       :STEALTHROCK, :SPIKYSHIELD, :THUNDERWAVE, :TOXICSPIKES, :TRICKROOM],
+      35 => [:AROMATHERAPY, :BANEFULBUNKER, :HEALBELL, :KINGSSHIELD, :LIGHTSCREEN, :MATBLOCK,
+             :REFLECT,      :TAILWIND, :OBSTRUCT, :STUFFCHEEKS, :NORETREAT, :COURTCHANGE, :ARENITEWALL],
+      40 => [],
+      60 => [:AURORAVEIL, :STICKYWEB, :SPORE]
+    }
+  )
 
-class PBMoves
-BREAKNECKBLITZ                 =10001
-ALLOUTPUMMELING                =10002
-SUPERSONICSKYSTRIKE            =10003
-ACIDDOWNPOUR                   =10004
-TECTONICRAGE                   =10005
-CONTINENTALCRUSH               =10006
-SAVAGESPINOUT                  =10007
-NEVERENDINGNIGHTMARE           =10008
-CORKSCREWCRASH                 =10009
-INFERNOOVERDRIVE               =10010
-HYDROVORTEX                    =10011
-BLOOMDOOM                      =10012
-GIGAVOLTHAVOC                  =10013
-SHATTEREDPSYCHE                =10014
-SUBZEROSLAMMER                 =10015
-DEVASTATINGDRAKE               =10016
-BLACKHOLEECLIPSE               =10017
-TWINKLETACKLE                  =10018
-STOKEDSPARKSURFER              =10019
-SINISTERARROWRAID              =10020
-MALICIOUSMOONSAULT             =10021
-OCEANICOPERETTA                =10022
-EXTREMEEVOBOOST                =10023
-CATASTROPIKA                   =10024
-PULVERIZINGPANCAKE             =10025
-GENESISSUPERNOVA               =10026
-GUARDIANOFALOLA                =10027
-SOULSTEALING7STARSTRIKE        =10028
-CLANGOROUSSOULBLAZE            =10029
-SPLINTEREDSTORMSHARDS          =10030
-LETSSNUGGLEFOREVER             =10031
-SEARINGSUNRAZESMASH            =10032
-MENACINGMOONRAZEMAELSTROM      =10033
-LIGHTTHATBURNSTHESKY           =10034
+  TYPETOZCRYSTAL = {
+    :NORMAL => :NORMALIUMZ,    :FIGHTING   => :FIGHTINIUMZ,
+    :FLYING => :FLYINIUMZ,     :POISON     => :POISONIUMZ,
+    :GROUND => :GROUNDIUMZ,    :ROCK       => :ROCKIUMZ,
+    :BUG => :BUGINIUMZ, :GHOST => :GHOSTIUMZ,
+    :STEEL => :STEELIUMZ,     :FIRE       => :FIRIUMZ,
+    :WATER => :WATERIUMZ,     :GRASS      => :GRASSIUMZ,
+    :ELECTRIC => :ELECTRIUMZ, :PSYCHIC => :PSYCHIUMZ,
+    :ICE => :ICIUMZ, :DRAGON => :DRAGONIUMZ,
+    :DARK => :DARKINIUMZ, :FAIRY => :FAIRIUMZ
+  }
+
+  MOVETOZCRYSTAL = {
+    :THUNDERBOLT => :ALORAICHIUMZ, :SPIRITSHACKLE => :DECIDIUMZ,
+    :DARKESTLARIAT => :INCINIUMZ, :SPARKLINGARIA => :PRIMARIUMZ,
+    :LASTRESORT => :EEVIUMZ,       :VOLTTACKLE     => :PIKANIUMZ,
+    :GIGAIMPACT => :SNORLIUMZ,     :PSYCHIC        => :MEWNIUMZ,
+    :NATURESMADNESS => :TAPUNIUMZ,     :SPECTRALTHIEF  => :MARSHADIUMZ,
+    :CLANGINGSCALES => :KOMMONIUMZ,    :STONEEDGE      => :LYCANIUMZ,
+    :PLAYROUGH => :MIMIKIUMZ, :SUNSTEELSTRIKE => :SOLGANIUMZ,
+    :MOONGEISTBEAM => :LUNALIUMZ, :PHOTONGEYSER => :ULTRANECROZIUMZ,
+  }
+
+  CRYSTALTOZMOVE = {
+    :NORMALIUMZ => :BREAKNECKBLITZ,           :FIGHTINIUMZ => :ALLOUTPUMMELING,
+    :FLYINIUMZ => :SUPERSONICSKYSTRIKE,       :POISONIUMZ => :ACIDDOWNPOUR,
+    :GROUNDIUMZ => :TECTONICRAGE,             :ROCKIUMZ => :CONTINENTALCRUSH,
+    :BUGINIUMZ => :SAVAGESPINOUT,             :GHOSTIUMZ => :NEVERENDINGNIGHTMARE,
+    :STEELIUMZ => :CORKSCREWCRASH,            :FIRIUMZ => :INFERNOOVERDRIVE,
+    :WATERIUMZ => :HYDROVORTEX,               :GRASSIUMZ => :BLOOMDOOM,
+    :ELECTRIUMZ => :GIGAVOLTHAVOC,            :PSYCHIUMZ => :SHATTEREDPSYCHE,
+    :ICIUMZ => :SUBZEROSLAMMER,               :DRAGONIUMZ => :DEVASTATINGDRAKE,
+    :DARKINIUMZ => :BLACKHOLEECLIPSE,         :FAIRIUMZ => :TWINKLETACKLE,
+    :ALORAICHIUMZ => :STOKEDSPARKSURFER,      :DECIDIUMZ => :SINISTERARROWRAID,
+    :INCINIUMZ => :MALICIOUSMOONSAULT,        :PRIMARIUMZ => :OCEANICOPERETTA,
+    :EEVIUMZ => :EXTREMEEVOBOOST,             :PIKANIUMZ => :CATASTROPIKA,
+    :SNORLIUMZ => :PULVERIZINGPANCAKE,        :MEWNIUMZ => :GENESISSUPERNOVA,
+    :TAPUNIUMZ => :GUARDIANOFALOLA,           :MARSHADIUMZ => :SOULSTEALING7STARSTRIKE,
+    :KOMMONIUMZ => :CLANGOROUSSOULBLAZE,      :LYCANIUMZ => :SPLINTEREDSTORMSHARDS,
+    :MIMIKIUMZ => :LETSSNUGGLEFOREVER,        :SOLGANIUMZ => :SEARINGSUNRAZESMASH,
+    :LUNALIUMZ => :MENACINGMOONRAZEMAELSTROM, :ULTRANECROZIUMZ => :LIGHTTHATBURNSTHESKY,
+  }
+
+  POKEMONTOMEGASTONE = {
+    :CHARIZARD => [:CHARIZARDITEX, :CHARIZARDITEY, :CHARIZARDITEG],
+    :MEWTWO => [:MEWTWONITEX, :MEWTWONITEY],
+    :VENUSAUR => [:VENUSAURITE, :VENUSAURITEG],
+    :BLASTOISE => [:BLASTOISINITE, :BLASTOISINITEG],
+    :GENGAR => [:GENGARITE, :GENGARITEG],
+    :ABOMASNOW => [:ABOMASITE], :ABSOL => [:ABSOLITE],
+    :AERODACTYL => [:AERODACTYLITE], :AGGRON => [:AGGRONITE],
+    :ALAKAZAM => [:ALAKAZITE], :AMPHAROS => [:AMPHAROSITE],
+    :BANETTE => [:BANETTITE], :BLAZIKEN => [:BLAZIKENITE],
+    :GARCHOMP => [:GARCHOMPITE],    :GARDEVOIR  => [:GARDEVOIRITE],
+    :GYARADOS => [:GYARADOSITE],    :HERACROSS  => [:HERACRONITE],
+    :HOUNDOOM => [:HOUNDOOMINITE],  :KANGASKHAN => [:KANGASKHANITE],
+    :LUCARIO => [:LUCARIONITE], :MANECTRIC => [:MANECTITE],
+    :MAWILE => [:MAWILITE],       :MEDICHAM   => [:MEDICHAMITE],
+    :PINSIR => [:PINSIRITE],      :SCIZOR     => [:SCIZORITE],
+    :TYRANITAR => [:TYRANITARITE], :BEEDRILL => [:BEEDRILLITE],
+    :PIDGEOT => [:PIDGEOTITE],     :SLOWBRO    => [:SLOWBRONITE],
+    :STEELIX => [:STEELIXITE],     :SCEPTILE   => [:SCEPTILITE],
+    :SWAMPERT => [:SWAMPERTITE], :SHARPEDO => [:SHARPEDONITE],
+    :SABLEYE => [:SABLENITE],      :CAMERUPT   => [:CAMERUPTITE],
+    :ALTARIA => [:ALTARIANITE],    :GLALIE     => [:GLALITITE],
+    :SALAMENCE => [:SALAMENCITE], :METAGROSS => [:METAGROSSITE],
+    :LOPUNNY => [:LOPUNNITE], :GALLADE => [:GALLADITE],
+    :AUDINO => [:AUDINITE],       :DIANCIE    => [:DIANCITE],
+    :LATIAS => [:LATIASITE],      :LATIOS     => [:LATIOSITE],
+    # Gmax Megas
+    :BUTTERFREE => [:BUTTERFREENITE], :MACHAMP => [:MACHAMPITE],
+    :PIKACHU => [:PIKACHUTITE],    :MEOWTH     => [:MEOWTHITE],
+    :KINGLER => [:KINGLERITE],     :LAPRAS     => [:LAPRASITE],
+    :EEVEE => [:EEVEETITE], :SNORLAX => [:SNORLAXITE],
+    :GARBODOR => [:GARBODORNITE], :MELMETAL => [:MELMETALITE],
+    :CORVIKNIGHT => [:CORVIKNITE], :ORBEETLE => [:ORBEETLENITE],
+    :DREDNAW => [:DREDNAWTITE], :COALOSSAL => [:COALOSSALITE],
+    :FLAPPLE => [:FLAPPLETITE], :APPLETUN => [:APPLETUNITE],
+    :SANDACONDA => [:SANDACONDITE], :TOXTRICITY => [:TOXTRICITITE],
+    :CENTISKORCH => [:CENTISKORCHITE], :HATTERENE => [:HATTERENITE],
+    :GRIMMSNARL => [:GRIMMSNARLITE],  :ALCREMIE   => [:ALCREMITE],
+    :COPPERAJAH => [:COPPERAJITE],    :DURALUDON  => [:DURALUDONITE],
+    :RILLABOOM => [:RILLABOOMITE],   :INTELEON   => [:INTELEONITE],
+    :CINDERACE => [:CINDERACITE],    :URSHIFU    => [:URSHIFUTITE],
+    # Deso Megas
+    :MIGHTYENA => [:MIGHTYENITE],    :FERALIGATR => [:FERALIGATRITE],
+    :LUXRAY => [:LUXRITE], :CINCCINO => [:CINCCINITE],
+    :TOXICROAK => [:TOXICROAKITE],
+  }
+
+  POKEMONTOCREST = {
+    :TYPHLOSION => :TYPHCREST, :ARIADOS => :ARIACREST,
+    :FERALIGATR => :FERACREST,        :DEDENNE => :DEDECREST,
+    :MEGANIUM => :MEGCREST,           :MAGCARGO => :MAGCREST,
+    :BEHEEYEM => :BEHECREST,          :VESPIQUEN => :VESPICREST,
+    :GLACEON => :GLACCREST, :LEAFEON => :LEAFCREST,
+    :FEAROW => :FEARCREST, :DUSKNOIR => :DUSKCREST,
+    :STANTLER => :STANTCREST, :WYRDEER => :STANTCREST,
+    :RELICANTH => :RELICREST, :ORICORIO => :ORICREST,
+    :SILVALLY => :SILVCREST, :SEVIPER => :SEVCREST,
+    :COFAGRIGUS => :COFCREST, :SKUNTANK => :SKUNCREST,
+    :WHISCASH => :WHISCREST, :DARMANITAN => :DARMCREST,
+    :CHERRIM => :CHERCREST, :CLAYDOL => :CLAYCREST,
+    :ZANGOOSE => :ZANGCREST, :RAMPARDOS => :RAMPCREST,
+    :LEDIAN => :LEDICREST, :SPIRITOMB => :SPIRITCREST,
+    :TORTERRA => :TORCREST, :EMPOLEON => :EMPCREST,
+    :INFERNAPE => :INFCREST, :CASTFORM => :CASTCREST,
+    :BOLTUND => :BOLTCREST,           :THIEVUL => :THIEVCREST,
+    :LUXRAY => :LUXCREST,             :NOCTOWL => :NOCCREST,
+    :DRUDDIGON => :DRUDDICREST,       :PHIONE => :PHIONECREST,
+    :DELCATTY => :DELCREST, :SWALOT => :SWACREST,
+    :CINCCINO => :CINCCREST, :PROBOPASS => :PROBOCREST,
+    :BASTIODON => :BASTCREST,           :HYPNO => :HYPCREST,
+    :GOTHITELLE => :GOTHCREST,          :REUNICLUS => :REUNICREST,
+    :ELECTRODE => :ELECCREST, :CRABOMINABLE => :CRABCREST,
+    :SIMISEAR => :SEARCREST,          :SIMIPOUR => :POURCREST,
+    :SIMISAGE => :SAGECREST,          :LUVDISC   => :LUVCREST,
+    :SAWSBUCK => :SAWSCREST,          :SHIINOTIC => :SHIINCREST,
+    :AMPHAROS => :AEAMPHCREST,        :ZOROARK => :ZOROCREST,
+    :SAMUROTT => :SAMUCREST, :CRYOGONAL => :CRYCREST,
+    :FURRET => :FURRCREST,
+  }
+
+  SILVALLYCRESTABILITIES = {
+    :GRASSMEMORY => :FLOWERVEIL,  :FIREMEMORY => :MOXIE,
+    :WATERMEMORY => :MARVELSCALE, :FIGHTINGMEMORY => :DEFIANT,
+    :FLYINGMEMORY => :GALEWINGS,  :ROCKMEMORY => :SOLIDROCK,
+    :ELECTRICMEMORY => :DOWNLOAD, :PSYCHICMEMORY => :MAGICBOUNCE,
+    :GHOSTMEMORY => :MUMMY,       :POISONMEMORY => :REGENERATOR,
+    :DRAGONMEMORY => :MULTISCALE, :GROUNDMEMORY => :SHEERFORCE,
+    :STEELMEMORY => :HEATPROOF,   :DARKMEMORY => :STRONGJAW,
+    :ICEMEMORY => :GORILLATACTICS, :BUGMEMORY => :TINTEDLENS,
+    :FAIRYMEMORY => :UNAWARE, :GLITCHMEMORY => :BEASTBOOST,
+  }
+
+  POKEMONTOMEGASTONE.default = []
+  POKEMONTOCREST.default = []
+  SILVALLYCRESTABILITIES.default = []
+
+  HMTOGOLDITEM = {
+    :CUT => :GOLDENAXE,               :ROCKSMASH => :GOLDENHAMMER,
+    :STRENGTH => :GOLDENGAUNTLET,     :SURF => :GOLDENSURFBOARD,
+    :MAGMADRIFT => :GOLDENDRIFTBOARD, :WATERFALL => :GOLDENJETPACK,
+    :DIVE => :GOLDENSCUBAGEAR,        :ROCKCLIMB => :GOLDENCLAWS,
+    :FLASH => :GOLDENLANTERN,         :FLY => :GOLDENWINGS
+  }
+
+  LEGENDARYLIST = [
+    :CRESSELIA, :REGICE, :REGIROCK,
+    :REGISTEEL,         :SUICUNE,       :ENTEI,       :RAIKOU,
+    :MESPRIT,           :AZELF,         :UXIE,        :ARTICUNO,
+    :ZAPDOS,            :MOLTRES,       :LANDORUS,    :THUNDURUS,
+    :TORNADUS,          :TERRAKION,     :VIRIZION,    :COBALION,
+    :KELDEO,            :REGIGIGAS,     :CELEBI,      :MELOETTA,
+    :VICTINI,           :VOLCANION,     :HOOPA,       :ZERAORA,
+    :MAGEARNA,          :ZYGARDE,       :TAPUBULU,    :TAPUKOKO,
+    :TAPULELE,          :TAPUFINI,      :DIANCIE,     :JIRACHI,
+    :HEATRAN,           :LATIAS,        :LATIOS,      :MANAPHY,
+    :DARKRAI,           :MARSHADOW,     :SHAYMIN,     :MEW,
+    :GENESECT,          :DIALGA,        :PALKIA,      :HOOH,
+    :LUGIA,             :RESHIRAM,      :ZEKROM,      :KYUREM,
+    :XERNEAS,           :YVELTAL,       :COSMOG,      :COSMOEM,
+    :LUNALA,            :SOLGALEO,      :DEOXYS,      :GROUDON,
+    :KYOGRE,            :GIRATINA,      :RAYQUAZA,    :NECROZMA,
+    :MEWTWO,            :ARCEUS,        :MELTAN,      :MELMETAL,
+    :ZACIAN,            :ZAMAZENTA,     :ETERNATUS,   :KUBFU,
+    :URSHIFU,           :ZARUDE,        :REGIELEKI,   :REGIDRAGO,
+    :GLASTRIER,         :SPECTRIER,     :CALYREX,     :ENAMORUS,
+    :TYPENULL,          :SILVALLY
+  ]
+
+  ULTRABEASTS = [:NIHILEGO, :BUZZWOLE, :PHEROMOSA, :XURKITREE, :CELESTEELA, :KARTANA,
+                 :GUZZLORD, :POIPOLE,  :NAGANADEL, :STAKATAKA, :BLACEPHALON]
+
+  SHORTCIRCUITROLLS = [0.8, 1.5, 0.5, 1.2, 2.0]
+
+  CCROLLS = [:FIRE, :WATER, :GRASS, :PSYCHIC]
+
+  CROWDBUFFS = [
+    "(self.attack > self.spatk) ? self.pbIncreaseStatBasic(PBStats::ATTACK,1) : self.pbIncreaseStatBasic(PBStats::SPATK,1); @battle.pbCommonAnimation(\"StatUp\",self,nil);",
+    "(self.defense > self.spdef) ?  self.pbIncreaseStatBasic(PBStats::DEFENSE,1) : self.pbIncreaseStatBasic(PBStats::SPDEF,1); @battle.pbCommonAnimation(\"StatUp\",self,nil);",
+    "self.pbIncreaseStatBasic(PBStats::SPEED,1); @battle.pbCommonAnimation(\"StatUp\",self,nil);",
+  ]
+  CROWDDEBUFFS = [
+    "(self.attack > self.spatk) ? self.pbReduceStatBasic(PBStats::ATTACK,1) : self.pbReduceStatBasic(PBStats::SPATK,1); @battle.pbCommonAnimation(\"StatDown\",self,nil);",
+    "(self.defense > self.spdef) ?  self.pbReduceStatBasic(PBStats::DEFENSE,1) : self.pbReduceStatBasic(PBStats::SPDEF,1); @battle.pbCommonAnimation(\"StatDown\",self,nil);",
+    "self.pbReduceStatBasic(PBStats::SPEED,1); @battle.pbCommonAnimation(\"StatDown\",self,nil);",
+  ]
 end
 
 class PBFields
-  #PBStuff for field effects.
-	CHESSMOVES = arrayToConstant(PBMoves,[:STRENGTH,:ANCIENTPOWER,:PSYCHIC,:CONTINENTALCRUSH, 
-    :SECRETPOWER,:SHATTEREDPSYCHE])
+  # PBStuff for field effects.
 
-	STRIKERMOVES = arrayToConstant(PBMoves,[:STRENGTH, :WOODHAMMER, :DUALCHOP, :HEATCRASH, :SKYDROP, 
-    :BULLDOZE, :POUND, :ICICLECRASH, :BODYSLAM, :STOMP, :SLAM, :GIGAIMPACT, :SMACKDOWN, :IRONTAIL, 
-    :METEORMASH, :DRAGONRUSH, :CRABHAMMER, :BOUNCE, :HEAVYSLAM, :MAGNITUDE, :EARTHQUAKE, 
-    :STOMPINGTANTRUM, :BRUTALSWING, :HIGHHORSEPOWER, :ICEHAMMER, :DRAGONHAMMER, :BLAZEKICK])
+  WINDMOVES = [
+    :OMINOUSWIND, :ICYWIND, :SILVERWIND, :TWISTER, :RAZORWIND,
+    :FAIRYWIND, :GUST
+  ]
 
-	WINDMOVES = arrayToConstant(PBMoves,[:OMINOUSWIND, :ICYWIND, :SILVERWIND, :TWISTER, :RAZORWIND, 
-    :FAIRYWIND, :GUST])
+  MIRRORMOVES = [
+    :CHARGEBEAM, :SOLARBEAM, :PSYBEAM, :TRIATTACK,
+    :BUBBLEBEAM, :HYPERBEAM, :ICEBEAM, :ORIGINPULSE, :MOONGEISTBEAM, :FLEURCANNON
+  ]
 
-	MIRRORMOVES = arrayToConstant(PBMoves,[:CHARGEBEAM, :SOLARBEAM, :PSYBEAM, :TRIATTACK, 
-    :BUBBLEBEAM, :HYPERBEAM, :ICEBEAM, :ORIGINPULSE, :MOONGEISTBEAM, :FLEURCANNON])
+  BLINDINGMOVES = [
+    :AURORABEAM, :SIGNALBEAM, :FLASHCANNON, :LUSTERPURGE,
+    :DAZZLINGGLEAM, :TECHNOBLAST, :DOOMDUMMY, :PRISMATICLASER, :PHOTONGEYSER, :LIGHTTHATBURNSTHESKY
+  ]
 
-	BLINDINGMOVES = arrayToConstant(PBMoves,[:AURORABEAM, :SIGNALBEAM, :FLASHCANNON, :LUSTERPURGE, 
-    :DAZZLINGGLEAM, :TECHNOBLAST, :DOOMDUMMY, :PRISMATICLASER, :PHOTONGEYSER, :LIGHTTHATBURNSTHESKY])
+  IGNITEMOVES = [
+    :HEATWAVE, :ERUPTION, :SEARINGSHOT, :FLAMEBURST,
+    :LAVAPLUME, :FIREPLEDGE, :MINDBLOWN, :INCINERATE, :INFERNOOVERDRIVE
+  ]
 
-	IGNITEMOVES = arrayToConstant(PBMoves,[:HEATWAVE, :ERUPTION, :SEARINGSHOT, :FLAMEBURST, 
-    :LAVAPLUME, :FIREPLEDGE, :MINDBLOWN, :INCINERATE, :INFERNOOVERDRIVE])
+  BLOWMOVES = [
+    :WHIRLWIND, :GUST, :RAZORWIND, :DEFOG, :HURRICANE,
+    :TWISTER, :TAILWIND, :SUPERSONICSKYSTRIKE
+  ]
 
-	BLOWMOVES = arrayToConstant(PBMoves,[:WHIRLWIND, :GUST, :RAZORWIND, :DEFOG, :HURRICANE, 
-    :TWISTER,:TAILWIND, :SUPERSONICSKYSTRIKE])
+  GROWMOVES = [
+    :GROWTH, :FLOWERSHIELD, :RAINDANCE, :SUNNYDAY, :ROTOTILLER,
+    :INGRAIN, :WATERSPORT
+  ]
 
-	GROWMOVES = arrayToConstant(PBMoves,[:GROWTH,:FLOWERSHIELD,:RAINDANCE,:SUNNYDAY, :ROTOTILLER,
-    :INGRAIN,:WATERSPORT])
+  MAXGARDENMOVES = PBStuff::POWDERMOVES + [:PETALDANCE, :PETALBLIZZARD]
 
-	MAXGARDENMOVES = PBStuff::POWDERMOVES + arrayToConstant(PBMoves,[:PETALDANCE,:PETALBLIZZARD])
+  QUAKEMOVES = [:EARTHQUAKE, :BULLDOZE, :MAGNITUDE, :FISSURE, :TECTONICRAGE]
 
-	QUAKEMOVES = arrayToConstant(PBMoves,[:EARTHQUAKE, :BULLDOZE, :MAGNITUDE, :FISSURE, :TECTONICRAGE])
-	
-	NONE = 0
-	ELECTRICT = 1
-	GRASSYT = 2
-	MISTYT = 3
-	DARKCRYSTALC = 4
-	CHESSB = 5
-	BIGTOPA = 6
-	BURNINGF = 7
-	SWAMPF = 8
-	RAINBOWF = 9
-	CORROSIVEF = 10
-	CORROSIVEMISTF = 11
-	DESERTF = 12
-	ICYF = 13
-	ROCKYF = 14
-	FORESTF = 15
-	SUPERHEATEDF = 16
-	FACTORYF = 17
-	SHORTCIRCUITF = 18
-	WASTELAND = 19
-	ASHENB = 20
-	WATERS = 21
-	UNDERWATER = 22
-	CAVE = 23
-	GLITCHF = 24
-	CRYSTALC = 25
-	MURKWATERS = 26
-	MOUNTAIN = 27
-	SNOWYM = 28
-	HOLYF = 29
-	MIRRORA = 30
-	FAIRYTALEF = 31
-	DRAGONSD = 32
-	FLOWERGARDENF = 33
-	STARLIGHTA = 34
-	NEWW = 35
-	INVERSEF = 36
-	PSYCHICT = 37
-	INDOORA = 38
-	INDOORB = 39
-	INDOORC = 40
-	CITY = 41
-	CITYNEW = 42
+  # Multi-stage Fields
+  FLOWERGARDEN = [:FLOWERGARDEN1, :FLOWERGARDEN2, :FLOWERGARDEN3, :FLOWERGARDEN4, :FLOWERGARDEN5]
+  DARKNESS = [:DARKNESS1, :DARKNESS2, :DARKNESS3] # desolation
+  CONCERT = [:CONCERT1, :CONCERT2, :CONCERT3, :CONCERT4]
+
+  # Burmy Field division (fuck burmy -Fal)
+  PLANTCLOAK = [
+    :GRASSY, :MISTY, :SWAMP, :RAINBOW, :FOREST, :WATERSURFACE, :UNDERWATER, :FAIRYTALE, :FLOWERGARDEN1,
+    :FLOWERGARDEN2, :FLOWERGARDEN3, :FLOWERGARDEN4, :FLOWERGARDEN5, :STARLIGHT, :BEWITCHED, :SKY, :CLOUDS
+  ]
+  SANDYCLOAK = [
+    :DARKCRYSTALCAVERN, :BURNING, :VOLCANIC, :DESERT, :ICY, :ROCKY, :SUPERHEATED, :VOLCANICTOP, :ASHENBEACH, :CAVE,
+    :CRYSTALCAVERN, :MOUNTAIN, :SNOWYMOUNTAIN, :DRAGONSDEN, :INFERNAL, :COLOSSEUM, :DEEPEARTH
+  ]
+  TRASHCLOAK = [
+    :ELECTERRAIN, :CHESS, :BIGTOP, :CORROSIVE, :CORROSIVEMIST, :FACTORY, :SHORTCIRCUIT, :WASTELAND, :GLITCH,
+    :MURKWATERSURFACE, :HOLY, :MIRROR, :NEWWORLD, :INVERSE, :PSYTERRAIN, :DIMENSIONAL, :FROZENDIMENSION, :HAUNTED, :CORRUPTED, :CONCERT1, :CONCERT2, :CONCERT3, :CONCERT4, :CROWD, :DANCEFLOOR, :DARKNESS1, :DARKNESS2, :DARKNESS3
+  ]
+
+  # Fieldconstant names for Reborn until field are sorted out there
+  # can be removed afterwards
+  NONE = 0
+  ELECTRICT = 1
+  GRASSYT = 2
+  MISTYT = 3
+  DARKCRYSTALC = 4
+  CHESSB = 5
+  BIGTOPA = 6
+  BURNINGF = 7
+  SWAMPF = 8
+  RAINBOWF = 9
+  CORROSIVEF = 10
+  CORROSIVEMISTF = 11
+  DESERTF = 12
+  ICYF = 13
+  ROCKYF = 14
+  FORESTF = 15
+  SUPERHEATEDF = 16
+  FACTORYF = 17
+  SHORTCIRCUITF = 18
+  WASTELAND = 19
+  ASHENB = 20
+  WATERS = 21
+  UNDERWATER = 22
+  CAVE = 23
+  GLITCHF = 24
+  CRYSTALC = 25
+  MURKWATERS = 26
+  MOUNTAIN = 27
+  SNOWYM = 28
+  HOLYF = 29
+  MIRRORA = 30
+  FAIRYTALEF = 31
+  DRAGONSD = 32
+  FLOWERGARDENF = 33
+  STARLIGHTA = 34
+  NEWW = 35
+  INVERSEF = 36
+  PSYCHICT = 37
+  INDOORA = 38
+  INDOORB = 39
+  INDOORC = 40
+  CITY = 41
+  CITYNEW = 42
 end
