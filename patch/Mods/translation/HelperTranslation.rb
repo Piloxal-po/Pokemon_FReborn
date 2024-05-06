@@ -17,7 +17,7 @@ def _INTL(*arg)
     end
     pushInHistory(HISTORY_INTL, base, transform)
     return transform
-  end
+end
 
 def _MAPINTL(mapid,*arg)
     base = arg[0]
