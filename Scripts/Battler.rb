@@ -6246,7 +6246,7 @@ class PokeBattle_Battler
     if z_effect.length == 2
       if attacker.pbCanIncreaseStatStage?(z_effect[0], false, ignoreContrary: true)
         attacker.pbIncreaseStat(z_effect[0], z_effect[1], abilitymessage: false, ignoreContrary: true)
-        boostlevel = ["", "sharply ", "drastically "]
+        boostlevel = ["", _INTL("sharply "), _INTL("drastically ")]
         @battle.pbDisplayBrief(_INTL("{1}'s Z-Power {2}boosted its {3}!", attacker.pbThis, boostlevel[z_effect[1] - 1], attacker.pbGetStatName(z_effect[0])))
         return
       end
