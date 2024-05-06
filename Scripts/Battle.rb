@@ -521,7 +521,7 @@ class PokeBattle_Battle
       seeddata = @field.seeds
       next if battler.item != seeddata[:seedtype]
 
-      boostlevel = ["", "", "sharply ", "drastically "]
+      boostlevel = ["", "", _INTL("sharply "), _INTL("drastically ")]
 
       # Stat boost from seed
       statupanimplayed = false
