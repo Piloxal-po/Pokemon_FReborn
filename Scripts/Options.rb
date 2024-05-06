@@ -274,7 +274,7 @@ class PokemonOptions
     @turboSpeedMultiplier     = 3.0 if @turboSpeedMultiplier.nil? # Game speed multiplier in turbo mode
     @discordRPC               = 1 if @discordRPC.nil? # Controls Discord rich presence updates (0=off, 1=on)
     @frameskip                = 0 if @frameskip.nil? # mkxp-z frameskip feature (0=off, 1=on)
-    @firstTime      = (system != nil ? system.firstTime : true)
+    @firstTime      = true if @firstTime.nil?
   end
 end
 

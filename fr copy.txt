@@ -78631,8 +78631,8 @@ It seems to be set on learning how to fly.
 On dirait qu'il essaie d'apprendre à voler.
 Show Bagon how to use Fly?
 Montrer à Draby comment utiliser Vol?
-1, 2, and... ... ...
-1, 2, et... ... ...
+1,  2, and... ... ...
+1,  2, et... ... ...
 Poof!
 Tadaa!
 Bagon learned Fly!
@@ -164508,7 +164508,7 @@ Taille
 WT
 Poids
 {1:s} Pokémon
-{1:s} Pokémon
+Pokémon {1:s}
 {1:d}'{2:02d}"
 {1:d}'{2:02d}"
 {1:4.1f} lbs.
@@ -166213,7 +166213,7 @@ Please remove the mail.
 Veuillez enlever la Lettre tenue. 
 That's your last Pokémon!
 C'est votre dernier Pokémon!
-Release this Pokémon?
+Release this Pokémon?Release this Pokémon?
 Relâcher ce Pokémon?
 {1} was released.
 {1} a été relâché. 
@@ -166656,7 +166656,7 @@ Prends-en bien soin!
 For {1}'s {2},<<n>>{3} sends {4}.<<1>>
 Contre {2} de {1},<<r>><<n>>{3} envoie {4}.<<1>>
 {1} bids farewell to {2}.
-{1} bids farewell to {2}.
+{1} souhaite bon voyage à {2}.
 {1:s}<<n>>ID: {2:05d} OT: {3:s}<<1>>
 {1:s}<<r>><<n>>ID: {2:05d} OT: {3:s}<<1>>
 Take good care of {1}.
@@ -169675,3 +169675,121 @@ Pétalexplosion Éblouissante
 Le Bouton Fuite de {1} s'est activé !
 {1}'s {2} activated!
 {2} de {1} s'est activé!
+{1} became a Pawn and stormed up the board!
+{1} devient un Pion et prend d'assaut l'échiquier
+{1} became a King and exposed itself!
+{1} devient le Roi et s'expose!
+{1} became a Knight and readied its position!
+{1} devient un Cavalier et prend position!
+{1} became a Bishop and took the diagonal!
+{1} devient un Fou et prend la diagonale!
+{1} became a Rook and took the open file!
+{1} devient une Tour et se place sur la voie libre!
+{1} became a Queen and was placed on the center of the board!
+{1} devient la Dame et se place au centre de l'Échiquier!
+The dawn of a New World shines down upon the broken land.
+NEED TRAD
+The grassy terrain healed the Pokémon on the field.
+Le Champ Herbu soigne les Pokémon sur le terrain.
+The Pokémon were burned by the field!
+Les Pokémon sont brûlés par le terrain!
+The Pokémon were poisoned by the corrosive mist!
+Les Pokémon sont empoisonnés par la brume corrosive!
+{1} drank tree sap to recover!
+{1} broute quelques feuilles!
+{1} absorbed some of the water!
+{1} absorbe un peu d'eau!
+The Pokémon were buffeted by the sandstorm!
+Les Pokémon sont blessés par Tempêtesable!
+The Pokémon were buffeted by the hail!
+Les Pokémon sont blessés par Grêle!
+{1} picked up an {2}!
+{1} a ramassé {2}!
+{1} picked up a {2}!
+{1} a ramassé {2}!
+{1} survived the poisoning.\nThe poison faded away!\1
+{1} a survécu au poison.\nLe poison s'est dissipé!\1
+<<n>>Oh!  A bite!
+<<n>>Oh! Une prise!
+Open Save Folder
+Dossier Sauvegardes
+I'll throw in a few Premier Balls, too.
+Vous gagnez des Honor Balls en cadeau.
+The wall collapsed!
+Le rocher s'est effondré!
+Autorunning
+Course Auto
+Volume of Background Music.
+Volume de la musique d'arrière-plan.
+Volume of Sound Effects.
+Volume des Effets Sonores.
+Bike and Surf Music
+Musique Vélo/Surf
+Enables bike and surf music to play
+Autorise la musique en vélo et en Surf.
+Bag Sorting
+Tri Sac
+By Name
+Par nom
+By Type
+Par Type
+How to sort items in the bag.
+Manière de trier les obets du sac.
+Show animations during battle.
+Affiche les animations en combat.
+Photosensitivity
+Photosensitivité
+Disables battle animations, screen flashes and shakes for photosensitivity.
+Désactive les animations et les flashs de l'écran.
+Menu frame {1}.
+Type de fenêtre {1}.
+Discord Activity
+NEED TRAD
+Controls Discord rich presence. If on, shows game info on Discord.
+NEED TRAD
+{1} was renamed to {2}.
+{1} se nomme désormais {2}.
+Produced by a curious stray Pokémon finding an abandoned machine. Its function is to make wasteful byproduct. Anything it touches sticks to it and will eventually be turned into toxic waste.
+NEED TRAD
+The very first PULSE Pokémon created. Its function is mass reproduction. Each of its eyes contains the energy of one of the people responsible for its creation. It obeys only them.
+NEED TRAD
+Created by a once wild Pokémon evolving in reaction to erratic energy. Its function is endless generation. Part of its body was formed around the machine, making it unable to move at all.
+NEED TRAD
+Engineered to be totally indestructible. Its function is endless regeneration. When it expands its body, it loses consciousness, becoming only a vessel for absorption and subsequent expulsion.
+NEED TRAD
+Created by repeated fusions. Its function is systematic contamination. By becoming one with substances of any kind, it is able to transmute the target of its union into toxic filth.
+NEED TRAD
+Hybridized for erratic growth. Its function is to empower nature to reclaim stolen land. Its purification process is almost fully complete. At the end of its petrification, its organs also begin to harden and stop.
+NEED TRAD
+Hybridized for erratic growth. Its function is to empower nature to reclaim stolen land. After absorbing the latent corruption, it begins to purify the damage by petrifying and breaking down the toxic components.
+NEED TRAD
+Hybridized for erratic growth. Its function is to empower nature to reclaim stolen land. Using long, reaching vines, it absorbs corruption from all sources into its body to dispose of it.
+NEED TRAD
+Created as a catalyst for purification. Its function is limitless amplification. Its body resonates with nearby heat, inciting reactive power. After eruption, it is unable to cool down, and will perish.
+NEED TRAD
+An experiment testing the effects of PULSE systems on unevolved Pokémon. Its function is seamless transportation. Its body seems to reject all machine input, at the apparent cost of its psyche.
+NEED TRAD
+Digitally lobotomized for full efficiency. Its function is perfect control. It projects its unconsciousness onto target locations and can directly manipulate up to two individuals at a time.
+NEED TRAD
+Modified by repeated amputations and augmentations. Its function is impregnable defense. Its psychic power is amplified by the constant focus it requires to maintain control over its unattached limbs.
+NEED TRAD
+Mechanically sculpted via scripted process. Its function is endless offensive potential. Many bodily features such as the brain have been rendered vestigial to allow manual usage of the Pokemon similar to traditional artillery.
+NEED TRAD
+World is deception, World is in pain, World should remake, World is competition, World is destruction, World is mistake, World is attack, World is unloved, World is deception, World is mistake, World is mistake, World is mistake, World is mistake
+NEED TRAD
+An item in the Bag can be registered to this key for instant use.
+Un Objet du Sac peut être associé à cette touche pour l'utiliser instantanément.
+Add Password
+Ajouter Mot de Passe
+Accessed the Password Menu.
+Accès au Menu Mots de Passe.
+<c3=F8F8F8,686868>Ability:<c3=404040,B0B0B0>\n
+NEED TRAD
+<c3=F8F8F8,686868>Description:\n
+<c3=F8F8F8,686868>Description:\n
+<c3=F83820,E09890>{1}<c3=404040,B0B0B0> nature.\n
+Nature <c3=F83820,E09890>{1}<c3=404040,B0B0B0> <<n>>
+<c3=F83820,E09890>Faraway place\n
+<c3=F83820,E09890>Faraway place<<n>>
+Saved the game!
+Partie sauvegardée!
