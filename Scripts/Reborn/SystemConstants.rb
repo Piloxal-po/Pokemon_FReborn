@@ -416,7 +416,7 @@ PULSEDexPictures = []
 
 def getPulseInfo()
   if PULSEDexPictures.empty?
-    PULSEDexPictures = [
+    PULSEDexPictures.concat [
       [587, "navpulse00", _INTL("0. Garbodor"), :GARBODOR, 1,
       _INTL("Produced by a curious stray Pokémon finding an abandoned machine. Its function is to make wasteful byproduct. Anything it touches sticks to it and will eventually be turned into toxic waste.")],
       [588, "navpulse01", _INTL("1. Magnezone"), :MAGNEZONE, 1,

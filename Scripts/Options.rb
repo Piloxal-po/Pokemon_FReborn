@@ -270,7 +270,7 @@ class PokemonOptions
     @unrealTimeTimeScale      = 30 if @unrealTimeTimeScale.nil? # Unreal Time Timescale (default 30x real time)
     @turboSpeedMultiplier     = 3.0 if @turboSpeedMultiplier.nil? # Game speed multiplier in turbo mode
     @discordRPC               = 1 if @discordRPC.nil? # Controls Discord rich presence updates (0=off, 1=on)
-    @firstTime      = (system != nil ? system.firstTime : true) 
+    @firstTime      = true if @firstTime.nil? 
   end
 end
 

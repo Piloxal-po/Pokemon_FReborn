@@ -36,7 +36,7 @@ def pbTicketText(textno)
   grandviewPosition = 73
   trainPlacePosition = 98
   numberPosition = 83
-  if (LANGUAGES.length >= 2 && LANGUAGES[$idk[:settings].language][1] == "fr")
+  if (LANGUAGES.length >= 2 && LANGUAGES[$Settings.language][1] == "fr")
     onePosition = 50
     grandviewPosition = 74
     trainPlacePosition = 102

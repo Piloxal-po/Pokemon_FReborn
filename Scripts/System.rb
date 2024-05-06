@@ -35,13 +35,12 @@ def pbSetUpSystem
     for lang in LANGUAGES
       commands.push(lang[0])
     end
-    pbLoadMessages("Data/"+LANGUAGES[$idk[:settings].language][1])
-    if ($idk[:settings].firstTime == nil) 
-      $idk[:settings].firstTime = false
-      $idk[:settings].language = Kernel.pbShowCommands(nil,commands)
+    if ($Settings.firstTime == nil) 
+      $Settings.firstTime = false
+      $Settings.language = Kernel.pbShowCommands(nil,commands)
       saveClientData
     end
-    pbLoadMessages("Data/"+LANGUAGES[$idk[:settings].language][1] + ".dat")
+    pbLoadMessages("Data/"+LANGUAGES[$Settings.language][1] + ".dat")
   end
 end
 
