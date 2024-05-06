@@ -235,6 +235,7 @@ class PokemonOptions
   attr_accessor :audiotype
   attr_accessor :turboSpeedMultiplier
   attr_accessor :discordRPC
+  attr_accessor :firstTime
 
   def initialize
     fixMissingValues
@@ -269,6 +270,7 @@ class PokemonOptions
     @unrealTimeTimeScale      = 30 if @unrealTimeTimeScale.nil? # Unreal Time Timescale (default 30x real time)
     @turboSpeedMultiplier     = 3.0 if @turboSpeedMultiplier.nil? # Game speed multiplier in turbo mode
     @discordRPC               = 1 if @discordRPC.nil? # Controls Discord rich presence updates (0=off, 1=on)
+    @firstTime      = (system != nil ? system.firstTime : true) 
   end
 end
 
@@ -305,45 +307,45 @@ class PokemonOptionScene
           $game_system.bgm_play_internal(bgm_new_volume, $game_system.bgm_position)
         end
       },
-      "Volume of Background Music."
+      _INTL("Volume of Background Music.")
     )
     optionList.push NumberOption.new(
       _INTL("SE Volume"), _INTL("Type %d"), 0, 100, 1,
       proc { $Settings.sevolume },
       proc { |value| $Settings.sevolume = value },
-      "Volume of Sound Effects."
+      _INTL("Volume of Sound Effects.")
     )
     if $game_switches && $game_switches[:Blindstep]
       optionList.push NumberOption.new(
         _INTL("Accessibility Volume"), _INTL("Type %d"), 0, 100, 1,
         proc { $Settings.accessibilityVolume },
         proc { |value| $Settings.accessibilityVolume = value },
-        "Volume of enhanced sounds effects for accessibility."
+        _INTL("Volume of enhanced sounds effects for accessibility.")
       )
     end
     optionList.push EnumOption.new(
       _INTL("Sound"), [_INTL("Stereo"), _INTL("Mono")],
       proc { $Settings.audiotype },
       proc { |value| $Settings.audiotype = value },
-      "Audio plays from both or one ear"
+      _INTL("Audio plays from both or one ear")
     )
     optionList.push EnumOption.new(
       _INTL("Bike and Surf Music"), [_INTL("Off"), _INTL("On")],
       proc { $Settings.bike_and_surf_music },
       proc { |value| $Settings.bike_and_surf_music = value },
-      "Enables bike and surf music to play"
+      _INTL("Enables bike and surf music to play")
     )
     optionList.push EnumOption.new(
       _INTL("Bag Sorting"), [_INTL("By Name"), _INTL("By Type")],
       proc { $Settings.bagsorttype },
       proc { |value| $Settings.bagsorttype = value },
-      "How to sort items in the bag."
+      _INTL("How to sort items in the bag.")
     )
     optionList.push EnumOption.new(
       _INTL("Battle Scene"), [_INTL("On"), _INTL("Off")],
       proc { $Settings.battlescene },
       proc { |value| $Settings.battlescene = value },
-      "Show animations during battle."
+      _INTL("Show animations during battle.")
     )
     optionList.push EnumOption.new(
       _INTL("Battle Style"), [_INTL("Shift"), _INTL("Set")],
@@ -354,13 +356,13 @@ class PokemonOptionScene
       _INTL("Photosensitivity"), [_INTL("Off"), _INTL("On")],
       proc { $Settings.photosensitive },
       proc { |value| $Settings.photosensitive = value },
-      "Disables battle animations, screen flashes and shakes for photosensitivity."
+      _INTL("Disables battle animations, screen flashes and shakes for photosensitivity.")
     )
     optionList.push EnumOption.new(
       _INTL("Streamer Mode"), [_INTL("Off"), _INTL("On")],
       proc { $Settings.streamermode },
       proc { |value| $Settings.streamermode = value },
-      "Hides private information for safety and compatibility."
+      _INTL("Hides private information for safety and compatibility.")
     )
     # options currently running every time the user accesses the options menu and does anything
     if defined?(DiscordAppID) && DiscordAppID && !$joiplay
@@ -368,7 +370,7 @@ class PokemonOptionScene
         _INTL("Discord Activity"), [_INTL("Off"), _INTL("On")],
         proc { $Settings.discordRPC },
         proc { |value| $Settings.discordRPC = value },
-        "Controls Discord rich presence. If on, shows game info on Discord."
+        _INTL("Controls Discord rich presence. If on, shows game info on Discord.")
       )
     end
     # JoiPlay version is always in Portable mode
@@ -379,7 +381,7 @@ class PokemonOptionScene
         proc { |value|
           value == 1 ? RTP.makePortable : RTP.makeNonPortable
         },
-        "Keeps save data in the game EXE folder."
+        _INTL("Keeps save data in the game EXE folder.")
       )
     end
     optionList.push NumberOption.new(
@@ -393,7 +395,7 @@ class PokemonOptionScene
           Graphics.toggleTurbo
         end
       },
-      "Game speed multiplier while in Turbo Mode."
+      _INTL("Game speed multiplier while in Turbo Mode.")
     )
     optionList.push NumberOption.new(
       _INTL("Speech Frame"), _INTL("Type %d"), 1, SpeechFrames.length, 1,
@@ -419,25 +421,25 @@ class PokemonOptionScene
       _INTL("Field UI Highlights"), [_INTL("On"), _INTL("Off")],
       proc { $Settings.field_effects_highlights },
       proc { |value| $Settings.field_effects_highlights = value },
-      "Shows boxes around move if boosted or decreased by field effect."
+      _INTL("Shows boxes around move if boosted or decreased by field effect.")
     )
     optionList.push EnumOption.new(
       _INTL("Battle Cursor"), [_INTL("Fight"), _INTL("Last Used")],
       proc { $Settings.remember_commands },
       proc { |value| $Settings.remember_commands = value },
-      "Sets default position of cursor in battle."
+      _INTL("Sets default position of cursor in battle.")
     )
     optionList.push EnumOption.new(
       _INTL("Backup"), [_INTL("On"), _INTL("Off")],
       proc { $Settings.backup },
       proc { |value| $Settings.backup = value },
-      "Preserves overwritten files on each save for later recovery."
+      _INTL("Preserves overwritten files on each save for later recovery.")
     )
     optionList.push NumberOption.new(
       _INTL("Max Backup Number"), _INTL("Type %d"), 1, 101, 1,
       proc { $Settings.maxBackup == 999_999 ? 100 : $Settings.maxBackup },
       proc { |value| value == 100 ? $Settings.maxBackup = 999_999 : $Settings.maxBackup = value }, # +1
-      "The maximum number of backup save files to keep. (101 is infinite)"
+      _INTL("The maximum number of backup save files to keep. (101 is infinite)")
     )
     unless $joiplay
       optionList.push EnumOption.new(
@@ -470,19 +472,19 @@ class PokemonOptionScene
         _INTL("Unreal Time"), [_INTL("Off"), _INTL("On")],
         proc { $Settings.unrealTimeDiverge },
         proc { |value| $Settings.unrealTimeDiverge = value },
-        "Uses in-game time instead of computer clock."
+        _INTL("Uses in-game time instead of computer clock.")
       )
       optionList.push EnumOption.new(
         _INTL("Show Clock"), [_INTL("Always"), _INTL("Menu"), _INTL("Gear")],
         proc { $Settings.unrealTimeClock },
         proc { |value| $Settings.unrealTimeClock = value },
-        "Shows an in-game clock that displays the current time."
+        _INTL("Shows an in-game clock that displays the current time.")
       )
       optionList.push NumberOption.new(
         _INTL("Unreal Time Scale"), _INTL("Type %d"), 1, 60, 1,
         proc { $Settings.unrealTimeTimeScale - 1 },
         proc { |value| $Settings.unrealTimeTimeScale = value + 1 },
-        "Sets the rate at which unreal time passes."
+        _INTL("Sets the rate at which unreal time passes.")
       )
     end
     return optionList

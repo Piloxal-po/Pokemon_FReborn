@@ -1130,7 +1130,7 @@ def pbPokemonDebug(origin, pkmn, pkmnid = nil, selected = nil, heldpoke = nil)
           cmd = 0 if cmd.nil?
           commands = abils.map { |element|
             isHidden = (element == $cache.pkmn[pkmn.species, pkmn.form].HiddenAbility && abils.length > 1)
-            (element == isHidden ? "(H) " : "") + getAbilityName(element)
+            (element == isHidden ? _INTL("(H)") + " " : "") + getAbilityName(element)
           }
           msg = [
             _INTL("Ability {1} is natural.", getAbilityName(abils[cmd])),

@@ -1502,8 +1502,8 @@ class PokemonScreen
         firstName  = getMoveName(aMoves[indexPrev])
         secondName = getMoveName(aMoves[index])
 
-        firstName = "AAAA" if firstName == "Fly"
-        secondName = "AAAA" if secondName == "Fly"
+        firstName = "AAAA" if firstName == PBMoves.getName(156)  
+        secondName = "AAAA" if secondName == PBMoves.getName(156)  
 
         if firstName > secondName
           aux               = aCmds[index]
@@ -1521,10 +1521,10 @@ class PokemonScreen
 
     # Add "None"
     aMoves = aMoves + [-1]
-    aCmds = aCmds + ["None"]
+    aCmds = aCmds + [_INTL("None")]
 
     iC = Kernel.pbMessage(_INTL("Which TM should be used?"), aCmds, aCmds.length)
-    if !(aCmds[iC] == "None")
+    if !(aCmds[iC] == _INTL("None"))
       atk = aMoves[iC]
       if Kernel.pbCanUseHiddenMove?(pkmn, atk)
         @scene.pbEndScene
@@ -1724,7 +1724,7 @@ class PokemonScreen
         itemMenu(pkmnid, pkmn)
       elsif cmdRename >= 0 && command == cmdRename
         species = getMonName(pkmn.species, pkmn.form)
-        $game_variables[5] = Kernel.pbMessageFreeText("#{species}'s nickname?", _INTL(""), false, 12)
+        $game_variables[5] = Kernel.pbMessageFreeText("{1}'s nickname?", _INTL(""), false, 12)
         if pbGet(5) == ""
           pkmn.name = getMonName(pkmn.species, pkmn.form)
           pbSet(5, pkmn.name)

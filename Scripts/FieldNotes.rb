@@ -17,18 +17,18 @@ class Scene_FieldNotes
       field = fieldIDToSym(i)
       if seenFields.include?(field)
         item = {
-          label: i.to_s + ". " + $cache.FEData[field].name,
+          label: i.to_s + ". " +  _INTL(getFieldRootName(field)),
           field: field,
         }
       else
         item = {
-          label: "???",
+          label: _INTL("???"),
         }
       end
       menu.push(item)
     end
     back = {
-      label: "Back",
+      label: _INTL("Back"),
       back: true,
     }
     menu.push(back)

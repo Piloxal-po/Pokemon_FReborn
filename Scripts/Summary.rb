@@ -248,6 +248,12 @@ class PokemonSummaryScene
     elsif pokemon.fakeOT == true
       ownerbase = DarkBase
       ownershadow = DarkShadow
+      pokemonOt = MessageTypes.pbGetMessage(MessageTypes::TrainerNames, pokemon.ot)
+      if (pokemonOt == "")
+        name = pokemon.ot
+      else 
+        name = pokemonOt
+      end
       name = pokemon.ot
       name = sprintf("%05s", name)
       name[rand(name.length)] = rand(33..126).chr
@@ -256,7 +262,13 @@ class PokemonSummaryScene
     else
       ownerbase = DarkBase
       ownershadow = DarkShadow
-      textpos.push([pokemon.ot, 435, 176, 2, ownerbase, ownershadow])
+      pokemonOt = MessageTypes.pbGetMessage(MessageTypes::TrainerNames, pokemon.ot)
+      if (pokemonOt == "")
+        name = pokemon.ot
+      else 
+        name = pokemonOt
+      end
+      textpos.push([name, 435, 176, 2, ownerbase, ownershadow])
     end
     if pokemon.isMale?
       textpos.push([_INTL("♂"), 178, 62, 0, Color.new(24, 112, 216), Color.new(136, 168, 208)])
@@ -306,13 +318,13 @@ class PokemonSummaryScene
     end
     mapname = pbGetMapNameFromId(pokemon.obtainMap)
     if (pokemon.obtainText rescue false) && pokemon.obtainText != ""
-      mapname = pokemon.obtainText
+      mapname=_INTL(pokemon.obtainText)
     end
     if mapname && mapname != ""
-      memo += _INTL("<c3=404040,B0B0B0>A mysterious Pokémon Egg received from <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.\n", mapname)
+      memo += _INTL("<c3=404040,B0B0B0>A mysterious Pokémon Egg received from <c3=F83820,E09890>{1}<c3=404040,B0B0B0>.", mapname)
     end
     memo += "<c3=404040,B0B0B0>\n"
-    memo += _INTL("<c3=404040,B0B0B0>\"The Egg Watch\"\n")
+    memo += _INTL("<c3=404040,B0B0B0>\"The Egg Watch\"")
     eggstate = _INTL("It looks like this Egg will take a long time to hatch.")
     eggstate = _INTL("What will hatch from this? It doesn't seem close to hatching.") if pokemon.eggsteps < 10200
     eggstate = _INTL("It appears to move occasionally. It may be close to hatching.") if pokemon.eggsteps < 2550

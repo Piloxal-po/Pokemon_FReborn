@@ -28,13 +28,13 @@ class PokeBattle_RealBattlePeer
               if iMon >= 0 && [:CUT, :ROCKSMASH, :STRENGTH, :SURF, :MAGMADRIFT, :WATERFALL, :DIVE, :ROCKCLIMB, :FLASH, :FLY].any? { |tmmove|
                    $Trainer.party[iMon].knowsMove?(tmmove) && !$PokemonBag.pbHasItem?(PBStuff::HMTOGOLDITEM[tmmove])
                  } && !$game_switches[:EasyHMs_Password]
-                Kernel.pbMessage("You can't return a Pokémon that knows a TMX move to the PC.")
+                Kernel.pbMessage(_INTL("You can't return a Pokémon that knows a TMX move to the PC."))
                 iMon = -2
               elsif unusablecount <= 1 && !($Trainer.party[iMon].isEgg?) && $Trainer.party[iMon].hp > 0 && pokemon.isEgg?
-                Kernel.pbMessage("That's your last Pokémon!")
+                Kernel.pbMessage(_INTL("That's your last Pokémon!"))
               else
                 if $Trainer.party[iMon].item
-                  if Kernel.pbConfirmMessage("This Pokémon is holding an item. Do you want to remove it?")
+                  if Kernel.pbConfirmMessage(_INTL("This Pokémon is holding an item. Do you want to remove it?"))
                     $PokemonBag.pbStoreItem($Trainer.party[iMon].item)
                     $Trainer.party[iMon].item = nil
                     $Trainer.party[iMon].form = 0 if ($Trainer.party[iMon].species == :ARCEUS || $Trainer.party[iMon].species == :GENESECT || $Trainer.party[iMon].species == :SILVALLY)

@@ -1848,7 +1848,7 @@ class PokeBattle_Battle
       elsif opposing.hp >= (opposing.totalhp / 4.0)
         pbDisplayBrief(_INTL("Go for it, {1}!", newname))
       else
-        pbDisplayBrief(_INTL("Your foe's weak!\nGet 'em, {1}!", newname))
+        pbDisplayBrief(_INTL("Your foe's weak!\n\rGet 'em, {1}!", newname))
       end
     else
       owner = pbGetOwner(index)
@@ -2010,7 +2010,7 @@ class PokeBattle_Battle
       if opponent.fullname.length < 30 # bennett and laura potion usage line break (their length = 35)
         pbDisplayBrief(_INTL("{1} used the\r\n{2}!", opponent.fullname, itemname))
       else
-        pbDisplayBrief(_INTL("{1} used the\r{2}!", opponent.fullname, itemname))
+        pbDisplayBrief(_INTL("{1} used the\r\n{2}!", opponent.fullname, itemname))
       end
     end
     case item
@@ -4333,7 +4333,7 @@ class PokeBattle_Battle
     if @trickroom > 0
       @trickroom = @trickroom - 1 if @field.effect != :FROZENDIMENSION
       if @trickroom == 0
-        pbDisplay("The twisted dimensions returned to normal!")
+        pbDisplay(_INTL("The twisted dimensions returned to normal!"))
       end
     end
     if @state.effects[:WonderRoom] > 0
@@ -5180,7 +5180,7 @@ class PokeBattle_Battle
       # Hydration
       if i.ability == :HYDRATION && ((pbWeather == :RAINDANCE && !i.hasWorkingItem(:UTILITYUMBRELLA)) || @field.effect == :WATERSURFACE || @field.effect == :UNDERWATER)
         if !i.status.nil?
-          pbDisplay(_INTL("{1}'s Hydration cured its {2} problem!", i.pbThis, i.status.downcase))
+          pbDisplay(_INTL("{1}'s Hydration cured its " + STATUSTEXTS[i.status] + " problem!",i.pbThis))
           i.status = nil
           i.statusCount = 0
         end

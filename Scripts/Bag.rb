@@ -129,7 +129,7 @@ class PokemonBag_Scene
     lastpocket = @bag.lastpocket
     lastitem = @bag.getChoice(lastpocket)
     @sprites["background"] = IconSprite.new(0, 0, @viewport)
-    @sprites["background"].setBitmap(sprintf("Graphics/Pictures/Bag/bagbg#{lastpocket}"))
+    @sprites["background"].setBitmap(sprintf("Graphics/Pictures/Bag/bagbg#{lastpocket}" + getSuffixFile()))
     @sprites["leftarrow"] = AnimatedSprite.new("Graphics/Pictures/leftarrow", 8, 40, 28, 2, @viewport)
     @sprites["rightarrow"] = AnimatedSprite.new("Graphics/Pictures/rightarrow", 8, 40, 28, 2, @viewport)
     @sprites["leftarrow"].play
@@ -255,7 +255,7 @@ class PokemonBag_Scene
     bm = @sprites["pocketwindow"].bitmap
     bm.clear
     # Set the background bitmap for the currently selected pocket
-    @sprites["background"].setBitmap(sprintf("Graphics/Pictures/Bag/bagbg#{@bag.lastpocket}"))
+    @sprites["background"].setBitmap(sprintf("Graphics/Pictures/Bag/bagbg#{@bag.lastpocket}" + getSuffixFile()))
     # Set the bag picture for the currently selected pocket
     @sprites["bag"].setBitmap("Graphics/Pictures/Bag/bag")
     # Draw the pocket name
@@ -402,8 +402,8 @@ class PokemonBag_Scene
               while index > 0
                 indexPrev = index - 1
                 if itemwindow.pocket == TMPOCKET
-                  firstName  = (((getItemName(pocket[indexPrev])).sub("TM", "00")).sub("X", "100")).to_i
-                  secondName = (((getItemName(pocket[index])).sub("TM", "00")).sub("X", "100")).to_i
+                  firstName  = (((getItemName(pocket[indexPrev][0])).sub(_INTL("TMX"),"100")).sub(_INTL("TM"),"00")).to_i
+                  secondName = (((getItemName(pocket[index][0])).sub(_INTL("TMX"),"100")).sub(_INTL("TM"),"00")).to_i  
                 else
                   firstName  = getItemName(pocket[indexPrev])
                   secondName = getItemName(pocket[index])

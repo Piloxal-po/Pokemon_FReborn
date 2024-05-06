@@ -58,4 +58,7 @@ def startup
   pbSetUpSystem
   # Dir["./Data/Mods/*.rb"].each { |file| load File.expand_path(file) }
   Dir["./patch/Mods/*.rb"].each { |file| load File.expand_path(file) }
+  Dir["./patch/Mods/**/*.rb"].each {|file| load File.expand_path(file) }
+  $cache.trainers = load_data("Data/trainers" + getSuffixFile() + ".dat") if !@trainers
+  $cache.FEData = load_data("Data/fields" + getSuffixFile() + ".dat") if !@FEData
 end

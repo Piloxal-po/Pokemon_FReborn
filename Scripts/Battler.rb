@@ -5250,7 +5250,7 @@ class PokeBattle_Battler
     # Eject Button
     if target.hasWorkingItem(:EJECTBUTTON) && !target.damagestate.substitute && target.damagestate.calcdamage > 0
       if !target.isFainted? && @battle.pbCanChooseNonActive?(target.index) && !@battle.pbAllFainted?(@battle.pbParty(target.index))
-        @battle.pbDisplay(_INTL("#{target.pbThis}'s Eject Button activates!"))
+        @battle.pbDisplay(_INTL("{1}'s Eject Button activates!", target.pbThis))
         target.pbDisposeItem(false, false)
         # @battle.pbDisplay(_INTL("{1} went back to {2}!",target.pbThis,@battle.pbGetOwner(target.index).name))
         if @battle.FE == :COLOSSEUM

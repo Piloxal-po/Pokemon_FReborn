@@ -412,36 +412,44 @@ DISCORD_PLAYERS = {
   9 => "decibel",
 }
 
-PULSEDexPictures = [
-  [587, "navpulse00", "0. Garbodor", :GARBODOR, 1,
-   "Produced by a curious stray Pokémon finding an abandoned machine. Its function is to make wasteful byproduct. Anything it touches sticks to it and will eventually be turned into toxic waste."],
-  [588, "navpulse01", "1. Magnezone", :MAGNEZONE, 1,
-   "The very first PULSE Pokémon created. Its function is mass reproduction. Each of its eyes contains the energy of one of the people responsible for its creation. It obeys only them."],
-  [589, "navpulse02", "2. Avalugg", :AVALUGG, 1,
-   "Created by a once wild Pokémon evolving in reaction to erratic energy. Its function is endless generation. Part of its body was formed around the machine, making it unable to move at all."],
-  [590, "navpulse03", "3. Swalot", :SWALOT, 1,
-   "Engineered to be totally indestructible. Its function is endless regeneration. When it expands its body, it loses consciousness, becoming only a vessel for absorption and subsequent expulsion."],
-  [591, "navpulse04", "4. Muk", :MUK, 2,
-   "Created by repeated fusions. Its function is systematic contamination. By becoming one with substances of any kind, it is able to transmute the target of its union into toxic filth."],
-  [1778, "navpulse05a", "5A. Tangrowth", :TANGROWTH, 3,
-   "Hybridized for erratic growth. Its function is to empower nature to reclaim stolen land. Its purification process is almost fully complete. At the end of its petrification, its organs also begin to harden and stop."],
-  [1777, "navpulse05b", "5B. Tangrowth", :TANGROWTH, 2,
-   "Hybridized for erratic growth. Its function is to empower nature to reclaim stolen land. After absorbing the latent corruption, it begins to purify the damage by petrifying and breaking down the toxic components."],
-  [592, "navpulse05c", "5C. Tangrowth", :TANGROWTH, 1,
-   "Hybridized for erratic growth. Its function is to empower nature to reclaim stolen land. Using long, reaching vines, it absorbs corruption from all sources into its body to dispose of it."],
-  [593, "navpulse06", "6. Camerupt", :CAMERUPT, 2,
-   "Created as a catalyst for purification. Its function is limitless amplification. Its body resonates with nearby heat, inciting reactive power. After eruption, it is unable to cool down, and will perish."],
-  [594, "navpulse07", "7. Abra", :ABRA, 1,
-   "An experiment testing the effects of PULSE systems on unevolved Pokémon. Its function is seamless transportation. Its body seems to reject all machine input, at the apparent cost of its psyche."],
-  [595, "navpulse08", "8. Hypno", :HYPNO, 1,
-   "Digitally lobotomized for full efficiency. Its function is perfect control. It projects its unconsciousness onto target locations and can directly manipulate up to two individuals at a time."],
-  [596, "navpulse09", "9. Mr. Mime", :MRMIME, Gen7 ? 1 : 2,
-   "Modified by repeated amputations and augmentations. Its function is impregnable defense. Its psychic power is amplified by the constant focus it requires to maintain control over its unattached limbs."],
-  [597, "navpulse10", "10. Clawitzer", :CLAWITZER, 1,
-   "Mechanically sculpted via scripted process. Its function is endless offensive potential. Many bodily features such as the brain have been rendered vestigial to allow manual usage of the Pokemon similar to traditional artillery."],
-  [598, "navpulse11", "11. Arceus", :ARCEUS, 19,
-   "World is deception, World is in pain, World should remake, World is competition, World is destruction, World is mistake, World is attack, World is unloved, World is deception, World is mistake, World is mistake, World is mistake, World is mistake"]
-]
+PULSEDexPictures = []
+
+def getPulseInfo()
+  if PULSEDexPictures.empty?
+    PULSEDexPictures = [
+      [587, "navpulse00", _INTL("0. Garbodor"), :GARBODOR, 1,
+      _INTL("Produced by a curious stray Pokémon finding an abandoned machine. Its function is to make wasteful byproduct. Anything it touches sticks to it and will eventually be turned into toxic waste.")],
+      [588, "navpulse01", _INTL("1. Magnezone"), :MAGNEZONE, 1,
+      _INTL("The very first PULSE Pokémon created. Its function is mass reproduction. Each of its eyes contains the energy of one of the people responsible for its creation. It obeys only them.")],
+      [589, "navpulse02", _INTL("2. Avalugg"), :AVALUGG, 1,
+      _INTL("Created by a once wild Pokémon evolving in reaction to erratic energy. Its function is endless generation. Part of its body was formed around the machine, making it unable to move at all.")],
+      [590, "navpulse03", _INTL("3. Swalot"), :SWALOT, 1,
+      _INTL("Engineered to be totally indestructible. Its function is endless regeneration. When it expands its body, it loses consciousness, becoming only a vessel for absorption and subsequent expulsion.")],
+      [591, "navpulse04", _INTL("4. Muk"), :MUK, 2,
+      _INTL("Created by repeated fusions. Its function is systematic contamination. By becoming one with substances of any kind, it is able to transmute the target of its union into toxic filth.")],
+      [1778, "navpulse05a", _INTL("5A. Tangrowth"), :TANGROWTH, 3,
+      _INTL("Hybridized for erratic growth. Its function is to empower nature to reclaim stolen land. Its purification process is almost fully complete. At the end of its petrification, its organs also begin to harden and stop.")],
+      [1777, "navpulse05b", _INTL("5B. Tangrowth"), :TANGROWTH, 2,
+      _INTL("Hybridized for erratic growth. Its function is to empower nature to reclaim stolen land. After absorbing the latent corruption, it begins to purify the damage by petrifying and breaking down the toxic components.")],
+      [592, "navpulse05c", _INTL("5C. Tangrowth"), :TANGROWTH, 1,
+      _INTL("Hybridized for erratic growth. Its function is to empower nature to reclaim stolen land. Using long, reaching vines, it absorbs corruption from all sources into its body to dispose of it.")],
+      [593, "navpulse06", _INTL("6. Camerupt"), :CAMERUPT, 2,
+      _INTL("Created as a catalyst for purification. Its function is limitless amplification. Its body resonates with nearby heat, inciting reactive power. After eruption, it is unable to cool down, and will perish.")],
+      [594, "navpulse07", _INTL("7. Abra"), :ABRA, 1,
+      _INTL("An experiment testing the effects of PULSE systems on unevolved Pokémon. Its function is seamless transportation. Its body seems to reject all machine input, at the apparent cost of its psyche.")],
+      [595, "navpulse08", _INTL("8. Hypno"), :HYPNO, 1,
+      _INTL("Digitally lobotomized for full efficiency. Its function is perfect control. It projects its unconsciousness onto target locations and can directly manipulate up to two individuals at a time.")],
+      [596, "navpulse09", _INTL("9. Mr. Mime"), :MRMIME, Gen7 ? 1 : 2,
+      _INTL("Modified by repeated amputations and augmentations. Its function is impregnable defense. Its psychic power is amplified by the constant focus it requires to maintain control over its unattached limbs.")],
+      [597, "navpulse10", _INTL("10. Clawitzer"), :CLAWITZER, 1,
+      _INTL("Mechanically sculpted via scripted process. Its function is endless offensive potential. Many bodily features such as the brain have been rendered vestigial to allow manual usage of the Pokemon similar to traditional artillery.")],
+      [598, "navpulse11", _INTL("11. Arceus"), :ARCEUS, 19,
+      _INTL("World is deception, World is in pain, World should remake, World is competition, World is destruction, World is mistake, World is attack, World is unloved, World is deception, World is mistake, World is mistake, World is mistake, World is mistake")]
+    ]
+  end
+
+  return PULSEDexPictures
+end
 
 KNOWN_TRAINERS = {
   "Maxwell" => 6217,

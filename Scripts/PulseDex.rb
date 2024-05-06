@@ -82,9 +82,9 @@ class Scene_PulseDex
       return
     end
     # If C button was pressed
-    if Input.trigger?(Input::C) && $game_switches[PULSEDexPictures[index][0]]
+    if Input.trigger?(Input::C) && $game_switches[getPulseInfo[index][0]]
       pbPlayDecisionSE()
-      $scene = Scene_PulseDex_Info.new("Graphics/Pictures/#{PULSEDexPictures[index][1]}", index)
+      $scene = Scene_PulseDex_Info.new("Graphics/Pictures/#{getPulseInfo[index][1]}", index)
       return
     end
   end
@@ -94,7 +94,7 @@ class Scene_PulseDex
   #-----------------------------------------------------------------------------
   def pbPulseSeen
     pulseSeen = []
-    for i in PULSEDexPictures
+    for i in getPulseInfo
       pulseSeen.push($game_switches[i[0]] ? i[2] : "???")
     end
     pulseSeen.push("Back")
@@ -108,7 +108,7 @@ def preparePulseDexInfo(backgrounds)
   viewport.z = 99999
   sprites["background"] = IconSprite.new(0, 0, viewport)
   if backgrounds.is_a?(Array)
-    sprites["background"].setBitmap("Graphics/Pictures/#{PULSEDexPictures[backgrounds[0]][1]}")
+    sprites["background"].setBitmap("Graphics/Pictures/#{getPulseInfo[backgrounds[0]][1]}")
   else
     sprites["background"].setBitmap(backgrounds)
   end
@@ -117,10 +117,10 @@ def preparePulseDexInfo(backgrounds)
 end
 
 def ttsPulse(index)
-  entry = PULSEDexPictures[index][2]
-  species = PULSEDexPictures[index][3]
-  form = PULSEDexPictures[index][4]
-  note = PULSEDexPictures[index][5]
+  entry = getPulseInfo[index][2]
+  species = getPulseInfo[index][3]
+  form = getPulseInfo[index][4]
+  note = getPulseInfo[index][5]
   type1 = $cache.pkmn[species, form].Type1
   type2 = $cache.pkmn[species, form].Type2
   ability = $cache.pkmn[species, form].Abilities[0]
@@ -187,18 +187,18 @@ class Scene_PulseDex_Info
     oldindex = @index
     loop do
       @index += increment
-      if @index >= PULSEDexPictures.length
+      if @index >= getPulseInfo.length
         @index = 0
       elsif @index == 0
-        @index = PULSEDexPictures.length - 1
+        @index = getPulseInfo.length - 1
       end
-      break unless !$game_switches[PULSEDexPictures[@index][0]]
+      break unless !$game_switches[getPulseInfo[@index][0]]
     end
     return if @index == oldindex
     pbPlayDecisionSE()
     pbDisposeSpriteHash(@sprites)
     @viewport.dispose
-    @background = "Graphics/Pictures/#{PULSEDexPictures[@index][1]}"
+    @background = "Graphics/Pictures/#{getPulseInfo[@index][1]}" + getSuffixFile()
     @viewport, @sprites = preparePulseDexInfo(@background)
     ttsPulse(@index)
   end
@@ -239,7 +239,7 @@ class Scene_PulseDex_Battle
   end
 
   def pbSwitchPulseNotes
-    @sprites["background"].setBitmap("Graphics/Pictures/#{PULSEDexPictures[@backgrounds[@index]][1]}")
+    @sprites["background"].setBitmap("Graphics/Pictures/#{getPulseInfo[@backgrounds[@index]][1]}")
     tts("Pulse #{@index + 1} of #{@backgrounds.length}") if @backgrounds.length > 1
     ttsPulse(@backgrounds[@index])
   end

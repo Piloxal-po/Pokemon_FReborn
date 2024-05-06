@@ -699,7 +699,7 @@ class PokemonStorageScreen
   end
 
   def pbFindPokemon
-    iIsNickName = Kernel.pbMessage("What do you want to find?", ["Name", "Species", "Item"], 0) # 0 prevents exiting without selecting an option
+    iIsNickName = Kernel.pbMessage(_INTL("What do you want to find?"), [_INTL("Name"), _INTL("Species"), _INTL("Item")], 0) # 0 prevents exiting without selecting an option
     # iFindEggs:
     # 0 = Name
     # 1 = Species
@@ -707,22 +707,22 @@ class PokemonStorageScreen
 
     if iIsNickName == 0
       iFindEggs = 1
-      sSearch = pbEnterPokemonName("Nickname of the Pokémon?", 0, 15, "")
+      sSearch = pbEnterPokemonName(_INTL("Nickname of the Pokémon?"), 0, 15, "")
     elsif iIsNickName == 1
-      iFindEggs = Kernel.pbMessage("Include eggs in the search?", ["Yes", "No eggs", "Eggs only"], 0) # 0 prevents exiting without selecting an option
+      iFindEggs = Kernel.pbMessage(_INTL("Include eggs in the search?"), [_INTL("Yes"), _INTL("No eggs"), _INTL("Eggs only")], 0) # 0 prevents exiting without selecting an option
       # iFindEggs:
       # 0 = eggs too
       # 1 = no eggs
       # 2 = eggs only
 
-      sSearch = pbEnterPokemonName("Name of the species?", 0, 15, "")
+      sSearch = pbEnterPokemonName(_INTL("Name of the species?"), 0, 15, "")
     else
       iFindEggs = 1
-      sSearch = pbEnterPokemonName("Item name?", 0, 15, "")
+      sSearch = pbEnterPokemonName(_INTL("Item name?"), 0, 15, "")
     end
     sName = sSearch.downcase
 
-    aFoundArr = ["Done"]
+    aFoundArr = [_INTL("Done")]
     aFoundBoxes = [0]
     aFoundCount = [0]
     for iBox in 0...$PokemonStorage.maxBoxes
@@ -1459,7 +1459,7 @@ class PokemonBoxPartySprite < SpriteWrapper
 
   def initialize(party, viewport = nil)
     super(viewport)
-    @boxbitmap = AnimatedBitmap.new("Graphics/Pictures/Storage/boxpartytab")
+    @boxbitmap = AnimatedBitmap.new("Graphics/Pictures/Storage/boxpartytab" + getSuffixFile())
     @pokemonsprites = []
     @party = party
     for i in 0...6
@@ -1771,7 +1771,7 @@ class PokemonStorageScene
     addBackgroundPlane(@sprites, "background", "Storage/boxbg", @bgviewport)
     @sprites["box"] = PokemonBoxSprite.new(@storage, @storage.currentBox, @boxviewport)
     @sprites["boxsides"] = IconSprite.new(0, 0, @boxsidesviewport)
-    @sprites["boxsides"].setBitmap("Graphics/Pictures/Storage/boxsides")
+    @sprites["boxsides"].setBitmap("Graphics/Pictures/Storage/boxsides" + getSuffixFile())
     @sprites["overlay"] = BitmapSprite.new(Graphics.width, Graphics.height, @boxsidesviewport)
     @sprites["pokemon"] = AutoMosaicPokemonSprite.new(@boxsidesviewport)
     pbSetSystemFont(@sprites["overlay"].bitmap)
@@ -2120,11 +2120,11 @@ class PokemonStorageScene
     end
     @sprites["pokemon"].visible = true
     speciesname = getMonName(pokemon.species, pokemon.form)
-    itemname = "No item"
+    itemname = _INTL("No item")
     if !pokemon.item.nil?
       itemname = getItemName(pokemon.item)
     end
-    abilityname = "No ability"
+    abilityname = _INTL("No ability")
     if !pokemon.ability.nil?
       abilityname = getAbilityName(pokemon.ability)
     end
@@ -2374,7 +2374,7 @@ class PokemonStorageScene
           ## Multi Select start##
           if ret != nil && defined?(@aMultiSelectedMons)
             if ret[0] >= 0 && !@storage[ret[0], ret[1]] && @aMultiSelectedMons.length > 0 && !@sprites["arrow"].heldPokemon
-              iCh = Kernel.pbMessage("What do you want to do?", ["Move multiselection", "Clear multiselection", "Cancel"], 3)
+              iCh = Kernel.pbMessage(_INTL("What do you want to do?"), [_INTL("Move multiselection"), _INTL("Clear multiselection"), _INTL("Cancel")], 3)
 
               if iCh != 2
                 if iCh == 0
@@ -2390,7 +2390,7 @@ class PokemonStorageScene
                         iIndex = 0
 
                         if iBox >= $PokemonStorage.maxBoxes
-                          Kernel.pbMessage("There is not enough space here.")
+                          Kernel.pbMessage(_INTL("There is not enough space here."))
                           bFound = false
                           break
                         end
@@ -2418,11 +2418,11 @@ class PokemonStorageScene
             end
             if @aMultiSelectedMons.include?(ret)
               numSelected = @aMultiSelectedMons.length
-              iCh = Kernel.pbMessage("What do you want to do?", ["Deselect", "Mass Release", "Cancel"], 3)
+              iCh = Kernel.pbMessage(_INTL("What do you want to do?"), [_INTL("Deselect"), _INTL("Mass Release"), _INTL("Cancel")], 3)
               if iCh == 0
                 @screen.pbHold(ret, true)
               elsif iCh == 1
-                iCh = Kernel.pbMessage(_INTL("Are you sure you want to mass release {1} Pokémon?", numSelected), ["Yes", "No"], 2)
+                iCh = Kernel.pbMessage(_INTL("Are you sure you want to mass release {1} Pokémon?", numSelected), [_INTL("Yes"), _INTL("No")], 2)
                 if iCh == 0
                   # Mass Release
                   for aEntry in @aMultiSelectedMons

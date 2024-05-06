@@ -651,7 +651,7 @@ class PokeBattle_Battle
     return if newfield.nil?
 
     setField(newfield, add_on: false, growth: true)
-    pbDisplay(_INTL("{1} grew the garden!", text)) if @battle.ProgressiveFieldCheck(PBFields::FLOWERGARDEN)
+    pbDisplay(_INTL("{1} grew the garden!",  _INTL(text))) if @battle.ProgressiveFieldCheck(PBFields::FLOWERGARDEN)
     pbDisplay(_INTL("{1} is getting the crowd hyped!", text)) if @battle.ProgressiveFieldCheck(PBFields::CONCERT)
     pbDisplay(_INTL("{1}", text)) if @battle.ProgressiveFieldCheck(PBFields::DARKNESS)
   end

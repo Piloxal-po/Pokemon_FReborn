@@ -24,7 +24,7 @@ class Scene_TimeWeather
     @viewport = Viewport.new(0, 0, Graphics.width, Graphics.height)
     @viewport.z = 99999
     @sprites["background"] = IconSprite.new(0, 0)
-    @sprites["background"].setBitmap("Graphics/Pictures/Pokegear/TimeWeather/navbgtw")
+    @sprites["background"].setBitmap("Graphics/Pictures/Pokegear/TimeWeather/navbgtw" + getSuffixFile())
     @sprites["background"].z = 255
     @sprites["header"] = Window_UnformattedTextPokemon.newWithSize(_INTL("Time & Weather"), -12, -18, 216, 64, @viewport)
     @sprites["header"].baseColor = Color.new(248, 248, 248)
@@ -235,7 +235,7 @@ class Scene_TimeWeather
   end
 
   def pbChangeWeather
-    choiceWType = Kernel.pbMessage("Select weather type", [_INTL("Clear"), _INTL("Rain"), _INTL("Storm"), _INTL("Snow"), _INTL("Sandstorm"), _INTL("Sunny"), _INTL("Windy"), _INTL("Heavy rain"), _INTL("Blizzard"), _INTL("Cancel")], 10)
+    choiceWType = Kernel.pbMessage(_INTL("Select weather type"), [_INTL("Clear"), _INTL("Rain"), _INTL("Storm"), _INTL("Snow"), _INTL("Sandstorm"), _INTL("Sunny"), _INTL("Windy"), _INTL("Heavy rain"), _INTL("Blizzard"), _INTL("Cancel")], 10)
     return if choiceWType == 9
 
     $game_variables[9] = choiceWType
@@ -244,12 +244,12 @@ class Scene_TimeWeather
 
   def pbRerollWeather
     $game_screen.RerollWeather
-    Kernel.pbMessage("Next week's weather: dry spell") if $game_variables[:Next_Weather_Archetype] == 1
-    Kernel.pbMessage("Next week's weather: showers") if $game_variables[:Next_Weather_Archetype] == 2
-    Kernel.pbMessage("Next week's weather: chilly") if $game_variables[:Next_Weather_Archetype] == 3
-    Kernel.pbMessage("Next week's weather: wet") if $game_variables[:Next_Weather_Archetype] == 4
-    Kernel.pbMessage("Next week's weather: blizzard") if $game_variables[:Next_Weather_Archetype] == 5
-    Kernel.pbMessage("Next week's weather: variety") if $game_variables[:Next_Weather_Archetype] == 6
+    Kernel.pbMessage(_INTL("Next week's weather: dry spell")) if $game_variables[:Next_Weather_Archetype] == 1
+    Kernel.pbMessage(_INTL("Next week's weather: showers")) if $game_variables[:Next_Weather_Archetype] == 2
+    Kernel.pbMessage(_INTL("Next week's weather: chilly")) if $game_variables[:Next_Weather_Archetype] == 3
+    Kernel.pbMessage(_INTL("Next week's weather: wet")) if $game_variables[:Next_Weather_Archetype] == 4
+    Kernel.pbMessage(_INTL("Next week's weather: blizzard")) if $game_variables[:Next_Weather_Archetype] == 5
+    Kernel.pbMessage(_INTL("Next week's weather: variety")) if $game_variables[:Next_Weather_Archetype] == 6 
   end
 
   #-----------------------------------------------------------------------------
@@ -325,13 +325,13 @@ class Scene_TimeWeather
           if $game_switches[:Unreal_Time]
             pbRestTime
           else
-            Kernel.pbMessage("Remember to take regular breaks!")
+            Kernel.pbMessage(_INTL("Remember to take regular breaks!"))
           end
         when 1
           if $game_switches[:Unreal_Time]
             pbRestTime
           else
-            Kernel.pbMessage("Remember to take regular breaks!")
+            Kernel.pbMessage(_INTL("Remember to take regular breaks!"))
           end
         when 2
           if $game_switches[:Weather_password] || $DEBUG

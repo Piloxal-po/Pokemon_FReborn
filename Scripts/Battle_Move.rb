@@ -1532,14 +1532,14 @@ class PokeBattle_Move
         if (CHESSMOVES).include?(@move)
           basemult *= 0.5 if [:ADAPTABILITY, :ANTICIPATION, :SYNCHRONIZE, :TELEPATHY].include?(opponent.ability)
           basemult *= 2.0 if [:OBLIVIOUS, :KLUTZ, :UNAWARE, :SIMPLE].include?(opponent.ability) || opponent.effects[:Confusion] > 0 || (Rejuv && opponent.ability == :DEFEATIST)
-          @battle.pbDisplay("The chess piece slammed forward!") if !@fieldmessageshown
+          @battle.pbDisplay(_INTL("The chess piece slammed forward!")) if !@fieldmessageshown
           @fieldmessageshown = true
         end
         # Queen piece boost
         if attacker.pokemon.piece == :QUEEN || attacker.ability == :QUEENLYMAJESTY
           basemult *= 1.5
           if attacker.pokemon.piece == :QUEEN
-            @battle.pbDisplay("The Queen is dominating the board!") && !@fieldmessageshown
+            @battle.pbDisplay(_INTL("The Queen is dominating the board!")) && !@fieldmessageshown
             @fieldmessageshown = true
           end
         end
@@ -1547,13 +1547,13 @@ class PokeBattle_Move
         # Knight piece boost
         if attacker.pokemon.piece == :KNIGHT && opponent.pokemon.piece == :QUEEN
           basemult = (basemult * 3.0).round
-          @battle.pbDisplay("An unblockable attack on the Queen!") if !@fieldmessageshown
+          @battle.pbDisplay(_INTL("An unblockable attack on the Queen!")) if !@fieldmessageshown
           @fieldmessageshown = true
         end
       when :BIGTOP
         if ((type == :FIGHTING && pbIsPhysical?(type)) || (STRIKERMOVES).include?(@move)) # Continental Crush
           striker = 1 + @battle.pbRandom(14)
-          @battle.pbDisplay("WHAMMO!") if !@fieldmessageshown
+          @battle.pbDisplay(_INTL("WHAMMO!")) if !@fieldmessageshown
           @fieldmessageshown = true
           if attacker.ability == :HUGEPOWER || attacker.ability == :GUTS || attacker.ability == :PUREPOWER || attacker.ability == :SHEERFORCE
             if striker >= 9
@@ -1565,19 +1565,19 @@ class PokeBattle_Move
           strikermod = attacker.stages[PBStats::ATTACK]
           striker = striker + strikermod
           if striker >= 15
-            @battle.pbDisplay("...OVER 9000!!!")
+            @battle.pbDisplay(_INTL("...OVER 9000!!!"))
             provimult = 3.0
           elsif striker >= 13
-            @battle.pbDisplay("...POWERFUL!")
+            @battle.pbDisplay(_INTL("...POWERFUL!"))
             provimult = 2.0
           elsif striker >= 9
-            @battle.pbDisplay("...NICE!")
+            @battle.pbDisplay(_INTL("...NICE!"))
             provimult = 1.5
           elsif striker >= 3
-            @battle.pbDisplay("...OK!")
+            @battle.pbDisplay(_INTL("...OK!"))
             provimult = 1
           else
-            @battle.pbDisplay("...WEAK!")
+            @battle.pbDisplay(_INTL("...WEAK!"))
             provimult = 0.5
           end
           provimult = ((provimult - 1.0) / 2.0) + 1.0 if $game_variables[:DifficultyModes] == 1 && !$game_switches[:FieldFrenzy]
@@ -1590,7 +1590,7 @@ class PokeBattle_Move
           provimult = 1.25 if $game_variables[:DifficultyModes] == 1
           provimult = ((provimult - 1.0) * 2.0) + 1.0 if $game_switches[:FieldFrenzy]
           basemult *= provimult
-          @battle.pbDisplay("Loud and clear!") if !@fieldmessageshown
+          @battle.pbDisplay(_INTL("Loud and clear!")) if !@fieldmessageshown
           @fieldmessageshown = true
         end
       when :ICY
@@ -1607,7 +1607,7 @@ class PokeBattle_Move
       when :SHORTCIRCUIT
         if type == :ELECTRIC
           damageroll = @battle.field.getRoll(maximize_roll: (@battle.state.effects[:ELECTERRAIN] > 0))
-          messageroll = ["Bzzt.", "Bzzapp!", "Bzt...", "Bzap!", "BZZZAPP!"][PBStuff::SHORTCIRCUITROLLS.index(damageroll)]
+          messageroll = [_INTL("Bzzt."), _INTL("Bzzapp!"), _INTL("Bzt..."), _INTL("Bzap!"), _INTL("BZZZAPP!")][PBStuff::SHORTCIRCUITROLLS.index(damageroll)]
           @battle.pbDisplay(messageroll) if !@fieldmessageshown
           damageroll = ((damageroll - 1.0) / 2.0) + 1.0 if $game_variables[:DifficultyModes] == 1 && !$game_switches[:FieldFrenzy]
           damageroll = ((damageroll - 1.0) * 2.0) + 1.0 if $game_variables[:DifficultyModes] != 1 && $game_switches[:FieldFrenzy] && damageroll > 1

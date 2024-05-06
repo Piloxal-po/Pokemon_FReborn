@@ -31,14 +31,25 @@ def pbTicketText(textno)
   end
   baseColor = Color.new(78, 66, 66)
   shadowColor = Color.new(159, 150, 144)
-  textPositions = [
-    [playerName, (Graphics.width / 2) - 143, 32 + 166, 0, baseColor, shadowColor],
-    [playerGender, (Graphics.width / 2) + 26, 32 + 166, 0, baseColor, shadowColor],
-    ["8R750", (Graphics.width / 2) - 83, 32 + 189, 0, baseColor, shadowColor],
-    ["5D", (Graphics.width / 2) + 98, 32 + 189, 0, baseColor, shadowColor],
-    ["Grandview Station", (Graphics.width / 2) - 73, 32 + 216, 0, baseColor, shadowColor],
-    ["ONE", (Graphics.width / 2) - 60, 32 + 241, 0, baseColor, shadowColor],
-    ["SGL", (Graphics.width / 2) + 98, 32 + 241, 0, baseColor, shadowColor],
+  
+  onePosition = 60
+  grandviewPosition = 73
+  trainPlacePosition = 98
+  numberPosition = 83
+  if (LANGUAGES.length >= 2 && LANGUAGES[$idk[:settings].language][1] == "fr")
+    onePosition = 50
+    grandviewPosition = 74
+    trainPlacePosition = 102
+    numberPosition = 85
+  end
+  textPositions=[
+      [playerName,(Graphics.width/2)-143,32+166,0,baseColor,shadowColor],       
+      [playerGender,(Graphics.width/2)+26,32+166,0,baseColor,shadowColor],       
+      ["8R750",(Graphics.width/2)-numberPosition,32+189,0,baseColor,shadowColor],       
+      ["5D",(Graphics.width/2)+trainPlacePosition,32+189,0,baseColor,shadowColor],       
+      [_INTL("Grandview Station"),(Graphics.width/2)-grandviewPosition,32+216,0,baseColor,shadowColor],       
+      [_INTL("ONE"),(Graphics.width/2)-onePosition,32+241,0,baseColor,shadowColor],       
+      ["SGL",(Graphics.width/2)+98,32+241,0,baseColor,shadowColor],       
   ]
   finalTextPositions = [textPositions[textno]]
   overlay.font.name = "PokemonEmerald"
@@ -129,10 +140,10 @@ def pbFakeStorePokemon(pokemon)
         loop do
           iMon = screen.pbChoosePokemon
           if iMon >= 0 && ($Trainer.party[iMon].knowsMove?(:CUT) || $Trainer.party[iMon].knowsMove?(:ROCKSMASH) || $Trainer.party[iMon].knowsMove?(:STRENGTH) || $Trainer.party[iMon].knowsMove?(:SURF) || $Trainer.party[iMon].knowsMove?(:WATERFALL) || $Trainer.party[iMon].knowsMove?(:DIVE) || $Trainer.party[iMon].knowsMove?(:ROCKCLIMB) || $Trainer.party[iMon].knowsMove?(:FLASH) || $Trainer.party[iMon].knowsMove?(:FLY)) && !$game_switches[:EasyHMs_Password]
-            Kernel.pbMessage("You can't return a Pokémon that knows a TMX move to the PC.")
+            Kernel.pbMessage(_INTL("You can't return a Pokémon that knows a TMX move to the PC."))
             iMon = -2
           elsif unusablecount <= 1 && !($Trainer.party[iMon].isEgg?) && $Trainer.party[iMon].hp > 0 && pokemon.isEgg?
-            Kernel.pbMessage("That's your last Pokémon!")
+            Kernel.pbMessage(_INTL("That's your last Pokémon!"))
           else
             screen.pbEndScene
             break
@@ -2270,20 +2281,20 @@ def readablePulseNotes(battle)
   pulses = battle.pbPartySingleOwner(battle.battlers[1].index).find_all { |mon| mon && mon.isPulse? }
   pulses += battle.pbPartySingleOwner(battle.battlers[3].index).find_all { |mon| mon && mon.isPulse? } if battle.doublebattle
   pulses.each{ |pulse|
-    ret.append(0) if pulse.species == :GARBODOR && $game_switches[PULSEDexPictures[0][0]]
-    ret.append(1) if pulse.species == :MAGNEZONE && $game_switches[PULSEDexPictures[1][0]]
-    ret.append(2) if pulse.species == :AVALUGG && $game_switches[PULSEDexPictures[2][0]]
-    ret.append(3) if pulse.species == :SWALOT && $game_switches[PULSEDexPictures[3][0]]
-    ret.append(4) if pulse.species == :MUK && $game_switches[PULSEDexPictures[4][0]]
-    ret.append(5) if pulse.species == :TANGROWTH && pulse.form == PULSEDexPictures[5][4] && $game_switches[PULSEDexPictures[5][0]]
-    ret.append(6) if pulse.species == :TANGROWTH && pulse.form == PULSEDexPictures[5][5] && $game_switches[PULSEDexPictures[6][0]]
-    ret.append(7) if pulse.species == :TANGROWTH && pulse.form == PULSEDexPictures[5][6] && $game_switches[PULSEDexPictures[7][0]]
-    ret.append(8) if pulse.species == :CAMERUPT && $game_switches[PULSEDexPictures[8][0]]
-    ret.append(9) if pulse.species == :ABRA && $game_switches[PULSEDexPictures[9][0]]
-    ret.append(10) if pulse.species == :HYPNO && $game_switches[PULSEDexPictures[10][0]]
-    ret.append(11) if pulse.species == :MRMIME && $game_switches[PULSEDexPictures[11][0]]
-    ret.append(12) if pulse.species == :CLAWITZER && $game_switches[PULSEDexPictures[12][0]]
-    ret.append(13) if pulse.species == :ARCEUS && $game_switches[PULSEDexPictures[13][0]]
+    ret.append(0) if pulse.species == :GARBODOR && $game_switches[getPulseInfo[0][0]]
+    ret.append(1) if pulse.species == :MAGNEZONE && $game_switches[getPulseInfo[1][0]]
+    ret.append(2) if pulse.species == :AVALUGG && $game_switches[getPulseInfo[2][0]]
+    ret.append(3) if pulse.species == :SWALOT && $game_switches[getPulseInfo[3][0]]
+    ret.append(4) if pulse.species == :MUK && $game_switches[getPulseInfo[4][0]]
+    ret.append(5) if pulse.species == :TANGROWTH && pulse.form == getPulseInfo[5][4] && $game_switches[getPulseInfo[5][0]]
+    ret.append(6) if pulse.species == :TANGROWTH && pulse.form == getPulseInfo[5][5] && $game_switches[getPulseInfo[6][0]]
+    ret.append(7) if pulse.species == :TANGROWTH && pulse.form == getPulseInfo[5][6] && $game_switches[getPulseInfo[7][0]]
+    ret.append(8) if pulse.species == :CAMERUPT && $game_switches[getPulseInfo[8][0]]
+    ret.append(9) if pulse.species == :ABRA && $game_switches[getPulseInfo[9][0]]
+    ret.append(10) if pulse.species == :HYPNO && $game_switches[getPulseInfo[10][0]]
+    ret.append(11) if pulse.species == :MRMIME && $game_switches[getPulseInfo[11][0]]
+    ret.append(12) if pulse.species == :CLAWITZER && $game_switches[getPulseInfo[12][0]]
+    ret.append(13) if pulse.species == :ARCEUS && $game_switches[getPulseInfo[13][0]]
   }
   ret.uniq!
   return ret
