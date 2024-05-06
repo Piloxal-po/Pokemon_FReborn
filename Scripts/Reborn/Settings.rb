@@ -323,8 +323,8 @@ POISON_ANIMATION_ID          = 20
 #      languages to choose from.
 #===============================================================================
 LANGUAGES = [
-  #  ["English","english.dat"],
-  #  ["Deutsch","deutsch.dat"]
+  ["English","en"],
+  ["Français","fr"]
 ]
 
 #===============================================================================

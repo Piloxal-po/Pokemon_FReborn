@@ -111,9 +111,9 @@ def pbSave(safesave = false)
       totalsec = framecount / 40 # Graphics.frame_rate  #Because Turbo exists
       hour = totalsec / 60 / 60
       min = totalsec / 60 % 60
-      mapname = pbGetMapNameFromId(mapid)
+      mapname = $game_map.name.clone
       mapname = mapname.gsub(/[^0-9A-Za-z ]/, '')
-      trainame = trainer.name
+      trainame = trainer.name.clone
       trainame = trainame.gsub(/[^0-9A-Za-z ]/, '')
       savename = "Game" + ($Unidata[:saveslot] == 1 ? "" : "_" + $Unidata[:saveslot].to_s)
       if $Trainer.postgame != nil

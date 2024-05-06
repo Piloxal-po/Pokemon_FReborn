@@ -742,13 +742,13 @@ class PokemonPokedexScene
       dexentry = $cache.pkmn[species, form].dexentry
       inches = (height / 0.254).round
       pounds = (weight / 0.45359).round
-      textpos.push([_ISPRINTF("{1:s} Pokémon", kind), 244, 74, 0, basecolor, shadowcolor])
+      textpos.push([_ISPRINTF(_INTL("{1:s} Pokémon"), kind), 244, 74, 0, basecolor, shadowcolor])
       if pbGetCountry() == 0xF4 # If the user is in the United States
-        textpos.push([_ISPRINTF("{1:d}'{2:02d}\"", inches / 12, inches % 12), 456, 158, 1, basecolor, shadowcolor])
-        textpos.push([_ISPRINTF("{1:4.1f} lbs.", pounds / 10.0), 490, 190, 1, basecolor, shadowcolor])
+        textpos.push([_ISPRINTF(_INTL("{1:d}'{2:02d}\""), inches / 12, inches % 12), 456, 158, 1, basecolor, shadowcolor])
+        textpos.push([_ISPRINTF(_INTL("{1:4.1f} lbs."), pounds / 10.0), 490, 190, 1, basecolor, shadowcolor])
       else
-        textpos.push([_ISPRINTF("{1:.1f} m", height / 10.0), 466, 158, 1, basecolor, shadowcolor])
-        textpos.push([_ISPRINTF("{1:.1f} kg", weight / 10.0), 478, 190, 1, basecolor, shadowcolor])
+        textpos.push([_ISPRINTF(_INTL("{1:.1f} m"), height / 10.0), 466, 158, 1, basecolor, shadowcolor])
+        textpos.push([_ISPRINTF(_INTL("{1:.1f} kg"), weight / 10.0), 478, 190, 1, basecolor, shadowcolor])
       end
       drawTextEx(@sprites["overlay"].bitmap, 42, 240, Graphics.width - (42 * 2), 4, dexentry, basecolor, shadowcolor)
 

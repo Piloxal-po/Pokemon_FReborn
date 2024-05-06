@@ -21,6 +21,7 @@ class PokemonSystem
   attr_accessor :bike_and_surf_music
   attr_accessor :streamermode
   attr_accessor :audiotype
+  attr_accessor :firstTime
 
 
   attr_accessor :unrealTimeDiverge
@@ -79,6 +80,10 @@ class PokemonSystem
 
   def audiotype
     return (!@audiotype) ? 0 : @audiotype
+  end
+  
+  def firstTime
+    return (!@firstTime) ? true : @firstTime
   end
 end
 

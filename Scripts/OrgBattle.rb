@@ -284,11 +284,11 @@ class BattleChallengeData
         when :INDOOR
           "no field no life"
         when :DARKCRYSTALCAVERN, :CAVE, :CRYSTALCAVERN
-          "The battle will take place in the " + $cache.FEData[$game_variables[:Forced_Field_Effect]].name
+          "The battle will take place in the " + _INTL(getFieldRootName($cache.FEData[$game_variables[:Forced_Field_Effect]]))
         when :UNDERWATER
           "The battle will take place Underwater"
         else
-          "The battle will take place on the " + $cache.FEData[$game_variables[:Forced_Field_Effect]].name
+          "The battle will take place on the " + _INTL(getFieldRootName($cache.FEData[$game_variables[:Forced_Field_Effect]]))
       end
     elsif (@stylechallenge == 0)
       # "placeholder no field no life"

@@ -32,7 +32,7 @@ class BattleSwapScene
         return "Swap Pokémon"
       end
     else
-      return $cache.FEData[$game_variables[:Forced_Field_Effect]].name
+      return _INTL(getFieldRootName($cache.FEData[$game_variables[:Forced_Field_Effect]]))
     end
   end
 

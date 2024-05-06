@@ -943,7 +943,7 @@ def pbAllFields
   double_battle = false # Kernel.pbConfirmMessage("Do you want it to be double battle?")
   for field in 0...38
     # CP_Profiler.begin
-    filename = sprintf("AIFights/Everybody_battles %s.txt", $cache.FEData[fieldIDToSym(field)].name)
+    filename = sprintf("AIFights/Everybody_battles %s.txt", _INTL(getFieldRootName(field)))
     next if File.exist?(filename)
 
     File.open(filename, "w") {}
@@ -956,7 +956,7 @@ def pbAllFields
   field = Kernel.pbMessageFreeText(_INTL("What field would you like to run?"), "", false, 999, 500)
   Input.text_input = false
   field = field.to_i
-  filename = sprintf("AIFights/Everybody_battles %s.txt", $cache.FEData[fieldIDToSym(field)].name)
+  filename = sprintf("AIFights/Everybody_battles %s.txt", _INTL(getFieldRootName(field)))
   count = 0
   System.window_title = "Field #{field}"
   Graphics.frame_rate = 200
