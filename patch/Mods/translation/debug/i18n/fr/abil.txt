@@ -695,73 +695,73 @@ Rassemblement
 232
 Ball Fetch
 Ball Fetch
-306
+233
 Cotton Down
 Cotton Down
-307
+234
 Dauntless Shield
 Dauntless Shield
-308
+235
 Gorilla Tactics
 Gorilla Tactics
-309
+236
 Gulp Missile
 Gulp Missile
-310
+237
 Hunger Switch
 Hunger Switch
-311
+238
 Ice Face
 Ice Face
-312
+239
 Ice Scales
 Ice Scales
-313
+240
 Intrepid Sword
 Intrepid Sword
-314
+241
 Libero
 Libero
-315
+242
 Mimicry
 Mimicry
-316
+243
 Mirror Armor
 Mirror Armor
-317
+244
 Neutralizing Gas
 Neutralizing Gas
-318
+245
 Pastel Veil
 Pastel Veil
-319
+246
 Perish Body
 Perish Body
-320
+247
 Power Spot
 Power Spot
-321
+248
 Propeller Tail
 Propeller Tail
-322
+249
 Punk Rock
 Punk Rock
-323
+250
 Ripen
 Ripen
-324
+251
 Sand Spit
 Sand Spit
-325
+252
 Screen Cleaner
 Screen Cleaner
-326
+253
 Stalwart
 Stalwart
-327
+254
 Steam Engine
 Steam Engine
-328
+255
 Steely Spirit
 Steely Spirit
 256
