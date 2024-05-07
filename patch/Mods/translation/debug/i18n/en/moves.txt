@@ -1,0 +1,4346 @@
+[1]
+1
+Megahorn
+Megahorn
+2
+Attack Order
+Attack Order
+3
+Bug Buzz
+Bug Buzz
+4
+X-Scissor
+X-Scissor
+5
+Signal Beam
+Signal Beam
+6
+U-turn
+U-turn
+7
+Steamroller
+Steamroller
+8
+Bug Bite
+Bug Bite
+9
+Silver Wind
+Silver Wind
+10
+Struggle Bug
+Struggle Bug
+11
+Twineedle
+Twineedle
+12
+Fury Cutter
+Fury Cutter
+13
+Leech Life
+Leech Life
+14
+Pin Missile
+Pin Missile
+15
+Defend Order
+Defend Order
+16
+Heal Order
+Heal Order
+17
+Quiver Dance
+Quiver Dance
+18
+Rage Powder
+Rage Powder
+19
+Spider Web
+Spider Web
+20
+String Shot
+String Shot
+21
+Tail Glow
+Tail Glow
+22
+Foul Play
+Foul Play
+23
+Night Daze
+Night Daze
+24
+Crunch
+Crunch
+25
+Dark Pulse
+Dark Pulse
+26
+Sucker Punch
+Sucker Punch
+27
+Night Slash
+Night Slash
+28
+Bite
+Bite
+29
+Feint Attack
+Feint Attack
+30
+Snarl
+Snarl
+31
+Assurance
+Assurance
+32
+Payback
+Payback
+33
+Pursuit
+Pursuit
+34
+Thief
+Thief
+35
+Knock Off
+Knock Off
+36
+Beat Up
+Beat Up
+37
+Fling
+Fling
+38
+Punishment
+Punishment
+39
+Dark Void
+Dark Void
+40
+Embargo
+Embargo
+41
+Fake Tears
+Fake Tears
+42
+Flatter
+Flatter
+43
+Hone Claws
+Hone Claws
+44
+Memento
+Memento
+45
+Nasty Plot
+Nasty Plot
+46
+Quash
+Quash
+47
+Snatch
+Snatch
+48
+Switcheroo
+Switcheroo
+49
+Taunt
+Taunt
+50
+Torment
+Torment
+51
+Roar of Time
+Roar of Time
+52
+Draco Meteor
+Draco Meteor
+53
+Outrage
+Outrage
+54
+Dragon Rush
+Dragon Rush
+55
+Spacial Rend
+Spacial Rend
+56
+Dragon Pulse
+Dragon Pulse
+57
+Dragon Claw
+Dragon Claw
+58
+Dragon Tail
+Dragon Tail
+59
+Dragon Breath
+Dragon Breath
+60
+Dual Chop
+Dual Chop
+61
+Twister
+Twister
+62
+Dragon Rage
+Dragon Rage
+63
+Dragon Dance
+Dragon Dance
+64
+Bolt Strike
+Bolt Strike
+65
+Thunder
+Thunder
+66
+Volt Tackle
+Volt Tackle
+67
+Zap Cannon
+Zap Cannon
+68
+Fusion Bolt
+Fusion Bolt
+69
+Thunderbolt
+Thunderbolt
+70
+Wild Charge
+Wild Charge
+71
+Discharge
+Discharge
+72
+Thunder Punch
+Thunder Punch
+73
+Volt Switch
+Volt Switch
+74
+Spark
+Spark
+75
+Thunder Fang
+Thunder Fang
+76
+Shock Wave
+Shock Wave
+77
+Electroweb
+Electroweb
+78
+Charge Beam
+Charge Beam
+79
+Thunder Shock
+Thunder Shock
+80
+Electro Ball
+Electro Ball
+81
+Charge
+Charge
+82
+Magnet Rise
+Magnet Rise
+83
+Thunder Wave
+Thunder Wave
+84
+Focus Punch
+Focus Punch
+85
+High Jump Kick
+High Jump Kick
+86
+Close Combat
+Close Combat
+87
+Focus Blast
+Focus Blast
+88
+Superpower
+Superpower
+89
+Cross Chop
+Cross Chop
+90
+Dynamic Punch
+Dynamic Punch
+91
+Hammer Arm
+Hammer Arm
+92
+Jump Kick
+Jump Kick
+93
+Aura Sphere
+Aura Sphere
+94
+Sacred Sword
+Sacred Sword
+95
+Secret Sword
+Secret Sword
+96
+Sky Uppercut
+Sky Uppercut
+97
+Submission
+Submission
+98
+Brick Break
+Brick Break
+99
+Drain Punch
+Drain Punch
+100
+Vital Throw
+Vital Throw
+101
+Circle Throw
+Circle Throw
+102
+Force Palm
+Force Palm
+103
+Low Sweep
+Low Sweep
+104
+Revenge
+Revenge
+105
+Rolling Kick
+Rolling Kick
+106
+Wake-Up Slap
+Wake-Up Slap
+107
+Karate Chop
+Karate Chop
+108
+Mach Punch
+Mach Punch
+109
+Rock Smash
+Rock Smash
+110
+Storm Throw
+Storm Throw
+111
+Vacuum Wave
+Vacuum Wave
+112
+Double Kick
+Double Kick
+113
+Arm Thrust
+Arm Thrust
+114
+Triple Kick
+Triple Kick
+115
+Counter
+Counter
+116
+Final Gambit
+Final Gambit
+117
+Low Kick
+Low Kick
+118
+Reversal
+Reversal
+119
+Seismic Toss
+Seismic Toss
+120
+Bulk Up
+Bulk Up
+121
+Detect
+Detect
+122
+Quick Guard
+Quick Guard
+123
+V-create
+V-create
+124
+Blast Burn
+Blast Burn
+125
+Eruption
+Eruption
+126
+Overheat
+Overheat
+127
+Blue Flare
+Blue Flare
+128
+Fire Blast
+Fire Blast
+129
+Flare Blitz
+Flare Blitz
+130
+Magma Storm
+Magma Storm
+131
+Fusion Flare
+Fusion Flare
+132
+Heat Wave
+Heat Wave
+133
+Inferno
+Inferno
+134
+Sacred Fire
+Sacred Fire
+135
+Searing Shot
+Searing Shot
+136
+Flamethrower
+Flamethrower
+137
+Blaze Kick
+Blaze Kick
+138
+Fiery Dance
+Fiery Dance
+139
+Lava Plume
+Lava Plume
+140
+Fire Punch
+Fire Punch
+141
+Flame Burst
+Flame Burst
+142
+Fire Fang
+Fire Fang
+143
+Flame Wheel
+Flame Wheel
+144
+Fire Pledge
+Fire Pledge
+145
+Flame Charge
+Flame Charge
+146
+Ember
+Ember
+147
+Fire Spin
+Fire Spin
+148
+Incinerate
+Incinerate
+149
+Heat Crash
+Heat Crash
+150
+Sunny Day
+Sunny Day
+151
+Will-O-Wisp
+Will-O-Wisp
+152
+Sky Attack
+Sky Attack
+153
+Brave Bird
+Brave Bird
+154
+Hurricane
+Hurricane
+155
+Aeroblast
+Aeroblast
+156
+Fly
+Fly
+157
+Bounce
+Bounce
+158
+Drill Peck
+Drill Peck
+159
+Air Slash
+Air Slash
+160
+Aerial Ace
+Aerial Ace
+161
+Chatter
+Chatter
+162
+Pluck
+Pluck
+163
+Sky Drop
+Sky Drop
+164
+Wing Attack
+Wing Attack
+165
+Acrobatics
+Acrobatics
+166
+Air Cutter
+Air Cutter
+167
+Gust
+Gust
+168
+Peck
+Peck
+169
+Defog
+Defog
+170
+Feather Dance
+Feather Dance
+171
+Mirror Move
+Mirror Move
+172
+Roost
+Roost
+173
+Tailwind
+Tailwind
+174
+Shadow Force
+Shadow Force
+175
+Shadow Ball
+Shadow Ball
+176
+Shadow Claw
+Shadow Claw
+177
+Ominous Wind
+Ominous Wind
+178
+Shadow Punch
+Shadow Punch
+179
+Hex
+Hex
+180
+Shadow Sneak
+Shadow Sneak
+181
+Astonish
+Astonish
+182
+Lick
+Lick
+183
+Night Shade
+Night Shade
+184
+Confuse Ray
+Confuse Ray
+185
+Curse
+Curse
+186
+Destiny Bond
+Destiny Bond
+187
+Grudge
+Grudge
+188
+Nightmare
+Nightmare
+189
+Spite
+Spite
+190
+Frenzy Plant
+Frenzy Plant
+191
+Leaf Storm
+Leaf Storm
+192
+Petal Dance
+Petal Dance
+193
+Power Whip
+Power Whip
+194
+Seed Flare
+Seed Flare
+195
+Solar Beam
+Solar Beam
+196
+Wood Hammer
+Wood Hammer
+197
+Leaf Blade
+Leaf Blade
+198
+Energy Ball
+Energy Ball
+199
+Seed Bomb
+Seed Bomb
+200
+Giga Drain
+Giga Drain
+201
+Horn Leech
+Horn Leech
+202
+Leaf Tornado
+Leaf Tornado
+203
+Magical Leaf
+Magical Leaf
+204
+Needle Arm
+Needle Arm
+205
+Razor Leaf
+Razor Leaf
+206
+Grass Pledge
+Grass Pledge
+207
+Mega Drain
+Mega Drain
+208
+Vine Whip
+Vine Whip
+209
+Bullet Seed
+Bullet Seed
+210
+Absorb
+Absorb
+211
+Grass Knot
+Grass Knot
+212
+Aromatherapy
+Aromatherapy
+213
+Cotton Guard
+Cotton Guard
+214
+Cotton Spore
+Cotton Spore
+215
+Grass Whistle
+Grass Whistle
+216
+Ingrain
+Ingrain
+217
+Leech Seed
+Leech Seed
+218
+Sleep Powder
+Sleep Powder
+219
+Spore
+Spore
+220
+Stun Spore
+Stun Spore
+221
+Synthesis
+Synthesis
+222
+Worry Seed
+Worry Seed
+223
+Earthquake
+Earthquake
+224
+Earth Power
+Earth Power
+225
+Dig
+Dig
+226
+Drill Run
+Drill Run
+227
+Bone Club
+Bone Club
+228
+Mud Bomb
+Mud Bomb
+229
+Bulldoze
+Bulldoze
+230
+Mud Shot
+Mud Shot
+231
+Bonemerang
+Bonemerang
+232
+Sand Tomb
+Sand Tomb
+233
+Bone Rush
+Bone Rush
+234
+Mud-Slap
+Mud-Slap
+235
+Fissure
+Fissure
+236
+Magnitude
+Magnitude
+237
+Mud Sport
+Mud Sport
+238
+Sand Attack
+Sand Attack
+239
+Spikes
+Spikes
+240
+Freeze Shock
+Freeze Shock
+241
+Ice Burn
+Ice Burn
+242
+Blizzard
+Blizzard
+243
+Ice Beam
+Ice Beam
+244
+Icicle Crash
+Icicle Crash
+245
+Ice Punch
+Ice Punch
+246
+Aurora Beam
+Aurora Beam
+247
+Glaciate
+Glaciate
+248
+Ice Fang
+Ice Fang
+249
+Avalanche
+Avalanche
+250
+Icy Wind
+Icy Wind
+251
+Frost Breath
+Frost Breath
+252
+Ice Shard
+Ice Shard
+253
+Powder Snow
+Powder Snow
+254
+Ice Ball
+Ice Ball
+255
+Icicle Spear
+Icicle Spear
+256
+Sheer Cold
+Sheer Cold
+257
+Hail
+Hail
+258
+Haze
+Haze
+259
+Mist
+Mist
+260
+Explosion
+Explosion
+261
+Self Destruct
+Self Destruct
+262
+Giga Impact
+Giga Impact
+263
+Hyper Beam
+Hyper Beam
+264
+Last Resort
+Last Resort
+265
+Double-Edge
+Double-Edge
+266
+Head Charge
+Head Charge
+267
+Mega Kick
+Mega Kick
+268
+Thrash
+Thrash
+269
+Egg Bomb
+Egg Bomb
+270
+Judgment
+Judgment
+271
+Skull Bash
+Skull Bash
+272
+Hyper Voice
+Hyper Voice
+273
+Rock Climb
+Rock Climb
+274
+Take Down
+Take Down
+275
+Uproar
+Uproar
+276
+Body Slam
+Body Slam
+277
+Techno Blast
+Techno Blast
+278
+Extreme Speed
+Extreme Speed
+279
+Hyper Fang
+Hyper Fang
+280
+Mega Punch
+Mega Punch
+281
+Razor Wind
+Razor Wind
+282
+Slam
+Slam
+283
+Strength
+Strength
+284
+Tri Attack
+Tri Attack
+285
+Crush Claw
+Crush Claw
+286
+Relic Song
+Relic Song
+287
+Chip Away
+Chip Away
+288
+Dizzy Punch
+Dizzy Punch
+289
+Facade
+Facade
+290
+Headbutt
+Headbutt
+291
+Retaliate
+Retaliate
+292
+Secret Power
+Secret Power
+293
+Slash
+Slash
+294
+Horn Attack
+Horn Attack
+295
+Stomp
+Stomp
+296
+Covet
+Covet
+297
+Round
+Round
+298
+Smelling Salts
+Smelling Salts
+299
+Swift
+Swift
+300
+Vise Grip
+Vise Grip
+301
+Cut
+Cut
+302
+Struggle
+Struggle
+303
+Tackle
+Tackle
+304
+Weather Ball
+Weather Ball
+305
+Echoed Voice
+Echoed Voice
+306
+Fake Out
+Fake Out
+307
+False Swipe
+False Swipe
+308
+Pay Day
+Pay Day
+309
+Pound
+Pound
+310
+Quick Attack
+Quick Attack
+311
+Scratch
+Scratch
+312
+Snore
+Snore
+313
+Double Hit
+Double Hit
+314
+Feint
+Feint
+315
+Tail Slap
+Tail Slap
+316
+Rage
+Rage
+317
+Rapid Spin
+Rapid Spin
+318
+Spike Cannon
+Spike Cannon
+319
+Comet Punch
+Comet Punch
+320
+Fury Swipes
+Fury Swipes
+321
+Barrage
+Barrage
+322
+Bind
+Bind
+323
+Double Slap
+Double Slap
+324
+Fury Attack
+Fury Attack
+325
+Wrap
+Wrap
+326
+Constrict
+Constrict
+327
+Bide
+Bide
+328
+Crush Grip
+Crush Grip
+329
+Endeavor
+Endeavor
+330
+Flail
+Flail
+331
+Frustration
+Frustration
+332
+Guillotine
+Guillotine
+333
+Hidden Power
+Hidden Power
+334
+Horn Drill
+Horn Drill
+335
+Natural Gift
+Natural Gift
+336
+Present
+Present
+337
+Return
+Return
+338
+SonicBoom
+SonicBoom
+339
+Spit Up
+Spit Up
+340
+Super Fang
+Super Fang
+341
+Trump Card
+Trump Card
+342
+Wring Out
+Wring Out
+343
+Acupressure
+Acupressure
+344
+After You
+After You
+345
+Assist
+Assist
+346
+Attract
+Attract
+347
+Baton Pass
+Baton Pass
+348
+Belly Drum
+Belly Drum
+349
+Bestow
+Bestow
+350
+Block
+Block
+351
+Camouflage
+Camouflage
+352
+Captivate
+Captivate
+353
+Charm
+Charm
+354
+Conversion
+Conversion
+355
+Conversion 2
+Conversion 2
+356
+Copycat
+Copycat
+357
+Defense Curl
+Defense Curl
+358
+Disable
+Disable
+359
+Double Team
+Double Team
+360
+Encore
+Encore
+361
+Endure
+Endure
+362
+Entrainment
+Entrainment
+363
+Flash
+Flash
+364
+Focus Energy
+Focus Energy
+365
+Follow Me
+Follow Me
+366
+Foresight
+Foresight
+367
+Glare
+Glare
+368
+Growl
+Growl
+369
+Growth
+Growth
+370
+Harden
+Harden
+371
+Heal Bell
+Heal Bell
+372
+Helping Hand
+Helping Hand
+373
+Howl
+Howl
+374
+Leer
+Leer
+375
+Lock-On
+Lock-On
+376
+Lovely Kiss
+Lovely Kiss
+377
+Lucky Chant
+Lucky Chant
+378
+Me First
+Me First
+379
+Mean Look
+Mean Look
+380
+Metronome
+Metronome
+381
+Milk Drink
+Milk Drink
+382
+Mimic
+Mimic
+383
+Mind Reader
+Mind Reader
+384
+Minimize
+Minimize
+385
+Moonlight
+Moonlight
+386
+Morning Sun
+Morning Sun
+387
+Nature Power
+Nature Power
+388
+Odor Sleuth
+Odor Sleuth
+389
+Pain Split
+Pain Split
+390
+Perish Song
+Perish Song
+391
+Protect
+Protect
+392
+Psych Up
+Psych Up
+393
+Recover
+Recover
+394
+Recycle
+Recycle
+395
+Reflect Type
+Reflect Type
+396
+Refresh
+Refresh
+397
+Roar
+Roar
+398
+Safeguard
+Safeguard
+399
+Scary Face
+Scary Face
+400
+Screech
+Screech
+401
+Sharpen
+Sharpen
+402
+Shell Smash
+Shell Smash
+403
+Simple Beam
+Simple Beam
+404
+Sing
+Sing
+405
+Sketch
+Sketch
+406
+Slack Off
+Slack Off
+407
+Sleep Talk
+Sleep Talk
+408
+Smoke Screen
+Smoke Screen
+409
+Soft-Boiled
+Soft-Boiled
+410
+Splash
+Splash
+411
+Stockpile
+Stockpile
+412
+Substitute
+Substitute
+413
+Supersonic
+Supersonic
+414
+Swagger
+Swagger
+415
+Swallow
+Swallow
+416
+Sweet Kiss
+Sweet Kiss
+417
+Sweet Scent
+Sweet Scent
+418
+Swords Dance
+Swords Dance
+419
+Tail Whip
+Tail Whip
+420
+Teeter Dance
+Teeter Dance
+421
+Tickle
+Tickle
+422
+Transform
+Transform
+423
+Whirlwind
+Whirlwind
+424
+Wish
+Wish
+425
+Work Up
+Work Up
+426
+Yawn
+Yawn
+427
+Gunk Shot
+Gunk Shot
+428
+Sludge Wave
+Sludge Wave
+429
+Sludge Bomb
+Sludge Bomb
+430
+Poison Jab
+Poison Jab
+431
+Cross Poison
+Cross Poison
+432
+Sludge
+Sludge
+433
+Venoshock
+Venoshock
+434
+Clear Smog
+Clear Smog
+435
+Poison Fang
+Poison Fang
+436
+Poison Tail
+Poison Tail
+437
+Acid
+Acid
+438
+Acid Spray
+Acid Spray
+439
+Smog
+Smog
+440
+Poison Sting
+Poison Sting
+441
+Acid Armor
+Acid Armor
+442
+Coil
+Coil
+443
+Gastro Acid
+Gastro Acid
+444
+Poison Gas
+Poison Gas
+445
+Poison Powder
+Poison Powder
+446
+Toxic
+Toxic
+447
+Toxic Spikes
+Toxic Spikes
+448
+Psycho Boost
+Psycho Boost
+449
+Dream Eater
+Dream Eater
+450
+Future Sight
+Future Sight
+451
+Psystrike
+Psystrike
+452
+Psychic
+Psychic
+453
+Extrasensory
+Extrasensory
+454
+Psyshock
+Psyshock
+455
+Zen Headbutt
+Zen Headbutt
+456
+Luster Purge
+Luster Purge
+457
+Mist Ball
+Mist Ball
+458
+Psycho Cut
+Psycho Cut
+459
+Synchronoise
+Synchronoise
+460
+Psybeam
+Psybeam
+461
+Heart Stamp
+Heart Stamp
+462
+Confusion
+Confusion
+463
+Mirror Coat
+Mirror Coat
+464
+Psywave
+Psywave
+465
+Stored Power
+Stored Power
+466
+Agility
+Agility
+467
+Ally Switch
+Ally Switch
+468
+Amnesia
+Amnesia
+469
+Barrier
+Barrier
+470
+Calm Mind
+Calm Mind
+471
+Cosmic Power
+Cosmic Power
+472
+Gravity
+Gravity
+473
+Guard Split
+Guard Split
+474
+Guard Swap
+Guard Swap
+475
+Heal Block
+Heal Block
+476
+Heal Pulse
+Heal Pulse
+477
+Healing Wish
+Healing Wish
+478
+Heart Swap
+Heart Swap
+479
+Hypnosis
+Hypnosis
+480
+Imprison
+Imprison
+481
+Kinesis
+Kinesis
+482
+Light Screen
+Light Screen
+483
+Lunar Dance
+Lunar Dance
+484
+Magic Coat
+Magic Coat
+485
+Magic Room
+Magic Room
+486
+Meditate
+Meditate
+487
+Miracle Eye
+Miracle Eye
+488
+Power Split
+Power Split
+489
+Power Swap
+Power Swap
+490
+Power Trick
+Power Trick
+491
+Psycho Shift
+Psycho Shift
+492
+Reflect
+Reflect
+493
+Rest
+Rest
+494
+Role Play
+Role Play
+495
+Skill Swap
+Skill Swap
+496
+Telekinesis
+Telekinesis
+497
+Teleport
+Teleport
+498
+Trick
+Trick
+499
+Trick Room
+Trick Room
+500
+Wonder Room
+Wonder Room
+501
+Head Smash
+Head Smash
+502
+Rock Wrecker
+Rock Wrecker
+503
+Stone Edge
+Stone Edge
+504
+Rock Slide
+Rock Slide
+505
+Power Gem
+Power Gem
+506
+Ancient Power
+Ancient Power
+507
+Rock Throw
+Rock Throw
+508
+Rock Tomb
+Rock Tomb
+509
+Smack Down
+Smack Down
+510
+Rollout
+Rollout
+511
+Rock Blast
+Rock Blast
+512
+Rock Polish
+Rock Polish
+513
+Sandstorm
+Sandstorm
+514
+Stealth Rock
+Stealth Rock
+515
+Wide Guard
+Wide Guard
+516
+Doom Desire
+Doom Desire
+517
+Iron Tail
+Iron Tail
+518
+Meteor Mash
+Meteor Mash
+519
+Flash Cannon
+Flash Cannon
+520
+Iron Head
+Iron Head
+521
+Steel Wing
+Steel Wing
+522
+Mirror Shot
+Mirror Shot
+523
+Magnet Bomb
+Magnet Bomb
+524
+Gear Grind
+Gear Grind
+525
+Metal Claw
+Metal Claw
+526
+Bullet Punch
+Bullet Punch
+527
+Gyro Ball
+Gyro Ball
+528
+Heavy Slam
+Heavy Slam
+529
+Metal Burst
+Metal Burst
+530
+Autotomize
+Autotomize
+531
+Iron Defense
+Iron Defense
+532
+Metal Sound
+Metal Sound
+533
+Shift Gear
+Shift Gear
+534
+Hydro Cannon
+Hydro Cannon
+535
+Water Spout
+Water Spout
+536
+Hydro Pump
+Hydro Pump
+537
+Muddy Water
+Muddy Water
+538
+Surf
+Surf
+539
+Aqua Tail
+Aqua Tail
+540
+Crabhammer
+Crabhammer
+541
+Dive
+Dive
+542
+Scald
+Scald
+543
+Waterfall
+Waterfall
+544
+Razor Shell
+Razor Shell
+545
+Brine
+Brine
+546
+Bubble Beam
+Bubble Beam
+547
+Octazooka
+Octazooka
+548
+Water Pulse
+Water Pulse
+549
+Water Pledge
+Water Pledge
+550
+Aqua Jet
+Aqua Jet
+551
+Water Gun
+Water Gun
+552
+Clamp
+Clamp
+553
+Whirlpool
+Whirlpool
+554
+Bubble
+Bubble
+555
+Aqua Ring
+Aqua Ring
+556
+Rain Dance
+Rain Dance
+557
+Soak
+Soak
+558
+Water Sport
+Water Sport
+559
+Withdraw
+Withdraw
+560
+Aromatic Mist
+Aromatic Mist
+561
+Baby-Doll Eyes
+Baby-Doll Eyes
+562
+Belch
+Belch
+563
+Boomburst
+Boomburst
+564
+Confide
+Confide
+565
+Crafty Shield
+Crafty Shield
+566
+Dazzling Gleam
+Dazzling Gleam
+567
+Disarming Voice
+Disarming Voice
+568
+Draining Kiss
+Draining Kiss
+569
+Plasma Fists
+Plasma Fists
+570
+Eerie Impulse
+Eerie Impulse
+571
+Electric Terrain
+Electric Terrain
+572
+Electrify
+Electrify
+573
+Fairy Lock
+Fairy Lock
+574
+Fairy Wind
+Fairy Wind
+575
+Fell Stinger
+Fell Stinger
+576
+Flower Shield
+Flower Shield
+577
+Flying Press
+Flying Press
+578
+Forest's Curse
+Forest's Curse
+579
+Freeze-Dry
+Freeze-Dry
+580
+Geomancy
+Geomancy
+581
+Grassy Terrain
+Grassy Terrain
+582
+Infestation
+Infestation
+583
+Ion Deluge
+Ion Deluge
+584
+King's Shield
+King's Shield
+585
+Land's Wrath
+Land's Wrath
+586
+Magnetic Flux
+Magnetic Flux
+587
+Mat Block
+Mat Block
+588
+Misty Terrain
+Misty Terrain
+589
+Moonblast
+Moonblast
+590
+Mystical Fire
+Mystical Fire
+591
+Noble Roar
+Noble Roar
+592
+Nuzzle
+Nuzzle
+593
+Oblivion Wing
+Oblivion Wing
+594
+Parabolic Charge
+Parabolic Charge
+595
+Parting Shot
+Parting Shot
+596
+Petal Blizzard
+Petal Blizzard
+597
+Phantom Force
+Phantom Force
+598
+Play Nice
+Play Nice
+599
+Play Rough
+Play Rough
+600
+Powder
+Powder
+601
+Power-Up Punch
+Power-Up Punch
+602
+Rototiller
+Rototiller
+603
+Spiky Shield
+Spiky Shield
+604
+Sticky Web
+Sticky Web
+605
+Topsy-Turvy
+Topsy-Turvy
+606
+Trick-or-Treat
+Trick-or-Treat
+607
+Venom Drench
+Venom Drench
+608
+Water Shuriken
+Water Shuriken
+609
+Hidden Power
+Hidden Power
+610
+Hidden Power
+Hidden Power
+611
+Hidden Power
+Hidden Power
+612
+Hidden Power
+Hidden Power
+613
+Hidden Power
+Hidden Power
+614
+Hidden Power
+Hidden Power
+615
+Hidden Power
+Hidden Power
+616
+Hidden Power
+Hidden Power
+617
+Hidden Power
+Hidden Power
+618
+Hidden Power
+Hidden Power
+619
+Hidden Power
+Hidden Power
+620
+Hidden Power
+Hidden Power
+621
+Hidden Power
+Hidden Power
+622
+Hidden Power
+Hidden Power
+623
+Hidden Power
+Hidden Power
+624
+Hidden Power
+Hidden Power
+625
+Hidden Power
+Hidden Power
+626
+Hidden Power
+Hidden Power
+627
+Origin Pulse
+Origin Pulse
+628
+Precipice Blades
+Precipice Blades
+629
+Dragon Ascent
+Dragon Ascent
+630
+Thousand Arrows
+Thousand Arrows
+631
+Thousand Waves
+Thousand Waves
+632
+Diamond Storm
+Diamond Storm
+633
+Hyperspace Hole
+Hyperspace Hole
+634
+Steam Eruption
+Steam Eruption
+635
+Hyperspace Fury
+Hyperspace Fury
+638
+Accelerock
+Accelerock
+639
+Anchor Shot
+Anchor Shot
+640
+Aurora Veil
+Aurora Veil
+641
+Baneful Bunker
+Baneful Bunker
+642
+Beak Blast
+Beak Blast
+643
+Brutal Swing
+Brutal Swing
+644
+Burn Up
+Burn Up
+645
+Clanging Scales
+Clanging Scales
+646
+Core Enforcer
+Core Enforcer
+647
+Darkest Lariat
+Darkest Lariat
+648
+Dragon Hammer
+Dragon Hammer
+649
+Fire Lash
+Fire Lash
+650
+First Impression
+First Impression
+651
+Fleur Cannon
+Fleur Cannon
+652
+Floral Healing
+Floral Healing
+653
+Gear Up
+Gear Up
+654
+High Horsepower
+High Horsepower
+655
+Ice Hammer
+Ice Hammer
+656
+Instruct
+Instruct
+657
+Laser Focus
+Laser Focus
+658
+Leafage
+Leafage
+659
+Liquidation
+Liquidation
+660
+Lunge
+Lunge
+661
+Moongeist Beam
+Moongeist Beam
+662
+Nature Madness
+Nature Madness
+663
+Pollen Puff
+Pollen Puff
+664
+Power Trip
+Power Trip
+665
+Prismatic Laser
+Prismatic Laser
+666
+Psychic Fangs
+Psychic Fangs
+667
+Psychic Terrain
+Psychic Terrain
+668
+Purify
+Purify
+669
+Revelation Dance
+Revelation Dance
+670
+Shadow Bone
+Shadow Bone
+671
+Shell Trap
+Shell Trap
+672
+Shore Up
+Shore Up
+673
+Smart Strike
+Smart Strike
+674
+Solar Blade
+Solar Blade
+675
+Sparkling Aria
+Sparkling Aria
+676
+Spectral Thief
+Spectral Thief
+677
+Speed Swap
+Speed Swap
+678
+Spirit Shackle
+Spirit Shackle
+679
+Spotlight
+Spotlight
+680
+Stomp Tantrum
+Stomp Tantrum
+681
+Strength Sap
+Strength Sap
+682
+Sunsteel Strike
+Sunsteel Strike
+683
+Tearful Look
+Tearful Look
+684
+Throat Chop
+Throat Chop
+685
+Toxic Thread
+Toxic Thread
+686
+Trop Kick
+Trop Kick
+687
+Zing Zap
+Zing Zap
+688
+Multi-Attack
+Multi-Attack
+689
+Mind Blown
+Mind Blown
+690
+Photon Geyser
+Photon Geyser
+695
+Dynamax Cannon
+Dynamax Cannon
+696
+Snipe Shot
+Snipe Shot
+697
+Jaw Lock
+Jaw Lock
+698
+Stuff Cheeks
+Stuff Cheeks
+699
+No Retreat
+No Retreat
+700
+Tar Shot
+Tar Shot
+701
+Magic Powder
+Magic Powder
+702
+Dragon Darts
+Dragon Darts
+703
+Teatime
+Teatime
+704
+Octolock
+Octolock
+705
+Bolt Beak
+Bolt Beak
+706
+Fishious Rend
+Fishious Rend
+707
+Court Change
+Court Change
+708
+Clangorous Soul
+Clangorous Soul
+709
+Body Press
+Body Press
+710
+Decorate
+Decorate
+711
+Drum Beating
+Drum Beating
+712
+Snap Trap
+Snap Trap
+713
+Pyro Ball
+Pyro Ball
+714
+Behemoth Blade
+Behemoth Blade
+715
+Behemoth Bash
+Behemoth Bash
+716
+Aura Wheel
+Aura Wheel
+717
+Breaking Swipe
+Breaking Swipe
+718
+Branch Poke
+Branch Poke
+719
+Overdrive
+Overdrive
+720
+Apple Acid
+Apple Acid
+721
+Grav Apple
+Grav Apple
+722
+Spirit Break
+Spirit Break
+723
+Strange Steam
+Strange Steam
+724
+Life Dew
+Life Dew
+725
+Obstruct
+Obstruct
+726
+False Surrender
+False Surrender
+727
+Meteor Assault
+Meteor Assault
+728
+Eternabeam
+Eternabeam
+729
+Steel Beam
+Steel Beam
+730
+Celebrate
+Celebrate
+[2]
+1
+Using its tough and impressive horn, the user rams into the target with no letup.
+Using its tough and impressive horn, the user rams into the target with no letup.
+2
+The user calls out its underlings to pummel the target. Critical hits land more easily.
+The user calls out its underlings to pummel the target. Critical hits land more easily.
+3
+The user vibrates its wings to make a sound wave. It may lower the target's Sp. Def.
+The user vibrates its wings to make a sound wave. It may lower the target's Sp. Def.
+4
+The user slashes at the target by crossing its claws as if they were a pair of scissors.
+The user slashes at the target by crossing its claws as if they were a pair of scissors.
+5
+The user attacks with a sinister beam of light. It may also confuse the target.
+The user attacks with a sinister beam of light. It may also confuse the target.
+6
+After making its attack, the user switches places with a party Pokémon in waiting.
+After making its attack, the user switches places with a party Pokémon in waiting.
+7
+The user crushes its targets by rolling over them with its rolled-up body. This attack may make the target flinch.
+The user crushes its targets by rolling over them with its rolled-up body. This attack may make the target flinch.
+8
+The user bites the target. If the target is holding a Berry, the user eats it.
+The user bites the target. If the target is holding a Berry, the user eats it.
+9
+The target is hit with powdery scales blown by wind. It may raise all the user's stats.
+The target is hit with powdery scales blown by wind. It may raise all the user's stats.
+10
+While resisting, the user attacks the opposing Pokémon. The targets' Sp. Atk is reduced.
+While resisting, the user attacks the opposing Pokémon. The targets' Sp. Atk is reduced.
+11
+The user damages the target twice by jabbing it with spikes. It may poison the target.
+The user damages the target twice by jabbing it with spikes. It may poison the target.
+12
+The target is slashed with claws. Its power increases if it hits in succession.
+The target is slashed with claws. Its power increases if it hits in succession.
+13
+The user drains the target's blood. The user's HP is restored by half the damage taken.
+The user drains the target's blood. The user's HP is restored by half the damage taken.
+14
+Sharp spikes are shot at the target in succession. They hit two to five times in a row.
+Sharp spikes are shot at the target in succession. They hit two to five times in a row.
+15
+The user calls out its underlings to shield its body, raising its Defense and Sp. Def.
+The user calls out its underlings to shield its body, raising its Defense and Sp. Def.
+16
+The user calls out its underlings to heal it. The user regains up to half of its max HP.
+The user calls out its underlings to heal it. The user regains up to half of its max HP.
+17
+The user performs a mystic dance. It boosts the user's Sp. Atk, Sp. Def, and Speed.
+The user performs a mystic dance. It boosts the user's Sp. Atk, Sp. Def, and Speed.
+18
+The user scatters irritating powder to draw attention. Opponents aim only at the user.
+The user scatters irritating powder to draw attention. Opponents aim only at the user.
+19
+The user ensnares the target with thin, gooey silk so it can't flee from battle.
+The user ensnares the target with thin, gooey silk so it can't flee from battle.
+20
+The targets are bound with silk blown from the user. This silk reduces the targets' Speed.
+The targets are bound with silk blown from the user. This silk reduces the targets' Speed.
+21
+The user stares at flashing lights to focus its mind, drastically raising its Sp. Atk.
+The user stares at flashing lights to focus its mind, drastically raising its Sp. Atk.
+22
+This move uses the target's power. The higher the target's Attack, the more damage taken.
+This move uses the target's power. The higher the target's Attack, the more damage taken.
+23
+The user lets loose a black shock wave. It may also lower the target's accuracy.
+The user lets loose a black shock wave. It may also lower the target's accuracy.
+24
+The user crunches up the target with sharp fangs. It may lower the target's Defense.
+The user crunches up the target with sharp fangs. It may lower the target's Defense.
+25
+The user releases an aura imbued with dark thoughts. It may make the target flinch.
+The user releases an aura imbued with dark thoughts. It may make the target flinch.
+26
+This move attacks first. It fails if the target is not attacking, however.
+This move attacks first. It fails if the target is not attacking, however.
+27
+The user slashes the target through darkness. Critical hits land more easily.
+The user slashes the target through darkness. Critical hits land more easily.
+28
+The target is bitten with viciously sharp fangs. It may make the target flinch.
+The target is bitten with viciously sharp fangs. It may make the target flinch.
+29
+The user throws a sucker punch. It hits without fail.
+The user throws a sucker punch. It hits without fail.
+30
+The user yells as if it is ranting about something, making the target's Sp. Atk decrease.
+The user yells as if it is ranting about something, making the target's Sp. Atk decrease.
+31
+If the target has already taken damage in the same turn, this attack's power is doubled.
+If the target has already taken damage in the same turn, this attack's power is doubled.
+32
+If the user moves after the target, this attack's power will be doubled.
+If the user moves after the target, this attack's power will be doubled.
+33
+An attack move that inflicts double damage if used on a fleeing target.
+An attack move that inflicts double damage if used on a fleeing target.
+34
+The user steals the target's held item. It can't steal if the user holds an item.
+The user steals the target's held item. It can't steal if the user holds an item.
+35
+The user slaps away the target's held item, removing it from the battle.
+The user slaps away the target's held item, removing it from the battle.
+36
+The user gets all party Pokémon to attack. The more party Pokémon, the greater the damage.
+The user gets all party Pokémon to attack. The more party Pokémon, the greater the damage.
+37
+The user flings its held item at the target. Its power and effects depend on the item.
+The user flings its held item at the target. Its power and effects depend on the item.
+38
+This attack's power increases the more the target has powered up with stat changes.
+This attack's power increases the more the target has powered up with stat changes.
+39
+Opposing Pokémon are dragged into a world of total darkness that makes them sleep.
+Opposing Pokémon are dragged into a world of total darkness that makes them sleep.
+40
+It prevents the target from using any items.
+It prevents the target from using any items.
+41
+The user feigns crying to fluster the target, harshly lowering its Sp. Def stat.
+The user feigns crying to fluster the target, harshly lowering its Sp. Def stat.
+42
+Flattery is used to confuse the target. However, it also raises the target's Sp. Atk.
+Flattery is used to confuse the target. However, it also raises the target's Sp. Atk.
+43
+The user sharpens its claws to boost its Attack stat and accuracy.
+The user sharpens its claws to boost its Attack stat and accuracy.
+44
+The user faints using this move. It harshly lowers the target's Attack and Sp. Atk.
+The user faints using this move. It harshly lowers the target's Attack and Sp. Atk.
+45
+The user stimulates its brain with bad thoughts. It sharply raises the user's Sp. Atk.
+The user stimulates its brain with bad thoughts. It sharply raises the user's Sp. Atk.
+46
+The user suppresses the target and makes its move go last.
+The user suppresses the target and makes its move go last.
+47
+The user steals the effects of any healing or stat-changing move the opponent uses.
+The user steals the effects of any healing or stat-changing move the opponent uses.
+48
+The user trades held items with the target faster than the eye can follow.
+The user trades held items with the target faster than the eye can follow.
+49
+The target is taunted into using only attacking moves for three turns.
+The target is taunted into using only attacking moves for three turns.
+50
+The user torments the target, making it incapable of using the same move twice in a row.
+The user torments the target, making it incapable of using the same move twice in a row.
+51
+The user blasts with power that distorts even time. The user must rest on the next turn.
+The user blasts with power that distorts even time. The user must rest on the next turn.
+52
+Comets are summoned down from the sky. The attack harshly reduces the user's Sp. Atk.
+Comets are summoned down from the sky. The attack harshly reduces the user's Sp. Atk.
+53
+The user rampages and attacks for two to three turns. It then becomes confused, however.
+The user rampages and attacks for two to three turns. It then becomes confused, however.
+54
+The user tackles the target while exhibiting menace. It may make the target flinch.
+The user tackles the target while exhibiting menace. It may make the target flinch.
+55
+The user tears the target along with the space around it. Critical hits land more easily.
+The user tears the target along with the space around it. Critical hits land more easily.
+56
+The target is attacked with a shock wave generated by the user's gaping mouth.
+The target is attacked with a shock wave generated by the user's gaping mouth.
+57
+The user slashes the target with huge, sharp claws.
+The user slashes the target with huge, sharp claws.
+58
+The user knocks away the target and drags out another Pokémon in its party. In the wild, the battle ends.
+The user knocks away the target and drags out another Pokémon in its party. In the wild, the battle ends.
+59
+The user exhales a mighty gust that inflicts damage. It may leave the target paralyzed.
+The user exhales a mighty gust that inflicts damage. It may leave the target paralyzed.
+60
+The user attacks its target by hitting it with brutal strikes. The target is hit twice.
+The user attacks its target by hitting it with brutal strikes. The target is hit twice.
+61
+The user whips up a tornado to tear at the opposing team. It may make targets flinch.
+The user whips up a tornado to tear at the opposing team. It may make targets flinch.
+62
+This attack hits with a shock wave of pure rage. This attack always inflicts 40 damage.
+This attack hits with a shock wave of pure rage. This attack always inflicts 40 damage.
+63
+The user vigorously performs a powerful dance that boosts its Attack and Speed stats.
+The user vigorously performs a powerful dance that boosts its Attack and Speed stats.
+64
+The user charges its target, surrounded with electricity. It may paralyze the target.
+The user charges its target, surrounded with electricity. It may paralyze the target.
+65
+A wicked thunderbolt is dropped on the target. It may paralyze the target.
+A wicked thunderbolt is dropped on the target. It may paralyze the target.
+66
+The user electrifies itself and charges. It damages the user and may paralyze the target.
+The user electrifies itself and charges. It damages the user and may paralyze the target.
+67
+The user fires an electric blast like a cannon to inflict damage and cause paralysis.
+The user fires an electric blast like a cannon to inflict damage and cause paralysis.
+68
+This attack does double damage when used after fusion flare or blue flare.
+This attack does double damage when used after fusion flare or blue flare.
+69
+A strong electric blast is loosed at the target. It may paralyze the target.
+A strong electric blast is loosed at the target. It may paralyze the target.
+70
+The user shrouds itself in electricity and smashes into its target. It damages the user.
+The user shrouds itself in electricity and smashes into its target. It damages the user.
+71
+Electricity is loosed to strike the area around the user. It may also cause paralysis.
+Electricity is loosed to strike the area around the user. It may also cause paralysis.
+72
+The target is punched with an electrified fist. It may leave the target with paralysis.
+The target is punched with an electrified fist. It may leave the target with paralysis.
+73
+After making its attack, the user rushes back to switch places with a party Pokémon.
+After making its attack, the user rushes back to switch places with a party Pokémon.
+74
+The user electrically tackles at the target. It may also paralyze the target.
+The user electrically tackles at the target. It may also paralyze the target.
+75
+The user bites with electrified fangs. It may make the target flinch or paralyze it.
+The user bites with electrified fangs. It may make the target flinch or paralyze it.
+76
+The user strikes the target with a quick jolt of electricity. This attack always hits.
+The user strikes the target with a quick jolt of electricity. This attack always hits.
+77
+The user attacks opposing Pokémon with an electric net. It reduces the targets' Speed.
+The user attacks opposing Pokémon with an electric net. It reduces the targets' Speed.
+78
+The user attacks with an electric charge which may raise its Sp. Atk stat.
+The user attacks with an electric charge which may raise its Sp. Atk stat.
+79
+A jolt of electricity is hurled at the target. It may also paralyze the target.
+A jolt of electricity is hurled at the target. It may also paralyze the target.
+80
+The faster the user is than the target, the greater the damage this move deals.
+The faster the user is than the target, the greater the damage this move deals.
+81
+The user boosts Electric moves it uses next turn. It also raises the user's Sp. Def.
+The user boosts Electric moves it uses next turn. It also raises the user's Sp. Def.
+82
+The user levitates using electrically generated magnetism for five turns.
+The user levitates using electrically generated magnetism for five turns.
+83
+A weak electric charge is launched at the target. It causes paralysis if it hits.
+A weak electric charge is launched at the target. It causes paralysis if it hits.
+84
+The user focuses its mind before punching. It will fail if the user is hit this turn.
+The user focuses its mind before punching. It will fail if the user is hit this turn.
+85
+The target is hit with a knee kick from a jump. If it misses, the user is hurt instead.
+The target is hit with a knee kick from a jump. If it misses, the user is hurt instead.
+86
+The user fights the target without guarding. It cuts the user's Defense and Sp. Def.
+The user fights the target without guarding. It cuts the user's Defense and Sp. Def.
+87
+The user mentally focuses and unleashes its power. It may lower the target's Sp. Def.
+The user mentally focuses and unleashes its power. It may lower the target's Sp. Def.
+88
+The user attacks the target with great power. It lowers the user's Attack and Defense.
+The user attacks the target with great power. It lowers the user's Attack and Defense.
+89
+The user delivers a double chop with its forearms. Critical hits land more easily.
+The user delivers a double chop with its forearms. Critical hits land more easily.
+90
+The user punches the target with full power. It confuses the target if it hits.
+The user punches the target with full power. It confuses the target if it hits.
+91
+The user hits with its strong and heavy fist. It lowers the user's Speed, however.
+The user hits with its strong and heavy fist. It lowers the user's Speed, however.
+92
+The user jumps, then strikes with a kick. If the kick misses, the user hurts itself.
+The user jumps, then strikes with a kick. If the kick misses, the user hurts itself.
+93
+The user looses a blast of aura power at the target. This move always hits.
+The user looses a blast of aura power at the target. This move always hits.
+94
+The user attacks by slicing. The target's stat changes don't affect the damage.
+The user attacks by slicing. The target's stat changes don't affect the damage.
+95
+The user cuts with its long horn. The  horn does physical damage to the target.
+The user cuts with its long horn. The  horn does physical damage to the target.
+96
+The user attacks the target with an uppercut thrown skyward with force.
+The user attacks the target with an uppercut thrown skyward with force.
+97
+The user grabs the target and dives for the ground. It also hurts the user slightly.
+The user grabs the target and dives for the ground. It also hurts the user slightly.
+98
+The user attacks with a chop. It also ends the effect of Light Screen and Reflect.
+The user attacks with a chop. It also ends the effect of Light Screen and Reflect.
+99
+An energy-draining punch. The user's HP is restored by half the damage dealt.
+An energy-draining punch. The user's HP is restored by half the damage dealt.
+100
+The user attacks last. In return, this throw move is guaranteed not to miss.
+The user attacks last. In return, this throw move is guaranteed not to miss.
+101
+The user throws the target and drags out another Pokémon. In the wild, the battle ends.
+The user throws the target and drags out another Pokémon. In the wild, the battle ends.
+102
+The target is attacked with a shock wave. It may also paralyze the target.
+The target is attacked with a shock wave. It may also paralyze the target.
+103
+The user attacks the target's legs swiftly, reducing the target's Speed stat.
+The user attacks the target's legs swiftly, reducing the target's Speed stat.
+104
+Inflicts double the damage if the user has been hurt by the opponent in the same turn.
+Inflicts double the damage if the user has been hurt by the opponent in the same turn.
+105
+The user lashes out with a quick, spinning kick. It may also make the target flinch.
+The user lashes out with a quick, spinning kick. It may also make the target flinch.
+106
+This attack inflicts big damage on a sleeping target. It also wakes the target up.
+This attack inflicts big damage on a sleeping target. It also wakes the target up.
+107
+The target is attacked with a sharp chop. Critical hits land more easily.
+The target is attacked with a sharp chop. Critical hits land more easily.
+108
+The user throws a punch at blinding speed. It is certain to strike first.
+The user throws a punch at blinding speed. It is certain to strike first.
+109
+Attacks with a rock-shattering punch. It may also lower the target's Defense stat.
+Attacks with a rock-shattering punch. It may also lower the target's Defense stat.
+110
+The user strikes the target fiercely. This attack always results in a critical hit.
+The user strikes the target fiercely. This attack always results in a critical hit.
+111
+The user whirls its fists to send out a wave of pure vacuum. This move always goes first.
+The user whirls its fists to send out a wave of pure vacuum. This move always goes first.
+112
+The target is quickly kicked twice in succession using both feet.
+The target is quickly kicked twice in succession using both feet.
+113
+The user looses a flurry of open-palmed arm thrusts that hit two to five times in a row.
+The user looses a flurry of open-palmed arm thrusts that hit two to five times in a row.
+114
+A consecutive three-kick attack that becomes more powerful with each successive hit.
+A consecutive three-kick attack that becomes more powerful with each successive hit.
+115
+A retaliation move that counters any physical attack, inflicting double the damage taken.
+A retaliation move that counters any physical attack, inflicting double the damage taken.
+116
+The user sacrifices itself but does damage equal to its current HP.
+The user sacrifices itself but does damage equal to its current HP.
+117
+A powerful kick that inflicts greater damage on heavier targets.
+A powerful kick that inflicts greater damage on heavier targets.
+118
+An all-out attack that becomes more powerful the less HP the user has.
+An all-out attack that becomes more powerful the less HP the user has.
+119
+The target is thrown using gravity. It inflicts damage equal to the user's level.
+The target is thrown using gravity. It inflicts damage equal to the user's level.
+120
+The user tenses its muscles, boosting both its Attack and Defense stats.
+The user tenses its muscles, boosting both its Attack and Defense stats.
+121
+The user evades all attacks. Its chance of failing rises if it is used in succession.
+The user evades all attacks. Its chance of failing rises if it is used in succession.
+122
+The user protects its team from priority moves. If used in succession, it may fail.
+The user protects its team from priority moves. If used in succession, it may fail.
+123
+With flames on its head, it hit target. It lowers its Defense, Sp. Def, and Speed stats.
+With flames on its head, it hit target. It lowers its Defense, Sp. Def, and Speed stats.
+124
+The target is razed by a fiery explosion. The user must rest on the next turn.
+The target is razed by a fiery explosion. The user must rest on the next turn.
+125
+The user hits the opposing team with flames. The more HP, the stronger the attack.
+The user hits the opposing team with flames. The more HP, the stronger the attack.
+126
+The user attacks the target at full power. It sharply reduces the user's Sp. Atk stat.
+The user attacks the target at full power. It sharply reduces the user's Sp. Atk stat.
+127
+The user attacks by engulfing the target in intense, blue flames. It may burn the target.
+The user attacks by engulfing the target in intense, blue flames. It may burn the target.
+128
+The target is attacked with an intense blast of fire. It may burn the target.
+The target is attacked with an intense blast of fire. It may burn the target.
+129
+The user sets fire and charges. It sustains serious damage and may burn the target.
+The user sets fire and charges. It sustains serious damage and may burn the target.
+130
+The target is caught in a maelstrom of fire that rages for four to five turns.
+The target is caught in a maelstrom of fire that rages for four to five turns.
+131
+The user brings down a giant flame. It is more powerful after a large thunderbolt.
+The user brings down a giant flame. It is more powerful after a large thunderbolt.
+132
+The user blasts hot breath on the opposing team. It may burn the targets.
+The user blasts hot breath on the opposing team. It may burn the targets.
+133
+The user engulfs the target in intense fire. It burns the target.
+The user engulfs the target in intense fire. It burns the target.
+134
+The target is razed with a mystical fire of great intensity. It may burn the target.
+The target is razed with a mystical fire of great intensity. It may burn the target.
+135
+An inferno torches everything around the user. It may burn the targets.
+An inferno torches everything around the user. It may burn the targets.
+136
+The target is scorched with an intense blast of fire. It may burn the target.
+The target is scorched with an intense blast of fire. It may burn the target.
+137
+The user launches a kick that lands a critical hit more easily. It may burn the target.
+The user launches a kick that lands a critical hit more easily. It may burn the target.
+138
+Cloaked in flames, the user dances. It may raise the user's Sp. Atk stat.
+Cloaked in flames, the user dances. It may raise the user's Sp. Atk stat.
+139
+An inferno torches everything around the user. It may burn the targets.
+An inferno torches everything around the user. It may burn the targets.
+140
+The target is punched with a fiery fist. It may leave the target with a burn.
+The target is punched with a fiery fist. It may leave the target with a burn.
+141
+The user attacks the target with big flames. The fire damages adjacent Pokemon also.
+The user attacks the target with big flames. The fire damages adjacent Pokemon also.
+142
+The user bites with flaming fangs. It may also burn the target or make it flinch.
+The user bites with flaming fangs. It may also burn the target or make it flinch.
+143
+The user sets fire and charges at the target. It may burn the target.
+The user sets fire and charges at the target. It may burn the target.
+144
+A fiery column hits the target. When used with Grass Pledge, it causes a sea of fire.
+A fiery column hits the target. When used with Grass Pledge, it causes a sea of fire.
+145
+The user sets fire and attacks. It raises the user's Speed stat.
+The user sets fire and attacks. It raises the user's Speed stat.
+146
+The target is attacked with small flames. It may also burn the target.
+The target is attacked with small flames. It may also burn the target.
+147
+The target is trapped within a fierce vortex of fire that rages for four to five turns.
+The target is trapped within a fierce vortex of fire that rages for four to five turns.
+148
+The user attacks the target with fire. The fire burns up the target's berry.
+The user attacks the target with fire. The fire burns up the target's berry.
+149
+The user hits the target with its fiery body. The heavier the user, the stronger it is.
+The user hits the target with its fiery body. The heavier the user, the stronger it is.
+150
+The user intensifies the sun for five turns, powering up Fire-type moves.
+The user intensifies the sun for five turns, powering up Fire-type moves.
+151
+The user shoots a sinister, bluish-white flame at the target to inflict a burn.
+The user shoots a sinister, bluish-white flame at the target to inflict a burn.
+152
+A two-turn attack where critical hits land more easily. It may make the target flinch.
+A two-turn attack where critical hits land more easily. It may make the target flinch.
+153
+The user tucks in its wings and charges. The user also takes serious damage.
+The user tucks in its wings and charges. The user also takes serious damage.
+154
+The user wraps its opponent in a fierce circular wind. It may confuse the target.
+The user wraps its opponent in a fierce circular wind. It may confuse the target.
+155
+A vortex of air is shot at the target to inflict damage. Critical hits land easily.
+A vortex of air is shot at the target to inflict damage. Critical hits land easily.
+156
+The user soars and strikes its target on turn two. It can be used for transportation.
+The user soars and strikes its target on turn two. It can be used for transportation.
+157
+The user bounces up high, then drops on the target. It may paralyze the target.
+The user bounces up high, then drops on the target. It may paralyze the target.
+158
+A corkscrewing attack with the sharp beak acting as a drill.
+A corkscrewing attack with the sharp beak acting as a drill.
+159
+The user attacks with a blade of air that slices the sky. It may make the target flinch.
+The user attacks with a blade of air that slices the sky. It may make the target flinch.
+160
+The user confounds the foe with speed, then slashes. The attack lands without fail.
+The user confounds the foe with speed, then slashes. The attack lands without fail.
+161
+The user attacks with sound based on words it has learned. It may confuse the target.
+The user attacks with sound based on words it has learned. It may confuse the target.
+162
+The user pecks the target. If the target is holding a Berry, the user gains its effect.
+The user pecks the target. If the target is holding a Berry, the user gains its effect.
+163
+The target is brought to the sky and dropped the next turn. It cannot attack.
+The target is brought to the sky and dropped the next turn. It cannot attack.
+164
+The target is struck with large, imposing wings spread wide to inflict damage.
+The target is struck with large, imposing wings spread wide to inflict damage.
+165
+The user nimbly hits the target. If there is no held item, it inflicts massive damage.
+The user nimbly hits the target. If there is no held item, it inflicts massive damage.
+166
+Razor-like wind is launched to slash the opposing team. Critical hits land more easily.
+Razor-like wind is launched to slash the opposing team. Critical hits land more easily.
+167
+A gust of wind is whipped up and launched at the target to inflict damage.
+A gust of wind is whipped up and launched at the target to inflict damage.
+168
+The target is jabbed with a sharply pointed beak or horn.
+The target is jabbed with a sharply pointed beak or horn.
+169
+A strong wind blows away obstacles. It also lowers the target's evasiveness.
+A strong wind blows away obstacles. It also lowers the target's evasiveness.
+170
+The user covers the target with feathers that harshly lowers its Attack stat.
+The user covers the target with feathers that harshly lowers its Attack stat.
+171
+The user counters the target by mimicking the target's last move.
+The user counters the target by mimicking the target's last move.
+172
+The user lands and rests its body. It restores the user's HP by up to half of its max HP.
+The user lands and rests its body. It restores the user's HP by up to half of its max HP.
+173
+The user whips up a sharp whirlwind that ups the Speed of party Pokemon for four turns.
+The user whips up a sharp whirlwind that ups the Speed of party Pokemon for four turns.
+174
+The user disappears, then strikes the target on the second turn. It always hits.
+The user disappears, then strikes the target on the second turn. It always hits.
+175
+The user hurls a shadowy blob at the target. It may lower the target's Sp. Def stat.
+The user hurls a shadowy blob at the target. It may lower the target's Sp. Def stat.
+176
+The user slashes with a sharp claw made from shadows. Critical hits land more easily.
+The user slashes with a sharp claw made from shadows. Critical hits land more easily.
+177
+The user blasts the target with a gust of repulsive wind. It may raise every stat.
+The user blasts the target with a gust of repulsive wind. It may raise every stat.
+178
+The user throws a punch from the shadows. The punch lands without fail.
+The user throws a punch from the shadows. The punch lands without fail.
+179
+This relentless attack does massive damage to targets affected by status problems.
+This relentless attack does massive damage to targets affected by status problems.
+180
+The user strikes with its shadow from behind. This move always goes first.
+The user strikes with its shadow from behind. This move always goes first.
+181
+The user attacks the target in a startling fashion. It may also make the target flinch.
+The user attacks the target in a startling fashion. It may also make the target flinch.
+182
+The target is licked with a long tongue, causing damage. It may paralyze the target.
+The target is licked with a long tongue, causing damage. It may paralyze the target.
+183
+The user makes the target see a horrid mirage. Its damage matches the user's level.
+The user makes the target see a horrid mirage. Its damage matches the user's level.
+184
+The target is exposed to a sinister ray that triggers confusion.
+The target is exposed to a sinister ray that triggers confusion.
+185
+A move that works differently for the Ghost type than for all the other types.
+A move that works differently for the Ghost type than for all the other types.
+186
+When this move is used, if the user faints, the target also faints.
+When this move is used, if the user faints, the target also faints.
+187
+If the user faints, the user fully depletes the PP of the opponent's move.
+If the user faints, the user fully depletes the PP of the opponent's move.
+188
+A sleeping target sees a nightmare that inflicts some damage every turn.
+A sleeping target sees a nightmare that inflicts some damage every turn.
+189
+The user unleashes a grudge on the move last used by the target, cutting 4 PP from it.
+The user unleashes a grudge on the move last used by the target, cutting 4 PP from it.
+190
+The user slams the target with an enormous tree. The user can't move on the next turn.
+The user slams the target with an enormous tree. The user can't move on the next turn.
+191
+A storm of leaves attacks the target. It harshly reduces the user's Sp. Atk stat.
+A storm of leaves attacks the target. It harshly reduces the user's Sp. Atk stat.
+192
+The user hits the target with petals for multiple turns. The user then becomes confused.
+The user hits the target with petals for multiple turns. The user then becomes confused.
+193
+The user violently whirls its vines or tentacles to harshly lash the target.
+The user violently whirls its vines or tentacles to harshly lash the target.
+194
+A shock wave slams the target. It may harshly lower the target's Sp. Def.
+A shock wave slams the target. It may harshly lower the target's Sp. Def.
+195
+A two-turn attack. The user gathers light, then blasts a beam on the second turn.
+A two-turn attack. The user gathers light, then blasts a beam on the second turn.
+196
+The user slams its body into the target to attack. The user also sustains serious damage.
+The user slams its body into the target to attack. The user also sustains serious damage.
+197
+The handles a sharp leaf like a sword. Critical hits land more easily.
+The handles a sharp leaf like a sword. Critical hits land more easily.
+198
+The user draws power from nature and fires it. It may lower the target's Sp. Def.
+The user draws power from nature and fires it. It may lower the target's Sp. Def.
+199
+The user slams a barrage of hard-shelled seeds down on the target from above.
+The user slams a barrage of hard-shelled seeds down on the target from above.
+200
+A nutrient-draining attack. The user's HP is restored by half the damage taken.
+A nutrient-draining attack. The user's HP is restored by half the damage taken.
+201
+Energy is drained by horns. The user's HP is restored by half the damage taken.
+Energy is drained by horns. The user's HP is restored by half the damage taken.
+202
+The user attacks its target with sharp leaves. This attack may lower the foe's accuracy.
+The user attacks its target with sharp leaves. This attack may lower the foe's accuracy.
+203
+The user scatters curious leaves that chase the target. This attack will not miss.
+The user scatters curious leaves that chase the target. This attack will not miss.
+204
+The user attacks by wildly swinging its thorny arms. It may also make the target flinch.
+The user attacks by wildly swinging its thorny arms. It may also make the target flinch.
+205
+Sharp-edged leaves launch at the opposing team. Critical hits land more easily.
+Sharp-edged leaves launch at the opposing team. Critical hits land more easily.
+206
+A grassy column hits the target. When used with Water Pledge, its creates a vast swamp.
+A grassy column hits the target. When used with Water Pledge, its creates a vast swamp.
+207
+A nutrient-draining attack. The user's HP is restored by half the damage taken.
+A nutrient-draining attack. The user's HP is restored by half the damage taken.
+208
+The target is struck with slender, whiplike vines to inflict damage.
+The target is struck with slender, whiplike vines to inflict damage.
+209
+The user forcefully shoots seeds at the target. Two to five seeds are shot.
+The user forcefully shoots seeds at the target. Two to five seeds are shot.
+210
+A nutrient-draining attack. The user's HP is restored by half the damage taken.
+A nutrient-draining attack. The user's HP is restored by half the damage taken.
+211
+The user snares the target with grass and trips it. Heavier targets take greater damage.
+The user snares the target with grass and trips it. Heavier targets take greater damage.
+212
+The user releases a soothing scent that heals all status problems of the user's party.
+The user releases a soothing scent that heals all status problems of the user's party.
+213
+The user wraps its body in cotton, drastically raising its Defense stat.
+The user wraps its body in cotton, drastically raising its Defense stat.
+214
+The user releases cotton-like spores at the target, harshly reducing its Speed stat.
+The user releases cotton-like spores at the target, harshly reducing its Speed stat.
+215
+The user plays a pleasant melody that lulls the target into a deep sleep.
+The user plays a pleasant melody that lulls the target into a deep sleep.
+216
+The user lays roots that restore HP every turn. The user cannot switch out.
+The user lays roots that restore HP every turn. The user cannot switch out.
+217
+A seed is planted on the target. It steals some HP from the target every turn.
+A seed is planted on the target. It steals some HP from the target every turn.
+218
+The user scatters a big cloud of sleep-inducing dust around the target.
+The user scatters a big cloud of sleep-inducing dust around the target.
+219
+The user scatters bursts of spores that induce sleep.
+The user scatters bursts of spores that induce sleep.
+220
+The user scatters a cloud of paralyzing powder. It may cause paralysis.
+The user scatters a cloud of paralyzing powder. It may cause paralysis.
+221
+The user restores its own HP. The amount of HP regained varies with the weather.
+The user restores its own HP. The amount of HP regained varies with the weather.
+222
+Plants a seed that causes worry. It prevents sleep by making its Ability Insomnia.
+Plants a seed that causes worry. It prevents sleep by making its Ability Insomnia.
+223
+The user sets off an earthquake that strikes every Pokemon around it.
+The user sets off an earthquake that strikes every Pokemon around it.
+224
+The user makes the ground under the target erupt. It may lower the target's Sp. Def.
+The user makes the ground under the target erupt. It may lower the target's Sp. Def.
+225
+The user burrows, then attacks on the second turn. It can also be used to exit dungeons.
+The user burrows, then attacks on the second turn. It can also be used to exit dungeons.
+226
+The user crashes into its target like a drill. Critical hits land more easily.
+The user crashes into its target like a drill. Critical hits land more easily.
+227
+The user clubs the target with a bone. It may also make the target flinch.
+The user clubs the target with a bone. It may also make the target flinch.
+228
+The user launches a packed mud ball to attack. It may lower the target's accuracy.
+The user launches a packed mud ball to attack. It may lower the target's accuracy.
+229
+The user stomps on the ground in an area. Hit Pokemon's Speed stat is reduced.
+The user stomps on the ground in an area. Hit Pokemon's Speed stat is reduced.
+230
+The user attacks the target with a blob of mud. It reduces the target's Speed.
+The user attacks the target with a blob of mud. It reduces the target's Speed.
+231
+The user throws a bone. The bone loops to hit the target twice, coming and going.
+The user throws a bone. The bone loops to hit the target twice, coming and going.
+232
+The user traps the target inside a harshly raging sandstorm for four to five turns.
+The user traps the target inside a harshly raging sandstorm for four to five turns.
+233
+The user strikes the target with a hard bone two to five times in a row.
+The user strikes the target with a hard bone two to five times in a row.
+234
+The user hurls mud in the target's face to inflict damage and lower its accuracy.
+The user hurls mud in the target's face to inflict damage and lower its accuracy.
+235
+The user opens up a fissure in the ground. The target instantly faints if it hits.
+The user opens up a fissure in the ground. The target instantly faints if it hits.
+236
+The user looses a ground-shaking quake around the user. Its power varies.
+The user looses a ground-shaking quake around the user. Its power varies.
+237
+The user covers itself with mud. It weakens Electric-type moves in battle.
+The user covers itself with mud. It weakens Electric-type moves in battle.
+238
+Sand is hurled in the target's face, reducing its accuracy.
+Sand is hurled in the target's face, reducing its accuracy.
+239
+The user lays spikes at the opponent's feet. They hurt Pokemon that switch in.
+The user lays spikes at the opponent's feet. They hurt Pokemon that switch in.
+240
+On the second turn, the target is hit with electrical ice. It may cause paralysis.
+On the second turn, the target is hit with electrical ice. It may cause paralysis.
+241
+On the second turn, a freezing wind surrounds the target. It may burn the target.
+On the second turn, a freezing wind surrounds the target. It may burn the target.
+242
+A howling blizzard is blasted at the opposing team. It may also freeze them solid.
+A howling blizzard is blasted at the opposing team. It may also freeze them solid.
+243
+The target is struck with an icy-cold beam of energy. It may also freeze the target.
+The target is struck with an icy-cold beam of energy. It may also freeze the target.
+244
+The user attacks by dropping icicles on the target. It may also make the target flinch.
+The user attacks by dropping icicles on the target. It may also make the target flinch.
+245
+The target is punched with an icy fist. It may leave the target frozen.
+The target is punched with an icy fist. It may leave the target frozen.
+246
+The target is hit by a colored ray. This may lower the target's Atk stat.
+The target is hit by a colored ray. This may lower the target's Atk stat.
+247
+A freezing cold air strikes the foe It may lower the target's Spd stat.
+A freezing cold air strikes the foe It may lower the target's Spd stat.
+248
+The user bites with freezing fangs. It may flinch or freeze the target.
+The user bites with freezing fangs. It may flinch or freeze the target.
+249
+This move deals double damage if the user is hurt by the target that turn.
+This move deals double damage if the user is hurt by the target that turn.
+250
+The foe is chilled by a gust of air. It lowers the target's Speed stat.
+The foe is chilled by a gust of air. It lowers the target's Speed stat.
+251
+Cold breath is blown on the target. This attack is always critical.
+Cold breath is blown on the target. This attack is always critical.
+252
+The user hurls chunks of ice at the target. This move always goes first.
+The user hurls chunks of ice at the target. This move always goes first.
+253
+The user attacks with a chilling snow. It may also freeze the targets.
+The user attacks with a chilling snow. It may also freeze the targets.
+254
+The user rolls into the target for 5 turns. It strengthens upon hitting.
+The user rolls into the target for 5 turns. It strengthens upon hitting.
+255
+The user launches icicles at the foe. It strikes 2 to 5 times in a row.
+The user launches icicles at the foe. It strikes 2 to 5 times in a row.
+256
+The foe is hit with a blast of zero degree cold. Causes instant fainting.
+The foe is hit with a blast of zero degree cold. Causes instant fainting.
+257
+A hail storm lasting 5 turns damages all non-Ice type Pokémon.
+A hail storm lasting 5 turns damages all non-Ice type Pokémon.
+258
+A haze eliminates every stat change among all the Pokémon in the battle.
+A haze eliminates every stat change among all the Pokémon in the battle.
+259
+The user is cloaked with a mist that prevents stat-lowering for 5 turns.
+The user is cloaked with a mist that prevents stat-lowering for 5 turns.
+260
+The user explodes to damage those around it. The user faints afterwards.
+The user explodes to damage those around it. The user faints afterwards.
+261
+The user attacks everything around it by exploding. The user faints after.
+The user attacks everything around it by exploding. The user faints after.
+262
+The user attacks the target using full power. The user must rest after.
+The user attacks the target using full power. The user must rest after.
+263
+The target is attacked with a powerful beam. The user must rest after.
+The target is attacked with a powerful beam. The user must rest after.
+264
+This move can be used only after the user has used all its other moves.
+This move can be used only after the user has used all its other moves.
+265
+A reckless, life-risking tackle. It also damages the user.
+A reckless, life-risking tackle. It also damages the user.
+266
+The user charges its head into its target. It also damages the user.
+The user charges its head into its target. It also damages the user.
+267
+The target is attacked by a kick launched with muscle-packed power.
+The target is attacked by a kick launched with muscle-packed power.
+268
+The user attacks for two to three turns. It then becomes confused.
+The user attacks for two to three turns. It then becomes confused.
+269
+A large egg is hurled at the target with maximum force to inflict damage.
+A large egg is hurled at the target with maximum force to inflict damage.
+270
+The user shoots light at the target. Its type varies by plate.
+The user shoots light at the target. Its type varies by plate.
+271
+The user tucks in its head, then rams the target on the next turn.
+The user tucks in its head, then rams the target on the next turn.
+272
+The user lets loose a horribe shout with the power to inflict damage.
+The user lets loose a horribe shout with the power to inflict damage.
+273
+The user attacks the target, smashing into it, May confuse the target.
+The user attacks the target, smashing into it, May confuse the target.
+274
+A reckless charge into the target. It also damages the user a little.
+A reckless charge into the target. It also damages the user a little.
+275
+The user attacks in an uproar for three turns. No one can fall asleep.
+The user attacks in an uproar for three turns. No one can fall asleep.
+276
+The user falls on the target with its full mass. It may cause paralysis.
+The user falls on the target with its full mass. It may cause paralysis.
+277
+The user fires a beam of light at its target. The type on the held Drive.
+The user fires a beam of light at its target. The type on the held Drive.
+278
+The user charges the foe at blinding speed. This attack always goes first.
+The user charges the foe at blinding speed. This attack always goes first.
+279
+The user bites on the foe with its sharp fangs. It may flinch the target.
+The user bites on the foe with its sharp fangs. It may flinch the target.
+280
+The target is slugged by a punch thrown with muscle-packed power.
+The target is slugged by a punch thrown with muscle-packed power.
+281
+A two-turn attack. Wind hits the foe on the second turn. Critical hits land more often.
+A two-turn attack. Wind hits the foe on the second turn. Critical hits land more often.
+282
+The target is slammed with a long tail, vines, etc., to inflict damage.
+The target is slammed with a long tail, vines, etc., to inflict damage.
+283
+The target is slugged at maximum power. It can move heavy boulders.
+The target is slugged at maximum power. It can move heavy boulders.
+284
+The user strikes with a beam attack. May also burn, freeze, or paralyze.
+The user strikes with a beam attack. May also burn, freeze, or paralyze.
+285
+The user slashes the foe with claws. It may lower the target's Defense.
+The user slashes the foe with claws. It may lower the target's Defense.
+286
+The user sings a song, attacking the foe's heart. It may induce sleep.
+The user sings a song, attacking the foe's heart. It may induce sleep.
+287
+The user strikes continually. The foe's stat changes don't affect damage.
+The user strikes continually. The foe's stat changes don't affect damage.
+288
+The foe is hit with rhythmic punches that may also leave it confused.
+The foe is hit with rhythmic punches that may also leave it confused.
+289
+An attack that doubles in power if the user has a major status effect.
+An attack that doubles in power if the user has a major status effect.
+290
+The user sticks out its head and charges. It may make the foe flinch.
+The user sticks out its head and charges. It may make the foe flinch.
+291
+The user avenges an ally. If an ally fainted the prior turn, the damage increases.
+The user avenges an ally. If an ally fainted the prior turn, the damage increases.
+292
+A secret power is used to attack. Effects vary among environment.
+A secret power is used to attack. Effects vary among environment.
+293
+The target is attacked with a slash. Critical hits land more easily.
+The target is attacked with a slash. Critical hits land more easily.
+294
+The target is jabbed with a sharply pointed horn to inflict damage.
+The target is jabbed with a sharply pointed horn to inflict damage.
+295
+The target is stomped with a big foot. It may make the foe flinch.
+The target is stomped with a big foot. It may make the foe flinch.
+296
+The user approaches the target, then steals the target's held item.
+The user approaches the target, then steals the target's held item.
+297
+The user attacks the target with a song. Others can join for more damage.
+The user attacks the target with a song. Others can join for more damage.
+298
+This attack does double damage on a paralyzed target. It cures the target's paralysis.
+This attack does double damage on a paralyzed target. It cures the target's paralysis.
+299
+Star-shaped rays are shot at the opposing team. This attack never misses.
+Star-shaped rays are shot at the opposing team. This attack never misses.
+300
+The target is gripped and squeezed from both sides to inflict damage.
+The target is gripped and squeezed from both sides to inflict damage.
+301
+The target is cut with a scythe or a claw. It can also be used to cut down thin trees.
+The target is cut with a scythe or a claw. It can also be used to cut down thin trees.
+302
+An attack that is used in desperation if the user has no PP. It also hurts the user.
+An attack that is used in desperation if the user has no PP. It also hurts the user.
+303
+A physical attack in which the user charges and slams into the target with its body.
+A physical attack in which the user charges and slams into the target with its body.
+304
+An attack move that varies in power and type depending on the weather.
+An attack move that varies in power and type depending on the weather.
+305
+The user hits the target with an echoing voice. If used every turn, it is more powerful.
+The user hits the target with an echoing voice. If used every turn, it is more powerful.
+306
+This attack hits first and makes targets flinch. It only works on the user's first turn.
+This attack hits first and makes targets flinch. It only works on the user's first turn.
+307
+A restrained attack that leaves the target with at least 1 HP.
+A restrained attack that leaves the target with at least 1 HP.
+308
+Numerous coins are hurled at the target to inflict damage. Money is earned after battle.
+Numerous coins are hurled at the target to inflict damage. Money is earned after battle.
+309
+The target is physically pounded with a long tail or a foreleg, etc.
+The target is physically pounded with a long tail or a foreleg, etc.
+310
+The user slams the target at a tremendous speed. It is sure to strike first.
+The user slams the target at a tremendous speed. It is sure to strike first.
+311
+Hard, pointed, and sharp claws rake the target to inflict damage.
+Hard, pointed, and sharp claws rake the target to inflict damage.
+312
+An attack that can be used only if the user is asleep. It may also make the target flinch.
+An attack that can be used only if the user is asleep. It may also make the target flinch.
+313
+The user slams the target with a tail, vine, or tentacle. The target is hit twice.
+The user slams the target with a tail, vine, or tentacle. The target is hit twice.
+314
+An attack that hits a target using Protect or Detect. It lifts the effects of said moves.
+An attack that hits a target using Protect or Detect. It lifts the effects of said moves.
+315
+The user strikes the target with its tail. It hits the Pokémon two to five times in a row.
+The user strikes the target with its tail. It hits the Pokémon two to five times in a row.
+316
+While the move is in use, the user's rage raises the Attack stat when the user is hit.
+While the move is in use, the user's rage raises the Attack stat when the user is hit.
+317
+A spin attack that can also eliminate such moves as Bind, Wrap, Leech Seed, and Spikes.
+A spin attack that can also eliminate such moves as Bind, Wrap, Leech Seed, and Spikes.
+318
+Sharp spikes are shot at the target in rapid succession. They hit two to five times.
+Sharp spikes are shot at the target in rapid succession. They hit two to five times.
+319
+The target is hit with a flurry of punches that strike two to five times in a row.
+The target is hit with a flurry of punches that strike two to five times in a row.
+320
+The target is raked with sharp claws or scythes for two to five times in quick succession.
+The target is raked with sharp claws or scythes for two to five times in quick succession.
+321
+Round objects are hurled at the target to strike two to five times in a row.
+Round objects are hurled at the target to strike two to five times in a row.
+322
+Things such as long bodies or tentacles are used to bind the foe for four to five turns.
+Things such as long bodies or tentacles are used to bind the foe for four to five turns.
+323
+The target is slapped repeatedly, back and forth, two to five times in a row.
+The target is slapped repeatedly, back and forth, two to five times in a row.
+324
+The target is jabbed repeatedly with a horn or beak two to five times in a row.
+The target is jabbed repeatedly with a horn or beak two to five times in a row.
+325
+A long body or vines are used to wrap and squeeze the target for four to five turns.
+A long body or vines are used to wrap and squeeze the target for four to five turns.
+326
+The target is attacked with creeping tentacles or vines. It can lower the target's Speed.
+The target is attacked with creeping tentacles or vines. It can lower the target's Speed.
+327
+The user endures for two turns, then strikes back to cause double the damage taken.
+The user endures for two turns, then strikes back to cause double the damage taken.
+328
+The target is crushed. The greater the target's HP, the more powerful the attack.
+The target is crushed. The greater the target's HP, the more powerful the attack.
+329
+An attack move that cuts down the target's HP to equal the user's HP.
+An attack move that cuts down the target's HP to equal the user's HP.
+330
+The user flails about to attack. It becomes more powerful the less HP the user has.
+The user flails about to attack. It becomes more powerful the less HP the user has.
+331
+A full-power attack that grows more powerful the less the user likes its Trainer.
+A full-power attack that grows more powerful the less the user likes its Trainer.
+332
+A vicious attack with big pincers. The target will faint instantly if this attack hits.
+A vicious attack with big pincers. The target will faint instantly if this attack hits.
+333
+A unique attack that varies in type depending on the Pokémon using it.
+A unique attack that varies in type depending on the Pokémon using it.
+334
+The user stabs the target with a rotating horn. If it hits, the target faints instantly.
+The user stabs the target with a rotating horn. If it hits, the target faints instantly.
+335
+The user draws power from its held Berry. The Berry determines the type and power.
+The user draws power from its held Berry. The Berry determines the type and power.
+336
+The user attacks by giving the target a gift with a hidden trap. It restores HP sometimes.
+The user attacks by giving the target a gift with a hidden trap. It restores HP sometimes.
+337
+A full-power attack that grows more powerful the more the user likes its Trainer.
+A full-power attack that grows more powerful the more the user likes its Trainer.
+338
+The target is hit with a destructive shock wave that always inflicts 20 HP damage.
+The target is hit with a destructive shock wave that always inflicts 20 HP damage.
+339
+The power stored by Stockpile is released. The more power stored, the greater the damage.
+The power stored by Stockpile is released. The more power stored, the greater the damage.
+340
+The user bites hard on the target with sharp front fangs. It cuts the target's HP to half.
+The user bites hard on the target with sharp front fangs. It cuts the target's HP to half.
+341
+The fewer PP this move has, the greater its attack power.
+The fewer PP this move has, the greater its attack power.
+342
+The user wrings the target. The more HP the target has, the greater this attack's power.
+The user wrings the target. The more HP the target has, the greater this attack's power.
+343
+The user applies pressure to stress points, sharply boosting one of its stats.
+The user applies pressure to stress points, sharply boosting one of its stats.
+344
+The user helps the target and makes it use its move right after the user.
+The user helps the target and makes it use its move right after the user.
+345
+The user randomly uses a move among those known by other Pokémon in the party.
+The user randomly uses a move among those known by other Pokémon in the party.
+346
+If it is the opposite gender of the user, the target becomes infatuated.
+If it is the opposite gender of the user, the target becomes infatuated.
+347
+The user switches places with a party Pokémon in waiting, passing along any stat changes.
+The user switches places with a party Pokémon in waiting, passing along any stat changes.
+348
+The user maximizes its Attack stat in exchange for HP equal to half its max HP.
+The user maximizes its Attack stat in exchange for HP equal to half its max HP.
+349
+The user passes its held item to the target when the target isn't holding an item.
+The user passes its held item to the target when the target isn't holding an item.
+350
+The user blocks the target's way with arms spread wide to prevent escape.
+The user blocks the target's way with arms spread wide to prevent escape.
+351
+The user's type is changed depending on its environment.
+The user's type is changed depending on its environment.
+352
+If it is the opposite gender of the user, the target's Sp. Atk stat is lowered.
+If it is the opposite gender of the user, the target's Sp. Atk stat is lowered.
+353
+The user gazes at the target, making it less wary. The target's Attack is harshly lowered.
+The user gazes at the target, making it less wary. The target's Attack is harshly lowered.
+354
+The user changes its type to become the same type as one of its moves.
+The user changes its type to become the same type as one of its moves.
+355
+The user changes to a resistant type of the attack the opponent used last.
+The user changes to a resistant type of the attack the opponent used last.
+356
+The user mimics the move used immediately before it.
+The user mimics the move used immediately before it.
+357
+The user curls up to conceal weak spots and raise its Defense stat.
+The user curls up to conceal weak spots and raise its Defense stat.
+358
+For four turns, this move prevents the target from using the move it last used.
+For four turns, this move prevents the target from using the move it last used.
+359
+By moving rapidly, the user makes illusory copies of itself to raise its evasiveness.
+By moving rapidly, the user makes illusory copies of itself to raise its evasiveness.
+360
+The user compels the target to keep using only the move it last used for three turns.
+The user compels the target to keep using only the move it last used for three turns.
+361
+The user endures any attack. Its chance of failing is greater if used in succession.
+The user endures any attack. Its chance of failing is greater if used in succession.
+362
+The user dances and compels the target to mimic it, making the target's Ability identical.
+The user dances and compels the target to mimic it, making the target's Ability identical.
+363
+The user's flashing light cuts the target's accuracy. It can be used to illuminate caves.
+The user's flashing light cuts the target's accuracy. It can be used to illuminate caves.
+364
+The user takes a deep breath and focuses so that critical hits land more easily.
+The user takes a deep breath and focuses so that critical hits land more easily.
+365
+The user draws attention to itself, making all targets take aim only at the user.
+The user draws attention to itself, making all targets take aim only at the user.
+366
+Identifies an evasive or Ghost-type target.
+Identifies an evasive or Ghost-type target.
+367
+The user intimidates the target with the pattern on its belly to cause paralysis.
+The user intimidates the target with the pattern on its belly to cause paralysis.
+368
+The user growls, making the opposing team less wary. The foes' Attack stats are lowered.
+The user growls, making the opposing team less wary. The foes' Attack stats are lowered.
+369
+The user's body grows all at once, raising the Atk and Sp. Atk stats.
+The user's body grows all at once, raising the Atk and Sp. Atk stats.
+370
+The user stiffens all the muscles in its body to raise its Defense stat.
+The user stiffens all the muscles in its body to raise its Defense stat.
+371
+The user makes a soothing bell chime to heal the status problems of all party Pokémon.
+The user makes a soothing bell chime to heal the status problems of all party Pokémon.
+372
+The user assists an ally by boosting the power of its attack.
+The user assists an ally by boosting the power of its attack.
+373
+The user howls loudly to raise its spirit, boosting its Attack stat.
+The user howls loudly to raise its spirit, boosting its Attack stat.
+374
+Leers with sharp eyes. The opposing team's Defense stats are reduced.
+Leers with sharp eyes. The opposing team's Defense stats are reduced.
+375
+The user takes sure aim at the target. It ensures the next attack does not miss.
+The user takes sure aim at the target. It ensures the next attack does not miss.
+376
+The user tries to force a kiss on the target. If it suceeds, the target falls asleep.
+The user tries to force a kiss on the target. If it suceeds, the target falls asleep.
+377
+The user chants toward the sky, preventing opposing Pokémon from landing critical hits.
+The user chants toward the sky, preventing opposing Pokémon from landing critical hits.
+378
+The user cuts ahead of the target to use its intended move with greater power.
+The user cuts ahead of the target to use its intended move with greater power.
+379
+The user pins the target with a dark, arresting look. The target becomes unable to flee.
+The user pins the target with a dark, arresting look. The target becomes unable to flee.
+380
+The user waggles a finger and stimulates its brain into randomly using nearly any move.
+The user waggles a finger and stimulates its brain into randomly using nearly any move.
+381
+The user restores its HP by up to half of its maximum. May be used in the field to heal.
+The user restores its HP by up to half of its maximum. May be used in the field to heal.
+382
+The user copies the target's last move and adds it to its move-set until it is switched out.
+The user copies the target's last move and adds it to its move-set until it is switched out.
+383
+The user senses the target's movements with its mind to ensure its next attack hits.
+The user senses the target's movements with its mind to ensure its next attack hits.
+384
+The user compresses its body to look smaller, which sharply raises its evasiveness.
+The user compresses its body to look smaller, which sharply raises its evasiveness.
+385
+The user restores its own HP. The amount of HP regained varies with the weather.
+The user restores its own HP. The amount of HP regained varies with the weather.
+386
+The user restores its own HP. The amount of HP regained varies with the weather.
+The user restores its own HP. The amount of HP regained varies with the weather.
+387
+An attack that makes use of the user's environment.
+An attack that makes use of the user's environment.
+388
+Enables Ghost-types  to be hit by Normal and Fighting-type moves.
+Enables Ghost-types  to be hit by Normal and Fighting-type moves.
+389
+The user adds its HP to the target's HP, then shares the combined HP with the target.
+The user adds its HP to the target's HP, then shares the combined HP with the target.
+390
+Any Pokémon that hears this song faints in three turns, unless it switches out of battle.
+Any Pokémon that hears this song faints in three turns, unless it switches out of battle.
+391
+It lets the user evade a move. Its chance of failing rises if used in succession.
+It lets the user evade a move. Its chance of failing rises if used in succession.
+392
+The user hypnotizes itself into copying any stat change made by the target.
+The user hypnotizes itself into copying any stat change made by the target.
+393
+Restoring its own cells, the user restores its own HP by half of its max HP.
+Restoring its own cells, the user restores its own HP by half of its max HP.
+394
+The user recycles a held item that has been used in battle so it can be used again.
+The user recycles a held item that has been used in battle so it can be used again.
+395
+The user reflects the target's type, making it the same type as the target.
+The user reflects the target's type, making it the same type as the target.
+396
+The user rests to cure itself of a poisoning, burn, or paralysis.
+The user rests to cure itself of a poisoning, burn, or paralysis.
+397
+The target is replaced by another Pokémon in its party. In the wild, the battle ends.
+The target is replaced by another Pokémon in its party. In the wild, the battle ends.
+398
+The user creates a protective field that prevents status problems for five turns.
+The user creates a protective field that prevents status problems for five turns.
+399
+The user frightens the target with a scary face to harshly reduce its Speed stat.
+The user frightens the target with a scary face to harshly reduce its Speed stat.
+400
+An earsplitting screech harshly reduces the target's Defense stat.
+An earsplitting screech harshly reduces the target's Defense stat.
+401
+The user reduces its polygon count to make itself more jagged, raising the Attack stat.
+The user reduces its polygon count to make itself more jagged, raising the Attack stat.
+402
+The user's defensive stats are lowered but its offensive stats are sharply raised.
+The user's defensive stats are lowered but its offensive stats are sharply raised.
+403
+The user's mysterious psychic wave changes the target's Ability to Simple.
+The user's mysterious psychic wave changes the target's Ability to Simple.
+404
+A soothing lullaby is sung in a calming voice that puts the target into a deep slumber.
+A soothing lullaby is sung in a calming voice that puts the target into a deep slumber.
+405
+It enables the user to permanently learn the move last used by the target.
+It enables the user to permanently learn the move last used by the target.
+406
+The user slacks off, restoring its own HP by up to half of its maximum HP.
+The user slacks off, restoring its own HP by up to half of its maximum HP.
+407
+While it is asleep, the user randomly uses one of the moves it knows.
+While it is asleep, the user randomly uses one of the moves it knows.
+408
+The user releases an obscuring cloud of smoke or ink. It reduces the target's accuracy.
+The user releases an obscuring cloud of smoke or ink. It reduces the target's accuracy.
+409
+The user restores its own HP by half of its maximum. May be used in the field to heal.
+The user restores its own HP by half of its maximum. May be used in the field to heal.
+410
+The user just flops and splashes around to no effect at all.
+The user just flops and splashes around to no effect at all.
+411
+The user stores power and raises its Defense and Sp. Def. The move can be used thrice.
+The user stores power and raises its Defense and Sp. Def. The move can be used thrice.
+412
+The user makes a copy of itself using some of its HP. The copy serves as the user's decoy.
+The user makes a copy of itself using some of its HP. The copy serves as the user's decoy.
+413
+The user generates odd sound waves from its body. It may confuse the target.
+The user generates odd sound waves from its body. It may confuse the target.
+414
+The user confuses the target. It also sharply raises the target's Attack stat.
+The user confuses the target. It also sharply raises the target's Attack stat.
+415
+The power stored using Stockpile is absorbed to heal HP. Storing more heals more HP.
+The power stored using Stockpile is absorbed to heal HP. Storing more heals more HP.
+416
+The user kisses the target with a sweet, angelic cuteness that causes confusion.
+The user kisses the target with a sweet, angelic cuteness that causes confusion.
+417
+A sweet scent that lowers the opposing team's evasiveness. It also lures wild Pokémon.
+A sweet scent that lowers the opposing team's evasiveness. It also lures wild Pokémon.
+418
+A frenetic dance to uplift the fighting spirit. It sharply raises the user's Attack stat.
+A frenetic dance to uplift the fighting spirit. It sharply raises the user's Attack stat.
+419
+The user wags its tail cutely, lowering foes' Defense stat.
+The user wags its tail cutely, lowering foes' Defense stat.
+420
+The user performs a wobbly dance that confuses the Pokémon around it.
+The user performs a wobbly dance that confuses the Pokémon around it.
+421
+The user tickles the target into laughing, reducing its Attack and Defense stats.
+The user tickles the target into laughing, reducing its Attack and Defense stats.
+422
+The user transforms into a clone of its target.
+The user transforms into a clone of its target.
+423
+The foe is blown away to be replaced by another Pokémon or flee.
+The foe is blown away to be replaced by another Pokémon or flee.
+424
+One turn after it is used, the target's HP is restored by half of its maximum HP.
+One turn after it is used, the target's HP is restored by half of its maximum HP.
+425
+The user is roused, and its Attack and Sp. Atk stats increase.
+The user is roused, and its Attack and Sp. Atk stats increase.
+426
+The user lets loose a yawn that lulls the target into falling asleep on the next turn.
+The user lets loose a yawn that lulls the target into falling asleep on the next turn.
+427
+The user shoots filthy garbage at the target to attack. It may poison the target.
+The user shoots filthy garbage at the target to attack. It may poison the target.
+428
+It swamps the area near the user with giant sludge waves. It may also poison those hit.
+It swamps the area near the user with giant sludge waves. It may also poison those hit.
+429
+Unsanitary sludge is hurled at the target. It may also poison the target.
+Unsanitary sludge is hurled at the target. It may also poison the target.
+430
+The target is jabbed with a tentacle or arm covered in poison. It may poison the target.
+The target is jabbed with a tentacle or arm covered in poison. It may poison the target.
+431
+A slash with poisonous blades that can leave targets poisoned. Critical hits land easier.
+A slash with poisonous blades that can leave targets poisoned. Critical hits land easier.
+432
+Unsanitary sludge is hurled at the target. It may also poison the target.
+Unsanitary sludge is hurled at the target. It may also poison the target.
+433
+The user drenches the target in a poison. Its power doubles if the target is poisoned.
+The user drenches the target in a poison. Its power doubles if the target is poisoned.
+434
+The user throws a clump of special mud. All status changes are returned to normal.
+The user throws a clump of special mud. All status changes are returned to normal.
+435
+The user bites the target with toxic fangs. It may also leave the target badly poisoned.
+The user bites the target with toxic fangs. It may also leave the target badly poisoned.
+436
+The user attacks with its tail. It may poison the target. Critical hits land easier.
+The user attacks with its tail. It may poison the target. Critical hits land easier.
+437
+The opposing team is attacked with acid and may also lower the targets' Sp.Def stats.
+The opposing team is attacked with acid and may also lower the targets' Sp.Def stats.
+438
+The user spits fluid thats melts the target. It harshly reduces the target's Sp. Def.
+The user spits fluid thats melts the target. It harshly reduces the target's Sp. Def.
+439
+The target is attacked with a discharge of filthy gases. It may also poison the target.
+The target is attacked with a discharge of filthy gases. It may also poison the target.
+440
+The user stabs the target with a poisonous stinger. This may also poison the target.
+The user stabs the target with a poisonous stinger. This may also poison the target.
+441
+The user alters its cell structure to liquefy itself, sharply raising its Defense.
+The user alters its cell structure to liquefy itself, sharply raising its Defense.
+442
+The user coils up and concentrates. This raises its Attack, Defense, and Accuracy.
+The user coils up and concentrates. This raises its Attack, Defense, and Accuracy.
+443
+The user hurls up its stomach acids on the target. This eliminates the target's Ability.
+The user hurls up its stomach acids on the target. This eliminates the target's Ability.
+444
+A cloud of poison gas is sprayed on opposing Pokémon. It may poison those hit.
+A cloud of poison gas is sprayed on opposing Pokémon. It may poison those hit.
+445
+The user scatters a cloud of poisonous dust on the target. It may poison the target.
+The user scatters a cloud of poisonous dust on the target. It may poison the target.
+446
+A move that leaves the target badly poisoned. Its poison damage worsens every turn.
+A move that leaves the target badly poisoned. Its poison damage worsens every turn.
+447
+The user lays a trap of poison spikes. They poison opponents that switch into battle.
+The user lays a trap of poison spikes. They poison opponents that switch into battle.
+448
+The user hits the target at full power. The attack harshly reduces the user's Sp. Atk stat.
+The user hits the target at full power. The attack harshly reduces the user's Sp. Atk stat.
+449
+The user eats the dreams of a sleeping target. It absorbs half the damage caused.
+The user eats the dreams of a sleeping target. It absorbs half the damage caused.
+450
+Two turns after this move is used, a hunk of psychic energy attacks the target.
+Two turns after this move is used, a hunk of psychic energy attacks the target.
+451
+The user creates an odd psychic wave to hit the target. This attack does physical damage.
+The user creates an odd psychic wave to hit the target. This attack does physical damage.
+452
+The target is hit by a strong telekinetic force. It may reduce the target's Sp. Def stat.
+The target is hit by a strong telekinetic force. It may reduce the target's Sp. Def stat.
+453
+The user attacks with an odd, unseeable power. It may also make the target flinch.
+The user attacks with an odd, unseeable power. It may also make the target flinch.
+454
+The user creates an odd psychic wave to hit the target. This attack does physical damage.
+The user creates an odd psychic wave to hit the target. This attack does physical damage.
+455
+The user focuses power to its head and hits the target. It may make the target flinch.
+The user focuses power to its head and hits the target. It may make the target flinch.
+456
+The user lets loose a damaging burst of light. It may reduce the target's Sp. Def stat.
+The user lets loose a damaging burst of light. It may reduce the target's Sp. Def stat.
+457
+A mistlike flurry of down envelops and damages the target. It may lower the target's Sp. Atk.
+A mistlike flurry of down envelops and damages the target. It may lower the target's Sp. Atk.
+458
+The user tears at the target with blades formed by psychic power. Critical hits land easier.
+The user tears at the target with blades formed by psychic power. Critical hits land easier.
+459
+Using a shock wave, the user inflicts damage on Pokémon of the same type.
+Using a shock wave, the user inflicts damage on Pokémon of the same type.
+460
+The target is attacked with a peculiar ray. It may also cause confusion.
+The target is attacked with a peculiar ray. It may also cause confusion.
+461
+The user unleashes a vicious blow after its cute act. It may make the target flinch.
+The user unleashes a vicious blow after its cute act. It may make the target flinch.
+462
+The target is hit by a weak telekinetic force. It may also leave the target confused.
+The target is hit by a weak telekinetic force. It may also leave the target confused.
+463
+A retaliation move that counters any special attack, inflicting double the damage.
+A retaliation move that counters any special attack, inflicting double the damage.
+464
+The target is attacked with an odd psychic wave. The attack varies in intensity.
+The target is attacked with an odd psychic wave. The attack varies in intensity.
+465
+The user attacks the target. The more the user's stats are raised, the greater the damage.
+The user attacks the target. The more the user's stats are raised, the greater the damage.
+466
+The user lightens its body to move faster. It sharply boosts the Speed stat.
+The user lightens its body to move faster. It sharply boosts the Speed stat.
+467
+The user teleports and switches its place with one of its allies.
+The user teleports and switches its place with one of its allies.
+468
+The user temporarily empties its mind. It sharply raises the user's Sp. Def stat.
+The user temporarily empties its mind. It sharply raises the user's Sp. Def stat.
+469
+The user throws up a sturdy wall that sharply raises its Defense stat.
+The user throws up a sturdy wall that sharply raises its Defense stat.
+470
+The user quietly focuses its mind and calms its spirit to raise its Sp. Atk and Sp. Def stats.
+The user quietly focuses its mind and calms its spirit to raise its Sp. Atk and Sp. Def stats.
+471
+The user absorbs a mystical power from space to raise its Defense and Sp. Def stats.
+The user absorbs a mystical power from space to raise its Defense and Sp. Def stats.
+472
+Gravity is intensified for five turns, making moves involving flying unusable and negating Levitation.
+Gravity is intensified for five turns, making moves involving flying unusable and negating Levitation.
+473
+The user employs its psychic power to average its Defense and Sp. Def stats with those of its target's.
+The user employs its psychic power to average its Defense and Sp. Def stats with those of its target's.
+474
+The user employs its psychic power to switch changes to its Defense and Sp. Def with the target.
+The user employs its psychic power to switch changes to its Defense and Sp. Def with the target.
+475
+For five turns, the user prevents the opposing team from using anything that recovers HP.
+For five turns, the user prevents the opposing team from using anything that recovers HP.
+476
+The user emits a healing pulse which restores the target's HP by up to half of its max HP.
+The user emits a healing pulse which restores the target's HP by up to half of its max HP.
+477
+The user faints. In return, the Pokémon taking its place will have its HP restored and status cured.
+The user faints. In return, the Pokémon taking its place will have its HP restored and status cured.
+478
+The user employs its psychic power to switch stat changes with the target.
+The user employs its psychic power to switch stat changes with the target.
+479
+The user employs hypnotic suggestion to make the target fall into a deep sleep.
+The user employs hypnotic suggestion to make the target fall into a deep sleep.
+480
+The user prevents the opponent from using moves known by the user.
+The user prevents the opponent from using moves known by the user.
+481
+The user distracts the target by bending a spoon. It lowers the target's accuracy.
+The user distracts the target by bending a spoon. It lowers the target's accuracy.
+482
+A wondrous wall of light is put up to suppress damage from special attacks for five turns.
+A wondrous wall of light is put up to suppress damage from special attacks for five turns.
+483
+The user faints. In return, the Pokémon taking its place will have its status and HP fully restored.
+The user faints. In return, the Pokémon taking its place will have its status and HP fully restored.
+484
+A barrier reflects back to the target moves like Leech Seed and moves that damage status.
+A barrier reflects back to the target moves like Leech Seed and moves that damage status.
+485
+The user creates a bizarre area in which Pokémon's held items lose their effects for five turns.
+The user creates a bizarre area in which Pokémon's held items lose their effects for five turns.
+486
+The user meditates to awaken the power deep within its body and raise its Attack stat.
+The user meditates to awaken the power deep within its body and raise its Attack stat.
+487
+Enables a Dark-type target to be hit by Psychic-type attacks. Ignores evasion.
+Enables a Dark-type target to be hit by Psychic-type attacks. Ignores evasion.
+488
+The user employs its psychic power to average its Attack and Sp. Atk stats with those of the target's.
+The user employs its psychic power to average its Attack and Sp. Atk stats with those of the target's.
+489
+The user employs its psychic power to switch changes to its Attack and Sp. Atk with the target.
+The user employs its psychic power to switch changes to its Attack and Sp. Atk with the target.
+490
+The user employs its psychic power to switch its Attack with its Defense stat.
+The user employs its psychic power to switch its Attack with its Defense stat.
+491
+Using its psychic power of suggestion, the user transfers its status problems to the target.
+Using its psychic power of suggestion, the user transfers its status problems to the target.
+492
+A wondrous wall of light is put up to suppress damage from physical attacks for five turns.
+A wondrous wall of light is put up to suppress damage from physical attacks for five turns.
+493
+The user goes to sleep for two turns. It fully restores the user's HP and heals any status problem.
+The user goes to sleep for two turns. It fully restores the user's HP and heals any status problem.
+494
+The user mimics the target completely, copying the target's natural Ability.
+The user mimics the target completely, copying the target's natural Ability.
+495
+The user employs its psychic power to exchange Abilities with the target.
+The user employs its psychic power to exchange Abilities with the target.
+496
+The user makes the target float with its psychic power. The target is easier to hit for three turns.
+The user makes the target float with its psychic power. The target is easier to hit for three turns.
+497
+Use it to flee from any wild Pokémon. It can also warp to the last Pokémon Center visited.
+Use it to flee from any wild Pokémon. It can also warp to the last Pokémon Center visited.
+498
+The user catches the target off guard and swaps its held item with its own.
+The user catches the target off guard and swaps its held item with its own.
+499
+The user creates a bizarre area in which slower Pokémon get to move first for five turns.
+The user creates a bizarre area in which slower Pokémon get to move first for five turns.
+500
+For five turns, Pokémon's Def and Sp. Def stats are swapped.
+For five turns, Pokémon's Def and Sp. Def stats are swapped.
+501
+The user attacks the target with a full-power headbutt. The user takes terrible damage.
+The user attacks the target with a full-power headbutt. The user takes terrible damage.
+502
+The user launches a huge boulder at the target to attack. It must rest on the next turn, however.
+The user launches a huge boulder at the target to attack. It must rest on the next turn, however.
+503
+The user stabs the foe with sharpened stones from below. It has a high critical-hit ratio.
+The user stabs the foe with sharpened stones from below. It has a high critical-hit ratio.
+504
+Boulders are hurled at the opposing team. The targets may flinch.
+Boulders are hurled at the opposing team. The targets may flinch.
+505
+The user attacks with a ray of light that sparkles as if it were made of gemstones.
+The user attacks with a ray of light that sparkles as if it were made of gemstones.
+506
+The user attacks with a prehistoric power. It may also raise all the user's stats at once.
+The user attacks with a prehistoric power. It may also raise all the user's stats at once.
+507
+The user picks up and throws a small rock at the target to attack.
+The user picks up and throws a small rock at the target to attack.
+508
+Boulders are hurled at the target. It also lowers the target's Speed by preventing its movement.
+Boulders are hurled at the target. It also lowers the target's Speed by preventing its movement.
+509
+The user throws a stone or projectile at the opponent. Flying Pokémons will fall to the ground.
+The user throws a stone or projectile at the opponent. Flying Pokémons will fall to the ground.
+510
+The user continually rolls into the target over five turns. It becomes stronger each time it hits.
+The user continually rolls into the target over five turns. It becomes stronger each time it hits.
+511
+The user hurls hard rocks at the target. Two to five rocks are launched in quick succession.
+The user hurls hard rocks at the target. Two to five rocks are launched in quick succession.
+512
+The user polishes its body to reduce drag. It can sharply raise the Speed stat.
+The user polishes its body to reduce drag. It can sharply raise the Speed stat.
+513
+A sandstorm is summoned to hurt all combatants except the Rock, Ground, and Steel types.
+A sandstorm is summoned to hurt all combatants except the Rock, Ground, and Steel types.
+514
+A trap of levitating stones is layed around the opponent. It hurts pokémons on the switch.
+A trap of levitating stones is layed around the opponent. It hurts pokémons on the switch.
+515
+The user and its allies are protected from wide-ranging attacks for one turn.
+The user and its allies are protected from wide-ranging attacks for one turn.
+516
+Two turns after this move is used, the user blasts the target with a concentrated bundle of light.
+Two turns after this move is used, the user blasts the target with a concentrated bundle of light.
+517
+The target is slammed with a steel-hard tail. It may also lower the target's Defense stat.
+The target is slammed with a steel-hard tail. It may also lower the target's Defense stat.
+518
+The target is hit with a hard punch fired like a meteor. It may also raise the user's Attack.
+The target is hit with a hard punch fired like a meteor. It may also raise the user's Attack.
+519
+The user gathers all its light energy and releases it at once. It may also lower the target's Sp. Def stat.
+The user gathers all its light energy and releases it at once. It may also lower the target's Sp. Def stat.
+520
+The foe slams the target with its steel-hard head. It may also make the target flinch.
+The foe slams the target with its steel-hard head. It may also make the target flinch.
+521
+The target is hit with wings of steel. It may also raise the user's Defense stat.
+The target is hit with wings of steel. It may also raise the user's Defense stat.
+522
+The user looses a flash of energy at the target. It might lower the target's accuracy.
+The user looses a flash of energy at the target. It might lower the target's accuracy.
+523
+The user launches steel bombs that stick to the target. This attack will not miss.
+The user launches steel bombs that stick to the target. This attack will not miss.
+524
+The user attacks by throwing two steel gears at its target.
+The user attacks by throwing two steel gears at its target.
+525
+The target is raked with steel claws. It may also raise the user's Attack stat.
+The target is raked with steel claws. It may also raise the user's Attack stat.
+526
+The user strikes the target with tough punches as fast as bullets. This move always goes first.
+The user strikes the target with tough punches as fast as bullets. This move always goes first.
+527
+The user tackles the target with a high-speed spin. The slower the user, the greater the damage.
+The user tackles the target with a high-speed spin. The slower the user, the greater the damage.
+528
+The user slams into the target with its heavy body. Damage varies with the user's weight.
+The user slams into the target with its heavy body. Damage varies with the user's weight.
+529
+The user retaliates with much greater power against the target that last inflicted damage on it.
+The user retaliates with much greater power against the target that last inflicted damage on it.
+530
+The user sheds part of its body to make itself lighter and sharply raise its Speed stat.
+The user sheds part of its body to make itself lighter and sharply raise its Speed stat.
+531
+The user hardens its body's surface like iron, sharply raising its Defense stat.
+The user hardens its body's surface like iron, sharply raising its Defense stat.
+532
+A horrible sound like scraping metal harshly reduces the target's Sp. Def stat.
+A horrible sound like scraping metal harshly reduces the target's Sp. Def stat.
+533
+The user rotates its gears, raising its Attack and sharply raising its Speed.
+The user rotates its gears, raising its Attack and sharply raising its Speed.
+534
+The target is hit with a watery blast. The user must rest on the next turn, however.
+The target is hit with a watery blast. The user must rest on the next turn, however.
+535
+The user spouts water to damage the opposing team. Damage varies with the user's HP.
+The user spouts water to damage the opposing team. Damage varies with the user's HP.
+536
+The target is blasted by a huge volume of water launched under great pressure.
+The target is blasted by a huge volume of water launched under great pressure.
+537
+The user attacks by shooting muddy water at the opposing team. It may also lower the target's accuracy.
+The user attacks by shooting muddy water at the opposing team. It may also lower the target's accuracy.
+538
+It swamps the area around the user with a giant wave. It can also be used for crossing water.
+It swamps the area around the user with a giant wave. It can also be used for crossing water.
+539
+The user attacks by swinging its tail as if it were a vicious wave in a raging storm.
+The user attacks by swinging its tail as if it were a vicious wave in a raging storm.
+540
+The target is hammered with a large pincer. Critical hits land more easily.
+The target is hammered with a large pincer. Critical hits land more easily.
+541
+Dives on the first turn and attacks on the second. It can be used to dive deep in the ocean.
+Dives on the first turn and attacks on the second. It can be used to dive deep in the ocean.
+542
+The user shoots boiling hot water at its target. It may also leave the target with a burn.
+The user shoots boiling hot water at its target. It may also leave the target with a burn.
+543
+The user charges at the target and may make it flinch. It can also be used to climb a waterfall.
+The user charges at the target and may make it flinch. It can also be used to climb a waterfall.
+544
+The user cuts its target with sharp shells. This might lower the target's Def. stat.
+The user cuts its target with sharp shells. This might lower the target's Def. stat.
+545
+If the target's HP is down to about half, this attack will hit with double the power.
+If the target's HP is down to about half, this attack will hit with double the power.
+546
+A spray of bubbles is launched at the target. It may also lower its Speed stat.
+A spray of bubbles is launched at the target. It may also lower its Speed stat.
+547
+The user attacks by spraying ink in the target. It might lower the target's accuracy.
+The user attacks by spraying ink in the target. It might lower the target's accuracy.
+548
+The user attacks the target with a pulsing blast of water. It may also confuse the target.
+The user attacks the target with a pulsing blast of water. It may also confuse the target.
+549
+A column of water strikes the target. It can be combined with its fire equivalent.
+A column of water strikes the target. It can be combined with its fire equivalent.
+550
+The user lunges at the target at a speed that makes it almost invisible. It is sure to strike first.
+The user lunges at the target at a speed that makes it almost invisible. It is sure to strike first.
+551
+The target is blasted with a forceful shot of water.
+The target is blasted with a forceful shot of water.
+552
+The target is clamped and squeezed by the user's very thick and sturdy shell for four to five turns.
+The target is clamped and squeezed by the user's very thick and sturdy shell for four to five turns.
+553
+Traps foes in a violent swirling whirlpool for four to five turns.
+Traps foes in a violent swirling whirlpool for four to five turns.
+554
+A spray of countless bubbles is jetted at the opposing team. It may also lower the targets' Speed stats.
+A spray of countless bubbles is jetted at the opposing team. It may also lower the targets' Speed stats.
+555
+The user envelops itself in a veil made of water. It regains some HP on every turn.
+The user envelops itself in a veil made of water. It regains some HP on every turn.
+556
+The user summons a heavy rain that falls for five turns, powering up Water-type moves.
+The user summons a heavy rain that falls for five turns, powering up Water-type moves.
+557
+The user shoots a torrent of water at the target and changes the target's type to Water.
+The user shoots a torrent of water at the target and changes the target's type to Water.
+558
+The user soaks itself with water. The move weakens Fire-type moves while the user is in the battle.
+The user soaks itself with water. The move weakens Fire-type moves while the user is in the battle.
+559
+The user withdraws its body into its hard shell, raising its Defense stat.
+The user withdraws its body into its hard shell, raising its Defense stat.
+560
+The user raises the Sp. Def stat of ally Pokémon with a mysterious aroma.
+The user raises the Sp. Def stat of ally Pokémon with a mysterious aroma.
+561
+Using its baby-doll eyes, the user lowers the opponent Atk stat. It always goes first.
+Using its baby-doll eyes, the user lowers the opponent Atk stat. It always goes first.
+562
+The user lets out a damaging belch on the target. The user must eat a Berry to use this move.
+The user lets out a damaging belch on the target. The user must eat a Berry to use this move.
+563
+The user attacks everything around it with the power of a terrible, explosive sound.
+The user attacks everything around it with the power of a terrible, explosive sound.
+564
+The user tells the target a secret, and lowers its Sp. Atk stat.
+The user tells the target a secret, and lowers its Sp. Atk stat.
+565
+The user protects itself and its allies from status moves with a mysterious power.
+The user protects itself and its allies from status moves with a mysterious power.
+566
+The user damages opposing Pokémon by emitting a powerful flash.
+The user damages opposing Pokémon by emitting a powerful flash.
+567
+Letting out a charming cry, the user does emotional damage to opposing Pokémon. It never misses.
+Letting out a charming cry, the user does emotional damage to opposing Pokémon. It never misses.
+568
+The user steals the target's energy with a kiss. Over half of the damage goes to the user's HP.
+The user steals the target's energy with a kiss. Over half of the damage goes to the user's HP.
+569
+The user attacks with electrically charged fists. Normal-type moves become Electric-type.
+The user attacks with electrically charged fists. Normal-type moves become Electric-type.
+570
+The user's body generates an eerie impulse. This harshly lowers the target's Sp. Atk stat.
+The user's body generates an eerie impulse. This harshly lowers the target's Sp. Atk stat.
+571
+The user electrifies the ground for five turns. Grounded Pokémon can't fall asleep.
+The user electrifies the ground for five turns. Grounded Pokémon can't fall asleep.
+572
+If the target is electrified before it uses a move during that turn, the target's move becomes Electric type.
+If the target is electrified before it uses a move during that turn, the target's move becomes Electric type.
+573
+By locking down the battlefield, the user keeps all Pokémon from fleeing during the next turn.
+By locking down the battlefield, the user keeps all Pokémon from fleeing during the next turn.
+574
+The user stirs up a fairy wind and strikes the target with it.
+The user stirs up a fairy wind and strikes the target with it.
+575
+When the user knocks out a target with this move, the user's Attack stat rises sharply.
+When the user knocks out a target with this move, the user's Attack stat rises sharply.
+576
+The user raises the Defense stat of all Grass-type Pokémon in battle with a mysterious power.
+The user raises the Defense stat of all Grass-type Pokémon in battle with a mysterious power.
+577
+The user dives down onto the target from the sky. This move is Fighting and Flying type simultaneously.
+The user dives down onto the target from the sky. This move is Fighting and Flying type simultaneously.
+578
+The user puts a forest curse on the target. Afflicted targets are now Grass type as well.
+The user puts a forest curse on the target. Afflicted targets are now Grass type as well.
+579
+The user rapidly cools the target, which might leave the target frozen. Its SE on Water types.
+The user rapidly cools the target, which might leave the target frozen. Its SE on Water types.
+580
+The user absorbs energy and sharply raises its Sp. Atk, Sp. Def, and Speed stats on the next turn.
+The user absorbs energy and sharply raises its Sp. Atk, Sp. Def, and Speed stats on the next turn.
+581
+The user turns the ground to grass for five turns. Grounded pokémon restore HP every turn.
+The user turns the ground to grass for five turns. Grounded pokémon restore HP every turn.
+582
+The target is infested for four to five turns. It can't flee during this time.
+The target is infested for four to five turns. It can't flee during this time.
+583
+The user disperses electrically charged particles, which changes Normal-type moves to Electric-type moves.
+The user disperses electrically charged particles, which changes Normal-type moves to Electric-type moves.
+584
+The user takes a defensive stance. It harshly lowers the Atk. after contact moves.
+The user takes a defensive stance. It harshly lowers the Atk. after contact moves.
+585
+The user gathers the energy of the land and focuses that power on opposing Pokémon to damage them.
+The user gathers the energy of the land and focuses that power on opposing Pokémon to damage them.
+586
+The user manipulates magnetic fields. This raises the Def and Sp. Def stats of allies with Plus or Minus.
+The user manipulates magnetic fields. This raises the Def and Sp. Def stats of allies with Plus or Minus.
+587
+Using a pulled-up mat as a shield, the user protects itself and its allies from damaging moves. 
+Using a pulled-up mat as a shield, the user protects itself and its allies from damaging moves. 
+588
+The user covers the ground with mist for five turns. Grounded pokémon are protected from status conditions. 
+The user covers the ground with mist for five turns. Grounded pokémon are protected from status conditions. 
+589
+The user attacks with moon power. It might lower the target's Sp. Atk. 
+The user attacks with moon power. It might lower the target's Sp. Atk. 
+590
+The user attacks by breathing a special, hot fire. It lowers the target's Sp. Atk. 
+The user attacks by breathing a special, hot fire. It lowers the target's Sp. Atk. 
+591
+Letting out a noble roar, the user intimidates the target and lowers its Atk. and Sp. Atk. 
+Letting out a noble roar, the user intimidates the target and lowers its Atk. and Sp. Atk. 
+592
+The user attacks by nuzzling its electrified cheeks. It paralyzes the target.
+The user attacks by nuzzling its electrified cheeks. It paralyzes the target.
+593
+The user absorbs its target's HP. The HP is restored by over half of the damage.
+The user absorbs its target's HP. The HP is restored by over half of the damage.
+594
+The user attacks everything around it. HP is restored by half of the damage.
+The user attacks everything around it. HP is restored by half of the damage.
+595
+With a parting threat, the user lowers the target's Atk and Sp. Atk. Then it switches out.
+With a parting threat, the user lowers the target's Atk and Sp. Atk. Then it switches out.
+596
+The user stirs up a violent petal blizzard and attacks everything around it.
+The user stirs up a violent petal blizzard and attacks everything around it.
+597
+The user vanishes, then strikes the target on the next turn. It always hits.
+The user vanishes, then strikes the target on the next turn. It always hits.
+598
+The user and the target become friends. This lowers the target's Atk.
+The user and the target become friends. This lowers the target's Atk.
+599
+The user plays rough and attacks. This may also lower the target's Attack stat.
+The user plays rough and attacks. This may also lower the target's Attack stat.
+600
+The user covers the target in a powder that explodes if it uses a Fire-type move.
+The user covers the target in a powder that explodes if it uses a Fire-type move.
+601
+Striking opponents makes the user's fists harder. Hitting a target raises the Atk.
+Striking opponents makes the user's fists harder. Hitting a target raises the Atk.
+602
+The user changes the soil, raising the Atk and Sp. Atk of Grass-type Pokémon.
+The user changes the soil, raising the Atk and Sp. Atk of Grass-type Pokémon.
+603
+It protects the user from attacks, while damaging any attacker who makes direct contact.
+It protects the user from attacks, while damaging any attacker who makes direct contact.
+604
+The user weaves a sticky net around the opposing team, which lowers their Speed upon switching.
+The user weaves a sticky net around the opposing team, which lowers their Speed upon switching.
+605
+All stat changes affecting the target turn topsy-turvy and become the opposite of what they were.
+All stat changes affecting the target turn topsy-turvy and become the opposite of what they were.
+606
+The user adds Ghost type to the target's type.
+The user adds Ghost type to the target's type.
+607
+Opposing Pokémon are drenched in an odd liquid. It lowers the Atk, Sp. Atk and Speed of a poisoned target.
+Opposing Pokémon are drenched in an odd liquid. It lowers the Atk, Sp. Atk and Speed of a poisoned target.
+608
+The target is hit with throwing stars two to five times. It always goes first.
+The target is hit with throwing stars two to five times. It always goes first.
+609
+A unique attack that varies in type depending on the Pokémon using it.
+A unique attack that varies in type depending on the Pokémon using it.
+610
+A unique attack that varies in type depending on the Pokémon using it.
+A unique attack that varies in type depending on the Pokémon using it.
+611
+A unique attack that varies in type depending on the Pokémon using it.
+A unique attack that varies in type depending on the Pokémon using it.
+612
+A unique attack that varies in type depending on the Pokémon using it.
+A unique attack that varies in type depending on the Pokémon using it.
+613
+A unique attack that varies in type depending on the Pokémon using it.
+A unique attack that varies in type depending on the Pokémon using it.
+614
+A unique attack that varies in type depending on the Pokémon using it.
+A unique attack that varies in type depending on the Pokémon using it.
+615
+A unique attack that varies in type depending on the Pokémon using it.
+A unique attack that varies in type depending on the Pokémon using it.
+616
+A unique attack that varies in type depending on the Pokémon using it.
+A unique attack that varies in type depending on the Pokémon using it.
+617
+A unique attack that varies in type depending on the Pokémon using it.
+A unique attack that varies in type depending on the Pokémon using it.
+618
+A unique attack that varies in type depending on the Pokémon using it.
+A unique attack that varies in type depending on the Pokémon using it.
+619
+A unique attack that varies in type depending on the Pokémon using it.
+A unique attack that varies in type depending on the Pokémon using it.
+620
+A unique attack that varies in type depending on the Pokémon using it.
+A unique attack that varies in type depending on the Pokémon using it.
+621
+A unique attack that varies in type depending on the Pokémon using it.
+A unique attack that varies in type depending on the Pokémon using it.
+622
+A unique attack that varies in type depending on the Pokémon using it.
+A unique attack that varies in type depending on the Pokémon using it.
+623
+A unique attack that varies in type depending on the Pokémon using it.
+A unique attack that varies in type depending on the Pokémon using it.
+624
+A unique attack that varies in type depending on the Pokémon using it.
+A unique attack that varies in type depending on the Pokémon using it.
+625
+A unique attack that varies in type depending on the Pokémon using it.
+A unique attack that varies in type depending on the Pokémon using it.
+626
+A unique attack that varies in type depending on the Pokémon using it.
+A unique attack that varies in type depending on the Pokémon using it.
+627
+The user attacks opponents with countless beams of deep blue light.
+The user attacks opponents with countless beams of deep blue light.
+628
+The user attacks opponents by manifesting fearsome blades of stone.
+The user attacks opponents by manifesting fearsome blades of stone.
+629
+The user soars up, then quickly drops down onto the opponent, lowering its defenses.
+The user soars up, then quickly drops down onto the opponent, lowering its defenses.
+630
+This move hits opposing Pokémon that are in the air, knocking them to the ground.
+This move hits opposing Pokémon that are in the air, knocking them to the ground.
+631
+The user attacks with a wave that crawls along the ground. Those hit can't flee from battle.
+The user attacks with a wave that crawls along the ground. Those hit can't flee from battle.
+632
+The user whips up a storm of diamonds. This may also sharply raise the user's Defense stat.
+The user whips up a storm of diamonds. This may also sharply raise the user's Defense stat.
+633
+Using a hyperspace hole, the user appears and strikes, hitting a target using Protect or Detect.
+Using a hyperspace hole, the user appears and strikes, hitting a target using Protect or Detect.
+634
+The user immerses the target in superheated steam. This may also leave the target with a burn.
+The user immerses the target in superheated steam. This may also leave the target with a burn.
+635
+Using its many arms, user unleashes a barrages of attack, hitting a target using Protect or Detect.
+Using its many arms, user unleashes a barrages of attack, hitting a target using Protect or Detect.
+638
+The user smashes into the target at high speed. This move always goes first.
+The user smashes into the target at high speed. This move always goes first.
+639
+Entangles the target with its anchor chain while attacking. The target becomes unable to flee.
+Entangles the target with its anchor chain while attacking. The target becomes unable to flee.
+640
+Reduces damage from physical and special moves for five turns. Can be used only in a hailstorm.
+Reduces damage from physical and special moves for five turns. Can be used only in a hailstorm.
+641
+It protects the user from attacks, while poisoning any attacker who makes direct contact.
+It protects the user from attacks, while poisoning any attacker who makes direct contact.
+642
+The user heats its beak before attacking, burning any attacker who makes direct contact.
+The user heats its beak before attacking, burning any attacker who makes direct contact.
+643
+The user swings its body around violently to inflict damage on everything in its vicinity.
+The user swings its body around violently to inflict damage on everything in its vicinity.
+644
+To inflict massive damage, the user burns itself out, losing its Fire type.
+To inflict massive damage, the user burns itself out, losing its Fire type.
+645
+The user rubs the scales on its entire body and makes a huge noise, lowering its defense.
+The user rubs the scales on its entire body and makes a huge noise, lowering its defense.
+646
+If the targets have already moved, this move eliminates the effect of their Ability.
+If the targets have already moved, this move eliminates the effect of their Ability.
+647
+The user swings both arms and hits the target. The target's stat changes don't affect the damage.
+The user swings both arms and hits the target. The target's stat changes don't affect the damage.
+648
+The user uses its body like a hammer to attack the target and inflict damage.
+The user uses its body like a hammer to attack the target and inflict damage.
+649
+The user strikes the target with a burning lash. This also lowers the target's Defense stat.
+The user strikes the target with a burning lash. This also lowers the target's Defense stat.
+650
+Although this move has great power, it only works the first turn the user is in battle.
+Although this move has great power, it only works the first turn the user is in battle.
+651
+The user unleashes a strong beam. The attack's recoil harshly lowers the user's Sp. Atk stat.
+The user unleashes a strong beam. The attack's recoil harshly lowers the user's Sp. Atk stat.
+652
+The user restores the target's HP by up to half of its max HP. It restores more HP when the terrain is grassy.
+The user restores the target's HP by up to half of its max HP. It restores more HP when the terrain is grassy.
+653
+The user engages its gears to raise the Attack and Sp. Atk stats of ally Pokémon with the Plus or Minus Ability.
+The user engages its gears to raise the Attack and Sp. Atk stats of ally Pokémon with the Plus or Minus Ability.
+654
+The user fiercely attacks the target using its entire body.
+The user fiercely attacks the target using its entire body.
+655
+The user swings and hits with its strong, heavy fist. It lowers the user's Speed, however.
+The user swings and hits with its strong, heavy fist. It lowers the user's Speed, however.
+656
+The user instructs the target to use the target's last move again.
+The user instructs the target to use the target's last move again.
+657
+The user concentrates intensely. The attack on the next turn always results in a critical hit.
+The user concentrates intensely. The attack on the next turn always results in a critical hit.
+658
+The user attacks by pelting the target with leaves.
+The user attacks by pelting the target with leaves.
+659
+Slams into the target using a full-force blast of water. This may also lower the target's Defense.
+Slams into the target using a full-force blast of water. This may also lower the target's Defense.
+660
+The user makes a full force lunge at the target. This also lowers the target's Attack stat.
+The user makes a full force lunge at the target. This also lowers the target's Attack stat.
+661
+The user emits a sinister ray to attack the target, ignoring its ability.
+The user emits a sinister ray to attack the target, ignoring its ability.
+662
+The user hits the target with the force of nature. It halves the target's HP.
+The user hits the target with the force of nature. It halves the target's HP.
+663
+Uses a pollen puff that explodes when given to enemies, but heals allies.
+Uses a pollen puff that explodes when given to enemies, but heals allies.
+664
+The user boasts its strength and attacks, getting more powerful the more their stats are raised.
+The user boasts its strength and attacks, getting more powerful the more their stats are raised.
+665
+Shoots powerful lasers using the power of a prism. The user can't move on the next turn.
+Shoots powerful lasers using the power of a prism. The user can't move on the next turn.
+666
+The user bites with its psychic capabilities. This can also destroy Light Screen and Reflect.
+The user bites with its psychic capabilities. This can also destroy Light Screen and Reflect.
+667
+This protects Pokémon on the ground from priority moves and powers up Psychic-type moves for five turns.
+This protects Pokémon on the ground from priority moves and powers up Psychic-type moves for five turns.
+668
+The user heals the target's status condition, restoring their own HP if succesful.
+The user heals the target's status condition, restoring their own HP if succesful.
+669
+The user attacks the target by dancing very hard. The user's type determines the type of this move.
+The user attacks the target by dancing very hard. The user's type determines the type of this move.
+670
+Beats the target with a bone that contains a spirit. This may also lower the target's Defense stat.
+Beats the target with a bone that contains a spirit. This may also lower the target's Defense stat.
+671
+The user sets a shell trap, which will explode if hit by a physical move.
+The user sets a shell trap, which will explode if hit by a physical move.
+672
+The user regains up to half of its max HP. It restores more HP in a sandstorm.
+The user regains up to half of its max HP. It restores more HP in a sandstorm.
+673
+The user stabs the target with a sharp horn. This attack never misses.
+The user stabs the target with a sharp horn. This attack never misses.
+674
+A two-turn attack. The user gathers light into a blade, attacking on the next turn.
+A two-turn attack. The user gathers light into a blade, attacking on the next turn.
+675
+The user bursts into song, emitting many bubbles which can heal burns.
+The user bursts into song, emitting many bubbles which can heal burns.
+676
+The user hides in the target's shadow, steals the target's stat boosts, and then attacks.
+The user hides in the target's shadow, steals the target's stat boosts, and then attacks.
+677
+The user exchanges Speed stats with the target.
+The user exchanges Speed stats with the target.
+678
+The user attacks while stitching the target's shadow to the ground, preventing escape.
+The user attacks while stitching the target's shadow to the ground, preventing escape.
+679
+The user shines a spotlight on the target so that only they will be attacked this turn. 
+The user shines a spotlight on the target so that only they will be attacked this turn. 
+680
+Driven by frustration, the user attacks, doubling in power if their previous move failed.
+Driven by frustration, the user attacks, doubling in power if their previous move failed.
+681
+Restores the user's HP by the same amount as the target's Attack stat and lowers it.
+Restores the user's HP by the same amount as the target's Attack stat and lowers it.
+682
+The user slams into the target with the force of a meteor, ignoring its ability.
+The user slams into the target with the force of a meteor, ignoring its ability.
+683
+The user gets teary eyed, lowering the target's Attack and Sp. Atk.
+The user gets teary eyed, lowering the target's Attack and Sp. Atk.
+684
+The user attacks the target's throat, preventing sound-based moves for two turns.
+The user attacks the target's throat, preventing sound-based moves for two turns.
+685
+The user shoots poisonous threads to poison the target and lower their Speed stat.
+The user shoots poisonous threads to poison the target and lower their Speed stat.
+686
+The user lands an intense kick of tropical origins on the target, lowering their Attack.
+The user lands an intense kick of tropical origins on the target, lowering their Attack.
+687
+A strong electric blast crashes down on the target. This may also make the target flinch. 
+A strong electric blast crashes down on the target. This may also make the target flinch. 
+688
+The user slams into the target, cloaked in energy. The memory held determines the move's type.
+The user slams into the target, cloaked in energy. The memory held determines the move's type.
+689
+The user attacks everything around it by causing its own head to explode. Also damages the user.
+The user attacks everything around it by causing its own head to explode. Also damages the user.
+690
+The user attacks a target with a pillar of light. Uses the higher of either Attack or Sp. Attack stats.
+The user attacks a target with a pillar of light. Uses the higher of either Attack or Sp. Attack stats.
+695
+The user unleashes a strong beam from its core. This move deals twice the damage if the target is Dynamaxed.
+The user unleashes a strong beam from its core. This move deals twice the damage if the target is Dynamaxed.
+696
+The user ignores the effects of opposing Pokémon's moves and Abilities that draw in moves, allowing this move to hit the chosen target.
+The user ignores the effects of opposing Pokémon's moves and Abilities that draw in moves, allowing this move to hit the chosen target.
+697
+This move prevents the user and the target from switching out until either of them faints. The effect goes away if either of the Pokémon leaves the field.
+This move prevents the user and the target from switching out until either of them faints. The effect goes away if either of the Pokémon leaves the field.
+698
+The user eats its held Berry, then sharply raises its Defense stat.
+The user eats its held Berry, then sharply raises its Defense stat.
+699
+This move raises all the user's stats but prevents the user from switching out or fleeing.
+This move raises all the user's stats but prevents the user from switching out or fleeing.
+700
+The user pours sticky tar over the target, lowering the target's Speed stat. The target becomes weaker to Fire-type moves.
+The user pours sticky tar over the target, lowering the target's Speed stat. The target becomes weaker to Fire-type moves.
+701
+The user scatters a cloud of magic powder that changes the target to Psychic type.
+The user scatters a cloud of magic powder that changes the target to Psychic type.
+702
+The user attacks twice using Dreepy. If there are two targets, this move hits each target once.
+The user attacks twice using Dreepy. If there are two targets, this move hits each target once.
+703
+The user has teatime with all the Pokémon in the battle. Each Pokémon eats its held Berry.
+The user has teatime with all the Pokémon in the battle. Each Pokémon eats its held Berry.
+704
+The user locks the target in and prevents it from fleeing. This move also lowers the target's Defense and Sp. Def every turn.
+The user locks the target in and prevents it from fleeing. This move also lowers the target's Defense and Sp. Def every turn.
+705
+The user stabs the target with its electrified beak. If the user attacks before the target, the power of this move is doubled.
+The user stabs the target with its electrified beak. If the user attacks before the target, the power of this move is doubled.
+706
+The user rends the target with its hard gills. If the user attacks before the target, the power of this move is doubled.
+The user rends the target with its hard gills. If the user attacks before the target, the power of this move is doubled.
+707
+With its mysterious power, the user swaps the effects on either side of the field.
+With its mysterious power, the user swaps the effects on either side of the field.
+708
+The user raises all its stats by using some of its HP.
+The user raises all its stats by using some of its HP.
+709
+The user attacks by slamming its body into the target. The higher the user's Defense, the more damage it can inflict on the target.
+The user attacks by slamming its body into the target. The higher the user's Defense, the more damage it can inflict on the target.
+710
+The user sharply raises the target's Attack and Sp. Atk stats by decorating the target.
+The user sharply raises the target's Attack and Sp. Atk stats by decorating the target.
+711
+The user plays its drum, controlling the drum's roots to attack the target. This also lowers the target's Speed stat.
+The user plays its drum, controlling the drum's roots to attack the target. This also lowers the target's Speed stat.
+712
+The user snares the target in a snap trap for four to five turns.
+The user snares the target in a snap trap for four to five turns.
+713
+The user attacks by igniting a small stone and launching it as a fiery ball at the target. This may also leave the target with a burn.
+The user attacks by igniting a small stone and launching it as a fiery ball at the target. This may also leave the target with a burn.
+714
+The user becomes a gigantic sword and cuts the target. This move deals twice the damage if the target is Dynamaxed.
+The user becomes a gigantic sword and cuts the target. This move deals twice the damage if the target is Dynamaxed.
+715
+The user becomes a gigantic shield and cuts the target. This move deals twice the damage if the target is Dynamaxed.
+The user becomes a gigantic shield and cuts the target. This move deals twice the damage if the target is Dynamaxed.
+716
+Morpeko attacks and raises its Speed with the energy stored in its cheeks. This move's type changes depending on the user's form.
+Morpeko attacks and raises its Speed with the energy stored in its cheeks. This move's type changes depending on the user's form.
+717
+The user swings its tough tail wildly and attacks opposing Pokémon. This also lowers their Attack stats.
+The user swings its tough tail wildly and attacks opposing Pokémon. This also lowers their Attack stats.
+718
+The user attacks the target by poking it with a sharply pointed branch.
+The user attacks the target by poking it with a sharply pointed branch.
+719
+The user attacks opposing Pokémon by twanging a guitar or bass guitar, causing a huge echo and strong vibration.
+The user attacks opposing Pokémon by twanging a guitar or bass guitar, causing a huge echo and strong vibration.
+720
+The user attacks the target with an acidic liquid created from tart apples. This also lowers the target's Sp. Def stat.
+The user attacks the target with an acidic liquid created from tart apples. This also lowers the target's Sp. Def stat.
+721
+The user attacks the target with an acidic liquid created from tart apples. This also lowers the target's Defense stat.
+The user attacks the target with an acidic liquid created from tart apples. This also lowers the target's Defense stat.
+722
+The user attacks the target with so much force that it could break the target's spirit. This also lowers the target's Sp. Atk stat.
+The user attacks the target with so much force that it could break the target's spirit. This also lowers the target's Sp. Atk stat.
+723
+The user attacks the target by emitting steam. This may also confuse the target.
+The user attacks the target by emitting steam. This may also confuse the target.
+724
+The user scatters mysterious water around and restores the HP of itself and its ally Pokémon in the battle.
+The user scatters mysterious water around and restores the HP of itself and its ally Pokémon in the battle.
+725
+Protects the user from all attacks. Direct contact harshly lowers the attacker's Defense stat.
+Protects the user from all attacks. Direct contact harshly lowers the attacker's Defense stat.
+726
+The user pretends to bow its head, but then it stabs the target with its disheveled hair. This attack never misses.
+The user pretends to bow its head, but then it stabs the target with its disheveled hair. This attack never misses.
+727
+The user attacks wildly with its thick leek. The user can't move on the next turn, because the force of this move makes it stagger.
+The user attacks wildly with its thick leek. The user can't move on the next turn, because the force of this move makes it stagger.
+728
+This is Eternatus's most powerful attack in its original form. The user can't move on the next turn.
+This is Eternatus's most powerful attack in its original form. The user can't move on the next turn.
+729
+The user fires a beam of steel that it collected from its entire body. This also damages the user.
+The user fires a beam of steel that it collected from its entire body. This also damages the user.
+730
+The Pokémon congratulates you on your special day!
+The Pokémon congratulates you on your special day!

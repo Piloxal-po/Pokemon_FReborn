@@ -1,0 +1,4415 @@
+[1]
+1
+Megahorn
+Mégacorne
+2
+Attack Order
+Appel Attaque
+3
+Bug Buzz
+Bourdon
+4
+X-Scissor
+Plaie-croix
+5
+Signal Beam
+Rayon Signal
+6
+U-turn
+Demi-tour
+7
+Steamroller
+Bulldoboule
+8
+Bug Bite
+Piqûre
+9
+Silver Wind
+Vent Argenté
+10
+Struggle Bug
+Survinsecte
+11
+Twineedle
+Double-Dard
+12
+Fury Cutter
+Taillade
+13
+Leech Life
+Vampirisme
+14
+Pin Missile
+Dard-Nuée
+15
+Defend Order
+Appel Défense
+16
+Heal Order
+Appel Soin
+17
+Quiver Dance
+Papillodanse
+18
+Rage Powder
+Poudre Fureur
+19
+Spider Web
+Toile
+20
+String Shot
+Sécrétion
+21
+Tail Glow
+Lumiqueue
+22
+Foul Play
+Tricherie
+23
+Night Daze
+Explonuit
+24
+Crunch
+Mâchouille
+25
+Dark Pulse
+Vibrobscur
+26
+Sucker Punch
+Coup Bas
+27
+Night Slash
+Tranche-Nuit
+28
+Bite
+Morsure
+29
+Feint Attack
+Feinte
+30
+Snarl
+Aboiement
+31
+Assurance
+Assurance
+32
+Payback
+Représailles
+33
+Pursuit
+Poursuite
+34
+Thief
+Larcin
+35
+Knock Off
+Sabotage
+36
+Beat Up
+Baston
+37
+Fling
+Dégommage
+38
+Punishment
+Punition
+39
+Dark Void
+Trou Noir
+40
+Embargo
+Embargo
+41
+Fake Tears
+Croco Larme
+42
+Flatter
+Flatterie
+43
+Hone Claws
+Aiguisage
+44
+Memento
+Souvenir
+45
+Nasty Plot
+Machination
+46
+Quash
+A la Queue
+47
+Snatch
+Saisie
+48
+Switcheroo
+Passe-Passe
+49
+Taunt
+Provoc
+50
+Torment
+Tourmente
+51
+Roar of Time
+Hurle-Temps
+52
+Draco Meteor
+Draco Météore
+53
+Outrage
+Colère
+54
+Dragon Rush
+Draco-Charge
+55
+Spacial Rend
+Spatio-Rift
+56
+Dragon Pulse
+Dracochoc
+57
+Dragon Claw
+Draco-Griffe
+58
+Dragon Tail
+Draco-Queue
+59
+Dragon Breath
+Draco-Souffle
+60
+Dual Chop
+Double Baffe
+61
+Twister
+Ouragan
+62
+Dragon Rage
+Draco-Rage
+63
+Dragon Dance
+Danse Draco
+64
+Bolt Strike
+Charge Foudre
+65
+Thunder
+Fatal-Foudre
+66
+Volt Tackle
+Electacle
+67
+Zap Cannon
+Elecanon
+68
+Fusion Bolt
+Eclair Croix
+69
+Thunderbolt
+Tonnerre
+70
+Wild Charge
+Eclair Fou
+71
+Discharge
+Coup d'Jus
+72
+Thunder Punch
+Poing-Eclair
+73
+Volt Switch
+Change Eclair
+74
+Spark
+Etincelle
+75
+Thunder Fang
+Crocs Eclair
+76
+Shock Wave
+Onde de Choc
+77
+Electroweb
+Toile Elek
+78
+Charge Beam
+Rayon Chargé
+79
+Thunder Shock
+Eclair
+80
+Electro Ball
+Boule Elek
+81
+Charge
+Chargeur
+82
+Magnet Rise
+Vol Magnétik
+83
+Thunder Wave
+Cage Eclair
+84
+Focus Punch
+Mitra-Poing
+85
+High Jump Kick
+Pied Voltige
+86
+Close Combat
+Close Combat
+87
+Focus Blast
+Exploforce
+88
+Superpower
+Surpuissance
+89
+Cross Chop
+Coup Croix
+90
+Dynamic Punch
+Dynamo-Poing
+91
+Hammer Arm
+Marto-Poing
+92
+Jump Kick
+Pied Sauté
+93
+Aura Sphere
+Aurasphère
+94
+Sacred Sword
+Lame Sainte
+95
+Secret Sword
+Lame Ointe
+96
+Sky Uppercut
+Stratopercut
+97
+Submission
+Sacrifice
+98
+Brick Break
+Casse-Brique
+99
+Drain Punch
+Vampi-Poing
+100
+Vital Throw
+Corps Perdu
+101
+Circle Throw
+Projection
+102
+Force Palm
+Forte-Paume
+103
+Low Sweep
+Balayette
+104
+Revenge
+Vendetta
+105
+Rolling Kick
+Mawashi Geri
+106
+Wake-Up Slap
+Réveil Forcé
+107
+Karate Chop
+Poing Karaté
+108
+Mach Punch
+Mach Punch
+109
+Rock Smash
+Eclate-Roc
+110
+Storm Throw
+Yama Arashi
+111
+Vacuum Wave
+Onde Vide
+112
+Double Kick
+Double Pied
+113
+Arm Thrust
+Cogne
+114
+Triple Kick
+Triple Pied
+115
+Counter
+Riposte
+116
+Final Gambit
+Tout ou Rien
+117
+Low Kick
+Balayage
+118
+Reversal
+Contre
+119
+Seismic Toss
+Frappe Atlas
+120
+Bulk Up
+Gonflette
+121
+Detect
+Détection
+122
+Quick Guard
+Prévention
+123
+V-create
+Coup Victoire
+124
+Blast Burn
+Rafale Feu
+125
+Eruption
+Eruption
+126
+Overheat
+Surchauffe
+127
+Blue Flare
+Flamme Bleue
+128
+Fire Blast
+Déflagration
+129
+Flare Blitz
+Boutefeu
+130
+Magma Storm
+Vortex Magma
+131
+Fusion Flare
+Flamme Croix
+132
+Heat Wave
+Canicule
+133
+Inferno
+Feu d'Enfer
+134
+Sacred Fire
+Feu Sacré
+135
+Searing Shot
+Incendie
+136
+Flamethrower
+Lance-Flamme
+137
+Blaze Kick
+Pied Brûleur
+138
+Fiery Dance
+Danse du Feu
+139
+Lava Plume
+Ebullilave
+140
+Fire Punch
+Poing de Feu
+141
+Flame Burst
+Rebondifeu
+142
+Fire Fang
+Crocs Feu
+143
+Flame Wheel
+Roue de Feu
+144
+Fire Pledge
+Aire de Feu
+145
+Flame Charge
+Nitrocharge
+146
+Ember
+Flammèche
+147
+Fire Spin
+Danse Flammes
+148
+Incinerate
+Calcination
+149
+Heat Crash
+Tacle Feu
+150
+Sunny Day
+Zénith
+151
+Will-O-Wisp
+Feu Follet
+152
+Sky Attack
+Piqué
+153
+Brave Bird
+Rapace
+154
+Hurricane
+Vent Violent
+155
+Aeroblast
+Aéroblast
+156
+Fly
+Vol
+157
+Bounce
+Rebond
+158
+Drill Peck
+Bec Vrille
+159
+Air Slash
+Lame d'Air
+160
+Aerial Ace
+Aéropique
+161
+Chatter
+Babil
+162
+Pluck
+Picore
+163
+Sky Drop
+Chute Libre
+164
+Wing Attack
+Cru-Ailes
+165
+Acrobatics
+Acrobatie
+166
+Air Cutter
+Tranch'Air
+167
+Gust
+Tornade
+168
+Peck
+Picpic
+169
+Defog
+Anti-Brume
+170
+Feather Dance
+Danse Plumes
+171
+Mirror Move
+Mimique
+172
+Roost
+Atterrissage
+173
+Tailwind
+Vent Arrière
+174
+Shadow Force
+Revenant
+175
+Shadow Ball
+Ball'Ombre
+176
+Shadow Claw
+Griffe Ombre
+177
+Ominous Wind
+Vent Mauvais
+178
+Shadow Punch
+Poing Ombre
+179
+Hex
+Châtiment
+180
+Shadow Sneak
+Ombre Portée
+181
+Astonish
+Etonnement
+182
+Lick
+Léchouille
+183
+Night Shade
+Ombre Nocturne
+184
+Confuse Ray
+Onde Folie
+185
+Curse
+Malédiction
+186
+Destiny Bond
+Lien du Destin
+187
+Grudge
+Rancune
+188
+Nightmare
+Cauchemar
+189
+Spite
+Dépit
+190
+Frenzy Plant
+Végé-Attaque
+191
+Leaf Storm
+Tempête Verte
+192
+Petal Dance
+Danse Fleurs
+193
+Power Whip
+Mégafouet
+194
+Seed Flare
+Fulmigraine
+195
+Solar Beam
+Lance-Soleil
+196
+Wood Hammer
+Martobois
+197
+Leaf Blade
+Lame Feuille
+198
+Energy Ball
+Eco-Sphère
+199
+Seed Bomb
+Canon Graine
+200
+Giga Drain
+Giga-Sangsue
+201
+Horn Leech
+Encornebois
+202
+Leaf Tornado
+Phytomixeur
+203
+Magical Leaf
+Feuille Magik
+204
+Needle Arm
+Poing Dard
+205
+Razor Leaf
+Tranch'Herbe
+206
+Grass Pledge
+Aire d'Herbe
+207
+Mega Drain
+Méga-Sangsue
+208
+Vine Whip
+Fouet Lianes
+209
+Bullet Seed
+Balle Graine
+210
+Absorb
+Vole-Vie
+211
+Grass Knot
+Nœud Herbe
+212
+Aromatherapy
+Aromathérapie
+213
+Cotton Guard
+Cotogarde
+214
+Cotton Spore
+Spore Coton
+215
+Grass Whistle
+Siffl'Herbe
+216
+Ingrain
+Racines
+217
+Leech Seed
+Vampigraine
+218
+Sleep Powder
+Poudre Dodo
+219
+Spore
+Spore
+220
+Stun Spore
+Para-Spore
+221
+Synthesis
+Synthèse
+222
+Worry Seed
+Soucigraine
+223
+Earthquake
+Séisme
+224
+Earth Power
+Telluriforce
+225
+Dig
+Tunnel
+226
+Drill Run
+Tunnelier
+227
+Bone Club
+Massd'Os
+228
+Mud Bomb
+Boue-Bombe
+229
+Bulldoze
+Piétisol
+230
+Mud Shot
+Tir de Boue
+231
+Bonemerang
+Osmerang
+232
+Sand Tomb
+Tourbi-Sable
+233
+Bone Rush
+Charge Os
+234
+Mud-Slap
+Coud'Boue
+235
+Fissure
+Abîme
+236
+Magnitude
+Ampleur
+237
+Mud Sport
+Lance-Boue
+238
+Sand Attack
+Jet de Sable
+239
+Spikes
+Picots
+240
+Freeze Shock
+Eclair Gelé
+241
+Ice Burn
+Feu glacé
+242
+Blizzard
+Blizzard
+243
+Ice Beam
+Laser Glace
+244
+Icicle Crash
+Chute glace
+245
+Ice Punch
+Poinglace
+246
+Aurora Beam
+Onde Boréale
+247
+Glaciate
+Ère Glaciaire
+248
+Ice Fang
+Crocs Givre
+249
+Avalanche
+Avalanche
+250
+Icy Wind
+Vent Glace
+251
+Frost Breath
+Souffle Glacé
+252
+Ice Shard
+Eclats Glace
+253
+Powder Snow
+Poudreuse
+254
+Ice Ball
+Ball'Glace
+255
+Icicle Spear
+Stalactite
+256
+Sheer Cold
+Glaciation
+257
+Hail
+Grêle
+258
+Haze
+Buée Noire
+259
+Mist
+Brume
+260
+Explosion
+Explosion
+261
+Self-Destruct
+Destruction
+262
+Giga Impact
+Giga Impact
+263
+Hyper Beam
+Ultralaser
+264
+Last Resort
+Dernier Recours
+265
+Double-Edge
+Damoclès
+266
+Head Charge
+Peignée
+267
+Mega Kick
+Ultimawashi
+268
+Thrash
+Mania
+269
+Egg Bomb
+Bombe Oeuf
+270
+Judgment
+Jugement
+271
+Skull Bash
+Coud'Krâne
+272
+Hyper Voice
+Mégaphone
+273
+Rock Climb
+Escalade
+274
+Take Down
+Bélier
+275
+Uproar
+Brouhaha
+276
+Body Slam
+Plaquage
+277
+Techno Blast
+Techno-Buster
+278
+Extreme Speed
+Vitesse Extrême
+279
+Hyper Fang
+Croc de Mort
+280
+Mega Punch
+Ultimapoing
+281
+Razor Wind
+Coupe-Vent
+282
+Slam
+Souplesse
+283
+Strength
+Force
+284
+Tri Attack
+Triplattaque
+285
+Crush Claw
+Eclate Griffe
+286
+Relic Song
+Chant Antique
+287
+Chip Away
+Attrition
+288
+Dizzy Punch
+Uppercut
+289
+Facade
+Façade
+290
+Headbutt
+Coup d'Boule
+291
+Retaliate
+Vengeance
+292
+Secret Power
+Force Cachée
+293
+Slash
+Tranche
+294
+Horn Attack
+Koud'Korne
+295
+Stomp
+Ecrasement
+296
+Covet
+Implore
+297
+Round
+Chant Canon
+298
+Smelling Salts
+Stimulant
+299
+Swift
+Météores
+300
+Vice Grip
+Force Poigne
+301
+Cut
+Coupe
+302
+Struggle
+Lutte
+303
+Tackle
+Charge
+304
+Weather Ball
+Ball'Météo
+305
+Echoed Voice
+Echo
+306
+Fake Out
+Bluff
+307
+False Swipe
+Faux-Chage
+308
+Pay Day
+Jackpot
+309
+Pound
+Ecras'face
+310
+Quick Attack
+Vive-Attaque
+311
+Scratch
+Griffe
+312
+Snore
+Ronflement
+313
+Double Hit
+Coup Double
+314
+Feint
+Ruse
+315
+Tail Slap
+Plumo-Queue
+316
+Rage
+Frénésie
+317
+Rapid Spin
+Tour Rapide
+318
+Spike Cannon
+Picanon
+319
+Comet Punch
+Poing Comète
+320
+Fury Swipes
+Combo-Griffe
+321
+Barrage
+Pilonnage
+322
+Bind
+Etreinte
+323
+Double Slap
+Torgnoles
+324
+Fury Attack
+Furie
+325
+Wrap
+Ligotage
+326
+Constrict
+Constriction
+327
+Bide
+Patience
+328
+Crush Grip
+Presse
+329
+Endeavor
+Effort
+330
+Flail
+Fléau
+331
+Frustration
+Frustration
+332
+Guillotine
+Guillotine
+333
+Hidden Power
+Puisance Cachée
+334
+Horn Drill
+Empal'Korne
+335
+Natural Gift
+Don Naturel
+336
+Present
+Cadeau
+337
+Return
+Retour
+338
+Sonic Boom
+Sonic Boom
+339
+Spit Up
+Relâche
+340
+Super Fang
+Croc Fatal
+341
+Trump Card
+Atout
+342
+Wring Out
+Essorage
+343
+Acupressure
+Acupression
+344
+After You
+Après Vous
+345
+Assist
+Assistance
+346
+Attract
+Attraction
+347
+Baton Pass
+Relais
+348
+Belly Drum
+Cognobidon
+349
+Bestow
+Passe-Cadeau
+350
+Block
+Possessif
+351
+Camouflage
+Camouflage
+352
+Captivate
+Séduction
+353
+Charm
+Charme
+354
+Conversion
+Conversion
+355
+Conversion 2
+Conversion 2
+356
+Copycat
+Photocopie
+357
+Defense Curl
+Boul'Armure
+358
+Disable
+Entrave
+359
+Double Team
+Reflet
+360
+Encore
+Encore
+361
+Endure
+Ténacité
+362
+Entrainment
+Ten-Danse
+363
+Flash
+Flash
+364
+Focus Energy
+Puissance
+365
+Follow Me
+Par Ici
+366
+Foresight
+Clairvoyance
+367
+Glare
+Regard Médusant
+368
+Growl
+Rugissement
+369
+Growth
+Croissance
+370
+Harden
+Armure
+371
+Heal Bell
+Glas de Soin
+372
+Helping Hand
+Coup d'Main
+373
+Howl
+Grondement
+374
+Leer
+Groz'Yeux
+375
+Lock-On
+Verrouillage
+376
+Lovely Kiss
+Grobisou
+377
+Lucky Chant
+Air Veinard
+378
+Me First
+Moi d'Abord
+379
+Mean Look
+Regard Noir
+380
+Metronome
+Métronome
+381
+Milk Drink
+Lait à Boire
+382
+Mimic
+Copie
+383
+Mind Reader
+Lire-Esprit
+384
+Minimize
+Lilliput
+385
+Moonlight
+Rayon Lune
+386
+Morning Sun
+Aurore
+387
+Nature Power
+Force Nature
+388
+Odor Sleuth
+Flair
+389
+Pain Split
+Balance
+390
+Perish Song
+Requiem
+391
+Protect
+Abri
+392
+Psych Up
+Boost
+393
+Recover
+Soin
+394
+Recycle
+Recyclage
+395
+Reflect Type
+Copie Type
+396
+Refresh
+Régénération
+397
+Roar
+Hurlement
+398
+Safeguard
+Rune Protect
+399
+Scary Face
+Grimace
+400
+Screech
+Grincement
+401
+Sharpen
+Affûtage
+402
+Shell Smash
+Exuviation
+403
+Simple Beam
+Rayon Simple
+404
+Sing
+Berceuse
+405
+Sketch
+Gribouille
+406
+Slack Off
+Paresse
+407
+Sleep Talk
+Blabla Dodo
+408
+Smokescreen
+Brouillard
+409
+Soft-Boiled
+E-Coque
+410
+Splash
+Trempette
+411
+Stockpile
+Stockage
+412
+Substitute
+Clonage
+413
+Supersonic
+Ultrason
+414
+Swagger
+Vantardise
+415
+Swallow
+Avale
+416
+Sweet Kiss
+Doux Baiser
+417
+Sweet Scent
+Doux Parfum
+418
+Swords Dance
+Danse Lames
+419
+Tail Whip
+Mimi-Queue
+420
+Teeter Dance
+Danse Folle
+421
+Tickle
+Chatouille
+422
+Transform
+Morphing
+423
+Whirlwind
+Cyclone
+424
+Wish
+Voeu
+425
+Work Up
+Rengorgement
+426
+Yawn
+Baillement
+427
+Gunk Shot
+Détricanon
+428
+Sludge Wave
+Cradovague
+429
+Sludge Bomb
+Bombe Beurk
+430
+Poison Jab
+Direct Toxik
+431
+Cross Poison
+Poison Croix
+432
+Sludge
+Détritus
+433
+Venoshock
+Choc Venin
+434
+Clear Smog
+Bain de Smog
+435
+Poison Fang
+Crochet Venin
+436
+Poison Tail
+Queue-Poison
+437
+Acid
+Acide
+438
+Acid Spray
+Bombe Acide
+439
+Smog
+Purédpois
+440
+Poison Sting
+Dard-Venin
+441
+Acid Armor
+Acidarmure
+442
+Coil
+Enroulement
+443
+Gastro Acid
+Suc Digestif
+444
+Poison Gas
+Gaz Toxik
+445
+Poison Powder
+Poudre Toxik
+446
+Toxic
+Toxik
+447
+Toxic Spikes
+Pics Toxik
+448
+Psycho Boost
+Psycho-Boost
+449
+Dream Eater
+Dévorêve
+450
+Future Sight
+Prescience
+451
+Psystrike
+Frappe Psy
+452
+Psychic
+Psyko
+453
+Extrasensory
+Extrasenseur
+454
+Psyshock
+Choc Psy
+455
+Zen Headbutt
+Psykoud'boul
+456
+Luster Purge
+Lumi-Eclat
+457
+Mist Ball
+Ball'Brume
+458
+Psycho Cut
+Coupe Psycho
+459
+Synchronoise
+Synchropeine
+460
+Psybeam
+Rafale Psy
+461
+Heart Stamp
+Crève-Coeur
+462
+Confusion
+Choc Mental
+463
+Mirror Coat
+Voile Miroir
+464
+Psywave
+Vague Psy
+465
+Stored Power
+Force Ajoutée
+466
+Agility
+Hâte
+467
+Ally Switch
+Interversion
+468
+Amnesia
+Amnésie
+469
+Barrier
+Bloqueur
+470
+Calm Mind
+Plénitude
+471
+Cosmic Power
+Force Cosmique
+472
+Gravity
+Gravité
+473
+Guard Split
+Partage Garde
+474
+Guard Swap
+Permugarde
+475
+Heal Block
+Anti-Soin
+476
+Heal Pulse
+Vibra Soin
+477
+Healing Wish
+Voeu Soin
+478
+Heart Swap
+Permucœur
+479
+Hypnosis
+Hypnose
+480
+Imprison
+Possessif
+481
+Kinesis
+Télékinésie
+482
+Light Screen
+Mur Lumière
+483
+Lunar Dance
+Danse Lune
+484
+Magic Coat
+Reflet Magik
+485
+Magic Room
+Zone Magique
+486
+Meditate
+Yoga
+487
+Miracle Eye
+Oeil Miracle
+488
+Power Split
+Partage Force
+489
+Power Swap
+Permuforce
+490
+Power Trick
+Astuce Force
+491
+Psycho Shift
+Echange Psy
+492
+Reflect
+Protection
+493
+Rest
+Repos
+494
+Role Play
+Imitation
+495
+Skill Swap
+Echange
+496
+Telekinesis
+Lévikinésie
+497
+Teleport
+Téléport
+498
+Trick
+Tourmagik
+499
+Trick Room
+Distorsion
+500
+Wonder Room
+Zone Etrange
+501
+Head Smash
+Fracass'Tête
+502
+Rock Wrecker
+Roc-Boulet
+503
+Stone Edge
+Lame de Roc
+504
+Rock Slide
+Eboulement
+505
+Power Gem
+Rayon Gemme
+506
+Ancient Power
+Pouvoir Antique
+507
+Rock Throw
+Jet-Pierres
+508
+Rock Tomb
+Tomberoche
+509
+Smack Down
+Anti-Air
+510
+Rollout
+Roulade
+511
+Rock Blast
+Boule Roc
+512
+Rock Polish
+Poliroche
+513
+Sandstorm
+Tempête de Sable
+514
+Stealth Rock
+Piège de Roc
+515
+Wide Guard
+Garde Large
+516
+Doom Desire
+Voeu Destructeur
+517
+Iron Tail
+Queue de Fer
+518
+Meteor Mash
+Poing Météore
+519
+Flash Cannon
+Luminocanon
+520
+Iron Head
+Tête de Fer
+521
+Steel Wing
+Aile d'Acier
+522
+Mirror Shot
+Miroi-Tir
+523
+Magnet Bomb
+Bombe Aimant
+524
+Gear Grind
+Lancécrou
+525
+Metal Claw
+Griffe Acier
+526
+Bullet Punch
+Pisto-Poing
+527
+Gyro Ball
+Gyroballe
+528
+Heavy Slam
+Tacle Lourd
+529
+Metal Burst
+Fulmifer
+530
+Autotomize
+Allègement
+531
+Iron Defense
+Mur de Fer
+532
+Metal Sound
+Strido-Son
+533
+Shift Gear
+Chgt Vitesse
+534
+Hydro Cannon
+Hydro Blast
+535
+Water Spout
+Giclédo
+536
+Hydro Pump
+Hydrocanon
+537
+Muddy Water
+Ocroupi
+538
+Surf
+Surf
+539
+Aqua Tail
+Hydroqueue
+540
+Crabhammer
+Pince-Masse
+541
+Dive
+Plongée
+542
+Scald
+Ebullition
+543
+Waterfall
+Cascade
+544
+Razor Shell
+Coqui-Lame
+545
+Brine
+Saumure
+546
+Bubble Beam
+Bulles d'O
+547
+Octazooka
+Octazooka
+548
+Water Pulse
+Vibraqua
+549
+Water Pledge
+Aire d'Eau
+550
+Aqua Jet
+Aqua-Jet
+551
+Water Gun
+Pistolet à O
+552
+Clamp
+Claquoir
+553
+Whirlpool
+Siphon
+554
+Bubble
+Ecume
+555
+Aqua Ring
+Anneau Hydro
+556
+Rain Dance
+Danse Pluie
+557
+Soak
+Détrempage
+558
+Water Sport
+Tourniquet
+559
+Withdraw
+Repli
+560
+Aromatic Mist
+Brume Capiteuse
+561
+Baby-Doll Eyes
+Regard Touchant
+562
+Belch
+Eructation
+563
+Boomburst
+Bang Sonique
+564
+Confide
+Confidence
+565
+Crafty Shield
+Vigilance
+566
+Dazzling Gleam
+Eclat Magique
+567
+Disarming Voice
+Voix Enjôleuse
+568
+Draining Kiss
+Vampibaiser
+569
+Plasma Fists
+Plasma Punch
+570
+Eerie Impulse
+Ondes Etranges
+571
+Electric Terrain
+Champ Electrifié
+572
+Electrify
+Electrisation
+573
+Fairy Lock
+Verrou Enchanté
+574
+Fairy Wind
+Vent Féérique
+575
+Fell Stinger
+Dard Mortel
+576
+Flower Shield
+Garde Florale
+577
+Flying Press
+Flying Press
+578
+Forest's Curse
+Maléfice Sylvain
+579
+Freeze-Dry
+Lyophilisation
+580
+Geomancy
+Géo-Contrôle
+581
+Grassy Terrain
+Champ Herbu
+582
+Infestation
+Harcèlement
+583
+Ion Deluge
+Déluge Plasmique
+584
+King's Shield
+Bouclier Royal
+585
+Land's Wrath
+Force Chtonienne
+586
+Magnetic Flux
+Magné-Contrôle
+587
+Mat Block
+Tatamigaeshi
+588
+Misty Terrain
+Champ Brumeux
+589
+Moonblast
+Pouvoir Lunaire
+590
+Mystical Fire
+Feu Ensorcelé
+591
+Noble Roar
+Râle Mâle
+592
+Nuzzle
+Frotte-Frimousse
+593
+Oblivion Wing
+Mort'Ailes
+594
+Parabolic Charge
+Parabocharge
+595
+Parting Shot
+Dernier Mot
+596
+Petal Blizzard
+Tempête Florale
+597
+Phantom Force
+Hantise
+598
+Play Nice
+Camaraderie
+599
+Play Rough
+Câlinerie
+600
+Powder
+Nuée de Poudre
+601
+Power-Up Punch
+Poing Boost
+602
+Rototiller
+Fertilisation
+603
+Spiky Shield
+Pico-Défense
+604
+Sticky Web
+Toile Gluante
+605
+Topsy-Turvy
+Renversement
+606
+Trick-or-Treat
+Halloween
+607
+Venom Drench
+Piège de Venin
+608
+Water Shuriken
+Sheauriken
+609
+Hidden Power
+Puisance Cachée
+610
+Hidden Power
+Puisance Cachée
+611
+Hidden Power
+Puisance Cachée
+612
+Hidden Power
+Puisance Cachée
+613
+Hidden Power
+Puisance Cachée
+614
+Hidden Power
+Puisance Cachée
+615
+Hidden Power
+Puisance Cachée
+616
+Hidden Power
+Puisance Cachée
+617
+Hidden Power
+Puisance Cachée
+618
+Hidden Power
+Puisance Cachée
+619
+Hidden Power
+Puisance Cachée
+620
+Hidden Power
+Puisance Cachée
+621
+Hidden Power
+Puisance Cachée
+622
+Hidden Power
+Puisance Cachée
+623
+Hidden Power
+Puisance Cachée
+624
+Hidden Power
+Puisance Cachée
+625
+Hidden Power
+Puisance Cachée
+626
+Hidden Power
+Puisance Cachée
+627
+Origin Pulse
+Onde Originelle
+628
+Precipice Blades
+Lame Pangéenne
+629
+Dragon Ascent
+Draco-Ascension
+630
+ThousandArrows
+Myria Flèches
+631
+Thousand Waves
+Myria-Vagues
+632
+Diamond Storm
+Orage Adamantin
+633
+Hyperspace Hole
+TrouDimensionnel
+634
+Steam Eruption
+Jet de Vapeur
+635
+HyperspaceFury
+Furie Dimension
+638
+Accelerock
+Vif Roc
+639
+Anchor Shot
+Ancrage
+640
+Aurora Veil
+Voile Aurore
+641
+Baneful Bunker
+Blockhaus
+642
+Beak Blast
+Bec-Canon
+643
+Brutal Swing
+Centrifugifle
+644
+Burn Up
+Flamme Ultime
+645
+Clanging Scales
+Vibrécaille
+646
+Core Enforcer
+Sanction Suprême
+647
+Darkest Lariat
+Dark Lariat
+648
+Dragon Hammer
+Draco-Marteau
+649
+Fire Lash
+Fouet de Feu
+650
+First Impression
+Escarmouche
+651
+Fleur Cannon
+Canon Floral
+652
+Floral Healing
+Soin Floral
+653
+Gear Up
+Engrenage
+654
+High Horsepower
+Cavalerie Lourde
+655
+Ice Hammer
+Marteau de Glace
+656
+Instruct
+Sommation
+657
+Laser Focus
+Affilage
+658
+Leafage
+Feuillage
+659
+Liquidation
+Aqua-Brèche
+660
+Lunge
+Furie-Bond
+661
+Moongeist Beam
+Rayon Spectral
+662
+Nature Madness
+Ire de la Nature
+663
+Pollen Puff
+Boule Pollen
+664
+Power Trip
+Arrogance
+665
+Prismatic Laser
+Laser Prisme
+666
+Psychic Fangs
+Psycho-Croc
+667
+Psychic Terrain
+Champ Psychique
+668
+Purify
+Purification
+669
+RevelationDance
+Danse Eveil
+670
+Shadow Bone
+Os Ombre
+671
+Shell Trap
+Carapiège
+672
+Shore Up
+Amass'Sable
+673
+Smart Strike
+Estocorne
+674
+Solar Blade
+Lame Solaire
+675
+Sparkling Aria
+Aria de l'Ecume
+676
+Spectral Thief
+Clepto-Mânes
+677
+Speed Swap
+Permuvitesse
+678
+Spirit Shackle
+Tisse Ombre
+679
+Spotlight
+Projecteur
+680
+Stomp Tantrum
+Trépignement
+681
+Strength Sap
+Vole-Force
+682
+Sunsteel Strike
+Choc Meteor
+683
+Tearful Look
+Larme à l'Oeil
+684
+Throat Chop
+Exécu-Son
+685
+Toxic Thread
+Fil Toxique
+686
+Trop Kick
+Botte Sucrette
+687
+Zing Zap
+Electrikipik
+688
+Multi-Attack
+Coup Varia-Type
+689
+Mind Blown
+Caboche-Kaboum
+690
+Photon Geyser
+Photo-Geyser
+695
+Dynamax Cannon
+Dynamax Cannon
+696
+Snipe Shot
+Snipe Shot
+697
+Jaw Lock
+Jaw Lock
+698
+Stuff Cheeks
+Stuff Cheeks
+699
+No Retreat
+No Retreat
+700
+Tar Shot
+Tar Shot
+701
+Magic Powder
+Magic Powder
+702
+Dragon Darts
+Dragon Darts
+703
+Teatime
+Teatime
+704
+Octolock
+Octolock
+705
+Bolt Beak
+Bolt Beak
+706
+Fishious Rend
+Fishious Rend
+707
+Court Change
+Court Change
+708
+Clangorous Soul
+Clangorous Soul
+709
+Body Press
+Body Press
+710
+Decorate
+Decorate
+711
+Drum Beating
+Drum Beating
+712
+Snap Trap
+Snap Trap
+713
+Pyro Ball
+Pyro Ball
+714
+Behemoth Blade
+Behemoth Blade
+715
+Behemoth Bash
+Behemoth Bash
+716
+Aura Wheel
+Aura Wheel
+717
+Breaking Swipe
+Breaking Swipe
+718
+Branch Poke
+Branch Poke
+719
+Overdrive
+Overdrive
+720
+Apple Acid
+Apple Acid
+721
+Grav Apple
+Grav Apple
+722
+Spirit Break
+Spirit Break
+723
+Strange Steam
+Strange Steam
+724
+Life Dew
+Life Dew
+725
+Obstruct
+Obstruct
+726
+False Surrender
+False Surrender
+727
+Meteor Assault
+Meteor Assault
+728
+Eternabeam
+Eternabeam
+729
+Steel Beam
+Steel Beam
+730
+Celebrate
+Celebrate
+[2]
+1
+Using a tough and impressive horn, the user rams into the target with no letup.
+Le lanceur utilise ses gigantesques cornes pour charger l'ennemi.
+2
+The user calls out their underlings to pummel the target. Critical hits land more easily.
+Le lanceur appelle ses sous-fifres pour frapper l’ennemi. Taux de critiques élevé.
+3
+The user generates a damaging sound wave by vibration. This may also lower the target's Sp. Def stat.
+Le lanceur fait vibrer son corps pour lancer une vague sonique. Peut aussi baisser la Déf.Spé. de la cible.
+4
+The user slashes by crossing their scythes or claws as if they were a pair of scissors.
+Le lanceur taillade l'ennemi en utilisant ses faux ou ses griffes comme une paire de ciseaux.
+5
+The user attacks with a sinister beam of light. This may also confuse the target.
+Le lanceur projette un rayon de lumière sinistre. Peut aussi rendre l'ennemi confus.
+6
+After making their attack, the user rushes back to switch places with a party Pokémon in waiting.
+Après son attaque, le lanceur revient à toute vitesse et change de place avec un Pokémon de l'équipe.
+7
+The user crushes the target by rolling over it. This may also make the target flinch.
+Le lanceur se roule en boule et écrase son ennemi. Peut aussi l’apeurer.
+8
+The user bites the target. If the target is holding a Berry, the user eats it and gains its effect.
+Le lanceur pique l'ennemi. Si ce dernier tient une Baie, le lanceur la dévore et obtient son effet.
+9
+The user attacks with powdery scales blown by the wind. This may raise all the user's stats.
+Vent qui projette des écailles poudreuses sur l'ennemi. Peut aussi monter toutes les stats du lanceur.
+10
+While resisting, the user attacks the opposing Pokémon. This lowers the Sp. Atk stat of those hit.
+Le lanceur se débat de toutes ses forces, et baisse l'Attaque Spéciale de l'ennemi.
+11
+The user attacks twice in succession by jabbing with two spikes. This may also poison the target.
+Un double coup de dard qui transperce l’ennemi deux fois d’affilée. Peut aussi l’empoisonner.
+12
+The target is slashed with scythes or claws. This attack becomes more powerful if it hits in succession.
+Un coup de faux ou de griffe dont la force augmente quand il touche plusieurs fois d'affilée.
+13
+The user drains the target's blood. The user's HP is restored by half the damage taken by the target.
+Une attaque qui aspire le sang de l'ennemi. La moitié des dégâts sont convertis en PV pour le lanceur.
+14
+Sharp spikes are shot at the target in rapid succession. They hit two to five times in a row.
+Envoie une rafale de dards. Peut toucher de deux à cinq fois.
+15
+The user calls out their underlings to shield their body, raising their Defense and Sp. Def stats.
+Le lanceur appelle ses sous-fifres pour former un bouclier qui augmente sa Défense et sa Déf.Spé.
+16
+The user calls out their underlings to heal them. The user regains up to half of their max HP.
+Le lanceur appelle ses sous-fifres pour le soigner. Il récupère jusqu'à la moitié de ses PV max.
+17
+The user performs a beautiful, mystic dance. This boosts the user's Sp. Atk, Sp. Def, and Speed stats.
+Une danse mystique dont le rythme parfait augmente l’Att.Spé., la Déf.Spé. et la Vitesse du lanceur.
+18
+The user scatters a cloud of irritating powder to draw attention. Opponents aim only at the user.
+Le lanceur s’asperge d’une poudre irritante pour attirer l’attention. Il attire toutes les attaques ennemies.
+19
+The user ensnares the target with thin, gooey silk so it can't flee from battle.
+Le lanceur enserre l'ennemi à l'aide d'une fine soie gluante pour l'empêcher de fuir le combat.
+20
+The opposing Pokémon are bound with silk blown from the user's mouth that harshly lowers the Speed stat.
+Le lanceur crache de la soie pour ligoter l'ennemi et beaucoup baisser sa Vitesse.
+21
+The user stares at flashing lights to focus their mind, drastically raising their Sp. Atk stat.
+Le lanceur regarde un flash lumineux fixement. Augmente énormément son Attaque Spéciale.
+22
+Turns the target's power against it. The higher the target's Attack stat, the greater the power.
+Plus l'Attaque de la cible est élevée, plus le lanceur inflige de dégâts.
+23
+The user lets loose a pitch-black shock wave at the target. This may lower the target's Accuracy.
+Le lanceur attaque l’ennemi avec une onde de choc ténébreuse. Peut aussi baisser sa Précision.
+24
+The user crunches up the target with sharp fangs. This may also lower the target's Defense stat.
+Le lanceur mord l'ennemi de ses crocs pointus. Peut aussi baisser sa Défense.
+25
+The user releases a horrible aura imbued with dark thoughts. This may also make the target flinch.
+Le lanceur dégage une horrible aura chargée d'idées noires. Peut aussi apeurer l'ennemi.
+26
+This move enables the user to attack first. It fails if the target is not readying a damaging move.
+Permet au lanceur de frapper en priorité. Échoue si l’ennemi ne prépare pas une attaque.
+27
+The user slashes the target the instant an opportunity arises. Critical hits land more easily.
+La lanceur lacère l'ennemi à la première occasion. Taux de critique élevé.
+28
+The target is bitten with viciously sharp fangs. This may also make the target flinch.
+L'ennemi est mordu par de tranchantes canines. Peut l'apeurer.
+29
+The user approaches the target disarmingly, then throws a sucker punch. Never misses.
+Le lanceur s'approche l'air de rien avant de frapper par surprise. N'échoue jamais.
+30
+The user yells as if ranting about something, lowering the Sp. Atk stat of opposing Pokémon.
+Le lanceur hurle sur l'ennemi. Baisse l'Attaque Spéciale de l'ennemi.
+31
+If the target has already taken some damage in the same turn, this attack's power is doubled.
+Cette attaque est deux fois plus efficace si l’ennemi a déjà été blessé durant ce tour.
+32
+The user stores power to attack. If the user moves after the target, the move's power will be doubled.
+Le lanceur charge son énergie, puis attaque. La puissance est doublée si le lanceur agit après l'ennemi.
+33
+The power of this attack is doubled if it is used on a target that is switching out of battle.
+Une attaque qui inflige deux fois plus de dégâts à un ennemi qui s'apprête à être remplacé.
+34
+The user attacks and steals the target's item. The item cannot be stolen if the user is holding one already.
+Le lanceur attaque la cible et vole son objet. Le lanceur ne peut rien voler s'il tient déjà un objet.
+35
+The user slaps away the target's held item. It deals more damage if the target holds an item.
+Fait plus de dégâts si la cible tient un objet et l'empêche de l'utiliser jusqu’à la fin du combat.
+36
+The user's party Pokémon attack. The more party Pokémon, the greater the number of attacks.
+Le lanceur appelle tous les Pokémon de son équipe à attaquer. Plus ils sont nombreux, plus il y a d'attaques.
+37
+The user flings a held item at the target to attack. This move's power and effects depend on the item.
+Le lanceur envoie l’objet qu’il tient sur l’ennemi. La puissance et les effets dépendent de l’objet.
+38
+The more the target has powered up with stat changes, the greater the move's power.
+Plus l'ennemi a utilisé d'augmentations de stats et plus cette capacité est puissante.
+39
+Opposing Pokémon are dragged into a world of total darkness that makes them sleep.
+L'ennemi est plongé dans les ténèbres. Il tombe dans un profond sommeil.
+40
+Prevents the target from using its item and its Trainer from using items on it for five turns.
+Empêche la cible d’utiliser un objet tenu et son Dresseur d’utiliser un objet sur lui pendant cinq tours.
+41
+The user feigns crying to fluster the target, harshly lowering its Sp. Def stat.
+Le lanceur fait semblant de pleurer pour troubler l'ennemi et beaucoup baisser sa Défense Spéciale.
+42
+Flattery is used to confuse the target. However, this also raises the target's Sp. Atk stat.
+Rend la cible confuse, mais augmente son Attaque Spéciale.
+43
+The user sharpens their claws to boost their Attack stat and Accuracy.
+Le lanceur s'aiguise les griffes. Augmente l'Attaque et la Précision.
+44
+The user faints. In return, this harshly lowers the target's Attack and Sp. Atk stats.
+Le lanceur est mis K.O., mais l'Attaque et l'Attaque Spéciale de l'ennemi baissent beaucoup.
+45
+The user stimulates their brain, thinking bad thoughts. This sharply raises the user's Sp. Atk stat.
+Stimule l'esprit par de mauvaises pensées. Augmente beaucoup l'Attaque Spéciale du lanceur.
+46
+The user suppresses the target and makes its move go last.
+Retient la cible de force, l'obligeant à agir en dernier.
+47
+The user steals the effects of any attempts to use a healing or stat-changing move.
+Lorsqu'une capacité de soin ou de changement de stats est utilisée, le lanceur vole ses effets.
+48
+The user trades held items with the target faster than the eye can follow.
+Le lanceur échange son objet avec celui de la cible à une vitesse que l’œil a du mal à suivre.
+49
+The target is taunted into a rage that allows it to use only attack moves for three turns.
+Provoque l’ennemi. L’oblige à n’utiliser que des attaques pendant 3 tours.
+50
+The user torments and enrages the target, preventing it from using the same move twice in a row.
+Le lanceur irrite l’ennemi pour l’empêcher d’utiliser la même capacité deux fois de suite.
+51
+The user blasts the target with power that distorts even time. The user can't move on the next turn.
+Le lanceur frappe si fort qu'il affecte le cours du temps. Il se repose au tour suivant.
+52
+Comets are summoned down from the sky. The recoil harshly lowers the user's Sp. Atk stat.
+Le lanceur invoque des comètes. Le contrecoup réduit beaucoup son Attaque Spéciale.
+53
+The user rampages and attacks for two to three turns. The user then becomes confused.
+Le lanceur enrage et attaque pendant deux ou trois tours avant de devenir confus.
+54
+The user tackles the target, exhibiting overwhelming menace. This may also make the target flinch.
+Le lanceur frappe l’ennemi en prenant un air menaçant. Peut aussi l’apeurer.
+55
+The user tears the target along with the space around it. Critical hits land more easily.
+Le lanceur déchire l’ennemi et l’espace autour de lui. Taux de critique élevé.
+56
+The target is attacked with a shock wave generated by the user's gaping mouth.
+Le lanceur ouvre la bouche pour envoyer une onde de choc qui frappe l'ennemi.
+57
+The user slashes the target with huge sharp claws.
+Le lanceur lacère l'ennemi de ses grandes griffes aiguisées.
+58
+The target is knocked away, and a different Pokémon is dragged out. Ends the battle in the wild.
+Un coup puissant qui blesse la cible et l'envoie au loin. Force l'adversaire à changer de Pokémon.
+59
+The user exhales a mighty gust that inflicts damage. This may also leave the target with paralysis.
+Le lanceur souffle fort sur l’ennemi pour lui infliger des dégâts. Peut aussi le paralyser.
+60
+The user attacks the target by hitting it with brutal strikes. The target is hit twice in a row.
+Le lanceur frappe l'ennemi deux fois d'affilée avec les parties les plus robustes de son corps.
+61
+The user whips up a vicious tornado to tear at the opposing Pokémon. This may also make them flinch.
+Déclenche un terrible ouragan sur l'ennemi. Peut aussi l'apeurer.
+62
+This attack hits the target with a shock wave of pure rage. This attack always inflicts 40 HP damage.
+La colère du lanceur déclenche une onde de choc destructrice qui inflige toujours 40 PV de dégâts.
+63
+The user vigorously performs a mystic, powerful dance that boosts their Attack and Speed stats.
+Une danse mystique dont le rythme effréné augmente l'Attaque et la Vitesse du lanceur.
+64
+Surrounded with electricity, the user charges forward. This may also leave the target with paralysis.
+Le lanceur s’enveloppe d’une charge électrique surpuissante et se jette sur l’ennemi. Peut aussi le paralyser.
+65
+A wicked thunderbolt is dropped on the target. This may also leave the target with paralysis.
+La foudre tombe sur l'ennemi pour lui infliger des dégâts. Peut aussi le paralyser.
+66
+The user attacks in an electrified charge. It damages the user quite a lot and may paralyze the target.
+Le lanceur électrifie son corps avant de charger. Blesse aussi gravement le lanceur. Peut paralyser la cible.
+67
+The user fires an electric blast like a cannon to inflict damage and cause paralysis.
+Un boulet de canon électrifié qui inflige des dégâts et paralyse l'ennemi.
+68
+The user throws down a giant lightning bolt. Its power is doubled if Fusion Flare is used before it.
+Projette un orbe électrique gigantesque. L'effet augmente sous l'influence de Flamme Croix.
+69
+A strong electric blast crashes down on the target. This may also leave the target with paralysis.
+Une grosse décharge électrique tombe sur l'ennemi. Peut aussi le paralyser.
+70
+The user is shrouded in electricity and smashes the target. It also damages the user a little.
+Une charge électrique violente qui blesse aussi légèrement le lanceur.
+71
+The user lets loose a flare of electricity, striking everything around. This may also cause paralysis.
+Un flamboiement d'électricité frappe tous les Pokémon autour du lanceur. Peut aussi les paralyser.
+72
+The target is punched with an electrified fist. This may also leave the target with paralysis.
+Un coup de poing électrique vient frapper l'ennemi. Peut le paralyser.
+73
+After making their attack, the user rushes back to switch places with a party Pokémon in waiting.
+Après son attaque, le lanceur revient à toute vitesse et change de place avec un Pokémon de l'équipe.
+74
+The user throws an electrically charged tackle at the target. This may paralyze the target.
+Lance une charge électrique sur l'ennemi. Peut aussi le paralyser.
+75
+The user bites with electrified fangs. This may also make the target flinch or leave it with paralysis.
+Le lanceur utilise une morsure électrifiée. Peut aussi paralyser ou apeurer l'ennemi.
+76
+The user strikes the target with a quick jolt of electricity. This attack never misses.
+Le lanceur envoie un choc électrique rapide à l'ennemi. Impossible à esquiver.
+77
+The user attacks and captures opposing Pokémon using an electric net, lowering their Speed stat.
+Attrape l'ennemi dans un filet électrique. Baisse aussi la Vitesse de l'ennemi.
+78
+The user attacks with an electric charge. It may also raise the user's Sp. Atk stat.
+Le lanceur tire un rayon chargé d’électricité. Peut aussi augmenter son Attaque Spéciale.
+79
+A jolt of electricity crashes down on the target. This may also leave the target with paralysis.
+Une décharge électrique tombe sur l'ennemi. Peut aussi le paralyser.
+80
+The user hurls an electric orb. The faster the user is than the target, the greater the power.
+Le lanceur envoie une boule d’électricité. S'il est plus rapide que la cible, les dégâts augmentent.
+81
+The user boosts an Electric-type move for use on the next turn. It raises the user's Sp. Def stat.
+Le lanceur concentre sa puissance pour sa prochaine attaque Électrik. Augmente sa Défense Spéciale.
+82
+The user levitates using electrically generated magnetism for five turns.
+Le lanceur utilise l'électricité pour générer un champ magnétique et léviter durant cinq tours.
+83
+The user launches a weak jolt of electricity that paralyzes the target.
+Un faible choc électrique frappe l’ennemi. Si l’attaque le touche, celui-ci est paralysé.
+84
+The user focuses their mind before launching a punch. The move fails if the user is hit before using it.
+Le lanceur se concentre avant d'attaquer. Echoue s'il est touché avant d'avoir frappé.
+85
+The target is attacked with a knee kick from a jump. If it misses, the user is hurt instead.
+Le lanceur s'élance pour effectuer un coup de genou sauté. S'il échoue, le lanceur se blesse.
+86
+The user fights up close, not guarding themselves. It lowers the user's Defense and Sp. Def stats.
+Le lanceur combat au corps à corps sans se protéger. Baisse aussi sa Défense et sa Défense Spéciale.
+87
+The user heightens mental focus to unleash their power. It may lower the target's Sp. Def stat.
+Le lanceur rassemble ses forces et laisse éclater son pouvoir. Peut aussi baisser la Déf.Spé. de la cible.
+88
+The user attacks with great power. However, this lowers the user's Attack and Defense stats.
+Une attaque puissante, mais qui baisse l'Attaque et la Défense du lanceur.
+89
+The user delivers a double chop with their forearms crossed. Critical hits land more easily.
+Le lanceur délivre un coup double en croisant les avant-bras. Taux de critique élevé.
+90
+The user punches the target with full, concentrated power. This confuses the target if it hits.
+Le lanceur rassemble ses forces et envoie un coup de poing à l’ennemi. Rend ce dernier confus.
+91
+The user swings and hits with their strong, heavy fist. It lowers the user's Speed, however.
+Le lanceur donne un puissant coup de poing à l’ennemi. Réduit la Vitesse du lanceur.
+92
+The user jumps up high, then strikes with a kick. If the kick misses, the user is hurt instead.
+Le lanceur s'envole pour décocher un coup de pied sauté. S'il échoue, le lanceur se blesse.
+93
+The user lets loose a blast of aura power from deep within their body. This attack never misses.
+Le lanceur dégage une aura et projette de l'énergie. N'échoue jamais.
+94
+The user attacks by slicing with a long horn. The target's stat changes don't affect the damage.
+Un coup de corne qui lacère l’ennemi. Ignore ses changements de stats.
+95
+The user cuts with a long horn. The odd power contained in the horn deals physical damage.
+L’ennemi est lacéré par une longue corne. Son pouvoir mystérieux inflige des dégâts physiques.
+96
+The user attacks the target with an uppercut thrown skyward with force.
+Le lanceur attaque avec un uppercut. Il envoie son poing vers le ciel de toutes ses forces.
+97
+The user grabs the target and recklessly dives for the ground. This also damages the user a little.
+Le lanceur agrippe l'ennemi et l'écrase au sol. Blesse aussi légèrement le lanceur.
+98
+The user attacks with a swift chop. It can also break barriers, such as Light Screen and Reflect.
+Une attaque avec le tranchant de la main. Permet aussi de briser les barrières comme Mur Lumière.
+99
+An energy-draining punch. The user's HP is restored by half the damage taken by the target.
+Un coup de poing qui draine l'énergie. Convertit la moitié des dégâts infligés en PV pour le lanceur.
+100
+The user attacks last. In return, this throw move never misses.
+Le lanceur porte son coup en dernier. En échange, cette capacité n'échoue jamais.
+101
+The target is thrown, and a different Pokémon is dragged out. Ends the battle in the wild.
+Projette le Pokémon ennemi et le remplace par un autre. Met fin au combat dans la nature.
+102
+The target is attacked with a shock wave. This may also leave the target with paralysis.
+Une onde de choc frappe l'ennemi. Peut aussi paralyser la cible.
+103
+The user makes a swift attack on the target's legs, which lowers the target's Speed stat.
+Un coup rapide qui affecte la mobilité de l’ennemi et diminue sa Vitesse.
+104
+This attack move's power is doubled if the user has been hurt by the opponent in the same turn.
+Une attaque deux fois plus puissante si le lanceur a été blessé par l'ennemi durant ce tour.
+105
+The user lashes out with a quick, spinning kick. This may also make the target flinch.
+Le lanceur effectue un coup de pied tournoyant et extrêmement rapide. Peut apeurer l'ennemi.
+106
+This attack inflicts big damage on a sleeping target. This also wakes the target up, however.
+Cette attaque inflige d'importants dégâts à un Pokémon endormi. Mais elle le réveille également.
+107
+The target is attacked with a sharp chop. Critical hits land more easily.
+L'ennemi est tranché violemment. Taux de critique élevé.
+108
+The user throws a punch at blinding speed. This move always goes first.
+Coup de poing fulgurant. Frappe en priorité.
+109
+The user punches the target. This may lower the target's Defense stat. It can shatter rocks in the field.
+Porte un coup de poing à l'ennemi qui peut baisser sa Défense.
+110
+The user strikes the target with a fierce blow. This attack always results in a critical hit.
+Un coup très puissant dont l'effet est toujours critique.
+111
+The user whirls their fists to send a wave of pure vacuum at the target. This move always goes first.
+Le lanceur agite son poing pour projeter une onde de vide. Frappe en priorité.
+112
+The target is quickly kicked twice in succession using both feet.
+Deux coups de pied qui frappent l'ennemi deux fois d'affilée.
+113
+The user lets loose a flurry of open-palmed arm thrusts that hit two to five times in a row.
+Un déluge de coups adressés avec la paume qui frappe de deux à cinq fois d'affilée.
+114
+A consecutive three-kick attack that becomes more powerful with each successive hit.
+Une salve de un à trois coups de pied dont la puissance augmente à chaque coup porté.
+115
+A retaliation move that counters any physical attack, inflicting double the damage taken.
+Une riposte qui répond à toute capacité physique en infligeant le double de dégâts.
+116
+The user risks everything to attack. The user faints, but does damage equal to their HP.
+Une attaque très risquée. Le lanceur perd tous ses PV restants et inflige autant de dégâts à l'ennemi.
+117
+A powerful low kick that makes the target fall over. The heavier the target, the greater the power.
+Un puissant coup de pied bas qui fauche l'ennemi. Il est plus efficace contre les ennemis lourds.
+118
+An all-out attack that becomes more powerful the less HP the user has.
+Le lanceur ne retient plus ses coups. Plus ses PV sont bas et plus l'attaque est puissante.
+119
+The target is thrown using the power of gravity. It inflicts damage equal to the user's level.
+L'ennemi est projeté grâce au pouvoir de la gravité. Inflige des dégâts équivalents au niveau du lanceur.
+120
+The user tenses their muscles to bulk up their body, raising both their Attack and Defense stats.
+Le lanceur tend ses muscles pour se gonfler, ce qui booste son Attaque et sa Défense.
+121
+Enables the user to evade all attacks. Its chance of failing rises if it is used in succession.
+Le lanceur esquive toutes les attaques. Échoue si utilisé plusieurs fois de suite.
+122
+The user protects themselves and their allies from priority moves.
+Le lanceur et son équipe sont protégés contre les attaques prioritaires.
+123
+Engulfed in flames, the user rushes at the target. It lowers the user's Defense, Sp. Def, and Speed.
+Le lanceur projette une flamme de son front et se jette sur l’ennemi. Baisse les défenses et la Vitesse.
+124
+The target is razed by a fiery explosion. The user can't move on the next turn.
+Une explosion ardente souffle l'adversaire. Le lanceur doit se reposer au tour suivant.
+125
+The user attacks the targets with explosive fury. The lower the user's HP, the lower the power.
+Le lanceur laisse exploser sa colère. Plus ses PV sont bas et moins l'attaque est puissante.
+126
+The user attacks the target at full power. The attack's recoil harshly lowers the user's Sp. Atk stat.
+Attaque l’ennemi à pleine puissance. Le contrecoup baisse beaucoup l’Attaque Spéciale du lanceur.
+127
+The user engulfs the target in an intense, yet beautiful, blue flame. This may also burn the target.
+De magnifiques et redoutables flammes bleues fondent sur l'ennemi. Peut aussi le brûler.
+128
+The user attacks with an intense blast of all-consuming fire. This may leave the target with a burn.
+Un déluge de flammes ardentes submerge l'ennemi. Peut aussi le brûler.
+129
+The user charges forward in a flame cloak. It damages the user quite a lot and may burn the target.
+Le lanceur s'embrase avant de charger l'ennemi. Blesse aussi gravement le lanceur. Peut brûler.
+130
+The target becomes trapped within a maelstrom of fire that rages for four to five turns.
+L’ennemi est pris dans un tourbillon de feu qui dure de quatre à cinq tours.
+131
+The user brings down a giant flame. This move's power is doubled if Fusion Bolt is used before it.
+Projette une boule de feu gigantesque. L'effet augmente sous l'influence d'Éclair Croix.
+132
+The user exhales hot breath on opposing Pokémon. This may also leave those Pokémon with a burn.
+Le lanceur provoque une vague de chaleur. Peut aussi brûler l'ennemi.
+133
+The user attacks by engulfing the target in an intense fire. This leaves the target with a burn.
+L'ennemi est entouré d'un torrent de flammes ardentes qui le brûlent.
+134
+The target is razed with a mystical fire of great intensity. This may also leave the target with a burn.
+Le lanceur génère un feu mystique d’une intensité redoutable pour attaquer l’ennemi. Peut aussi le brûler.
+135
+The user torches everything around in an inferno of scarlet flames. This may burn those hit.
+Des boules de feu s’abattent sur tous les Pokémon autour du lanceur. Peut aussi les brûler.
+136
+The target is scorched with an intense blast of fire. This may leave the target with a burn.
+L'ennemi reçoit un torrent de flammes. Peut aussi le brûler.
+137
+The user launches a kick that lands critical hits more easily. This may also burn the target.
+Le lanceur envoie un coup de pied au taux de critiques élevé. Peut aussi brûler la cible.
+138
+Cloaked in flames, the user dances and flaps their wings. This may also raise the user's Sp. Atk stat.
+Le lanceur enveloppe l'ennemi de flammes. Peut aussi augmenter l'Attaque Spéciale du lanceur.
+139
+The user torches everything around in an inferno of scarlet flames. This may leave those hit with a burn.
+Des boules de feu s’abattent sur tous les Pokémon autour du lanceur. Peut aussi les brûler.
+140
+The target is punched with a fiery fist. This may also leave the target with a burn.
+Un coup de poing enflammé vient frapper l'ennemi. Peut le brûler.
+141
+The user attacks with a bursting flame. The bursting flame damages Pokémon next to the target as well.
+Quand l’attaque atteint sa cible, elle projette des flammes qui touchent tout ennemi situé à côté.
+142
+The user bites with flame-cloaked fangs. This may also make the target flinch or leave it with a burn.
+Le lanceur utilise une morsure enflammée. Peut aussi brûler ou apeurer l'ennemi.
+143
+The user charges at the target, cloaked in flames. This may also burn the target.
+Le lanceur s’entoure de feu et charge l’ennemi. Peut aussi le brûler.
+144
+A column of fire erupts. Its power is increased and it can create Fields with other Pledge moves.
+Une masse de feu s'abat sur l'ennemi. Si l'attaque est utilisée avec une autre Aire, crée un Terrain.
+145
+Cloaked in flames, the user attacks. Building up power, the user raises their Speed stat.
+Le lanceur s’entoure de flammes pour attaquer l’ennemi. Il se concentre et sa Vitesse augmente.
+146
+The target is attacked with small flames. This may also leave the target with a burn.
+L'ennemi est attaqué par une faible flamme. Peut aussi le brûler.
+147
+The target becomes trapped within a fierce vortex of fire that rages for four to five turns.
+Un tourbillon de flammes emprisonne l’ennemi pendant quatre à cinq tours.
+148
+The user attacks with fire. If a Pokémon is holding a Berry or a Type Gem, the item becomes unusable.
+Des flammes calcinent l’ennemi. S’il tient une Baie, celle-ci est brûlée et devient inutilisable.
+149
+The user slams, covered in flames. The heavier the user is than the target, the greater the power.
+Le lanceur projette son corps enflammé contre l'ennemi. Plus il est lourd, plus les dégâts sont grands.
+150
+Intensified sun empowers Fire-type moves and weakens Water-type moves for five turns.
+Fait briller le soleil pendant cinq tours. Améliore le type Feu et affaiblit le type Eau.
+151
+The user shoots a sinister, bluish-white flame at the target to inflict a burn.
+Lance un bouquet de flammes maléfiques à l'ennemi pour lui infliger une brûlure.
+152
+A second-turn attack move where critical hits land more easily. This may also make the target flinch.
+Une attaque en deux tours au taux de critiques élevé. Peut aussi apeurer l'ennemi.
+153
+The user tucks in their wings and charges from low altitude. This damages the user quite a lot.
+Le lanceur replie ses ailes et charge en rase-mottes. Blesse gravement le lanceur.
+154
+The user wraps their opponent in a fierce wind that flies up into the sky. This may also confuse the target.
+Le lanceur déclenche une tempête de vents violents qui s'abat sur l'ennemi. Peut aussi le rendre confus.
+155
+A vortex of air is shot at the target to inflict damage. Critical hits land more easily.
+Le lanceur projette une tornade sur l'ennemi pour infliger des dégâts. Taux de critiques élevé.
+156
+The user soars, then strikes the target on the next turn. It can be used to fly to any familiar location.
+Le lanceur s'envole au premier tour et frappe au second. Permet aussi de voler jusqu'à une ville déjà visitée.
+157
+The user bounces up high, then drops on the second turn. This may also paralyze the target.
+Le lanceur bondit très haut et plonge sur l'ennemi au second tour. Peut aussi le paralyser.
+158
+A corkscrewing attack with a sharp beak acting as a drill.
+Une attaque utilisant le bec comme une perceuse.
+159
+The user attacks with a blade of air that slices even the sky. This may also make the target flinch.
+Le lanceur attaque avec une lame d'air qui fend tout. Peut aussi apeurer l'ennemi.
+160
+The user confounds the target with speed, then slashes. This attack never misses.
+Le lanceur prend l'ennemi de vitesse et le lacère. N'échoue jamais.
+161
+The user attacks the target with sound waves of deafening chatter. This confuses the target.
+Attaque avec les ondes sonores assourdissantes qu’il émet en bavardant. Rend l’ennemi confus.
+162
+The user pecks the target. If the target is holding a Berry, the user eats it and gains its effect.
+Le lanceur picore la cible. Si cette dernière tient une Baie, le lanceur la mange et profite de ses effets.
+163
+Takes the target to the skies and drops it on the next turn. The target cannot attack while in the sky.
+Le lanceur emmène l’ennemi dans les airs au premier tour et le lâche dans le vide au second.
+164
+The target is struck with large, imposing wings spread wide to inflict damage.
+L'ennemi est frappé par de larges ailes déployées pour infliger des dégâts.
+165
+The user nimbly strikes the target. Inflicts massive damage if the user is not holding an item.
+Attaque agile. Si le lanceur ne tient pas d'objet, l'attaque inflige davantage de dégâts.
+166
+The user launches razor-like wind to slash the opposing Pokémon. Critical hits land more easily.
+Le lanceur appelle des vents tranchants qui lacèrent l’ennemi. Taux de critique élevé.
+167
+A gust of wind is whipped up by wings and launched at the target to inflict damage.
+Le lanceur bat des ailes pour générer une bourrasque qui blesse l'ennemi.
+168
+The target is jabbed with a sharply pointed beak or horn.
+Frappe l'ennemi d'un bec pointu ou d'une corne pour infliger des dégâts.
+169
+A strong wind blows away barriers like Reflect or Light Screen. It also lowers the target's Evasion.
+Un grand coup de vent qui disperse les barrières. Baisse l'Esquive de la cible.
+170
+The user covers the target's body with a mass of down that harshly lowers its Attack stat.
+Une montagne de plumes ensevelit l’ennemi et réduit beaucoup son Attaque.
+171
+The user counters the target by mimicking the target's last move.
+Le lanceur riposte à l'attaque de l'ennemi avec la même attaque.
+172
+The user lands and rests their body. It restores up to half of the user's max HP.
+Le lanceur atterrit et se repose. Restaure jusqu'à la moitié de ses PV max.
+173
+The user whips up a turbulent whirlwind, boosting the Speed stat of the user and allies for four turns.
+Génère une rafale de vent qui augmente la Vitesse des Pokémon de l'équipe pendant 4 tours.
+174
+The user disappears, then strikes on the next turn. It strikes even if the target protects itself.
+Le lanceur disparaît et frappe l’ennemi au second tour. Fonctionne même si l’ennemi se protège.
+175
+The user hurls a shadowy blob at the target. This may also lower the target's Sp. Def stat.
+Projette une grande ombre sur l'ennemi. Peut aussi faire baisser sa Défense Spéciale.
+176
+The user slashes with a sharp claw made from shadows. Critical hits land more easily.
+Attaque avec une griffe puissante faite d’ombres. Taux de critiques élevé.
+177
+The user blasts the target with a gust of repulsive wind. This may also raise all the user's stats at once.
+Le lanceur crée une violente bourrasque. Peut aussi augmenter toutes ses stats.
+178
+The user throws a punch from the shadows. This attack never misses.
+Le lanceur surgit des ombres et donne un coup de poing. N'échoue jamais.
+179
+This relentless attack does massive damage to a target affected by status conditions.
+Attaque acharnée qui cause davantage de dégâts à l'ennemi s'il a un problème de statut.
+180
+The user extends their shadow and attacks from behind. This move always goes first.
+Le lanceur étend son ombre pour frapper par-derrière. Frappe en priorité.
+181
+The user attacks the target while shouting in a startling fashion. This may also make the target flinch.
+Le lanceur attaque l'ennemi en poussant un cri terrifiant. Peut aussi l'apeurer.
+182
+The target is licked with a long tongue, causing damage. This may also leave the target with paralysis.
+Un grand coup de langue qui inflige des dégâts à l'ennemi. Peut aussi le paralyser.
+183
+The user makes the target see a frightening mirage. It inflicts damage equal to the user's level.
+Le lanceur invoque un mirage. Inflige des dégâts équivalents au niveau du lanceur.
+184
+The target is exposed to a sinister ray that triggers confusion.
+Un rayon sinistre qui plonge l'ennemi dans un état de confusion.
+185
+A move that works differently for the Ghost-type than for all other types.
+Une capacité à l'effet différent selon que le lanceur est un Pokémon Spectre ou non.
+186
+If the user faints after using this move, the Pokémon knocking it out also faints.
+Quand cette capacité est activée, elle met K.O. un ennemi qui porte un coup fatal au lanceur.
+187
+If the user faints, the user's grudge depletes the PP of the opponent's move that knocked it out.
+Si le lanceur est mis K.O., sa rancune épuise les PP de la capacité utilisée par l’ennemi pour le mettre K.O.
+188
+A sleeping target sees a nightmare that inflicts some damage every turn.
+Un cauchemar qui inflige des dégâts à chaque tour à un ennemi endormi.
+189
+The user unleashes a grudge on the move last used by the target, cutting 4 PP from it.
+Le lanceur exprime son ressentiment en retirant 4 PP de la dernière attaque de l'ennemi.
+190
+The user slams the target with an enormous tree. The user can't move on the next turn.
+Un violent coup de racines s'abat sur l'ennemi. Immobilise le lanceur au tour suivant.
+191
+The user whips up a storm of leaves. The attack's recoil harshly lowers the user's Sp. Atk stat.
+Invoque une tempête de feuilles acérées. Le contrecoup réduit beaucoup l’Attaque Spéciale du lanceur.
+192
+The user attacks by scattering petals for two to three turns. The user then becomes confused.
+Le lanceur attaque en projetant des pétales pendant deux à trois tours avant de céder à la confusion.
+193
+The user violently whirls vines, tentacles, or the like to harshly lash the target.
+Le lanceur fait virevolter violemment ses lianes ou ses tentacules pour fouetter l'ennemi.
+194
+The user emits a shock wave to attack the target. This may also harshly lower the target's Sp. Def stat.
+Le corps du lanceur émet une onde de choc. Peut aussi beaucoup baisser la Défense Spéciale de la cible.
+195
+In this two-turn attack, the user gathers light, then blasts a bundled beam on the next turn.
+Absorbe la lumière au premier tour et envoie un rayon puissant au tour suivant.
+196
+The user slams their rugged body into the target to attack. This also damages the user quite a lot.
+Le lanceur heurte l’ennemi de son corps robuste. Blesse aussi gravement le lanceur.
+197
+The user handles a sharp leaf like a sword, cutting their target. Critical hits land more easily.
+Une feuille coupante comme une lame entaille l'ennemi. Taux de critiques élevé.
+198
+The user draws power from nature and fires it at the target. This may also lower the target's Sp. Def stat.
+Utilise les pouvoirs de la nature pour attaquer l’ennemi. Peut aussi baisser sa Défense Spéciale.
+199
+The user slams a barrage of hard-shelled seeds down on the target from above.
+Le lanceur fait pleuvoir un déluge de graines explosives sur l'ennemi.
+200
+A nutrient-draining attack. The user's HP is restored by half the damage taken by the target.
+Une attaque qui convertit la moitié des dégâts infligés en PV pour le lanceur.
+201
+The user drains the target's energy with horns. The user's HP is restored by half the damage dealt.
+Un coup de corne qui draine l'énergie de l'ennemi. Convertit la moitié des dégâts infligés en PV.
+202
+The user attacks by encircling the target in sharp leaves. This may also lower the target's Accuracy.
+L’ennemi est pris dans un tourbillon de feuilles acérées. Peut aussi baisser sa Précision.
+203
+The user scatters curious leaves that chase the target. This attack never misses.
+Le lanceur disperse d'étranges feuilles qui poursuivent l'ennemi. N'échoue jamais.
+204
+The user attacks by wildly swinging their thorny arms. This may also make the target flinch.
+Le lanceur attaque en fouettant l'ennemi de ses bras épineux. Peut aussi l'apeurer.
+205
+Sharp-edged leaves are launched to slash at the opposing Pokémon. Critical hits land more easily.
+Des feuilles aiguisées comme des rasoirs entaillent l’ennemi. Taux de critiques élevé.
+206
+A column of grass sprouts. Its power is increased and it can create Fields with other Pledge moves.
+Une masse végétale s'abat sur l'ennemi. Si l'attaque est utilisée avec une autre Aire, crée un Terrain.
+207
+A nutrient-draining attack. The user's HP is restored by half the damage taken by the target.
+Une attaque qui convertit la moitié des dégâts infligés en PV pour le lanceur.
+208
+The target is struck with slender, whiplike vines to inflict damage.
+Fouette l'ennemi avec de fines lianes pour infliger des dégâts.
+209
+The user forcefully shoots seeds at the target two to five times in a row.
+Le lanceur mitraille l’ennemi avec une rafale de graines. De deux à cinq rafales sont lancées à la suite.
+210
+A nutrient-draining attack. The user's HP is restored by half the damage taken by the target.
+Une attaque qui convertit la moitié des dégâts infligés en PV pour le lanceur.
+211
+The user snares the target and trips it. The heavier the target, the greater the move's power.
+L’ennemi est piégé dans de l’herbe qui le fait trébucher. Plus il est lourd, plus il subit de dégâts.
+212
+The user releases a soothing scent that heals all status conditions affecting the user's party.
+Le lanceur libère un parfum apaisant qui guérit tous les problèmes de statut de l'équipe.
+213
+The user protects their body, wrapping it in soft cotton. It drastically raises their Defense stat.
+Le lanceur se protège en s’emmitouflant dans du coton. Sa Défense augmente énormément.
+214
+The user releases cotton-like spores that harshly lower the targets' Speed stat.
+Le lanceur libère des spores cotonneuses qui collent à l’ennemi et baissent beaucoup sa Vitesse.
+215
+The user plays a pleasant melody that lulls the target into a deep sleep.
+Le lanceur joue une douce mélodie qui plonge l'ennemi dans un profond sommeil.
+216
+The user lays roots that restore HP on every turn. Because of being rooted, the user can't switch out.
+Le lanceur plante ses racines et récupère des PV à chaque tour. Une fois enraciné, il ne peut plus fuir.
+217
+A seed is planted on the target. It steals some HP from the target every turn.
+Une graine est semée sur l'ennemi. À chaque tour, elle lui dérobe des PV que le lanceur récupère.
+218
+The user scatters a big cloud of sleep-inducing dust around the target.
+Le lanceur répand une poudre soporifique qui endort la cible.
+219
+The user scatters bursts of spores that induce sleep.
+Le lanceur répand un nuage de spores qui endort.
+220
+The user scatters a cloud of numbing powder that paralyzes the target.
+Le lanceur répand sur l'ennemi une poudre qui le paralyse.
+221
+The user restores their own HP. The amount of HP regained varies with the weather.
+Un soin qui restaure des PV au lanceur. Son efficacité varie en fonction de la météo.
+222
+A seed causing worry is planted on the target. It changes the target's Ability to Insomnia.
+Plante sur la cible une graine qui la rend soucieuse et remplace son talent par Insomnia.
+223
+The user sets off an earthquake that strikes every Pokémon around them.
+Le lanceur provoque un tremblement de terre touchant tous les Pokémon autour de lui.
+224
+The user makes the ground under the target erupt. This may also lower the target's Sp. Def stat.
+De terribles séismes secouent l’ennemi. Peut aussi baisser sa Défense Spéciale.
+225
+The user burrows, then attacks on the next turn. It can also be used to exit dungeons.
+Le lanceur creuse au premier tour et frappe au second. Permet aussi de sortir des grottes.
+226
+The user crashes into the target while rotating their body like a drill. Critical hits land more easily.
+Le lanceur tourne sur lui-même comme une perceuse et se jette sur l'ennemi. Taux de critiques élevé.
+227
+The user clubs the target with a bone. This may also make the target flinch.
+Le lanceur frappe l’ennemi à grands coups d’os. Peut aussi l’apeurer.
+228
+The user launches a hard-packed mud ball to attack. This may also lower the target's Accuracy.
+Le lanceur attaque à l’aide d’une boule de boue solidifiée. Peut aussi baisser la Précision de l’ennemi.
+229
+The user strikes everything around by stomping the ground. This lowers the Speed stat of those hit.
+Le lanceur piétine le sol et inflige des dégâts à tous les Pokémon autour de lui. Baisse aussi leur Vitesse.
+230
+The user attacks by hurling a blob of mud at the target. This also lowers the target's Speed stat.
+Le lanceur attaque en projetant de la boue sur l'ennemi. Réduit aussi la Vitesse de la cible.
+231
+The user throws the bone they hold. The bone loops around to hit the target twice, coming and going.
+Le lanceur projette son os comme un boomerang. Cette attaque frappe à l'aller et au retour.
+232
+The user traps the target inside a harshly raging sandstorm for four to five turns.
+Le lanceur emprisonne l’ennemi dans une tempête de sable terrifiante qui dure de quatre à cinq tours.
+233
+The user strikes the target with a hard bone two to five times in a row.
+Le lanceur frappe l’ennemi avec un os de deux à cinq fois d’affilée.
+234
+The user hurls mud in the target's face to inflict damage and lower its Accuracy.
+Le lanceur envoie de la boue au visage de l'ennemi pour infliger des dégâts et baisser sa Précision.
+235
+The user opens up a fissure in the ground and drops the target in. The target faints instantly if hit.
+Le lanceur fait tomber l'ennemi dans une crevasse. Si cette attaque réussit, elle met K.O. sur le coup.
+236
+The user attacks everything around with a ground-shaking quake. Its power varies.
+Provoque un tremblement de terre d’intensité variable qui affecte tous les Pokémon alentour.
+237
+The user kicks up mud on the battlefield. This weakens Electric-type moves for five turns.
+Asperge les alentours de boue. Affaiblit les capacités Électrik pendant cinq tours.
+238
+Sand is hurled in the target's face, reducing the target's Accuracy.
+Lance du sable au visage de l'ennemi pour baisser sa Précision.
+239
+The user lays a trap of spikes at the opposing team's feet. It hurts opponents switching into battle.
+Le lanceur disperse des piquants sur le sol pour blesser tout ennemi qui entre au combat.
+240
+The user attacks with electrically charged ice on the second turn. This may paralyze the target.
+Projette un bloc de glace électrifié sur l'ennemi au second tour. Peut aussi le paralyser.
+241
+On the second turn, an ultracold, freezing wind surrounds the target. This may burn the target.
+Au second tour, le lanceur projette un souffle de vent glacial dévastateur sur l’ennemi. Peut aussi le brûler.
+242
+A howling blizzard is summoned to strike opposing Pokémon. This may also freeze the targets.
+Une violente tempête de neige s’abat sur l’ennemi. Peut aussi le geler.
+243
+The target is struck with an icy-cold beam of energy. This may also leave the target frozen.
+Un rayon de glace frappe l'ennemi. Peut aussi le geler.
+244
+The user attacks by harshly dropping large icicles onto the target. This may make the target flinch.
+Envoie de gros blocs de glace sur l'ennemi pour lui infliger des dégâts. Peut aussi l'apeurer.
+245
+The target is punched with an icy fist. This may also leave the target frozen.
+Un coup de poing glacé vient frapper l'ennemi. Peut le geler.
+246
+The target is hit with a rainbow-colored beam. This may also lower the target's Attack stat.
+Envoie un rayon arc-en-ciel sur l'ennemi. Peut aussi baisser son Attaque.
+247
+The user attacks by blowing freezing cold air at opposing Pokémon. This lowers their Speed stat.
+Un souffle de vent qui congèle tout sur son passage s'abat sur l'ennemi. Réduit aussi sa Vitesse.
+248
+The user bites with cold-infused fangs. This may also make the target flinch or leave it frozen.
+Le lanceur utilise une morsure glaciale. Peut aussi geler ou apeurer l'ennemi.
+249
+The power of this move is doubled if the user has already been hurt by the target in the same turn.
+Une attaque deux fois plus puissante si le lanceur a été blessé par l'ennemi durant le tour.
+250
+The user attacks with a gust of chilled air. This also lowers the opposing Pokémons' Speed stat.
+Une bourrasque de vent froid blesse l'ennemi. Réduit aussi sa Vitesse.
+251
+The user blows a cold breath on the target. This attack always results in a critical hit.
+Un souffle froid blesse l'ennemi. L'effet est toujours critique.
+252
+The user flash-freezes chunks of ice and hurls them at the target. This move always goes first.
+Le lanceur crée des éclats de glace qu’il envoie sur l’ennemi. Frappe en priorité.
+253
+The user attacks with a chilling gust of powdery snow. This may also freeze the opposing Pokémon.
+Le lanceur projette de la neige poudreuse. Peut aussi geler l'ennemi.
+254
+The user attacks the target for five turns. The move's power increases each time it hits.
+Frappe l’ennemi pendant cinq tours. L’attaque gagne en puissance à chaque coup.
+255
+The user launches sharp icicles at the target two to five times in a row.
+Le lanceur jette des pics de glace sur l’ennemi, de deux à cinq fois de suite.
+256
+The target faints instantly. It is less likely to hit if used by Pokémon other than Ice-types.
+Une vague de froid glacial frappe l’ennemi pour le mettre K.O. en un coup. Peu précis.
+257
+The user summons a hailstorm lasting five turns. It damages all Pokémon except the Ice-type.
+Invoque une tempête de grêle qui dure cinq tours. Ne blesse pas les Pokémon de type Glace.
+258
+The user creates a haze that eliminates every stat change among all the Pokémon engaged in battle.
+Un brouillard qui annule les changements de stats de tous les Pokémon au combat.
+259
+The user cloaks themselves and allies in mist, preventing stats from being lowered for five turns.
+Une brume blanche enveloppe l’équipe du lanceur et empêche la réduction des stats pour cinq tours.
+260
+The user attacks everything around themselves, causing a tremendous explosion. The user then faints.
+Le lanceur explose et inflige des dégâts à tous les Pokémon autour de lui. Met K.O. le lanceur.
+261
+The user attacks everything around themselves by causing an explosion. The user then faints.
+Le lanceur explose en blessant tous les Pokémon autour de lui. Le lanceur tombe K.O.
+262
+The user charges at the target using every bit of their power. The user can't move on the next turn.
+Le lanceur charge l’ennemi de toute sa puissance et doit ensuite se reposer au tour suivant.
+263
+The target is attacked with a powerful beam. The user can't move on the next turn.
+Projette un puissant rayon sur l'ennemi. Le lanceur doit se reposer au tour suivant.
+264
+This move can be used only after the user has used all other moves they know within the battle.
+Cette capacité ne peut être utilisée qu'après que le lanceur a utilisé toutes les autres.
+265
+A reckless, life-risking tackle. This also damages the user quite a lot.
+Une charge dangereuse et imprudente. Blesse aussi gravement le lanceur.
+266
+The user charges head-first, using powerful guard hair. This also damages the user a little.
+Le lanceur donne un coup avec sa tête couronnée d'une fière crinière. Blesse aussi légèrement le lanceur.
+267
+The target is attacked by a kick launched with muscle-packed power.
+Un coup de pied surpuissant qui frappe l’ennemi.
+268
+The user rampages and attacks for two to three turns. The user then becomes confused.
+Le lanceur enrage et attaque pendant deux ou trois tours avant de devenir confus.
+269
+A large egg is hurled at the target with maximum force to inflict damage.
+De toutes ses forces, le lanceur jette un gros œuf sur l'ennemi pour lui infliger des dégâts.
+270
+The user releases countless shots of light. This move's type varies depending on the held Plate.
+Le lanceur libère une myriade de rayons de lumière. Le type varie selon la Plaque que tient le lanceur.
+271
+Tucking in their head, the user raises their Defense stat and rams the target on the second turn.
+Le lanceur baisse la tête pour augmenter sa Défense au premier tour et percuter l’ennemi au second.
+272
+The user lets loose a horribly echoing shout with the power to inflict damage.
+Le lanceur pousse un cri dont l'écho terrifiant a le pouvoir d'infliger des dégâts à l'ennemi.
+273
+The user attacks the target by smashing into it with incredible force. This may also confuse the target. It can also be used to scale rocky walls.
+Le lanceur se jette violemment sur l’ennemi. Peut aussi le rendre confus. Permet aussi d'escalader des parois rocheuses.
+274
+A reckless, full-body charge to slam into the target. This also damages the user a little.
+Une charge violente qui blesse aussi légèrement le lanceur.
+275
+The user attacks in an uproar for three turns. During that time, no Pokémon can fall asleep.
+Le lanceur attaque en rugissant durant trois tours. Pendant ce temps, aucun Pokémon ne peut s'endormir.
+276
+The user drops onto the target with their full body weight. This may also leave the target with paralysis.
+Le lanceur se laisse tomber sur l’ennemi de tout son poids. Peut aussi le paralyser.
+277
+The user fires a beam of light. The move's type changes depending on the Drive the user holds.
+Le lanceur projette un rayon lumineux sur l'ennemi. Le type varie selon le Module que tient le lanceur.
+278
+The user charges the target at blinding speed. This move always goes first.
+Le lanceur charge à une vitesse renversante. Frappe en priorité.
+279
+The user bites hard on the target with sharp front fangs. This may also make the target flinch.
+Le lanceur mord l’ennemi à l’aide de ses incisives aiguisées. Peut aussi l’apeurer.
+280
+The target is slugged by a punch thrown with muscle-packed power.
+L'ennemi reçoit un coup de poing d'une puissance incroyable.
+281
+Blades of wind hit opposing Pokémon on the second turn. Critical hits land more easily.
+Attaque en deux tours. Des lames de vent frappent l’ennemi au second tour. Taux de critique élevé.
+282
+The target is slammed with a long tail, vines, or the like to inflict damage.
+Fouette l’ennemi avec la queue ou une liane, par exemple, pour infliger des dégâts.
+283
+The target is slugged with a punch thrown at maximum power. This can also be used to move heavy boulders.
+Le lanceur cogne l'ennemi de toutes ses forces. Permet aussi de déplacer des rochers.
+284
+The user strikes with a simultaneous three-beam attack. May also burn, freeze, or paralyze the target.
+Le lanceur envoie trois boules d'énergie simultanément. Peut aussi paralyser, brûler ou geler l'ennemi.
+285
+The user slashes the target with hard and sharp claws. This may also lower the target's Defense.
+Lacère l'ennemi avec des griffes solides et aiguisées. Peut aussi baisser sa Défense.
+286
+The user appeals to the targets' hearts with an ancient song. This may also induce sleep.
+Le lanceur attaque l’ennemi en lui chantant une chanson d’un autre temps. Peut l’endormir.
+287
+The user strikes consistently. The target's stat changes don't affect this attack's damage.
+Attaque quand l'ennemi baisse sa garde. Ne tient pas compte des changements de stats de la cible.
+288
+The target is hit with rhythmically launched punches. This may also leave the target confused.
+Un enchaînement de coups de poing cadencés frappe l’ennemi. Peut aussi le rendre confus.
+289
+This attack move doubles its power if the user is poisoned, burned, or paralyzed.
+Une attaque dont la puissance double lorsque le lanceur est empoisonné, paralysé ou brûlé.
+290
+The user charges head first into the target. The target may flinch. Can be used to shake trees.
+Le lanceur donne un coup de tête. Peut apeurer l'ennemi. Peut faire tomber des Pokémon des arbres.
+291
+The user seeks revenge. If an ally fainted on the previous turn, it deals more damage.
+Si un Pokémon de l'équipe a été mis K.O. au tour d'avant, l'effet augmente.
+292
+The additional effects of this attack depend upon where it is used.
+Les effets de cette attaque varient en fonction de l'environnement.
+293
+The target is attacked with a slash of claws or blades. Critical hits land more easily.
+Un coup de griffe ou autre tranche l'ennemi. Taux de critiques élevé.
+294
+The target is jabbed with a sharply pointed horn to inflict damage.
+Frappe l'ennemi d'un coup de corne pointue pour infliger des dégâts.
+295
+The target is stomped with a big foot. This may also make the target flinch.
+Écrase l’ennemi avec un énorme pied. Peut aussi l’apeurer.
+296
+The user endearingly approaches the target, then steals the target's held item.
+Le lanceur s'approche de la cible avec un air angélique afin de dérober l'objet qu'elle tient.
+297
+The user attacks the target with a song. Others can join in the Round to increase the power of the attack.
+Si plusieurs Pokémon déclenchent cette attaque à la suite, l’effet augmente.
+298
+This move's power is doubled when used on a target with paralysis, but also heals its paralysis.
+Cette attaque est doublement efficace sur les ennemis paralysés, mais elle soigne leur paralysie.
+299
+Star-shaped rays are shot at the opposing Pokémon. This attack never misses.
+Le lanceur envoie des rayons d'étoiles. Touche toujours l'ennemi.
+300
+The target is gripped and squeezed from both sides to inflict damage.
+L'ennemi est attrapé et compressé par les côtés.
+301
+The target is cut with a scythe or claw. This can also be used to cut down thin trees.
+Coupe l'ennemi avec des lames ou des griffes. Hors combat, permet de couper des arbres fins.
+302
+This attack is used in desperation only if the user has no PP. It also damages the user a little.
+Une attaque désespérée, utilisée quand le lanceur n’a plus de PP. Le blesse aussi légèrement.
+303
+A physical attack in which the user charges and slams into the target with their whole body.
+Le lanceur charge l'ennemi et le percute de tout son poids.
+304
+This attack move varies in power and type depending on the weather.
+Une attaque dont la puissance et le type varient en fonction du temps qu'il fait.
+305
+The user attacks with an echoing voice. The power increases with every turn it is used successively.
+Si le lanceur ou d'autres Pokémon l'utilisent à chaque tour, l'effet augmente.
+306
+This attack hits first and makes the target flinch. It only works the first turn the user is in battle.
+Permet de frapper en priorité et apeure l’ennemi. Ne fonctionne qu’au premier tour.
+307
+A restrained attack that prevents the target from fainting. The target is left with at least 1 HP.
+Le lanceur retient ses coups pour que l'ennemi garde au moins 1 PV et ne tombe pas K.O.
+308
+Numerous coins are hurled at the target to inflict damage. Money is earned after the battle.
+Des pièces sont lancées sur l'ennemi. Permet d'obtenir de l'argent à la fin du combat.
+309
+The target is physically pounded with a long tail, a foreleg, or the like.
+Écrase l'ennemi avec les pattes avant ou la queue, par exemple.
+310
+The user lunges at a speed that makes them almost invisible. This move always goes first.
+Le lanceur fonce sur l'ennemi si rapidement qu'on parvient à peine à le discerner. Frappe en priorité.
+311
+Hard, pointed, sharp claws rake the target to inflict damage.
+Lacère l'ennemi avec des griffes acérées pour lui infliger des dégâts.
+312
+This attack can be used only if the user is asleep. The harsh noise may also make the target flinch.
+Une attaque qui ne fonctionne que si le lanceur est endormi. Le boucan peut aussi apeurer l'ennemi.
+313
+The user slams the target with a long tail, vines, or a tentacle. The target is hit twice in a row.
+Le lanceur frappe l'ennemi deux fois d'affilée à l'aide de sa queue, de lianes ou d'un autre membre.
+314
+The user even hits a target using moves like Protect or Detect. These moves' effects are lifted.
+Une attaque capable de toucher un ennemi qui utilise une capacité comme Détection ou Abri.
+315
+The user attacks by striking the target with a hard tail. It hits the target two to five times in a row.
+Le lanceur frappe l’ennemi de deux à cinq fois d’affilée avec sa queue robuste.
+316
+As long as this move is in use, the user's Attack stat raises each time the user is hit.
+Une fois activée, cette capacité augmente l'Attaque du lanceur à mesure que celui-ci subit des attaques.
+317
+A spin attack that can also eliminate such moves as Bind, Wrap, Leech Seed, and Spikes.
+Une attaque tournoyante pouvant aussi annuler par exemple Étreinte, Ligotage, Vampigraine ou Picots.
+318
+Sharp spikes are shot at the target in rapid succession. They hit two to five times in a row.
+Envoie une rafale de dards. Peut toucher de deux à cinq fois.
+319
+The target is hit with a flurry of punches that strike two to five times in a row.
+Une tornade de coups de poing qui frappe de deux à cinq fois d’affilée.
+320
+The target is raked with sharp claws or scythes quickly two to five times in a row.
+L'ennemi est lacéré par des faux ou des griffes de deux à cinq fois d'affilée.
+321
+Round objects are hurled at the target to strike two to five times in a row.
+Projette de deux à cinq grosses boules sur l’ennemi.
+322
+Things such as long bodies or tentacles are used to bind and squeeze the target for four to five turns.
+Ligote l'ennemi avec les tentacules ou le corps pour l'écraser durant quatre à cinq tours.
+323
+The target is slapped repeatedly, back and forth, two to five times in a row.
+Gifle rapidement l'ennemi de deux à cinq fois d’affilée.
+324
+The target is jabbed repeatedly with a horn or beak two to five times in a row.
+Frappe l'ennemi deux à cinq fois d'affilée avec un bec ou une corne, par exemple.
+325
+A long body, vines, or the like are used to wrap and squeeze the target for four to five turns.
+Le lanceur ligote l'ennemi avec des lianes ou son corps pour l'écraser durant quatre à cinq tours.
+326
+The user attacks with long tentacles, vines, or the like. This may lower the target's Speed stat.
+De longs tentacules ou lianes attaquent l'ennemi. Peut aussi baisser sa Vitesse.
+327
+The user endures attacks for two turns, then strikes back to cause double the damage taken.
+Le lanceur encaisse les coups durant deux tours et réplique en infligeant le double des dégâts subis.
+328
+The target is crushed with great force. The more HP the target has left, the greater this move's power.
+Une force puissante écrase l'ennemi. Plus il lui reste de PV et plus l'attaque est puissante.
+329
+This attack move cuts down the target's HP to equal the user's HP.
+Une attaque qui réduit les PV de l'ennemi au niveau des PV du lanceur.
+330
+The user flails about aimlessly to attack. The less HP the user has, the greater the move's power.
+Le lanceur fait tournoyer son fléau. Plus ses PV sont bas, plus l'attaque est puissante.
+331
+This full-power attack grows more powerful the less the user likes their Trainer.
+Moins le Pokémon aime son Dresseur, plus cette attaque est puissante.
+332
+A vicious, tearing attack with big pincers. The target faints instantly if this attack hits.
+Des pinces lacèrent violemment l'ennemi, le mettant K.O. sur le coup s'il est touché.
+333
+A unique attack that varies in type depending on the Pokémon using it.
+Attaque dont le type dépend du Pokémon qui l’utilise.
+334
+The user stabs the target with a horn rotating like a drill. The target faints instantly if hit.
+Un coup de corne en vrille qui empale l'ennemi, le mettant K.O. sur le coup s'il est touché.
+335
+The user draws power to attack by using a held Berry. The Berry determines the move's type and power.
+Le lanceur rassemble ses forces grâce à sa Baie. Elle détermine le type et la puissance de l'attaque.
+336
+The user attacks by giving the target a gift with a hidden trap. It restores HP sometimes, however.
+Le lanceur attaque en offrant un cadeau piégé à la cible. Peut cependant restaurer certains de ses PV.
+337
+This full-power attack grows more powerful the more the user likes their Trainer.
+Plus le Pokémon apprécie son Dresseur, plus la puissance de cette attaque furieuse augmente.
+338
+The target is hit with a destructive shock wave that always inflicts 20 HP damage.
+Une onde de choc destructrice qui inflige toujours 20 PV de dégâts.
+339
+The power stored from Stockpile is released. Storing more power increases damage dealt.
+Libère dans une attaque la puissance précédemment accumulée avec Stockage.
+340
+The user chomps hard on the target with their sharp front fangs. This cuts the target's HP in half.
+Une vilaine morsure d'incisives qui réduit de moitié les PV de l'ennemi.
+341
+The fewer PP this move has, the greater its power.
+Moins cette capacité possède de PP, plus elle est puissante.
+342
+The user powerfully wrings the target. The higher the target's HP still is, the greater the power.
+Le lanceur essore l'ennemi. Plus l'ennemi a de PV, plus cette attaque est puissante.
+343
+The user pressures stress points, sharply boosting one of their own or their allies' stats.
+Le lanceur utilise sa connaissance des points de pression pour beaucoup augmenter une stat.
+344
+The user helps the target and makes it use its move right after the user.
+S'il est le premier à agir, le lanceur permet à sa cible d'utiliser une capacité juste après lui.
+345
+The user hurriedly and randomly uses a move among those known by ally Pokémon.
+Le lanceur se dépêche d'utiliser une capacité au hasard parmi celles des Pokémon de l'équipe.
+346
+If it is the opposite gender of the user, the target becomes infatuated and less likely to attack.
+Si l'ennemi est du sexe opposé, il tombe amoureux et rechigne alors à attaquer.
+347
+The user switches places with a party Pokémon in waiting and passes along any stat changes.
+Le lanceur échange sa place et tout changement de stat avec un Pokémon de l'équipe.
+348
+The user maximizes their Attack stat in exchange for HP equal to half their max HP.
+Améliore l'Attaque au maximum en sacrifiant la moitié des PV max.
+349
+The user passes their held item to the target if the target isn't holding an item already.
+Si la cible ne tient pas d'objet, le lanceur lui donne l'objet qu'il tient.
+350
+The user blocks the target's way with arms spread wide to prevent escape.
+Le lanceur bloque la route de l'ennemi pour empêcher sa fuite.
+351
+The user's type is changed depending on the environment.
+Modifie le type du lanceur en fonction du terrain, comme une berge, une grotte, l'herbe, etc.
+352
+Opposing Pokémon of the opposite gender are charmed, and their Sp. Atk stat harshly lowered.
+Si l’ennemi est de sexe opposé au lanceur, il est séduit et son Attaque Spéciale baisse beaucoup.
+353
+The user gazes rather charmingly, making the target less wary. This harshly lowers its Attack stat.
+Le lanceur fait les yeux doux pour berner l'ennemi et beaucoup réduire son Attaque.
+354
+The user changes their type to become the same as the move at the top of the list of their known moves.
+Le lanceur change de type pour prendre celui de la première capacité de sa liste.
+355
+The user changes their type to become resistant to the type of the attack the opponent used last.
+Le lanceur change de type pour être résistant au type de la dernière attaque lancée par sa cible.
+356
+The user mimics the move used immediately before them. It fails if no other move has been used yet.
+Le lanceur imite la dernière capacité employée. Échoue si aucune capacité n'a été utilisée.
+357
+The user curls up to conceal weak spots and raise their Defense stat.
+Le lanceur s'enroule pour cacher ses points faibles, ce qui augmente sa Défense.
+358
+For four turns, this move prevents the target from using the move it last used.
+Empêche l'ennemi d'employer à nouveau sa dernière attaque. Dure quatre tours.
+359
+By moving rapidly, the user makes illusory copies of themselves to raise their Evasion.
+Le lanceur se déplace si vite qu’il crée des copies illusoires de lui-même, augmentant son Esquive.
+360
+The user compels the target to keep using the move that was encored for three turns.
+Oblige l’ennemi à répéter durant trois tours la dernière capacité utilisée.
+361
+The user endures any attack with at least 1 HP. Its chance of failing rises if it is used in succession.
+Le lanceur résiste aux attaques avec 1 PV. Peut échouer si utilisée plusieurs fois de suite.
+362
+Forces the target to mimic an odd dance. The target's Ability becomes the same as the user's.
+Le lanceur danse sur un rythme étrange. Il force sa cible à l’imiter, ce qui lui fait adopter son talent.
+363
+The user emits bright light, cutting targets' Accuracy. It can be used to illuminate dark caves.
+Explosion lumineuse qui fait baisser la Précision de l’ennemi.
+364
+The user takes a deep breath and focuses so that critical hits land more easily.
+Le lanceur prend une profonde inspiration et se concentre pour augmenter son taux de critiques.
+365
+The user draws attention to themselves, making all targets take aim only at the user.
+Attire l’attention des ennemis pour les forcer à n’attaquer que le lanceur.
+366
+Enables Normal- and Fighting-type attacks to hit Ghost-types. Renders raised Evasion useless.
+Permet de toucher un Pokémon Spectre ou un ennemi insaisissable.
+367
+The user intimidates the target with the pattern on their belly to cause paralysis.
+Le lanceur intimide l'ennemi grâce à son regard terrifiant pour le paralyser.
+368
+The user growls in an endearing way, making opposing Pokémon less wary. This lowers their Attack stat.
+Le lanceur pousse un cri tout mimi pour tromper la vigilance de l'ennemi et baisser son Attaque.
+369
+The user's body grows all at once, raising the Attack and Sp. Atk stats.
+Le corps du lanceur se développe. Augmente l'Attaque et l'Attaque Spéciale.
+370
+The user stiffens all the muscles in their body to raise their Defense stat.
+Le lanceur contracte tous ses muscles pour augmenter sa Défense.
+371
+The user makes a soothing bell chime to heal the status conditions of all the party Pokémon.
+Carillon apaisant qui soigne les problèmes de statut de tous les Pokémon de l'équipe.
+372
+The user assists an ally by boosting the power of that ally's attack.
+Une capacité qui augmente la puissance d'attaque d'un allié.
+373
+The user howls loudly to raise their spirit, which boosts their Attack stat.
+Le lanceur grogne pour se rassurer, ce qui augmente son Attaque.
+374
+The user gives opposing Pokémon an intimidating leer that lowers the Defense stat.
+Le lanceur fait les gros yeux à l'ennemi pour l'intimider et baisser sa Défense.
+375
+The user takes sure aim at the target. This ensures the next attack does not miss the target.
+Verrouille l'ennemi pour ne pas le rater au tour suivant.
+376
+With a scary face, the user tries to force a kiss on the target. If it succeeds, the target falls asleep.
+Le lanceur fait un bisou à l'ennemi en prenant une mine effrayante. Endort l'ennemi.
+377
+The user chants an incantation, preventing opponents from landing critical hits for five turns.
+Le lanceur envoie une incantation vers le ciel et protège l'équipe des coups critiques pendant cinq tours.
+378
+The user cuts ahead and uses the target's intended move with greater power. It fails if not used first.
+Le lanceur vole la capacité prévue par l'ennemi et l'utilise en faisant plus de dégâts.
+379
+The user pins the target with a dark, arresting look. The target becomes unable to flee.
+Le lanceur pétrifie l'ennemi en lui lançant un regard noir. Il devient incapable de s'enfuir.
+380
+The user waggles a finger and stimulates their brain into randomly using nearly any move.
+Le lanceur agite un doigt et stimule son cerveau pour utiliser presque n’importe quelle capacité au hasard.
+381
+The user restores up to half of their max HP. May also be used in the field to heal HP.
+Restaure jusqu'à la moitié des PV max du lanceur. En dehors des combats, restaure des PV.
+382
+The user copies the target's last move. This move can be used until the Pokémon is switched out.
+Le lanceur imite la dernière capacité utilisée par l'ennemi, peut l'utiliser pour le reste du combat.
+383
+The user senses the target's movements to ensure the next attack hitting the target.
+Le lanceur analyse les mouvements de l'ennemi pour être plus sûr de toucher au coup suivant.
+384
+The user compresses their body to make themselves look smaller, sharply raising their Evasion.
+Le lanceur comprime son corps pour se faire tout petit et augmenter son esquive.
+385
+The user restores their own HP. The amount of HP regained varies with the weather.
+Un soin qui restaure des PV au lanceur. Son efficacité varie en fonction de la météo.
+386
+The user restores their own HP. The amount of HP regained varies with the weather.
+Un soin qui restaure des PV au lanceur. Son efficacité varie en fonction de la météo.
+387
+This attack makes use of nature's power. Its effects vary depending on the user's environment.
+Une attaque qui tire sa force de la nature. Son type varie selon le terrain.
+388
+Enables Normal- and Fighting-type moves to hit Ghost-types. It also negates raised Evasion.
+Permet de toucher un Pokémon Spectre ou un ennemi insaisissable.
+389
+The user adds their HP to the target's HP, then equally shares the combined HP with the target.
+Le lanceur ajoute ses PV à ceux de sa cible et les répartit équitablement.
+390
+Any Pokémon that hears this song faints in three turns, unless it switches out of battle.
+Tout Pokémon qui entend ce requiem est K.O. dans trois tours à moins qu’il ne soit remplacé.
+391
+Enables the user to evade all attacks. Its chance of failing rises if it is used in succession.
+Le lanceur esquive toutes les attaques. Échoue si utilisé plusieurs fois de suite.
+392
+The user hypnotizes themselves into copying any stat change made by the target.
+Une autohypnose qui permet au lanceur de copier les changements de stats de l'ennemi.
+393
+Regenerating their own cells, the user restores up to half of their max HP.
+Un soin qui permet au lanceur de récupérer jusqu'à la moitié de ses PV max.
+394
+The user recycles a held item that has been used in battle so it can be used again.
+Recycle un objet tenu à usage unique déjà utilisé lors du combat pour pouvoir l'utiliser à nouveau.
+395
+The user reflects the target's type, becoming the same type as the target.
+Le lanceur copie le type de la cible et devient du même type.
+396
+The user rests to cure themselves of a poisoning, burn, or paralysis.
+Le lanceur se repose pour guérir d'un empoisonnement, d'une brûlure ou d'une paralysie.
+397
+The target is scared off, and a different Pokémon is dragged out. Ends the battle in the wild.
+Effraie le Pokémon ennemi et le remplace par un autre. Met fin au combat dans la nature.
+398
+The user creates a protective field that prevents status conditions for five turns.
+Crée un champ protecteur qui empêche tous les problèmes de statut pendant cinq tours.
+399
+The user frightens the target with a scary face to harshly lower its Speed stat.
+Une grimace qui effraie l’ennemi et réduit beaucoup sa Vitesse.
+400
+An earsplitting screech harshly lowers the target's Defense stat.
+Cri strident qui baisse beaucoup la Défense de l'ennemi.
+401
+The user makes their edges more jagged, which raises their Attack stat.
+Le lanceur réduit son nombre de polygones pour accentuer ses angles et augmenter son Attaque.
+402
+The user lowers their Defense and Sp. Def stats to sharply raise their Attack, Sp. Atk, and Speed.
+Le lanceur brise sa coquille. Baisse les défenses, mais augmente l'Attaque, l'Att.Spé. et la Vitesse.
+403
+The user's mysterious psychic wave changes the target's Ability to Simple.
+Le lanceur envoie des ondes mystérieuses à l’ennemi. Son talent devient Simple.
+404
+A soothing lullaby is sung in a calming voice that puts the target into a deep slumber.
+Une berceuse plonge l'ennemi dans un profond sommeil.
+405
+The user permanently learns the move last used by the target. After using it, Sketch itself disappears.
+Le lanceur apprend la dernière capacité utilisée par la cible. Gribouille disparaît après utilisation.
+406
+The user slacks off, restoring up to half of their max HP.
+Le lanceur se tourne les pouces et récupère jusqu'à la moitié de ses PV max.
+407
+While being asleep, the user randomly uses one of the moves they know.
+Le lanceur utilise une de ses capacités au hasard pendant qu’il dort.
+408
+The user releases an obscuring cloud of smoke or ink. This lowers the target's Accuracy.
+Le lanceur disperse un nuage d'encre ou de fumée. Réduit la précision de l'ennemi.
+409
+The user restores up to half of their max HP. May also be used in the field to heal HP.
+Restaure jusqu'à la moitié des PV max du lanceur. En dehors des combats, restaure des PV.
+410
+The user just flops and splashes around to no effect at all...
+Le lanceur barbote et éclabousse les environs. Cette capacité n’a aucun effet.
+411
+The user charges up power, raising both Defense and Sp. Def. stats. The move can be used three times.
+Le lanceur accumule de la puissance et augmente sa Déf. et sa Déf.Spé. Peut être utilisé trois fois.
+412
+The user makes a copy of themselves using some of their HP. The copy serves as the user's decoy.
+Le lanceur fait une copie de lui-même en sacrifiant quelques PV. La copie sert de leurre.
+413
+The user generates odd sound waves from their body that confuse the target.
+Le lanceur produit d'étranges ondes sonores qui rendent la cible confuse.
+414
+The user enrages and confuses the target. However, this also sharply raises the target's Attack stat.
+Fait enrager la cible et la plonge dans la confusion, mais augmente beaucoup son Attaque.
+415
+The power stored from Stockpile is absorbed. Storing more power heals more HP.
+Le lanceur absorbe la puissance accumulée avec Stockage pour restaurer ses PV.
+416
+The user kisses the target with a sweet, angelic cuteness that causes confusion.
+Le lanceur envoie un bisou si mignon et désarmant qu'il plonge l'ennemi dans la confusion.
+417
+A sweet scent that harshly lowers opposing Pokémons' Evasion.
+A sweet scent that harshly lowers opposing Pokémons' Evasion.
+418
+A frenetic dance to uplift the fighting spirit. This sharply raises the user's Attack stat.
+Danse frénétique qui exalte l'esprit combatif. Augmente beaucoup l'Attaque du lanceur.
+419
+The user wags their tail cutely, making opposing Pokémon less wary and lowering their Defense stat.
+Le lanceur remue son adorable queue pour tromper la vigilance de l'ennemi et baisser sa Défense.
+420
+The user performs a wobbly dance that confuses the Pokémon around them.
+Danse qui rend confus tous les Pokémon autour du lanceur.
+421
+The user tickles the target into laughing, reducing its Attack and Defense stats.
+Le lanceur chatouille l'ennemi, ce qui baisse son Attaque et sa Défense.
+422
+The user transforms into a copy of the target right down to having the same move set.
+Le lanceur devient une copie de sa cible et obtient la même palette de capacités.
+423
+The target is blown away, and a different Pokémon is dragged out. Ends the battle in the wild.
+Éjecte le Pokémon ennemi et le remplace par un autre. Met fin au combat dans la nature.
+424
+One turn after using this move, the user's or their replacement's HP is restored by half the user's max HP.
+Un vœu qui permet de récupérer la moitié des PV max au tour suivant.
+425
+The user is roused, and their Attack and Sp. Atk stats increase.
+Le lanceur se rengorge. Augmente l'Attaque et l'Attaque Spéciale.
+426
+The user lets loose a huge yawn that lulls the target into falling asleep on the next turn.
+Fait bâiller l'ennemi qui s'endort au tour suivant.
+427
+The user shoots filthy garbage at the target to attack. This may also poison the target.
+Le lanceur envoie des détritus sur l'ennemi. Peut aussi l'empoisonner.
+428
+The user strikes everything around by swamping the area. This may also poison those hit.
+Une vague de détritus attaque tous les Pokémon autour du lanceur. Peut aussi empoisonner.
+429
+Unsanitary sludge is hurled at the target. This may also poison the target.
+Des détritus toxiques sont projetés sur l'ennemi. Peut aussi l'empoisonner.
+430
+The target is stabbed with a tentacle or arm steeped in poison. This may also poison the target.
+Attaque l'ennemi avec un tentacule, un bras, ou un autre membre plein de poison. Peut aussi l'empoisonner.
+431
+A slashing attack with a poisonous blade that may also poison the target. Critical hits land more easily.
+Un coup tranchant qui peut empoisonner l’ennemi. Taux de critiques élevé.
+432
+Unsanitary sludge is hurled at the target. This may also poison the target.
+Des détritus toxiques sont projetés sur l'ennemi. Peut aussi l'empoisonner.
+433
+The user attacks with a special poisonous liquid. If the target is poisoned, the power is doubled.
+Le lanceur inocule un poison spécial à l’ennemi. L’effet est doublé si l’ennemi est déjà empoisonné.
+434
+The user attacks by throwing a clump of special mud. All stat changes are returned to normal.
+Le lanceur jette un tas de détritus spéciaux sur la cible. Les changements de stats de la cible sont annulés.
+435
+The user bites the target with toxic fangs. This may also leave the target badly poisoned.
+Le lanceur mord l'ennemi de ses crocs toxiques. Peut aussi l'empoisonner gravement.
+436
+The user hits the target with a tail. This may also poison the target. Critical hits land more easily.
+Attaque à taux de critique élevé. Peut aussi empoisonner l’ennemi.
+437
+The opposing Pokémon are attacked with a spray of harsh acid. This may also lower their Sp. Def stat.
+Le lanceur attaque l’ennemi avec un jet d’acide corrosif. Peut aussi baisser sa Défense Spéciale.
+438
+The user spits fluid that works to melt the target. This harshly lowers the target's Sp. Def stat.
+Projette un liquide acide qui fait fondre l’ennemi. Sa Défense Spéciale diminue beaucoup.
+439
+The target is attacked with a discharge of filthy gases. This may also poison the target.
+Le lanceur attaque à l'aide d'une éruption de gaz répugnants. Peut aussi empoisonner l'ennemi.
+440
+The user stabs the target with a poisonous stinger. This may also poison the target.
+Un dard toxique qui transperce l'ennemi. Peut aussi l'empoisonner.
+441
+The user alters their cellular structure to liquefy themselves, sharply raising their Defense stat.
+Le lanceur modifie sa structure moléculaire pour se liquéfier et beaucoup augmenter sa Défense.
+442
+The user coils up and concentrates. This raises their Attack and Defense stats as well as their Accuracy.
+Le lanceur s’enroule sur lui-même et se concentre. Son Attaque, sa Défense et sa Précision augmentent.
+443
+Hurls up stomach acids on the target. The fluid eliminates the effect of the target's Ability.
+Le lanceur répand ses sucs digestifs sur l’ennemi. Le fluide neutralise le talent de l’ennemi.
+444
+A cloud of poison gas is sprayed in the face of opposing Pokémon, poisoning those hit.
+Un nuage de gaz toxique est projeté au visage de l’ennemi pour l’empoisonner.
+445
+The user scatters a cloud of poisonous dust that poisons the target.
+Une poudre toxique empoisonne l'ennemi.
+446
+A move that leaves the target badly poisoned. Its poison damage worsens every turn.
+Empoisonne gravement l'ennemi. Les dégâts dus au poison augmentent à chaque tour.
+447
+The user lays a trap of poison spikes. This poisons opposing Pokémon that switch into battle.
+Lance des pics autour de l'ennemi. Ils empoisonnent les ennemis qui entrent au combat.
+448
+The user attacks the target at full power. The attack's recoil harshly lowers the user's Sp. Atk stat.
+Attaque l’ennemi à pleine puissance. Le contrecoup baisse beaucoup l’Attaque Spéciale du lanceur.
+449
+The user eats the dreams of a sleeping target. It absorbs half the damage to heal its own HP.
+Le lanceur mange le rêve de l’ennemi endormi et récupère en PV la moitié des dégâts infligés.
+450
+Two turns after this move is used, a hunk of psychic energy attacks the target.
+De l’énergie psychique vient frapper l’ennemi deux tours après l’utilisation de cette capacité.
+451
+The user materializes an odd psychic wave to attack the target. This attack does physical damage.
+Le lanceur matérialise des ondes mystérieuses qu'il projette sur l'ennemi. Inflige des dégâts physiques.
+452
+The target is hit by a strong telekinetic force. This may also lower the target's Sp. Def stat.
+Une puissante force télékinésique frappe l'ennemi. Peut aussi faire baisser sa Défense Spéciale.
+453
+The user attacks with an odd, unseeable power. This may also make the target flinch.
+Le lanceur attaque avec un pouvoir étrange et invisible. Peut aussi apeurer l'ennemi.
+454
+The user materializes an odd psychic wave to attack the target. This attack does physical damage.
+Le lanceur matérialise des ondes mystérieuses qu'il projette sur l'ennemi. Inflige des dégâts physiques.
+455
+The user focuses their willpower to their head and attacks. It may make the target flinch.
+Le lanceur concentre sa volonté et donne un coup de tête. Peut aussi apeurer l'ennemi.
+456
+The user lets loose a damaging burst of light. This may also lower the target's Sp. Def stat.
+Le lanceur libère un éclair lumineux. Peut aussi baisser la Défense Spéciale de l'ennemi.
+457
+A mist-like flurry of down envelops the target. This may also lower the target's Sp. Atk stat.
+Une bulle de brume inflige des dégâts à l'ennemi. Peut aussi réduire son Attaque Spéciale.
+458
+The user tears at the target with blades formed by psychic power. Critical hits land more easily.
+Le lanceur entaille l'ennemi grâce à des lames faites d'énergie psychique. Taux de critiques élevé.
+459
+The user inflicts damage on any Pokémon of the same type with an odd shock wave.
+Des ondes mystérieuses blessent tous les Pokémon alentour qui sont du même type que le lanceur.
+460
+The target is attacked with a peculiar ray. This may also leave the target confused.
+Un étrange rayon frappe l'ennemi. Peut aussi le rendre confus.
+461
+The user unleashes a vicious blow after fooling the target. This may make the target flinch.
+Déconcentre l’ennemi avec des mouvements mignons avant de le frapper violemment. Peut aussi l’apeurer.
+462
+The target is hit by a weak telekinetic force. This may also confuse the target.
+Une faible vague télékinétique frappe l'ennemi. Peut aussi le plonger dans la confusion.
+463
+A retaliation move that counters any special attack, inflicting double the damage taken.
+Une riposte qui contre n’importe quelle capacité spéciale en infligeant le double des dégâts subis.
+464
+The target is attacked with an odd psychic wave. The attack varies in intensity.
+Une étrange onde d'énergie chaude frappe l'ennemi. Cette attaque est d'intensité variable.
+465
+The user attacks with stored power. The more the user's stats are raised, the greater the power.
+Le lanceur attaque avec une force accumulée. Plus les stats du lanceur sont augmentées, plus le coup est efficace.
+466
+The user relaxes and lightens their body to move faster. This sharply raises the Speed stat.
+Le lanceur se relaxe et allège son corps pour beaucoup augmenter sa Vitesse.
+467
+The user teleports using a strange power and switches places with an ally or a party Pokémon.
+Le lanceur se téléporte à l'aide d'un pouvoir mystérieux. Il échange sa place avec celle d'un allié sur le terrain.
+468
+The user empties their mind to forget their concerns. This sharply raises the user's Sp. Def stat.
+Le lanceur fait le vide dans son esprit pour oublier ses soucis. Augmente fortement sa Défense Spéciale.
+469
+The user throws up a sturdy wall that sharply raises their Defense stat.
+Le lanceur érige un mur solide qui augmente beaucoup sa Défense.
+470
+The user quietly focuses their mind and calms their spirit to raise their Sp. Atk and Sp. Def stats.
+Le lanceur se concentre et fait le vide dans son esprit pour augmenter son Att.Spé. et sa Déf.Spé.
+471
+The user absorbs a mystical power from space to raise their Defense and Sp. Def stats.
+Le lanceur absorbe un pouvoir mystique spatial qui augmente sa Défense et sa Défense Spéciale.
+472
+Gravity is intensified for five turns, making moves involving flying unusable and negating Levitate.
+Pendant cinq tours, les Pokémon Vol ou qui ont Lévitation deviennent sensibles aux capacités Sol.
+473
+Employs psychic power to average the user's Defense and Sp. Def stats with the target's.
+Additionne les défenses du lanceur et de sa cible et les redistribue équitablement entre les deux.
+474
+The user employs their psychic power to switch changes of Defense and Sp. Def stats with the target.
+Pouvoir qui échange les modifications de la Défense Spéciale et de la Défense avec la cible.
+475
+The user prevents opponents from using moves, Abilities or held items to recover HP for five turns.
+Le lanceur empêche l’ennemi de récupérer des PV pendant cinq tours.
+476
+The user emits a healing pulse that restores the target's HP by up to half of its max HP.
+Une aura de bien-être fait récupérer la moitié de ses PV max à la cible.
+477
+The user faints. The Pokémon taking their place will have its HP restored and status conditions cured.
+Le lanceur tombe K.O. pour soigner les PV et le statut du Pokémon qui passe après lui.
+478
+The user employs their psychic power to switch stat changes with the target.
+Le lanceur utilise un pouvoir psychique pour échanger ses changements de stats avec la cible.
+479
+The user employs hypnotic suggestion to make the target fall into a deep sleep.
+Le lanceur hypnotise l'ennemi pour le plonger dans un profond sommeil.
+480
+If opposing Pokémon know any move also known by the user, they are prevented from using it.
+Si l'ennemi et le lanceur ont des capacités en commun, l'ennemi ne pourra pas les utiliser.
+481
+The user distracts the target by bending a spoon. This lowers the target's Accuracy.
+Le lanceur distrait l’ennemi en pliant une cuiller, ce qui baisse sa Précision.
+482
+A wondrous wall of light is put up to reduce damage from special attacks for five turns.
+Un fabuleux mur de lumière qui réduit les dégâts causés par les capacités spéciales durant cinq tours.
+483
+The user faints. The Pokémon taking their place will have its status and HP fully restored.
+Le lanceur tombe K.O. pour soigner le statut et les PV du Pokémon qui prendra sa place au combat.
+484
+The user creates a barrier that reflects back moves like Leech Seed and most status moves.
+Une barrière qui renvoie les capacités comme Vampigraine et celles affectant le statut et les stats.
+485
+The user creates a bizarre area in which Pokémons' held items lose their effects for five turns.
+The user creates a bizarre area in which Pokémons' held items lose their effects for five turns.
+486
+The user meditates to awaken the power deep within their body and raise their Attack stat.
+Le lanceur médite pour éveiller son pouvoir latent et augmenter son Attaque.
+487
+Enables Psychic-type attacks to hit Dark-types. Renders a target's raised Evasion useless.
+Permet de toucher un Pokémon Ténèbres avec une attaque Psy ou un ennemi ayant beaucoup d’esquive.
+488
+The user employs their psychic power to average Attack and Sp. Atk stats with those of the target.
+Additionne les stats offensives du lanceur et de sa cible et les redistribue équitablement entre les deux.
+489
+The user employs psychic power to switch changes of Attack and Sp. Atk stats with the target.
+Pouvoir qui échange les modifications de l'Attaque Spéciale et de l'Attaque du lanceur avec la cible.
+490
+The user employs their psychic power to switch their Attack and Defense stat.
+Le lanceur utilise ses pouvoirs psychiques pour échanger sa Défense et son Attaque.
+491
+Using their psychic power of suggestion, the user transfers status conditions to the target.
+Le lanceur transfère ses problèmes de statut à l'ennemi grâce à son pouvoir de suggestion.
+492
+A wondrous wall of light is put up to reduce damage from physical attacks for five turns.
+Un fabuleux mur de lumière qui réduit les dégâts causés par les capacités physiques durant cinq tours.
+493
+The user sleeps for two turns. The user's HP are restored and any status conditions healed.
+Le lanceur regagne tous ses PV et soigne ses problèmes de statut, puis il dort pendant deux tours.
+494
+The user mimics the target completely, copying the target's natural Ability.
+Imite la cible et copie son talent.
+495
+The user employs their psychic power to exchange Abilities with the target.
+Le lanceur utilise ses pouvoirs psychiques pour échanger son talent avec la cible.
+496
+The user makes the target float with psychic power. The target is easier to hit for three turns.
+Un pouvoir qui fait flotter l'ennemi dans les airs. Pendant trois tours, il devient plus facile à atteindre.
+497
+Use it to flee from any wild Pokémon. It can also warp to the last Pokémon Center visited.
+Permet de fuir un Pokémon sauvage. Permet aussi de revenir au dernier Centre Pokémon.
+498
+The user catches the target off guard and swaps held items.
+Le lanceur prend la cible au dépourvu et l'oblige à échanger son objet contre le sien.
+499
+The user creates a bizarre area in which slower Pokémon get to move first for five turns.
+Le lanceur crée une zone étrange où les Pokémon les plus lents frappent en priorité pendant cinq tours.
+500
+The user creates a bizarre area in which Defense and Sp. Def stats are swapped for five turns.
+Pendant cinq tours, la Défense et la Défense Spéciale de tous les Pokémon sont inversées.
+501
+The user attacks with a hazardous, full-power headbutt. This also damages the user terribly.
+Le lanceur assène un coup de tête désespéré. Blesse aussi gravement le lanceur.
+502
+The user launches a huge boulder at the target to attack. The user can't move on the next turn.
+Le lanceur attaque en projetant un gros rocher sur l'ennemi. Il doit se reposer au tour suivant.
+503
+The user stabs the target from below with sharpened stones. Critical hits land more easily.
+Fait surgir des pierres aiguisées sous l'ennemi. Taux de critiques élevé.
+504
+Large boulders are hurled at the targets to inflict damage. The opposing Pokémon may flinch.
+Envoie de gros rochers sur l'ennemi pour infliger des dégâts. Peut aussi l'apeurer.
+505
+The user attacks with a ray of light that sparkles as if it were made of gemstones.
+Le lanceur attaque avec un rayon de lumière qui scintille comme s'il était composé de gemmes.
+506
+The user attacks with a ray of light that sparkles as if it were made of gemstones.
+Une attaque préhistorique qui peut augmenter toutes les stats du lanceur d'un seul coup.
+507
+The user picks up and throws a small rock at the target to attack.
+Le lanceur lâche une pierre sur l'ennemi.
+508
+Boulders are hurled at the target. This also lowers the target's Speed stat.
+Des rochers frappent l’ennemi. Réduit aussi sa Vitesse.
+509
+The user throws a stone or a similar projectile to attack. Flying Pokémon fall to the ground when hit.
+Le lanceur jette toutes sortes de projectiles à un ennemi. Si ce dernier vole, il tombe au sol.
+510
+The user continually rolls into the target over five turns. It becomes more powerful with each hit.
+Un rocher roule sur l’ennemi pendant cinq tours. L’attaque gagne en puissance à chaque coup.
+511
+The user hurls hard rocks at the target. Two to five rocks are launched in a row.
+Le lanceur projette un rocher sur l’ennemi de deux à cinq fois d’affilée.
+512
+The user polishes their body to reduce drag. This sharply raises the user's Speed stat.
+Le lanceur polit son corps pour diminuer sa résistance au vent. Augmente beaucoup la Vitesse.
+513
+A five-turn sandstorm is summoned to hurt all combatants except the Rock-, Ground-, and Steel-types.
+Une tempête de sable qui blesse tous les Pokémon durant cinq tours, sauf ceux de type Roche, Sol ou Acier.
+514
+The user lays a trap of levitating stones. The trap hurts opponents that switch into battle.
+Lance des pierres flottantes autour de l'ennemi, qui blessent tout adversaire entrant au combat.
+515
+The user and their allies are protected from wide-ranging attacks for one turn.
+Annule les attaques visant toute l'équipe pendant un tour.
+516
+Two turns after this move is used, the user blasts the target with a concentrated bundle of light.
+Le lanceur génère une sphère lumineuse qu’il projette sur l’ennemi deux tours plus tard.
+517
+The target is slammed with a steel-hard tail. This may also lower the target's Defense stat.
+Attaque l'ennemi avec une queue de fer. Peut aussi baisser sa Défense.
+518
+The target is hit with a hard punch fired like a meteor. This may also raise the user's Attack stat.
+Un coup de poing lancé à la vitesse d'un Meteor. Peut aussi augmenter l'Attaque du lanceur.
+519
+The user gathers their light energy and releases it all. This may lower the target's Sp. Def stat.
+Le lanceur concentre son énergie lumineuse et la fait exploser. Peut aussi baisser la Déf.Spé. de la cible.
+520
+The user slams the target with their steel-hard head. This may also make the target flinch.
+Le lanceur heurte l'ennemi avec sa tête dure comme de l'acier. Peut aussi l'apeurer.
+521
+The target is hit with wings of steel. This may also raise the user's Defense stat.
+Le lanceur frappe l'ennemi avec des ailes d'acier. Peut aussi augmenter la Défense du lanceur.
+522
+The user lets loose a flash of energy from their polished body. This may lower the target's Accuracy.
+Le corps poli du lanceur libère un éclair d’énergie. Peut aussi baisser la Précision de l’ennemi.
+523
+The user launches steel bombs that stick to the target. This attack never misses.
+Le lanceur projette des bombes d'acier qui collent à l'ennemi. N'échoue jamais.
+524
+The user attacks by throwing steel gears at the target twice.
+Le lanceur jette deux écrous d'acier qui frappent l'ennemi deux fois d'affilée.
+525
+The target is raked with steel claws. This may also raise the user's Attack stat.
+Attaque avec des griffes d'acier. Peut aussi augmenter l'Attaque du lanceur.
+526
+The user strikes the target with tough punches as fast as bullets. This move always goes first.
+Le lanceur envoie des coups de poing aussi rapides que des balles de revolver. Frappe en priorité.
+527
+The user whirls in a high-speed spin. The slower the user is than the target, the greater the power.
+Le lanceur effectue une rotation et frappe l’ennemi. Plus la Vitesse du lanceur est basse, plus il fait de dégâts.
+528
+The user slams with their heavy body. The heavier the user is than the target, the greater the power.
+Le lanceur se jette sur l’ennemi de tout son poids. Plus il est lourd, plus les dégâts augmentent.
+529
+The user retaliates with greater force against the opponent that last inflicted damage on them.
+Le lanceur attaque le dernier ennemi l'ayant blessé durant le même tour en frappant plus fort.
+530
+The user sheds part of their body to make themselves lighter and sharply raise their Speed stat.
+Le lanceur se débarrasse des parties inutiles de son corps. Sa Vitesse augmente beaucoup.
+531
+The user hardens their body's surface like iron, sharply raising their Defense stat.
+L'épiderme du lanceur devient dur comme du fer, ce qui augmente beaucoup sa Défense.
+532
+A horrible sound like scraping metal harshly lowers the target's Sp. Def stat.
+Un cri horrible tel un crissement métallique qui réduit beaucoup la Défense Spéciale de l'ennemi.
+533
+The user rotates their gears, raising the Attack stat and sharply raising the Speed stat.
+Le lanceur fait tourner ses engrenages. Cela augmente son Attaque et augmente beaucoup sa Vitesse.
+534
+The target is hit with a watery blast. The user can't move on the next turn.
+Une trombe d'eau heurte l'ennemi. Le lanceur doit se reposer au tour suivant.
+535
+The user spouts water against opposing Pokémon. The lower the user's HP, the lower the power.
+Le lanceur attaque avec un jet d'eau. Moins il a de PV et moins l'attaque est puissante.
+536
+The target is blasted by a huge volume of water launched under great pressure.
+Un puissant jet d'eau est dirigé sur l'ennemi.
+537
+The user attacks by shooting muddy water at the opposing Pokémon. This may also lower their Accuracy.
+Le lanceur attaque en projetant de l'eau boueuse. Peut aussi réduire la Précision de l'ennemi.
+538
+The user swamps their surroundings with a giant wave. It can also be used for crossing water.
+Une énorme vague s'abat sur le champ de bataille. Permet aussi de voyager sur l'eau.
+539
+The user attacks by swinging their tail as if it were a vicious wave in a raging storm.
+Le lanceur attaque en balançant sa queue comme une lame de fond en pleine tempête.
+540
+The target is hammered with a large pincer. Critical hits land more easily.
+Une grande pince martèle l’ennemi. Taux de critique élevé.
+541
+Dives on the first turn, floats up and attacks on the next turn. Can be used to dive deep into water.
+Le lanceur plonge sous l'eau au 1er tour et frappe au 2e. Permet aussi de plonger au fond de l'eau.
+542
+The user shoots boiling hot water at the target. This may also leave the target with a burn.
+L’ennemi est attaqué par un jet d’eau bouillante. Peut aussi le brûler.
+543
+The user charges at the target and may make it flinch. This can also be used to climb a waterfall.
+Le lanceur charge l'ennemi à une vitesse remarquable, ce qui peut l'apeurer. Permet aussi de franchir une cascade.
+544
+The user cuts the target with sharp shells. This may also lower the target's Defense stat.
+Un coquillage aiguisé lacère l'ennemi. Peut aussi baisser sa Défense.
+545
+If the target's HP is half or less, this attack will hit with double the power.
+Cette attaque est deux fois plus puissante lorsque l'ennemi a moins de la moitié de ses PV.
+546
+A spray of bubbles is forcefully ejected at the target. This may also lower its Speed stat.
+Des bulles d'eau sont envoyées avec puissance sur l'ennemi. Peut aussi baisser sa Vitesse.
+547
+The user attacks by spraying ink at the target's eyes. This may also lower the target's Accuracy.
+Le lanceur attaque en projetant de l'encre au visage de l'ennemi. Peut aussi baisser la Précision de l'ennemi.
+548
+The user attacks the target with a pulsing blast of water. This may also confuse the target.
+Le lanceur envoie un puissant jet d'eau sur l'ennemi. Peut rendre l'ennemi confus.
+549
+A column of water spouts up. Its power is increased and it can create Fields with other Pledge moves.
+Une masse d'eau s'abat sur l'ennemi. En l'utilisant avec Aire de Feu, l'effet augmente et un arc-en-ciel apparaît.
+550
+The user lunges at a speed that makes them almost invisible. This move always goes first.
+Le lanceur fonce sur l'ennemi si rapidement qu'on parvient à peine à le discerner. Frappe en priorité.
+551
+The target is blasted with a forceful shot of water.
+De l'eau est projetée sur l'ennemi en arc de cercle.
+552
+The target is clamped and squeezed by the user's very thick and sturdy shell for four to five turns.
+Le lanceur piège l'ennemi dans sa dure coquille et l'écrase pendant 4 à 5 tours.
+553
+The user traps the target in a violent swirling whirlpool for four to five turns.
+Piège l'ennemi dans une trombe d'eau pendant 4 à 5 tours.
+554
+A spray of countless bubbles is jetted at the opposing Pokémon. This may also lower their Speed stat.
+Des bulles frappent l'ennemi. Peut réduire sa Vitesse.
+555
+The user envelops themselves in a veil made of water. They regain some HP every turn.
+Un voile liquide enveloppe le lanceur. Il récupère des PV à chaque tour.
+556
+Summons rain for five turns, powering up Water-type moves and weakening Fire-type moves.
+Invoque de fortes pluies qui durent 5 tours et améliorent les capacités de type Eau.
+557
+The user shoots a torrent of water at the target and changes the target's type to Water.
+Le lanceur projette beaucoup d’eau sur sa cible, qui devient de type Eau.
+558
+The user soaks the battlefield with water. This weakens Fire-type moves for five turns.
+Le lanceur s'asperge d'eau. Affaiblit les capacités Feu quand le lanceur est au combat.
+559
+The user withdraws their body into their hard shell, raising their Defense stat.
+Le lanceur se recroqueville dans sa carapace, ce qui augmente sa Défense.
+560
+The user raises the Sp. Def stat of an ally Pokémon by using a mysterious aroma.
+Grâce à un parfum mystérieux, augmente la Défense Spéciale d'un allié.
+561
+Staring with baby-doll eyes, the user lowers the target's Attack stat. This move always goes first.
+Fixe l'ennemi d'un air très attendrissant qui le touche et diminue son Attaque. Agit en priorité.
+562
+The user lets out a damaging belch at the target. The user must eat a held Berry to use this move.
+Après avoir mangé sa Baie, le lanceur se tourne vers l'ennemi et lui éructe dessus, infligeant des dégâts.
+563
+The user attacks everything around with the destructive power of a terrible, explosive sound.
+Attaque les Pokémon alentour grâce à une onde sonore assourdissante qui détruit tout sur son passage.
+564
+The user discloses a secret to the target, which cannot focus anymore. This lowers the target's Sp. Atk.
+Dévoile des secrets à l'ennemi, qui perd alors sa concentration et voit son Attaque Spéciale diminuer.
+565
+The user protects themselves and their allies from status moves. This does not stop damaging moves.
+Utilise une force mystérieuse pour protéger l'équipe des capacités de statut.
+566
+The user damages opposing Pokémon by emitting a powerful flash.
+Libère une puissante décharge lumineuse qui inflige des dégâts à l'ennemi.
+567
+A charming cry does emotional damage to opposing Pokémon. This attack never misses.
+Laisse s'échapper une voix enchanteresse qui inflige des dégâts psychiques à l'ennemi. Touche à coup sûr.
+568
+The user steals HP with a kiss. The user's HP is restored by over half of the damage dealt.
+Aspire la force vitale de l'ennemi par un baiser. Rend des PV au lanceur.
+569
+The user attacks with electrically charged fists. For that turn, Normal-type moves become Electric-type.
+Le lanceur attaque en projetant de l'électricité avec ses poings. Convertit les capacités de type Normal en type Électrik.
+570
+The user's body generates an eerie impulse. It harshly lowers the target's Sp. Atk stat.
+Le corps du lanceur produit des ondes anormales qui enveloppent l'ennemi et diminuent beaucoup son Att.Spé.
+571
+The user electrifies the ground for five turns, turning the battlefield into Electric Terrain.
+Pendant cinq tours, le terrain se charge d'électricité. Les Pokémon au sol ne peuvent pas s'endormir.
+572
+If the target is hit before using its own move, the target's move becomes Electric-type.
+Si le lanceur attaque avant la cible, les capacités de celle-ci seront de type Électrik jusqu'à la fin du tour.
+573
+By locking down the battlefield, the user keeps all Pokémon from fleeing during the next turn.
+Des chaînes entourent la zone de combat, empêchant tous les Pokémon de fuir au prochain tour.
+574
+The user stirs up a fairy wind and strikes the target with it.
+Déchaîne un vent magique qui cingle l'ennemi.
+575
+When the user knocks out a target with this move, the user's Attack stat rises drastically.
+Augmente beaucoup l'Attaque du lanceur si un ennemi est mis K.O. avec cette capacité.
+576
+The user raises the Defense stat of all Grass-type Pokémon in battle with a mysterious power.
+Grâce à une force mystérieuse, la Défense de tous les Pokémon Plante au combat augmente.
+577
+The user dives down onto the target from the sky. This move is Fighting- and Flying-type simultaneously.
+Une attaque en piqué depuis le ciel, à la fois de type Combat et de type Vol.
+578
+The user puts a forest curse on the target. This changes the target to Grass-type.
+La cible est charmée par l'esprit de la forêt. Le type Plante est ajouté à ses types actuels.
+579
+The user rapidly cools the target. It may freeze the target and is supereffective on Water-types.
+Refroidit violemment l'ennemi et peut le geler. Super efficace sur les Pokémon de type Eau.
+580
+Absorbing energy, the user sharply raises their Sp. Atk, Sp. Def and Speed stats on the next turn.
+Le lanceur absorbe de l'énergie au premier tour et augmente ses statistiques au second.
+581
+Letting grass sprout from the ground, the user turns the field into Grassy Terrain for five turns.
+Crée un Champ Herbu pendant cinq tours, augmentant la puissance des attaques Plante.
+582
+The user attacks and infests the target for four to five turns, preventing the target from escaping.
+Cette attaque dure quatre à cinq tours. L'ennemi ne peut pas fuir au cours de cette période.
+583
+The user disperses charged particles, which change Normal-type moves to Electric-type moves.
+Diffuse des particules chargées qui transforment les attaques Normal en attaques Électrik.
+584
+The user is protected from damage. Direct contact harshly lowers any attacker's Attack stat.
+Le lanceur se protège. Diminue beaucoup l'Attaque de tout Pokémon qui touche le lanceur.
+585
+The user gathers the energy of the land and focuses that power on the targets to damage them.
+Utilise la puissance du sol et la concentre sur l'ennemi pour infliger des dégâts.
+586
+The user manipulates magnetic fields to raise Defense and Sp. Def of allies with Plus or Minus Ability.
+Manipule les champs magnétiques pour augmenter les défenses des alliés dotés du Talent Plus/Minus.
+587
+The user shields themselves and allies from damaging moves with a mat. Does not stop status moves.
+Retourne un tatami pour bloquer, les capacités visant le lanceur ou ses alliés.
+588
+The user summons mist for five turns, turning the battlefield into Misty Terrain.
+Pendant cinq tours, les Pokémon au sol ne peuvent pas subir d'altération de statut.
+589
+The user attacks borrowing the power of the moon. This may also lower the target's Sp. Atk stat.
+Attaque l'ennemi grâce au pouvoir de la lune. Peut diminuer son Attaque Spéciale.
+590
+The user attacks by breathing a special, hot fire. This also lowers the target's Sp. Atk stat.
+Attaque avec des flammes soufflées de la bouche du lanceur. Diminue l'Att.Spé. de l'ennemi.
+591
+The user roars nobly, intimidating the target. This lowers the target's Attack and Sp. Atk stats.
+Le lanceur pousse un rugissement qui intimide l'ennemi et diminue son Attaque et son Attaque Spéciale.
+592
+The user attacks by nuzzling electrified cheeks against the target. This also paralyzes the target.
+Le lanceur attaque en frottant ses bajoues chargées d'électricité. Paralyse l'ennemi.
+593
+The user absorbs the target's HP. The user's HP is restored by over half of the damage inflicted.
+Vole l'énergie de la cible. Rend au lanceur un nombre de PV supérieur ou égal à la moitié des dégâts infligés.
+594
+The user attacks everything around. The user's HP is restored by half the damage dealt.
+Inflige des dégâts à tous les Pokémon autour du lanceur. Il récupère en PV la moitié des dégâts infligés.
+595
+The user lowers the target's Attack and Sp. Atk stats and switches with a party Pokémon.
+Menace l'ennemi avant de changer de place avec un autre Pokémon. Baisse l'Attaque et l'Att.Spé de la cible.
+596
+The user stirs up a violent petal blizzard and attacks everything around themselves.
+Déclenche une violente tempête de fleurs qui inflige des dégâts à tous les Pokémon alentour.
+597
+The user vanishes, then strikes on the next turn. It strikes even if the target protects itself.
+Le lanceur disparaît au premier tour et frappe au second. Cette attaque passe outre les protections.
+598
+The user befriends the target, making it lose the will to fight. It lowers the target's Attack stat.
+L'ennemi se lie d'amitié avec le lanceur et perd sa combativité, diminuant son Attaque.
+599
+The user plays rough with the target and attacks it. This may also lower the target's Attack stat.
+Attaque l'ennemi avec un câlin. Peut diminuer son Attaque.
+600
+The user covers the target in combustible powder. It explodes if the target uses a Fire-type move.
+L’ennemi est pris dans un nuage de poudre. S’il utilise une attaque Feu lors du même tour, le nuage explose.
+601
+Striking opponents over and over hardens the user's fists. This raises the user's Attack stat.
+À force de frapper, les poings deviennent plus durs. Augmente l'Attaque du lanceur si l'ennemi est touché.
+602
+Tilling the soil, the user raises the Attack and Sp. Atk stats of grounded Grass-type Pokémon.
+Laboure le sol et le rend plus fertile. Augmente l'Attaque et l'Attaque Spéciale des Pokémon de type Plante.
+603
+Protecting the user from attacks, this move also damages any attacker who makes direct contact.
+Protège des attaques, et diminue les PV de tout attaquant qui entre en contact avec le lanceur.
+604
+The user weaves a sticky net, lowering the Speed stat of opposing Pokémon switching into battle.
+Déploie une toile visqueuse autour de l'ennemi qui ralentit la Vitesse de tout adversaire entrant au combat.
+605
+All stat changes affecting the target turn topsy-turvy and become the opposite of what they were.
+Inverse tous les changements de stats de la cible.
+606
+The user takes the target trick-or-treating. This changes the target's type to Ghost.
+Insuffle à la cible l'esprit d'Halloween, et ajoute le type Spectre à ses types actuels.
+607
+With an odd poisonous liquid, the user lowers the Attack, Sp. Atk, and Speed stats of poisoned opponents.
+Sécrète un liquide empoisonné. Diminue l'Attaque, l'Attaque Spéciale et la Vitesse de l'ennemi empoisonné.
+608
+The user attacks with throwing stars two to five times in a row. This move always goes first.
+Attaque l'ennemi avec des shuriken de mucus. Frappe en priorité deux à cinq fois d'affilée en un tour.
+609
+A unique attack that varies in type depending on the Pokémon using it.
+Attaque dont le type dépend du Pokémon qui l’utilise.
+610
+A unique attack that varies in type depending on the Pokémon using it.
+Attaque dont le type dépend du Pokémon qui l’utilise.
+611
+A unique attack that varies in type depending on the Pokémon using it.
+Attaque dont le type dépend du Pokémon qui l’utilise.
+612
+A unique attack that varies in type depending on the Pokémon using it.
+Attaque dont le type dépend du Pokémon qui l’utilise.
+613
+A unique attack that varies in type depending on the Pokémon using it.
+Attaque dont le type dépend du Pokémon qui l’utilise.
+614
+A unique attack that varies in type depending on the Pokémon using it.
+Attaque dont le type dépend du Pokémon qui l’utilise.
+615
+A unique attack that varies in type depending on the Pokémon using it.
+Attaque dont le type dépend du Pokémon qui l’utilise.
+616
+A unique attack that varies in type depending on the Pokémon using it.
+Attaque dont le type dépend du Pokémon qui l’utilise.
+617
+A unique attack that varies in type depending on the Pokémon using it.
+Attaque dont le type dépend du Pokémon qui l’utilise.
+618
+A unique attack that varies in type depending on the Pokémon using it.
+Attaque dont le type dépend du Pokémon qui l’utilise.
+619
+A unique attack that varies in type depending on the Pokémon using it.
+Attaque dont le type dépend du Pokémon qui l’utilise.
+620
+A unique attack that varies in type depending on the Pokémon using it.
+Attaque dont le type dépend du Pokémon qui l’utilise.
+621
+A unique attack that varies in type depending on the Pokémon using it.
+Attaque dont le type dépend du Pokémon qui l’utilise.
+622
+A unique attack that varies in type depending on the Pokémon using it.
+Attaque dont le type dépend du Pokémon qui l’utilise.
+623
+A unique attack that varies in type depending on the Pokémon using it.
+Attaque dont le type dépend du Pokémon qui l’utilise.
+624
+A unique attack that varies in type depending on the Pokémon using it.
+Attaque dont le type dépend du Pokémon qui l’utilise.
+625
+A unique attack that varies in type depending on the Pokémon using it.
+Attaque dont le type dépend du Pokémon qui l’utilise.
+626
+A unique attack that varies in type depending on the Pokémon using it.
+Attaque dont le type dépend du Pokémon qui l’utilise.
+627
+The user attacks opposing Pokémon with countless beams of light that glow a deep and brilliant blue.
+D'innombrables rayons lumineux d'un bleu étincelant s'abattent sur la cible.
+628
+The user attacks by manifesting the power of the land in fearsome blades of stone.
+Le Pokémon transforme la puissance de la terre et attaque la cible avec une lame acérée.
+629
+The user soars, then drops from the sky at high speed. It lowers the user's Defense and Sp. Def stats.
+Le Pokémon s'abat à toute vitesse sur la cible depuis les hautes couches de l'atmosphère. Baisse la Déf. et la Déf.Spé. du lanceur.
+630
+This move also hits opposing Pokémon in the air. Those Pokémon are knocked down to the ground.
+Touche même les Pokémon dans les airs. Dans ce cas, la cible retombe au sol.
+631
+The user attacks with a wave that crawls along the ground. Those hit can't flee from battle.
+Attaque avec des vagues glissant au sol. L'ennemi pris dedans ne peut pas s'échapper.
+632
+The user whips up a storm of diamonds to attack. It may sharply raise the user's Defense stat.
+Provoque une tempête de diamants qui inflige des dégâts. Peut beaucoup augmenter la Défense du lanceur.
+633
+The user appears right next to the target and strikes. Ignores moves like Protect or Detect.
+Crée une faille dimensionnelle pour attaquer soudainement l'ennemi de côté. Ignore Abri ou Détection.
+634
+Immerses the target in superheated steam. This may also leave the target with a burn.
+Plonge l'ennemi dans une chaleur étouffante. Peut le brûler.
+635
+The user unleashes a barrage, ignoring moves like Protect and Detect. It lowers the user's Defense.
+Le Pokémon utilise sa multitude de bras pour infliger une nuée de coups qui ignorent Abri ou Détection.
+638
+The user smashes into the target at high speed. This move always goes first.
+Le lanceur charge l'ennemi à toute vitesse. Frappe en priorité.
+639
+The user entangles the target with their anchor chain. The target becomes unable to flee.
+Le lanceur jette son ancre sur la cible pour l'attaquer. Une fois accrochée, elle l'empêche de s'enfuir.
+640
+This move reduces damage from physical and special moves for five turns. Can only be used during hail.
+Réduit les dégâts causés par les capacités physiques et spéciales durant cinq tours.
+641
+Protecting the user from attacks, this move also poisons any attacker that makes direct contact.
+Protège le lanceur contre les attaques de l'ennemi et empoisonne ce dernier s'il utilise une attaque directe.
+642
+The user first heats up their beak, then attacks. Direct contact while heating up results in a burn.
+Le lanceur fait chauffer son bec avant d'attaquer. S'il subit une attaque directe, il est brûlé.
+643
+The user swings their body around violently to inflict damage on everything in their vicinity.
+Le lanceur pivote pour prendre de l'élan et infliger des dégâts.
+644
+The user burns themselves out for massive damage. The user then will no longer be Fire-type.
+Le Pokémon se consume et inflige des dégâts élevés à la cible. Le lanceur perd le type Feu.
+645
+The user rubs the scales on their body, making a huge noise. It then lowers the user's Defense stat.
+Le lanceur déclenche un vacarme en frottant ses écailles les unes contre les autres pour attaquer.
+646
+A damaging move that also eliminates the targets' Abilities if they have already used their moves.
+La cible subit des dégâts et, si elle a déjà agi à ce tour, elle perd aussi son talent.
+647
+The user swings both arms and strikes. The target's stat changes don't affect this attack's damage.
+Le Pokémon frappe l'adversaire en tournant violemment. Ingnore les changements de stats de la cible.
+648
+The user uses their body like a hammer to attack the target and inflict damage.
+Le lanceur utilise son corps comme un véritable marteau pour écraser la cible.
+649
+The user strikes the target with a burning lash. This also lowers the target's Defense stat.
+Frappe la cible avec un fouet incandescent et baisse sa Défense.
+650
+Although this move has great power, it only works the first turn the user is in battle.
+Une capacité très puissante, mais qui ne fonctionne qu'au premier tour.
+651
+The user unleashes a strong beam. The attack's recoil harshly lowers the user's Sp. Atk stat.
+Envoie un rayon laser dévastateur. Baisse beaucoup l'Attaque Spéciale du lanceur.
+652
+The user restores the target's HP by up to half of its max HP. Restores more HP on Grassy Terrain.
+Rend la moitié de ses PV max à la cible. Plus efficace sur un Champ Herbu.
+653
+The user engages their gears to raise Attack and Sp. Atk stats of allies with Plus or Minus Ability.
+Change de réglage pour augmenter l'Attaque et l'Attaque Spéciale des alliés ayant les talents Plus ou Minus.
+654
+The user fiercely attacks the target using their entire body.
+Le lanceur attaque violemment en utilisant tout son poids.
+655
+The user swings and hits with their strong, heavy fist. It lowers the user's Speed, however.
+Le lanceur donne un puissant coup de poing à l’ennemi. Réduit la Vitesse du lanceur.
+656
+The user instructs the target to use the target's last move again.
+Force la cible à lancer immédiatement la dernière capacité qu'elle a utilisée.
+657
+By concentrating intensely, the user's attack on the next turn always results in a critical hit.
+Le lanceur se concentre pour être sûr de porter un coup critique au tour suivant.
+658
+The user attacks by pelting the target with leaves.
+Le lanceur attaque l'ennemi avec des feuilles.
+659
+The user slams the target with a full-force water blast. It may lower the Defense stat of the target.
+Le lanceur utilise la force de l'eau pour attaquer. Peut aussi baisser la Défense de la cible.
+660
+The user lunges at the target with full force. This also lowers the target's Attack stat.
+Le lanceur se jette sur la cible de toutes ses forces pour lui infliger des dégâts et baisser son Attaque.
+661
+The user emits a sinister ray to attack. This move will ignore the target's Ability.
+Le lanceur attaque avec un rayon de lumière mystérieux. Ignore le talent de la cible.
+662
+The user hits the target with the force of nature. It halves the target's HP.
+Le lanceur déchaîne toute la colère de la nature pour baisser les PV de la cible de moitié.
+663
+The user attacks with a pollen puff that explodes. If the target is an ally, it restores HP instead.
+Utilisé sur l'ennemi, fait des dégâts. Sur un allié, fait récupérer des PV.
+664
+The user boasts their strength and strikes. The more the user's stats are raised, the greater the power.
+Ivre de puissance, le lanceur attaque de toutes ses forces. Plus ses stats ont été augmentées, plus la puissance est élevée.
+665
+The user shoots powerful lasers using the power of a prism. The user can't move on the next turn.
+Le lanceur utilise la puissance d'un prisme pour envoyer un laser destructeur, mais il doit se reposer au tour suivant.
+666
+The user bites the target with psychic capabilities. This can also destroy Light Screen and Reflect.
+Le lanceur mord la cible avec ses pouvoirs psychiques. Brise aussi les barrières comme Mur Lumière et Protection.
+667
+Summoning psychic energies, the user turns the battlefield into Psychic Terrain for five turns.
+Pendant 5 tours, les Pokémon au sol sont protégés des priorités et augmente les capacités Psy.
+668
+The user heals the target's status condition. It also restores the user's own HP.
+Le lanceur soigne les altérations de statut de la cible, ce qui lui permet de regagner des PV.
+669
+The user attacks the target by dancing very hard. The user's type determines the type of this move.
+Le lanceur attaque en dansant avec enthousiasme. Le type de la capacité est le même que celui du lanceur.
+670
+The user beats the target with a bone containing a spirit. This may lower the target's Defense.
+Le lanceur frappe avec un os possédé par l'âme d'un défunt. Peut aussi baisser la Défense de la cible.
+671
+The user sets a shell trap. If the user is hit by a physical move, the trap will explode and inflict damage.
+Pose une carapace piégée. Si l'adversaire utilise une capacité physique, la carapace explose.
+672
+The user regains up to half of their max HP. It restores more HP in a sandstorm.
+Le lanceur récupère la moitié de ses PV max. Durant une tempête de sable, il en récupère encore plus.
+673
+The user stabs the target with a sharp horn. This attack never misses.
+Le lanceur transperce la cible avec sa corne effilée. Touche toujours l'ennemi.
+674
+The user fills a blade with light energy on the first turn, then attacks on the next turn.
+Le lanceur absorbe la lumière dans une lame au premier tour et attaque au second.
+675
+The user bursts into song, emitting many bubbles. If any target had a burn, the burn will be lifted.
+Le lanceur émet plusieurs bulles en chantant. Soigne les brûlures des Pokémon touchés par ces bulles.
+676
+The user hides in the target's shadow, steals the target's stat boosts, and then attacks.
+Le lanceur plonge dans l'ombre de la cible, vole ses augmentations de stats et l'attaque.
+677
+The user exchanges Speed stats with the target.
+Intervertit la Vitesse du lanceur et celle de la cible.
+678
+The user attacks while stitching the target's shadow to the ground, preventing it from escaping.
+Une attaque qui coud l'ennemi à son ombre, ce qui l'empêche de s'enfuir.
+679
+The user shines a spotlight on the target so that only it will be attacked during the turn.
+Met un Pokémon sous le feu des projecteurs et force tout le monde à le viser.
+680
+Driven by frustration, the user attacks. If the user's previous move failed, the power of this move doubles.
+Le lanceur attaque en utilisant sa frustration. Si sa capacité a échoué au tour précédent, la puissance est doublée.
+681
+The user restores HP equal to the target's Attack stat. It also lowers the target's Attack stat.
+Rend au lanceur une quantité de PV équivalente à la stat d'Attaque de la cible, puis baisse celle-ci.
+682
+The user slams into the target with the force of a meteor. This move will ignore the target's Ability.
+Le lanceur fonce sur la cible à la vitesse d'une météorite. Ignore le talent de l'ennemi.
+683
+Teary eyes make the target lose the desire to fight. It lowers the target's Attack and Sp. Atk.
+Le lanceur jette un regard plein de larmes à la cible. Celle-ci voit son Attaque et son Attaque Spéciale baisser.
+684
+The user attacks the target's throat. The target cannot use sound-based moves for two turns.
+Inflige une douleur tellement violente à la cible qu'elle ne peut plus émettre de sons pendant deux tours.
+685
+The user shoots poisonous threads to poison the target and lower the target's Speed stat.
+Tisse un fil imprégné de venin. Empoisonne la cible et baisse sa Vitesse.
+686
+The user lands an intense kick of tropical origins. This also lowers the target's Attack stat.
+Un coup de pied chaud comme les tropiques qui inflige des dégâts à la cible et baisse son Attaque.
+687
+A strong electric blast crashes down, shocking the target. This may also make the target flinch.
+Le lanceur fonce sur la cible et lui envoie un puissant choc électrique. Peut aussi l'effrayer.
+688
+Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
+Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
+689
+The user attacks everything around by causing their own head to explode. This also damages the user.
+Le lanceur fait exploser sa tête pour attaquer toutes les cibles autour de lui. Il subit aussi des dégâts.
+690
+A pillar of light that inflicts damage using the higher one of the user's Attack or Sp. Atk.
+Le lanceur fait jaillir un pilier de lumière. Utilise la statistique offensive qui infligera le plus de dégâts.
+695
+The user unleashes a strong beam from its core. This move deals twice the damage if the target is Dynamaxed.
+The user unleashes a strong beam from its core. This move deals twice the damage if the target is Dynamaxed.
+696
+The user ignores the effects of opposing Pokémon's moves and Abilities that draw in moves, allowing this move to hit the chosen target.
+The user ignores the effects of opposing Pokémon's moves and Abilities that draw in moves, allowing this move to hit the chosen target.
+697
+This move prevents the user and the target from switching out until either of them faints. The effect goes away if either of the Pokémon leaves the field.
+This move prevents the user and the target from switching out until either of them faints. The effect goes away if either of the Pokémon leaves the field.
+698
+The user eats its held Berry, then sharply raises its Defense stat.
+The user eats its held Berry, then sharply raises its Defense stat.
+699
+This move raises all the user's stats but prevents the user from switching out or fleeing.
+This move raises all the user's stats but prevents the user from switching out or fleeing.
+700
+The user pours sticky tar over the target, lowering the target's Speed stat. The target becomes weaker to Fire-type moves.
+The user pours sticky tar over the target, lowering the target's Speed stat. The target becomes weaker to Fire-type moves.
+701
+The user scatters a cloud of magic powder that changes the target to Psychic type.
+The user scatters a cloud of magic powder that changes the target to Psychic type.
+702
+The user attacks twice using Dreepy. If there are two targets, this move hits each target once.
+The user attacks twice using Dreepy. If there are two targets, this move hits each target once.
+703
+The user has teatime with all the Pokémon in the battle. Each Pokémon eats its held Berry.
+The user has teatime with all the Pokémon in the battle. Each Pokémon eats its held Berry.
+704
+The user locks the target in and prevents it from fleeing. This move also lowers the target's Defense and Sp. Def every turn.
+The user locks the target in and prevents it from fleeing. This move also lowers the target's Defense and Sp. Def every turn.
+705
+The user stabs the target with its electrified beak. If the user attacks before the target, the power of this move is doubled.
+The user stabs the target with its electrified beak. If the user attacks before the target, the power of this move is doubled.
+706
+The user rends the target with its hard gills. If the user attacks before the target, the power of this move is doubled.
+The user rends the target with its hard gills. If the user attacks before the target, the power of this move is doubled.
+707
+With its mysterious power, the user swaps the effects on either side of the field.
+With its mysterious power, the user swaps the effects on either side of the field.
+708
+The user raises all its stats by using some of its HP.
+The user raises all its stats by using some of its HP.
+709
+The user attacks by slamming its body into the target. The higher the user's Defense, the more damage it can inflict on the target.
+The user attacks by slamming its body into the target. The higher the user's Defense, the more damage it can inflict on the target.
+710
+The user sharply raises the target's Attack and Sp. Atk stats by decorating the target.
+The user sharply raises the target's Attack and Sp. Atk stats by decorating the target.
+711
+The user plays its drum, controlling the drum's roots to attack the target. This also lowers the target's Speed stat.
+The user plays its drum, controlling the drum's roots to attack the target. This also lowers the target's Speed stat.
+712
+The user snares the target in a snap trap for four to five turns.
+The user snares the target in a snap trap for four to five turns.
+713
+The user attacks by igniting a small stone and launching it as a fiery ball at the target. This may also leave the target with a burn.
+The user attacks by igniting a small stone and launching it as a fiery ball at the target. This may also leave the target with a burn.
+714
+The user becomes a gigantic sword and cuts the target. This move deals twice the damage if the target is Dynamaxed.
+The user becomes a gigantic sword and cuts the target. This move deals twice the damage if the target is Dynamaxed.
+715
+The user becomes a gigantic shield and cuts the target. This move deals twice the damage if the target is Dynamaxed.
+The user becomes a gigantic shield and cuts the target. This move deals twice the damage if the target is Dynamaxed.
+716
+Morpeko attacks and raises its Speed with the energy stored in its cheeks. This move's type changes depending on the user's form.
+Morpeko attacks and raises its Speed with the energy stored in its cheeks. This move's type changes depending on the user's form.
+717
+The user swings its tough tail wildly and attacks opposing Pokémon. This also lowers their Attack stats.
+The user swings its tough tail wildly and attacks opposing Pokémon. This also lowers their Attack stats.
+718
+The user attacks the target by poking it with a sharply pointed branch.
+The user attacks the target by poking it with a sharply pointed branch.
+719
+The user attacks opposing Pokémon by twanging a guitar or bass guitar, causing a huge echo and strong vibration.
+The user attacks opposing Pokémon by twanging a guitar or bass guitar, causing a huge echo and strong vibration.
+720
+The user attacks the target with an acidic liquid created from tart apples. This also lowers the target's Sp. Def stat.
+The user attacks the target with an acidic liquid created from tart apples. This also lowers the target's Sp. Def stat.
+721
+The user attacks the target with an acidic liquid created from tart apples. This also lowers the target's Defense stat.
+The user attacks the target with an acidic liquid created from tart apples. This also lowers the target's Defense stat.
+722
+The user attacks the target with so much force that it could break the target's spirit. This also lowers the target's Sp. Atk stat.
+The user attacks the target with so much force that it could break the target's spirit. This also lowers the target's Sp. Atk stat.
+723
+The user attacks the target by emitting steam. This may also confuse the target.
+The user attacks the target by emitting steam. This may also confuse the target.
+724
+The user scatters mysterious water around and restores the HP of itself and its ally Pokémon in the battle.
+The user scatters mysterious water around and restores the HP of itself and its ally Pokémon in the battle.
+725
+This move enables the user to protect itself from all attacks. Its chance of failing rises if it is used in succession. Direct contact harshly lowers the attacker's Defense stat.
+This move enables the user to protect itself from all attacks. Its chance of failing rises if it is used in succession. Direct contact harshly lowers the attacker's Defense stat.
+726
+The user pretends to bow its head, but then it stabs the target with its disheveled hair. This attack never misses.
+The user pretends to bow its head, but then it stabs the target with its disheveled hair. This attack never misses.
+727
+The user attacks wildly with its thick leek. The user can't move on the next turn, because the force of this move makes it stagger.
+The user attacks wildly with its thick leek. The user can't move on the next turn, because the force of this move makes it stagger.
+728
+This is Eternatus's most powerful attack in its original form. The user can't move on the next turn.
+This is Eternatus's most powerful attack in its original form. The user can't move on the next turn.
+729
+The user fires a beam of steel that it collected from its entire body. This also damages the user.
+The user fires a beam of steel that it collected from its entire body. This also damages the user.
+730
+The Pokémon congratulates you on your special day!
+Le Pokémon vous souhaite plein de bonnes choses pour cet événement spécial.
+731
+Morpeko attacks and raises its Speed with the energy stored in its cheeks. This move's type changes depending on the user's form.
+Morpeko attacks and raises its Speed with the energy stored in its cheeks. This move's type changes depending on the user's form.
+732
+The user fires a beam of light. The move's type changes depending on the Drive the user holds.
+Le lanceur projette un rayon lumineux sur l'ennemi. Le type varie selon le Module que tient le lanceur.
+733
+The user fires a beam of light. The move's type changes depending on the Drive the user holds.
+Le lanceur projette un rayon lumineux sur l'ennemi. Le type varie selon le Module que tient le lanceur.
+734
+The user fires a beam of light. The move's type changes depending on the Drive the user holds.
+Le lanceur projette un rayon lumineux sur l'ennemi. Le type varie selon le Module que tient le lanceur.
+735
+The user fires a beam of light. The move's type changes depending on the Drive the user holds.
+Le lanceur projette un rayon lumineux sur l'ennemi. Le type varie selon le Module que tient le lanceur.
+736
+Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
+Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
+737
+Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
+Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
+738
+Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
+Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
+739
+Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
+Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
+740
+Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
+Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
+741
+Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
+Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
+742
+Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
+Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
+743
+Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
+Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
+744
+Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
+Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
+745
+Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
+Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
+746
+Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
+Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
+747
+Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
+Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
+748
+Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
+Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
+749
+Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
+Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
+750
+Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
+Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
+751
+Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
+Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
+752
+Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
+Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
+753
+Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
+Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.

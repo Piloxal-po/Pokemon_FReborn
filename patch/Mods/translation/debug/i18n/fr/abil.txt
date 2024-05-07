@@ -1,0 +1,1592 @@
+[1]
+1
+Stench
+Puanteur
+2
+Drizzle
+Crachin
+3
+Speed Boost
+Turbo
+4
+Battle Armor
+Armurbaston
+5
+Sturdy
+Fermeté
+6
+Damp
+Moiteur
+7
+Limber
+Echauffement
+8
+Sand Veil
+Voile Sable
+9
+Static
+Statik
+10
+Volt Absorb
+Absorb Volt
+11
+Water Absorb
+Absorb Eau
+12
+Oblivious
+Benêt
+13
+Cloud Nine
+Ciel Gris
+14
+Compound Eyes
+Œil Composé
+15
+Insomnia
+Insomnia
+16
+Color Change
+Déguisement
+17
+Immunity
+Vaccin
+18
+Flash Fire
+Torche
+19
+Shield Dust
+Ecran Poudre
+20
+Own Tempo
+Tempo Perso
+21
+Suction Cups
+Ventouse
+22
+Intimidate
+Intimidation
+23
+Shadow Tag
+Marque Ombre
+24
+Rough Skin
+Peau Dure
+25
+Wonder Guard
+Garde Mystik
+26
+Levitate
+Lévitation
+27
+Effect Spore
+Pose Spore
+28
+Synchronize
+Synchro
+29
+Clear Body
+Corps Sain
+30
+Natural Cure
+Médic Nature
+31
+Lightning Rod
+Paratonnerre
+32
+Serene Grace
+Sérénité
+33
+Swift Swim
+Glissade
+34
+Chlorophyll
+Chlorophylle
+35
+Illuminate
+Lumiattirance
+36
+Trace
+Calque
+37
+Huge Power
+Coloforce
+38
+Poison Point
+Point Poison
+39
+Inner Focus
+Attention
+40
+Magma Armor
+Armumagma
+41
+Water Veil
+Ignifu-Voile
+42
+Magnet Pull
+Magnépiège
+43
+Soundproof
+Anti-Bruit
+44
+Rain Dish
+Cuvette
+45
+Sand Stream
+Sable Volant
+46
+Pressure
+Pression
+47
+Thick Fat
+Isograisse
+48
+Early Bird
+Matinal
+49
+Flame Body
+Corps Ardent
+50
+Run Away
+Fuite
+51
+Keen Eye
+Regard Vif
+52
+Hyper Cutter
+Hyper Cutter
+53
+Pickup
+Ramassage
+54
+Truant
+Absentéisme
+55
+Hustle
+Agitation
+56
+Cute Charm
+Joli Sourire
+57
+Plus
+Plus
+58
+Minus
+Minus
+59
+Forecast
+Météo
+60
+Sticky Hold
+Glue
+61
+Shed Skin
+Mue
+62
+Guts
+Cran
+63
+Marvel Scale
+Ecaille Spé.
+64
+Liquid Ooze
+Suintement
+65
+Overgrow
+Engrais
+66
+Blaze
+Brasier
+67
+Torrent
+Torrent
+68
+Swarm
+Essaim
+69
+Rock Head
+Tête de Roc
+70
+Drought
+Sécheresse
+71
+Arena Trap
+Piège Sable
+72
+Vital Spirit
+Esprit Vital
+73
+White Smoke
+Ecran fumée
+74
+Pure Power
+Force Pure
+75
+Shell Armor
+Coque Armure
+76
+Air Lock
+Air Lock
+77
+Tangled Feet
+Pied Confus
+78
+Motor Drive
+Motorisé
+79
+Rivalry
+Rivalité
+80
+Steadfast
+Impassible
+81
+Snow Cloak
+Rideau Neige
+82
+Gluttony
+Gloutonnerie
+83
+Anger Point
+Colérique
+84
+Unburden
+Délestage
+85
+Heatproof
+Ignifuge
+86
+Simple
+Simple
+87
+Dry Skin
+Peau Sèche
+88
+Download
+Télécharge
+89
+Iron Fist
+Poing de Fer
+90
+Poison Heal
+Soin Poison
+91
+Adaptability
+Adaptabilité
+92
+Skill Link
+Multi-Coups
+93
+Hydration
+Hydratation
+94
+Solar Power
+Force Soleil
+95
+Quick Feet
+Pied Véloce
+96
+Normalize
+Normalise
+97
+Sniper
+Sniper
+98
+Magic Guard
+Garde Magik
+99
+No Guard
+Annule Garde
+100
+Stall
+Frein
+101
+Technician
+Technicien
+102
+Leaf Guard
+Feuille Garde
+103
+Klutz
+Maladresse
+104
+Mold Breaker
+Brise Moule
+105
+Super Luck
+Chanceux
+106
+Aftermath
+Boom Final
+107
+Anticipation
+Anticipation
+108
+Forewarn
+Prédicition
+109
+Unaware
+Inconscient
+110
+Tinted Lens
+Lentiteintée
+111
+Filter
+Filtre
+112
+Slow Start
+Début Calme
+113
+Scrappy
+Querelleur
+114
+Storm Drain
+Lavabo
+115
+Ice Body
+Corps Gel
+116
+Solid Rock
+Solide Roc
+117
+Snow Warning
+Alerte Neige
+118
+Honey Gather
+Cherche Miel
+119
+Frisk
+Fouille
+120
+Reckless
+Téméraire
+121
+Multitype
+Multitype
+122
+Flower Gift
+Don Floral
+123
+Bad Dreams
+Mauvais Rêve
+124
+Pickpocket
+Pickpocket
+125
+Sheer Force
+Sans Limite
+126
+Contrary
+Contestation
+127
+Unnerve
+Tension
+128
+Defiant
+Acharné
+129
+Defeatist
+Défaitiste
+130
+Cursed Body
+Corps Maudit
+131
+Healer
+Cœur Soin
+132
+Friend Guard
+Garde-Ami
+133
+Weak Armor
+Armurouillée
+134
+Heavy Metal
+Heavy Metal
+135
+Light Metal
+Light Metal
+136
+Multiscale
+Multiécaille
+137
+Toxic Boost
+Rage Poison
+138
+Flare Boost
+Rage Brûlure
+139
+Harvest
+Récolte
+140
+Telepathy
+Télépathe
+141
+Moody
+Lunatique
+142
+Overcoat
+Envelocape
+143
+Poison Touch
+Toxitouche
+144
+Regenerator
+Régé-Force
+145
+Big Pecks
+Cœur de Coq
+146
+Sand Rush
+Baigne Sable
+147
+Wonder Skin
+Peau Miracle
+148
+Analytic
+Analyste
+149
+Illusion
+Illusion
+150
+Imposter
+Imposteur
+151
+Infiltrator
+Infiltration
+152
+Mummy
+Momie
+153
+Moxie
+Impudence
+154
+Justified
+Cœur Noble
+155
+Rattled
+Phobique
+156
+Magic Bounce
+Miroir Magik
+157
+Sap Sipper
+Herbivore
+158
+Prankster
+Farceur
+159
+Sand Force
+Force Sable
+160
+Iron Barbs
+Epine de Fer
+161
+Zen Mode
+Mode Transe
+162
+Victory Star
+Victorieux
+163
+Turboblaze
+Turbo Brasier
+164
+Teravolt
+Téra-Voltage
+165
+Aerilate
+Peau Céleste
+166
+Aroma Veil
+Aroma-Voile
+167
+Aura Break
+Aura Inversée
+168
+Bulletproof
+Pare-Balles
+169
+Cheek Pouch
+Bajoues
+170
+Competitive
+Battant
+171
+Dark Aura
+Aura Ténébreuse
+172
+Fairy Aura
+Aura Féérique
+173
+Flower Veil
+Flora-Voile
+174
+Fur Coat
+Toison Épaisse
+175
+Gale Wings
+Ailes Bourrasque
+176
+Gooey
+Poisseux
+177
+Grass Pelt
+Toison Herbue
+178
+Magician
+Magicien
+179
+Mega Launcher
+Méga Blaster
+180
+Parental Bond
+Amour Filial
+181
+Pixilate
+Peau Féérique
+182
+Protean
+Protéen
+183
+Refrigerate
+Peau Gelée
+184
+Stance Change
+Déclic Tactique
+185
+Strong Jaw
+Prognathe
+186
+Sweet Veil
+Gluco-Voile
+187
+Symbiosis
+Symbiose
+188
+Tough Claws
+Griffe Dure
+189
+Primordial Sea
+Mer Primaire
+190
+Desolate Land
+Terre Finale
+191
+Delta Stream
+Souffle Delta
+192
+Battery
+Batterie
+193
+Beast Boost
+Boost Chimère
+194
+Berserk
+Dracolère
+195
+Comatose
+Hypersommeil
+196
+Corrosion
+Corrosion
+197
+Dancer
+Danseuse
+198
+Dazzling
+Corps Coloré
+199
+Electric Surge
+Créa-Élec
+200
+Emergency Exit
+Repli Tactique
+201
+Fluffy
+Boule de Poils
+202
+Full Metal Body
+Métallo-Garde
+203
+Galvanize
+Peau Électrique
+204
+Grassy Surge
+Créa-Herbe
+205
+Innards Out
+Explus'Organes
+206
+Liquid Voice
+Hydrata-Son
+207
+Long Reach
+Longue Portée
+208
+Merciless
+Cruauté
+209
+Misty Surge
+Créa-Brume
+210
+Alchemy
+Osmose
+211
+Prism Armor
+Prisme-Armure
+212
+Psychic Surge
+Créa-Psy
+213
+Q. Majesty
+Prestance Royale
+214
+Receiver
+Receveur
+215
+Shadow Shield
+Spectro-Bouclier
+216
+Slush Rush
+Chasse-Neige
+217
+Soul-heart
+Animacœur
+218
+Stakeout
+Filature
+219
+Stamina
+Endurance
+220
+Steelworker
+Expert Acier
+221
+Surge Surfer
+Surf Caudal
+222
+Tangling Hair
+Mèche Rebelle
+223
+Triage
+Prioguérison
+224
+Water Bubble
+Aquabulle
+225
+Water Compact
+Sable Humide
+226
+Wimp Out
+Escampette
+227
+Schooling
+Banc
+228
+RKS System
+Système Alpha
+229
+Shields Down
+Bouclier-Carcan
+230
+Disguise
+Fantômasque
+231
+P. Construct
+Rassemblement
+232
+Ball Fetch
+Ball Fetch
+306
+Cotton Down
+Cotton Down
+307
+Dauntless Shield
+Dauntless Shield
+308
+Gorilla Tactics
+Gorilla Tactics
+309
+Gulp Missile
+Gulp Missile
+310
+Hunger Switch
+Hunger Switch
+311
+Ice Face
+Ice Face
+312
+Ice Scales
+Ice Scales
+313
+Intrepid Sword
+Intrepid Sword
+314
+Libero
+Libero
+315
+Mimicry
+Mimicry
+316
+Mirror Armor
+Mirror Armor
+317
+Neutralizing Gas
+Neutralizing Gas
+318
+Pastel Veil
+Pastel Veil
+319
+Perish Body
+Perish Body
+320
+Power Spot
+Power Spot
+321
+Propeller Tail
+Propeller Tail
+322
+Punk Rock
+Punk Rock
+323
+Ripen
+Ripen
+324
+Sand Spit
+Sand Spit
+325
+Screen Cleaner
+Screen Cleaner
+326
+Stalwart
+Stalwart
+327
+Steam Engine
+Steam Engine
+328
+Steely Spirit
+Steely Spirit
+256
+W. Spirit
+W. Spirit
+257
+Neuroforce
+Cérébro-Force
+258
+Quick Draw
+Quick Draw
+259
+Unseen Fist
+Unseen Fist
+260
+Curious Med.
+Curious Med.
+261
+Transistor
+Transistor
+262
+Dragon's Maw
+Dragon's Maw
+263
+Chilling Neigh
+Chilling Neigh
+264
+Grim Neigh
+Grim Neigh
+265
+As One
+As One
+[2]
+1
+The stench may cause the target to flinch.
+Attaquer peut effrayer sa cible.
+2
+The Pokémon makes it rain when it enters a battle.
+Invoque la pluie en entrant au combat.
+3
+Its Speed stat is gradually boosted.
+La Vitesse du Pokémon augmente à chaque tour.
+4
+The Pokémon is protected against critical hits.
+Le Pokémon est protégé des coups critiques.
+5
+It cannot be knocked out with one hit.
+Encaisse toujours une attaque avec tous ses PV.
+6
+Prevents the use of self-destructing moves.
+Empêche les explosions.
+7
+The Pokémon is protected from paralysis.
+Protège le Pokémon de la paralysie.
+8
+Boosts the Pokémon's evasion in a sandstorm.
+Augmente l’Esquive lors des tempêtes de sable.
+9
+Contact with the Pokémon may cause paralysis.
+Un contact avec le Pokémon peut paralyser.
+10
+Restores HP if hit by an Electric-type move.
+Récupère des PV si touché par une capacité Électrik.
+11
+Restores HP if hit by a Water-type move.
+Récupère des PV si touché par une capacité Eau.
+12
+Prevents it from becoming infatuated.
+Empêche la séduction et Provoc.
+13
+Eliminates the effects of weather.
+Annule les effets du climat.
+14
+The Pokémon's accuracy is boosted...
+Augmente la Précision du Pokémon.
+15
+Prevents the Pokémon from falling asleep.
+Empêche le Pokémon de s’endormir.
+16
+Changes the Pokémon's type to the foe's move.
+Le Pokémon adopte le type de la capacité ennemie.
+17
+Prevents the Pokémon from getting poisoned.
+Empêche le Pokémon d’être empoisonné.
+18
+Powers up Fire-type moves if it's hit by one...
+Booste capacités Feu si touché par attaques Feu.
+19
+Blocks the added effects of attacks taken.
+Annule les effets cumulés d’une attaque ennemie.
+20
+Prevents the Pokémon from becoming confused.
+Empêche la confusion.
+21
+Negates all moves that force switching out.
+Ne peut être retiré de force du terrain.
+22
+Lowers the foe's Attack stat.
+Baisse l’Attaque ennemie.
+23
+Prevents the foe from escaping.
+Empêche le Pokémon ennemi de quitter le combat.
+24
+Inflicts damage to the foe on contact.
+Le Pokémon blesse l’ennemi qui le touche.
+25
+Only super-effective moves will hit.
+Seules les capacités “super efficaces” l’atteignent.
+26
+Gives full immunity to all Ground-type moves.
+Immunise contre toutes les capacités de type Sol.
+27
+Contact may poison or cause paralysis or sleep.
+Le contact peut paralyser, empoisonner ou endormir.
+28
+Passes a burn, poison, or paralysis to the foe.
+Transmet brûlure, poison ou paralysie à l’ennemi.
+29
+Prevents other Pokémon from lowering its stats.
+Empêche les stats du Pokémon de baisser.
+30
+All status problems heal when it switches out.
+Quitter le combat soigne les problèmes de statut.
+31
+Draws in all Electric-type moves to raise Sp. Attack.
+Attire l’électricité et augmente l’Atq. Spé.
+32
+Boosts the likelihood of added effects appearing.
+Augmente la fréquence du cumul d’effets.
+33
+Doubles the Pokémon's Speed in rain.
+Augmente la Vitesse du Pokémon s’il pleut.
+34
+Doubles the Pokémon's Speed in sunshine.
+Augmente la Vitesse du Pokémon s’il y a du soleil.
+35
+Raises the likelihood of meeting wild Pokémon.
+Augmente les rencontres avec Pokémon sauvages.
+36
+The Pokémon copies a foe's Ability.
+Imite la capacité spéciale de l’ennemi.
+37
+Doubles the Pokémon's Attack stat.
+Augmente l’Attaque du Pokémon.
+38
+Contact with the Pokémon may poison the attacker.
+Peut empoisonner l’ennemi s’il y a contact.
+39
+The Pokémon is protected from flinching.
+Empêche le Pokémon d’avoir peur.
+40
+Prevents the Pokémon from becoming frozen.
+Protège contre le gel. Les Œufs éclosent plus vite.
+41
+Prevents the Pokémon from getting a burn.
+Protège le Pokémon des brûlures.
+42
+Prevents Steel-type Pokémon from escaping.
+Empêche les Pokémon Acier de fuir.
+43
+Gives full immunity to all sound-based moves.
+Protège de toutes les capacités sonores.
+44
+The Pokémon gradually regains HP in rain.
+Récupère progressivement des PV par temps de pluie.
+45
+The Pokémon summons a sandstorm in battle.
+Le Pokémon invoque une tempête de sable.
+46
+The Pokémon raises the foe's PP usage.
+Force l’ennemi à dépenser plus de PP.
+47
+Ups resistance to Fire- and Ice-type moves...
+Augmente la résistance aux cap. Feu et Glace.
+48
+The Pokémon awakens quickly from sleep.
+Le Pokémon se réveille plus rapidement.
+49
+Contact with the Pokémon may burn the attacker.
+Peut brûler au contact. Les Œufs éclosent vite.
+50
+Enables a sure getaway from wild Pokémon.
+Permet de fuir n’importe quel Pokémon sauvage.
+51
+Prevents other Pokémon from lowering accuracy.
+Empêche le Pokémon de perdre en Précision.
+52
+Prevents other Pokémon from lowering Attack stat.
+Empêche la réduction de l’Attaque.
+53
+The Pokémon may pick up items...
+Permet parfois au Pokémon de ramasser des objets.
+54
+Pokémon can't attack on consecutive turns.
+Le Pokémon ne frappe qu’un tour sur deux.
+55
+Boosts the Attack stat, but lowers accuracy...
+Améliore l’Attaque mais diminue la Précision.
+56
+Contact with the Pokémon may cause infatuation.
+Séduit parfois l’ennemi au contact.
+57
+Ups Sp. Atk if another Pokémon has Plus or Minus...
+Augmente l’Atq. Spé. si un Pokémon a Minus ou Plus.
+58
+Ups Sp. Atk if another Pokémon has Plus or Minus...
+Augmente l’Atq. Spé. si un Pokémon a Minus ou Plus.
+59
+Castform transforms with the weather.
+Change de forme selon le climat.
+60
+Protects the Pokémon from item theft.
+Fait s’agripper à l’objet pour en empêcher le vol.
+61
+The Pokémon may heal its own status problems.
+Le Pokémon soigne parfois ses problèmes de statut.
+62
+Boosts Attack if there is a status problem...
+Augmente l’Attaque s’il y a un problème de statut.
+63
+Ups Defense if there is a status problem...
+Augmente la Défense s’il y a un problème de statut.
+64
+Damages attackers using any draining move...
+Blesse l’ennemi qui draine l’énergie du Pokémon.
+65
+Powers up Grass-type moves in a pinch...
+Booste les capacités Plante en cas de besoin.
+66
+Powers up Fire-type moves in a pinch...
+Booste les capacités Feu en cas de besoin.
+67
+Powers up Water-type moves in a pinch...
+Booste les capacités Eau en cas de besoin.
+68
+Powers up Bug-type moves in a pinch...
+Booste les capacités Insecte en cas de besoin.
+69
+Protects the Pokémon from recoil damage.
+Protège le Pokémon des dégâts de contrecoups.
+70
+The Pokémon summons harsh sunlight in battle.
+Intensifie les rayons du soleil pendant le combat.
+71
+Prevents the foe from fleeing.
+Empêche le Pokémon ennemi de quitter le combat.
+72
+Prevents the Pokémon from falling asleep.
+Empêche le Pokémon de s’endormir.
+73
+Prevents other Pokémon from lowering its stats.
+Empêche les stats du Pokémon de baisser.
+74
+Doubles the Pokémon's Attack stat.
+Augmente l’Attaque du Pokémon.
+75
+The Pokémon is protected against critical hits.
+Le Pokémon est protégé des coups critiques.
+76
+Eliminates the effects of weather.
+Annule les effets du climat.
+77
+Raises evasion if the Pokémon is confused.
+Augmente l’Esquive si le Pokémon est confus.
+78
+Raises Speed if hit by an Electric-type move.
+Augmente la Vit. si touché par une cap. Électrik.
+79
+Deals more damage to a foe of the same gender...
+Devient plus fort si l’ennemi est du même sexe.
+80
+Raises Speed each time the Pokémon flinches.
+Augmente la Vitesse quand le Pokémon a peur.
+81
+Raises evasion in a hailstorm.
+Augmente l’Esquive durant les tempêtes de grêle.
+82
+Encourages the early use of a held Berry.
+Encourage l’utilisation d’une Baie tenue.
+83
+Maxes Attack after taking a critical hit.
+Monte l’Attaque au max après un coup critique.
+84
+Doubles Speed if a held item is used.
+Augmente la Vit. si l’objet tenu est utilisé ou perdu.
+85
+Weakens the power of Fire-type moves...
+Réduit la puissance des capacités de type Feu.
+86
+The Pokémon is prone to wild stat changes.
+Le Pokémon est sujet à des variations de stats.
+87
+Reduces HP if it is hot. Water restores HP...
+Perd des PV à la chaleur. L’eau les restaure.
+88
+Adjusts power according to a foe's defenses...
+Ajuste la puissance selon l’ennemi.
+89
+Punching moves used by it deal more damage.
+Augmente la puissance des capacités coups de poing.
+90
+Restores HP instead of losing them when poisoned.
+Restaure des PV si le Pokémon est empoisonné.
+91
+Damage bonus for same-type moves is doubled.
+Augmente la puissance des capacités de même type.
+92
+Its Multi-strike moves hit the max number of times.
+Augmente la fréquence des attaques multiples.
+93
+Cures its status conditions during rain.
+Soigne les problèmes de statut s’il pleut.
+94
+Harsh sunlight boosts Sp. Atk, but damages it.
+Augmente l’Atq. Spé. mais baisse les PV au soleil.
+95
+Status conditions greatly increase its Speed stat.
+Augmente la Vitesse en cas de problème de statut.
+96
+Moves it uses turn Normal-type and deal more damage.
+Toutes les capacités sont de type Normal.
+97
+The critical hits it lands deal more damage.
+Augmente la puissance des coups critiques.
+98
+This Pokémon can only take direct damage.
+Seule une attaque directe peut blesser le Pokémon.
+99
+Moves used by or against this Pokémon always hit.
+Capacités du Pokémon et de l’ennemi réussissent.
+100
+Uses its move after all others of same priority.
+Attaque toujours après l’ennemi, même plus lent.
+101
+Greatly boosts its moves with power 60 or less.
+Augmente la puissance des capacités les plus faibles.
+102
+Resists status conditions during harsh sunlight.
+Empêche les problèmes de statut au soleil.
+103
+It is unable to gain any effect of its held item.
+Le Pokémon ne peut utiliser aucun objet tenu.
+104
+This Pokémon's moves ignore any Abilities.
+Les cap. spé. adverses ne bloquent pas ses cap.
+105
+Raises this Pokémon's critical hit chance.
+Augmente la fréquence des coups critiques.
+106
+Damages an attacker who makes it faint on contact.
+Blesse l’ennemi qui porte le coup de grâce.
+107
+Senses a supereffective or one-hit KO move.
+Prévoit les capacités ennemies dangereuses.
+108
+Senses the strongest damaging move of its foes.
+Découvre la capacité ennemie la plus puissante.
+109
+This Pokémon ignores an opponent's stat raises.
+Ignore les changements de stats de l’ennemi.
+110
+Deals double damage with 'not effective' moves.
+Améliore les capacités “pas très efficaces”.
+111
+Takes less damage from supereffective attacks.
+Affaiblit les capacités “super efficaces”.
+112
+Its Attack and Speed are halved for five turns.
+Divise temporairement Vitesse et Attaque par 2.
+113
+Can hit Ghost-types with Normal and Fighting moves.
+Les cap. Normal touchent les Pokémon Spectre.
+114
+Attracts Water moves. They raise its Sp. Atk.
+Attire l’eau et augmente l’Atq. Spé.
+115
+Slowly regenerates HP during a hailstorm.
+Régénère ses PV lors des tempêtes de grêle.
+116
+Takes less damage from supereffective attacks.
+Affaiblit les capacités “super efficaces”.
+117
+Summons a hailstorm upon entering battle.
+Déclenche une tempête de grêle pendant le combat.
+118
+May find Honey after a battle.
+Le Pokémon peut parfois trouver du Miel.
+119
+Identifies an opponent's held item when switched in.
+Permet de connaître l’objet tenu par l’ennemi.
+120
+Deals more damage with moves that cause recoil.
+Booste les capacités de contrecoups.
+121
+Matches the type of its held Plate or Z-Crystal.
+Modifie le type en fonction de la Plaque tenue.
+122
+Harsh sunlight ups its and allies' Attack and Sp. Def.
+Pokémon de l’équipe plus puissants au soleil.
+123
+Makes sleeping opponents steadily lose HP.
+Réduit les PV d’un ennemi endormi.
+124
+Steals the held item of an attacker on contact.
+Vole l’objet de l’ennemi si son attaque touche.
+125
+Removes added effects, boosting according moves.
+Frappe plus fort mais annule les effets cumulés.
+126
+Inverts this Pokémon's stat raises and lowerings.
+Inverse les variations de stats.
+127
+Prevents opponents from eating their held Berries.
+L’ennemi stresse et ne peut plus manger de Baies.
+128
+Sharply raises its Attack if a foe lowers its stats.
+Monte l’Attaque quand les stats baissent.
+129
+Halved Attack and Sp. Atk stats at half HP or lower.
+Baisse les stats quand les PV tombent à la moitié.
+130
+May disable a move it is damaged by for four turns.
+Peut empêcher l’ennemi de réutiliser une attaque.
+131
+Has a good chance to heal an ally's status condition.
+Guérit parfois le statut des alliés alentour.
+132
+Reduces damage to allies while in battle.
+Diminue les dégâts subis par les alliés.
+133
+Physical hits sharply raise Speed, but lower Defense.
+Un coup physique baisse la Défense, monte la Vitesse.
+134
+This Pokémon's weight is doubled in battle.
+Double le poids du Pokémon.
+135
+This Pokémon's weight is halved in battle.
+Divise par deux le poids du Pokémon.
+136
+Only takes halved direct damage if at full HP.
+Reçoit moins de dégâts si les PV sont au maximum.
+137
+Being poisoned greatly boosts its physical moves.
+Booste les att. physiques si le statut est poison.
+138
+Being burnt greatly boosts its special moves.
+Booste les att. spéciales si le statut est brûlure.
+139
+May restore its Berry. Ensured in harsh sunlight.
+Les Baies utilisées peuvent repousser.
+140
+This Pokémon dodges damaging moves of allies.
+Anticipe et évite les attaques de ses alliés.
+141
+Sharply raises a stat and lowers another each turn.
+Monte une stat tout en en baissant une autre.
+142
+Hail, sandstorm, powder, spores don't affect it.
+Neutralise les dégâts dus à la météo.
+143
+May cause poisoning on contact when attacking.
+Peut empoisonner l’ennemi par simple contact.
+144
+Regenerates a third of its max HP when switched out.
+Restaure un peu de PV si le Pokémon est retiré.
+145
+Others can't lower this Pokémon's Defense stat.
+Empêche la Déf. de baisser à cause d’attaques.
+146
+A sandstorm doubles this Pokémon's Speed stat.
+Augmente la Vitesse lors des tempêtes de sable.
+147
+Lowers the Accuracy of status moves used on it.
+Son corps résiste mieux aux attaques de statut.
+148
+Deals more damage when moving after its target.
+Booste les capacités s’il attaque en dernier.
+149
+Appears as the last party member until damaged.
+Prend l’apparence du dernier Pokémon de l’équipe.
+150
+Copies its foe's species, moves, Ability and stats.
+Adopte l’apparence du Pokémon adverse.
+151
+Ignores effects of moves like Reflect or Substitute.
+Traverse les barrières de l’ennemi pour attaquer.
+152
+An attacker's Ability will become Mummy on contact.
+Momifie la cap. spé. de l’ennemi qui le touche.
+153
+Knocking out any Pokémon raises its Attack stat.
+Monte l’Attaque quand il met un ennemi K.O.
+154
+Being damaged by a Dark move raises its Attack.
+Monte l’Attaque si une att. Ténèbres le touche.
+155
+Bug, Dark, or Ghost move damage raises its Speed.
+Sa peur de certains types augmente sa Vitesse.
+156
+Reflects almost all status moves back to their user.
+Renvoie les attaques de statut.
+157
+Being hit by a Grass move raises its Attack stat.
+Augmente l’Attaque après une attaque Plante.
+158
+Gains increased priority on its status moves.
+Utilise les attaques de statut en premier.
+159
+Sandstorms boost Rock, Ground and Steel moves.
+Renforce des capacités en cas de tempête de sable.
+160
+Damages any attacker who makes direct contact.
+Le Pokémon blesse l’ennemi qui le touche.
+161
+Changes into its Zen Mode if at half HP or below.
+Transforme le Pokémon dans les moments délicats.
+162
+Increases its and allies' Accuracy slightly.
+Monte la Précision des Pokémon de l’équipe.
+163
+This Pokémon's moves ignore any Abilities.
+Les cap. spé. adverses ne bloquent pas ses cap.
+164
+This Pokémon's moves ignore any Abilities.
+Les cap. spé. adverses ne bloquent pas ses cap.
+165
+Boosts its Normal moves, making them Flying-type.
+Les capacités Normal deviennent de type Vol.
+166
+Protects it and allies from move-choice-limiting moves.
+Protège les alliés des capacités mentales.
+167
+Inverts the effects of Fairy Aura and Dark Aura.
+L'effet des auras est inversé.
+168
+This Pokémon is immune to ball and bomb moves.
+Protège de certaines capacités projetant des bombes, balles.
+169
+Eating a held Berry restores additional HP.
+Rend des PV lorsque le Pokémon consomme une Baie.
+170
+Sharply raises its Sp. Atk if a foe lowers its stats.
+Monte l'Att.Spé. quand une stat est baissée.
+171
+Powers up Dark-type moves from any combatant.
+Renforce les attaques de type Ténèbres.
+172
+Powers up Fairy-type moves from any combatant.
+Renforce les attaques de type Fée.
+173
+Protects allied Grass-types' status and stats.
+Protège les alliés Plante des altérations.
+174
+This Pokémon's Defense stat is doubled in battle.
+Réduit les dégâts des attaques physiques.
+175
+It gains priority on its Flying moves if at full HP.
+Les attaques de type Vol sont prioritaires.
+176
+Lowers the Speed stat of any attacker on contact.
+Diminue la vitesse de l'attaquant qui le touche.
+177
+Grassy Terrain increases this Pokémon's Defense.
+La Défense augmente dans l'herbe.
+178
+Damaging a target directly also steals its held item.
+Les capacités volent aussi l'objet tenu par la cible.
+179
+Boosts its pulse-based moves and Aura Sphere.
+Augmente la puissance des capacités canons.
+180
+Strikes single targets a second time with low power.
+La mère et l'enfant attaquent ensemble.
+181
+Boosts its Normal moves, making them Fairy-type.
+Les capacités Normal deviennent de type Fée.
+182
+Matches the type of the move it is about to use.
+Le Pokémon prend le type de sa dernière capacité.
+183
+Boosts its Normal moves, making them Ice-type.
+Les capacités Normal deviennent de type Glace.
+184
+Depending on the move it uses, it switches Formes.
+Change de forme selon la capacité choisie.
+185
+Biting moves used by it are powered up greatly.
+Augmente la puissance des attaques "croc".
+186
+This Pokémon and its allies cannot fall asleep.
+Les Pokémon de l'équipe ne peuvent pas s'endormir.
+187
+Will pass its held item to an ally who used their own.
+Permet aux alliés d'utiliser l'objet porté.
+188
+Deals more damage with moves that make contact.
+Augmente la puissance des attaques directes.
+189
+Summons insurmountable heavy rain.
+Invoque la pluie battante à l'entrée au combat.
+190
+Summons overbearing, extremely harsh sunlight.
+Invoque le soleil intense à l'entrée au combat.
+191
+Summons a powerful mysterious air current.
+Invoque le courant aérien à l'entrée au combat.
+192
+Considerably boosts its allies' special moves.
+Augmente la puissance des capacités spéciales.
+193
+Knocking out any Pokémon raises its highest stat.
+Augmente la statistique la plus élevée après un K.O.
+194
+Raises its Sp. Atk when a hit drops its HP below half.
+Augmente l’Att. Spé. lorsque que PV tombent à 50%.
+195
+It is always asleep, but can still attack normally.
+Constamment endormi mais capable d’attaquer.
+196
+This Pokémon can poison Steel- and Poison-types.
+Permet d’empoisonner les Pokémon Acier et Poison.
+197
+It instantly copies dance moves used by combatants.
+Repète toutes les capacités "Danse".
+198
+Prevents foes' single-target priority moves.
+Empêche les priorités adverses.
+199
+Turns the battlefield into Electric Terrain.
+Crée un Champ Électrifié à son entrée au combat.
+200
+When dropping to half HP or less, it switches out.
+Se retire du combat quand les PV tombent à 50%
+201
+Halves contact and doubles Fire damage taken.
+Réduit les dégâts de contact, double les dégâts de Feu.
+202
+Others cannot lower this Pokémon's stats.
+Empêche les stats du Pokémon de baisser.
+203
+Boosts its Normal moves, making them Electric-type.
+Les capacités Normal deviennent de type Électrik.
+204
+Turns the battlefield into Grassy Terrain.
+Crée un Champ Herbu à son entrée au combat.
+205
+Deals equal damage to an attacker knocking it out.
+Inflige à l’adversaire les dégâts l’ayant mis K.O.
+206
+Changes its sound-based moves to Water-type.
+Les capacités sonores deviennent de type Eau.
+207
+Never makes direct contact when attacking.
+Les capacités ne font plus de contact avec la cible.
+208
+Poisoned targets will always be critically hit.
+Inflige des coups critiques sur une cible empoisonnée.
+209
+Turns the battlefield into Misty Terrain.
+Crée un Champ Brumeux à son entrée au combat.
+210
+Takes over the Ability of a fainting ally.
+Prend le talent d’un allié mis K.O.
+211
+Takes less damage from supereffective attacks.
+Affaiblit les capacités “super efficaces”.
+212
+Turns the battlefield into Psychic Terrain.
+Crée un Champ Psychique à son entrée au combat.
+213
+Prevents foes' single-target priority moves.
+Bloque les attaques prioritaires.
+214
+Takes over the Ability of a fainting ally.
+Prend le talent d’un allié mis K.O.
+215
+Only takes halved direct damage if at full HP.
+Reçoit moins de dégâts si les PV sont au maximum.
+216
+This Pokémon's Speed stat is doubled during hail.
+Double la Vitesse par temps de grêle.
+217
+Whenever a combatant faints, its Sp. Atk raises.
+Augmente l’Att. Spé. lorsqu’un Pokémon est K.O.
+218
+Deals double damage if the target is switched out.
+Double les dégâts si la cible s'est retirée.
+219
+When hit by an attack, its Defense stat is raised.
+Augmente la Défense à chaque coup encaissé.
+220
+Deals greatly more damage with Steel-type moves.
+Augmente la puissance des capacités Acier.
+221
+Electric Terrain doubles this Pokémon's Speed stat.
+Double la Vitesse si le Champ Électrifié est actif.
+222
+Lowers the Speed stat of any attacker on contact.
+Diminue la vitesse de l'attaquant qui le touche.
+223
+Gains high priority for its HP-restoring moves.
+Capacités de soin et de drain de vie prioritaires.
+224
+Double damage with Water moves. Can't be burnt.
+Double les capacités Eau. Immunise contre la brûlure.
+225
+Being hit by a Water move raises its Defense stat.
+Augmente la Défense lorsqu'il encaisse une capacité Eau.
+226
+When dropping to half HP or less, it switches out.
+Se retire du combat quand les PV tombent à 50%
+227
+Takes on a School Form as long as above 25% HP.
+Forme un banc quand les PV dépassent 25%.
+228
+This Pokémon matches the type of its held Memory.
+Le type change en fonction de la ROM qu'il porte.
+229
+Loses its protective Meteor Form below half HP.
+Gagne un bouclier quand les PV dépassent 50%.
+230
+Once a battle, it is not damaged by the first hit.
+Absorbe le premier coup subi.
+231
+When HP are half or less, enters Complete Forme.
+Passe en forme Parfaite lorsque les PV tombent à 50%.
+232
+Fetches the first failed Pokéball if no held item.
+Fetches the first failed Pokéball if no held item.
+233
+Lowers Speed of adjacent Pokémon when hit.
+Lowers Speed of adjacent Pokémon when hit.
+234
+Boosts the Pokémon's Defense stat upon entry.
+Boosts the Pokémon's Defense stat upon entry.
+235
+Boosts attack and may only use one move.
+Boosts attack and may only use one move.
+236
+Catches Pokémon with Surf and Dive, spits out when hit.
+Catches Pokémon with Surf and Dive, spits out when hit.
+237
+Switches forms after every turn...
+Switches forms after every turn...
+238
+Can take a physical attack once...
+Can take a physical attack once...
+239
+Halves the damage taken from special moves.
+Halves the damage taken from special moves.
+240
+Boosts the Pokémon's Attack stat upon entry.
+Boosts the Pokémon's Attack stat upon entry.
+241
+Changes the Pokémon's type to its used move.
+Changes the Pokémon's type to its used move.
+242
+The Pokémon changes type to match the terrain.
+The Pokémon changes type to match the terrain.
+243
+Reflects stat-changing moves.
+Reflects stat-changing moves.
+244
+Effects of abilities are nullified or prevented.
+Effects of abilities are nullified or prevented.
+245
+Protects the user and allies from being poisoned.
+Protects the user and allies from being poisoned.
+246
+When hit by a contact move...
+When hit by a contact move...
+247
+Just being next to the Pokémon powers up moves...
+Just being next to the Pokémon powers up moves...
+248
+Ignores redirection...
+Ignores redirection...
+249
+Boosts damage of and resists sound based moves.
+Boosts damage of and resists sound based moves.
+250
+Ripens Berries and doubles their effect.
+Ripens Berries and doubles their effect.
+251
+Creates a sandstorm when it's hit by an attack.
+Creates a sandstorm when it's hit by an attack.
+252
+Negates all screen effects...
+Negates all screen effects...
+253
+Ignores redirection...
+Ignores redirection...
+254
+Fire- and Water-type moves boost Speed drastcally.
+Fire- and Water-type moves boost Speed drastcally.
+255
+Powers up ally Pokémon's Steel-type moves...
+Powers up ally Pokémon's Steel-type moves...
+256
+Swaps Abilities when hit by a contact move.
+Swaps Abilities when hit by a contact move.
+257
+Powers up moves that are super effective.
+Augmente la puissance des capacités super efficaces.
+258
+Enables the Pokémon to move first occasionally...
+Enables the Pokémon to move first occasionally...
+259
+Physical contact bypasses Protect and similar.
+Physical contact bypasses Protect and similar.
+260
+Removes ally stat changes on entry.
+Removes ally stat changes on entry.
+261
+Powers up Electric-type moves...
+Powers up Electric-type moves...
+262
+Powers up Dragon-type moves...
+Powers up Dragon-type moves...
+263
+Boosts Attack when knocking out an opponent.
+Boosts Attack when knocking out an opponent.
+264
+Boosts Sp. Atk when knocking out an opponent.
+Boosts Sp. Atk when knocking out an opponent.
+265
+Combines abilities of fused Pokémon.
+Combines abilities of fused Pokémon.

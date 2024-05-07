@@ -708,7 +708,6 @@ class PokemonLoad
         @scene.pbEndScene
         $Settings.language = pbChooseLanguage
         pbLoadMessages("Data/" + LANGUAGES[$Settings.language][1] + ".dat")
-        $cache.trainers = load_data("Data/trainers" + getSuffixFile() + ".dat") if !@trainers
         $scene = pbCallTitle
         return
       elsif cmdPatchUpdate >= 0 && command == cmdPatchUpdate

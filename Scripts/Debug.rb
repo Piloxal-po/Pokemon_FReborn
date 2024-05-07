@@ -273,6 +273,9 @@ def pbDebugMenu
     commands.add("animeditor", _INTL("Animation Editor"))
     commands.add("togglelogging", _INTL("Toggle Battle Logging"))
     commands.add("debugTrainer", _INTL("Test Debug Trainer"))
+    getDebugCommand.each do |command|
+      commands.add(command[0], _INTL(command[0]))
+    end
   else
     commands.add("healparty", _INTL("Heal Party"))
     commands.add("additem", _INTL("Add Item"))
@@ -733,6 +736,13 @@ def pbDebugMenu
     elsif cmd == "compiledata"
       compileAll
       Kernel.pbMessage(_INTL("All data has been compiled."))
+    elsif getDebugCommand.any?{|command| command[0] == cmd}
+    getDebugCommand.each do |command|
+        if command[0] == cmd
+          command[1].call
+          Kernel.pbMessage(command[0] + " : done")
+        end
+      end
     elsif cmd == "mapconnections"
       pbFadeOutIn(99999) { pbEditorScreen }
     elsif cmd == "animeditor"
