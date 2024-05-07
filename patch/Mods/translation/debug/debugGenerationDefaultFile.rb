@@ -6,6 +6,7 @@ def generateDebugTranslationModFile
     generateMoveDebugTranslationModFile(dir)
     generateMessageDebugTranslationFile(dir)
     generateItemsDebugTranslationFile(dir)
+    generateMonsDebugTranslationFile(dir)
 end
 
 def generateAbilityDebugTranslationModFile(dir)
@@ -15,12 +16,16 @@ def generateAbilityDebugTranslationModFile(dir)
     }
     names = "[1]\n"
     descriptions = "[2]\n"
-    ABILHASH.each { |key, value|
-        if value[:ID]
-            names += value[:ID].to_s + "\n" + value[:name] + "\n" + value[:name] + "\n"
-            descriptions += value[:ID].to_s + "\n" + value[:desc] + "\n" + value[:desc] + "\n"
-        end
-    }
+    begin
+        ABILHASH.each { |key, value|
+            if value[:ID]
+                names += value[:ID].to_s + "\n" + value[:name] + "\n" + value[:name] + "\n"
+                descriptions += value[:ID].to_s + "\n" + value[:desc] + "\n" + value[:desc] + "\n"
+            end
+        }
+    rescue => e
+        Kernel.pbMessage(pbGetExceptionMessage(e))
+    end
     file.puts(names)
     file.flush
     file.puts(descriptions)
@@ -35,12 +40,16 @@ def generateMoveDebugTranslationModFile(dir)
     }
     names = "[1]\n"
     descriptions = "[2]\n"
-    MOVEHASH.each { |key, value|
-        if value[:ID]
-            names += value[:ID].to_s + "\n" + value[:name] + "\n" + value[:name] + "\n"
-            descriptions += value[:ID].to_s + "\n" + value[:desc] + "\n" + value[:desc] + "\n"
-        end
-    }
+    begin
+        MOVEHASH.each { |key, value|
+            if value[:ID]
+                names += value[:ID].to_s + "\n" + value[:name] + "\n" + value[:name] + "\n"
+                descriptions += value[:ID].to_s + "\n" + value[:desc] + "\n" + value[:desc] + "\n"
+            end
+        }
+    rescue => e
+        Kernel.pbMessage(pbGetExceptionMessage(e))
+    end
     file.puts(names)
     file.flush
     file.puts(descriptions)
@@ -50,20 +59,24 @@ end
 
 def generateMessageDebugTranslationFile(dir)
     origMessages = Messages.new("Data/" + MESSAGE_FILE + ".dat")
-    File.open(dir + "/" + MESSAGE_FILE + ".txt", "wb") { |f|
-      f.write("# To localize this text for a particular language, please\r\n")
-      f.write("# translate every second line of this file.\r\n")
-      if origMessages.messages[0]
-        for i in 0...origMessages.messages[0].length
-          msgs = origMessages.messages[0][i]
-          Messages.writeObject(f, msgs, "Map#{i}", origMessages)
+    begin
+        File.open(dir + "/" + MESSAGE_FILE + ".txt", "wb") { |f|
+        f.write("# To localize this text for a particular language, please\r\n")
+        f.write("# translate every second line of this file.\r\n")
+        if origMessages.messages[0]
+            for i in 0...origMessages.messages[0].length
+            msgs = origMessages.messages[0][i]
+            Messages.writeObject(f, msgs, "Map#{i}", origMessages)
+            end
         end
-      end
-      for i in 1...origMessages.messages.length
-        msgs = origMessages.messages[i]
-        Messages.writeObject(f, msgs, i, origMessages)
-      end
-    }
+        for i in 1...origMessages.messages.length
+            msgs = origMessages.messages[i]
+            Messages.writeObject(f, msgs, i, origMessages)
+        end
+        }
+    rescue => e
+        Kernel.pbMessage(pbGetExceptionMessage(e))
+    end
   end
 
   
@@ -74,12 +87,53 @@ def generateItemsDebugTranslationFile(dir)
     }
     names = "[1]\n"
     descriptions = "[2]\n"
-    ITEMHASH.each { |key, value|
-        if value[:ID]
-            names += value[:ID].to_s + "\n" + value[:name] + "\n" + value[:name] + "\n"
-            descriptions += value[:ID].to_s + "\n" + value[:desc] + "\n" + value[:desc] + "\n"
-        end
+    begin
+        ITEMHASH.each { |key, value|
+            if value[:ID]
+                names += value[:ID].to_s + "\n" + value[:name] + "\n" + value[:name] + "\n"
+                descriptions += value[:ID].to_s + "\n" + value[:desc] + "\n" + value[:desc] + "\n"
+            end
+        }
+    rescue => e
+        Kernel.pbMessage(pbGetExceptionMessage(e))
+    end
+    file.puts(names)
+    file.flush
+    file.puts(descriptions)
+    file.flush
+    file.close
+  end
+
+  def generateMonsDebugTranslationFile(dir)
+    file = File.new(dir + "/" + MONS_FILE + ".txt", "w")
+    File.open("Scripts/" + GAMEFOLDER + "/montext.rb") { |f|
+      eval(f.read)
     }
+    names = "[1]\n"
+    descriptions = "[2]\n"
+    defi = nil
+    begin
+        MONHASH.each { |key, value|
+            value.each do |name, definition|
+                if definition.instance_of? Hash
+                    defi = definition
+                    if definition[:dexnum]
+                        names += definition[:dexnum].to_s + "\n" + definition[:name] + "\n" + definition[:name] + "\n"
+                        descriptions += definition[:dexnum].to_s + "\n" + definition[:dexentry] + "\n" + definition[:dexentry] + "\n"
+                    elsif definition[:name] && definition[:dexentry]
+                        names += definition[:name] + "\n" + definition[:name] + "\n"
+                        descriptions += definition[:dexentry] + "\n" + definition[:dexentry] + "\n"
+                    elsif definition[:name]
+                        names += definition[:name] + "\n" + definition[:name] + "\n"
+                    elsif definition[:dexentry]
+                        descriptions += definition[:dexentry] + "\n" + definition[:dexentry] + "\n"
+                    end
+                end
+            end
+        }
+      rescue => e
+        Kernel.pbMessage(pbGetExceptionMessage(e))
+      end
     file.puts(names)
     file.flush
     file.puts(descriptions)
