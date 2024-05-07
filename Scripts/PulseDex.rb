@@ -198,7 +198,7 @@ class Scene_PulseDex_Info
     pbPlayDecisionSE()
     pbDisposeSpriteHash(@sprites)
     @viewport.dispose
-    @background = "Graphics/Pictures/#{getPulseInfo[@index][1]}" + getSuffixFile()
+    @background = getPathWithTranslation("Graphics/Pictures/#{getPulseInfo[@index][1]}")
     @viewport, @sprites = preparePulseDexInfo(@background)
     ttsPulse(@index)
   end

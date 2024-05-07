@@ -43,35 +43,29 @@ def getTypeRootName(id)
     end
 end
 
-def pbGetTypeNameFile(id)
-    return getTypeRootName(id) + getSuffixFile();
-end
-
-def pbItemIconFile(item)
-    return nil if !item
-    bitmapFileName=nil
-    if item==0
-      bitmapFileName=sprintf("Graphics/Icons/itemBack")
+def pbItemIconFile(item, conversion = false)
+    return "Graphics/Icons/itemBack" if !item
+  
+    bitmapFileName = nil
+    tmmove = pbGetTM(item)
+    if tmmove
+      type = $cache.moves[tmmove].type
+      typename = getTypeName(type)
+      return getPathWithTranslation(sprintf("Graphics/Icons/TM - %s", typename))
+    end
+    image = $cache.items[item].checkFlag?(:image)
+    return getPathWithTranslation(sprintf("Graphics/Icons/#{image}")) if image
+  
+    if !conversion
+      bitmapFileName = getPathWithTranslation(sprintf("Graphics/Icons/%s.png", item)) rescue nil
+      if !pbResolveBitmap(bitmapFileName)
+        bitmapFileName = getPathWithTranslation(sprintf("Graphics/Icons/%s.png", item))
+      end
     else
-      moveid = $cache.items[item][ITEMMACHINE]
-      if moveid != 0 #This is 0 if it's not a TM.
-        type = $cache.pkmn_move[moveid][2]
-        typename = getTypeRootName(type)
-        bitmapFileName=sprintf("Graphics/Icons/TM - %s",typename)
-      else
-        bitmapFileName=sprintf("Graphics/Icons/item%s",getConstantName(PBItems,item)) rescue nil
-        if !pbResolveBitmap(bitmapFileName)
-          bitmapFileName=sprintf("Graphics/Icons/item%03d",item)
-        end
+      bitmapFileName = getPathWithTranslation(sprintf("Graphics/Icons/%s", $cache.items[item].checkFlag?(:ID))) rescue nil
+      if !pbResolveBitmap(bitmapFileName)
+        bitmapFileName = getPathWithTranslation(sprintf("Graphics/Icons/%03d", $cache.items[item].checkFlag?(:ID)))
       end
     end
     return bitmapFileName
   end
-
-def getSuffixFile()
-    if (LANGUAGES.length>=2 && LANGUAGES[$Settings.language][1] != "en")
-        return "_" + LANGUAGES[$Settings.language][1]
-    else
-        return ""
-    end
-end

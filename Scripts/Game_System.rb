@@ -85,9 +85,7 @@ class Game_System
     end
     @playing_bgm = bgm == nil ? nil : bgm.clone
     if bgm != nil && bgm.name != ""
-      if (FileTest.audio_exist?("Audio/BGM/" + bgm.name + getSuffixFile())) 
-        bgm.name = bgm.name + getSuffixFile()
-      end
+      bgm.name = getPathWithTranslation("Audio/BGM/" + bgm.name)
       if FileTest.audio_exist?("Audio/BGM/" + bgm.name)
         bgm_play_internal2("Audio/BGM/" + bgm.name, bgm.volume, bgm.pitch, @bgm_position) if !@defaultBGM
       end
@@ -182,9 +180,7 @@ class Game_System
   def bgs_play(bgs)
     @playing_bgs = bgs == nil ? nil : bgs.clone
     if bgs != nil && bgs.name != ""
-      if (FileTest.audio_exist?("Audio/BGS/" + bgs.name + getSuffixFile())) 
-        bgs.name = bgs.name + getSuffixFile()
-      end
+      bgs.name = getPathWithTranslation(bgs.name)
       if FileTest.audio_exist?("Audio/BGS/" + bgs.name)
         Audio.bgs_play("Audio/BGS/" + bgs.name, self.resolve_volume(bgs.volume), bgs.pitch)
       end
@@ -242,9 +238,7 @@ class Game_System
       me = RPG::AudioFile.new(me)
     end
     if me != nil && me.name != ""
-      if (FileTest.audio_exist?("Audio/ME/" + me.name + getSuffixFile())) 
-        me.name = me.name + getSuffixFile()
-      end
+      me.name = getPathWithTranslation(me.name)
       if FileTest.audio_exist?("Audio/ME/" + me.name)
         Audio.me_play("Audio/ME/" + me.name, self.resolve_volume(me.volume), me.pitch)
       end
@@ -260,9 +254,7 @@ class Game_System
     end
     if se != nil && se.name != ""
       se.name = File.basename(se.name, File.extname(se.name))
-      if (FileTest.audio_exist?("Audio/SE/" + se.name + getSuffixFile())) 
-        se.name = se.name + getSuffixFile()
-      end
+      se.name = getPathWithTranslation(se.name)
       if FileTest.audio_exist?("Audio/SE/" + se.name)
         Audio.se_play("Audio/SE/" + se.name, self.resolve_volume(se.volume), se.pitch)
       end

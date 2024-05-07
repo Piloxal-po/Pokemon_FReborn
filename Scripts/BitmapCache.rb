@@ -54,6 +54,8 @@ module RPG
       ret = fromCache(path)
       if !ret
         if filename == ""
+          
+          Kernel.pbMessage(@cache.to_s)
           ret = BitmapWrapper.new(32, 32)
         else
           ret = BitmapWrapper.new(path)

@@ -24,7 +24,7 @@ class Scene_TimeWeather
     @viewport = Viewport.new(0, 0, Graphics.width, Graphics.height)
     @viewport.z = 99999
     @sprites["background"] = IconSprite.new(0, 0)
-    @sprites["background"].setBitmap("Graphics/Pictures/Pokegear/TimeWeather/navbgtw" + getSuffixFile())
+    @sprites["background"].setBitmap(getPathWithTranslation("Graphics/Pictures/Pokegear/TimeWeather/navbgtw"))
     @sprites["background"].z = 255
     @sprites["header"] = Window_UnformattedTextPokemon.newWithSize(_INTL("Time & Weather"), -12, -18, 216, 64, @viewport)
     @sprites["header"].baseColor = Color.new(248, 248, 248)
