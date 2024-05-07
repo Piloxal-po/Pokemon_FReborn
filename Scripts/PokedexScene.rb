@@ -1014,7 +1014,7 @@ class PokemonPokedexScene
     # Update the slider
     ycoord = 62
     if @sprites["pokedex"].itemCount > 1
-      ycoord += 188.0 * @sprites["pokedex"].index / (@sprites["pokedex"].itemCount - 1)
+      ycoord += (188.0 * @sprites["pokedex"].index) / (@sprites["pokedex"].itemCount - 1)
     end
     @sprites["slider"].y = ycoord
     pbFadeInAndShow(@sprites, oldsprites)
@@ -1177,7 +1177,7 @@ class PokemonPokedexScene
               # Update the slider
               ycoord = 62
               if @sprites["pokedex"].itemCount > 1
-                ycoord += 188.0 * @sprites["pokedex"].index / (@sprites["pokedex"].itemCount - 1)
+                ycoord += (188.0 * @sprites["pokedex"].index) / (@sprites["pokedex"].itemCount - 1)
               end
               @sprites["slider"].y = ycoord
               @searchResults = true
@@ -1253,7 +1253,7 @@ class PokemonPokedexScene
           # Update the slider
           ycoord = 62
           if @sprites["pokedex"].itemCount > 1
-            ycoord += 188.0 * @sprites["pokedex"].index / (@sprites["pokedex"].itemCount - 1)
+            ycoord += (188.0 * @sprites["pokedex"].index) / (@sprites["pokedex"].itemCount - 1)
           end
           @sprites["slider"].y = ycoord
           if iconspecies.nil?

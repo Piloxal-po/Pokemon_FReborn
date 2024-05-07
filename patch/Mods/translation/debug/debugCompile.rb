@@ -167,7 +167,6 @@ def debugCompileMonsWithLang(lang)
           end
         end
       end
-
       mons[key] = MonWrapper.new(key, value)
     }
   rescue => e
@@ -191,6 +190,8 @@ def buildData(file)
         type = 1
       elsif line == "[2]" # description
         type = 2
+      elsif line == "[3]" # description
+        type = 3
       elsif line.empty? # empty line
       elsif line.to_i.to_s == line # check if ID
         id = line.to_i
@@ -198,16 +199,22 @@ def buildData(file)
       elsif iLine % 2 != 0 # first line skip
         iLine += 1
       elsif type == 1 && res[id] && iLine % 2 == 0
-        res[id] = [[res[id][0]].concat([line]), res[id][1]]
+        res[id] = [[res[id][0]].concat([line]), res[id][1], res[id][2]]
         iLine += 1
       elsif type == 2 && res[id][1] && iLine % 2 == 0
-        res[id] = [res[id][0], [res[id][1]].concat([line])]
+        res[id] = [res[id][0], [res[id][1]].concat([line]), res[id][2]]
+        iLine += 1
+      elsif type == 3 && res[id][2] && iLine % 2 == 0
+        res[id] = [res[id][0], res[id][1], [res[id][2]].concat([line])]
         iLine += 1
       elsif type == 1 # name = init array
-        res[id] = [line, nil]
+        res[id] = [line, nil, nil]
         iLine += 1
       elsif type == 2 # description = update array
-        res[id] = [res[id][0], line]
+        res[id] = [res[id][0], line, res[id][2]]
+        iLine += 1
+      elsif type == 3 # description = update array
+        res[id] = [res[id][0], res[id][1], line]
         iLine += 1
       end
     }
