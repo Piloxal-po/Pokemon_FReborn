@@ -648,11 +648,7 @@ def getFormattedText(
         elsif control == "icon" # Icon
           if !endtag
             param = param.sub(/\s+$/, "")
-            if (File.exists?("Graphics/Icons/#{param}#{getSuffixFile()}.png")) 
-              graphic="Graphics/Icons/#{param}#{getSuffixFile()}"
-            else
-              graphic="Graphics/Icons/#{param}"
-            end
+            graphic=getPathWithTranslation("Graphics/Icons/#{param}")
             controls[i] = nil
             break
           end

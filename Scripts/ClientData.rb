@@ -59,4 +59,5 @@ def startup
   # Dir["./Data/Mods/*.rb"].each { |file| load File.expand_path(file) }
   Dir["./patch/Mods/*.rb"].each { |file| load File.expand_path(file) }
   Dir["./patch/Mods/**/*.rb"].each {|file| load File.expand_path(file) }
+  $cache.reload
 end

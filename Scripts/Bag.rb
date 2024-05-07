@@ -129,7 +129,7 @@ class PokemonBag_Scene
     lastpocket = @bag.lastpocket
     lastitem = @bag.getChoice(lastpocket)
     @sprites["background"] = IconSprite.new(0, 0, @viewport)
-    @sprites["background"].setBitmap(sprintf("Graphics/Pictures/Bag/bagbg#{lastpocket}" + getSuffixFile()))
+    @sprites["background"].setBitmap(getPathWithTranslation(sprintf("Graphics/Pictures/Bag/bagbg#{lastpocket}")))
     @sprites["leftarrow"] = AnimatedSprite.new("Graphics/Pictures/leftarrow", 8, 40, 28, 2, @viewport)
     @sprites["rightarrow"] = AnimatedSprite.new("Graphics/Pictures/rightarrow", 8, 40, 28, 2, @viewport)
     @sprites["leftarrow"].play
@@ -255,7 +255,7 @@ class PokemonBag_Scene
     bm = @sprites["pocketwindow"].bitmap
     bm.clear
     # Set the background bitmap for the currently selected pocket
-    @sprites["background"].setBitmap(sprintf("Graphics/Pictures/Bag/bagbg#{@bag.lastpocket}" + getSuffixFile()))
+    @sprites["background"].setBitmap(getPathWithTranslation(sprintf("Graphics/Pictures/Bag/bagbg#{@bag.lastpocket}")))
     # Set the bag picture for the currently selected pocket
     @sprites["bag"].setBitmap("Graphics/Pictures/Bag/bag")
     # Draw the pocket name
@@ -277,7 +277,7 @@ class PokemonBag_Scene
     # Draw the slider
     ycoord = 60
     if itemwindow.itemCount > 1
-      ycoord += 116.0 * itemwindow.index / (itemwindow.itemCount - 1)
+      ycoord += (116.0 * itemwindow.index) / (itemwindow.itemCount - 1)
     end
     @sprites["slider"].y = ycoord
     # Set the icon for the currently selected item
@@ -323,7 +323,7 @@ class PokemonBag_Scene
           # Update slider position
           ycoord = 60
           if itemwindow.itemCount > 1
-            ycoord += 116.0 * itemwindow.index / (itemwindow.itemCount - 1)
+            ycoord += (116.0 * itemwindow.index) / (itemwindow.itemCount - 1)
           end
           @sprites["slider"].y = ycoord
           # Update item icon and description

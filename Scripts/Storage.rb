@@ -1459,7 +1459,7 @@ class PokemonBoxPartySprite < SpriteWrapper
 
   def initialize(party, viewport = nil)
     super(viewport)
-    @boxbitmap = AnimatedBitmap.new("Graphics/Pictures/Storage/boxpartytab" + getSuffixFile())
+    @boxbitmap = AnimatedBitmap.new(getPathWithTranslation("Graphics/Pictures/Storage/boxpartytab"))
     @pokemonsprites = []
     @party = party
     for i in 0...6
@@ -1771,7 +1771,7 @@ class PokemonStorageScene
     addBackgroundPlane(@sprites, "background", "Storage/boxbg", @bgviewport)
     @sprites["box"] = PokemonBoxSprite.new(@storage, @storage.currentBox, @boxviewport)
     @sprites["boxsides"] = IconSprite.new(0, 0, @boxsidesviewport)
-    @sprites["boxsides"].setBitmap("Graphics/Pictures/Storage/boxsides" + getSuffixFile())
+    @sprites["boxsides"].setBitmap(getPathWithTranslation("Graphics/Pictures/Storage/boxsides"))
     @sprites["overlay"] = BitmapSprite.new(Graphics.width, Graphics.height, @boxsidesviewport)
     @sprites["pokemon"] = AutoMosaicPokemonSprite.new(@boxsidesviewport)
     pbSetSystemFont(@sprites["overlay"].bitmap)

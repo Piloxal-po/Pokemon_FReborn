@@ -82,7 +82,7 @@ class Scene_Pokegear
     @button = AnimatedBitmap.new("Graphics/Pictures/Pokegear/pokegearButton")
     @sprites = {}
     @sprites["background"] = IconSprite.new(0, 0)
-    @sprites["background"].setBitmap("Graphics/Pictures/Pokegear/pokegearbg" + getSuffixFile())
+    @sprites["background"].setBitmap(getPathWithTranslation("Graphics/Pictures/Pokegear/pokegearbg"))
     @sprites["command_window"] = Window_CommandPokemon.new(@buttons, 160)
     @sprites["command_window"].index = @menu_index
     @sprites["command_window"].x = Graphics.width

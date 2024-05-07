@@ -707,7 +707,8 @@ class PokemonLoad
       elsif cmdLanguage >= 0 && command == cmdLanguage
         @scene.pbEndScene
         $Settings.language = pbChooseLanguage
-        pbLoadMessages("Data/" + LANGUAGES[$Settings.language][1] + ".dat")
+        $cache.reload
+        saveSettings
         $scene = pbCallTitle
         return
       elsif cmdPatchUpdate >= 0 && command == cmdPatchUpdate
