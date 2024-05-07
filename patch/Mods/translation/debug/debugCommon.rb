@@ -6,6 +6,8 @@ ABILITIES_FILE = "abil"
 
 MESSAGE_FILE = "messages"
 
+ITEM_FILE = "items"
+
 DEBUG_COMMANDS = []
 
 
@@ -16,6 +18,7 @@ def getDebugCommand
             ["[DTF] compile move translation file", self.method(:debugCompileMoves)],
             ["[DTF] compile ability translation file", self.method(:debugCompileAbilities)],
             ["[DTF] compile message translation file", self.method(:debugCompileMessages)],
+            ["[DTF] compile items translation file", self.method(:debugCompileItems)],
             ["[DTF] compile all translation file", self.method(:debugCompileAll)]
         ]
     end

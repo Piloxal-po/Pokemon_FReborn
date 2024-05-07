@@ -4,6 +4,7 @@ def debugCompileAll
   debugCompileMovesWithLang(lang)
   debugCompileAbilitiesWithLang(lang)
   debugCompileMessagesWithLang(lang)
+  debugCompileItemsWithLang(lang)
 end
 
 def debugCompileMoves
@@ -67,6 +68,28 @@ def debugCompileMessagesWithLang(lang)
   ensure
     outfile.close
   end
+end
+
+def debugCompileItems
+  debugCompileItemsWithLang(choiceLanguage)
+end
+
+def debugCompileItemsWithLang(lang)
+  File.open("Scripts/" + GAMEFOLDER + "/itemtext.rb") { |f|
+    eval(f.read)
+  }
+  dir = DIR_I18N + lang
+  debugMkdir(dir)
+  dict = buildData(DIR_DEBUG_I18N + lang + "/" + ITEM_FILE + ".txt",)
+  moves = {}
+  ITEMHASH.each { |key, value|
+    if dict[value[:ID].to_i]
+      value[:name] = dict[value[:ID].to_i][0]
+      value[:desc] = dict[value[:ID].to_i][1]
+    end
+    moves[key] = ItemData.new(key, value)
+  }
+  save_data(moves, dir + "/" + ITEM_FILE + ".dat")
 end
 
 def buildData(file)
