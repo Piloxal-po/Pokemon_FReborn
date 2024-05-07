@@ -1,10 +1,14 @@
 class Scene_DebugIntro
   def main
-    Graphics.transition(0)
-    sscene = PokemonLoadScene.new
-    sscreen = PokemonLoad.new(sscene)
-    sscreen.pbStartLoadScreen
-    Graphics.freeze
+    begin
+      Graphics.transition(0)
+      sscene = PokemonLoadScene.new
+      sscreen = PokemonLoad.new(sscene)
+      sscreen.pbStartLoadScreen
+      Graphics.freeze
+    rescue => e
+      raise pbGetExceptionMessage(e)
+    end
   end
 end
 

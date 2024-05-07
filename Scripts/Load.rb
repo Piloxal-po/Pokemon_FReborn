@@ -423,7 +423,8 @@ class PokemonLoad
         }
       end
       return
-    rescue
+    rescue => e
+      raise pbGetExceptionMessage(e)
       raise "If you're seeing this message, your save file is corrupted."
       raise savefile
     end

@@ -1,3 +1,5 @@
+DEBUG_TRANSLATION_MOD_ENABLE = true
+
 DIR_DEBUG_I18N = "patch/Mods/translation/debug/i18n/"
 
 MOVES_FILE = "moves"
