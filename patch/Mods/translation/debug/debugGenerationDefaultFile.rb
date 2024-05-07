@@ -7,6 +7,7 @@ def generateDebugTranslationModFile
     generateMessageDebugTranslationFile(dir)
     generateItemsDebugTranslationFile(dir)
     generateMonsDebugTranslationFile(dir)
+    generateNaturesDebugTranslationFile(dir)
 end
 
 def generateAbilityDebugTranslationModFile(dir)
@@ -153,6 +154,23 @@ def generateItemsDebugTranslationFile(dir)
     file.puts(descriptions)
     file.flush
     file.puts(kind)
+    file.flush
+    file.close
+  end
+
+  def generateNaturesDebugTranslationFile(dir)
+    file = File.new(dir + "/" + NATURE_FILE + ".txt", "w")
+    File.open("Scripts/" + GAMEFOLDER + "/naturetext.rb") { |f|
+      eval(f.read)
+    }
+    names = "[1]\n"
+    descriptions = "[2]\n"
+    i = 0
+    NATUREHASH.each { |key, value|
+        names += i.to_s + "\n" + value[:name] + "\n" + value[:name] + "\n"
+        i += 1
+    }
+    file.puts(names)
     file.flush
     file.close
   end

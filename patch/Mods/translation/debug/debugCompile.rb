@@ -6,6 +6,7 @@ def debugCompileAll
   debugCompileMessagesWithLang(lang)
   debugCompileItemsWithLang(lang)
   debugCompileMonsWithLang(lang)
+  debugCompileNaturesWithLang(lang)
 end
 
 def debugCompileMoves
@@ -18,7 +19,7 @@ def debugCompileMovesWithLang(lang)
     }
     dir = DIR_I18N + lang
     debugMkdir(dir)
-    dict = buildData(DIR_DEBUG_I18N + lang + "/" + MOVES_FILE + ".txt",)
+    dict = buildData(DIR_DEBUG_I18N + lang + "/" + MOVES_FILE + ".txt")
     moves = {}
     MOVEHASH.each { |key, value|
       if dict[value[:ID].to_i]
@@ -40,7 +41,7 @@ def debugCompileAbilitiesWithLang(lang)
   }
   dir = DIR_I18N + lang
   debugMkdir(dir)
-  dict = buildData(DIR_DEBUG_I18N + lang + "/" + ABILITIES_FILE + ".txt",)
+  dict = buildData(DIR_DEBUG_I18N + lang + "/" + ABILITIES_FILE + ".txt")
   abilities = {}
   spacetoclear = 0
   ABILHASH.each { |key, value|
@@ -64,8 +65,8 @@ def debugCompileMessagesWithLang(lang)
   begin
     intldat = pbGetText(DIR_DEBUG_I18N + lang + "/" + MESSAGE_FILE + ".txt")
     Marshal.dump(intldat, outfile)
-  rescue
-    raise
+  rescue => e
+    Kernel.pbMessage(pbGetExceptionMessage(e))
   ensure
     outfile.close
   end
@@ -81,7 +82,7 @@ def debugCompileItemsWithLang(lang)
   }
   dir = DIR_I18N + lang
   debugMkdir(dir)
-  dict = buildData(DIR_DEBUG_I18N + lang + "/" + ITEM_FILE + ".txt",)
+  dict = buildData(DIR_DEBUG_I18N + lang + "/" + ITEM_FILE + ".txt")
   moves = {}
   ITEMHASH.each { |key, value|
     if dict[value[:ID].to_i]
@@ -103,7 +104,7 @@ def debugCompileMonsWithLang(lang)
   }
   dir = DIR_I18N + lang
   debugMkdir(dir)
-  dict = buildData(DIR_DEBUG_I18N + lang + "/" + MONS_FILE + ".txt",)
+  dict = buildData(DIR_DEBUG_I18N + lang + "/" + MONS_FILE + ".txt")
   mons = MonDataHash.new()
   begin
     MONHASH.each { |key, value|
@@ -173,6 +174,27 @@ def debugCompileMonsWithLang(lang)
     Kernel.pbMessage(pbGetExceptionMessage(e))
   end
   save_data(mons, dir + "/" + MONS_FILE + ".dat")
+end
+
+def debugCompileNatures
+  debugCompileNaturesWithLang(choiceLanguage)
+end
+
+def debugCompileNaturesWithLang(lang)
+  File.open("Scripts/" + GAMEFOLDER + "/naturetext.rb") { |f|
+    eval(f.read)
+  }
+  dir = DIR_I18N + lang
+  debugMkdir(dir)
+  dict = buildData(DIR_DEBUG_I18N + lang + "/" + NATURE_FILE + ".txt")
+  natures = {}
+  i = 0
+  NATUREHASH.each { |key, value|
+    value[:name] = dict[i.to_i][0]
+    natures[key] = NatureData.new(key, value)
+    i += 1
+  }
+  save_data(natures, dir + "/" + NATURE_FILE + ".dat")
 end
 
 def buildData(file)

@@ -10,6 +10,8 @@ ITEM_FILE = "items"
 
 MONS_FILE = "mons"
 
+NATURE_FILE = "natures"
+
 DEBUG_COMMANDS = []
 
 
@@ -22,6 +24,7 @@ def getDebugCommand
             ["[DTF] compile message translation file", self.method(:debugCompileMessages)],
             ["[DTF] compile items translation file", self.method(:debugCompileItems)],
             ["[DTF] compile mons translation file", self.method(:debugCompileMons)],
+            ["[DTF] compile nature translation file", self.method(:debugCompileNatures)],
             ["[DTF] compile all translation file", self.method(:debugCompileAll)]
         ]
     end
