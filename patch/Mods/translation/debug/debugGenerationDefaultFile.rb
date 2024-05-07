@@ -111,6 +111,7 @@ def generateItemsDebugTranslationFile(dir)
     }
     names = "[1]\n"
     descriptions = "[2]\n"
+    kind = "[3]\n"
     defi = nil
     begin
         MONHASH.each { |key, value|
@@ -120,13 +121,26 @@ def generateItemsDebugTranslationFile(dir)
                     if definition[:dexnum]
                         names += definition[:dexnum].to_s + "\n" + definition[:name] + "\n" + definition[:name] + "\n"
                         descriptions += definition[:dexnum].to_s + "\n" + definition[:dexentry] + "\n" + definition[:dexentry] + "\n"
+                        kind += definition[:dexnum].to_s + "\n" + definition[:kind] + "\n" + definition[:kind] + "\n"
+                    elsif definition[:name] && definition[:dexentry] && definition[:kind]
+                        names += definition[:name] + "\n" + definition[:name] + "\n"
+                        descriptions += definition[:dexentry] + "\n" + definition[:dexentry] + "\n"
+                        kind += definition[:kind] + "\n" + definition[:kind] + "\n"
                     elsif definition[:name] && definition[:dexentry]
                         names += definition[:name] + "\n" + definition[:name] + "\n"
+                        descriptions += definition[:dexentry] + "\n" + definition[:dexentry] + "\n"
+                    elsif definition[:name] && definition[:kind]
+                        names += definition[:name] + "\n" + definition[:name] + "\n"
+                        kind += definition[:kind] + "\n" + definition[:kind] + "\n"
+                    elsif definition[:kind] && definition[:dexentry]
+                        kind += definition[:kind] + "\n" + definition[:kind] + "\n"
                         descriptions += definition[:dexentry] + "\n" + definition[:dexentry] + "\n"
                     elsif definition[:name]
                         names += definition[:name] + "\n" + definition[:name] + "\n"
                     elsif definition[:dexentry]
                         descriptions += definition[:dexentry] + "\n" + definition[:dexentry] + "\n"
+                    elsif definition[:kind]
+                        kind += definition[:kind] + "\n" + definition[:kind] + "\n"
                     end
                 end
             end
@@ -137,6 +151,8 @@ def generateItemsDebugTranslationFile(dir)
     file.puts(names)
     file.flush
     file.puts(descriptions)
+    file.flush
+    file.puts(kind)
     file.flush
     file.close
   end

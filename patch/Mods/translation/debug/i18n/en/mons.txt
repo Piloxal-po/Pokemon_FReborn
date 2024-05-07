@@ -4906,3 +4906,2425 @@ It slithers toward people. Then, without warning, it triggers the explosion of i
 807
 It electrifies its claws and tears its opponents apart with them. Even if they dodge its attack, they'll be electrocuted by the flying sparks.
 It electrifies its claws and tears its opponents apart with them. Even if they dodge its attack, they'll be electrocuted by the flying sparks.
+[3]
+1
+Seed
+Seed
+2
+Seed
+Seed
+3
+Seed
+Seed
+4
+Lizard
+Lizard
+5
+Flame
+Flame
+6
+Flame
+Flame
+7
+Tiny Turtle
+Tiny Turtle
+8
+Turtle
+Turtle
+9
+Shellfish
+Shellfish
+10
+Worm
+Worm
+11
+Cocoon
+Cocoon
+12
+Butterfly
+Butterfly
+13
+Hairy Bug
+Hairy Bug
+14
+Cocoon
+Cocoon
+15
+Poison Bee
+Poison Bee
+16
+Tiny Bird
+Tiny Bird
+17
+Bird
+Bird
+18
+Bird
+Bird
+19
+Mouse
+Mouse
+20
+Mouse
+Mouse
+21
+Tiny Bird
+Tiny Bird
+22
+Beak
+Beak
+23
+Snake
+Snake
+24
+Cobra
+Cobra
+25
+Mouse
+Mouse
+26
+Mouse
+Mouse
+27
+Mouse
+Mouse
+28
+Mouse
+Mouse
+29
+Poison Pin
+Poison Pin
+30
+Poison Pin
+Poison Pin
+31
+Drill
+Drill
+32
+Poison Pin
+Poison Pin
+33
+Poison Pin
+Poison Pin
+34
+Drill
+Drill
+35
+Fairy
+Fairy
+36
+Fairy
+Fairy
+37
+Fox
+Fox
+38
+Fox
+Fox
+39
+Balloon
+Balloon
+40
+Balloon
+Balloon
+41
+Bat
+Bat
+42
+Bat
+Bat
+43
+Weed
+Weed
+44
+Weed
+Weed
+45
+Flower
+Flower
+46
+Mushroom
+Mushroom
+47
+Mushroom
+Mushroom
+48
+Insect
+Insect
+49
+Poison Moth
+Poison Moth
+50
+Mole
+Mole
+51
+Mole
+Mole
+52
+Scratch Cat
+Scratch Cat
+53
+Classy Cat
+Classy Cat
+54
+Duck
+Duck
+55
+Duck
+Duck
+56
+Pig Monkey
+Pig Monkey
+57
+Pig Monkey
+Pig Monkey
+58
+Puppy
+Puppy
+59
+Legendary
+Legendary
+60
+Tadpole
+Tadpole
+61
+Tadpole
+Tadpole
+62
+Tadpole
+Tadpole
+63
+Psi
+Psi
+64
+Psi
+Psi
+65
+Psi
+Psi
+66
+Superpower
+Superpower
+67
+Superpower
+Superpower
+68
+Superpower
+Superpower
+69
+Flower
+Flower
+70
+Flycatcher
+Flycatcher
+71
+Flycatcher
+Flycatcher
+72
+Jellyfish
+Jellyfish
+73
+Jellyfish
+Jellyfish
+74
+Rock
+Rock
+75
+Rock
+Rock
+76
+Megaton
+Megaton
+77
+Fire Horse
+Fire Horse
+78
+Fire Horse
+Fire Horse
+79
+Dopey
+Dopey
+80
+Hermit Crab
+Hermit Crab
+81
+Magnet
+Magnet
+82
+Magnet
+Magnet
+83
+Wild Duck
+Wild Duck
+84
+Twin Bird
+Twin Bird
+85
+Triple Bird
+Triple Bird
+86
+Sea Lion
+Sea Lion
+87
+Sea Lion
+Sea Lion
+88
+Sludge
+Sludge
+89
+Sludge
+Sludge
+90
+Bivalve
+Bivalve
+91
+Bivalve
+Bivalve
+92
+Gas
+Gas
+93
+Gas
+Gas
+94
+Shadow
+Shadow
+95
+Rock Snake
+Rock Snake
+96
+Hypnosis
+Hypnosis
+97
+Hypnosis
+Hypnosis
+98
+River Crab
+River Crab
+99
+Pincer
+Pincer
+100
+Ball
+Ball
+101
+Ball
+Ball
+102
+Egg
+Egg
+103
+Coconut
+Coconut
+104
+Lonely
+Lonely
+105
+Bone Keeper
+Bone Keeper
+106
+Kicking
+Kicking
+107
+Punching
+Punching
+108
+Licking
+Licking
+109
+Poison Gas
+Poison Gas
+110
+Poison Gas
+Poison Gas
+111
+Spikes
+Spikes
+112
+Drill
+Drill
+113
+Egg
+Egg
+114
+Vine
+Vine
+115
+Parent
+Parent
+116
+Dragon
+Dragon
+117
+Dragon
+Dragon
+118
+Goldfish
+Goldfish
+119
+Goldfish
+Goldfish
+120
+Star Shape
+Star Shape
+121
+Mysterious
+Mysterious
+122
+Barrier
+Barrier
+123
+Mantis
+Mantis
+124
+Human Shape
+Human Shape
+125
+Electric
+Electric
+126
+Spitfire
+Spitfire
+127
+Stag Beetle
+Stag Beetle
+128
+Wild Bull
+Wild Bull
+129
+Fish
+Fish
+130
+Atrocious
+Atrocious
+131
+Transport
+Transport
+132
+Transform
+Transform
+133
+Evolution
+Evolution
+134
+Bubble Jet
+Bubble Jet
+135
+Lightning
+Lightning
+136
+Flame
+Flame
+137
+Virtual
+Virtual
+138
+Spiral
+Spiral
+139
+Spiral
+Spiral
+140
+Shellfish
+Shellfish
+141
+Shellfish
+Shellfish
+142
+Fossil
+Fossil
+143
+Sleeping
+Sleeping
+144
+Freeze
+Freeze
+145
+Electric
+Electric
+146
+Flame
+Flame
+147
+Dragon
+Dragon
+148
+Dragon
+Dragon
+149
+Dragon
+Dragon
+150
+Genetic
+Genetic
+151
+New Species
+New Species
+152
+Leaf
+Leaf
+153
+Leaf
+Leaf
+154
+Herb
+Herb
+155
+Fire Mouse
+Fire Mouse
+156
+Volcano
+Volcano
+157
+Volcano
+Volcano
+158
+Big Jaw
+Big Jaw
+159
+Big Jaw
+Big Jaw
+160
+Big Jaw
+Big Jaw
+161
+Scout
+Scout
+162
+Long Body
+Long Body
+163
+Owl
+Owl
+164
+Owl
+Owl
+165
+Five Star
+Five Star
+166
+Five Star
+Five Star
+167
+String Spit
+String Spit
+168
+Long Leg
+Long Leg
+169
+Bat
+Bat
+170
+Angler
+Angler
+171
+Light
+Light
+172
+Tiny Mouse
+Tiny Mouse
+173
+Star Shape
+Star Shape
+174
+Balloon
+Balloon
+175
+Spike Ball
+Spike Ball
+176
+Happiness
+Happiness
+177
+Tiny Bird
+Tiny Bird
+178
+Mystic
+Mystic
+179
+Wool
+Wool
+180
+Wool
+Wool
+181
+Light
+Light
+182
+Flower
+Flower
+183
+Aqua Mouse
+Aqua Mouse
+184
+Aqua Rabbit
+Aqua Rabbit
+185
+Imitation
+Imitation
+186
+Frog
+Frog
+187
+Cottonweed
+Cottonweed
+188
+Cottonweed
+Cottonweed
+189
+Cottonweed
+Cottonweed
+190
+Long Tail
+Long Tail
+191
+Seed
+Seed
+192
+Sun
+Sun
+193
+Clear Wing
+Clear Wing
+194
+Water Fish
+Water Fish
+195
+Water Fish
+Water Fish
+196
+Sun
+Sun
+197
+Moonlight
+Moonlight
+198
+Darkness
+Darkness
+199
+Royal
+Royal
+200
+Screech
+Screech
+201
+Symbol
+Symbol
+202
+Patient
+Patient
+203
+Long Neck
+Long Neck
+204
+Bagworm
+Bagworm
+205
+Bagworm
+Bagworm
+206
+Land Snake
+Land Snake
+207
+FlyScorpion
+FlyScorpion
+208
+Iron Snake
+Iron Snake
+209
+Fairy
+Fairy
+210
+Fairy
+Fairy
+211
+Balloon
+Balloon
+212
+Pincer
+Pincer
+213
+Mold
+Mold
+214
+Single Horn
+Single Horn
+215
+Sharp Claw
+Sharp Claw
+216
+Little Bear
+Little Bear
+217
+Hibernator
+Hibernator
+218
+Lava
+Lava
+219
+Lava
+Lava
+220
+Pig
+Pig
+221
+Swine
+Swine
+222
+Coral
+Coral
+223
+Jet
+Jet
+224
+Jet
+Jet
+225
+Delivery
+Delivery
+226
+Kite
+Kite
+227
+Armor Bird
+Armor Bird
+228
+Dark
+Dark
+229
+Dark
+Dark
+230
+Dragon
+Dragon
+231
+Long Nose
+Long Nose
+232
+Armor
+Armor
+233
+Virtual
+Virtual
+234
+Big Horn
+Big Horn
+235
+Painter
+Painter
+236
+Scuffle
+Scuffle
+237
+Handstand
+Handstand
+238
+Kiss
+Kiss
+239
+Electric
+Electric
+240
+Live Coal
+Live Coal
+241
+Milk Cow
+Milk Cow
+242
+Happiness
+Happiness
+243
+Thunder
+Thunder
+244
+Volcano
+Volcano
+245
+Aurora
+Aurora
+246
+Rock Skin
+Rock Skin
+247
+Hard Shell
+Hard Shell
+248
+Armor
+Armor
+249
+Diving
+Diving
+250
+Rainbow
+Rainbow
+251
+Time Travel
+Time Travel
+252
+Wood Gecko
+Wood Gecko
+253
+Wood Gecko
+Wood Gecko
+254
+Forest
+Forest
+255
+Chick
+Chick
+256
+Young Fowl
+Young Fowl
+257
+Blaze
+Blaze
+258
+Mud Fish
+Mud Fish
+259
+Mud Fish
+Mud Fish
+260
+Mud Fish
+Mud Fish
+261
+Bite
+Bite
+262
+Bite
+Bite
+263
+TinyRaccoon
+TinyRaccoon
+264
+Rushing
+Rushing
+265
+Worm
+Worm
+266
+Cocoon
+Cocoon
+267
+Butterfly
+Butterfly
+268
+Cocoon
+Cocoon
+269
+Poison Moth
+Poison Moth
+270
+Water Weed
+Water Weed
+271
+Jolly
+Jolly
+272
+Carefree
+Carefree
+273
+Acorn
+Acorn
+274
+Wily
+Wily
+275
+Wicked
+Wicked
+276
+TinySwallow
+TinySwallow
+277
+Swallow
+Swallow
+278
+Seagull
+Seagull
+279
+Water Bird
+Water Bird
+280
+Feeling
+Feeling
+281
+Emotion
+Emotion
+282
+Embrace
+Embrace
+283
+Pond Skater
+Pond Skater
+284
+Eyeball
+Eyeball
+285
+Mushroom
+Mushroom
+286
+Mushroom
+Mushroom
+287
+Slacker
+Slacker
+288
+Wild Monkey
+Wild Monkey
+289
+Lazy
+Lazy
+290
+Trainee
+Trainee
+291
+Ninja
+Ninja
+292
+Shed
+Shed
+293
+Whisper
+Whisper
+294
+Big Voice
+Big Voice
+295
+Loud Noise
+Loud Noise
+296
+Guts
+Guts
+297
+Arm Thrust
+Arm Thrust
+298
+Polka Dot
+Polka Dot
+299
+Compass
+Compass
+300
+Kitten
+Kitten
+301
+Prim
+Prim
+302
+Darkness
+Darkness
+303
+Deceiver
+Deceiver
+304
+Iron Armor
+Iron Armor
+305
+Iron Armor
+Iron Armor
+306
+Iron Armor
+Iron Armor
+307
+Meditate
+Meditate
+308
+Meditate
+Meditate
+309
+Lightning
+Lightning
+310
+Discharge
+Discharge
+311
+Cheering
+Cheering
+312
+Cheering
+Cheering
+313
+Firefly
+Firefly
+314
+Firefly
+Firefly
+315
+Thorn
+Thorn
+316
+Stomach
+Stomach
+317
+Poison Bag
+Poison Bag
+318
+Savage
+Savage
+319
+Brutal
+Brutal
+320
+Ball Whale
+Ball Whale
+321
+Float Whale
+Float Whale
+322
+Numb
+Numb
+323
+Eruption
+Eruption
+324
+Coal
+Coal
+325
+Bounce
+Bounce
+326
+Manipulate
+Manipulate
+327
+Spot Panda
+Spot Panda
+328
+Ant Pit
+Ant Pit
+329
+Vibration
+Vibration
+330
+Mystic
+Mystic
+331
+Cactus
+Cactus
+332
+Scarecrow
+Scarecrow
+333
+Cotton Bird
+Cotton Bird
+334
+Humming
+Humming
+335
+Cat Ferret
+Cat Ferret
+336
+Fang Snake
+Fang Snake
+337
+Meteorite
+Meteorite
+338
+Meteorite
+Meteorite
+339
+Whiskers
+Whiskers
+340
+Whiskers
+Whiskers
+341
+Ruffian
+Ruffian
+342
+Rogue
+Rogue
+343
+Clay Doll
+Clay Doll
+344
+Clay Doll
+Clay Doll
+345
+Sea Lily
+Sea Lily
+346
+Barnacle
+Barnacle
+347
+Old Shrimp
+Old Shrimp
+348
+Plate
+Plate
+349
+Fish
+Fish
+350
+Tender
+Tender
+351
+Weather
+Weather
+352
+Color Swap
+Color Swap
+353
+Puppet
+Puppet
+354
+Marionette
+Marionette
+355
+Requiem
+Requiem
+356
+Beckon
+Beckon
+357
+Fruit
+Fruit
+358
+Wind Chime
+Wind Chime
+359
+Disaster
+Disaster
+360
+Bright
+Bright
+361
+Snow Hat
+Snow Hat
+362
+Face
+Face
+363
+Clap
+Clap
+364
+Ball Roll
+Ball Roll
+365
+Ice Break
+Ice Break
+366
+Bivalve
+Bivalve
+367
+Deep Sea
+Deep Sea
+368
+South Sea
+South Sea
+369
+Longevity
+Longevity
+370
+Rendezvous
+Rendezvous
+371
+Rock Head
+Rock Head
+372
+Endurance
+Endurance
+373
+Dragon
+Dragon
+374
+Iron Ball
+Iron Ball
+375
+Iron Claw
+Iron Claw
+376
+Iron Leg
+Iron Leg
+377
+Rock Peak
+Rock Peak
+378
+Iceberg
+Iceberg
+379
+Iron
+Iron
+380
+Eon
+Eon
+381
+Eon
+Eon
+382
+Sea Basin
+Sea Basin
+383
+Continent
+Continent
+384
+Sky High
+Sky High
+385
+Wish
+Wish
+386
+DNA
+DNA
+387
+Tiny Leaf
+Tiny Leaf
+388
+Grove
+Grove
+389
+Continent
+Continent
+390
+Chimp
+Chimp
+391
+Playful
+Playful
+392
+Flame
+Flame
+393
+Penguin
+Penguin
+394
+Penguin
+Penguin
+395
+Emperor
+Emperor
+396
+Starling
+Starling
+397
+Starling
+Starling
+398
+Predator
+Predator
+399
+Plump Mouse
+Plump Mouse
+400
+Beaver
+Beaver
+401
+Cricket
+Cricket
+402
+Cricket
+Cricket
+403
+Flash
+Flash
+404
+Spark
+Spark
+405
+Gleam Eyes
+Gleam Eyes
+406
+Bud
+Bud
+407
+Bouquet
+Bouquet
+408
+Head Butt
+Head Butt
+409
+Head Butt
+Head Butt
+410
+Shield
+Shield
+411
+Shield
+Shield
+412
+Bagworm
+Bagworm
+413
+Bagworm
+Bagworm
+414
+Moth
+Moth
+415
+Tiny Bee
+Tiny Bee
+416
+Beehive
+Beehive
+417
+EleSquirrel
+EleSquirrel
+418
+Sea Weasel
+Sea Weasel
+419
+Sea Weasel
+Sea Weasel
+420
+Cherry
+Cherry
+421
+Blossom
+Blossom
+422
+Sea Slug
+Sea Slug
+423
+Sea Slug
+Sea Slug
+424
+Long Tail
+Long Tail
+425
+Balloon
+Balloon
+426
+Blimp
+Blimp
+427
+Rabbit
+Rabbit
+428
+Rabbit
+Rabbit
+429
+Magical
+Magical
+430
+Big Boss
+Big Boss
+431
+Catty
+Catty
+432
+Tiger Cat
+Tiger Cat
+433
+Bell
+Bell
+434
+Skunk
+Skunk
+435
+Skunk
+Skunk
+436
+Bronze
+Bronze
+437
+Bronze Bell
+Bronze Bell
+438
+Bonsai
+Bonsai
+439
+Mime
+Mime
+440
+Playhouse
+Playhouse
+441
+Music Note
+Music Note
+442
+Forbidden
+Forbidden
+443
+Land Shark
+Land Shark
+444
+Cave
+Cave
+445
+Mach
+Mach
+446
+Big Eater
+Big Eater
+447
+Emanation
+Emanation
+448
+Aura
+Aura
+449
+Hippo
+Hippo
+450
+Heavyweight
+Heavyweight
+451
+Scorpion
+Scorpion
+452
+Ogre Scorpion
+Ogre Scorpion
+453
+Toxic Mouth
+Toxic Mouth
+454
+Toxic Mouth
+Toxic Mouth
+455
+Bug Catcher
+Bug Catcher
+456
+Wing Fish
+Wing Fish
+457
+Neon
+Neon
+458
+Kite
+Kite
+459
+Frost Tree
+Frost Tree
+460
+Frost Tree
+Frost Tree
+461
+Sharp Claw
+Sharp Claw
+462
+Magnet Area
+Magnet Area
+463
+Licking
+Licking
+464
+Drill
+Drill
+465
+Vine
+Vine
+466
+Thunderbolt
+Thunderbolt
+467
+Blast
+Blast
+468
+Jubilee
+Jubilee
+469
+Ogre Darner
+Ogre Darner
+470
+Verdant
+Verdant
+471
+Fresh Snow
+Fresh Snow
+472
+Fang Scorpion
+Fang Scorpion
+473
+Twin Tusk
+Twin Tusk
+474
+Virtual
+Virtual
+475
+Blade
+Blade
+476
+Compass
+Compass
+477
+Gripper
+Gripper
+478
+Snow Land
+Snow Land
+479
+Plasma
+Plasma
+480
+Knowledge
+Knowledge
+481
+Emotion
+Emotion
+482
+Willpower
+Willpower
+483
+Temporal
+Temporal
+484
+Spatial
+Spatial
+485
+Lava Dome
+Lava Dome
+486
+Colossal
+Colossal
+487
+Renegade
+Renegade
+488
+Lunar
+Lunar
+489
+Sea Drifter
+Sea Drifter
+490
+Seafaring
+Seafaring
+491
+Pitch-Black
+Pitch-Black
+492
+Gratitude
+Gratitude
+493
+Alpha
+Alpha
+494
+Victory
+Victory
+495
+Grass Snake
+Grass Snake
+496
+Grass Snake
+Grass Snake
+497
+Regal
+Regal
+498
+Fire Pig
+Fire Pig
+499
+Fire Pig
+Fire Pig
+500
+Mega Fire Pig
+Mega Fire Pig
+501
+Sea Otter
+Sea Otter
+502
+Discipline
+Discipline
+503
+Formidable
+Formidable
+504
+Scout
+Scout
+505
+Lookout
+Lookout
+506
+Puppy
+Puppy
+507
+Loyal Dog
+Loyal Dog
+508
+Big-Hearted
+Big-Hearted
+509
+Devious
+Devious
+510
+Cruel
+Cruel
+511
+Grass Monkey
+Grass Monkey
+512
+Thorn Monkey
+Thorn Monkey
+513
+High Temp
+High Temp
+514
+Ember
+Ember
+515
+Spray
+Spray
+516
+Geyser
+Geyser
+517
+Dream Eater
+Dream Eater
+518
+Drowsing
+Drowsing
+519
+Tiny Pigeon
+Tiny Pigeon
+520
+Wild Pigeon
+Wild Pigeon
+521
+Proud
+Proud
+522
+Electrified
+Electrified
+523
+Thunderbolt
+Thunderbolt
+524
+Mantle
+Mantle
+525
+Ore
+Ore
+526
+Compressed
+Compressed
+527
+Bat
+Bat
+528
+Courting
+Courting
+529
+Mole
+Mole
+530
+Subterrene
+Subterrene
+531
+Hearing
+Hearing
+532
+Muscular
+Muscular
+533
+Muscular
+Muscular
+534
+Muscular
+Muscular
+535
+Tadpole
+Tadpole
+536
+Vibration
+Vibration
+537
+Vibration
+Vibration
+538
+Judo
+Judo
+539
+Karate
+Karate
+540
+Sewing
+Sewing
+541
+Leaf-Wrapped
+Leaf-Wrapped
+542
+Nurturing
+Nurturing
+543
+Centipede
+Centipede
+544
+Curlipede
+Curlipede
+545
+Megapede
+Megapede
+546
+Cotton Puff
+Cotton Puff
+547
+Windveiled
+Windveiled
+548
+Bulb
+Bulb
+549
+Flowering
+Flowering
+550
+Hostile
+Hostile
+551
+Desert Croc
+Desert Croc
+552
+Desert Croc
+Desert Croc
+553
+Intimidation
+Intimidation
+554
+Zen Charm
+Zen Charm
+555
+Blazing
+Blazing
+556
+Cactus
+Cactus
+557
+Rock Inn
+Rock Inn
+558
+Stone Home
+Stone Home
+559
+Shedding
+Shedding
+560
+Hoodlum
+Hoodlum
+561
+Avianoid
+Avianoid
+562
+Spirit
+Spirit
+563
+Coffin
+Coffin
+564
+Prototurtle
+Prototurtle
+565
+Prototurtle
+Prototurtle
+566
+First Bird
+First Bird
+567
+First Bird
+First Bird
+568
+Trash Bag
+Trash Bag
+569
+Trash Heap
+Trash Heap
+570
+Tricky Fox
+Tricky Fox
+571
+Illusion Fox
+Illusion Fox
+572
+Chinchilla
+Chinchilla
+573
+Scarf
+Scarf
+574
+Fixation
+Fixation
+575
+Manipulate
+Manipulate
+576
+Astral Body
+Astral Body
+577
+Cell
+Cell
+578
+Mitosis
+Mitosis
+579
+Multiplying
+Multiplying
+580
+Water Bird
+Water Bird
+581
+White Bird
+White Bird
+582
+Fresh Snow
+Fresh Snow
+583
+Icy Snow
+Icy Snow
+584
+Snowstorm
+Snowstorm
+585
+Season
+Season
+586
+Season
+Season
+587
+Sky Squirrel
+Sky Squirrel
+588
+Clamping
+Clamping
+589
+Cavalry
+Cavalry
+590
+Mushroom
+Mushroom
+591
+Mushroom
+Mushroom
+592
+Floating
+Floating
+593
+Floating
+Floating
+594
+Caring
+Caring
+595
+Attaching
+Attaching
+596
+EleSpider
+EleSpider
+597
+Thorn Seed
+Thorn Seed
+598
+Thorn Pod
+Thorn Pod
+599
+Gear
+Gear
+600
+Gear
+Gear
+601
+Gear
+Gear
+602
+EleFish
+EleFish
+603
+EleFish
+EleFish
+604
+EleFish
+EleFish
+605
+Cerebral
+Cerebral
+606
+Cerebral
+Cerebral
+607
+Candle
+Candle
+608
+Lamp
+Lamp
+609
+Luring
+Luring
+610
+Tusk
+Tusk
+611
+Axe Jaw
+Axe Jaw
+612
+Axe Jaw
+Axe Jaw
+613
+Chill
+Chill
+614
+Freezing
+Freezing
+615
+Crystallizing
+Crystallizing
+616
+Snail
+Snail
+617
+Shell Out
+Shell Out
+618
+Trap
+Trap
+619
+Martial Arts
+Martial Arts
+620
+Martial Arts
+Martial Arts
+621
+Cave
+Cave
+622
+Automaton
+Automaton
+623
+Automaton
+Automaton
+624
+Sharp Blade
+Sharp Blade
+625
+Sword Blade
+Sword Blade
+626
+Bash Buffalo
+Bash Buffalo
+627
+Eaglet
+Eaglet
+628
+Valiant
+Valiant
+629
+Diapered
+Diapered
+630
+Bone Vulture
+Bone Vulture
+631
+Anteater
+Anteater
+632
+Iron Ant
+Iron Ant
+633
+Irate
+Irate
+634
+Hostile
+Hostile
+635
+Brutal
+Brutal
+636
+Torch
+Torch
+637
+Sun
+Sun
+638
+Iron Will
+Iron Will
+639
+Cavern
+Cavern
+640
+Grassland
+Grassland
+641
+Cyclone
+Cyclone
+642
+Bolt Strike
+Bolt Strike
+643
+Vast White
+Vast White
+644
+Deep Black
+Deep Black
+645
+Abundance
+Abundance
+646
+Boundary
+Boundary
+647
+Colt
+Colt
+648
+Melody
+Melody
+649
+Paleozoic
+Paleozoic
+650
+Spiky Nut
+Spiky Nut
+651
+Spiky Armor
+Spiky Armor
+652
+Spiky Armor
+Spiky Armor
+653
+Fox
+Fox
+654
+Fox
+Fox
+655
+Fox
+Fox
+656
+Bubble Frog
+Bubble Frog
+657
+Bubble Frog
+Bubble Frog
+658
+Ninja
+Ninja
+659
+Digging
+Digging
+660
+Digging
+Digging
+661
+Tiny Robin
+Tiny Robin
+662
+Ember
+Ember
+663
+Scorching
+Scorching
+664
+Scatterdust
+Scatterdust
+665
+Scatterdust
+Scatterdust
+666
+Scale
+Scale
+667
+Lion Cub
+Lion Cub
+668
+Royal
+Royal
+669
+Single Bloom
+Single Bloom
+670
+Single Bloom
+Single Bloom
+671
+Garden
+Garden
+672
+Mount
+Mount
+673
+Mount
+Mount
+674
+Playful
+Playful
+675
+Daunting
+Daunting
+676
+Poodle
+Poodle
+677
+Restraint
+Restraint
+678
+Constraint
+Constraint
+679
+Sword
+Sword
+680
+Sword
+Sword
+681
+Royal Sword
+Royal Sword
+682
+Perfume
+Perfume
+683
+Fragrance
+Fragrance
+684
+Cotton Candy
+Cotton Candy
+685
+Meringue
+Meringue
+686
+Revolving
+Revolving
+687
+Overturning
+Overturning
+688
+Two-Handed
+Two-Handed
+689
+Collective
+Collective
+690
+Mock Kelp
+Mock Kelp
+691
+Mock Kelp
+Mock Kelp
+692
+Water Gun
+Water Gun
+693
+Howitzer
+Howitzer
+694
+Generator
+Generator
+695
+Generator
+Generator
+696
+Royal Heir
+Royal Heir
+697
+Despot
+Despot
+698
+Tundra
+Tundra
+699
+Tundra
+Tundra
+700
+Intertwining
+Intertwining
+701
+Wrestling
+Wrestling
+702
+Antenna
+Antenna
+703
+Jewel
+Jewel
+704
+Soft Tissue
+Soft Tissue
+705
+Soft Tissue
+Soft Tissue
+706
+Dragon
+Dragon
+707
+Key Ring
+Key Ring
+708
+Stump
+Stump
+709
+Elder Tree
+Elder Tree
+710
+Pumpkin
+Pumpkin
+711
+Pumpkin
+Pumpkin
+712
+Ice Chunk
+Ice Chunk
+713
+Iceberg
+Iceberg
+714
+Sound Wave
+Sound Wave
+715
+Sound Wave
+Sound Wave
+716
+Life
+Life
+717
+Destruction
+Destruction
+718
+Order
+Order
+719
+Jewel
+Jewel
+720
+Mischief
+Mischief
+721
+Steam
+Steam
+722
+Grass Quill
+Grass Quill
+723
+Blade Quill
+Blade Quill
+724
+Arrow Quill
+Arrow Quill
+725
+Fire Cat
+Fire Cat
+726
+Fire Cat
+Fire Cat
+727
+Heel
+Heel
+728
+Sea Lion
+Sea Lion
+729
+Pop Star
+Pop Star
+730
+Soloist
+Soloist
+731
+Woodpecker
+Woodpecker
+732
+Bugle Beak
+Bugle Beak
+733
+Cannon
+Cannon
+734
+Loitering
+Loitering
+735
+Stakeout
+Stakeout
+736
+Larva
+Larva
+737
+Battery
+Battery
+738
+Stag Beetle
+Stag Beetle
+739
+Boxing
+Boxing
+740
+Woolly Crab
+Woolly Crab
+741
+Dancing
+Dancing
+742
+Bee Fly
+Bee Fly
+743
+Bee Fly
+Bee Fly
+744
+Puppy
+Puppy
+745
+Wolf
+Wolf
+746
+Small Fry
+Small Fry
+747
+Brutal Star
+Brutal Star
+748
+Brutal Star
+Brutal Star
+749
+Donkey
+Donkey
+750
+Draft Horse
+Draft Horse
+751
+Water Bubble
+Water Bubble
+752
+Water Bubble
+Water Bubble
+753
+Sickle Grass
+Sickle Grass
+754
+Bloom Sickle
+Bloom Sickle
+755
+Illuminating
+Illuminating
+756
+Illuminating
+Illuminating
+757
+Toxic Lizard
+Toxic Lizard
+758
+Toxic Lizard
+Toxic Lizard
+759
+Flailing
+Flailing
+760
+Strong Arm
+Strong Arm
+761
+Fruit
+Fruit
+762
+Fruit
+Fruit
+763
+Fruit
+Fruit
+764
+Posy Picker
+Posy Picker
+765
+Sage
+Sage
+766
+Teamwork
+Teamwork
+767
+Turn Tail
+Turn Tail
+768
+Hard Scale
+Hard Scale
+769
+Sand Heap
+Sand Heap
+770
+Sand Castle
+Sand Castle
+771
+Sea Cucumber
+Sea Cucumber
+772
+Synthetic
+Synthetic
+773
+Synthetic
+Synthetic
+774
+Meteor
+Meteor
+775
+Drowsing
+Drowsing
+776
+Blast Turtle
+Blast Turtle
+777
+Roly-Poly
+Roly-Poly
+778
+Disguise
+Disguise
+779
+Gnash Teeth
+Gnash Teeth
+780
+Placid
+Placid
+781
+Sea Creeper
+Sea Creeper
+782
+Scaly
+Scaly
+783
+Scaly
+Scaly
+784
+Scaly
+Scaly
+785
+Land Spirit
+Land Spirit
+786
+Land Spirit
+Land Spirit
+787
+Land Spirit
+Land Spirit
+788
+Land Spirit
+Land Spirit
+789
+Nebula
+Nebula
+790
+Protostar
+Protostar
+791
+Sunne
+Sunne
+792
+Moone
+Moone
+793
+Parasite
+Parasite
+794
+Swollen
+Swollen
+795
+Lissome
+Lissome
+796
+Glowing
+Glowing
+797
+Launch
+Launch
+798
+Drawn Sword
+Drawn Sword
+799
+Junkivore
+Junkivore
+800
+Prism
+Prism
+801
+Artificial
+Artificial
+802
+Gloomdweller
+Gloomdweller
+803
+Poison Pin
+Poison Pin
+804
+Poison Pin
+Poison Pin
+805
+Rampart
+Rampart
+806
+Fireworks
+Fireworks
+807
+Thunderclap
+Thunderclap
