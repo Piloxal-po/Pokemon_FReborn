@@ -5,6 +5,7 @@ def generateDebugTranslationModFile
     generateAbilityDebugTranslationModFile(dir)
     generateMoveDebugTranslationModFile(dir)
     generateMessageDebugTranslationFile(dir)
+    generateItemsDebugTranslationFile(dir)
 end
 
 def generateAbilityDebugTranslationModFile(dir)
@@ -63,4 +64,25 @@ def generateMessageDebugTranslationFile(dir)
         Messages.writeObject(f, msgs, i, origMessages)
       end
     }
+  end
+
+  
+def generateItemsDebugTranslationFile(dir)
+    file = File.new(dir + "/" + ITEM_FILE + ".txt", "w")
+    File.open("Scripts/" + GAMEFOLDER + "/itemtext.rb") { |f|
+      eval(f.read)
+    }
+    names = "[1]\n"
+    descriptions = "[2]\n"
+    ITEMHASH.each { |key, value|
+        if value[:ID]
+            names += value[:ID].to_s + "\n" + value[:name] + "\n" + value[:name] + "\n"
+            descriptions += value[:ID].to_s + "\n" + value[:desc] + "\n" + value[:desc] + "\n"
+        end
+    }
+    file.puts(names)
+    file.flush
+    file.puts(descriptions)
+    file.flush
+    file.close
   end
