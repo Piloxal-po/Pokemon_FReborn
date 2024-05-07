@@ -5,6 +5,7 @@ def debugCompileAll
   debugCompileAbilitiesWithLang(lang)
   debugCompileMessagesWithLang(lang)
   debugCompileItemsWithLang(lang)
+  debugCompileMonsWithLang(lang)
 end
 
 def debugCompileMoves
@@ -92,29 +93,127 @@ def debugCompileItemsWithLang(lang)
   save_data(moves, dir + "/" + ITEM_FILE + ".dat")
 end
 
+def debugCompileMons
+  debugCompileMonsWithLang(choiceLanguage)
+end
+
+def debugCompileMonsWithLang(lang)
+  File.open("Scripts/" + GAMEFOLDER + "/montext.rb") { |f|
+    eval(f.read)
+  }
+  dir = DIR_I18N + lang
+  debugMkdir(dir)
+  dict = buildData(DIR_DEBUG_I18N + lang + "/" + MONS_FILE + ".txt",)
+  mons = MonDataHash.new()
+  begin
+    MONHASH.each { |key, value|
+      iName = 0
+      iDescription = 0
+      iType = 0
+      id = 0
+      value.each do |name, definition|
+        if definition.instance_of? Hash
+          if definition[:dexnum]
+            id = definition[:dexnum]
+            if dict[id][0].instance_of? Array
+              definition[:name] = dict[id][0][iName]
+              iName += 1
+            else
+              definition[:name] = dict[id][0]
+            end
+            if dict[id][1].instance_of? Array
+              definition[:dexentry] = dict[id][1][iDescription]
+              iDescription += 1
+            else
+              definition[:dexentry] = dict[id][1]
+            end
+            if dict[id][2].instance_of? Array
+              definition[:kind] = dict[id][2][iType]
+              iType += 1
+            else
+              definition[:kind] = dict[id][2]
+            end
+          elsif definition[:name] && definition[:dexentry] && definition[:kind]
+            definition[:name] = dict[id][0][iName]
+            iName += 1
+            definition[:dexentry] = dict[id][1][iDescription]
+            iDescription += 1
+            definition[:kind] = dict[id][2][iType]
+            iType += 1
+          elsif definition[:name] && definition[:dexentry]
+            definition[:name] = dict[id][0][iName]
+            iName += 1
+            definition[:dexentry] = dict[id][1][iDescription]
+            iDescription += 1
+          elsif definition[:name] && definition[:kind]
+            definition[:name] = dict[id][0][iName]
+            iName += 1
+            definition[:kind] = dict[id][2][iType]
+            iType += 1
+          elsif definition[:kind] && definition[:dexentry]
+            definition[:kind] = dict[id][2][iType]
+            iType += 1
+            definition[:dexentry] = dict[id][1][iDescription]
+            iDescription += 1
+          elsif definition[:name]
+            definition[:name] = dict[id][0][iName]
+            iName += 1
+          elsif definition[:dexentry]
+            definition[:dexentry] = dict[id][1][iDescription]
+            iDescription += 1
+          elsif definition[:kind]
+            definition[:kind] = dict[id][2][iType]
+            iType += 1
+          end
+        end
+      end
+
+      mons[key] = MonWrapper.new(key, value)
+    }
+  rescue => e
+    Kernel.pbMessage(pbGetExceptionMessage(e))
+  end
+  save_data(mons, dir + "/" + MONS_FILE + ".dat")
+end
+
 def buildData(file)
   res = {}
-  name = false
+  type = 0
   id = 0
-  en = false
+  iLine = 0
   dataFile = File.open(file)
-  dataFile.each_line { |line| 
-    line = line.strip
-    if line == "[1]" # name
-      name = true
-    elsif line == "[2]" # description
-      name = false
-    elsif line.empty? # empty line
-    elsif line.to_i.to_s == line # check if ID
-      id = line.to_i
-      en = true
-    elsif en # first line skip
-      en = false
-    elsif name # name = init array
-      res[id] = [line, ""]
-    elsif !name # description = update array
-      res[id] = [res[id][0], line]
-    end
-  }
+  l = nil
+  begin
+    dataFile.each_line { |line| 
+      line = line.strip
+      l = line
+      if line == "[1]" # name
+        type = 1
+      elsif line == "[2]" # description
+        type = 2
+      elsif line.empty? # empty line
+      elsif line.to_i.to_s == line # check if ID
+        id = line.to_i
+        iLine = 1
+      elsif iLine % 2 != 0 # first line skip
+        iLine += 1
+      elsif type == 1 && res[id] && iLine % 2 == 0
+        res[id] = [[res[id][0]].concat([line]), res[id][1]]
+        iLine += 1
+      elsif type == 2 && res[id][1] && iLine % 2 == 0
+        res[id] = [res[id][0], [res[id][1]].concat([line])]
+        iLine += 1
+      elsif type == 1 # name = init array
+        res[id] = [line, nil]
+        iLine += 1
+      elsif type == 2 # description = update array
+        res[id] = [res[id][0], line]
+        iLine += 1
+      end
+    }
+  rescue => e
+    Kernel.pbMessage(pbGetExceptionMessage(e))
+    Kernel.pbMessage(l)
+  end
   return res
 end
