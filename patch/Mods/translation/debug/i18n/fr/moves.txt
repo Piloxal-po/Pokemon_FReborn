@@ -4327,8 +4327,8 @@ The user attacks the target by emitting steam. This may also confuse the target.
 The user scatters mysterious water around and restores the HP of itself and its ally Pokémon in the battle.
 The user scatters mysterious water around and restores the HP of itself and its ally Pokémon in the battle.
 725
-This move enables the user to protect itself from all attacks. Its chance of failing rises if it is used in succession. Direct contact harshly lowers the attacker's Defense stat.
-This move enables the user to protect itself from all attacks. Its chance of failing rises if it is used in succession. Direct contact harshly lowers the attacker's Defense stat.
+Protects the user from all attacks. Direct contact harshly lowers the attacker's Defense stat.
+Protects the user from all attacks. Direct contact harshly lowers the attacker's Defense stat.
 726
 The user pretends to bow its head, but then it stabs the target with its disheveled hair. This attack never misses.
 The user pretends to bow its head, but then it stabs the target with its disheveled hair. This attack never misses.
@@ -4343,73 +4343,4 @@ The user fires a beam of steel that it collected from its entire body. This also
 The user fires a beam of steel that it collected from its entire body. This also damages the user.
 730
 The Pokémon congratulates you on your special day!
-Le Pokémon vous souhaite plein de bonnes choses pour cet événement spécial.
-731
-Morpeko attacks and raises its Speed with the energy stored in its cheeks. This move's type changes depending on the user's form.
-Morpeko attacks and raises its Speed with the energy stored in its cheeks. This move's type changes depending on the user's form.
-732
-The user fires a beam of light. The move's type changes depending on the Drive the user holds.
-Le lanceur projette un rayon lumineux sur l'ennemi. Le type varie selon le Module que tient le lanceur.
-733
-The user fires a beam of light. The move's type changes depending on the Drive the user holds.
-Le lanceur projette un rayon lumineux sur l'ennemi. Le type varie selon le Module que tient le lanceur.
-734
-The user fires a beam of light. The move's type changes depending on the Drive the user holds.
-Le lanceur projette un rayon lumineux sur l'ennemi. Le type varie selon le Module que tient le lanceur.
-735
-The user fires a beam of light. The move's type changes depending on the Drive the user holds.
-Le lanceur projette un rayon lumineux sur l'ennemi. Le type varie selon le Module que tient le lanceur.
-736
-Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
-Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
-737
-Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
-Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
-738
-Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
-Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
-739
-Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
-Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
-740
-Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
-Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
-741
-Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
-Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
-742
-Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
-Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
-743
-Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
-Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
-744
-Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
-Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
-745
-Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
-Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
-746
-Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
-Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
-747
-Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
-Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
-748
-Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
-Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
-749
-Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
-Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
-750
-Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
-Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
-751
-Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
-Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
-752
-Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
-Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
-753
-Cloaked in high energy, the user slams the target. The held Memory defines the move's type.
-Le Pokémon s'entoure d'une puissante énergie avant de foncer sur sa cible. Le type de la capacité dépend de la ROM installée.
+The Pokémon congratulates you on your special day!

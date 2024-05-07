@@ -81,6 +81,7 @@ def buildData(file)
       name = true
     elsif line == "[2]" # description
       name = false
+    elsif line.empty? # empty line
     elsif line.to_i.to_s == line # check if ID
       id = line.to_i
       en = true
