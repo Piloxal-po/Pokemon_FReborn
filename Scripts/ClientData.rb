@@ -1,3 +1,5 @@
+DEBUG_TRANSLATION_MOD_ENABLE = false
+
 def buildClientData
   $Unidata = {}
   $Unidata[:saveslot] = 1
@@ -57,7 +59,14 @@ def startup
   loadSettings
   pbSetUpSystem
   # Dir["./Data/Mods/*.rb"].each { |file| load File.expand_path(file) }
-  Dir["./patch/Mods/*.rb"].each { |file| load File.expand_path(file) }
-  Dir["./patch/Mods/**/*.rb"].each {|file| load File.expand_path(file) }
-  $cache.reload
+  begin
+    Dir["./patch/Mods/**/*.rb"].each {|file| 
+        if !file.include?("debug")
+          load File.expand_path(file)
+        end
+    }
+    $cache.reload
+  rescue => e
+    raise pbGetExceptionMessage(e)
+  end
 end

@@ -9,6 +9,7 @@ class Cache_Game
       cacheFieldsReload
       cacheFieldNotesReload
       cacheTypesReload
+      cacheNaturesReload
     end
     
     def cacheDexReload
@@ -62,6 +63,12 @@ class Cache_Game
     def cacheTypesReload
       if fileExists?(getDiri18n + "types.dat")
         @types = load_data(getDiri18n + "types.dat")
+      end
+    end
+
+    def cacheNaturesReload
+      if fileExists?(getDiri18n + "natures.dat")
+        @natures = load_data(getDiri18n + "natures.dat")
       end
     end
   end

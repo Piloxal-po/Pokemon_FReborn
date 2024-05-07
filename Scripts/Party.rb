@@ -1502,8 +1502,8 @@ class PokemonScreen
         firstName  = getMoveName(aMoves[indexPrev])
         secondName = getMoveName(aMoves[index])
 
-        firstName = "AAAA" if firstName == PBMoves.getName(156)  
-        secondName = "AAAA" if secondName == PBMoves.getName(156)  
+        firstName = "AAAA" if firstName == getMoveName(:FLY)  
+        secondName = "AAAA" if secondName == getMoveName(:FLY)  
 
         if firstName > secondName
           aux               = aCmds[index]
