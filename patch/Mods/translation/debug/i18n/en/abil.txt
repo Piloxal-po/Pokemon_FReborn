@@ -1,0 +1,1592 @@
+[1]
+1
+Stench
+Stench
+2
+Drizzle
+Drizzle
+3
+Speed Boost
+Speed Boost
+4
+Battle Armor
+Battle Armor
+5
+Sturdy
+Sturdy
+6
+Damp
+Damp
+7
+Limber
+Limber
+8
+Sand Veil
+Sand Veil
+9
+Static
+Static
+10
+Volt Absorb
+Volt Absorb
+11
+Water Absorb
+Water Absorb
+12
+Oblivious
+Oblivious
+13
+Cloud Nine
+Cloud Nine
+14
+Compound Eyes
+Compound Eyes
+15
+Insomnia
+Insomnia
+16
+Color Change
+Color Change
+17
+Immunity
+Immunity
+18
+Flash Fire
+Flash Fire
+19
+Shield Dust
+Shield Dust
+20
+Own Tempo
+Own Tempo
+21
+Suction Cups
+Suction Cups
+22
+Intimidate
+Intimidate
+23
+Shadow Tag
+Shadow Tag
+24
+Rough Skin
+Rough Skin
+25
+Wonder Guard
+Wonder Guard
+26
+Levitate
+Levitate
+27
+Effect Spore
+Effect Spore
+28
+Synchronize
+Synchronize
+29
+Clear Body
+Clear Body
+30
+Natural Cure
+Natural Cure
+31
+Lightning Rod
+Lightning Rod
+32
+Serene Grace
+Serene Grace
+33
+Swift Swim
+Swift Swim
+34
+Chlorophyll
+Chlorophyll
+35
+Illuminate
+Illuminate
+36
+Trace
+Trace
+37
+Huge Power
+Huge Power
+38
+Poison Point
+Poison Point
+39
+Inner Focus
+Inner Focus
+40
+Magma Armor
+Magma Armor
+41
+Water Veil
+Water Veil
+42
+Magnet Pull
+Magnet Pull
+43
+Soundproof
+Soundproof
+44
+Rain Dish
+Rain Dish
+45
+Sand Stream
+Sand Stream
+46
+Pressure
+Pressure
+47
+Thick Fat
+Thick Fat
+48
+Early Bird
+Early Bird
+49
+Flame Body
+Flame Body
+50
+Run Away
+Run Away
+51
+Keen Eye
+Keen Eye
+52
+Hyper Cutter
+Hyper Cutter
+53
+Pickup
+Pickup
+54
+Truant
+Truant
+55
+Hustle
+Hustle
+56
+Cute Charm
+Cute Charm
+57
+Plus
+Plus
+58
+Minus
+Minus
+59
+Forecast
+Forecast
+60
+Sticky Hold
+Sticky Hold
+61
+Shed Skin
+Shed Skin
+62
+Guts
+Guts
+63
+Marvel Scale
+Marvel Scale
+64
+Liquid Ooze
+Liquid Ooze
+65
+Overgrow
+Overgrow
+66
+Blaze
+Blaze
+67
+Torrent
+Torrent
+68
+Swarm
+Swarm
+69
+Rock Head
+Rock Head
+70
+Drought
+Drought
+71
+Arena Trap
+Arena Trap
+72
+Vital Spirit
+Vital Spirit
+73
+White Smoke
+White Smoke
+74
+Pure Power
+Pure Power
+75
+Shell Armor
+Shell Armor
+76
+Air Lock
+Air Lock
+77
+Tangled Feet
+Tangled Feet
+78
+Motor Drive
+Motor Drive
+79
+Rivalry
+Rivalry
+80
+Steadfast
+Steadfast
+81
+Snow Cloak
+Snow Cloak
+82
+Gluttony
+Gluttony
+83
+Anger Point
+Anger Point
+84
+Unburden
+Unburden
+85
+Heatproof
+Heatproof
+86
+Simple
+Simple
+87
+Dry Skin
+Dry Skin
+88
+Download
+Download
+89
+Iron Fist
+Iron Fist
+90
+Poison Heal
+Poison Heal
+91
+Adaptability
+Adaptability
+92
+Skill Link
+Skill Link
+93
+Hydration
+Hydration
+94
+Solar Power
+Solar Power
+95
+Quick Feet
+Quick Feet
+96
+Normalize
+Normalize
+97
+Sniper
+Sniper
+98
+Magic Guard
+Magic Guard
+99
+No Guard
+No Guard
+100
+Stall
+Stall
+101
+Technician
+Technician
+102
+Leaf Guard
+Leaf Guard
+103
+Klutz
+Klutz
+104
+Mold Breaker
+Mold Breaker
+105
+Super Luck
+Super Luck
+106
+Aftermath
+Aftermath
+107
+Anticipation
+Anticipation
+108
+Forewarn
+Forewarn
+109
+Unaware
+Unaware
+110
+Tinted Lens
+Tinted Lens
+111
+Filter
+Filter
+112
+Slow Start
+Slow Start
+113
+Scrappy
+Scrappy
+114
+Storm Drain
+Storm Drain
+115
+Ice Body
+Ice Body
+116
+Solid Rock
+Solid Rock
+117
+Snow Warning
+Snow Warning
+118
+Honey Gather
+Honey Gather
+119
+Frisk
+Frisk
+120
+Reckless
+Reckless
+121
+Multitype
+Multitype
+122
+Flower Gift
+Flower Gift
+123
+Bad Dreams
+Bad Dreams
+124
+Pickpocket
+Pickpocket
+125
+Sheer Force
+Sheer Force
+126
+Contrary
+Contrary
+127
+Unnerve
+Unnerve
+128
+Defiant
+Defiant
+129
+Defeatist
+Defeatist
+130
+Cursed Body
+Cursed Body
+131
+Healer
+Healer
+132
+Friend Guard
+Friend Guard
+133
+Weak Armor
+Weak Armor
+134
+Heavy Metal
+Heavy Metal
+135
+Light Metal
+Light Metal
+136
+Multiscale
+Multiscale
+137
+Toxic Boost
+Toxic Boost
+138
+Flare Boost
+Flare Boost
+139
+Harvest
+Harvest
+140
+Telepathy
+Telepathy
+141
+Moody
+Moody
+142
+Overcoat
+Overcoat
+143
+Poison Touch
+Poison Touch
+144
+Regenerator
+Regenerator
+145
+Big Pecks
+Big Pecks
+146
+Sand Rush
+Sand Rush
+147
+Wonder Skin
+Wonder Skin
+148
+Analytic
+Analytic
+149
+Illusion
+Illusion
+150
+Imposter
+Imposter
+151
+Infiltrator
+Infiltrator
+152
+Mummy
+Mummy
+153
+Moxie
+Moxie
+154
+Justified
+Justified
+155
+Rattled
+Rattled
+156
+Magic Bounce
+Magic Bounce
+157
+Sap Sipper
+Sap Sipper
+158
+Prankster
+Prankster
+159
+Sand Force
+Sand Force
+160
+Iron Barbs
+Iron Barbs
+161
+Zen Mode
+Zen Mode
+162
+Victory Star
+Victory Star
+163
+Turboblaze
+Turboblaze
+164
+Teravolt
+Teravolt
+165
+Aerilate
+Aerilate
+166
+Aroma Veil
+Aroma Veil
+167
+Aura Break
+Aura Break
+168
+Bulletproof
+Bulletproof
+169
+Cheek Pouch
+Cheek Pouch
+170
+Competitive
+Competitive
+171
+Dark Aura
+Dark Aura
+172
+Fairy Aura
+Fairy Aura
+173
+Flower Veil
+Flower Veil
+174
+Fur Coat
+Fur Coat
+175
+Gale Wings
+Gale Wings
+176
+Gooey
+Gooey
+177
+Grass Pelt
+Grass Pelt
+178
+Magician
+Magician
+179
+Mega Launcher
+Mega Launcher
+180
+Parental Bond
+Parental Bond
+181
+Pixilate
+Pixilate
+182
+Protean
+Protean
+183
+Refrigerate
+Refrigerate
+184
+Stance Change
+Stance Change
+185
+Strong Jaw
+Strong Jaw
+186
+Sweet Veil
+Sweet Veil
+187
+Symbiosis
+Symbiosis
+188
+Tough Claws
+Tough Claws
+189
+Primordial Sea
+Primordial Sea
+190
+Desolate Land
+Desolate Land
+191
+Delta Stream
+Delta Stream
+192
+Battery
+Battery
+193
+Beast Boost
+Beast Boost
+194
+Berserk
+Berserk
+195
+Comatose
+Comatose
+196
+Corrosion
+Corrosion
+197
+Dancer
+Dancer
+198
+Dazzling
+Dazzling
+199
+Electric Surge
+Electric Surge
+200
+EmergencyExit
+EmergencyExit
+201
+Fluffy
+Fluffy
+202
+Full Metal Body
+Full Metal Body
+203
+Galvanize
+Galvanize
+204
+Grassy Surge
+Grassy Surge
+205
+Innards Out
+Innards Out
+206
+Liquid Voice
+Liquid Voice
+207
+Long Reach
+Long Reach
+208
+Merciless
+Merciless
+209
+Misty Surge
+Misty Surge
+210
+Alchemy
+Alchemy
+211
+Prism Armor
+Prism Armor
+212
+Psychic Surge
+Psychic Surge
+213
+Q. Majesty
+Q. Majesty
+214
+Receiver
+Receiver
+215
+Shadow Shield
+Shadow Shield
+216
+Slush Rush
+Slush Rush
+217
+Soul-heart
+Soul-heart
+218
+Stakeout
+Stakeout
+219
+Stamina
+Stamina
+220
+Steelworker
+Steelworker
+221
+Surge Surfer
+Surge Surfer
+222
+Tangling Hair
+Tangling Hair
+223
+Triage
+Triage
+224
+Water Bubble
+Water Bubble
+225
+W. Compaction
+W. Compaction
+226
+Wimp Out
+Wimp Out
+227
+Schooling
+Schooling
+228
+RKS System
+RKS System
+229
+Shields Down
+Shields Down
+230
+Disguise
+Disguise
+231
+P. Construct
+P. Construct
+232
+Ball Fetch
+Ball Fetch
+233
+Cotton Down
+Cotton Down
+234
+Dauntless Shield
+Dauntless Shield
+235
+Gorilla Tactics
+Gorilla Tactics
+236
+Gulp Missile
+Gulp Missile
+237
+Hunger Switch
+Hunger Switch
+238
+Ice Face
+Ice Face
+239
+Ice Scales
+Ice Scales
+240
+Intrepid Sword
+Intrepid Sword
+241
+Libero
+Libero
+242
+Mimicry
+Mimicry
+243
+Mirror Armor
+Mirror Armor
+244
+Neutralizing Gas
+Neutralizing Gas
+245
+Pastel Veil
+Pastel Veil
+246
+Perish Body
+Perish Body
+247
+Power Spot
+Power Spot
+248
+Propeller Tail
+Propeller Tail
+249
+Punk Rock
+Punk Rock
+250
+Ripen
+Ripen
+251
+Sand Spit
+Sand Spit
+252
+Screen Cleaner
+Screen Cleaner
+253
+Stalwart
+Stalwart
+254
+Steam Engine
+Steam Engine
+255
+Steely Spirit
+Steely Spirit
+256
+W. Spirit
+W. Spirit
+257
+Neuroforce
+Neuroforce
+258
+Quick Draw
+Quick Draw
+259
+Unseen Fist
+Unseen Fist
+260
+Curious Med.
+Curious Med.
+261
+Transistor
+Transistor
+262
+Dragon's Maw
+Dragon's Maw
+263
+Chilling Neigh
+Chilling Neigh
+264
+Grim Neigh
+Grim Neigh
+265
+As One
+As One
+[2]
+1
+The stench may cause the target to flinch.
+The stench may cause the target to flinch.
+2
+The Pokémon makes it rain when it enters a battle.
+The Pokémon makes it rain when it enters a battle.
+3
+Its Speed stat is gradually boosted.
+Its Speed stat is gradually boosted.
+4
+The Pokémon is protected against critical hits.
+The Pokémon is protected against critical hits.
+5
+It cannot be knocked out with one hit.
+It cannot be knocked out with one hit.
+6
+Prevents the use of self-destructing moves.
+Prevents the use of self-destructing moves.
+7
+The Pokémon is protected from paralysis.
+The Pokémon is protected from paralysis.
+8
+Boosts the Pokémon's evasion in a sandstorm.
+Boosts the Pokémon's evasion in a sandstorm.
+9
+Contact with the Pokémon may cause paralysis.
+Contact with the Pokémon may cause paralysis.
+10
+Restores HP if hit by an Electric-type move.
+Restores HP if hit by an Electric-type move.
+11
+Restores HP if hit by a Water-type move.
+Restores HP if hit by a Water-type move.
+12
+Prevents it from becoming infatuated.
+Prevents it from becoming infatuated.
+13
+Eliminates the effects of weather.
+Eliminates the effects of weather.
+14
+The Pokémon's accuracy is boosted...
+The Pokémon's accuracy is boosted...
+15
+Prevents the Pokémon from falling asleep.
+Prevents the Pokémon from falling asleep.
+16
+Changes the Pokémon's type to the foe's move.
+Changes the Pokémon's type to the foe's move.
+17
+Prevents the Pokémon from getting poisoned.
+Prevents the Pokémon from getting poisoned.
+18
+Powers up Fire-type moves if it's hit by one...
+Powers up Fire-type moves if it's hit by one...
+19
+Blocks the added effects of attacks taken.
+Blocks the added effects of attacks taken.
+20
+Prevents the Pokémon from becoming confused.
+Prevents the Pokémon from becoming confused.
+21
+Negates all moves that force switching out.
+Negates all moves that force switching out.
+22
+Lowers the foe's Attack stat.
+Lowers the foe's Attack stat.
+23
+Prevents the foe from escaping.
+Prevents the foe from escaping.
+24
+Inflicts damage to the foe on contact.
+Inflicts damage to the foe on contact.
+25
+Only super-effective moves will hit.
+Only super-effective moves will hit.
+26
+Gives full immunity to all Ground-type moves.
+Gives full immunity to all Ground-type moves.
+27
+Contact may poison or cause paralysis or sleep.
+Contact may poison or cause paralysis or sleep.
+28
+Passes a burn, poison, or paralysis to the foe.
+Passes a burn, poison, or paralysis to the foe.
+29
+Prevents other Pokémon from lowering its stats.
+Prevents other Pokémon from lowering its stats.
+30
+All status problems heal when it switches out.
+All status problems heal when it switches out.
+31
+Draws in all Electric-type moves to raise Sp. Attack.
+Draws in all Electric-type moves to raise Sp. Attack.
+32
+Boosts the likelihood of added effects appearing.
+Boosts the likelihood of added effects appearing.
+33
+Doubles the Pokémon's Speed in rain.
+Doubles the Pokémon's Speed in rain.
+34
+Doubles the Pokémon's Speed in sunshine.
+Doubles the Pokémon's Speed in sunshine.
+35
+Raises the likelihood of meeting wild Pokémon.
+Raises the likelihood of meeting wild Pokémon.
+36
+The Pokémon copies a foe's Ability.
+The Pokémon copies a foe's Ability.
+37
+Doubles the Pokémon's Attack stat.
+Doubles the Pokémon's Attack stat.
+38
+Contact with the Pokémon may poison the attacker.
+Contact with the Pokémon may poison the attacker.
+39
+The Pokémon is protected from flinching.
+The Pokémon is protected from flinching.
+40
+Prevents the Pokémon from becoming frozen.
+Prevents the Pokémon from becoming frozen.
+41
+Prevents the Pokémon from getting a burn.
+Prevents the Pokémon from getting a burn.
+42
+Prevents Steel-type Pokémon from escaping.
+Prevents Steel-type Pokémon from escaping.
+43
+Gives full immunity to all sound-based moves.
+Gives full immunity to all sound-based moves.
+44
+The Pokémon gradually regains HP in rain.
+The Pokémon gradually regains HP in rain.
+45
+The Pokémon summons a sandstorm in battle.
+The Pokémon summons a sandstorm in battle.
+46
+The Pokémon raises the foe's PP usage.
+The Pokémon raises the foe's PP usage.
+47
+Ups resistance to Fire- and Ice-type moves...
+Ups resistance to Fire- and Ice-type moves...
+48
+The Pokémon awakens quickly from sleep.
+The Pokémon awakens quickly from sleep.
+49
+Contact with the Pokémon may burn the attacker.
+Contact with the Pokémon may burn the attacker.
+50
+Enables a sure getaway from wild Pokémon.
+Enables a sure getaway from wild Pokémon.
+51
+Prevents other Pokémon from lowering accuracy.
+Prevents other Pokémon from lowering accuracy.
+52
+Prevents other Pokémon from lowering Attack stat.
+Prevents other Pokémon from lowering Attack stat.
+53
+The Pokémon may pick up items...
+The Pokémon may pick up items...
+54
+Pokémon can't attack on consecutive turns.
+Pokémon can't attack on consecutive turns.
+55
+Boosts the Attack stat, but lowers accuracy...
+Boosts the Attack stat, but lowers accuracy...
+56
+Contact with the Pokémon may cause infatuation.
+Contact with the Pokémon may cause infatuation.
+57
+Ups Sp. Atk if another Pokémon has Plus or Minus...
+Ups Sp. Atk if another Pokémon has Plus or Minus...
+58
+Ups Sp. Atk if another Pokémon has Plus or Minus...
+Ups Sp. Atk if another Pokémon has Plus or Minus...
+59
+Castform transforms with the weather.
+Castform transforms with the weather.
+60
+Protects the Pokémon from item theft.
+Protects the Pokémon from item theft.
+61
+The Pokémon may heal its own status problems.
+The Pokémon may heal its own status problems.
+62
+Boosts Attack if there is a status problem...
+Boosts Attack if there is a status problem...
+63
+Ups Defense if there is a status problem...
+Ups Defense if there is a status problem...
+64
+Damages attackers using any draining move...
+Damages attackers using any draining move...
+65
+Powers up Grass-type moves in a pinch...
+Powers up Grass-type moves in a pinch...
+66
+Powers up Fire-type moves in a pinch...
+Powers up Fire-type moves in a pinch...
+67
+Powers up Water-type moves in a pinch...
+Powers up Water-type moves in a pinch...
+68
+Powers up Bug-type moves in a pinch...
+Powers up Bug-type moves in a pinch...
+69
+Protects the Pokémon from recoil damage.
+Protects the Pokémon from recoil damage.
+70
+The Pokémon summons harsh sunlight in battle.
+The Pokémon summons harsh sunlight in battle.
+71
+Prevents the foe from fleeing.
+Prevents the foe from fleeing.
+72
+Prevents the Pokémon from falling asleep.
+Prevents the Pokémon from falling asleep.
+73
+Prevents other Pokémon from lowering its stats.
+Prevents other Pokémon from lowering its stats.
+74
+Doubles the Pokémon's Attack stat.
+Doubles the Pokémon's Attack stat.
+75
+The Pokémon is protected against critical hits.
+The Pokémon is protected against critical hits.
+76
+Eliminates the effects of weather.
+Eliminates the effects of weather.
+77
+Raises evasion if the Pokémon is confused.
+Raises evasion if the Pokémon is confused.
+78
+Raises Speed if hit by an Electric-type move.
+Raises Speed if hit by an Electric-type move.
+79
+Deals more damage to a foe of the same gender...
+Deals more damage to a foe of the same gender...
+80
+Raises Speed each time the Pokémon flinches.
+Raises Speed each time the Pokémon flinches.
+81
+Raises evasion in a hailstorm.
+Raises evasion in a hailstorm.
+82
+Encourages the early use of a held Berry.
+Encourages the early use of a held Berry.
+83
+Maxes Attack after taking a critical hit.
+Maxes Attack after taking a critical hit.
+84
+Doubles Speed if a held item is used.
+Doubles Speed if a held item is used.
+85
+Weakens the power of Fire-type moves...
+Weakens the power of Fire-type moves...
+86
+The Pokémon is prone to wild stat changes.
+The Pokémon is prone to wild stat changes.
+87
+Reduces HP if it is hot. Water restores HP...
+Reduces HP if it is hot. Water restores HP...
+88
+Adjusts power according to a foe's defenses...
+Adjusts power according to a foe's defenses...
+89
+Boosts the power of punching moves...
+Boosts the power of punching moves...
+90
+Restores HP if the Pokémon is poisoned.
+Restores HP if the Pokémon is poisoned.
+91
+Powers up moves of the same type...
+Powers up moves of the same type...
+92
+Increases the frequency of multi-strike moves.
+Increases the frequency of multi-strike moves.
+93
+Heals status problems in the rain.
+Heals status problems in the rain.
+94
+Sunshine boosts Sp. Atk but HP decreases...
+Sunshine boosts Sp. Atk but HP decreases...
+95
+Boosts Speed if there is a status problem...
+Boosts Speed if there is a status problem...
+96
+All the user's moves become the Normal type.
+All the user's moves become the Normal type.
+97
+Powers up critical hits...
+Powers up critical hits...
+98
+The Pokémon only takes damage from attacks.
+The Pokémon only takes damage from attacks.
+99
+Ensures attacks by or against the user land.
+Ensures attacks by or against the user land.
+100
+The Pokémon moves after all other Pokémon do.
+The Pokémon moves after all other Pokémon do.
+101
+Powers up the Pokémon's weaker moves...
+Powers up the Pokémon's weaker moves...
+102
+Prevents status problems in sunny weather.
+Prevents status problems in sunny weather.
+103
+The Pokémon can't use any held items.
+The Pokémon can't use any held items.
+104
+Moves can be used regardless of Abilities.
+Moves can be used regardless of Abilities.
+105
+Heightens the critical-hit ratios of moves...
+Heightens the critical-hit ratios of moves...
+106
+Damages the foe landing the finishing hit...
+Damages the foe landing the finishing hit...
+107
+Senses a foe's dangerous moves.
+Senses a foe's dangerous moves.
+108
+Determines what moves a foe has.
+Determines what moves a foe has.
+109
+Ignores any stat changes in the Pokémon.
+Ignores any stat changes in the Pokémon.
+110
+Powers up "not very effective" moves...
+Powers up "not very effective" moves...
+111
+Reduces damage from supereffective attacks...
+Reduces damage from supereffective attacks...
+112
+Temporarily halves Attack and Speed.
+Temporarily halves Attack and Speed.
+113
+Enables moves to hit Ghost-type Pokémon.
+Enables moves to hit Ghost-type Pokémon.
+114
+Draws in Water-type moves to up Sp. Attack.
+Draws in Water-type moves to up Sp. Attack.
+115
+The Pokémon gradually regains HP in hail.
+The Pokémon gradually regains HP in hail.
+116
+Reduces damage from supereffective attacks...
+Reduces damage from supereffective attacks...
+117
+The Pokémon summons a hailstorm in battle.
+The Pokémon summons a hailstorm in battle.
+118
+The Pokémon may gather Honey from somewhere.
+The Pokémon may gather Honey from somewhere.
+119
+The Pokémon can check a foe's held item.
+The Pokémon can check a foe's held item.
+120
+Powers up moves that have recoil damage...
+Powers up moves that have recoil damage...
+121
+Changes type to match the held Plate.
+Changes type to match the held Plate.
+122
+Powers up party Pokémon when it is sunny...
+Powers up party Pokémon when it is sunny...
+123
+Reduces a sleeping foe's HP...
+Reduces a sleeping foe's HP...
+124
+Steals an item when hit by another Pokémon.
+Steals an item when hit by another Pokémon.
+125
+Removes added effects to increase move damage...
+Removes added effects to increase move damage...
+126
+Makes stat changes have an opposite effect.
+Makes stat changes have an opposite effect.
+127
+Makes the foe unable to eat Berries.
+Makes the foe unable to eat Berries.
+128
+When a stat is lowered its Attack increases.
+When a stat is lowered its Attack increases.
+129
+Lowers stats when HP becomes half or less...
+Lowers stats when HP becomes half or less...
+130
+May disable a move used on the Pokémon.
+May disable a move used on the Pokémon.
+131
+May heal an ally's status conditions.
+May heal an ally's status conditions.
+132
+Reduces damage done to allies...
+Reduces damage done to allies...
+133
+Physical attacks lower Def. and sharply raise Spd.
+Physical attacks lower Def. and sharply raise Spd.
+134
+Doubles the Pokémon's weight.
+Doubles the Pokémon's weight.
+135
+Halves the Pokémon's weight.
+Halves the Pokémon's weight.
+136
+Halves damage when HP is full.
+Halves damage when HP is full.
+137
+Powers up physical attacks when poisoned...
+Powers up physical attacks when poisoned...
+138
+Powers up special moves when burned...
+Powers up special moves when burned...
+139
+May create another Berry after one is used.
+May create another Berry after one is used.
+140
+Anticipates an ally's attack and dodges it.
+Anticipates an ally's attack and dodges it.
+141
+Raises one stat and lowers another.
+Raises one stat and lowers another.
+142
+Protects the Pokémon from damage from weather.
+Protects the Pokémon from damage from weather.
+143
+May poison targets upon contact.
+May poison targets upon contact.
+144
+Restores HP when withdrawn from battle...
+Restores HP when withdrawn from battle...
+145
+Protects the Pokémon from Defense-lowering.
+Protects the Pokémon from Defense-lowering.
+146
+Doubles the Pokémon's Speed in a sandstorm.
+Doubles the Pokémon's Speed in a sandstorm.
+147
+Makes foes' status moves more likely to miss...
+Makes foes' status moves more likely to miss...
+148
+Boosts move power when the Pokémon moves last...
+Boosts move power when the Pokémon moves last...
+149
+Comes out disguised as the Pokémon in back.
+Comes out disguised as the Pokémon in back.
+150
+Transforms itself into the foe it is facing.
+Transforms itself into the foe it is facing.
+151
+Passes through the foe's barrier and strikes.
+Passes through the foe's barrier and strikes.
+152
+Contact with this Pokémon spreads this Ability.
+Contact with this Pokémon spreads this Ability.
+153
+Boosts Attack after knocking out any Pokémon.
+Boosts Attack after knocking out any Pokémon.
+154
+Raises Attack when hit by a Dark-type move.
+Raises Attack when hit by a Dark-type move.
+155
+Some move types scare it and boost its Speed...
+Some move types scare it and boost its Speed...
+156
+Reflects status-changing moves.
+Reflects status-changing moves.
+157
+Boosts Attack when hit by a Grass-type move.
+Boosts Attack when hit by a Grass-type move.
+158
+Gives priority to a status move.
+Gives priority to a status move.
+159
+Boosts certain moves' power in a sandstorm...
+Boosts certain moves' power in a sandstorm...
+160
+Inflicts damage to the Pokémon on contact...
+Inflicts damage to the Pokémon on contact...
+161
+Changes the Pokémon's shape when HP is halved.
+Changes the Pokémon's shape when HP is halved.
+162
+Boosts the accuracy of its allies and itself...
+Boosts the accuracy of its allies and itself...
+163
+Moves can be used regardless of Abilities.
+Moves can be used regardless of Abilities.
+164
+Moves can be used regardless of Abilities.
+Moves can be used regardless of Abilities.
+165
+Normal-type moves become Flying-type moves...
+Normal-type moves become Flying-type moves...
+166
+Protects allies from moves that effect their mind.
+Protects allies from moves that effect their mind.
+167
+The effects of Aura Abilities are reversed.
+The effects of Aura Abilities are reversed.
+168
+Protects the Pokémon from ball and bomb moves.
+Protects the Pokémon from ball and bomb moves.
+169
+Restores HP when the Pokémon eats a Berry...
+Restores HP when the Pokémon eats a Berry...
+170
+Boosts the Sp. Atk stat when a stat is lowered.
+Boosts the Sp. Atk stat when a stat is lowered.
+171
+Powers up each Pokémon's Dark-type moves...
+Powers up each Pokémon's Dark-type moves...
+172
+Powers up each Pokémon's Fairy-type moves...
+Powers up each Pokémon's Fairy-type moves...
+173
+Prevents lowering of ally Grass-type stats.
+Prevents lowering of ally Grass-type stats.
+174
+Halves damage from physical moves.
+Halves damage from physical moves.
+175
+Gives priority to Flying-type moves when HP is full.
+Gives priority to Flying-type moves when HP is full.
+176
+Contact lowers the foe's Speed stat.
+Contact lowers the foe's Speed stat.
+177
+Boosts Defense when the terrain is grass.
+Boosts Defense when the terrain is grass.
+178
+The Pokémon steals the foe's held item on contact.
+The Pokémon steals the foe's held item on contact.
+179
+Powers up aura and pulse moves...
+Powers up aura and pulse moves...
+180
+Parent and child attack together...
+Parent and child attack together...
+181
+Normal-type moves become Fairy-type moves...
+Normal-type moves become Fairy-type moves...
+182
+Changes the Pokémon's type to its move used.
+Changes the Pokémon's type to its move used.
+183
+Normal-type moves become Ice-type moves...
+Normal-type moves become Ice-type moves...
+184
+The Pokémon changes form depending on moves.
+The Pokémon changes form depending on moves.
+185
+The power of biting moves is increased...
+The power of biting moves is increased...
+186
+Prevents ally Pokémon from falling asleep.
+Prevents ally Pokémon from falling asleep.
+187
+The Pokémon can pass an item to an ally.
+The Pokémon can pass an item to an ally.
+188
+Powers up moves that make direct contact.
+Powers up moves that make direct contact.
+189
+Summons heavy rain when on the field...
+Summons heavy rain when on the field...
+190
+Summons extreme sunlight when on the field...
+Summons extreme sunlight when on the field...
+191
+Summons strong winds when on the field...
+Summons strong winds when on the field...
+192
+Powers up ally Pokémon's special moves...
+Powers up ally Pokémon's special moves...
+193
+Boosts highest stat after KO'ing a Pokémon.
+Boosts highest stat after KO'ing a Pokémon.
+194
+Boosts Sp. Atk when a hit drops HP below half.
+Boosts Sp. Atk when a hit drops HP below half.
+195
+It's always asleep, and attacks without waking up.
+It's always asleep, and attacks without waking up.
+196
+Can poison targets regardless of their type.
+Can poison targets regardless of their type.
+197
+Dances with others, duplicating their moves.
+Dances with others, duplicating their moves.
+198
+Surprises the opponent, preventing priority moves.
+Surprises the opponent, preventing priority moves.
+199
+Electrifies the terrain on entry.
+Electrifies the terrain on entry.
+200
+It retreats when its HP becomes half or less.
+It retreats when its HP becomes half or less.
+201
+Weakens contact moves, but doubles Fire damage.
+Weakens contact moves, but doubles Fire damage.
+202
+Prevents other Pokémon from lowering its stats.
+Prevents other Pokémon from lowering its stats.
+203
+Normal-type moves become Electric-type moves...
+Normal-type moves become Electric-type moves...
+204
+Makes the terrain grassy on entry.
+Makes the terrain grassy on entry.
+205
+Damages the attacker the same amount when fainted.
+Damages the attacker the same amount when fainted.
+206
+All sound-based moves become Water-type moves.
+All sound-based moves become Water-type moves.
+207
+This Pokémon's moves do not make contact.
+This Pokémon's moves do not make contact.
+208
+Critically hits poisoned Pokémon without fail.
+Critically hits poisoned Pokémon without fail.
+209
+Makes the terrain misty on entry.
+Makes the terrain misty on entry.
+210
+The Pokémon copies the Ability of a defeated ally.
+The Pokémon copies the Ability of a defeated ally.
+211
+Reduces damage from supereffective attacks...
+Reduces damage from supereffective attacks...
+212
+Makes the terrain mysterious on entry.
+Makes the terrain mysterious on entry.
+213
+Pressures the opponent, preventing priority moves.
+Pressures the opponent, preventing priority moves.
+214
+The Pokémon receives the Ability of a defeated ally.
+The Pokémon receives the Ability of a defeated ally.
+215
+Halves damage when HP is full...
+Halves damage when HP is full...
+216
+Doubles the Pokémon's Speed stat in a hailstorm.
+Doubles the Pokémon's Speed stat in a hailstorm.
+217
+Boosts its Sp. Atk every time a Pokémon faints.
+Boosts its Sp. Atk every time a Pokémon faints.
+218
+Doubles damage to newly switched-in targets.
+Doubles damage to newly switched-in targets.
+219
+Boosts the Defense stat when hit by an attack.
+Boosts the Defense stat when hit by an attack.
+220
+Powers up Steel-type moves...
+Powers up Steel-type moves...
+221
+Doubles the Speed stat on Electric Terrain.
+Doubles the Speed stat on Electric Terrain.
+222
+Contact lowers the foe's Speed stat.
+Contact lowers the foe's Speed stat.
+223
+Gives priority to a healing move.
+Gives priority to a healing move.
+224
+Stops burns, halves Fire damage and boosts Water...
+Stops burns, halves Fire damage and boosts Water...
+225
+Water-type moves sharply raise Defense.
+Water-type moves sharply raise Defense.
+226
+It wimps out when its HP becomes half or less.
+It wimps out when its HP becomes half or less.
+227
+As long as it has high HP, it can form a school.
+As long as it has high HP, it can form a school.
+228
+Changes type to match the held memory disc.
+Changes type to match the held memory disc.
+229
+This Pokémon is protected by its shell above half HP.
+This Pokémon is protected by its shell above half HP.
+230
+This Pokémon's shroud can protect it from one hit.
+This Pokémon's shroud can protect it from one hit.
+231
+Enters Complete Form when HP is half or less.
+Enters Complete Form when HP is half or less.
+232
+Fetches the first failed Pokéball if no held item.
+Fetches the first failed Pokéball if no held item.
+233
+Lowers Speed of adjacent Pokémon when hit.
+Lowers Speed of adjacent Pokémon when hit.
+234
+Boosts the Pokémon's Defense stat upon entry.
+Boosts the Pokémon's Defense stat upon entry.
+235
+Boosts attack and may only use one move.
+Boosts attack and may only use one move.
+236
+Catches Pokémon with Surf and Dive, spits out when hit.
+Catches Pokémon with Surf and Dive, spits out when hit.
+237
+Switches forms after every turn...
+Switches forms after every turn...
+238
+Can take a physical attack once...
+Can take a physical attack once...
+239
+Halves the damage taken from special moves.
+Halves the damage taken from special moves.
+240
+Boosts the Pokémon's Attack stat upon entry.
+Boosts the Pokémon's Attack stat upon entry.
+241
+Changes the Pokémon's type to its used move.
+Changes the Pokémon's type to its used move.
+242
+The Pokémon changes type to match the terrain.
+The Pokémon changes type to match the terrain.
+243
+Reflects stat-changing moves.
+Reflects stat-changing moves.
+244
+Effects of abilities are nullified or prevented.
+Effects of abilities are nullified or prevented.
+245
+Protects the user and allies from being poisoned.
+Protects the user and allies from being poisoned.
+246
+When hit by a contact move...
+When hit by a contact move...
+247
+Just being next to the Pokémon powers up moves...
+Just being next to the Pokémon powers up moves...
+248
+Ignores redirection...
+Ignores redirection...
+249
+Boosts damage of and resists sound based moves.
+Boosts damage of and resists sound based moves.
+250
+Ripens Berries and doubles their effect.
+Ripens Berries and doubles their effect.
+251
+Creates a sandstorm when it's hit by an attack.
+Creates a sandstorm when it's hit by an attack.
+252
+Negates all screen effects...
+Negates all screen effects...
+253
+Ignores redirection...
+Ignores redirection...
+254
+Fire- and Water-type moves boost Speed drastcally.
+Fire- and Water-type moves boost Speed drastcally.
+255
+Powers up ally Pokémon's Steel-type moves...
+Powers up ally Pokémon's Steel-type moves...
+256
+Swaps Abilities when hit by a contact move.
+Swaps Abilities when hit by a contact move.
+257
+Powers up moves that are super effective.
+Powers up moves that are super effective.
+258
+Enables the Pokémon to move first occasionally...
+Enables the Pokémon to move first occasionally...
+259
+Physical contact bypasses Protect and similar.
+Physical contact bypasses Protect and similar.
+260
+Removes ally stat changes on entry.
+Removes ally stat changes on entry.
+261
+Powers up Electric-type moves...
+Powers up Electric-type moves...
+262
+Powers up Dragon-type moves...
+Powers up Dragon-type moves...
+263
+Boosts Attack when knocking out an opponent.
+Boosts Attack when knocking out an opponent.
+264
+Boosts Sp. Atk when knocking out an opponent.
+Boosts Sp. Atk when knocking out an opponent.
+265
+Combines abilities of fused Pokémon.
+Combines abilities of fused Pokémon.
