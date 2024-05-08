@@ -85,9 +85,9 @@ class Game_System
     end
     @playing_bgm = bgm == nil ? nil : bgm.clone
     if bgm != nil && bgm.name != ""
-      bgm.name = getPathWithTranslation("Audio/BGM/" + bgm.name)
-      if FileTest.audio_exist?("Audio/BGM/" + bgm.name)
-        bgm_play_internal2("Audio/BGM/" + bgm.name, bgm.volume, bgm.pitch, @bgm_position) if !@defaultBGM
+      bgmName = getPathWithTranslation("Audio/BGM/" + bgm.name)
+      if FileTest.audio_exist?(bgmName)
+        bgm_play_internal2(bgmName, bgm.volume, bgm.pitch, @bgm_position) if !@defaultBGM
       end
     else
       if !@bgm_paused
@@ -180,9 +180,9 @@ class Game_System
   def bgs_play(bgs)
     @playing_bgs = bgs == nil ? nil : bgs.clone
     if bgs != nil && bgs.name != ""
-      bgs.name = getPathWithTranslation(bgs.name)
-      if FileTest.audio_exist?("Audio/BGS/" + bgs.name)
-        Audio.bgs_play("Audio/BGS/" + bgs.name, self.resolve_volume(bgs.volume), bgs.pitch)
+      bgsName = getPathWithTranslation("Audio/BGS/" + bgs.name)
+      if FileTest.audio_exist?(bgsName)
+        Audio.bgs_play(bgsName, self.resolve_volume(bgs.volume), bgs.pitch)
       end
     else
       @bgs_position = 0
@@ -238,9 +238,9 @@ class Game_System
       me = RPG::AudioFile.new(me)
     end
     if me != nil && me.name != ""
-      me.name = getPathWithTranslation(me.name)
-      if FileTest.audio_exist?("Audio/ME/" + me.name)
-        Audio.me_play("Audio/ME/" + me.name, self.resolve_volume(me.volume), me.pitch)
+      meName = getPathWithTranslation("Audio/ME/" + me.name)
+      if FileTest.audio_exist?(meName)
+        Audio.me_play(meName, self.resolve_volume(me.volume), me.pitch)
       end
     else
       Audio.me_stop
@@ -254,9 +254,9 @@ class Game_System
     end
     if se != nil && se.name != ""
       se.name = File.basename(se.name, File.extname(se.name))
-      se.name = getPathWithTranslation(se.name)
-      if FileTest.audio_exist?("Audio/SE/" + se.name)
-        Audio.se_play("Audio/SE/" + se.name, self.resolve_volume(se.volume), se.pitch)
+      seName = getPathWithTranslation("Audio/SE/" + se.name)
+      if FileTest.audio_exist?(seName)
+        Audio.se_play(seName, self.resolve_volume(se.volume), se.pitch)
       end
     end
   end

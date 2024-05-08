@@ -1,12 +1,13 @@
 
 def debugCompileAll
   lang = choiceLanguage
+  debugCompileMessagesWithLang(lang)
   debugCompileMovesWithLang(lang)
   debugCompileAbilitiesWithLang(lang)
-  debugCompileMessagesWithLang(lang)
   debugCompileItemsWithLang(lang)
   debugCompileMonsWithLang(lang)
   debugCompileNaturesWithLang(lang)
+  debugCompileMapInfosWithLang(lang)
 end
 
 def debugCompileMoves
@@ -245,4 +246,23 @@ def buildData(file)
     Kernel.pbMessage(l)
   end
   return res
+end
+
+
+
+def debugCompileMapInfos
+  debugCompileMapInfosWithLang(choiceLanguage)
+end
+
+def debugCompileMapInfosWithLang(lang)
+  dir = DIR_I18N + lang
+  debugMkdir(dir)
+  dict = buildData(DIR_DEBUG_I18N + lang + "/" + MAP_INFO_FILE + ".txt")
+  mapInfo = $cache.mapinfos.clone
+  mapInfo.each { |key, value|
+    if value.name
+      value.name = dict[key][0]
+    end
+  }
+  save_data(mapInfo, dir + "/" + MAP_INFO_FILE + ".dat")
 end

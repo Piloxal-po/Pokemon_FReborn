@@ -230,6 +230,9 @@ class Game_Map
     return false if !valid?(x, y)
 
     bit = (1 << (d / 2 - 1)) & 0x0f
+    if !events
+      return false
+    end
     for event in events.values
       if event.tile_id >= 0 && event != self_event &&
          event.x == x && event.y == y && !event.through

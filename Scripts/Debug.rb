@@ -937,7 +937,7 @@ def pbPokemonDebug(origin, pkmn, pkmnid = nil, selected = nil, heldpoke = nil)
         break
 
       ### HP/Status ###
-      when "HP/Status"
+      when _INTL("HP/Status")
         cmd = 0
         loop do
           arr = [
@@ -1005,7 +1005,7 @@ def pbPokemonDebug(origin, pkmn, pkmnid = nil, selected = nil, heldpoke = nil)
         end
 
       ### Level ###
-      when "Level"
+      when _INTL("Level")
         params = ChooseNumberParams.new
         params.setRange(1, MAXIMUMLEVEL)
         params.setDefaultValue(pkmn.level)
@@ -1021,7 +1021,7 @@ def pbPokemonDebug(origin, pkmn, pkmnid = nil, selected = nil, heldpoke = nil)
         end
 
       ### Species ###
-      when "Species"
+      when _INTL("Species")
         species = pbChooseSpecies(pkmn.dexnum)
         if species
           oldspeciesname = getMonName(pkmn.species, pkmn.form)
@@ -1038,7 +1038,7 @@ def pbPokemonDebug(origin, pkmn, pkmnid = nil, selected = nil, heldpoke = nil)
         end
 
       ### Moves ###
-      when "Moves"
+      when _INTL("Moves")
         cmd = 0
         loop do
           cmd = @scene.pbShowCommands(
@@ -1084,7 +1084,7 @@ def pbPokemonDebug(origin, pkmn, pkmnid = nil, selected = nil, heldpoke = nil)
         end
 
       ### Gender ###
-      when "Gender"
+      when _INTL("Gender")
         if pkmn.gender == 2
           pbDisplay(_INTL("{1} is genderless.", pkmn.name))
         else
@@ -1135,7 +1135,7 @@ def pbPokemonDebug(origin, pkmn, pkmnid = nil, selected = nil, heldpoke = nil)
         end
 
       ### Ability ###
-      when "Ability"
+      when _INTL("Ability")
         loop do
           abils = pkmn.getAbilityList
           cmd = abils.find_index { |abil| abil == pkmn.ability }
@@ -1161,7 +1161,7 @@ def pbPokemonDebug(origin, pkmn, pkmnid = nil, selected = nil, heldpoke = nil)
         end
 
       ### Nature ###
-      when "Nature"
+      when _INTL("Nature")
         cmd = 0
         loop do
           oldnature = pkmn.nature
@@ -1191,7 +1191,7 @@ def pbPokemonDebug(origin, pkmn, pkmnid = nil, selected = nil, heldpoke = nil)
         end
 
       ### Shininess ###
-      when "Shininess"
+      when _INTL("Shininess")
         cmd = 0
         loop do
           oldshiny = (pkmn.isShiny?) ? _INTL("shiny") : _INTL("normal")
@@ -1226,7 +1226,7 @@ def pbPokemonDebug(origin, pkmn, pkmnid = nil, selected = nil, heldpoke = nil)
         end
 
       ### Form ###
-      when "Form"
+      when _INTL("Form")
         params = ChooseNumberParams.new
         params.setRange(0, 100)
         params.setDefaultValue(pkmn.form)
@@ -1242,7 +1242,7 @@ def pbPokemonDebug(origin, pkmn, pkmnid = nil, selected = nil, heldpoke = nil)
         end
 
       ### Happiness ###
-      when "Happiness"
+      when _INTL("Happiness")
         params = ChooseNumberParams.new
         params.setRange(0, 255)
         params.setDefaultValue(pkmn.happiness)
@@ -1256,7 +1256,7 @@ def pbPokemonDebug(origin, pkmn, pkmnid = nil, selected = nil, heldpoke = nil)
         end
 
       ### EV/IV/pID ###
-      when "EV/IV/pID"
+      when _INTL("EV/IV/pID")
         stats = STATSTRINGS
         cmd = 0
         loop do
@@ -1347,7 +1347,7 @@ def pbPokemonDebug(origin, pkmn, pkmnid = nil, selected = nil, heldpoke = nil)
         end
 
       ### Pokérus ###
-      when "Pokérus"
+      when _INTL("Pokérus")
         cmd = 0
         loop do
           pokerus = (pkmn.pokerus) ? pkmn.pokerus : 0
@@ -1383,7 +1383,7 @@ def pbPokemonDebug(origin, pkmn, pkmnid = nil, selected = nil, heldpoke = nil)
         end
 
       ### Ownership ###
-      when "Ownership"
+      when _INTL("Ownership")
         cmd = 0
         loop do
           msg = [
@@ -1428,7 +1428,7 @@ def pbPokemonDebug(origin, pkmn, pkmnid = nil, selected = nil, heldpoke = nil)
         end
 
       ### Nickname ###
-      when "Nickname"
+      when _INTL("Nickname")
         cmd = 0
         loop do
           speciesname = getMonName(pkmn.species, pkmn.form)
@@ -1458,7 +1458,7 @@ def pbPokemonDebug(origin, pkmn, pkmnid = nil, selected = nil, heldpoke = nil)
         end
 
       ### Poké Ball ###
-      when "Poké Ball"
+      when _INTL("Poké Ball")
         cmd = 0
         loop do
           oldball = getItemName(pkmn.ballused)
@@ -1484,7 +1484,7 @@ def pbPokemonDebug(origin, pkmn, pkmnid = nil, selected = nil, heldpoke = nil)
         end
 
       ### Egg ###
-      when "Egg"
+      when _INTL("Egg")
         cmd = 0
         loop do
           msg = [_INTL("Not an egg"), _INTL("Egg with eggsteps: {1}.", pkmn.eggsteps)][pkmn.isEgg? ? 1 : 0]
@@ -1526,7 +1526,7 @@ def pbPokemonDebug(origin, pkmn, pkmnid = nil, selected = nil, heldpoke = nil)
         end
 
       ### Shadow Pokémon ###
-      when "Shadow Pokémon"
+      when _INTL("Shadow Pokémon")
         cmd = 0
         loop do
           msg = [_INTL("Not a Shadow Pokémon."),
@@ -1576,11 +1576,11 @@ def pbPokemonDebug(origin, pkmn, pkmnid = nil, selected = nil, heldpoke = nil)
         end
 
       ### Duplicate ###
-      when "Duplicate"
+      when _INTL("Duplicate")
         origin.duplicatePokemon(pkmn, selected)
 
       ### Delete ###
-      when "Delete"
+      when _INTL("Delete")
         origin.deletePokemon($Trainer.party.index(pkmn) ? $Trainer.party.index(pkmn) : 0, selected, heldpoke)
         break
       else
