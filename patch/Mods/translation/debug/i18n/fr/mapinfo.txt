@@ -1,0 +1,2680 @@
+[1]
+1
+Department Store 5F
+Centre Commercial E4
+2
+Department Store 6F
+Centre Commercial E5
+3
+Department Store 7F
+Centre Commercial E6
+4
+Department Store 8F
+Centre Commercial E7
+5
+Department Store 9F
+Centre Commercial E8
+6
+Department Store 11F
+Centre Commercial E10
+7
+Department Store 10F
+Centre Commercial E9
+8
+Blacksteam Factory 3F
+Usine à Charbon E2
+9
+Blacksteam Factory 2F
+Usine à Charbon E1
+10
+Blacksteam Factory 1F
+Usine à Charbon RDC
+11
+Blacksteam Factory B1F
+Usine à Charbon E-1
+12
+Blacksteam Factory B2F
+Usine à Charbon E-2
+13
+Blacksteam Factory 1F
+Usine à Charbon RDC
+14
+Coral Ward
+Quartier Corail
+15
+Apophyll Beach
+Plage d'Apophylle
+16
+Apophyll Beach
+Plage d'Apophylle
+17
+Apophyll Academy
+Académie d'Apophylle
+18
+Apophyll Beach
+Plage d'Apophylle
+19
+Apophyll Beach
+Plage d'Apophylle
+20
+Apophyll Beach
+Plage d'Apophylle
+21
+Pyrous Mountain
+Mont Pyros
+22
+Apophyll Academy
+Académie d'Apophylle
+23
+Apophyll Academy
+Académie d'Apophylle
+24
+Reborn
+Reborn
+25
+Apophyll Academy
+Académie d'Apophylle
+26
+Apophyll Academy
+Académie d'Apophylle
+27
+Pyrous Mountain
+Mont Pyros
+28
+Reborn City
+Reborn
+29
+Opal Ward
+Quartier Opale
+30
+Apophyll Cave
+Grotte d'Entraînement
+31
+Apophyll Cave 2F
+Caverne Apophylle E1
+32
+REMOVED
+REMOVED
+33
+Pyrous Mountain 1F
+Mont Pyros RDC
+34
+Pyrous Mountain 1F
+Mont Pyros RDC
+35
+Pyrous Mountain B1F
+Mont Pyros E-1
+36
+Obsidia Ward
+Quartier Obsidienne
+37
+Lower Peridot Ward
+Bas Quartier Péridot
+38
+Grand Hall
+Grand Hall
+39
+Grand Hall
+Grand Hall
+40
+Opal Ward
+Quartier Opale
+41
+Underground Railnet
+Métro Souterrain
+42
+Lower Peridot Ward
+Bas Quartier Péridot
+43
+Lower Peridot Ward
+Bas Quartier Péridot
+44
+Lower Peridot Ward
+Bas Quartier Péridot
+45
+Lower Peridot Ward
+Bas Quartier Péridot
+46
+Lower Peridot Ward
+Bas Quartier Péridot
+47
+Lower Peridot Ward
+Bas Quartier Péridot
+48
+Peridot Pokemon Center
+Centre Pokémon de Péridot
+49
+Lower Peridot Ward
+Bas Quartier Péridot
+50
+Lower Peridot Ward
+Bas Quartier Péridot
+51
+Intro
+Intro
+52
+Lower Peridot Alley
+Ruelle Bas Péridot
+53
+Lower Peridot Ward
+Bas Quartier Péridot
+54
+Lower Peridot Ward
+Bas Quartier Péridot
+55
+Lower Peridot Ward
+Bas Quartier Péridot
+56
+Lower Peridot Ward
+Bas Quartier Péridot
+57
+Peridot Ward
+Quartier Péridot
+58
+North Peridot Alley
+Ruelle Péridot Nord
+59
+Peridot Ward
+Quartier Péridot
+60
+Peridot Ward
+Quartier Péridot
+61
+Peridot Ward
+Quartier Péridot
+62
+Peridot Ward
+Quartier Péridot
+63
+Peridot Ward
+Quartier Péridot
+64
+Peridot Ward
+Quartier Péridot
+65
+Peridot Ward
+Quartier Péridot
+66
+REMOVED
+REMOVED
+67
+Peridot Ward
+Quartier Péridot
+68
+Peridot Ward
+Quartier Péridot
+69
+Peridot Ward
+Quartier Péridot
+70
+Peridot PokeMart
+Boutique Péridot
+71
+Mosswater Industrial
+Usine Écumousse
+72
+REMOVED
+REMOVED
+73
+REMOVED
+REMOVED
+74
+REMOVED
+REMOVED
+75
+REMOVED
+REMOVED
+76
+REMOVED
+REMOVED
+77
+REMOVED
+REMOVED
+78
+Peridot Gym
+Arène de Péridot
+79
+North Obsidia Ward
+Quartier Obsidienne Nord
+80
+Lapis Ward
+Quartier Lapis
+81
+South Obsidia Ward
+Quartier Obsidienne Sud
+82
+Central Obsidia Salon
+Salon d'Obsidienne Centrale
+83
+Obsidia Pokemon Center
+Centre Pokémon d'Obsidienne
+84
+Devon Corp
+Devon SARL
+85
+Obsidia Slums 1F
+Bidonvilles RDC
+86
+South Obsidia Ward
+Quartier Obsidienne Sud
+87
+REMOVED
+REMOVED
+88
+Obsidia Slums B1F
+Bidonvilles E-1
+89
+Obsidia Slums
+Bidonvilles
+90
+Obsidia Slums 1F
+Bidonvilles RDC
+91
+Obsidia Slums 2F
+Bidonvilles E1
+92
+Obsidia Slums 3F
+Bidonvilles E2
+93
+REMOVED
+REMOVED
+94
+REMOVED
+REMOVED
+95
+Obsidia Slums B1F
+Bidonvilles E-1
+96
+Obsidia Slums B1F
+Bidonvilles E-1
+97
+Coral Ward
+Quartier Corail
+98
+Coral Ward
+Quartier Corail
+99
+Coral Ward
+Quartier Corail
+100
+Coral Pokemon Center
+Centre Pokémon de Corail
+101
+Glamazonia Salon
+Salon Glamazonia
+102
+Obsidia Ward
+Quartier Obsidienne
+103
+Underground Railnet
+Métro Souterrain
+104
+Obsidia Ward
+Quartier Obsidienne
+105
+Obsidia Alleyway
+Ruelles d'Obsidienne
+106
+Obsidia Daycare
+Pension d'Obsidienne
+107
+REMOVED
+REMOVED
+108
+Obsidia Ward
+Quartier Obsidienne
+109
+Coral Ward
+Quartier Corail
+110
+Coral Ward
+Quartier Corail
+111
+Silph CO
+Sylphe SARL
+112
+Department Store
+Centre Commercial
+113
+Department Store
+Centre Commercial
+114
+Department Store 2F
+Centre Commercial E1
+115
+Onyx Ward
+Quartier Onyx
+116
+Onyx Ward
+Quartier Onyx
+117
+Onyx Arcade
+Casino d'Onyx
+118
+Onyx Ward
+Quartier Onyx
+119
+Onyx Trainers' School
+École des Dresseurs d'Onyx
+120
+Onyx Trainers' School
+École des Dresseurs d'Onyx
+121
+Onyx Trainers' School 2F
+École des Dresseurs d'Onyx E1
+122
+Onyx Trainers' School 2F
+École des Dresseurs d'Onyx E1
+123
+Onyx Trainers' School 2F
+École des Dresseurs d'Onyx E1
+124
+Onyx Trainers' School
+École des Dresseurs d'Onyx
+125
+Onyx Trainers' School
+École des Dresseurs d'Onyx
+126
+Onyx Trainers' School
+École des Dresseurs d'Onyx
+127
+Onyx Trainers' Arena
+Arène des Dresseurs d'Onyx
+128
+Onyx Ward
+Quartier Onyx
+129
+Onyx Ward
+Quartier Onyx
+130
+Jasper Ward
+Quartier Jaspe
+131
+REMOVED
+REMOVED
+132
+Malchous Forest Park
+Parc Mauverte
+133
+Police Station
+Commissariat
+134
+Jasper Ward
+Quartier Jaspe
+135
+Jasper Ward
+Quartier Jaspe
+136
+Jasper Pokemon Center
+Centre Pokémon de Jaspe
+137
+Jasper Ward
+Quartier Jaspe
+138
+Jasper Ward
+Quartier Jaspe
+139
+Jasper Ward
+Quartier Jaspe
+140
+Jasper Ward
+Quartier Jaspe
+141
+Department Store 3F
+Centre Commercial E2
+142
+Beryl Ward
+Quartier Béryl
+143
+REMOVED
+REMOVED
+144
+Beryl Bridge
+Pont Béryl
+145
+Aventurine Region
+Région Aventurine
+146
+Abandoned Power Plant
+Centrale Abandonnée
+147
+REMOVED
+REMOVED
+148
+Tourmaline Desert
+Désert de Tourmaline
+149
+Beryl Ward
+Quartier Béryl
+150
+Rhodochrine Jungle
+Jungle Rhodochrine
+151
+Beryl Ward
+Quartier Béryl
+152
+Beryl Cemetery
+Cimetière de Béryl
+153
+The Underroot
+La Racine
+154
+Rhodochrine Jungle
+Jungle Rhodochrine
+155
+Beryl Ward
+Quartier Béryl
+156
+REMOVED
+REMOVED
+157
+REMOVED
+REMOVED
+158
+Beryl Ward
+Quartier Béryl
+159
+Beryl Pokemon Center
+Centre Pokémon de Béryl
+160
+Beryl PokeMart
+Boutique Pokémon de Béryl
+161
+Beryl Ward
+Quartier Béryl
+162
+Beryl Gym
+Arène de Béryl
+163
+Beryl Gym
+Arène de Béryl
+164
+North Obsidia Ward
+Quartier Obsidienne Nord
+165
+North Obsidia Alleyway
+Ruelles d'Obsidienne Nord
+166
+Lapis Pokemon Center
+Centre Pokémon de Lapiz-Lazuli
+167
+Lapis Luxury Cycle
+Magasin de Vélos de Luxe de Lapis-Lazuli
+168
+Lapis Ward
+Quartier Lapis
+169
+Lapis Ward
+Quartier Lapis
+170
+Lapis Alleyway
+Ruelles de Lapis-Lazuli
+171
+Lapis PokeMart
+Boutique Pokémon de Lapis-Lazuli
+172
+Beryl Ward
+Quartier Béryl
+173
+Beryl Ward
+Quartier Béryl
+174
+Lapis Ward
+Quartier Lapis
+175
+Lapis Gym
+Arène de Lapis-Lazuli
+176
+Lapis Gym
+Arène de Lapis-Lazuli
+177
+Grand Stairway
+Grand Escalier
+178
+Grand Stairway B1F
+Grand Escalier E-1
+179
+Grand Stairway B2F
+Grand Escalier E-2
+180
+Grand Stairway B3F
+Grand Escalier E-3
+181
+Dr. Connal's Orphanage
+Orphelinat du Dr. Connal
+182
+Lapis Gym
+Arène de Lapis-Lazuli
+183
+Department Store 4F
+Centre Commercial E3
+184
+Beryl Cave 1F
+Grotte Béryl RDC
+185
+Beryl Cave B1F
+Grotte Béryl E-1
+186
+Beryl Cave B2F
+Grotte Béryl E-2
+187
+REMOVED
+REMOVED
+188
+Grand Stairway B1F
+Grand Escalier E-1
+189
+REMOVED
+REMOVED
+190
+Dr. Connal's Orphanage
+Orphelinat du Dr. Connal
+191
+Dr. Connal's Orphanage
+Orphelinat du Dr. Connal
+192
+Dr. Connal's Orphanage
+Orphelinat du Dr. Connal
+193
+Dr. Connal's Orphanage
+Orphelinat du Dr. Connal
+194
+Dr. Connal's Orphanage
+Orphelinat du Dr. Connal
+195
+Dr. Connal's Orphanage
+Orphelinat du Dr. Connal
+196
+Underground Railnet
+Métro Souterrain
+197
+Yureyu Power Plant
+Centrale Yureyu
+198
+Yureyu Power Plant
+Centrale Yureyu
+199
+Pyrous Mountain B1F
+Mont Pyros E-1
+200
+Pyrous Mountain B2F
+Mont Pyros E-2
+201
+Pyrous Mountain 2F
+Mont Pyros E1
+202
+Pyrous Mountain 2F
+Mont Pyros E1
+203
+Pyrous Mountain 3F
+Mont Pyros E2
+204
+Pyrous Mountain 3F
+Mont Pyros E2
+205
+Pyrous Mountain 4F
+Mont Pyros E3
+206
+Azurine Island
+Ile Azurine
+207
+Observation Facility
+Observatoire
+208
+Observation Facility
+Observatoire
+209
+Byxbysion Wasteland
+Crassier de Byxbysion
+210
+Byxbysion Wasteland
+Crassier de Byxbysion
+211
+Byxbysion Wasteland
+Crassier de Byxbysion
+212
+Wasteland Wall
+Muraille du Crassier
+213
+Wasteland Wall
+Muraille du Crassier
+214
+Byxbysion Tunnels
+Galeries de Byxbysion
+215
+Byxbysion Tunnels
+Galeries de Byxbysion
+216
+Byxbysion Grotto
+Grotte Byxbysion
+217
+Hidden Tunnel
+Tunnel Secret
+218
+Byxbysion Tunnels
+Galeries de Byxbysion
+219
+Byxbysion Grotto
+Grotte Byxbysion
+220
+Byxbysion Grotto
+Grotte Byxbysion
+221
+Byxbysion Grotto
+Grotte Byxbysion
+222
+Byxbysion Grotto
+Grotte Byxbysion
+223
+Wasteland Hideout
+Refuge du Crassier
+224
+Wasteland Hideout
+Refuge du Crassier
+225
+Underground Railnet
+Métro Souterrain
+226
+North Obsidia Ward
+Quartier Obsidienne Nord
+227
+Yureyu HQ
+QG Yureyu
+228
+Underground Railnet
+Métro Souterrain
+229
+Underground Railnet
+Métro Souterrain
+230
+Chrysolia Region
+Région de Chrysolia
+231
+Tanzan Mountain
+Montagne de Tanzan
+232
+Tanzan Cove
+Crique Tanzan
+233
+Belrose Manse
+Villa Belrose
+234
+Chrysolia Forest
+Forêt de Chrysolia
+235
+REMOVED
+REMOVED
+236
+REMOVED
+REMOVED
+237
+REMOVED
+REMOVED
+238
+Chrysolia Spring 1F
+Chrysolia Spring 1F
+239
+Voclain Estate
+Villa Voclain
+240
+Spinel Pokemon Center
+Centre Pokémon de Spinelle
+241
+Spinel Museum
+Musée de Spinelle
+242
+Spinel Town
+Village Spinelle
+243
+Spinel PokeMart
+Boutique de Spinelle
+244
+Tanzan Mountain
+Montagne de Tanzan
+245
+Tanzan Meteor Base
+Base Meteor de Tanzan
+246
+Tanzan Meteor Base
+Base Meteor de Tanzan
+247
+Tanzan Depths
+Profondeurs de Tanzan
+248
+Coral Ward
+Quartier Corail
+249
+Chrysolia Pass
+Défilé de Chrysolia
+250
+Chrysolia Forest
+Forêt de Chrysolia
+251
+Lost Railcave
+Chemin de fer perdu
+252
+Lost Railcave
+Chemin de fer perdu
+253
+Chrysolia Forest
+Forêt de Chrysolia
+254
+Tanzan Meteor Base
+Base Meteor de Tanzan
+255
+Tanzan Meteor Base
+Base Meteor de Tanzan
+256
+Sweet Kiss Candy Shop
+Confiserie Haribonbon
+257
+Tanzan Depths
+Profondeurs de Tanzan
+258
+Tanzan Depths
+Profondeurs de Tanzan
+259
+Tanzan Depths
+Profondeurs de Tanzan
+260
+Tanzan Depths
+Profondeurs de Tanzan
+261
+Tanzan Depths
+Profondeurs de Tanzan
+262
+Tanzan Depths
+Profondeurs de Tanzan
+263
+Tanzan Depths
+Profondeurs de Tanzan
+264
+Tanzan Depths
+Profondeurs de Tanzan
+265
+Tanzan Peak
+Pic de Tanzan
+266
+Reset Map
+Carte Reset
+267
+REMOVED
+REMOVED
+268
+REMOVED
+REMOVED
+269
+Obsidia Park
+Parc d'Obsidienne
+270
+REMOVED
+REMOVED
+271
+Spinel Town
+Village Spinelle
+272
+Tanzan Mountain
+Montagne de Tanzan
+273
+Tanzan Mountain
+Montagne de Tanzan
+274
+Chrysolia Pass
+Défilé de Chrysolia
+275
+Byxbysion Cave
+Caverne de Byxbysion
+276
+Byxbysion Cave 2F
+Caverne de Byxbysion E1
+277
+Byxbysion Cave 3F
+Caverne de Byxbysion E2
+278
+Wasteland Wall
+Muraille du Crassier
+279
+Wasteland Wall
+Muraille du Crassier
+280
+Wasteland Wall
+Muraille du Crassier
+281
+Yureyu Power Plant
+Centrale Yureyu
+282
+South Aventurine Woods
+Bois d'Aventurine Sud
+283
+South Aventurine Woods
+Bois d'Aventurine Sud
+284
+South Aventurine Woods
+Bois d'Aventurine Sud
+285
+Route 1
+Route 1
+286
+Route 1
+Route 1
+287
+Route 1
+Route 1
+288
+North Aventurine Woods
+Bois d'Aventurine Nord
+289
+North Aventurine Woods
+Bois d'Aventurine Nord
+290
+Route 1
+Route 1
+291
+Route 1
+Route 1
+292
+Vanhanen Labyrinth
+Labyrinthe de Vanhanen
+293
+Vanhanen Castle
+Château de Vanhanen
+294
+Nature Center
+Centre Naturel
+295
+Grand Gate
+Grandes Portes
+296
+Grand Gate
+Grandes Portes
+297
+Agate City Checkpoint
+Douane d'Agate
+298
+Agate City Checkpoint
+Douane d'Agate
+299
+Nyu's House
+Maison de Nyu
+300
+REMOVED
+REMOVED
+301
+REMOVED
+REMOVED
+302
+Grand Gate
+Grandes Portes
+303
+Grand... Somewhere
+Grand... Quelque Part
+304
+Grand... Somewhere
+Grand... Quelque Part
+305
+Citae Astrae
+Citae Astrae
+306
+Citae Astrae
+Citae Astrae
+307
+Citae Astrae
+Citae Astrae
+308
+Citae Astrae
+Citae Astrae
+309
+Citae Astrae
+Citae Astrae
+310
+Ruby Tower
+Tour Rubis
+311
+Amethyst Tower
+Tour Améthyste
+312
+Grand Gate
+Grandes Portes
+313
+Vanhanen Castle
+Château de Vanhanen
+314
+Vanhanen Castle
+Château de Vanhanen
+315
+Vanhanen Castle
+Château de Vanhanen
+316
+Vanhanen Castle
+Château de Vanhanen
+317
+Vanhanen Castle
+Château de Vanhanen
+318
+Vanhanen Castle
+Château de Vanhanen
+319
+Reset
+Reset
+320
+Slums Playground
+Aire de Jeu des Bidonvilles
+321
+Slums Playground
+Aire de Jeu des Bidonvilles
+322
+Sweet Scent Flower Shop
+Jardinerie Doux Parfum
+323
+Grand Hall
+Grand Hall
+324
+7th Street
+7ème Avenue
+325
+7th Street
+7ème Avenue
+326
+7th Street
+7ème Avenue
+327
+7th Street Watering Hole
+Puits de la 7ème Avenue
+328
+Beryl Wall
+Mur de Béryl
+329
+Subseven Sanctum
+Sanctuaire des Sept
+330
+Subseven Sanctum
+Sanctuaire des Sept
+331
+Subseven Sanctum
+Sanctuaire des Sept
+332
+Subseven Sanctum
+Sanctuaire des Sept
+333
+Iolia Valley
+Vallée d'Iolia
+334
+Iolia Valley
+Vallée d'Iolia
+335
+Iolia Valley
+Vallée d'Iolia
+336
+Iolia Valley
+Vallée d'Iolia
+337
+Iolia Valley
+Vallée d'Iolia
+338
+Iolia Valley
+Vallée d'Iolia
+339
+Iolia Valley
+Vallée d'Iolia
+340
+Iolia Valley
+Vallée d'Iolia
+341
+Iolia Valley
+Vallée d'Iolia
+342
+Iolia Valley
+Vallée d'Iolia
+343
+Iolia Valley
+Vallée d'Iolia
+344
+Iolia Valley
+Vallée d'Iolia
+345
+Iolia Valley
+Vallée d'Iolia
+346
+Iolia Valley
+Vallée d'Iolia
+347
+Iolia Valley
+Vallée d'Iolia
+348
+Iolia Valley
+Vallée d'Iolia
+349
+Iolia Valley
+Vallée d'Iolia
+350
+Iolia Valley
+Vallée d'Iolia
+351
+Peridot Gym
+Arène de Péridot
+352
+7th Street
+7ème Avenue
+353
+REMOVED
+REMOVED
+354
+Agate City
+Agate
+355
+Agate Circus
+Cirque d'Agate
+356
+Big Top
+Scène de Spectacle
+357
+Big Top
+Scène de Spectacle
+358
+Route 2
+Route 2
+359
+Celestinine Cascade
+Cascade Célestine
+360
+Route 2
+Route 2
+361
+Route 3
+Route 3
+362
+Fiore Mansion
+Manoir Fiore
+363
+Carnelia Region
+Région Carnélia
+364
+Ametrine Mountain 2F
+Montagne Amétrine E1
+365
+Agate Circus Checkpoint
+Douane du Cirque d'Agate
+366
+Ametrine Mountain 3F
+Montagne Amétrine E2
+367
+Reset Map
+Reset Map
+368
+Underground Railnet
+Métro Souterrain
+369
+Critical Capture
+Capture Critique
+370
+Beryl Gym
+Arène de Béryl
+371
+Tanzan Mountain
+Montagne de Tanzan
+372
+Celestinine Cascade
+Cascade Célestine
+373
+Ametrine Mountain 4F
+Montagne Amétrine E3
+374
+Ametrine Mountain 5F
+Montagne Amétrine E4
+375
+Ametrine Mountain 1F
+Montagne Amétrine RDC
+376
+Ametrine Mountain B1F
+Montagne Amétrine E-1
+377
+Ametrine Mountain B2F
+Montagne Amétrine E-2
+378
+Ametrine Mountain B3F
+Montagne Amétrine E-3
+379
+Ametrine Mountain B4F
+Montagne Amétrine E-4
+380
+Celestinine Mountain 1F
+Montagne Célestine RDC
+381
+Citrine Mountain 1F
+Montagne Citrine RDC
+382
+Citrine Mountain 2F
+Montagne Citrine E1
+383
+Citrine Mountain 3F
+Montagne Citrine E2
+384
+Celestinine Mountain 2F
+Montagne Célestine E1
+385
+Celestinine Mountain 3F
+Montagne Célestine E2
+386
+Celestinine Mountain B1F
+Montagne Célestine E-1
+387
+Celestinine Mountain B2F
+Montagne Célestine E-2
+388
+Celestinine Mountain B3F
+Montagne Célestine E-3
+389
+Ametrine Mountain 1F
+Montagne Amétrine RDC
+390
+Ametrine Mountain 2F
+Montagne Amétrine E1
+391
+Ametrine Mountain 2F
+Montagne Amétrine E1
+392
+Ametrine Mountain 2F
+Montagne Amétrine E1
+393
+Ametrine Mountain B1F
+Montagne Amétrine E-1
+394
+Ametrine Mountain B2F
+Montagne Amétrine E-2
+395
+Ametrine Mountain B3F
+Montagne Amétrine E-3
+396
+Celestinine Mountain 4F
+Montagne Célestine E3
+397
+Celestinine Mountain 1F
+Montagne Célestine RDC
+398
+Celestinine Mountain 2F
+Montagne Célestine E1
+399
+Celestinine Mountain B1F
+Montagne Célestine E-1
+400
+Celestinine Mountain B2F
+Montagne Célestine E-2
+401
+Celestinine Mountain B3F
+Montagne Célestine E-3
+402
+Ametrine Mountain B2F
+Montagne Amétrine E-2
+403
+Ametrine Mountain B3F
+Montagne Amétrine E-3
+404
+Route 3
+Route 3
+405
+Route 3
+Route 3
+406
+LCCC
+LCCC
+407
+LCCC
+LCCC
+408
+LCCC
+LCCC
+409
+Route 3
+Route 3
+410
+Route 3
+Route 3
+411
+Route 3
+Route 3
+412
+Route 4
+Route 4
+413
+Calcenon City
+Calcinéon
+414
+Labradorra City
+Labradorra
+415
+Calcenon Pokemon Center
+Centre Pokémon de Calcinéon
+416
+Calcenon PokeMart
+Boutique de Calcinéon
+417
+Calcenon City
+Calcinéon
+418
+Calcenon Checkpoint
+Douane de Calcinéon
+419
+Calcenon Gym
+Arène de Calcinéon
+420
+Coral Stairway
+Escalier de Corail
+421
+Onyx Stairway
+Escalier d'Onyx
+422
+Beryl Stairway
+Escalier de Béryl
+423
+Jasper Stairway
+Escalier de Jaspe
+424
+Lapis Checkpoint
+Douane de Lapis-Lazuli
+425
+Department Store Penthouse
+Terrasse du Centre Commercial
+426
+Beryl Library
+Bibliothèque de Béryl
+427
+Beryl Library
+Bibliothèque de Béryl
+428
+REMOVED
+REMOVED
+429
+Citrine Mountain 2F
+Montagne Citrine E1
+430
+Celestinine Mountain 2F
+Montagne Célestine E1
+431
+Celestinine Mountain 2F
+Montagne Célestine E1
+432
+Ametrine Mountain 2F
+Montagne Amétrine E1
+433
+Celestinine Mountain B2F
+Montagne Célestine E-2
+434
+Celestinine Mountain B2F
+Montagne Célestine E-2
+435
+Celestinine Mountain B2F
+Montagne Célestine E-2
+436
+Celestinine Mountain B2F
+Montagne Célestine E-2
+437
+Beryl Gym
+Arène de Béryl
+438
+Route 3
+Route 3
+439
+Ametrine City
+Amétrine
+440
+Ametrine Mountain 6F
+Montagne Amétrine E5
+441
+Ametrine Mountain 7F
+Montagne Amétrine E6
+442
+Ametrine Mountain 8F
+Montagne Amétrine E7
+443
+Route 23
+Route 23
+444
+Glitch City
+Glitch City
+445
+Mt Moon
+Mont Sélénite
+446
+Pokemon League
+Ligue Pokémon
+447
+Opal Ward
+Quartier Opale
+448
+Rocket Hideout
+Repaire Rocket
+449
+Lavender Town
+Lavanville
+450
+Byxbysion Wasteland
+Crassier de Byxbysion
+451
+Pokemon Mansion
+Manoir Pokémon
+452
+Citae Astrae
+Citae Astrae
+453
+Victory Road
+Route Victoire
+454
+Indigo Plateau
+Plateau Indigo
+455
+Cerulean Cave
+Caverne Azurée
+456
+Champion Room
+Chambre du Maître
+457
+Ametrine City
+Amétrine
+458
+Ametrine Pokemon Center
+Centre Pokémon d'Amétrine
+459
+Ametrine PokeMart
+Boutique d'Amétrine
+460
+Ametrine City
+Amétrine
+461
+Ametrine City
+Amétrine
+462
+Ametrine City
+Amétrine
+463
+Ametrine Mountain 2F
+Montagne Amétrine E1
+464
+Ametrine Cave
+Caverne d'Amétrine
+465
+Chrysolia Forest
+Forêt de Chrysolia
+466
+Celestinine Cascade
+Cascade Célestine
+467
+Water Treatment Center
+Centre de Traitement des Eaux
+468
+Lapis Water Grid
+Lapis Water Grid
+469
+Central Obsidia Water Grid
+Réseau d'Eau d'Obsidienne Centrale
+470
+North Obsidia Water Grid
+Réseau d'Eau d'Obsidienne Nord
+471
+Onyx Water Grid
+Réseau d'Eau d'Onyx
+472
+Coral Water Grid
+Réseau d'Eau de Corail
+473
+Opal Water Grid
+Réseau d'Eau d'Opale
+474
+Peridot Water Grid
+Réseau d'Eau de Péridot
+475
+Jasper Water Grid
+Réseau d'Eau de Jaspe
+476
+Beryl Water Grid
+Réseau d'Eau de Béryl
+477
+Water Treatment Center
+Centre de Traitement des Eaux
+478
+Water Treatment Center
+Centre de Traitement des Eaux
+479
+North Obsidia Water Grid
+Réseau d'Eau d'Obsidienne Nord
+480
+North Obsidia Water Grid
+Réseau d'Eau d'Obsidienne Nord
+481
+Central Obsidia Water Grid
+Réseau d'Eau d'Obsidienne Centrale
+482
+Central Obsidia Water Grid
+Réseau d'Eau d'Obsidienne Centrale
+483
+Onyx Water Grid
+Réseau d'Eau d'Onyx
+484
+Onyx Water Grid
+Réseau d'Eau d'Onyx
+485
+Coral Water Grid
+Réseau d'Eau de Corail
+486
+Coral Water Grid
+Réseau d'Eau de Corail
+487
+Opal Water Grid
+Réseau d'Eau d'Opale
+488
+Opal Water Grid
+Réseau d'Eau d'Opale
+489
+Peridot Water Grid
+Réseau d'Eau de Péridot
+490
+Peridot Water Grid
+Réseau d'Eau de Péridot
+491
+Lapis Water Grid
+Réseau d'eau de Lapis
+492
+Lapis Water Grid
+Réseau d'eau de Lapis
+493
+Jasper Water Grid
+Réseau d'Eau de Jaspe
+494
+Jasper Water Grid
+Réseau d'Eau de Jaspe
+495
+Beryl Water Grid
+Réseau d'Eau de Béryl
+496
+Beryl Water Grid
+Réseau d'Eau de Béryl
+497
+North Obsidia Water Grid
+Réseau d'Eau d'Obsidienne Nord
+498
+Central Obsidia Water Grid
+Réseau d'Eau d'Obsidienne Centrale
+499
+Onyx Water Grid
+Réseau d'Eau d'Onyx
+500
+Coral Water Grid
+Réseau d'Eau de Corail
+501
+Opal Water Grid
+Réseau d'Eau d'Opale
+502
+Peridot Water Grid
+Réseau d'Eau de Péridot
+503
+Lapis Water Grid
+Réseau d'Eau de Lapis
+504
+Jasper Water Grid
+Réseau d'Eau de Jaspe
+505
+Beryl Water Grid
+Réseau d'Eau de Béryl
+506
+Voclain Estate
+Villa Voclain
+507
+Iolia Valley
+Vallée d'Iolia
+508
+Fiore Mansion
+Manoir Fiore
+509
+Fiore Mansion
+Manoir Fiore
+511
+Neoteric Isle
+Neoteric Isle
+512
+Grand Stairway B3F
+Grand Escalier E-3
+513
+Opal Ward
+Quartier Opale
+514
+REMOVED
+REMOVED
+515
+REMOVED
+REMOVED
+516
+Onyx Trainers' School 3F
+École des Dresseurs d'Onyx E2
+517
+The Spyce
+Le Pimenté
+518
+Neo Reborn City
+Néo-Reborn
+519
+Opal Ward
+Quartier Opale
+520
+Obsidia Ward
+Quartier Obsidienne
+521
+Onyx Ward
+Quartier Onyx
+522
+Peridot Ward
+Quartier Péridot
+523
+Jasper Ward
+Quartier Jaspe
+524
+Lapis Ward
+Quartier Lapis
+525
+Beryl Ward
+Quartier Béryl
+526
+Coral Ward
+Quartier Corail
+527
+North Obsidia Ward
+Quartier Obsidienne Nord
+528
+South Obsidia Ward
+Quartier Obsidienne Sud
+529
+North Obsidia Alleyway
+Ruelles d'Obsidienne Nord
+530
+Lower Peridot Ward
+Bas Quartier Péridot
+531
+South Peridot Alley
+Ruelle Péridot Sud
+532
+North Peridot Alley
+Ruelle Péridot Nord
+533
+Malchous Forest Park
+Parc Mauverte
+534
+Jasper Ward
+Quartier Jaspe
+535
+Jasper Ward
+Quartier Jaspe
+536
+Azurine Lake
+Lac Azurine
+537
+Jasper Ward
+Quartier Jaspe
+538
+Azurine Lake
+Lac Azurine
+539
+Jasper Stairway
+Escalier de Jaspe
+540
+Onyx Stairway
+Escalier d'Onyx
+541
+Goldenrod Station
+Gare Doublon
+542
+Lapis Community Garden
+Potager de Lapis-Lazuli
+543
+Beryl Bridge
+Pont Béryl
+544
+Beryl Ward
+Quartier Béryl
+545
+Chrysolia Spring B1F
+Sources Chrysolia -1
+546
+Chrysolia Spring Sauna
+Sources Chaudes Chrysolia
+547
+Azurine Lake
+Lac Azurine
+548
+Beryl Library
+Bibliothèque de Béryl
+549
+Beryl Library
+Bibliothèque de Béryl
+550
+REMOVED
+REMOVED
+551
+Beryl Ward
+Quartier Béryl
+552
+Beryl Cemetery
+Cimetière de Béryl
+553
+Azurine Lake
+Lac Azurine
+554
+Beryl Stairway
+Escalier de Béryl
+555
+Coral Ward
+Quartier Corail
+556
+Azurine Lake
+Lac Azurine
+557
+Shantyport Station
+Gare du Vieux Port
+558
+Azurine Lake
+Lac Azurine
+559
+Coral Stairway
+Escalier de Corail
+560
+Abandoned Power Plant
+Centrale Abandonnée
+561
+Neo Apophyll
+Néo-Apophylle
+562
+Apophyll Beach
+Plage d'Apophylle
+563
+Apophyll Beach
+Plage d'Apophylle
+564
+Apophyll Academy
+Académie d'Apophylle
+565
+Apophyll Beach
+Plage d'Apophylle
+566
+Apophyll Beach
+Plage d'Apophylle
+567
+Apophyll Beach
+Plage d'Apophylle
+568
+Pyrous Mountain
+Mont Pyros
+569
+Azurine Island
+Ile Azurine
+570
+Obsidia Alleyway
+Ruelles d'Obsidienne
+571
+Sweet Co HQ
+Sweet Co
+572
+Grand Gate
+Grandes Portes
+573
+Onyx Ward
+Quartier Onyx
+574
+Azurine Lake
+Lac Azurine
+575
+Azurine Lake
+Lac Azurine
+576
+Azurine Lake
+Lac Azurine
+577
+Azurine Lake
+Lac Azurine
+578
+Azurine Lake
+Lac Azurine
+579
+Azurine Lake
+Lac Azurine
+585
+South Obsidia Ward
+Quartier Obsidienne Sud
+586
+Azurine Island
+Ile Azurine
+587
+SOLICE Lobby
+Accueil de LEPOS
+588
+Grand Stairway
+Grand Escalier
+589
+Celestinine Cascade
+Cascade Célestine
+590
+Ivyline Station
+Gare d'Ivyline
+591
+Grandview Station
+Gare Bellevue
+592
+Blacksteam Shelter 3F
+Refuge Charbon E2
+593
+Blacksteam Shelter 2F
+Refuge Charbon E1
+594
+Blacksteam Shelter 1F
+Refuge Charbon RDC
+595
+Blacksteam Shelter B1F
+Refuge Charbon E-1
+596
+Blacksteam Shelter B2F
+Refuge Charbon E-2
+597
+Peony Station
+Gare Pivoine
+598
+Jasper Pokemon Center
+Centre Pokémon de Jaspe
+599
+Kingsbury Station
+Gare Royale
+600
+Beryl Ward
+Quartier Béryl
+601
+Azurine Center
+Centre Azurine
+602
+Underground Railnet
+Métro Souterrain
+603
+Azurine Cave
+Caverne Azurine
+604
+Azurine Cave
+Caverne Azurine
+605
+Azurine Cave
+Caverne Azurine
+606
+GUM Room
+Salle GUM
+607
+Tanzan Cove
+Crique Tanzan
+608
+Coral Ward
+Quartier Corail
+609
+Coral Lighthouse
+Phare Corail
+610
+Coral Lighthouse
+Phare Corail
+611
+Medicine Market
+Pharmacie
+612
+Lapis Ward
+Quartier Lapis
+613
+Coral Gym
+Quartier Corail
+614
+Tanzan Depths
+Profondeurs de Tanzan
+615
+Tanzan Depths
+Profondeurs de Tanzan
+616
+Tanzan Depths
+Profondeurs de Tanzan
+617
+Tanzan Depths
+Profondeurs de Tanzan
+618
+Tanzan Depths
+Profondeurs de Tanzan
+619
+Tanzan Depths
+Profondeurs de Tanzan
+620
+Tanzan Depths
+Profondeurs de Tanzan
+621
+Tanzan Depths
+Profondeurs de Tanzan
+622
+Devon Corp B1F
+Devon SARL E-1
+623
+Devon Corp 2F
+Devon SARL E1
+624
+Devon Corp 3F
+Devon SARL E2
+625
+Devon Corp 4F
+Devon SARL E3
+626
+Devon Corp 5F
+Devon SARL E4
+627
+Devon Corp 6F
+Devon SARL E5
+628
+Devon Corp?
+Devon SARL?
+629
+Devon Corp?
+Devon SARL?
+630
+Devon Corp?
+Devon SARL?
+631
+Devon Corp?
+Devon SARL?
+632
+Devon Corp?
+Devon SARL?
+633
+Underground Railnet
+Métro Souterrain
+634
+Underground Railnet
+Métro Souterrain
+635
+Underground Railnet
+Métro Souterrain
+636
+Route 2
+Route 2
+637
+7th Street
+7ème Avenue
+638
+Teknite Cave
+Grotte Teknite
+639
+Teknite Cave 2F
+Grotte Teknite E1
+640
+Teknite Cave 3F
+Grotte Teknite E2
+641
+Teknite Cave 4F
+Grotte Teknite E3
+642
+Teknite Ridge
+Crête Teknite
+643
+Teknite Ridge
+Crête Teknite
+644
+Teknite Cave 4F
+Grotte Teknite E3
+645
+Teknite Cave 3-4F
+Grotte Teknite E2-3
+646
+Teknite Ridge
+Crête Teknite
+647
+Teknite Cave 2F
+Grotte Teknite E1
+648
+Teknite Cave 3F
+Grotte Teknite E2
+649
+Teknite Cave 3-4F
+Grotte Teknite E2-3
+650
+Teknite Cave 4F
+Grotte Teknite E3
+651
+Sugiline Cave
+Grotte Sugilite
+652
+Sugiline Cave
+Grotte Sugilite
+653
+Sugiline Cave
+Grotte Sugilite
+654
+Sugiline Cave
+Grotte Sugilite
+655
+Sugiline Cave
+Grotte Sugilite
+656
+Sugiline Cave B1F
+Grotte Sugilite E-1
+657
+Sugiline Cave B1F
+Grotte Sugilite E-1
+658
+Sugiline Cave B1F
+Grotte Sugilite E-1
+659
+Sugiline Cave B1F
+Grotte Sugilite E-1
+660
+Sugiline Ruin
+Ruines Sugilite
+661
+Sugiline Ruin
+Ruines Sugilite
+662
+Sugiline Ruin B1F
+Ruines Sugilite E-1
+663
+1R253 Scrapyard
+Parc à Ferrailles 1R253
+664
+7R099 Scrap
+Ferrailles 7R099
+665
+4R182 Scrap
+Ferrailles 4R182
+666
+2R400 Scrap
+Ferrailes 2R400
+667
+Intro Train
+Train de Départ
+668
+Mirage Tower
+Tour Mirage
+669
+Mirage Tower B1F
+Tour Mirage E-1
+670
+Mirage Tower 2F
+Tour Mirage E1
+671
+Mirage Tower 3F
+Tour Mirage E2
+672
+Mirage Tower 4F
+Tour Mirage E3
+673
+Mirage Tower 5F
+Tour Mirage E4
+674
+Mirage Tower 6F
+Tour Mirage E5
+675
+Tourmaline Desert
+Désert de Tourmaline
+676
+Mirage Tower
+Tour Mirage
+677
+Mirage Tower
+Tour Mirage
+678
+Fiore Gym
+Arène de Fiore
+679
+Fiore Arena
+Arène de Fiore
+680
+Fiore Gym
+Arène de Fiore
+681
+Fiore Gym
+Arène de Fiore
+682
+Fiore Gym
+Arène de Fiore
+683
+Fiore Gym
+Arène de Fiore
+686
+1R108 Scrap
+Ferrailles 1R108
+687
+Tourmaline Desert
+Désert de Tourmaline
+688
+Tourmaline Desert
+Désert de Tourmaline
+689
+Tourmaline Desert
+Désert de Tourmaline
+690
+Mirage Tower 4F
+Tour Mirage E3
+691
+1R253 Scrapyard
+Parc à Ferrailles 1R253
+692
+1R253 Scrapyard
+Parc à Ferrailles 1R253
+693
+1R253 Scrapyard
+Parc à Ferrailles 1R253
+694
+Tourmaline Desert
+Désert de Tourmaline
+695
+Tourmaline Desert
+Désert de Tourmaline
+696
+Once Upon a Somewhere
+Il Était Un Endroit
+697
+Once Upon a Somewhere
+Il Était Un Endroit
+698
+Castle at Wit's End
+Château des Résignés
+699
+Tower Corybantia
+Tour Corybantia
+700
+Once Upon a Waste of Time
+Il Était Zéro Fois
+701
+The Belly of the Beast
+Le Ventre de La Bête
+702
+Never After
+Pour Jamais
+703
+Tourmaline Desert
+Désert de Tourmaline
+704
+Tourmaline Desert
+Désert de Tourmaline
+705
+Tourmaline Desert
+Désert de Tourmaline
+706
+Mirage Tower 5F
+Tour Mirage E4
+707
+Mirage Tower
+Tour Mirage
+708
+Mirage Tower 3F
+Tour Mirage E2
+709
+Mirage Tower 2F
+Tour Mirage E1
+710
+Route 4
+Route 4
+711
+Route 4
+Route 4
+712
+Route 4
+Route 4
+713
+Route 4
+Route 4
+714
+Route 4
+Route 4
+715
+Route 4
+Route 4
+716
+Route 4
+Route 4
+717
+Route 4
+Route 4
+718
+Route 4
+Route 4
+719
+Route 4
+Route 4
+720
+Route 4
+Route 4
+721
+Route 4
+Route 4
+722
+Route 4
+Route 4
+723
+Route 4
+Route 4
+724
+Route 4
+Route 4
+725
+Route 4
+Route 4
+726
+Route 4
+Route 4
+727
+Route 4
+Route 4
+728
+Route 4
+Route 4
+729
+Route 4
+Route 4
+730
+Abandoned Warehouse
+Entrepôt Abandonné
+731
+Abandoned Warehouse
+Entrepôt Abandonné
+732
+Glass Workstation
+Atelier de Verrerie
+733
+Glass Workstation
+Atelier de Verrerie
+734
+Glass Workstation
+Atelier de Verrerie
+735
+Glass Workstation
+Atelier de Verrerie
+736
+Glass Workstation B1F
+Atelier de Verrerie E-1
+737
+Glass Workstation B2F
+Atelier de Verrerie E-2
+738
+Glass Workstation B2F
+Atelier de Verrerie E-2
+739
+Agate Gym
+Arène d'Agate
+740
+Agate Arena
+Arène d'Agate
+741
+Agate City
+Agate
+742
+Route 4
+Route 4
+743
+Beryl Cave 2F
+Grotte Béryl E1
+744
+Teknite Ridge
+Crête Teknite
+745
+Teknite Cave
+Grotte Teknite
+746
+Teknite Cave
+Grotte Teknite
+747
+Teknite Cave
+Grotte Teknite
+748
+Mechanic Shed
+Mechanic Shed
+749
+Charous Mountain B2F
+Mont Chaorite E-2
+750
+Charous Mountain B2F
+Mont Chaorite E-2
+751
+Agate PokeMart
+Boutique d'Agate
+752
+Agate Pokemon Center
+Centre Pokémon d'Agate
+753
+Agate City
+Agate
+754
+???
+???
+755
+???
+???
+756
+???
+???
+757
+???
+???
+758
+???
+???
+759
+???
+???
+760
+Underground Railnet
+Métro Souterrain
+761
+Railnet Train
+Wagon de Métro
+762
+Underground Railnet
+Métro Souterrain
+763
+Agate City
+Agate
+764
+Grand Hall
+Grand Hall
+765
+Devon Corp?
+Devon SARL?
+766
+Calcenon City
+Calcinéon
+767
+Agate City
+Agate
+768
+Labradorra Arena
+Arène de Labradorra
+769
+Labradorra Arena
+Arène de Labradorra
+770
+Labradorra Arena
+Arène de Labradorra
+771
+Labradorra Arena
+Arène de Labradorra
+772
+Labradorra Pokemon Center
+Centre Pokémon de Labradorra
+773
+Labradorra PokeMart
+Boutique de Labradorra
+774
+Labradorra City
+Labradorra
+775
+LCCC
+CCLC
+776
+Labradorra Arena
+Arène de Labradorra
+777
+Labradorra Arena
+Arène de Labradorra
+778
+Labradorra Arena
+Arène de Labradorra
+779
+Labradorra Gym
+Arène de Labradorra
+780
+Labradorra Gym
+Arène de Labradorra
+781
+Labradorra City
+Labradorra
+782
+Victory Road Pokemon Center
+Centre Pokémon Route Victoire
+783
+Victory Road
+Route Victoire
+784
+Victory Road
+Route Victoire
+785
+Victory Road 2F
+Route Victoire E1
+786
+Victory Road B1F
+Route Victoire E-1
+787
+Victory Road
+Route Victoire
+788
+Victory Road 2F
+Route Victoire E1
+789
+Victory Road 2F
+Route Victoire E1
+790
+Victory Road B1F
+Route Victoire E-1
+791
+Victory Road B2F
+Route Victoire E-2
+792
+Charous Mountain
+Mont Chaorite
+793
+Charous Mountain 2F
+Montagne Chaorite
+794
+Charous Path
+Chemin de Chaorite
+795
+Victory Road 2F
+Route Victoire E-2
+796
+Victory Road
+Route Victoire
+797
+Victory Road
+Route Victoire
+798
+Victory Road
+Route Victoire
+799
+Victory Road B3F
+Route Victoire E-3
+800
+Victory Road B3F
+Route Victoire E-3
+801
+Victory Road B3F
+Route Victoire E-3
+802
+Victory Road B3F
+Route Victoire E-3
+803
+Victory Road B4F
+Route Victoire E-4
+804
+Victory Road B4F
+Route Victoire E-4
+805
+Victory Road B4F
+Route Victoire E-4
+806
+Victory Road B4F
+Route Victoire E-4
+807
+Victory Road B5F
+Route Victoire E-5
+808
+Victory Road B5F
+Route Victoire E-5
+809
+Victory Road B5F
+Route Victoire E-5
+810
+Victory Road B5F
+Route Victoire E-5
+811
+Victory Road B1F
+Route Victoire E-1
+812
+Victory Road
+Route Victoire
+813
+Victory Road
+Route Victoire
+814
+Charous Mountain
+Mont Chaorite
+815
+Charous Hall
+Hall de Chaorite
+816
+Charous Pokemon Center
+Centre Pokémon de Chaorite
+817
+Charous Hall
+Hall de Chaorite
+818
+Charous Hall
+Hall de Chaorite
+819
+Charous Hall
+Hall de Chaorite
+820
+Charous Hall
+Hall de Chaorite
+821
+Charous Hall
+Hall de Chaorite
+822
+Emerald Tower
+Tour Émeraude
+823
+Sapphire Tower
+Tour Saphir
+824
+New World
+Nouveau Monde
+825
+New World
+Nouveau Monde
+826
+Nightclub
+Discothèque
+827
+Nightclub Interior
+Nightclub Interior
+828
+Nightclub Arena
+Arène de la Discothèque
+829
+Battle Pavilion
+Battle Pavilion
+830
+The Emporium
+The Emporium
+831
+New World
+Nouveau Monde
+832
+Vanhanen Castle
+Château de Vanhanen
+833
+New World
+Nouveau Monde
+834
+New World
+Nouveau Monde
+835
+New World
+Nouveau Monde
+836
+New World
+Nouveau Monde
+837
+New World
+Nouveau Monde
+838
+New World
+Nouveau Monde
+839
+New World
+Nouveau Monde
+840
+Chrysolia Deepwoods
+Chrysolia Deepwoods
+841
+Twilight Desert
+Désert Crépuscule
+842
+Battle Factory
+Usine de Combat
+843
+Charous Hall
+Hall de Chaorite
+844
+Vacant Past
+Passé Lointain
+845
+Charous Hall
+Hall de Chaorite
+846
+Twilight Factory
+Usine Crépuscule
+847
+New World
+Nouveau Monde
+848
+Manyworld Forest
+Manyworld Forest
+849
+Aegir Cave
+Grotte Aegir
+850
+Aegir Cave
+Grotte Aegir
+851
+Aegir Cave
+Grotte Aegir
+852
+New World
+Nouveau Monde
+853
+New World
+Nouveau Monde
+854
+Not Truly For Children
+Not Truly For Children
+855
+Tabula Rasa
+Tabula Rasa
+856
+Unexplored Territory
+Territoire Inexploré
+857
+Unexplored Territory
+Territoire Inexploré
+858
+Q81RK7
+Q81RK7
+859
+Unexplored Territory
+Territoire Inexploré
+860
+Aegir Cave Depths
+Aegir Cave Depths
+861
+Tourmaline Desert
+Désert de Tourmaline
+862
+Splash Grounds
+Splash Grounds
+863
+Tourmaline Desert
+Désert de Tourmaline
+865
+New World
+Nouveau Monde
+866
+New World
+Nouveau Monde
+867
+Agate Circus
+Cirque d'Agate
+868
+Battle Wheel
+Roue de Combat
+869
+Manyworld Pool
+Manyworld Pool
+870
+Ametrine Core
+Ametrine Core
+871
+Subseven Sanctum
+Sanctuaire des Sept
+872
+Ametrine Core
+Ametrine Core
+873
+Ametrine Core
+Ametrine Core
+874
+Triskeline Toybox
+Triskeline Toybox
+875
+Chrysolia Deepwoods
+Chrysolia Deepwoods
+876
+Cauldron of the Future
+Cauldron of the Future
+877
+Neo Blacksteam Fabrication
+Neo Blacksteam Fabrication
+878
+Idyll of Pestilence
+Idyll of Pestilence
+879
+Idyll of Panaceance
+Idyll of Panaceance
+880
+Mirage Tower?
+Tour Mirage?
+881
+Mirage Tower?
+Tour Mirage?
+882
+Mirage Tower?
+Tour Mirage?
+883
+New World
+Nouveau Monde
+884
+New World Crash
+New World Crash
+885
+Jasper Ward Gym
+Arène de Jaspe
+886
+Rhodochrine Tree
+Rhodochrine Tree
+887
+New World Helix
+New World Helix
+888
+New World Helix
+New World Helix
+889
+Rhodochrine Tree
+Rhodochrine Tree
+890
+Distorted Space
+Distorted Space
+891
+Distorted Space
+Distorted Space
+892
+Distorted Space
+Distorted Space
+893
+Stalemate
+Stalemate
+894
+Endgame
+Endgame
+895
+Neoteric Isle
+Neoteric Isle
+896
+Citae Prisma
+Citae Prisma
+897
+New World Asylum
+New World Asylum
+898
+New World Asylum
+New World Asylum
+899
+Ending Handler
+Ending Handler
+900
+Another Time
+Un Autre Temps
+901
+Grand Hall SEEKRIT Room
+Grand Hall SEEKRIT Room
+902
+Citae Astrae
+Citae Astrae

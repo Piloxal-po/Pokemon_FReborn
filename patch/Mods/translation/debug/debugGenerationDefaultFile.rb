@@ -2,12 +2,20 @@ def generateDebugTranslationModFile
     lang = choiceLanguage
     dir = DIR_DEBUG_I18N + lang
     debugMkdir(dir)
-    generateAbilityDebugTranslationModFile(dir)
-    generateMoveDebugTranslationModFile(dir)
-    generateMessageDebugTranslationFile(dir)
-    generateItemsDebugTranslationFile(dir)
-    generateMonsDebugTranslationFile(dir)
-    generateNaturesDebugTranslationFile(dir)
+    t2 = Thread.new{generateAbilityDebugTranslationModFile(dir)}
+    t3 = Thread.new{generateMoveDebugTranslationModFile(dir)}
+    t4 = Thread.new{generateMessageDebugTranslationFile(dir)}
+    t5 = Thread.new{generateItemsDebugTranslationFile(dir)}
+    t6 = Thread.new{generateMonsDebugTranslationFile(dir)}
+    t7 = Thread.new{generateNaturesDebugTranslationFile(dir)}
+    t8 = Thread.new{generateMapInfoDebugTranslationFile(dir)}
+    t2.join()
+    t3.join()
+    t4.join()
+    t5.join()
+    t6.join()
+    t7.join()
+    t8.join()
 end
 
 def generateAbilityDebugTranslationModFile(dir)
@@ -164,10 +172,24 @@ def generateItemsDebugTranslationFile(dir)
       eval(f.read)
     }
     names = "[1]\n"
-    descriptions = "[2]\n"
     i = 0
     NATUREHASH.each { |key, value|
         names += i.to_s + "\n" + value[:name] + "\n" + value[:name] + "\n"
+        i += 1
+    }
+    file.puts(names)
+    file.flush
+    file.close
+  end
+
+  def generateMapInfoDebugTranslationFile(dir)
+    file = File.new(dir + "/" + MAP_INFO_FILE + ".txt", "w")
+    names = "[1]\n"
+    i = 0
+    $cache.mapinfos.each { |key, value|
+        if value.name
+            names += key.to_s + "\n" + value.name + "\n" + value.name + "\n"
+        end
         i += 1
     }
     file.puts(names)

@@ -3465,7 +3465,7 @@ class PokeBattle_Battler
           choices[choices.length] = i if @battle.pbCanSwitchLax?(user.index, i, false)
         end
         if choices.length != 0
-          @battle.pbDisplay(_INTL("#{target.pbThis}'s Red Card activates!"))
+          @battle.pbDisplay(_INTL("{1}'s Red Card activates!", target.pbThis))
           target.pbDisposeItem(false)
           if user.ability == :SUCTIONCUPS
             @battle.pbDisplay(_INTL("{1} anchored itself with {2}!", user.pbThis, getAbilityName(user.ability)))

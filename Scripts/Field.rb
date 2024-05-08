@@ -2383,22 +2383,22 @@ def Kernel.pbItemBall(item, quantity = 1, plural = nil)
   if $PokemonBag.pbStoreItem(item, quantity) # If item can be picked up
     if pbIsTM?(item)
       Kernel.pbMessage(_INTL("\\se[itemlevel]{1} found \\c[1]{2}\\c[0]!\\nIt contained \\c[1]{3}\\c[0].\\wtnp[30]", $Trainer.name, itemname, pbGetMachineMoveName(item)))
-      Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}\\c[0]\r\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.", $Trainer.name, itemname, PokemonBag.pocketNames()[pocket]))
+      Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}\\c[0]\r\nin the <icon=bagPocket{4}>\\c[1]{3}\\c[0] Pocket.", $Trainer.name, itemname, PokemonBag.pocketNames()[pocket], pocket))
     elsif (item == :LEFTOVERS)
       Kernel.pbMessage(_INTL("\\se[itemlevel]{1} found some \\c[1]{2}\\c[0]!\\wtnp[30]", $Trainer.name, itemname))
-      Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}\\c[0]\r\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.", $Trainer.name, itemname, PokemonBag.pocketNames()[pocket]))
+      Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}\\c[0]\r\nin the <icon=bagPocket{4}>\\c[1]{3}\\c[0] Pocket.", $Trainer.name, itemname, PokemonBag.pocketNames()[pocket], pocket))
     else
       if quantity > 1
         if plural
           Kernel.pbMessage(_INTL("\\se[itemlevel]{1} found {2} \\c[1]{3}\\c[0]!\\wtnp[30]", $Trainer.name, quantity, plural))
-          Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}\\c[0]\r\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.", $Trainer.name, plural, PokemonBag.pocketNames()[pocket]))
+          Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}\\c[0]\r\nin the <icon=bagPocket{4}>\\c[1]{3}\\c[0] Pocket.", $Trainer.name, plural, PokemonBag.pocketNames()[pocket], pocket))
         else
           Kernel.pbMessage(_INTL("\\se[itemlevel]{1} found {2} \\c[1]{3}s\\c[0]!\\wtnp[30]", $Trainer.name, quantity, itemname))
-          Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}s\\c[0]\r\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.", $Trainer.name, itemname, PokemonBag.pocketNames()[pocket]))
+          Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}s\\c[0]\r\nin the <icon=bagPocket{4}>\\c[1]{3}\\c[0] Pocket.", $Trainer.name, itemname, PokemonBag.pocketNames()[pocket], pocket))
         end
       else
         Kernel.pbMessage(_INTL("\\se[itemlevel]{1} found one \\c[1]{2}\\c[0]!\\wtnp[30]", $Trainer.name, itemname))
-        Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}\\c[0]\r\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.", $Trainer.name, itemname, PokemonBag.pocketNames()[pocket]))
+        Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}\\c[0]\r\nin the <icon=bagPocket{4}>\\c[1]{3}\\c[0] Pocket.", $Trainer.name, itemname, PokemonBag.pocketNames()[pocket], pocket))
       end
     end
     return true

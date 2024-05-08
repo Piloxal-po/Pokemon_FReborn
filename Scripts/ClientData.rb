@@ -1,5 +1,3 @@
-DEBUG_TRANSLATION_MOD_ENABLE = false
-
 def buildClientData
   $Unidata = {}
   $Unidata[:saveslot] = 1
@@ -63,9 +61,11 @@ def startup
     Dir["./patch/Mods/**/*.rb"].each {|file| 
         if !file.include?("debug")
           load File.expand_path(file)
+        else
+          Thread.new{load File.expand_path(file)}
         end
     }
-    $cache.reload
+    Thread.new{$cache.reload}
   rescue => e
     raise pbGetExceptionMessage(e)
   end
