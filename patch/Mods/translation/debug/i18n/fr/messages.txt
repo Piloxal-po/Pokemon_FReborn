@@ -169795,3 +169795,5 @@ The foe's {1}
 {1} adverse
 A wild {1} appeared!
 {1} sauvage apparaît !
+The PP of {1}'s moves was maximixed.
+NEED TRAD
