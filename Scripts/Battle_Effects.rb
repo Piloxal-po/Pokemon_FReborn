@@ -550,7 +550,7 @@ class PokeBattle_Battler
     return false if isFainted? && !(Rejuv && isbossmon && @shieldCount > 0)
 
     if pbTooHigh?(stat)
-      @battle.pbDisplay(_INTL("{1}'s " + pbGetStatName(stat) + " won't go any higher!",pbThis)) if showMessages
+      @battle.pbDisplay(_INTL("{1}'s " + pbGetStatNameNoTrad(stat) + " won't go any higher!",pbThis)) if showMessages
       return false
     end
     return true
@@ -653,7 +653,7 @@ class PokeBattle_Battler
       end
     end
     if pbTooLow?(stat)
-      @battle.pbDisplay(_INTL("{1}'s {2} won't go any lower!", pbThis, pbGetStatName(stat))) if showMessages
+      @battle.pbDisplay(_INTL("{1}'s " + pbGetStatNameNoTrad(stat) + " won't go any lower!", pbThis)) if showMessages
       return false
     end
     return true
@@ -890,6 +890,11 @@ class PokeBattle_Battler
       return true
     end
     return false
+  end
+
+  def pbGetStatNameNoTrad(stat)
+    # can't use STATSTRINGS for this bc that doesn't have Acc and Eva
+    return ["HP","Attack", "Defense", "Speed", "Special Attack", "Special Defense", "accuracy", "evasiveness"][stat]
   end
 
   def pbGetStatName(stat)

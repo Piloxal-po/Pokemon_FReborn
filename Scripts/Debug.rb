@@ -273,10 +273,8 @@ def pbDebugMenu
     commands.add("animeditor", _INTL("Animation Editor"))
     commands.add("togglelogging", _INTL("Toggle Battle Logging"))
     commands.add("debugTrainer", _INTL("Test Debug Trainer"))
-    if DEBUG_TRANSLATION_MOD_ENABLE
-      getDebugCommand.each do |command|
-        commands.add(command[0], _INTL(command[0]))
-      end
+    getDebugCommand.each do |command|
+      commands.add(command[0], _INTL(command[0]))
     end
   else
     commands.add("healparty", _INTL("Heal Party"))
@@ -738,8 +736,8 @@ def pbDebugMenu
     elsif cmd == "compiledata"
       compileAll
       Kernel.pbMessage(_INTL("All data has been compiled."))
-    elsif DEBUG_TRANSLATION_MOD_ENABLE && getDebugCommand.any?{|command| command[0] == cmd}
-    getDebugCommand.each do |command|
+    elsif getDebugCommand.any?{|command| command[0] == cmd}
+      getDebugCommand.each do |command|
         if command[0] == cmd
           command[1].call
           Kernel.pbMessage(command[0] + " : done")

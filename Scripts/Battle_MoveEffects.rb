@@ -7504,8 +7504,8 @@ class PokeBattle_Move_0FF < PokeBattle_Move
     @battle.weatherduration = 8 if (attacker.hasWorkingItem(:HEATROCK)) || @battle.FE == :DESERT || @battle.FE == :MOUNTAIN || @battle.FE == :SNOWYMOUNTAIN || @battle.FE == :SKY
 
     @battle.pbCommonAnimation("Sunny", nil, nil)
-    @battle.pbDisplay("The sunlight turned harsh!")
-    @battle.pbDisplay("The sunlight eclipsed the starry sky!") if @battle.FE == :STARLIGHT
+    @battle.pbDisplay(_INTL("The sunlight turned harsh!"))
+    @battle.pbDisplay(_INTL("The sunlight eclipsed the starry sky!")) if @battle.FE == :STARLIGHT
 
     if rainbowhold != 0
       fieldbefore = @battle.FE
