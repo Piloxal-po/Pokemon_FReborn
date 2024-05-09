@@ -8,6 +8,67 @@ def debugCompileAll
   debugCompileMonsWithLang(lang)
   debugCompileNaturesWithLang(lang)
   debugCompileMapInfosWithLang(lang)
+  debugCompileTrainersWithLang(lang)
+end
+
+def denormalizeData(text)
+  if text.start_with?("[]")
+    line = text.clone.gsub(/\[\]/, "")
+    if line.to_i.to_s == line
+      return line
+    end
+  end
+  return text
+end
+
+def buildData(file)
+  res = {}
+  type = 0
+  id = 0
+  iLine = 0
+  dataFile = File.open(file)
+  l = nil
+  begin
+    dataFile.each_line { |line| 
+      line = line.strip
+      l = line
+      if line == "[1]" # name
+        type = 1
+      elsif line == "[2]" # description
+        type = 2
+      elsif line == "[3]" # description
+        type = 3
+      elsif line.empty? # empty line
+      elsif line.to_i.to_s == line # check if ID
+        id = line.to_i
+        iLine = 1
+      elsif iLine % 2 != 0 # first line skip
+        iLine += 1
+      elsif type == 1 && res[id] && iLine % 2 == 0
+        res[id] = [[res[id][0]].concat([denormalizeData(line)]), res[id][1], res[id][2]]
+        iLine += 1
+      elsif type == 2 && res[id][1] && iLine % 2 == 0
+        res[id] = [res[id][0], [res[id][1]].concat([denormalizeData(line)]), res[id][2]]
+        iLine += 1
+      elsif type == 3 && res[id][2] && iLine % 2 == 0
+        res[id] = [res[id][0], res[id][1], [res[id][2]].concat([denormalizeData(line)])]
+        iLine += 1
+      elsif type == 1 # name = init array
+        res[id] = [denormalizeData(line), nil, nil]
+        iLine += 1
+      elsif type == 2 # description = update array
+        res[id] = [res[id][0], denormalizeData(line), res[id][2]]
+        iLine += 1
+      elsif type == 3 # description = update array
+        res[id] = [res[id][0], res[id][1], denormalizeData(line)]
+        iLine += 1
+      end
+    }
+  rescue => e
+    Kernel.pbMessage(pbGetExceptionMessage(e))
+    Kernel.pbMessage(l)
+  end
+  return res
 end
 
 def debugCompileMoves
@@ -44,7 +105,6 @@ def debugCompileAbilitiesWithLang(lang)
   debugMkdir(dir)
   dict = buildData(DIR_DEBUG_I18N + lang + "/" + ABILITIES_FILE + ".txt")
   abilities = {}
-  spacetoclear = 0
   ABILHASH.each { |key, value|
     if dict[value[:ID].to_i]
       value[:name] = dict[value[:ID].to_i][0]
@@ -198,58 +258,6 @@ def debugCompileNaturesWithLang(lang)
   save_data(natures, dir + "/" + NATURE_FILE + ".dat")
 end
 
-def buildData(file)
-  res = {}
-  type = 0
-  id = 0
-  iLine = 0
-  dataFile = File.open(file)
-  l = nil
-  begin
-    dataFile.each_line { |line| 
-      line = line.strip
-      l = line
-      if line == "[1]" # name
-        type = 1
-      elsif line == "[2]" # description
-        type = 2
-      elsif line == "[3]" # description
-        type = 3
-      elsif line.empty? # empty line
-      elsif line.to_i.to_s == line # check if ID
-        id = line.to_i
-        iLine = 1
-      elsif iLine % 2 != 0 # first line skip
-        iLine += 1
-      elsif type == 1 && res[id] && iLine % 2 == 0
-        res[id] = [[res[id][0]].concat([line]), res[id][1], res[id][2]]
-        iLine += 1
-      elsif type == 2 && res[id][1] && iLine % 2 == 0
-        res[id] = [res[id][0], [res[id][1]].concat([line]), res[id][2]]
-        iLine += 1
-      elsif type == 3 && res[id][2] && iLine % 2 == 0
-        res[id] = [res[id][0], res[id][1], [res[id][2]].concat([line])]
-        iLine += 1
-      elsif type == 1 # name = init array
-        res[id] = [line, nil, nil]
-        iLine += 1
-      elsif type == 2 # description = update array
-        res[id] = [res[id][0], line, res[id][2]]
-        iLine += 1
-      elsif type == 3 # description = update array
-        res[id] = [res[id][0], res[id][1], line]
-        iLine += 1
-      end
-    }
-  rescue => e
-    Kernel.pbMessage(pbGetExceptionMessage(e))
-    Kernel.pbMessage(l)
-  end
-  return res
-end
-
-
-
 def debugCompileMapInfos
   debugCompileMapInfosWithLang(choiceLanguage)
 end
@@ -265,4 +273,70 @@ def debugCompileMapInfosWithLang(lang)
     end
   }
   save_data(mapInfo, dir + "/" + MAP_INFO_FILE + ".dat")
+end
+
+def debugCompileTrainers
+  debugCompileTrainersWithLang(choiceLanguage)
+end
+
+def debugCompileTrainersWithLang(lang)
+  File.open("Scripts/" + GAMEFOLDER + "/trainertext.rb") { |f|
+    eval(f.read)
+  }
+  File.open("Scripts/" + GAMEFOLDER + "/montext.rb") { |f|
+    eval(f.read)
+  }
+  dir = DIR_I18N + lang
+  debugMkdir(dir)
+  dict = buildData(DIR_DEBUG_I18N + lang + "/" + TRAINER_FILE + ".txt")
+  
+  fulltrainerdata = {}
+  i = 1
+  for trainer in TEAMARRAY
+    next if trainer.nil?
+    # split trainer into important components
+    trainertype = trainer[:teamid][1]
+    name = trainer[:teamid][0]
+    items = trainer[:items]
+    pkmn = trainer[:mons]
+
+    customEntity = dict[i]
+    name = customEntity[0][0] if (customEntity[0][0] && !customEntity[0][0].empty?)
+    drop = 1
+    split = customEntity[0][1].split(",")
+    if !MONHASH[split[0]]
+      trainer[:defeat] = customEntity[0][1]
+    else
+      drop = 2
+    end
+    iMon = drop + 1
+
+    if customEntity[0][iMon]
+      pkmn.each {|value| 
+        customMonInformation = customEntity[0][iMon].split(",")
+        if value[:species].to_s == customMonInformation[0]
+          value[:gender] = customMonInformation[1] if (customMonInformation[1] && !customMonInformation[1].empty?)
+          value[:name] = customMonInformation[2] if (customMonInformation[2] && !customMonInformation[2].empty?)
+          iMon += 1
+        end
+      }
+    end
+
+    for mon in pkmn
+      unless $cache.pkmn[mon[:species]].hasForm?(mon[:form])
+        puts trainer[:teamid].to_s + " is using unknown " + mon[:species].to_s + " form " + mon[:form].to_s
+        # Note: It is recommended to add cosmetic-only forms such as Furfrou into montext when used by trainers.
+      end
+    end
+    partyid = trainer[:teamid][2]
+    ace = trainer[:ace]
+    defeat = trainer[:defeat]
+    trainereffect = trainer[:trainereffect]
+    # see if there's a trainer with the same type/name in the hash already
+    fulltrainerdata[trainertype] = {} if !fulltrainerdata[trainertype]
+    fulltrainerdata[trainertype][name] = [] if !fulltrainerdata[trainertype][name]
+    fulltrainerdata[trainertype][name].push([partyid, pkmn, items, ace, defeat, trainereffect])
+    i += 1
+  end
+  save_data(fulltrainerdata, dir + "/" + TRAINER_FILE + ".dat")
 end

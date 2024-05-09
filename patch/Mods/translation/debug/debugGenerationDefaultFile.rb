@@ -8,7 +8,8 @@ def generateDebugTranslationModFile
     t5 = Thread.new{generateItemsDebugTranslationFile(dir)}
     t6 = Thread.new{generateMonsDebugTranslationFile(dir)}
     t7 = Thread.new{generateNaturesDebugTranslationFile(dir)}
-    t8 = Thread.new{generateMapInfoDebugTranslationFile(dir)}
+    t8 = Thread.new{generateMapInfoDebugTranslationFile(lang, dir)}
+    t9 = Thread.new{generateTrainersDebugTranslationFile(dir)}
     t2.join()
     t3.join()
     t4.join()
@@ -16,7 +17,16 @@ def generateDebugTranslationModFile
     t6.join()
     t7.join()
     t8.join()
+    t9.join()
 end
+
+def normalizeData(text) 
+    if text.to_i.to_s == text
+        return "[]" + text
+    end
+    return text
+end
+
 
 def generateAbilityDebugTranslationModFile(dir)
     file = File.new(dir + "/" + ABILITIES_FILE + ".txt", "w")
@@ -28,8 +38,8 @@ def generateAbilityDebugTranslationModFile(dir)
     begin
         ABILHASH.each { |key, value|
             if value[:ID]
-                names += value[:ID].to_s + "\n" + value[:name] + "\n" + value[:name] + "\n"
-                descriptions += value[:ID].to_s + "\n" + value[:desc] + "\n" + value[:desc] + "\n"
+                names += value[:ID].to_s + "\n" + normalizeData(value[:name]) + "\n" + normalizeData(value[:name]) + "\n"
+                descriptions += value[:ID].to_s + "\n" + normalizeData(value[:desc]) + "\n" + normalizeData(value[:desc]) + "\n"
             end
         }
     rescue => e
@@ -52,8 +62,8 @@ def generateMoveDebugTranslationModFile(dir)
     begin
         MOVEHASH.each { |key, value|
             if value[:ID]
-                names += value[:ID].to_s + "\n" + value[:name] + "\n" + value[:name] + "\n"
-                descriptions += value[:ID].to_s + "\n" + value[:desc] + "\n" + value[:desc] + "\n"
+                names += value[:ID].to_s + "\n" + normalizeData(value[:name]) + "\n" + normalizeData(value[:name]) + "\n"
+                descriptions += value[:ID].to_s + "\n" + normalizeData(value[:desc]) + "\n" + normalizeData(value[:desc]) + "\n"
             end
         }
     rescue => e
@@ -99,8 +109,8 @@ def generateItemsDebugTranslationFile(dir)
     begin
         ITEMHASH.each { |key, value|
             if value[:ID]
-                names += value[:ID].to_s + "\n" + value[:name] + "\n" + value[:name] + "\n"
-                descriptions += value[:ID].to_s + "\n" + value[:desc] + "\n" + value[:desc] + "\n"
+                names += value[:ID].to_s + "\n" + normalizeData(value[:name]) + "\n" + normalizeData(value[:name]) + "\n"
+                descriptions += value[:ID].to_s + "\n" + normalizeData(value[:desc]) + "\n" + normalizeData(value[:desc]) + "\n"
             end
         }
     rescue => e
@@ -128,28 +138,28 @@ def generateItemsDebugTranslationFile(dir)
                 if definition.instance_of? Hash
                     defi = definition
                     if definition[:dexnum]
-                        names += definition[:dexnum].to_s + "\n" + definition[:name] + "\n" + definition[:name] + "\n"
-                        descriptions += definition[:dexnum].to_s + "\n" + definition[:dexentry] + "\n" + definition[:dexentry] + "\n"
-                        kind += definition[:dexnum].to_s + "\n" + definition[:kind] + "\n" + definition[:kind] + "\n"
+                        names += definition[:dexnum].to_s + "\n" + normalizeData(definition[:name]) + "\n" + normalizeData(definition[:name]) + "\n"
+                        descriptions += definition[:dexnum].to_s + "\n" + normalizeData(definition[:dexentry]) + "\n" + normalizeData(definition[:dexentry]) + "\n"
+                        kind += definition[:dexnum].to_s + "\n" + normalizeData(definition[:kind]) + "\n" + normalizeData(definition[:kind]) + "\n"
                     elsif definition[:name] && definition[:dexentry] && definition[:kind]
-                        names += definition[:name] + "\n" + definition[:name] + "\n"
-                        descriptions += definition[:dexentry] + "\n" + definition[:dexentry] + "\n"
-                        kind += definition[:kind] + "\n" + definition[:kind] + "\n"
+                        names += normalizeData(definition[:name]) + "\n" + normalizeData(definition[:name]) + "\n"
+                        descriptions += normalizeData(definition[:dexentry]) + "\n" + normalizeData(definition[:dexentry]) + "\n"
+                        kind += normalizeData(definition[:kind]) + "\n" + normalizeData(definition[:kind]) + "\n"
                     elsif definition[:name] && definition[:dexentry]
-                        names += definition[:name] + "\n" + definition[:name] + "\n"
-                        descriptions += definition[:dexentry] + "\n" + definition[:dexentry] + "\n"
+                        names += normalizeData(definition[:name]) + "\n" + normalizeData(definition[:name]) + "\n"
+                        descriptions += normalizeData(definition[:dexentry]) + "\n" + normalizeData(definition[:dexentry]) + "\n"
                     elsif definition[:name] && definition[:kind]
-                        names += definition[:name] + "\n" + definition[:name] + "\n"
-                        kind += definition[:kind] + "\n" + definition[:kind] + "\n"
+                        names += normalizeData(definition[:name]) + "\n" + normalizeData(definition[:name]) + "\n"
+                        kind += normalizeData(definition[:kind]) + "\n" + normalizeData(definition[:kind]) + "\n"
                     elsif definition[:kind] && definition[:dexentry]
-                        kind += definition[:kind] + "\n" + definition[:kind] + "\n"
-                        descriptions += definition[:dexentry] + "\n" + definition[:dexentry] + "\n"
+                        kind += normalizeData(definition[:kind]) + "\n" + normalizeData(definition[:kind]) + "\n"
+                        descriptions += normalizeData(definition[:dexentry]) + "\n" + normalizeData(definition[:dexentry]) + "\n"
                     elsif definition[:name]
-                        names += definition[:name] + "\n" + definition[:name] + "\n"
+                        names += normalizeData(definition[:name]) + "\n" + normalizeData(definition[:name]) + "\n"
                     elsif definition[:dexentry]
-                        descriptions += definition[:dexentry] + "\n" + definition[:dexentry] + "\n"
+                        descriptions += normalizeData(definition[:dexentry]) + "\n" + normalizeData(definition[:dexentry]) + "\n"
                     elsif definition[:kind]
-                        kind += definition[:kind] + "\n" + definition[:kind] + "\n"
+                        kind += normalizeData(definition[:kind]) + "\n" + normalizeData(definition[:kind]) + "\n"
                     end
                 end
             end
@@ -174,7 +184,7 @@ def generateItemsDebugTranslationFile(dir)
     names = "[1]\n"
     i = 0
     NATUREHASH.each { |key, value|
-        names += i.to_s + "\n" + value[:name] + "\n" + value[:name] + "\n"
+        names += i.to_s + "\n" + normalizeData(value[:name]) + "\n" + normalizeData(value[:name]) + "\n"
         i += 1
     }
     file.puts(names)
@@ -182,16 +192,105 @@ def generateItemsDebugTranslationFile(dir)
     file.close
   end
 
-  def generateMapInfoDebugTranslationFile(dir)
+  def generateMapInfoDebugTranslationFile(lang, dir)
+    actualLang = $Settings.language
+    tempLang = LANGUAGES.map{|i| i[1]}.find_index(lang)
+
+    $Settings.language = tempLang
+    $cache.cacheMapInfosReload
     file = File.new(dir + "/" + MAP_INFO_FILE + ".txt", "w")
     names = "[1]\n"
     i = 0
     $cache.mapinfos.each { |key, value|
         if value.name
-            names += key.to_s + "\n" + value.name + "\n" + value.name + "\n"
+            names += key.to_s + "\n" + normalizeData(value.name) + "\n" + normalizeData(value.name) + "\n"
         end
         i += 1
     }
+
+    $Settings.language = actualLang
+    $cache.cacheMapInfosReload
+    file.puts(names)
+    file.flush
+    file.close
+  end
+
+#just use for start fr translation
+def gotText(text)
+    if text && !text.empty?
+        message = File.open(DIR_DEBUG_I18N + "fr/" + MESSAGE_FILE + ".txt")
+        stop = false
+        message.each_line { |line| 
+            line = line.strip
+            if stop
+                return line
+            elsif line == text
+                stop = true
+            end
+        }
+    end
+    return ""
+end
+
+#just use for start fr translation
+def generateTrainersDebugConvertTranslationFile(dir)
+    file = File.new(dir + "/" + TRAINER_FILE + "2.txt", "w")
+    File.open("Scripts/" + GAMEFOLDER + "/trainertext.rb") { |f|
+      eval(f.read)
+    }
+    i = 1
+    names = "[1]\n"
+    for trainer in TEAMARRAY
+      next if trainer.nil?
+      name = trainer[:teamid][0]
+      pkmn = trainer[:mons]
+      defeat = trainer[:defeat] ? Messages.normalizeValue(trainer[:defeat]) : ""
+      defeat2 = trainer[:defeat] ? gotText(Messages.normalizeValue(trainer[:defeat])) : ""
+
+      names += i.to_s + "\n" + normalizeData(name) + "\n" + normalizeData(name) + "\n"
+      names += normalizeData(defeat) + "\n" + normalizeData(defeat2) + "\n"
+      pkmn.each { |value|
+        if value[:name]
+            pokeSpecies = value[:species].to_s
+            pokeName = value[:name] ? value[:name] : ""
+            pokeGender = value[:gender] ? value[:gender] : ""
+            names += pokeSpecies + "," + pokeGender + "," + pokeName + "\n"
+            names += pokeSpecies + "," + pokeGender + "," + pokeName + "\n"
+        end
+      }
+      i += 1
+    end
+    file.puts(names)
+    file.flush
+    file.close
+  end
+
+def generateTrainersDebugTranslationFile(dir)
+    file = File.new(dir + "/" + TRAINER_FILE + ".txt", "w")
+    File.open("Scripts/" + GAMEFOLDER + "/trainertext.rb") { |f|
+      eval(f.read)
+    }
+    i = 1
+    names = "[1]\n"
+    for trainer in TEAMARRAY
+      next if trainer.nil?
+      name = trainer[:teamid][0]
+      pkmn = trainer[:mons]
+      defeat = trainer[:defeat] ? Messages.normalizeValue(trainer[:defeat]) : ""
+
+      names += i.to_s + "\n" + normalizeData(name) + "\n" + normalizeData(name) + "\n"
+      names += normalizeData(defeat) + "\n" + normalizeData(defeat) + "\n"
+      pkmn.each { |value|
+        if value[:name]
+            pokeSpecies = value[:species].to_s
+            pokeName = value[:name] ? value[:name] : ""
+            pokeGender = value[:gender] ? value[:gender] : ""
+            names += pokeSpecies + "," + pokeGender + "," + pokeName + "\n"
+            names += pokeSpecies + "," + pokeGender + "," + pokeName + "\n"
+        end
+      }
+      i += 1
+    end
     file.puts(names)
     file.flush
     file.close
