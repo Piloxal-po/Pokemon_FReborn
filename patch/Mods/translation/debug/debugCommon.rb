@@ -25,6 +25,7 @@ def getDebugCommand
     if DEBUG_COMMANDS.empty?
         DEBUG_COMMANDS.concat [
             ["[DTF] extract translation file", self.method(:generateDebugTranslationModFile)],
+            ["[DTF] extract convert translation file", self.method(:generateTrainersDebugConvertTranslationFile)],
             ["[DTF] compile move translation file", self.method(:debugCompileMoves)],
             ["[DTF] compile ability translation file", self.method(:debugCompileAbilities)],
             ["[DTF] compile message translation file", self.method(:debugCompileMessages)],

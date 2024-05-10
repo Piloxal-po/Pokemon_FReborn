@@ -233,8 +233,8 @@ def gotText(text)
 end
 
 #just use for start fr translation
-def generateTrainersDebugConvertTranslationFile(dir)
-    file = File.new(dir + "/" + TRAINER_FILE + "2.txt", "w")
+def generateTrainersDebugConvertTranslationFile
+    file = File.new(DIR_DEBUG_I18N + "en" + "/" + TRAINER_FILE + "2.txt", "w")
     File.open("Scripts/" + GAMEFOLDER + "/trainertext.rb") { |f|
       eval(f.read)
     }
@@ -250,13 +250,17 @@ def generateTrainersDebugConvertTranslationFile(dir)
       names += i.to_s + "\n" + normalizeData(name) + "\n" + normalizeData(name) + "\n"
       names += normalizeData(defeat) + "\n" + normalizeData(defeat2) + "\n"
       pkmn.each { |value|
-        if value[:name]
-            pokeSpecies = value[:species].to_s
-            pokeName = value[:name] ? value[:name] : ""
-            pokeGender = value[:gender] ? value[:gender] : ""
-            names += pokeSpecies + "," + pokeGender + "," + pokeName + "\n"
-            names += pokeSpecies + "," + pokeGender + "," + pokeName + "\n"
-        end
+        pokeSpecies = value[:species].to_s
+        pokeName = value[:name] ? value[:name] : ""
+        pokeGender = value[:gender] ? value[:gender] : ""
+        pokeItem = value[:item] ? value[:item].to_s : ""
+        pokeNature = value[:nature] ? value[:nature].to_s : ""
+        pokeAbility = value[:ability] ? value[:ability].to_s : ""
+        pokeMoves = value[:moves] ? value[:moves].join("|") : ""
+        pokeEv = value[:ev] ? value[:ev].join("|") : "0|0|0|0|0|0"
+        pokeLevel = value[:level] ? value[:level].to_s : "1"
+        names += pokeSpecies + "," + pokeLevel + "," + pokeItem + "," + pokeMoves + "," + pokeGender + "," + pokeAbility + "," + pokeNature + "," + pokeName + "," + pokeEv + "\n"
+        names += pokeSpecies + "," + pokeLevel + "," + pokeItem + "," + pokeMoves + "," + pokeGender + "," + pokeAbility + "," + pokeNature + "," + pokeName + "," + pokeEv + "\n"
       }
       i += 1
     end
@@ -281,13 +285,17 @@ def generateTrainersDebugTranslationFile(dir)
       names += i.to_s + "\n" + normalizeData(name) + "\n" + normalizeData(name) + "\n"
       names += normalizeData(defeat) + "\n" + normalizeData(defeat) + "\n"
       pkmn.each { |value|
-        if value[:name]
-            pokeSpecies = value[:species].to_s
-            pokeName = value[:name] ? value[:name] : ""
-            pokeGender = value[:gender] ? value[:gender] : ""
-            names += pokeSpecies + "," + pokeGender + "," + pokeName + "\n"
-            names += pokeSpecies + "," + pokeGender + "," + pokeName + "\n"
-        end
+        pokeSpecies = value[:species].to_s
+        pokeName = value[:name] ? value[:name] : ""
+        pokeGender = value[:gender] ? value[:gender] : ""
+        pokeItem = value[:item] ? value[:item].to_s : ""
+        pokeNature = value[:nature] ? value[:nature].to_s : ""
+        pokeAbility = value[:ability] ? value[:ability].to_s : ""
+        pokeMoves = value[:moves] ? value[:moves].join("|") : ""
+        pokeEv = value[:ev] ? value[:ev].join("|") : "0|0|0|0|0|0"
+        pokeLevel = value[:level] ? value[:level].to_s : "1"
+        names += pokeSpecies + "," + pokeLevel + "," + pokeItem + "," + pokeMoves + "," + pokeGender + "," + pokeAbility + "," + pokeNature + "," + pokeName + "," + pokeEv + "\n"
+        names += pokeSpecies + "," + pokeLevel + "," + pokeItem + "," + pokeMoves + "," + pokeGender + "," + pokeAbility + "," + pokeNature + "," + pokeName + "," + pokeEv + "\n"
       }
       i += 1
     end
