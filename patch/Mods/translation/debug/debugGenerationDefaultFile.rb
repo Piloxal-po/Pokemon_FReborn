@@ -17,6 +17,7 @@ def generateDebugTranslationModFileWithoutMessage(lang, dir)
    generateMapInfoDebugTranslationFile(lang, dir)
    generateTrainersDebugTranslationFile(dir)
    generateFieldsDebugTranslationFile(dir)
+   generateFieldNotesDebugConvertTranslationFile(dir)
 end
 
 #just use for start fr translation
@@ -354,3 +355,24 @@ def generateTrainersDebugTranslationFile(dir)
     file.flush
     file.close
   end
+
+def generateFieldNotesDebugConvertTranslationFile(dir)
+    file = File.new(dir + "/" + FIELD_NOTE_FILE + "2.txt", "w")
+    quakemovenames = PBFields::QUAKEMOVES.map { |id| getMoveName(id) }.sort.join(", ")
+    File.open("Scripts/" + GAMEFOLDER + "/fieldtext.rb") { |f| eval(f.read) }
+    File.open("Scripts/" + GAMEFOLDER + "/fieldnotetext.rb") { |f| eval(f.read) }
+    
+    i = 1
+    names = "[1]\n"
+    FIELDNOTEEFFECTS.each { |value|
+        names += i.to_s + "\n"
+        names += value.text + "\n" + FIELDNOTEEFFECTS_FR[i].text + "\n"
+        names += value.elaboration + "\n" + FIELDNOTEEFFECTS_FR[i].elaboration + "\n"
+        names += value.cogwheeltext + "\n" + FIELDNOTEEFFECTS_FR[i].cogwheeltext + "\n"
+        i += 1
+    }
+    file.puts(names)
+    file.flush
+    file.close
+  end
+  
