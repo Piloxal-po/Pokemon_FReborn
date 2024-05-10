@@ -1,0 +1,674 @@
+[1]
+1
+INDOOR
+INDOOR
+
+
+2
+ELECTERRAIN
+ELECTERRAIN
+Electric Terrain
+Champ Electrifié
+3
+GRASSY
+GRASSY
+Grassy Terrain
+Champ Herbu
+4
+MISTY
+MISTY
+Misty Terrain
+Champ Brumeux
+5
+DARKCRYSTALCAVERN
+DARKCRYSTALCAVERN
+Dark Crystal Cavern
+Caverne Obscure
+6
+CHESS
+CHESS
+Chess Board
+Échiquier
+7
+BIGTOP
+BIGTOP
+Big Top Arena
+Scène de Spectacle
+8
+BURNING
+BURNING
+Burning Field
+Terre Enflammée
+9
+SWAMP
+SWAMP
+Swamp Field
+Marécage
+10
+RAINBOW
+RAINBOW
+Rainbow Field
+Champ Arc-en-ciel
+11
+CORROSIVE
+CORROSIVE
+Corrosive Field
+Terrain Corrosif
+12
+CORROSIVEMIST
+CORROSIVEMIST
+Corrosive Mist Field
+Brume Corrosive
+13
+DESERT
+DESERT
+Desert Field
+Désert
+14
+ICY
+ICY
+Icy Field
+Terrain Glacé
+15
+ROCKY
+ROCKY
+Rocky Field
+Lande de Pierre
+16
+FOREST
+FOREST
+Forest Field
+Forêt
+17
+SUPERHEATED
+SUPERHEATED
+Super-Heated Field
+Terrain Surchauffé
+18
+FACTORY
+FACTORY
+Factory Field
+Terraindustriel
+19
+SHORTCIRCUIT
+SHORTCIRCUIT
+Short-Circuit Field
+Terrain Déchargé
+20
+WASTELAND
+WASTELAND
+Wasteland
+Crassier
+21
+ASHENBEACH
+ASHENBEACH
+Ashen Beach
+Plage de Cendres
+22
+WATERSURFACE
+WATERSURFACE
+Water Surface
+Surface de l'Eau
+23
+UNDERWATER
+UNDERWATER
+Underwater
+Sous l'Eau
+24
+CAVE
+CAVE
+Cave
+Caverne
+25
+GLITCH
+GLITCH
+Glitch Field
+Terrain Glitché
+26
+CRYSTALCAVERN
+CRYSTALCAVERN
+Crystal Cavern
+Caverne de Cristaux
+27
+MURKWATERSURFACE
+MURKWATERSURFACE
+Murkwater Surface
+Eau Polluée
+28
+MOUNTAIN
+MOUNTAIN
+Mountain
+Montagne
+29
+SNOWYMOUNTAIN
+SNOWYMOUNTAIN
+Snowy Mountain
+Montagne Enneigée
+30
+HOLY
+HOLY
+Holy Field
+Terre Sainte
+31
+MIRROR
+MIRROR
+Mirror Arena
+Palais des Glaces
+32
+FAIRYTALE
+FAIRYTALE
+Fairy Tale Field
+Conte de Fée
+33
+DRAGONSDEN
+DRAGONSDEN
+Dragon's Den
+Antre du Dragon
+34
+FLOWERGARDEN1
+FLOWERGARDEN1
+Flower Garden Field
+Jardin Fleuri
+35
+FLOWERGARDEN2
+FLOWERGARDEN2
+Flower Garden Field
+Jardin Fleuri
+36
+FLOWERGARDEN3
+FLOWERGARDEN3
+Flower Garden Field
+Jardin Fleuri
+37
+FLOWERGARDEN4
+FLOWERGARDEN4
+Flower Garden Field
+Jardin Fleuri
+38
+FLOWERGARDEN5
+FLOWERGARDEN5
+Flower Garden Field
+Jardin Fleuri
+39
+STARLIGHT
+STARLIGHT
+Starlight Arena
+Piste aux Étoiles
+40
+NEWWORLD
+NEWWORLD
+New World
+Nouveau Monde
+41
+INVERSE
+INVERSE
+Inverse Field
+Terrain Inversé
+42
+PSYTERRAIN
+PSYTERRAIN
+Psychic Terrain
+Champ Psychique
+[2]
+1
+
+
+
+
+
+
+
+
+
+
+2
+The field is hyper-charged!
+De l'electricité parcourt le terrain!
+The explosion became hyper-charged!|The attack became hyper-charged!|The attack powered up!
+L'explosion se charge d'électricité!|L'attaque devient hyper-chargée!|L'attaque gagne en puissance!
+The Electric Terrain strengthened the attack!
+Le Champ Électrifié renforce l'attaque!
+The hyper-charged terrain shorted out!
+Le terrain est court-circuité!
+{1} began charging power!
+{1} se met à charger son énergie!
+3
+The field is in full bloom.
+Un beau gazon pousse sur le terrain!
+The wind picked up strength from the field!|The grass softened the attack...
+Le terrain renforce le vent!|L'herbe affaiblit l'attaque...
+The Grassy Terrain strengthened the attack!|The grass below caught flame!
+Le Champ Herbu renforce l'attaque!|Le gazon prend feu!
+The grassy terrain caught fire!|The grassy terrain was corroded!
+Le champ herbu prend feu!|Le champ herbu est intoxiqué!
+{1} planted its roots!
+{1} plante ses racines!
+4
+Mist settles on the field.
+La brume recouvre le terrain!
+The mist's energy strengthened the attack!|The mist softened the attack...|The dampness prevents the explosion!
+L'énergie de la Brume améliore l'attaque!|La brume affaiblit l'attaque...|La moiteur empêche l'explosion!
+The Misty Terrain weakened the attack!
+Le Champ Brumeux affaiblit l'attaque!
+The mist was blown away!|The mist was corroded!
+La brume se dissipe!|La brume est intoxiquée!
+A wish was made for {1}!
+Un voeu a été fait pour {1}!
+5
+Darkness is gathering...
+L'obscurité s'amasse...
+The darkness began to gather...!|The darkness strengthened the attack!|The crystals' light strengthened the attack!|The crystal split the attack!|The consuming darkness fed the attack!|{1} couldn't consume much light...
+L'obscurité s'amasse...!|L'obscurité renforce l'attaque!|la lumière des cristaux renforce l'attaque!|Le cristal diffracte l'attaque!|L'obscurité étouffante nourrit l'attaque!|{1} ne pouvait pas consumer autant de lumière...
+
+
+The dark crystals were shattered!|The sun lit up the crystal cavern!
+Les cristaux sombres se brisent!|Le soleil illumine la caverne de cristaux!
+{1} shrouded itself with Magic Coat!
+{1} s'entoure du Reflet Magik!
+6
+Opening variation set.
+Ouverture.
+En passant!
+En passant!
+
+
+The board was destroyed!
+The board was destroyed!
+{1} shrouded itself with Magic Coat!
+{1} s'entoure du Reflet Magik!
+7
+Now presenting...!
+Le prochain numéro...!
+Back, foul beast!|What grace!|An extravagant aerial finish!|And what an entrance it is!|And a little extra for you, darling!
+Arrière, monstre!|Quelle grâce!|Une prouesse aérienne éblouissante!|Une entrée fracassante!|Et un petit bonus pour toi, mon cœur!
+
+
+
+
+{1} accepts the crowd's help!
+{1} accepte l'aide de la foule!
+8
+The field is ablaze!
+Le terrain est en feu!
+The flames spread from the attack!|{1} was knocked into the flames!
+Les flammes se propagent!|{1} est projeté dans les flammes!
+The blaze amplified the attack!|The blaze softened the attack...
+Les flammes amplifient l'attaque!|Les flammes affaiblissent l'attaque...
+The grime snuffed out the flame!|The wind snuffed out the flame!|The water snuffed out the flame!|The sand snuffed out the flame!
+La saleté étouffe les flammes!|Le vent étouffe les flammes!|L'eau étouffe les flammes!|Le sable étouffe les flammes!
+{1} was trapped in the vortex!
+{1} est piégé(e) dans le tourbillon!
+9
+The field is swamped.
+Le terrain est marécageux.
+The murk strengthened the attack!|The attack dissipated in the soggy ground...|The dampness prevents the explosion!
+La vase renforce l'attaque!|L'attaque se dissipe dans le sol détrempé...|La moiteur empêche l'explosion!
+The poison infected the nearby murk!
+Le poison contamine la vase!
+
+
+{1} planted its roots!
+{1} plante ses racines!
+10
+What does it mean?
+Qu'est-ce que ça veut dire?
+The attack was rainbow-charged!|The rainbow softened the attack...
+L'attaque se charge dans l'arc-en-ciel!|L'arc-en-ciel affaiblit l'attaque...
+The rainbow energized the attack!
+L'arc-en-ciel énergise l'attaque!
+The rainbow was consumed!
+L'arc-en-ciel a été consumé!
+A wish was made for {1}!
+Un voeu a été fait pour {1}!
+11
+The field is corrupted!
+Le terrain est intoxiqué!
+The corrosion strengthened the attack!
+La corrosion renforce l'attaque!
+
+
+The polluted field was purified!
+Le terrain pollué est purifié!
+The Telluric Seed shielded {1} against damage!
+The Telluric Seed shielded {1} against damage!
+12
+Corrosive mist settles on the field!
+La brume corrosive s'installe sur le terrain!
+The poison strengthened the attack!
+Le poison renforce l'attaque!
+The toxic mist caught flame!
+La brume toxique prend feu!
+The mist was blown away!|The polluted mist was purified!|The toxic mist collected on the ground!
+La brume se dissipe!|The polluted mist was purified!|La brume toxique s'amasse sur le sol!
+{1} was badly poisoned!
+{1} est gravement empoisonné!
+13
+The field is rife with sand.
+Le terrain est recouvert de sable.
+The desert strengthened the attack!
+Le désert renforce l'attaque!
+The desert softened the attack...
+Le désert affaiblit l'attaque...
+
+
+{1} was trapped by Sand Tomb!
+{1} est piégé(e) dans le Tourbi-Sable!
+14
+The field is covered in ice.
+Le terrain est couvert de glace.
+The cold softened the attack...
+Le froid affaiblit l'attaque...
+The cold strengthened the attack!|The cold softened the attack...
+Le froid renforce l'attaque!|Le froid affaiblit l'attaque...
+The ice melted away!|The quake broke up the ice and revealed the water beneath!|The hot water melted the ice!
+La glace fond!|La secousse brise la glace et révèle l'eau en-dessous!|L'eau brûlante fait fondre la glace!
+{1} was hurt by icy Spikes!
+{1} est blessé par des Pics Glacés!
+15
+The field is littered with rocks.
+Le terrain est parsemé de rochers.
+The rocks strengthened the attack!|SMASH'D!
+Les rochers renforcent l'attaque!|ÉCLATÉ!
+The field strengthened the attack!
+Le terrain renforce l'attaque!
+
+
+{1} was hurt by Stealth Rocks!
+{1} est blessé par Piège de roc!
+16
+The field is abound with trees.
+Promenons-nous dans les bois...
+The forest softened the attack...|They're coming out of the woodwork!|Gossamer and arbor strengthened the attack!|The target was cut down to size!
+La forêt affaiblit l'attaque...|They're coming out of the woodwork!|Gossamer and arbor strengthened the attack!|La cible est taillée à ras!
+The field strengthened the attack!|The forestry strengthened the attack!
+Le terrain renforce l'attaque!|La forêt renforce l'attaque!
+The forest caught fire!
+La forêt prend feu!
+The Telluric Seed shielded {1} against damage!
+The Telluric Seed shielded {1} against damage!
+17
+The field is super-heated!
+Le terrain est surchauffé!
+The field super-heated the attack!
+Le terrain surchauffe l'attaque!
+The extreme heat softened the attack...|The attack was super-heated!
+La chaleur extrême affaiblit l'attaque...|L'attaque est surchauffée!
+The field combusted!|The field cooled off!
+Le terrain prend feu!|Le terrain refroidit!
+{1} primed a trap!
+{1} amorce un piège!
+18
+Machines whir in the background.
+Des machines tournent en fond.
+ATTACK SEQUENCE UPDATE.|ATTACK SEQUENCE INITIATE.
+SÉQUENCE D'ATTAQUE MISE À JOUR.|SÉQUENCE D'ATTAQUE INITIÉE.
+The attack took energy from the field!
+Le terrain énergise l'attaque!
+The field was broken!|All the light was consumed!
+Le terrain est détruit!|Toute la lumière a été consumée!
+{1} is focused!
+{1} est concentré!
+19
+Bzzt!
+Bzzt!
+Blinding!|The attack picked up electricity!|The darkness strengthened the attack!|{1} couldn't consume much light...
+Aveuglant!|L'attaque amasse de l'électricité!|L'obscurité renforce l'attaque!|{1} ne pouvait pas consumer autant de lumière...
+
+
+SYSTEM ONLINE.
+SYSTÈME EN LIGNE.
+{1} levitated with electromagnetism!
+{1} lévite par électromagnétisme!
+20
+The waste is watching...
+La crasse vous entoure...
+The waste did it for the vine!|The waste was added to the attack!|Wibble-wibble wobble-wobb...|BLEAAARGGGGH!|The waste joined the attack!
+La crasse renforce la liane!|De la crasse s'est ajoutée à l'attaque!|Blub-blub-bloub-bloub...|BLEAAARGGGGH!|La crasse se joint à l'attaque!
+
+
+
+
+
+
+21
+Ash and sand line the field.
+Le terrain est rayé de sable et de cendres.
+...And with pure focus!|The sand strengthened the atttack!|Surf's up!|Ash mixed into the attack!|...And with full focus...!|...And with focus...!
+...La concentration est pure!|Le sable renforce l'attaque!|C'est l'heure de surfer!|Des cendres s'ajoutent à l'attaque!|...La concentration est parfaite!|...La concentration est grande!
+
+
+
+
+{1}'s Telluric Seed is getting it pumped!
+La Graine Tellurique de {1} le fait gonfler!
+22
+The water's surface is calm.
+La surface de l'eau est calme.
+The attack rode the current!|Poison spread through the water!|...The spikes sank into the water and vanished!
+L'attaque suit le courant!|Le poison se diffuse dans l'eau!|...Les picots coulent et disparaissent!
+The water conducted the attack!|The water strengthened the attack!|The water deluged the attack...|...But there was no solid ground to attack from!
+L'eau est conductrice!|L'eau renforce l'attaque!|L'eau détrempe l'attaque...|...Mais il n'y a pas de sol concret pour attaquer!
+The battle sank into the depths!|The battle was pulled underwater!|The water froze over!|The water was polluted!
+Le combat coule dans les profondeurs!|Le combat est entraîné sous l'eau!|La surface de l'eau a gelé!|L'eau est souillée!
+{1} surrounded itself with a veil of water!
+{1} s'entoure d'un voile d'eau!
+23
+Blub blub...
+Glou glou...
+Jet-streamed!|From the depths!|Poison spread through the water!|You're too deep to notice the weather!
+Comme un geyser!|Des profondeurs!|Le poison se diffuse dans l'eau!|Vous êtes trop profond pour remarquer la météo!
+The water strengthened the attack!|The water super-conducted the attack!|...But the attack was doused instantly!
+L'eau renforce l'attaque!|L'eau est super-conductrice!|...Mais l'attaque est immédiatement noyée!
+The battle resurfaced!|The grime sank beneath the battlers!
+Le combat remonte à la surface!|Le poison s'écoule sous les combattants!
+{1} transformed into the Water type!
+{1} transformed into the Water type!
+24
+The cave echoes dully...
+La caverne résonne...
+...Piled on!
+...Empilé!
+The cave choked out the air!|The cavern strengthened the attack!
+La caverne étouffe le courant d'air!|La caverne renforce l'attaque!
+The cave was littered with crystals!
+La caverne se couvre de cristaux!
+{1} was hurt by Stealth Rocks!
+{1} est blessé par Piège de roc!
+25
+1n!taliz3 .b//////attl3
+d38ut .//////c0mb4t!
+
+
+.0P pl$ nerf!-//
+.0P pl$ nerf!-//
+
+
+{1}.TYPE = (:QMARKS)
+{1}.TYPE = (:QMARKS)
+26
+The cave is littered with crystals.
+La caverne est jonchée de cristaux.
+The crystals' light strengthened the attack!|The crystals strengthened the attack!
+la lumière des cristaux renforce l'attaque!|Les cristaux renforcent l'attaque!
+The crystals charged the attack!|The crystal energy strengthened the attack!
+Les cristaux chargent l'attaque!|L'énergie cristalline renforce l'attaque!
+The crystals were broken up!|The crystals' light was warped by the darkness!|The crystals' light was consumed!
+Les cristaux se brisent!|La lumière des cristaux est avalée par l'obscurité!|The crystals' light was consumed!
+{1} shrouded itself with Magic Coat!
+{1} s'entoure du Reflet Magik!
+27
+The water is tainted...
+L'eau est souillée...
+The toxic water strengthened the attack!|Stinging!|...The spikes sank into the water and vanished!
+L'eau toxique renforce l'attaque!|Stinging|...Les picots coulent et disparaissent!
+The toxic water strengthened the attack!|The toxic water conducted the attack!|...But there was no solid ground to attack from!
+L'eau toxique renforce l'attaque!|L'attaque se propage dans l'eau toxique!|...Mais il n'y a pas de sol concret pour attaquer!
+The maelstrom flushed out the poison!|The toxic water froze over!
+Le tourbillon chasse le poison!|L'eau toxique a gelé!
+{1} surrounded itself with a veil of water!
+{1} s'entoure d'un voile d'eau!
+28
+Adieu to disappointment and spleen,|What are men to rocks and mountains?
+Pourtant, que la montagne est belle,|Comment peut-on s'imaginer?
+{1} was thrown partway down the mountain!|The wind strengthened the attack!|The mountain strengthened the attack!|Yodelayheehoo~
+{1} est projeté en bas de la montagne!|Le vent renforce l'attaque!|La montagne renforce l'attaque!|Yodelayheehoo~
+The mountain strengthened the attack!|The open air strengthened the attack!
+La montagne renforce l'attaque!|L'air libre renforce l'attaque!
+The mountain was covered in snow!
+La montagne se couvre de neige!
+
+
+29
+The snow glows white on the mountain...
+L'hiver s'installe doucement sur la montagne...
+{1} was thrown partway down the mountain!|The wind strengthened the attack!|The snow strengthened the attack!|The cold softened the attack...|The frigid wind strengthened the attack!|Yodelayheehoo~
+{1} est projeté en bas de la montagne!|Le vent renforce l'attaque!|La neige renforce l'attaque!|Le froid affaiblit l'attaque...|Le vent frais renforce l'attaque!|Yodelayheehoo~
+The snowy mountain strengthened the attack!|The open air strengthened the attack!|The cold softened the attack!
+La montagne enneigée renforce l'attaque!|L'air libre renforce l'attaque!|La froid affaiblit l'attaque!
+The snow melted away!
+La neige fond!
+
+
+30
+Benedictus Sanctus Spiritus...
+Benedictus Sanctus Spiritus...
+Legendary power accelerated the attack!|The holy energy resonated with the attack!|Godspeed!
+Legendary power accelerated the attack!|L'énergie sacrée résonne avec l'attaque!|Godspeed!
+The holy energy resonated with the attack!|The legendary energy resonated with the attack!|The attack was cleansed...
+L'énergie sacrée résonne avec l'attaque!|L'énergie légendaire résonne avec l'attaque!|L'attaque est purifiée...
+The holy light was consumed!
+La lumière sacrée a été consumée!
+{1} shrouded itself with Magic Coat!
+{1} s'entoure du Reflet Magik!
+31
+Mirror, mirror, on the field,|Who shall this fractured power wield?
+Miroir, mon beau miroir,|À qui donneras-tu la victoire?
+The reflected light was blinding!|The mirrors strengthened the attack!
+La lumière réfléchie est aveuglante!|Les miroirs renforcent l'attaque!
+
+
+The mirror arena shattered!
+L'arène se brise en mille morceaux!
+{1} shrouded itself with Magic Coat!
+{1} s'entoure du Reflet Magik!
+32
+Once upon a time...
+Il était une fois...
+The blade cuts true!|The magical energy strengthened the attack!|True love never hurt so badly!
+Ma lame te pourfendra!|L'énergie magique renforce l'attaque!|De l'amour à la haine!
+For ever after!|For justice!|The foul beast's attack gained strength!
+Heureux pour toujours!|Pour la justice!|L'attaque de la bête est renforcée!
+
+
+The Magical Seed shielded {1} against damage!
+The Magical Seed shielded {1} against damage!
+33
+If you wish to slay a dragon...
+Qui trop combat le dragon devient dragon lui-même.
+Trial of the Dragon!!!|The lava strengthened the attack!|{1} was knocked into the lava!|The draconic energy boosted the attack!|money money money money money mothafucka
+L'Épreuve du Dragon!!!|La lave renforce l'attaque!|{1} tombe dans la lave!|L'énergie draconique renforce l'attaque!|money money money money money mothafucka
+The lava's heat boosted the flame!|The draconic energy boosted the attack!|The lava's heat softened the attack...
+La chaleur de la lave alimente les flammes!|L'énergie draconique renforce l'attaque!|La chaleur de la lave affaiblit l'attaque...
+The lava was frozen solid!|The lava solidified!
+La lave est gelée!|La lave est devenue solide!
+{1} raised its Fire power!
+{1} augmente sa puissance de Feu!
+34
+Seeds line the field.
+Des graines sont semées sur le terrain.
+
+
+
+
+The garden grew a little!
+Le jardin croît un peu!
+{1} planted its roots!
+{1} plante ses racines!
+35
+Seeds line the field.
+Des graines sont semées sur le terrain.
+{1} was cut down to size!
+{1} est taillé à ras!
+The garden's power boosted the attack!
+Le pouvoir du jardin renforce l'attaque!
+The garden was cut down a bit!|The garden grew a little!|The acid melted the bloom!
+Le gazon est tondu!|Le jardin croît un peu!|The acid melted the bloom!
+{1} planted its roots!
+{1} plante ses racines!
+36
+Seeds line the field.
+Des graines sont semées sur le terrain.
+{1} was cut down to size!|The fresh scent of flowers boosted the attack!
+{1} est taillé à ras!|La parfum frais des fleurs renforce l'attaque!
+The budding flowers boosted the attack!|The attack infested the garden!|The nearby flowers caught flame!
+Les fleurs bourgeonnantes renforcent l'attaque!|L'attaque infecte le jardin!|Les fleurs alentours prennent feu!
+The garden caught fire!|The garden was cut down a bit!|The garden grew a little!|The acid melted the bloom!
+Le jardin prend feu!|Le gazon est tondu!|Le gazon est tondu!|The acid melted the bloom!
+{1} planted its roots!
+{1} plante ses racines!
+37
+Seeds line the field.
+Des graines sont semées sur le terrain.
+{1} was cut down to size!|The vibrant aroma scent of flowers boosted the attack!
+{1} est taillé à ras!|L'arôme enivrant des fleurs renforce l'attaque!
+The blooming flowers boosted the attack!|The attack infested the flowers!|The nearby flowers caught flame!
+Les fleurs écloses renforcent l'attaque!|L'attaque infecte les fleurs!|Les fleurs alentours prennent feu!
+The garden caught fire!|The garden was cut down a bit!|The garden grew a little!|The acid melted the bloom!
+Le jardin prend feu!|Le gazon est tondu!|Le jardin croît un peu!|The acid melted the bloom!
+{1} planted its roots!
+{1} plante ses racines!
+38
+Seeds line the field.
+Des graines sont semées sur le terrain.
+{1} was cut down to size!|The vibrant aroma scent of flowers boosted the attack!
+{1} est taillé à ras!|L'arôme enivrant des fleurs renforce l'attaque!
+The thriving flowers boosted the attack!|The attack infested the flowers!|The nearby flowers caught flame!
+Les fleurs épanouies renforcent l'attaque!|L'attaque infecte les fleurs!|Les fleurs alentours prennent feu!
+The garden caught fire!|The garden was cut down a bit!|The acid melted the bloom!
+Le jardin prend feu!|Le gazon est tondu!|The acid melted the bloom!
+{1} planted its roots!
+{1} plante ses racines!
+39
+Starlight fills the battlefield.
+Cette obscure clarté qui tombe des étoiles...
+Starlight surged through the attack!|Lunar energy surged through the attack!|The astral energy boosted the attack!|The astral vortex accelerated the attack!|A star came crashing down!
+La lumière des étoiles canalise l'attaque!|L'énergie lunaire canalise l'attaque!|L'énergie astrale amplifie l'attaque!|The astral vortex accelerated the attack!|Une météorite s'écrase!
+Starlight supercharged the attack!|The night sky boosted the attack!|The astral energy boosted the attack!
+La lumière des étoiles surcharge l'attaque!|Le ciel nocturne renforce l'attaque!|L'énergie astrale amplifie l'attaque!
+The cosmic light was consumed!
+La lumière cosmique a été consumée!
+A wish was made for {1}!
+Un voeu a été fait pour {1}!
+40
+From darkness, from stardust,|From memories of eons past and visions yet to come...
+Du néant, des étoiles,|Avec les mémoires des éternités passées, et les visions des éternités à venir...
+The light shone through the infinite darkness!|The ethereal energy strengthened the attack!|The germinal matter amassed in the attack!|The astral energy boosted the attack!|A star came crashing down on {1}!|{1} was swallowed up by the void!|The unformed land diffused the attack...|The terrain had no solid ground to attach...|The weather drifted off into space...
+La lumière point dans les ténèbres infinies!|L'énergie éthérée renforce l'attaque!|La matière germinale s'amasse dans l'attaque!|L'énergie astrale amplifie l'attaque!|Une étoile vient s'écraser sur {1}!|{1} was swallowed up by the void!|Le sol informe disperse l'attaque...|The terrain had no solid ground to attach...|The weather drifted off into space...
+Infinity boosted the attack!
+L'infinité amplifie l'attaque!
+The world's matter reformed!|The world was regenerated!
+La matière du monde se reforme!|Le monde est régénéré!
+{1} must recharge!
+{1} doit se recharger!
+41
+!trats elttaB
+!ecnemmoc tabmoc eL
+
+
+
+
+
+
+{1} must recharge!
+{1} doit se recharger!
+42
+The field became mysterious!
+Le sol se met à réagir de façon bizarre...
+The psychic energy strengthened the attack!
+L'énergie psychique renforce l'attaque!
+The Psychic Terrain strengthened the attack!
+Le Terrain Psychique renforce l'attaque!
+
+
+{1} became confused!
+Cela rend {1} confus!

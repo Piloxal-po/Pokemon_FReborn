@@ -9,6 +9,7 @@ def debugCompileAll
   debugCompileNaturesWithLang(lang)
   debugCompileMapInfosWithLang(lang)
   debugCompileTrainersWithLang(lang)
+  debugCompileFieldsWithLang(lang)
 end
 
 def denormalizeData(text)
@@ -21,7 +22,7 @@ def denormalizeData(text)
   return text
 end
 
-def buildData(file)
+def buildData(file, skipEmptyLine = true)
   res = {}
   type = 0
   id = 0
@@ -38,7 +39,7 @@ def buildData(file)
         type = 2
       elsif line == "[3]" # description
         type = 3
-      elsif line.empty? # empty line
+      elsif skipEmptyLine && line.empty? # empty line
       elsif line.to_i.to_s == line # check if ID
         id = line.to_i
         iLine = 1
@@ -297,14 +298,6 @@ def debugCompileTrainers
   debugCompileTrainersWithLang(choiceLanguage)
 end
 
-def findKeyMapByName(name, map)
-  map.keys.each{|key|
-    if key.to_s == name
-      return key
-    end
-  }
-end
-
 def debugCompileTrainersWithLang(lang)
   File.open("Scripts/" + GAMEFOLDER + "/trainertext.rb") { |f|
     eval(f.read)
@@ -335,7 +328,7 @@ def debugCompileTrainersWithLang(lang)
     if !MONHASH[split[0].to_sym]
       trainer[:defeat] = customEntity[0][1]
       iMon = 2
-      
+
     end
     j = 0
     if customEntity[0][iMon]
@@ -372,4 +365,196 @@ def debugCompileTrainersWithLang(lang)
     i += 1
   end
   save_data(fulltrainerdata, dir + "/" + TRAINER_FILE + ".dat")
+end
+
+def debugCompileFields
+  debugCompileFieldsWithLang(choiceLanguage)
+end
+
+def debugCompileFieldsWithLang(lang)
+  fields = {}
+  File.open("Scripts/" + GAMEFOLDER + "/fieldtext.rb") { |f| eval(f.read) }
+
+  dir = DIR_I18N + lang
+  debugMkdir(dir)
+  dict = buildData(DIR_DEBUG_I18N + lang + "/" + FIELD_FILE + ".txt", false)
+
+  FIELDEFFECTS[nil] = FIELDEFFECTS[:INDOOR].clone
+  FIELDEFFECTS[0] = FIELDEFFECTS[:INDOOR].clone
+
+  i = 1
+  FIELDEFFECTS.each { |key, data|
+    key2 = key && key != 0 ? key : :INDOOR
+    customField = i > dict.length ? dict[1] : dict[i]
+
+    currentfield = FEData.new
+    # Basic data copying
+    currentfield.name = customField[0][1] ? customField[0][1] : data[:name]
+    currentfield.fieldAppSwitch = data[:fieldAppSwitch]
+    currentfield.message = customField[1][0] ? customField[1][0].split("|") : data[:fieldMessage]
+    currentfield.secretPower = data[:secretPower]
+    currentfield.graphic = data[:graphic]
+    currentfield.naturePower = data[:naturePower]
+    currentfield.mimicry = data[:mimicry]
+    currentfield.statusMods = data[:statusMods]
+    currentfield.overlayStatusMods = data[:overlay][:statusMods] if data[:overlay]
+    # now for worse shit
+    # invert hashes such that move => mod
+    movetypemod = pbHashForwardizer(data[:typeMods]) || {}
+    movedamageboost = pbHashForwardizer(data[:damageMods]) || {}
+    moveaccuracyboost = pbHashForwardizer(data[:accuracyMods]) || {}
+    moveeffects = pbHashForwardizer(data[:moveEffects]) || {}
+    typedamageboost = pbHashForwardizer(data[:typeBoosts]) || {}
+    typetypemod = pbHashForwardizer(data[:typeAddOns]) || {}
+    fieldchange = pbHashForwardizer(data[:fieldChange]) || {}
+    changeeffects = pbHashForwardizer(data[:changeEffects]) || {}
+    typecondition = data[:typeCondition] ? data[:typeCondition] : {}
+    typeeffects = data[:typeEffects] ? data[:typeEffects] : {}
+    changecondition = data[:changeCondition] ? data[:changeCondition] : {}
+    dontchangebackup = data[:dontChangeBackup] ? data[:dontChangeBackup] : {}
+    if data[:overlay]
+      overlaydamage = pbHashForwardizer(data[:overlay][:damageMods]) || {}
+      overlaytypemod = pbHashForwardizer(data[:overlay][:typeMods]) || {}
+      overlaytypeboost = pbHashForwardizer(data[:overlay][:typeBoosts]) || {}
+      overlaytypecons = data[:overlay][:typeCondition] ? data[:overlay][:typeCondition] : {}
+    end
+
+    # messages get stored separately and are replaced by an index
+    movemessages = data[:moveMessages]  || {}
+    if customField[1][1]
+      j = 0
+      fieldMessageArray = customField[1][1].split("|")
+      movemessages = movemessages.reduce({}) do |acc, (key, value)|
+        acc[fieldMessageArray[j]] = value
+        j += 1
+        acc
+      end
+    end
+    typemessages  = data[:typeMessages]  || {}
+    if customField[1][2]
+      j = 0
+      fieldMessageArray = customField[1][2].split("|")
+      typemessages = typemessages.reduce({}) do |acc, (key, value)|
+        acc[fieldMessageArray[j]] = value
+        j += 1
+        acc
+      end
+    end
+    changemessage = data[:changeMessage] || {}
+    if customField[1][3]
+      j = 0
+      fieldMessageArray = customField[1][3].split("|")
+      changemessage = changemessage.reduce({}) do |acc, (key, value)|
+        acc[fieldMessageArray[j]] = value
+        j += 1
+        acc
+      end
+    end
+    overlaymovemsg = data[:overlay][:moveMessages] || {} if data[:overlay]
+    overlaytypemsg = data[:overlay][:typeMessages] || {} if data[:overlay]
+    movemessagelist = []
+    typemessagelist = []
+    changemessagelist = []
+    olmovemessagelist = []
+    oltypemessagelist = []
+    messagearray = [movemessages, typemessages, changemessage]
+    messagearray = [movemessages, typemessages, changemessage, overlaymovemsg, overlaytypemsg] if data[:overlay]
+    messagearray.each_with_index { |hashdata, index|
+      messagelist = hashdata.keys
+      newhashdata = {}
+      hashdata.each { |key, value|
+        newhashdata[messagelist.index(key) + 1] = value
+      }
+      invhash = pbHashForwardizer(newhashdata)
+      case index
+        when 0
+          movemessagelist = messagelist
+          movemessages = invhash
+        when 1
+          typemessagelist = messagelist
+          typemessages = invhash
+        when 2
+          changemessagelist = messagelist
+          changemessage = invhash
+        when 3
+          olmovemessagelist = messagelist
+          overlaymovemsg = invhash
+        when 4
+          oltypemessagelist = messagelist
+          overlaytypemsg = invhash
+      end
+    }
+
+    # now we have all our hashes de-backwarded, and can fuse them all together.
+    # first, moves:
+    # get all the keys in one place
+    keys = (movedamageboost.keys << movetypemod.keys << moveaccuracyboost.keys << moveeffects.keys << fieldchange.keys).flatten
+    # now we take all the old hashes and squish them into one:
+    fieldmovedata = {}
+    for move in keys
+      movedata = {}
+      movedata[:mult] = movedamageboost[move] if movedamageboost[move]
+      movedata[:typemod] = movetypemod[move] if movetypemod[move]
+      movedata[:accmod] = moveaccuracyboost[move] if moveaccuracyboost[move]
+      movedata[:multtext] = movemessages[move] if movemessages[move]
+      movedata[:moveeffect] = moveeffects[move] if moveeffects[move]
+      movedata[:fieldchange] = fieldchange[move] if fieldchange[move]
+      movedata[:changetext] = changemessage[move] if changemessage[move]
+      movedata[:changeeffect] = changeeffects[move] if changeeffects[move]
+      movedata[:dontchangebackup] = dontchangebackup.include?(move)
+      fieldmovedata[move] = movedata
+    end
+    # now, types!
+    fieldtypedata = {}
+    keys = (typedamageboost.keys << typetypemod.keys << typeeffects.keys).flatten
+    for type in keys
+      typedata = {}
+      typedata[:mult] = typedamageboost[type] if typedamageboost[type]
+      typedata[:typemod] = typetypemod[type] if typetypemod[type]
+      typedata[:typeeffect] = typeeffects[type] if typeeffects[type]
+      typedata[:multtext] = typemessages[type] if typemessages[type]
+      typedata[:condition] = typecondition[type] if typecondition[type]
+      fieldtypedata[type] = typedata
+    end
+    if data[:overlay]
+      overlaymovedata = {}
+      keys = (overlaydamage.keys << overlaytypemod.keys).flatten
+      for move in keys
+        movedata = {}
+        movedata[:mult] = overlaydamage[move] if overlaydamage[move]
+        movedata[:typemod] = overlaytypemod[move] if overlaytypemod[move]
+        movedata[:multtext] = overlaymovemsg[move] if overlaymovemsg[move]
+        overlaymovedata[move] = movedata
+      end
+      overlaytypedata = {}
+      keys = overlaytypeboost.keys
+      for type in keys
+        typedata = {}
+        typedata[:mult] = overlaytypeboost[type] if overlaytypeboost[type]
+        typedata[:multtext] = overlaytypemsg[type] if overlaytypemsg[type]
+        typedata[:condition] = overlaytypecons[type] if overlaytypecons[type]
+        overlaytypedata[type] = typedata
+      end
+    end
+
+    # seeds for good measure.
+    seeddata = {}
+    seeddata = data[:seed]
+    seeddata[:message] = customField[1][4] if customField[1][4]
+    currentfield.fieldtypedata = fieldtypedata
+    currentfield.fieldmovedata = fieldmovedata
+    currentfield.seeddata = seeddata
+    currentfield.movemessagelist = movemessagelist
+    currentfield.typemessagelist = typemessagelist
+    currentfield.changemessagelist = changemessagelist
+    currentfield.fieldchangeconditions = changecondition
+    currentfield.overlaytypedata = overlaytypedata if overlaytypedata
+    currentfield.overlaymovedata = overlaymovedata if overlaymovedata
+    currentfield.overlaymovemessagelist = olmovemessagelist if olmovemessagelist
+    currentfield.overlaytypemessagelist = oltypemessagelist if oltypemessagelist
+    # all done!
+    fields.store(key, currentfield)
+    i += 1
+  }
+  save_data(fields, dir + "/" + FIELD_FILE + ".dat")
 end

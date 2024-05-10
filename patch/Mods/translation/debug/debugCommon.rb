@@ -18,6 +18,8 @@ MAP_INFO_FILE = "mapinfo"
 
 TRAINER_FILE = "trainers"
 
+FIELD_FILE = "fields"
+
 DEBUG_COMMANDS = []
 
 
@@ -34,6 +36,7 @@ def getDebugCommand
             ["[DTF] compile nature translation file", self.method(:debugCompileNatures)],
             ["[DTF] compile map info translation file", self.method(:debugCompileMapInfos)],
             ["[DTF] compile trainer translation file", self.method(:debugCompileTrainers)],
+            ["[DTF] compile field translation file", self.method(:debugCompileFields)],
             ["[DTF] compile all translation file", self.method(:debugCompileAll)]
         ]
     end

@@ -1,0 +1,674 @@
+[1]
+1
+INDOOR
+INDOOR
+
+
+2
+ELECTERRAIN
+ELECTERRAIN
+Electric Terrain
+Electric Terrain
+3
+GRASSY
+GRASSY
+Grassy Terrain
+Grassy Terrain
+4
+MISTY
+MISTY
+Misty Terrain
+Misty Terrain
+5
+DARKCRYSTALCAVERN
+DARKCRYSTALCAVERN
+Dark Crystal Cavern
+Dark Crystal Cavern
+6
+CHESS
+CHESS
+Chess Board
+Chess Board
+7
+BIGTOP
+BIGTOP
+Big Top Arena
+Big Top Arena
+8
+BURNING
+BURNING
+Burning Field
+Burning Field
+9
+SWAMP
+SWAMP
+Swamp Field
+Swamp Field
+10
+RAINBOW
+RAINBOW
+Rainbow Field
+Rainbow Field
+11
+CORROSIVE
+CORROSIVE
+Corrosive Field
+Corrosive Field
+12
+CORROSIVEMIST
+CORROSIVEMIST
+Corrosive Mist Field
+Corrosive Mist Field
+13
+DESERT
+DESERT
+Desert Field
+Desert Field
+14
+ICY
+ICY
+Icy Field
+Icy Field
+15
+ROCKY
+ROCKY
+Rocky Field
+Rocky Field
+16
+FOREST
+FOREST
+Forest Field
+Forest Field
+17
+SUPERHEATED
+SUPERHEATED
+Super-Heated Field
+Super-Heated Field
+18
+FACTORY
+FACTORY
+Factory Field
+Factory Field
+19
+SHORTCIRCUIT
+SHORTCIRCUIT
+Short-Circuit Field
+Short-Circuit Field
+20
+WASTELAND
+WASTELAND
+Wasteland
+Wasteland
+21
+ASHENBEACH
+ASHENBEACH
+Ashen Beach
+Ashen Beach
+22
+WATERSURFACE
+WATERSURFACE
+Water Surface
+Water Surface
+23
+UNDERWATER
+UNDERWATER
+Underwater
+Underwater
+24
+CAVE
+CAVE
+Cave
+Cave
+25
+GLITCH
+GLITCH
+Glitch Field
+Glitch Field
+26
+CRYSTALCAVERN
+CRYSTALCAVERN
+Crystal Cavern
+Crystal Cavern
+27
+MURKWATERSURFACE
+MURKWATERSURFACE
+Murkwater Surface
+Murkwater Surface
+28
+MOUNTAIN
+MOUNTAIN
+Mountain
+Mountain
+29
+SNOWYMOUNTAIN
+SNOWYMOUNTAIN
+Snowy Mountain
+Snowy Mountain
+30
+HOLY
+HOLY
+Holy Field
+Holy Field
+31
+MIRROR
+MIRROR
+Mirror Arena
+Mirror Arena
+32
+FAIRYTALE
+FAIRYTALE
+Fairy Tale Field
+Fairy Tale Field
+33
+DRAGONSDEN
+DRAGONSDEN
+Dragon's Den
+Dragon's Den
+34
+FLOWERGARDEN1
+FLOWERGARDEN1
+Flower Garden Field
+Flower Garden Field
+35
+FLOWERGARDEN2
+FLOWERGARDEN2
+Flower Garden Field
+Flower Garden Field
+36
+FLOWERGARDEN3
+FLOWERGARDEN3
+Flower Garden Field
+Flower Garden Field
+37
+FLOWERGARDEN4
+FLOWERGARDEN4
+Flower Garden Field
+Flower Garden Field
+38
+FLOWERGARDEN5
+FLOWERGARDEN5
+Flower Garden Field
+Flower Garden Field
+39
+STARLIGHT
+STARLIGHT
+Starlight Arena
+Starlight Arena
+40
+NEWWORLD
+NEWWORLD
+New World
+New World
+41
+INVERSE
+INVERSE
+Inverse Field
+Inverse Field
+42
+PSYTERRAIN
+PSYTERRAIN
+Psychic Terrain
+Psychic Terrain
+[2]
+1
+
+
+
+
+
+
+
+
+
+
+2
+The field is hyper-charged!
+The field is hyper-charged!
+The explosion became hyper-charged!|The attack became hyper-charged!|The attack powered up!
+The explosion became hyper-charged!|The attack became hyper-charged!|The attack powered up!
+The Electric Terrain strengthened the attack!
+The Electric Terrain strengthened the attack!
+The hyper-charged terrain shorted out!
+The hyper-charged terrain shorted out!
+{1} began charging power!
+{1} began charging power!
+3
+The field is in full bloom.
+The field is in full bloom.
+The wind picked up strength from the field!|The grass softened the attack...
+The wind picked up strength from the field!|The grass softened the attack...
+The Grassy Terrain strengthened the attack!|The grass below caught flame!
+The Grassy Terrain strengthened the attack!|The grass below caught flame!
+The grassy terrain caught fire!|The grassy terrain was corroded!
+The grassy terrain caught fire!|The grassy terrain was corroded!
+{1} planted its roots!
+{1} planted its roots!
+4
+Mist settles on the field.
+Mist settles on the field.
+The mist's energy strengthened the attack!|The mist softened the attack...|The dampness prevents the explosion!
+The mist's energy strengthened the attack!|The mist softened the attack...|The dampness prevents the explosion!
+The Misty Terrain weakened the attack!
+The Misty Terrain weakened the attack!
+The mist was blown away!|The mist was corroded!
+The mist was blown away!|The mist was corroded!
+A wish was made for {1}!
+A wish was made for {1}!
+5
+Darkness is gathering...
+Darkness is gathering...
+The darkness began to gather...!|The darkness strengthened the attack!|The crystals' light strengthened the attack!|The crystal split the attack!|The consuming darkness fed the attack!|{1} couldn't consume much light...
+The darkness began to gather...!|The darkness strengthened the attack!|The crystals' light strengthened the attack!|The crystal split the attack!|The consuming darkness fed the attack!|{1} couldn't consume much light...
+
+
+The dark crystals were shattered!|The sun lit up the crystal cavern!
+The dark crystals were shattered!|The sun lit up the crystal cavern!
+{1} shrouded itself with Magic Coat!
+{1} shrouded itself with Magic Coat!
+6
+Opening variation set.
+Opening variation set.
+En passant!
+En passant!
+
+
+The board was destroyed!
+The board was destroyed!
+{1} shrouded itself with Magic Coat!
+{1} shrouded itself with Magic Coat!
+7
+Now presenting...!
+Now presenting...!
+Back, foul beast!|What grace!|An extravagant aerial finish!|And what an entrance it is!|And a little extra for you, darling!
+Back, foul beast!|What grace!|An extravagant aerial finish!|And what an entrance it is!|And a little extra for you, darling!
+
+
+
+
+{1} accepts the crowd's help!
+{1} accepts the crowd's help!
+8
+The field is ablaze!
+The field is ablaze!
+The flames spread from the attack!|{1} was knocked into the flames!
+The flames spread from the attack!|{1} was knocked into the flames!
+The blaze amplified the attack!|The blaze softened the attack...
+The blaze amplified the attack!|The blaze softened the attack...
+The grime snuffed out the flame!|The wind snuffed out the flame!|The water snuffed out the flame!|The sand snuffed out the flame!
+The grime snuffed out the flame!|The wind snuffed out the flame!|The water snuffed out the flame!|The sand snuffed out the flame!
+{1} was trapped in the vortex!
+{1} was trapped in the vortex!
+9
+The field is swamped.
+The field is swamped.
+The murk strengthened the attack!|The attack dissipated in the soggy ground...|The dampness prevents the explosion!
+The murk strengthened the attack!|The attack dissipated in the soggy ground...|The dampness prevents the explosion!
+The poison infected the nearby murk!
+The poison infected the nearby murk!
+
+
+{1} planted its roots!
+{1} planted its roots!
+10
+What does it mean?
+What does it mean?
+The attack was rainbow-charged!|The rainbow softened the attack...
+The attack was rainbow-charged!|The rainbow softened the attack...
+The rainbow energized the attack!
+The rainbow energized the attack!
+The rainbow was consumed!
+The rainbow was consumed!
+A wish was made for {1}!
+A wish was made for {1}!
+11
+The field is corrupted!
+The field is corrupted!
+The corrosion strengthened the attack!
+The corrosion strengthened the attack!
+
+
+The polluted field was purified!
+The polluted field was purified!
+The Telluric Seed shielded {1} against damage!
+The Telluric Seed shielded {1} against damage!
+12
+Corrosive mist settles on the field!
+Corrosive mist settles on the field!
+The poison strengthened the attack!
+The poison strengthened the attack!
+The toxic mist caught flame!
+The toxic mist caught flame!
+The mist was blown away!|The polluted mist was purified!|The toxic mist collected on the ground!
+The mist was blown away!|The polluted mist was purified!|The toxic mist collected on the ground!
+{1} was badly poisoned!
+{1} was badly poisoned!
+13
+The field is rife with sand.
+The field is rife with sand.
+The desert strengthened the attack!
+The desert strengthened the attack!
+The desert softened the attack...
+The desert softened the attack...
+
+
+{1} was trapped by Sand Tomb!
+{1} was trapped by Sand Tomb!
+14
+The field is covered in ice.
+The field is covered in ice.
+The cold softened the attack...
+The cold softened the attack...
+The cold strengthened the attack!|The cold softened the attack...
+The cold strengthened the attack!|The cold softened the attack...
+The ice melted away!|The quake broke up the ice and revealed the water beneath!|The hot water melted the ice!
+The ice melted away!|The quake broke up the ice and revealed the water beneath!|The hot water melted the ice!
+{1} was hurt by icy Spikes!
+{1} was hurt by icy Spikes!
+15
+The field is littered with rocks.
+The field is littered with rocks.
+The rocks strengthened the attack!|SMASH'D!
+The rocks strengthened the attack!|SMASH'D!
+The field strengthened the attack!
+The field strengthened the attack!
+
+
+{1} was hurt by Stealth Rocks!
+{1} was hurt by Stealth Rocks!
+16
+The field is abound with trees.
+The field is abound with trees.
+The forest softened the attack...|They're coming out of the woodwork!|Gossamer and arbor strengthened the attack!|The target was cut down to size!
+The forest softened the attack...|They're coming out of the woodwork!|Gossamer and arbor strengthened the attack!|The target was cut down to size!
+The field strengthened the attack!|The forestry strengthened the attack!
+The field strengthened the attack!|The forestry strengthened the attack!
+The forest caught fire!
+The forest caught fire!
+The Telluric Seed shielded {1} against damage!
+The Telluric Seed shielded {1} against damage!
+17
+The field is super-heated!
+The field is super-heated!
+The field super-heated the attack!
+The field super-heated the attack!
+The extreme heat softened the attack...|The attack was super-heated!
+The extreme heat softened the attack...|The attack was super-heated!
+The field combusted!|The field cooled off!
+The field combusted!|The field cooled off!
+{1} primed a trap!
+{1} primed a trap!
+18
+Machines whir in the background.
+Machines whir in the background.
+ATTACK SEQUENCE UPDATE.|ATTACK SEQUENCE INITIATE.
+ATTACK SEQUENCE UPDATE.|ATTACK SEQUENCE INITIATE.
+The attack took energy from the field!
+The attack took energy from the field!
+The field was broken!|All the light was consumed!
+The field was broken!|All the light was consumed!
+{1} is focused!
+{1} is focused!
+19
+Bzzt!
+Bzzt!
+Blinding!|The attack picked up electricity!|The darkness strengthened the attack!|{1} couldn't consume much light...
+Blinding!|The attack picked up electricity!|The darkness strengthened the attack!|{1} couldn't consume much light...
+
+
+SYSTEM ONLINE.
+SYSTEM ONLINE.
+{1} levitated with electromagnetism!
+{1} levitated with electromagnetism!
+20
+The waste is watching...
+The waste is watching...
+The waste did it for the vine!|The waste was added to the attack!|Wibble-wibble wobble-wobb...|BLEAAARGGGGH!|The waste joined the attack!
+The waste did it for the vine!|The waste was added to the attack!|Wibble-wibble wobble-wobb...|BLEAAARGGGGH!|The waste joined the attack!
+
+
+
+
+
+
+21
+Ash and sand line the field.
+Ash and sand line the field.
+...And with pure focus!|The sand strengthened the atttack!|Surf's up!|Ash mixed into the attack!|...And with full focus...!|...And with focus...!
+...And with pure focus!|The sand strengthened the atttack!|Surf's up!|Ash mixed into the attack!|...And with full focus...!|...And with focus...!
+
+
+
+
+{1}'s Telluric Seed is getting it pumped!
+{1}'s Telluric Seed is getting it pumped!
+22
+The water's surface is calm.
+The water's surface is calm.
+The attack rode the current!|Poison spread through the water!|...The spikes sank into the water and vanished!
+The attack rode the current!|Poison spread through the water!|...The spikes sank into the water and vanished!
+The water conducted the attack!|The water strengthened the attack!|The water deluged the attack...|...But there was no solid ground to attack from!
+The water conducted the attack!|The water strengthened the attack!|The water deluged the attack...|...But there was no solid ground to attack from!
+The battle sank into the depths!|The battle was pulled underwater!|The water froze over!|The water was polluted!
+The battle sank into the depths!|The battle was pulled underwater!|The water froze over!|The water was polluted!
+{1} surrounded itself with a veil of water!
+{1} surrounded itself with a veil of water!
+23
+Blub blub...
+Blub blub...
+Jet-streamed!|From the depths!|Poison spread through the water!|You're too deep to notice the weather!
+Jet-streamed!|From the depths!|Poison spread through the water!|You're too deep to notice the weather!
+The water strengthened the attack!|The water super-conducted the attack!|...But the attack was doused instantly!
+The water strengthened the attack!|The water super-conducted the attack!|...But the attack was doused instantly!
+The battle resurfaced!|The grime sank beneath the battlers!
+The battle resurfaced!|The grime sank beneath the battlers!
+{1} transformed into the Water type!
+{1} transformed into the Water type!
+24
+The cave echoes dully...
+The cave echoes dully...
+...Piled on!
+...Piled on!
+The cave choked out the air!|The cavern strengthened the attack!
+The cave choked out the air!|The cavern strengthened the attack!
+The cave was littered with crystals!
+The cave was littered with crystals!
+{1} was hurt by Stealth Rocks!
+{1} was hurt by Stealth Rocks!
+25
+1n!taliz3 .b//////attl3
+1n!taliz3 .b//////attl3
+
+
+.0P pl$ nerf!-//
+.0P pl$ nerf!-//
+
+
+{1}.TYPE = (:QMARKS)
+{1}.TYPE = (:QMARKS)
+26
+The cave is littered with crystals.
+The cave is littered with crystals.
+The crystals' light strengthened the attack!|The crystals strengthened the attack!
+The crystals' light strengthened the attack!|The crystals strengthened the attack!
+The crystals charged the attack!|The crystal energy strengthened the attack!
+The crystals charged the attack!|The crystal energy strengthened the attack!
+The crystals were broken up!|The crystals' light was warped by the darkness!|The crystals' light was consumed!
+The crystals were broken up!|The crystals' light was warped by the darkness!|The crystals' light was consumed!
+{1} shrouded itself with Magic Coat!
+{1} shrouded itself with Magic Coat!
+27
+The water is tainted...
+The water is tainted...
+The toxic water strengthened the attack!|Stinging!|...The spikes sank into the water and vanished!
+The toxic water strengthened the attack!|Stinging!|...The spikes sank into the water and vanished!
+The toxic water strengthened the attack!|The toxic water conducted the attack!|...But there was no solid ground to attack from!
+The toxic water strengthened the attack!|The toxic water conducted the attack!|...But there was no solid ground to attack from!
+The maelstrom flushed out the poison!|The toxic water froze over!
+The maelstrom flushed out the poison!|The toxic water froze over!
+{1} surrounded itself with a veil of water!
+{1} surrounded itself with a veil of water!
+28
+Adieu to disappointment and spleen,|What are men to rocks and mountains?
+Adieu to disappointment and spleen,|What are men to rocks and mountains?
+{1} was thrown partway down the mountain!|The wind strengthened the attack!|The mountain strengthened the attack!|Yodelayheehoo~
+{1} was thrown partway down the mountain!|The wind strengthened the attack!|The mountain strengthened the attack!|Yodelayheehoo~
+The mountain strengthened the attack!|The open air strengthened the attack!
+The mountain strengthened the attack!|The open air strengthened the attack!
+The mountain was covered in snow!
+The mountain was covered in snow!
+
+
+29
+The snow glows white on the mountain...
+The snow glows white on the mountain...
+{1} was thrown partway down the mountain!|The wind strengthened the attack!|The snow strengthened the attack!|The cold softened the attack...|The frigid wind strengthened the attack!|Yodelayheehoo~
+{1} was thrown partway down the mountain!|The wind strengthened the attack!|The snow strengthened the attack!|The cold softened the attack...|The frigid wind strengthened the attack!|Yodelayheehoo~
+The snowy mountain strengthened the attack!|The open air strengthened the attack!|The cold softened the attack!
+The snowy mountain strengthened the attack!|The open air strengthened the attack!|The cold softened the attack!
+The snow melted away!
+The snow melted away!
+
+
+30
+Benedictus Sanctus Spiritus...
+Benedictus Sanctus Spiritus...
+Legendary power accelerated the attack!|The holy energy resonated with the attack!|Godspeed!
+Legendary power accelerated the attack!|The holy energy resonated with the attack!|Godspeed!
+The holy energy resonated with the attack!|The legendary energy resonated with the attack!|The attack was cleansed...
+The holy energy resonated with the attack!|The legendary energy resonated with the attack!|The attack was cleansed...
+The holy light was consumed!
+The holy light was consumed!
+{1} shrouded itself with Magic Coat!
+{1} shrouded itself with Magic Coat!
+31
+Mirror, mirror, on the field,|Who shall this fractured power wield?
+Mirror, mirror, on the field,|Who shall this fractured power wield?
+The reflected light was blinding!|The mirrors strengthened the attack!
+The reflected light was blinding!|The mirrors strengthened the attack!
+
+
+The mirror arena shattered!
+The mirror arena shattered!
+{1} shrouded itself with Magic Coat!
+{1} shrouded itself with Magic Coat!
+32
+Once upon a time...
+Once upon a time...
+The blade cuts true!|The magical energy strengthened the attack!|True love never hurt so badly!
+The blade cuts true!|The magical energy strengthened the attack!|True love never hurt so badly!
+For ever after!|For justice!|The foul beast's attack gained strength!
+For ever after!|For justice!|The foul beast's attack gained strength!
+
+
+The Magical Seed shielded {1} against damage!
+The Magical Seed shielded {1} against damage!
+33
+If you wish to slay a dragon...
+If you wish to slay a dragon...
+Trial of the Dragon!!!|The lava strengthened the attack!|{1} was knocked into the lava!|The draconic energy boosted the attack!|money money money money money mothafucka
+Trial of the Dragon!!!|The lava strengthened the attack!|{1} was knocked into the lava!|The draconic energy boosted the attack!|money money money money money mothafucka
+The lava's heat boosted the flame!|The draconic energy boosted the attack!|The lava's heat softened the attack...
+The lava's heat boosted the flame!|The draconic energy boosted the attack!|The lava's heat softened the attack...
+The lava was frozen solid!|The lava solidified!
+The lava was frozen solid!|The lava solidified!
+{1} raised its Fire power!
+{1} raised its Fire power!
+34
+Seeds line the field.
+Seeds line the field.
+
+
+
+
+The garden grew a little!
+The garden grew a little!
+{1} planted its roots!
+{1} planted its roots!
+35
+Seeds line the field.
+Seeds line the field.
+{1} was cut down to size!
+{1} was cut down to size!
+The garden's power boosted the attack!
+The garden's power boosted the attack!
+The garden was cut down a bit!|The garden grew a little!|The acid melted the bloom!
+The garden was cut down a bit!|The garden grew a little!|The acid melted the bloom!
+{1} planted its roots!
+{1} planted its roots!
+36
+Seeds line the field.
+Seeds line the field.
+{1} was cut down to size!|The fresh scent of flowers boosted the attack!
+{1} was cut down to size!|The fresh scent of flowers boosted the attack!
+The budding flowers boosted the attack!|The attack infested the garden!|The nearby flowers caught flame!
+The budding flowers boosted the attack!|The attack infested the garden!|The nearby flowers caught flame!
+The garden caught fire!|The garden was cut down a bit!|The garden grew a little!|The acid melted the bloom!
+The garden caught fire!|The garden was cut down a bit!|The garden grew a little!|The acid melted the bloom!
+{1} planted its roots!
+{1} planted its roots!
+37
+Seeds line the field.
+Seeds line the field.
+{1} was cut down to size!|The vibrant aroma scent of flowers boosted the attack!
+{1} was cut down to size!|The vibrant aroma scent of flowers boosted the attack!
+The blooming flowers boosted the attack!|The attack infested the flowers!|The nearby flowers caught flame!
+The blooming flowers boosted the attack!|The attack infested the flowers!|The nearby flowers caught flame!
+The garden caught fire!|The garden was cut down a bit!|The garden grew a little!|The acid melted the bloom!
+The garden caught fire!|The garden was cut down a bit!|The garden grew a little!|The acid melted the bloom!
+{1} planted its roots!
+{1} planted its roots!
+38
+Seeds line the field.
+Seeds line the field.
+{1} was cut down to size!|The vibrant aroma scent of flowers boosted the attack!
+{1} was cut down to size!|The vibrant aroma scent of flowers boosted the attack!
+The thriving flowers boosted the attack!|The attack infested the flowers!|The nearby flowers caught flame!
+The thriving flowers boosted the attack!|The attack infested the flowers!|The nearby flowers caught flame!
+The garden caught fire!|The garden was cut down a bit!|The acid melted the bloom!
+The garden caught fire!|The garden was cut down a bit!|The acid melted the bloom!
+{1} planted its roots!
+{1} planted its roots!
+39
+Starlight fills the battlefield.
+Starlight fills the battlefield.
+Starlight surged through the attack!|Lunar energy surged through the attack!|The astral energy boosted the attack!|The astral vortex accelerated the attack!|A star came crashing down!
+Starlight surged through the attack!|Lunar energy surged through the attack!|The astral energy boosted the attack!|The astral vortex accelerated the attack!|A star came crashing down!
+Starlight supercharged the attack!|The night sky boosted the attack!|The astral energy boosted the attack!
+Starlight supercharged the attack!|The night sky boosted the attack!|The astral energy boosted the attack!
+The cosmic light was consumed!
+The cosmic light was consumed!
+A wish was made for {1}!
+A wish was made for {1}!
+40
+From darkness, from stardust,|From memories of eons past and visions yet to come...
+From darkness, from stardust,|From memories of eons past and visions yet to come...
+The light shone through the infinite darkness!|The ethereal energy strengthened the attack!|The germinal matter amassed in the attack!|The astral energy boosted the attack!|A star came crashing down on {1}!|{1} was swallowed up by the void!|The unformed land diffused the attack...|The terrain had no solid ground to attach...|The weather drifted off into space...
+The light shone through the infinite darkness!|The ethereal energy strengthened the attack!|The germinal matter amassed in the attack!|The astral energy boosted the attack!|A star came crashing down on {1}!|{1} was swallowed up by the void!|The unformed land diffused the attack...|The terrain had no solid ground to attach...|The weather drifted off into space...
+Infinity boosted the attack!
+Infinity boosted the attack!
+The world's matter reformed!|The world was regenerated!
+The world's matter reformed!|The world was regenerated!
+{1} must recharge!
+{1} must recharge!
+41
+!trats elttaB
+!trats elttaB
+
+
+
+
+
+
+{1} must recharge!
+{1} must recharge!
+42
+The field became mysterious!
+The field became mysterious!
+The psychic energy strengthened the attack!
+The psychic energy strengthened the attack!
+The Psychic Terrain strengthened the attack!
+The Psychic Terrain strengthened the attack!
+
+
+{1} became confused!
+{1} became confused!

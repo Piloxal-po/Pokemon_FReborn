@@ -173,7 +173,7 @@ class Scene_FieldNotes
     menu.push(general)
     FIELD_NOTES_MENU.each do |category, fields|
       item = {
-        label: category,
+        label: _INTL(category),
         skip: true,
       }
       menu.push(item)
@@ -192,7 +192,7 @@ class Scene_FieldNotes
       end
     end
     back = {
-      label: "<c3=a7a7a7,4e4e4e>Back",
+      label: _INTL("<c3=a7a7a7,4e4e4e>Back"),
       back: true,
     }
     menu.push(back)
