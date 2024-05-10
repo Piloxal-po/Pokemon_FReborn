@@ -45,13 +45,31 @@ def buildData(file)
       elsif iLine % 2 != 0 # first line skip
         iLine += 1
       elsif type == 1 && res[id] && iLine % 2 == 0
-        res[id] = [[res[id][0]].concat([denormalizeData(line)]), res[id][1], res[id][2]]
+        val = res[id][0]
+        if val.instance_of? Array
+          val.push(denormalizeData(line))
+        else
+          val = [val, denormalizeData(line)]
+        end
+        res[id] = [val, res[id][1], res[id][2]]
         iLine += 1
       elsif type == 2 && res[id][1] && iLine % 2 == 0
-        res[id] = [res[id][0], [res[id][1]].concat([denormalizeData(line)]), res[id][2]]
+        val = res[id][1]
+        if val.instance_of? Array
+          val.push(denormalizeData(line))
+        else
+          val = [val, denormalizeData(line)]
+        end
+        res[id] = [res[id][0], val, res[id][2]]
         iLine += 1
       elsif type == 3 && res[id][2] && iLine % 2 == 0
-        res[id] = [res[id][0], res[id][1], [res[id][2]].concat([denormalizeData(line)])]
+        val = res[id][2]
+        if val.instance_of? Array
+          val.push(denormalizeData(line))
+        else
+          val = [val, denormalizeData(line)]
+        end
+        res[id] = [res[id][0], res[id][1], val]
         iLine += 1
       elsif type == 1 # name = init array
         res[id] = [denormalizeData(line), nil, nil]
@@ -65,8 +83,8 @@ def buildData(file)
       end
     }
   rescue => e
-    Kernel.pbMessage(pbGetExceptionMessage(e))
     Kernel.pbMessage(l)
+    raise pbGetExceptionMessage(e)
   end
   return res
 end
@@ -279,12 +297,23 @@ def debugCompileTrainers
   debugCompileTrainersWithLang(choiceLanguage)
 end
 
+def findKeyMapByName(name, map)
+  map.keys.each{|key|
+    if key.to_s == name
+      return key
+    end
+  }
+end
+
 def debugCompileTrainersWithLang(lang)
   File.open("Scripts/" + GAMEFOLDER + "/trainertext.rb") { |f|
     eval(f.read)
   }
   File.open("Scripts/" + GAMEFOLDER + "/montext.rb") { |f|
     eval(f.read)
+  }
+  File.open("Scripts/" + GAMEFOLDER + "/movetext.rb") { |f|
+      eval(f.read)
   }
   dir = DIR_I18N + lang
   debugMkdir(dir)
@@ -299,35 +328,38 @@ def debugCompileTrainersWithLang(lang)
     name = trainer[:teamid][0]
     items = trainer[:items]
     pkmn = trainer[:mons]
-
     customEntity = dict[i]
-    name = customEntity[0][0] if (customEntity[0][0] && !customEntity[0][0].empty?)
-    drop = 1
+    customName = (customEntity[0][0] && !customEntity[0][0].empty?) ? customEntity[0][0] : name
+    iMon = 1
     split = customEntity[0][1].split(",")
-    if !MONHASH[split[0]]
+    if !MONHASH[split[0].to_sym]
       trainer[:defeat] = customEntity[0][1]
-    else
-      drop = 2
+      iMon = 2
     end
-    iMon = drop + 1
-
+    j = 0
     if customEntity[0][iMon]
       pkmn.each {|value| 
-        customMonInformation = customEntity[0][iMon].split(",")
-        if value[:species].to_s == customMonInformation[0]
-          value[:gender] = customMonInformation[1] if (customMonInformation[1] && !customMonInformation[1].empty?)
-          value[:name] = customMonInformation[2] if (customMonInformation[2] && !customMonInformation[2].empty?)
-          iMon += 1
+        customMonInformation = customEntity[0][j + iMon].split(",")
+        value[:species] = customMonInformation[0].to_sym if (customMonInformation[0] && !customMonInformation[0].empty?)
+        value[:level] = customMonInformation[1].to_i if (customMonInformation[1] && !customMonInformation[1].empty?)
+        value[:item] = customMonInformation[2].to_sym if (customMonInformation[2] && !customMonInformation[2].empty?)
+        if customMonInformation[3] && !customMonInformation[3].empty?
+          customMonMoves = customMonInformation[3].split("|")
+          if !customMonMoves[3]
+            customMonMoves[3] = nil
+          end
+          value[:moves] = customMonMoves.map{|move| move ? move.to_sym : nil}
         end
+        value[:gender] = customMonInformation[4] if (customMonInformation[4] && !customMonInformation[4].empty?)
+        value[:ability] = customMonInformation[5].to_sym if (customMonInformation[5] && !customMonInformation[5].empty?)
+        value[:nature] = customMonInformation[6].to_sym if (customMonInformation[6] && !customMonInformation[6].empty?)
+        value[:name] = customMonInformation[7] if (customMonInformation[7] && !customMonInformation[7].empty?)
+        if customMonInformation[8] && !customMonInformation[8].empty?
+          value[:ev] = customMonInformation[8].split("|").map{|ev| ev ? ev.to_i : 0}
+        end
+        j += 1
       }
-    end
-
-    for mon in pkmn
-      unless $cache.pkmn[mon[:species]].hasForm?(mon[:form])
-        puts trainer[:teamid].to_s + " is using unknown " + mon[:species].to_s + " form " + mon[:form].to_s
-        # Note: It is recommended to add cosmetic-only forms such as Furfrou into montext when used by trainers.
-      end
-    end
+    end    
     partyid = trainer[:teamid][2]
     ace = trainer[:ace]
     defeat = trainer[:defeat]
@@ -335,7 +367,7 @@ def debugCompileTrainersWithLang(lang)
     # see if there's a trainer with the same type/name in the hash already
     fulltrainerdata[trainertype] = {} if !fulltrainerdata[trainertype]
     fulltrainerdata[trainertype][name] = [] if !fulltrainerdata[trainertype][name]
-    fulltrainerdata[trainertype][name].push([partyid, pkmn, items, ace, defeat, trainereffect])
+    fulltrainerdata[trainertype][name].push([partyid, pkmn, items, ace, defeat, trainereffect, customName])
     i += 1
   end
   save_data(fulltrainerdata, dir + "/" + TRAINER_FILE + ".dat")

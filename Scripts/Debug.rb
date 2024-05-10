@@ -1588,23 +1588,13 @@ def pbPokemonDebug(origin, pkmn, pkmnid = nil, selected = nil, heldpoke = nil)
 end
 
 def pbFightDebugTrainer()
-  File.open("Scripts/" + GAMEFOLDER + "/trainertext.rb") { |f|
-    eval(f.read)
-  }
-  debugtrainer = TEAMARRAY[0]
+  debugtrainer = findParty(:TEST, "Mr. Meow Mix", 0)
 
   # split trainer into important components
-  trainertype = debugtrainer[:teamid][1]
-  name = debugtrainer[:teamid][0]
-  items = debugtrainer[:items]
-  pkmn = debugtrainer[:mons]
-  partyid = debugtrainer[:teamid][2]
-  ace = debugtrainer[:ace]
-  defeat = debugtrainer[:defeat]
-  trainereffect = debugtrainer[:trainereffect]
+  trainertype = :TEST
+  name = debugtrainer[6] if  (debugtrainer[6] && !debugtrainer[6].empty?)
   # make the classic trainer data array
-  fulltrainerdata = [partyid, pkmn, items, ace, defeat, trainereffect]
-
+  fulltrainerdata = debugtrainer
   # make the trainer
   items = fulltrainerdata[2]
   opponent = PokeBattle_Trainer.new(name, trainertype)

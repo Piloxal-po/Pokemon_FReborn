@@ -1,16 +1,20 @@
 class Cache_Game
     def reload()
-      cacheDexReload
-      cacheMovesReload
-      cacheItemsReload
-      cacheTrainersReload
-      cacheAbilitiesReload
-      cacheMessageReload
-      cacheFieldsReload
-      cacheFieldNotesReload
-      cacheTypesReload
-      cacheNaturesReload
-      cacheMapInfosReload
+      begin 
+        cacheDexReload
+        cacheMovesReload
+        cacheItemsReload
+        cacheTrainersReload
+        cacheAbilitiesReload
+        cacheMessageReload
+        cacheFieldsReload
+        cacheFieldNotesReload
+        cacheTypesReload
+        cacheNaturesReload
+        cacheMapInfosReload
+      rescue => e
+        raise pbGetExceptionMessage(e)
+      end
     end
     
     def cacheDexReload

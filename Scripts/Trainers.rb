@@ -4,6 +4,7 @@ def pbLoadTrainer(type, name, id)
   return nil if !trainer
 
   items = trainer[2]
+  name = trainer[6] if  (trainer[6] && !trainer[6].empty?)
   opponent = PokeBattle_Trainer.new(name, type)
   opponent.setForeignID($Trainer) if $Trainer
   opponent.aceline = trainer[3]
