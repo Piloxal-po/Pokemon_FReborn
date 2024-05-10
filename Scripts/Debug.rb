@@ -1669,8 +1669,8 @@ def pbFightDebugTrainer()
 
   # start the battle
   double_battle = !Kernel.pbConfirmMessage("Singles battle?")
-  pbTrainerBattle(trainertype, name, "Happy to help!", double_battle, 0,
-                  true, opponent_team: party, items_overwrite: items)
+  pbTrainerBattle(trainertype, name, opponent.defeatline, double_battle, debugtrainer[0],
+                  true)
 end
 
 class Scene_Debug
