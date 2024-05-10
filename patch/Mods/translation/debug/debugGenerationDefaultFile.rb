@@ -2,22 +2,38 @@ def generateDebugTranslationModFile
     lang = choiceLanguage
     dir = DIR_DEBUG_I18N + lang
     debugMkdir(dir)
-    t2 = Thread.new{generateAbilityDebugTranslationModFile(dir)}
-    t3 = Thread.new{generateMoveDebugTranslationModFile(dir)}
-    t4 = Thread.new{generateMessageDebugTranslationFile(dir)}
-    t5 = Thread.new{generateItemsDebugTranslationFile(dir)}
-    t6 = Thread.new{generateMonsDebugTranslationFile(dir)}
-    t7 = Thread.new{generateNaturesDebugTranslationFile(dir)}
-    t8 = Thread.new{generateMapInfoDebugTranslationFile(lang, dir)}
-    t9 = Thread.new{generateTrainersDebugTranslationFile(dir)}
+    t1 = Thread.new{generateMessageDebugTranslationFile(dir)}
+    t2 = Thread.new{generateDebugTranslationModFileWithoutMessage(lang, dir)}
+    t1.join()
     t2.join()
-    t3.join()
-    t4.join()
-    t5.join()
-    t6.join()
-    t7.join()
-    t8.join()
-    t9.join()
+end
+
+def generateDebugTranslationModFileWithoutMessage(lang, dir)
+   generateAbilityDebugTranslationModFile(dir)
+   generateMoveDebugTranslationModFile(dir)
+   generateItemsDebugTranslationFile(dir)
+   generateMonsDebugTranslationFile(dir)
+   generateNaturesDebugTranslationFile(dir)
+   generateMapInfoDebugTranslationFile(lang, dir)
+   generateTrainersDebugTranslationFile(dir)
+   generateFieldsDebugTranslationFile(dir)
+end
+
+#just use for start fr translation
+def gotText(text)
+    if text && !text.empty?
+        message = File.open(DIR_DEBUG_I18N + "fr/" + MESSAGE_FILE + ".txt")
+        stop = false
+        message.each_line { |line| 
+            line = line.strip
+            if stop
+                return line
+            elsif line == text
+                stop = true
+            end
+        }
+    end
+    return ""
 end
 
 def normalizeData(text) 
@@ -216,23 +232,6 @@ def generateItemsDebugTranslationFile(dir)
   end
 
 #just use for start fr translation
-def gotText(text)
-    if text && !text.empty?
-        message = File.open(DIR_DEBUG_I18N + "fr/" + MESSAGE_FILE + ".txt")
-        stop = false
-        message.each_line { |line| 
-            line = line.strip
-            if stop
-                return line
-            elsif line == text
-                stop = true
-            end
-        }
-    end
-    return ""
-end
-
-#just use for start fr translation
 def generateTrainersDebugConvertTranslationFile
     file = File.new(DIR_DEBUG_I18N + "en" + "/" + TRAINER_FILE + "2.txt", "w")
     File.open("Scripts/" + GAMEFOLDER + "/trainertext.rb") { |f|
@@ -300,6 +299,58 @@ def generateTrainersDebugTranslationFile(dir)
       i += 1
     end
     file.puts(names)
+    file.flush
+    file.close
+  end
+
+  def generateFieldsDebugTranslationFile(dir)
+    file = File.new(dir + "/" + FIELD_FILE + ".txt", "w")
+    File.open("Scripts/" + GAMEFOLDER + "/fieldtext.rb") { |f| eval(f.read) }
+    
+    i = 1
+    names = "[1]\n"
+    description = "[2]\n"
+  
+    FIELDEFFECTS.each { |key, data|
+        names += i.to_s + "\n" + key.to_s + "\n" + key.to_s + "\n" + data[:name] + "\n" + data[:name] + "\n"
+        description += i.to_s + "\n"
+        description += data[:fieldMessage].join("|") + "\n" + data[:fieldMessage].join("|") + "\n"
+        description += data[:moveMessages].keys.join("|") + "\n" + data[:moveMessages].keys.join("|") + "\n"
+        description += data[:typeMessages].keys.join("|") + "\n" + data[:typeMessages].keys.join("|") + "\n"
+        description += data[:changeMessage].keys.join("|") + "\n" + data[:changeMessage].keys.join("|") + "\n"
+        description += data[:seed] && data[:seed][:message] ? data[:seed][:message] + "\n" + data[:seed][:message] + "\n" : "\n\n"
+        i += 1
+    }
+    file.puts(names)
+    file.flush
+    file.puts(description)
+    file.flush
+    file.close
+  end
+
+  
+
+  def generateFieldsDebugConvertTranslationFile(dir)
+    file = File.new(dir + "/" + FIELD_FILE + ".txt", "w")
+    File.open("Scripts/" + GAMEFOLDER + "/fieldtext.rb") { |f| eval(f.read) }
+    
+    i = 1
+    names = "[1]\n"
+    description = "[2]\n"
+  
+    FIELDEFFECTS.each { |key, data|
+        names += i.to_s + "\n" + key.to_s + "\n" + key.to_s + "\n" + data[:name] + "\n" + gotText(data[:name]) + "\n"
+        description += i.to_s + "\n"
+        description += data[:fieldMessage].join("|") + "\n" + data[:fieldMessage].map{|e| gotText(e)}.join("|") + "\n"
+        description += data[:moveMessages].keys.join("|") + "\n" + data[:moveMessages].keys.map{|e| gotText(e)}.join("|") + "\n"
+        description += data[:typeMessages].keys.join("|") + "\n" + data[:typeMessages].keys.map{|e| gotText(e)}.join("|") + "\n"
+        description += data[:changeMessage].keys.join("|") + "\n" + data[:changeMessage].keys.map{|e| gotText(e)}.join("|") + "\n"
+        description += data[:seed] && data[:seed][:message] ? data[:seed][:message] + "\n" + gotText(data[:seed][:message]) + "\n" : "\n\n"
+        i += 1
+    }
+    file.puts(names)
+    file.flush
+    file.puts(description)
     file.flush
     file.close
   end
