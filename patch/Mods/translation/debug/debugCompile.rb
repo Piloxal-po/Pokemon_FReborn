@@ -335,6 +335,7 @@ def debugCompileTrainersWithLang(lang)
     if !MONHASH[split[0].to_sym]
       trainer[:defeat] = customEntity[0][1]
       iMon = 2
+      
     end
     j = 0
     if customEntity[0][iMon]
