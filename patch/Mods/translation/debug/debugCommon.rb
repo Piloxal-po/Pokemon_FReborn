@@ -20,6 +20,8 @@ TRAINER_FILE = "trainers"
 
 FIELD_FILE = "fields"
 
+FIELD_NOTE_FILE = "fieldnotes"
+
 DEBUG_COMMANDS = []
 
 

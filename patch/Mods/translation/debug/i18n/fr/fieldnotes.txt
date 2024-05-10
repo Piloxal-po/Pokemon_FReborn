@@ -1,0 +1,5680 @@
+[1]
+1
+<c=orange>"The field is hyper-charged!"</c> 
+<c=orange>"The field is hyper-charged!"</c> 
+
+
+
+
+2
+Grounded Pokémon <icon=fieldChange,tts="are"> <icon=fieldNoSleep> 
+Grounded Pokémon <icon=fieldChange,tts="are"> <icon=fieldNoSleep> 
+
+
+
+
+3
+<c=green>Created</c> by . . .
+<c=green>Created</c> by . . .
+Electric Surge, Electric Terrain (5 turns), Stoked Sparksurfer, Ion Deluge, Plasma Fists (3 turns), when the attacker does not hold an Everstone.
+Electric Surge, Electric Terrain (5 turns), Stoked Sparksurfer, Ion Deluge, Plasma Fists (3 turns), when the attacker does not hold an Everstone.
+
+
+4
+<icon=typeELECTRIC> attacks <icon=fieldUp> <c=green>x1.5</c> when . . .
+<icon=typeELECTRIC> attacks <icon=fieldUp> <c=green>x1.5</c> when . . .
+...when attacker is grounded.
+...when attacker is grounded.
+
+
+5
+Certain attacks <icon=fieldPlus,tts="gain the"> <icon=typeELECTRIC> . . . 
+Certain attacks <icon=fieldPlus,tts="gain the"> <icon=typeELECTRIC> . . . 
+Explosion, Hurricane, Hydro Vortex, Muddy Water, Self Destruct, Smack Down, Surf, Thousand Arrows
+Explosion, Hurricane, Hydro Vortex, Muddy Water, Self Destruct, Smack Down, Surf, Thousand Arrows
+
+
+6
+Focus Punch will always <c=red>fail</c> 
+Focus Punch will always <c=red>fail</c> 
+
+
+
+
+7
+Certain stat moves effect <icon=fieldUp,tts="boosted"> . . . 
+Certain stat moves effect <icon=fieldUp,tts="boosted"> . . . 
+Charge, Eerie Impulse
+Charge, Eerie Impulse
+
+
+8
+Magnet Rise lasts <c=green>8</c> turns
+Magnet Rise lasts <c=green>8</c> turns
+
+
+
+
+9
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Explosion, Hurricane, Muddy Water, Self Destruct, Smack Down, Surf, Thousand Arrows
+Explosion, Hurricane, Muddy Water, Self Destruct, Smack Down, Surf, Thousand Arrows
+
+
+10
+Certain attacks <icon=fieldUp> <c=green>x2</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x2</c> . . . 
+Magnet Bomb
+Magnet Bomb
+
+
+11
+<c=green>Activates</c> Surge Surfer
+<c=green>Activates</c> Surge Surfer
+
+
+
+
+12
+<c=green>Activates</c> Motor Drive . . .
+<c=green>Activates</c> Motor Drive . . .
+...each turn.
+...each turn.
+
+
+13
+<c=red>Disables</c> Comatose
+<c=red>Disables</c> Comatose
+
+
+
+
+14
+Slow Start timer <icon=fieldChange,tts="increments"> <c=green>x2</c> per turn
+Slow Start timer <icon=fieldChange,tts="increments"> <c=green>x2</c> per turn
+
+
+
+
+15
+Galvanize power boost <icon=fieldChange> <c=green>x1.5</c> 
+Galvanize power boost <icon=fieldChange> <c=green>x1.5</c> 
+
+
+
+
+16
+Wild Charge <icon=fieldChange,tts="has"> <c=green>no recoil</c> 
+Wild Charge <icon=fieldChange,tts="has"> <c=green>no recoil</c> 
+
+
+
+
+17
+<c=red>Destroyed</c> by these moves . . .
+<c=red>Destroyed</c> by these moves . . .
+Mud Sport, Tectonic Rage
+Mud Sport, Tectonic Rage
+
+
+18
+Nature Power <icon=fieldChange> Thunderbolt
+Nature Power <icon=fieldChange> Thunderbolt
+
+
+
+
+19
+Camouflage <icon=fieldChange> <icon=typeELECTRIC> 
+Camouflage <icon=fieldChange> <icon=typeELECTRIC> 
+
+
+
+
+20
+Secret Power effect <icon=fieldChange> <icon=fieldParalyze> 
+Secret Power effect <icon=fieldChange> <icon=fieldParalyze> 
+
+
+
+
+21
+Activates <c=orange>Elemental Seed</c>. . .
+Activates <c=orange>Elemental Seed</c>. . .
+Boosts Speed and applies Charge to the user.
+Boosts Speed and applies Charge to the user.
+
+
+22
+<c=orange>"The field is in full bloom."</c> 
+<c=orange>"The field is in full bloom."</c> 
+
+
+
+
+23
+Pokémon <icon=fieldPlus,tts="restore"> <c=green>1/16 HP</c> when . . .
+Pokémon <icon=fieldPlus,tts="restore"> <c=green>1/16 HP</c> when . . .
+...when grounded
+...when grounded
+
+
+24
+<c=green>Created</c> by . . .
+<c=green>Created</c> by . . .
+Grassy Surge, Grassy Terrain (5 turns), Bloom Doom when not in Forest or Flower Garden fields (3 turns)
+Grassy Surge, Grassy Terrain (5 turns), Bloom Doom when not in Forest or Flower Garden fields (3 turns)
+
+
+25
+<icon=typeGRASS> attacks <icon=fieldUp> <c=green>x1.5</c> when . . .
+<icon=typeGRASS> attacks <icon=fieldUp> <c=green>x1.5</c> when . . .
+...when attacker is grounded.
+...when attacker is grounded.
+
+
+26
+<icon=typeFIRE> attacks <icon=fieldUp> <c=green>x1.5</c> when . . .
+<icon=typeFIRE> attacks <icon=fieldUp> <c=green>x1.5</c> when . . .
+...when target is grounded.
+...when target is grounded.
+
+
+27
+<c=green>Activates</c> Grass Pelt
+<c=green>Activates</c> Grass Pelt
+
+
+
+
+28
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Fairy Wind, Silver Wind
+Fairy Wind, Silver Wind
+
+
+29
+Certain attacks <icon=fieldDown> <c=red>x0.5</c> . . . 
+Certain attacks <icon=fieldDown> <c=red>x0.5</c> . . . 
+Bulldoze, Earthquake, Magnitude, Muddy Water, Surf
+Bulldoze, Earthquake, Magnitude, Muddy Water, Surf
+
+
+30
+Grass Whistle's Accuracy <icon=fieldChange> <c=green>80</c> 
+Grass Whistle's Accuracy <icon=fieldChange> <c=green>80</c> 
+
+
+
+
+31
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . .
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . .
+Coil, Growth
+Coil, Growth
+
+
+32
+Nature's Madness damage <icon=fieldChange> <c=green>75 % HP</c> 
+Nature's Madness damage <icon=fieldChange> <c=green>75 % HP</c> 
+
+
+
+
+33
+Floral Healing heals <c=green>100 %</c> Max HP
+Floral Healing heals <c=green>100 %</c> Max HP
+
+
+
+
+34
+Becomes <c=orange>Burning Field</c> when . . .
+Becomes <c=orange>Burning Field</c> when . . .
+...when Eruption, Fire Pledge, Flame Burst, Heat Wave, Incinerate, Inf. Overdrive, Lava Plume, Mind Blown, Searing Shot is used in the absence of Rain or Water Sport.
+...when Eruption, Fire Pledge, Flame Burst, Heat Wave, Incinerate, Inf. Overdrive, Lava Plume, Mind Blown, Searing Shot is used in the absence of Rain or Water Sport.
+
+
+35
+Becomes <c=orange>Corrosive Field</c> when . . .
+Becomes <c=orange>Corrosive Field</c> when . . .
+...when Acid Downpour, Sludge Wave is used.
+...when Acid Downpour, Sludge Wave is used.
+
+
+36
+Nature Power <icon=fieldChange> Energy Ball
+Nature Power <icon=fieldChange> Energy Ball
+
+
+
+
+37
+Camouflage <icon=fieldChange> <icon=typeGRASS> 
+Camouflage <icon=fieldChange> <icon=typeGRASS> 
+
+
+
+
+38
+Secret Power effect <icon=fieldChange> <icon=fieldSleep> 
+Secret Power effect <icon=fieldChange> <icon=fieldSleep> 
+
+
+
+
+39
+Activates <c=orange>Elemental Seed</c>. . .
+Activates <c=orange>Elemental Seed</c>. . .
+Boosts Defense and applies Ingrain to the user.
+Boosts Defense and applies Ingrain to the user.
+
+
+40
+<c=orange>"Mist settles on the field."</c> 
+<c=orange>"Mist settles on the field."</c> 
+
+
+
+
+41
+Grounded Pokémon <c=red>immune</c> to status
+Grounded Pokémon <c=red>immune</c> to status
+
+
+
+
+42
+<c=green>Created</c> by . . .
+<c=green>Created</c> by . . .
+Misty Surge, Misty Terrain (5 turns), Mist (3 turns), when the attacker does not hold an Everstone.
+Misty Surge, Misty Terrain (5 turns), Mist (3 turns), when the attacker does not hold an Everstone.
+
+
+43
+<icon=typeDRAGON> attacks <icon=fieldDown> <c=red>x0.5</c> 
+<icon=typeDRAGON> attacks <icon=fieldDown> <c=red>x0.5</c> 
+
+
+
+
+44
+<icon=typeFAIRY> Pokémon's Sp.Def <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeFAIRY> Pokémon's Sp.Def <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+45
+<c=green>Activates</c> Marvel Scale
+<c=green>Activates</c> Marvel Scale
+
+
+
+
+46
+Dry Skin slowly <c=green>restores HP</c> 
+Dry Skin slowly <c=green>restores HP</c> 
+
+
+
+
+47
+Pixilate power boost <icon=fieldChange> <c=green>x1.5</c> 
+Pixilate power boost <icon=fieldChange> <c=green>x1.5</c> 
+
+
+
+
+48
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Aura Sphere, Dazzling Gleam, Doom Desire, Fairy Wind, Icy Wind, Magical Leaf, Mist Ball, Moonblast, Moongeist Beam, Mystical Fire, Silver Wind, Steam Eruption
+Aura Sphere, Dazzling Gleam, Doom Desire, Fairy Wind, Icy Wind, Magical Leaf, Mist Ball, Moonblast, Moongeist Beam, Mystical Fire, Silver Wind, Steam Eruption
+
+
+49
+Certain attacks <icon=fieldDown> <c=red>x0.5</c> . . . 
+Certain attacks <icon=fieldDown> <c=red>x0.5</c> . . . 
+Dark Pulse, Night Daze, Shadow Ball
+Dark Pulse, Night Daze, Shadow Ball
+
+
+50
+Soul Heart also <c=green>boosts</c> Sp.Def
+Soul Heart also <c=green>boosts</c> Sp.Def
+
+
+
+
+51
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . . 
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . . 
+Aromatic Mist, Cosmic Power
+Aromatic Mist, Cosmic Power
+
+
+52
+Sweet Scent <c=red>lowers</c> Def & Sp.Def
+Sweet Scent <c=red>lowers</c> Def & Sp.Def
+
+
+
+
+53
+Wish recovery <icon=fieldChange> <c=green>75 % HP</c> 
+Wish recovery <icon=fieldChange> <c=green>75 % HP</c> 
+
+
+
+
+54
+Aqua Ring recovery <icon=fieldChange> <c=green>1/8 HP</c> 
+Aqua Ring recovery <icon=fieldChange> <c=green>1/8 HP</c> 
+
+
+
+
+55
+<c=red>Destroyed</c> by these moves . . .
+<c=red>Destroyed</c> by these moves . . .
+Defog, Gust, Hurricane, Razor Wind, Sonic Skystrike, Tailwind, Twister, Whirlwind
+Defog, Gust, Hurricane, Razor Wind, Sonic Skystrike, Tailwind, Twister, Whirlwind
+
+
+56
+Becomes <c=orange>Corrosive Mist</c> when . . .
+Becomes <c=orange>Corrosive Mist</c> when . . .
+...when Acid Downpour is used, or when one of these moves is used twice: Clear Smog, Poison Gas, Smog
+...when Acid Downpour is used, or when one of these moves is used twice: Clear Smog, Poison Gas, Smog
+
+
+57
+<c=red>Prevents</c> use of these moves . . .
+<c=red>Prevents</c> use of these moves . . .
+Explosion, Mind Blown, Self Destruct
+Explosion, Mind Blown, Self Destruct
+
+
+58
+<c=green>Activates</c> Water Compaction when . . .
+<c=green>Activates</c> Water Compaction when . . .
+...when Pokémon is sent out.
+...when Pokémon is sent out.
+
+
+59
+Nature Power <icon=fieldChange> Mist Ball
+Nature Power <icon=fieldChange> Mist Ball
+
+
+
+
+60
+Camouflage <icon=fieldChange> <icon=typeFAIRY> 
+Camouflage <icon=fieldChange> <icon=typeFAIRY> 
+
+
+
+
+61
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Sp.Atk
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Sp.Atk
+
+
+
+
+62
+Activates <c=orange>Elemental Seed</c>. . .
+Activates <c=orange>Elemental Seed</c>. . .
+Boosts Sp.Def and applies Wish to the user.
+Boosts Sp.Def and applies Wish to the user.
+
+
+63
+<c=orange>"Darkness is gathering..."</c> 
+<c=orange>"Darkness is gathering..."</c> 
+
+
+
+
+64
+Certain attacks <icon=fieldUp> <c=green>x2</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x2</c> . . . 
+Black Hole, Prismatic Laser
+Black Hole, Prismatic Laser
+
+
+65
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Aurora Beam, Dark Pulse, Dazzling Gleam, Diamond Storm, Doom Desire, Flash Cannon, Luster Purge, M. M. Maelstrom, Mirror Shot, Moongeist Beam, Night Daze, Night Slash, Photon Geyser, Power Gem, Shadow Ball, Shadow Bone, Shadow Claw, Shadow Force, Shadow Punch, Shadow Sneak, Signal Beam, Techno Blast
+Aurora Beam, Dark Pulse, Dazzling Gleam, Diamond Storm, Doom Desire, Flash Cannon, Luster Purge, M. M. Maelstrom, Mirror Shot, Moongeist Beam, Night Daze, Night Slash, Photon Geyser, Power Gem, Shadow Ball, Shadow Bone, Shadow Claw, Shadow Force, Shadow Punch, Shadow Sneak, Signal Beam, Techno Blast
+
+
+66
+Certain attacks <icon=fieldDown> <c=red>x0.5</c> . . . 
+Certain attacks <icon=fieldDown> <c=red>x0.5</c> . . . 
+Burning Light
+Burning Light
+
+
+67
+<icon=typeDARK> Pokémon's defenses <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeDARK> Pokémon's defenses <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+68
+<icon=typeGHOST> Pokémon's defenses <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeGHOST> Pokémon's defenses <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+69
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . . 
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . . 
+Flash
+Flash
+
+
+70
+Dark Void's Accuracy <icon=fieldChange> <c=green>100</c> 
+Dark Void's Accuracy <icon=fieldChange> <c=green>100</c> 
+
+
+
+
+71
+Moonlight recovery <icon=fieldChange> <c=green>75 % HP</c> 
+Moonlight recovery <icon=fieldChange> <c=green>75 % HP</c> 
+
+
+
+
+72
+Synthesis/Morning Sun <icon=fieldChange,tts="recovery changes to"> <c=red>25 % HP</c> 
+Synthesis/Morning Sun <icon=fieldChange,tts="recovery changes to"> <c=red>25 % HP</c> 
+
+
+
+
+73
+<c=red>Prevents</c> these moves . . .
+<c=red>Prevents</c> these moves . . .
+Solar Beam, Solar Blade
+Solar Beam, Solar Blade
+
+
+74
+Becomes <c=orange>Crystal Cavern</c> when . . .
+Becomes <c=orange>Crystal Cavern</c> when . . .
+...when the weather is Sunny, for as long as the sun lasts.
+...when the weather is Sunny, for as long as the sun lasts.
+
+
+75
+Becomes a <c=orange>Cave</c> when . . .
+Becomes a <c=orange>Cave</c> when . . .
+...when Bulldoze, Earthquake, Fissure, Magnitude, Tectonic Rage is used.
+...when Bulldoze, Earthquake, Fissure, Magnitude, Tectonic Rage is used.
+
+
+76
+<c=green>Enables</c> Aurora Veil
+<c=green>Enables</c> Aurora Veil
+
+
+
+
+77
+Prism Armor <c=green>lowers damage</c> x0.75
+Prism Armor <c=green>lowers damage</c> x0.75
+
+
+
+
+78
+Shadow Shield <c=green>reduces</c> damage
+Shadow Shield <c=green>reduces</c> damage
+Shadow Shield reduces damage of super effective hits by 0.75
+Shadow Shield reduces damage of super effective hits by 0.75
+
+
+79
+Nature Power <icon=fieldChange> Dark Pulse
+Nature Power <icon=fieldChange> Dark Pulse
+
+
+
+
+80
+Camouflage <icon=fieldChange> <icon=typeDARK> 
+Camouflage <icon=fieldChange> <icon=typeDARK> 
+
+
+
+
+81
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Accuracy
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Accuracy
+
+
+
+
+82
+Activates <c=orange>Magical Seed</c>. . .
+Activates <c=orange>Magical Seed</c>. . .
+Boosts Sp.Def and applies Magic Coat to the user.
+Boosts Sp.Def and applies Magic Coat to the user.
+
+
+83
+<c=orange>"Opening variation set."</c> 
+<c=orange>"Opening variation set."</c> 
+
+
+
+
+84
+Pokémon are assigned as <c=orange>Pieces</c> . . .
+Pokémon are assigned as <c=orange>Pieces</c> . . .
+...based on specific criteria. A Pokémon can only be one Piece.
+...based on specific criteria. A Pokémon can only be one Piece.
+
+
+85
+<c=orange>Pawn</c> - Sent out first turn of battle
+<c=orange>Pawn</c> - Sent out first turn of battle
+Overrides all other roles except Queen.
+Overrides all other roles except Queen.
+
+
+86
+<c=orange>Rook</c> - Highest stat is Def or Sp.Def 
+<c=orange>Rook</c> - Highest stat is Def or Sp.Def 
+
+
+
+
+87
+<c=orange>Bishop</c> - Highest stat is Atk or Sp.Atk
+<c=orange>Bishop</c> - Highest stat is Atk or Sp.Atk
+
+
+
+
+88
+<c=orange>Knight</c> - Highest stat is Speed 
+<c=orange>Knight</c> - Highest stat is Speed 
+
+
+
+
+89
+<c=orange>Queen</c> - Final slot in party
+<c=orange>Queen</c> - Final slot in party
+Overrides all roles. One per team.
+Overrides all roles. One per team.
+
+
+90
+<c=orange>King</c> - Holds King's Rock or lowest HP
+<c=orange>King</c> - Holds King's Rock or lowest HP
+Overrides Knight, Bishop and Rook. One per team.
+Overrides Knight, Bishop and Rook. One per team.
+
+
+91
+<c=orange>Pieces</c> gain the following effects:
+<c=orange>Pieces</c> gain the following effects:
+
+
+
+
+92
+<c=orange>Pawn</c> - <icon=fieldPlus,tts="Gains"> Focus Sash's effect
+<c=orange>Pawn</c> - <icon=fieldPlus,tts="Gains"> Focus Sash's effect
+
+
+
+
+93
+<c=orange>Rook</c> - Def and Sp.Def <icon=fieldUp,tts="boosted"> 
+<c=orange>Rook</c> - Def and Sp.Def <icon=fieldUp,tts="boosted"> 
+
+
+
+
+94
+<c=orange>Bishop</c> - Attack and Sp.Atk <icon=fieldUp,tts="boosted"> 
+<c=orange>Bishop</c> - Attack and Sp.Atk <icon=fieldUp,tts="boosted"> 
+
+
+
+
+95
+<c=orange>Knight</c> - Deals <c=green>3x</c> damage to <c=orange>Queens</c> and
+<c=orange>Knight</c> - Deals <c=green>3x</c> damage to <c=orange>Queens</c> and
+...and deals 1.25x damage when using a move in double battle that targets both opponents.
+...and deals 1.25x damage when using a move in double battle that targets both opponents.
+
+
+96
+<c=orange>Queen</c> - Def, Sp.Def, and damage <icon=fieldUp,tts="boosted"> 
+<c=orange>Queen</c> - Def, Sp.Def, and damage <icon=fieldUp,tts="boosted"> 
+
+
+
+
+97
+<c=orange>King</c> - All attacks <icon=fieldPlus,tts="gain"> 1 Priority
+<c=orange>King</c> - All attacks <icon=fieldPlus,tts="gain"> 1 Priority
+
+
+
+
+98
+Certain moves <icon=fieldChange,tts="become"> <c=orange>Chess Attacks</c> 
+Certain moves <icon=fieldChange,tts="become"> <c=orange>Chess Attacks</c> 
+Ancient Power, Continent Crush, Psychic, Secret Power, Shatter Psyche, Strength
+Ancient Power, Continent Crush, Psychic, Secret Power, Shatter Psyche, Strength
+
+
+99
+<c=orange>Chess Attacks</c> <icon=fieldUp> <c=green>x1.5</c> 
+<c=orange>Chess Attacks</c> <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+100
+<c=orange>Chess Attacks</c> <icon=fieldPlus,tts="gain the"> <icon=typeROCK> 
+<c=orange>Chess Attacks</c> <icon=fieldPlus,tts="gain the"> <icon=typeROCK> 
+
+
+
+
+101
+<c=orange>Chess Attacks</c> <icon=fieldUp> <c=green>x2</c> when . . .
+<c=orange>Chess Attacks</c> <icon=fieldUp> <c=green>x2</c> when . . .
+...when the target has Oblivious, Simple, Unaware, Klutz, or is confused.
+...when the target has Oblivious, Simple, Unaware, Klutz, or is confused.
+
+
+102
+<c=orange>Chess Attacks</c> <icon=fieldDown> <c=red>x0.5</c> when . . .
+<c=orange>Chess Attacks</c> <icon=fieldDown> <c=red>x0.5</c> when . . .
+...when the target has Adaptability, Synchronize, Anticipation or Telepathy.
+...when the target has Adaptability, Synchronize, Anticipation or Telepathy.
+
+
+103
+Trick Room lasts <c=green>8</c> turns . . .
+Trick Room lasts <c=green>8</c> turns . . .
+
+
+
+
+104
+Queenly Majesty damage <icon=fieldUp> <c=green>x1.5</c> 
+Queenly Majesty damage <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+105
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . .
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . .
+Ancient Power, Continent Crush, Fake Out, Feint, Feint Attack, First Impression, Psychic, Secret Power, Shadow Sneak, Shatter Psyche, Smart Strike, Strength, Sucker Punch
+Ancient Power, Continent Crush, Fake Out, Feint, Feint Attack, First Impression, Psychic, Secret Power, Shadow Sneak, Shatter Psyche, Smart Strike, Strength, Sucker Punch
+
+
+106
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . . 
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . . 
+Calm Mind, Nasty Plot
+Calm Mind, Nasty Plot
+
+
+107
+Certain attacks <icon=fieldPlus,tts="gain"> <c=green>protection</c> . . .
+Certain attacks <icon=fieldPlus,tts="gain"> <c=green>protection</c> . . .
+King's Shield additionally protects from non-damaging moves.
+King's Shield additionally protects from non-damaging moves.
+
+
+108
+King's Shield <icon=fieldPlus> <c=green>lowers</c> Sp.Atk
+King's Shield <icon=fieldPlus> <c=green>lowers</c> Sp.Atk
+
+
+
+
+109
+<c=red>Destroyed</c> by these moves . . .
+<c=red>Destroyed</c> by these moves . . .
+Stomp Tantrum, Tectonic Rage
+Stomp Tantrum, Tectonic Rage
+
+
+110
+Nature Power <icon=fieldChange> Ancient Power
+Nature Power <icon=fieldChange> Ancient Power
+
+
+
+
+111
+Camouflage <icon=fieldChange> <icon=typePSYCHIC> 
+Camouflage <icon=fieldChange> <icon=typePSYCHIC> 
+
+
+
+
+112
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Defense
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Defense
+
+
+
+
+113
+Activates <c=orange>Synthetic Seed</c>. . .
+Activates <c=orange>Synthetic Seed</c>. . .
+Boosts Sp.Atk and applies Magic Coat to the user.
+Boosts Sp.Atk and applies Magic Coat to the user.
+
+
+114
+<c=orange>"Now presenting...!"</c> 
+<c=orange>"Now presenting...!"</c> 
+
+
+
+
+115
+Certain moves <icon=fieldChange,tts="become"> <c=orange>Striker Moves</c> 
+Certain moves <icon=fieldChange,tts="become"> <c=orange>Striker Moves</c> 
+All physical Fighting moves, Blaze Kick, Body Slam, Bounce, Brutal Swing, Bulldoze, Continent Crush, Crabhammer, Double Iron Bash, Dragon Hammer, Dragon Rush, Dual Chop, Earthquake, Giga Impact, Grav Apple, Heat Crash, Heavy Slam, High Horsepower, Ice Hammer, Icicle Crash, Iron Tail, Magnitude, Meteor Mash, Pound, Sky Drop, Slam, Smack Down, Stomp, Stomp Tantrum, Strength, Wood Hammer
+All physical Fighting moves, Blaze Kick, Body Slam, Bounce, Brutal Swing, Bulldoze, Continent Crush, Crabhammer, Double Iron Bash, Dragon Hammer, Dragon Rush, Dual Chop, Earthquake, Giga Impact, Grav Apple, Heat Crash, Heavy Slam, High Horsepower, Ice Hammer, Icicle Crash, Iron Tail, Magnitude, Meteor Mash, Pound, Sky Drop, Slam, Smack Down, Stomp, Stomp Tantrum, Strength, Wood Hammer
+
+
+116
+<c=orange>Striker Moves</c> <icon=fieldChange,tts="inflict"> random damage
+<c=orange>Striker Moves</c> <icon=fieldChange,tts="inflict"> random damage
+Damage rolls set multipliers between x0.5 and x3
+Damage rolls set multipliers between x0.5 and x3
+
+
+117
+<c=orange>Striker Moves</c> roll <c=green>high</c> when . . .
+<c=orange>Striker Moves</c> roll <c=green>high</c> when . . .
+...when the attacker has one of these abilities: Sheer Force, Guts, Huge Power, Pure Power
+...when the attacker has one of these abilities: Sheer Force, Guts, Huge Power, Pure Power
+
+
+118
+<c=orange>Striker Moves</c> roll base on Atk stat
+<c=orange>Striker Moves</c> roll base on Atk stat
+A boosted Attack stat increases the chance of high rolls. Lowered Attack decreases the chance of high rolls, regardless of ability.
+A boosted Attack stat increases the chance of high rolls. Lowered Attack decreases the chance of high rolls, regardless of ability.
+
+
+119
+Acrobatics <icon=fieldChange,tts="is"> always <c=green>full</c> damage
+Acrobatics <icon=fieldChange,tts="is"> always <c=green>full</c> damage
+
+
+
+
+120
+Sound-based moves <icon=fieldUp> <c=green>x1.5</c> 
+Sound-based moves <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+121
+Pay Day BP <icon=fieldUp> <c=green>x2</c> and payout <icon=fieldUp,tts="boosted"> 
+Pay Day BP <icon=fieldUp> <c=green>x2</c> and payout <icon=fieldUp,tts="boosted"> 
+
+
+
+
+122
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . .
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . .
+Acrobatics, Fiery Dance, Fire Lash, First Impression, Fly, Petal Dance, Power Whip, Revelation Dance, Vine Whip
+Acrobatics, Fiery Dance, Fire Lash, First Impression, Fly, Petal Dance, Power Whip, Revelation Dance, Vine Whip
+
+
+123
+Encore lasts <c=green>6</c> turns
+Encore lasts <c=green>6</c> turns
+
+
+
+
+124
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . . 
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . . 
+Dragon Dance, Quiver Dance, Swords Dance, Feather Dance
+Dragon Dance, Quiver Dance, Swords Dance, Feather Dance
+
+
+125
+Sing's Accuracy <icon=fieldChange> <c=green>100</c> 
+Sing's Accuracy <icon=fieldChange> <c=green>100</c> 
+
+
+
+
+126
+Rain Dance lasts <c=green>8</c> turns
+Rain Dance lasts <c=green>8</c> turns
+
+
+
+
+127
+Belly Drum <c=green>boosts</c> Def/Sp.Def
+Belly Drum <c=green>boosts</c> Def/Sp.Def
+
+
+
+
+128
+Spotlight <c=green>boosts</c> Atk/Sp.Atk . . .
+Spotlight <c=green>boosts</c> Atk/Sp.Atk . . .
+...of both the target and user.
+...of both the target and user.
+
+
+129
+Dancer <c=green>boosts</c> Speed and Sp.Atk . . .
+Dancer <c=green>boosts</c> Speed and Sp.Atk . . .
+...when a Dance move is used on its own turn.
+...when a Dance move is used on its own turn.
+
+
+130
+Nature Power <icon=fieldChange> Acrobatics
+Nature Power <icon=fieldChange> Acrobatics
+
+
+
+
+131
+Camouflage <icon=fieldChange> <icon=typeNORMAL> 
+Camouflage <icon=fieldChange> <icon=typeNORMAL> 
+
+
+
+
+132
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Sp.Def
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Sp.Def
+
+
+
+
+133
+Activates <c=orange>Synthetic Seed</c>. . .
+Activates <c=orange>Synthetic Seed</c>. . .
+Boosts Attack and applies Helping Hand to the user.
+Boosts Attack and applies Helping Hand to the user.
+
+
+134
+<c=orange>"The field is ablaze!"</c> 
+<c=orange>"The field is ablaze!"</c> 
+
+
+
+
+135
+End of turn <icon=typeFIRE> <c=orange>damage</c> when . . .
+End of turn <icon=typeFIRE> <c=orange>damage</c> when . . .
+...when grounded and not Fire type.
+...when grounded and not Fire type.
+
+
+136
+<c=green>Immunity</c> to <c=orange>field damage</c> when . . .
+<c=green>Immunity</c> to <c=orange>field damage</c> when . . .
+...when one of these abilities is active: Flame Body, Flare Boost, Flash Fire, Heatproof, Magma Armor, Water Bubble, Water Veil.
+...when one of these abilities is active: Flame Body, Flare Boost, Flash Fire, Heatproof, Magma Armor, Water Bubble, Water Veil.
+
+
+137
+<c=orange>Field damage</c> <icon=fieldUp,tts="boosted"> when . . .
+<c=orange>Field damage</c> <icon=fieldUp,tts="boosted"> when . . .
+...when one of these abilities is active: Fluffy, Grass Pelt, Ice Body, Leaf Guard
+...when one of these abilities is active: Fluffy, Grass Pelt, Ice Body, Leaf Guard
+
+
+138
+<c=green>Created</c> by Grass <icon=fieldPlus,tts="and"> Fire Pledge
+<c=green>Created</c> by Grass <icon=fieldPlus,tts="and"> Fire Pledge
+
+
+
+
+139
+<icon=typeFIRE> attacks <icon=fieldUp> <c=green>x1.5</c> when . . .
+<icon=typeFIRE> attacks <icon=fieldUp> <c=green>x1.5</c> when . . .
+...when attacker is grounded.
+...when attacker is grounded.
+
+
+140
+<icon=typeGRASS> attacks <icon=fieldDown> <c=red>x0.5</c> when . . .
+<icon=typeGRASS> attacks <icon=fieldDown> <c=red>x0.5</c> when . . .
+...when target is grounded.
+...when target is grounded.
+
+
+141
+<icon=typeICE> attacks <icon=fieldDown> <c=red>x0.5</c> 
+<icon=typeICE> attacks <icon=fieldDown> <c=red>x0.5</c> 
+
+
+
+
+142
+<c=red>Destroyed</c> by these moves . . .
+<c=red>Destroyed</c> by these moves . . .
+Continent Crush, Defog, Gust, Hurricane, Hydro Vortex, Muddy Water, Ocean Operetta, Razor Wind, Sand Tomb, Sludge Wave, Sonic Skystrike, Sparkling Aria, Surf, Tailwind, Twister, Water Pledge, Water Sport, Water Spout, Whirlwind
+Continent Crush, Defog, Gust, Hurricane, Hydro Vortex, Muddy Water, Ocean Operetta, Razor Wind, Sand Tomb, Sludge Wave, Sonic Skystrike, Sparkling Aria, Surf, Tailwind, Twister, Water Pledge, Water Sport, Water Spout, Whirlwind
+
+
+143
+<c=red>Destroyed</c> by Sand and Rain
+<c=red>Destroyed</c> by Sand and Rain
+
+
+
+
+144
+<c=green>Activates</c> certain abilities . . .
+<c=green>Activates</c> certain abilities . . .
+Blaze, Flare Boost, Flash Fire
+Blaze, Flare Boost, Flash Fire
+
+
+145
+Will-O-Wisp's Accuracy <icon=fieldChange> <c=green>100</c> 
+Will-O-Wisp's Accuracy <icon=fieldChange> <c=green>100</c> 
+
+
+
+
+146
+Pokémon cannot be <c=red>frozen</c> 
+Pokémon cannot be <c=red>frozen</c> 
+
+
+
+
+147
+Smokescreen effect <icon=fieldUp,tts="boosted"> 
+Smokescreen effect <icon=fieldUp,tts="boosted"> 
+
+
+
+
+148
+Fire Spin damage <icon=fieldChange> <c=green>1/6 HP</c> 
+Fire Spin damage <icon=fieldChange> <c=green>1/6 HP</c> 
+
+
+
+
+149
+Certain attacks <icon=fieldPlus,tts="gain the"> <icon=typeFIRE> . . . 
+Certain attacks <icon=fieldPlus,tts="gain the"> <icon=typeFIRE> . . . 
+Clear Smog, Smack Down, Smog, Thousand Arrows
+Clear Smog, Smack Down, Smog, Thousand Arrows
+
+
+150
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Clear Smog, Smog
+Clear Smog, Smog
+
+
+151
+Certain attacks <icon=fieldUp> <c=green>x2</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x2</c> . . . 
+Smack Down, Thousand Arrows
+Smack Down, Thousand Arrows
+
+
+152
+<c=green>Restores</c> <icon=typeFIRE> after Burn Up
+<c=green>Restores</c> <icon=typeFIRE> after Burn Up
+
+
+
+
+153
+Nature Power <icon=fieldChange> Flamethrower
+Nature Power <icon=fieldChange> Flamethrower
+
+
+
+
+154
+Camouflage <icon=fieldChange> <icon=typeFIRE> 
+Camouflage <icon=fieldChange> <icon=typeFIRE> 
+
+
+
+
+155
+Secret Power effect <icon=fieldChange> <icon=fieldBurn> 
+Secret Power effect <icon=fieldChange> <icon=fieldBurn> 
+
+
+
+
+156
+Activates <c=orange>Elemental Seed</c>. . .
+Activates <c=orange>Elemental Seed</c>. . .
+Boosts Attack, Special Attack and Speed, but applies Fire Spin to the user.
+Boosts Attack, Special Attack and Speed, but applies Fire Spin to the user.
+
+
+157
+<c=orange>"The field is swamped."</c> 
+<c=orange>"The field is swamped."</c> 
+
+
+
+
+158
+Pokémon's Speed <icon=fieldDown,tts="lowered by one stage"> each turn.
+Pokémon's Speed <icon=fieldDown,tts="lowered by one stage"> each turn.
+
+
+
+
+159
+Pokémon <c=red>immune</c> to <c=orange>slow</c> when . . .
+Pokémon <c=red>immune</c> to <c=orange>slow</c> when . . .
+...when airborne or the abilities Quick Feet or Swift Swim are active.
+...when airborne or the abilities Quick Feet or Swift Swim are active.
+
+
+160
+<c=green>Created</c> by Water <icon=fieldPlus,tts="and"> Grass Pledge
+<c=green>Created</c> by Water <icon=fieldPlus,tts="and"> Grass Pledge
+
+
+
+
+161
+Ingrain <c=red>damages</c> user unless . . .
+Ingrain <c=red>damages</c> user unless . . .
+...unless user has Poison or Steel type.
+...unless user has Poison or Steel type.
+
+
+162
+Dry Skin slowly <c=green>restores HP</c> 
+Dry Skin slowly <c=green>restores HP</c> 
+
+
+
+
+163
+Aqua Ring recovery <icon=fieldChange> <c=green>1/8 HP</c> 
+Aqua Ring recovery <icon=fieldChange> <c=green>1/8 HP</c> 
+
+
+
+
+164
+<icon=typePOISON> attacks <icon=fieldUp> <c=green>x1.5</c> when. . .
+<icon=typePOISON> attacks <icon=fieldUp> <c=green>x1.5</c> when. . .
+...when target is grounded.
+...when target is grounded.
+
+
+165
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Brine, Gunk Shot, Hydro Vortex, Mud Bomb, Mud Shot, Mud-Slap, Muddy Water, Sludge Wave, Smack Down, Surf, Thousand Arrows
+Brine, Gunk Shot, Hydro Vortex, Mud Bomb, Mud Shot, Mud-Slap, Muddy Water, Sludge Wave, Smack Down, Surf, Thousand Arrows
+
+
+166
+Certain attacks <icon=fieldDown> <c=red>x0.25</c> . . . 
+Certain attacks <icon=fieldDown> <c=red>x0.25</c> . . . 
+Bulldoze, Earthquake, Magnitude
+Bulldoze, Earthquake, Magnitude
+
+
+167
+Certain attacks <icon=fieldPlus,tts="gain the"> <icon=typeWATER> . . . 
+Certain attacks <icon=fieldPlus,tts="gain the"> <icon=typeWATER> . . . 
+Smack Down, Thousand Arrows
+Smack Down, Thousand Arrows
+
+
+168
+<c=red>Prevents</c> use of these moves . . .
+<c=red>Prevents</c> use of these moves . . .
+Explosion, Mind Blown, Self Destruct
+Explosion, Mind Blown, Self Destruct
+
+
+169
+Sleep Powder's Accuracy <icon=fieldChange> <c=green>100</c> 
+Sleep Powder's Accuracy <icon=fieldChange> <c=green>100</c> 
+
+
+
+
+170
+<icon=fieldSleep> Pokémon <c=red>damaged</c> each turn
+<icon=fieldSleep> Pokémon <c=red>damaged</c> each turn
+
+
+
+
+171
+Gooey effect <icon=fieldUp> <c=green>x2</c> 
+Gooey effect <icon=fieldUp> <c=green>x2</c> 
+
+
+
+
+172
+<c=green>Activates</c> Water Compaction . . .
+<c=green>Activates</c> Water Compaction . . .
+...each turn.
+...each turn.
+
+
+173
+Strength Sap recovery <icon=fieldUp> <c=green>30 %</c> 
+Strength Sap recovery <icon=fieldUp> <c=green>30 %</c> 
+
+
+
+
+174
+Nature Power <icon=fieldChange> Muddy Water
+Nature Power <icon=fieldChange> Muddy Water
+
+
+
+
+175
+Camouflage <icon=fieldChange> <icon=typeWATER> 
+Camouflage <icon=fieldChange> <icon=typeWATER> 
+
+
+
+
+176
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Speed
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Speed
+
+
+
+
+177
+Activates <c=orange>Telluric Seed</c>. . .
+Activates <c=orange>Telluric Seed</c>. . .
+Boosts Defense and Sp.Def and applies Ingrain to the user.
+Boosts Defense and Sp.Def and applies Ingrain to the user.
+
+
+178
+<c=orange>"What does it mean?"</c> 
+<c=orange>"What does it mean?"</c> 
+
+
+
+
+179
+Secondary effect chance <icon=fieldUp> <c=green>x2</c> 
+Secondary effect chance <icon=fieldUp> <c=green>x2</c> 
+
+
+
+
+180
+<c=green>Created</c> by Fire <icon=fieldPlus,tts="and"> Water Pledge
+<c=green>Created</c> by Fire <icon=fieldPlus,tts="and"> Water Pledge
+
+
+
+
+181
+<c=green>Created</c> by Sun <icon=fieldPlus,tts="and"> Rain
+<c=green>Created</c> by Sun <icon=fieldPlus,tts="and"> Rain
+
+
+
+
+182
+Cloud Nine slowly <c=green>boosts</c> stats
+Cloud Nine slowly <c=green>boosts</c> stats
+
+
+
+
+183
+<c=green>Activates</c> Marvel Scale
+<c=green>Activates</c> Marvel Scale
+
+
+
+
+184
+Wonder Skin always <c=green>activates</c> 
+Wonder Skin always <c=green>activates</c> 
+
+
+
+
+185
+Special <icon=typeNORMAL> attacks <icon=fieldUp> <c=green>x1.5</c> 
+Special <icon=typeNORMAL> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+186
+Special <icon=typeNORMAL> attacks <icon=fieldPlus,tts="gain"> <icon=typeQMARKS> 
+Special <icon=typeNORMAL> attacks <icon=fieldPlus,tts="gain"> <icon=typeQMARKS> 
+Special Normal attacks gain a random type.
+Special Normal attacks gain a random type.
+
+
+187
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Aurora Beam, Dazzling Gleam, Dragon Pulse, Fire Pledge, Fleur Cannon, Grass Pledge, Heart Stamp, Hidden Power, Judgment, Mist Ball, Moonblast, Mystical Fire, Ocean Operetta, Prismatic Laser, Relic Song, Sacred Fire, Secret Power, Silver Wind, Solar Beam, Solar Blade, Sparkling Aria, Tri Attack, Twinkle Tackle, Water Pledge, Weather Ball, Zen Headbutt
+Aurora Beam, Dazzling Gleam, Dragon Pulse, Fire Pledge, Fleur Cannon, Grass Pledge, Heart Stamp, Hidden Power, Judgment, Mist Ball, Moonblast, Mystical Fire, Ocean Operetta, Prismatic Laser, Relic Song, Sacred Fire, Secret Power, Silver Wind, Solar Beam, Solar Blade, Sparkling Aria, Tri Attack, Twinkle Tackle, Water Pledge, Weather Ball, Zen Headbutt
+
+
+188
+Certain attacks <icon=fieldDown> <c=red>x0.5</c> . . . 
+Certain attacks <icon=fieldDown> <c=red>x0.5</c> . . . 
+Dark Pulse, NE. Nightmare, Night Daze, Shadow Ball
+Dark Pulse, NE. Nightmare, Night Daze, Shadow Ball
+
+
+189
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . . 
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . . 
+Cosmic Power, Meditate
+Cosmic Power, Meditate
+
+
+190
+Certain attacks <icon=fieldChange,tts="have"> <c=green>no charge turn</c> 
+Certain attacks <icon=fieldChange,tts="have"> <c=green>no charge turn</c> 
+Solar Beam, Solar Blade
+Solar Beam, Solar Blade
+
+
+191
+Wish recovery <icon=fieldChange> <c=green>75 % HP</c> 
+Wish recovery <icon=fieldChange> <c=green>75 % HP</c> 
+
+
+
+
+192
+Nightmare and Bad Dreams <c=red>fail</c> 
+Nightmare and Bad Dreams <c=red>fail</c> 
+
+
+
+
+193
+<icon=fieldSleep> Pokémon <c=green>recover</c> each turn
+<icon=fieldSleep> Pokémon <c=green>recover</c> each turn
+
+
+
+
+194
+Sonic Boom damage <icon=fieldChange> <c=green>140</c> 
+Sonic Boom damage <icon=fieldChange> <c=green>140</c> 
+
+
+
+
+195
+<c=red>Destroyed</c> when . . .
+<c=red>Destroyed</c> when . . .
+...when Sand or Hail are in effect, or Light That Burns The Sky is used.
+...when Sand or Hail are in effect, or Light That Burns The Sky is used.
+
+
+196
+<c=green>Enables</c> Aurora Veil
+<c=green>Enables</c> Aurora Veil
+
+
+
+
+197
+Soul Heart also <c=green>boosts</c> Sp.Def
+Soul Heart also <c=green>boosts</c> Sp.Def
+
+
+
+
+198
+Prism Armor <c=green>lowers damage</c> x0.75
+Prism Armor <c=green>lowers damage</c> x0.75
+
+
+
+
+199
+Nature Power <icon=fieldChange> Aurora Beam
+Nature Power <icon=fieldChange> Aurora Beam
+
+
+
+
+200
+Camouflage <icon=fieldChange> <icon=typeDRAGON> 
+Camouflage <icon=fieldChange> <icon=typeDRAGON> 
+
+
+
+
+201
+Secret Power effect <icon=fieldChange> random status
+Secret Power effect <icon=fieldChange> random status
+
+
+
+
+202
+Activates <c=orange>Magical Seed</c>. . .
+Activates <c=orange>Magical Seed</c>. . .
+Boosts Sp.Atk and applies Wish to the user.
+Boosts Sp.Atk and applies Wish to the user.
+
+
+203
+<c=orange>"The field is corrupted!"</c> 
+<c=orange>"The field is corrupted!"</c> 
+
+
+
+
+204
+Deals <icon=typePOISON> <c=orange>hazard damage</c> when . . .
+Deals <icon=typePOISON> <c=orange>hazard damage</c> when . . .
+...when grounded.
+...when grounded.
+
+
+205
+No <c=orange>hazard damage</c> when . . .
+No <c=orange>hazard damage</c> when . . .
+...when  Poison or Steel type, or one of these abilities is active: Immunity, Poison Heal, Toxic Boost, Wonder Guard
+...when  Poison or Steel type, or one of these abilities is active: Immunity, Poison Heal, Toxic Boost, Wonder Guard
+
+
+206
+Ingrain <c=red>damages</c> user unless . . .
+Ingrain <c=red>damages</c> user unless . . .
+...unless Poison or Steel type.
+...unless Poison or Steel type.
+
+
+207
+Grass Pelt <c=red>damages</c> user unless
+Grass Pelt <c=red>damages</c> user unless
+...unless Poison or Steel type.
+...unless Poison or Steel type.
+
+
+208
+<c=green>Activates</c> certain abilities when . . .
+<c=green>Activates</c> certain abilities when . . .
+...when grounded, activates Poison Heal and Toxic Boost.
+...when grounded, activates Poison Heal and Toxic Boost.
+
+
+209
+<icon=typeGRASS> attacks <icon=fieldPlus,tts="gain the"> <icon=typePOISON> 
+<icon=typeGRASS> attacks <icon=fieldPlus,tts="gain the"> <icon=typePOISON> 
+
+
+
+
+210
+Certain attacks <icon=fieldPlus,tts="gain the"> <icon=typePOISON> . . . 
+Certain attacks <icon=fieldPlus,tts="gain the"> <icon=typePOISON> . . . 
+Mud Bomb, Mud Shot, Mud-Slap, Muddy Water, Smack Down, Thousand Arrows, Whirlpool
+Mud Bomb, Mud Shot, Mud-Slap, Muddy Water, Smack Down, Thousand Arrows, Whirlpool
+
+
+211
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Mud Bomb, Mud Shot, Mud-Slap, Muddy Water, Smack Down, Thousand Arrows, Whirlpool
+Mud Bomb, Mud Shot, Mud-Slap, Muddy Water, Smack Down, Thousand Arrows, Whirlpool
+
+
+212
+Certain attacks <icon=fieldUp> <c=green>x2</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x2</c> . . . 
+Acid, Acid Spray, Grass Knot
+Acid, Acid Spray, Grass Knot
+
+
+213
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . . 
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . . 
+Acid Armor
+Acid Armor
+
+
+214
+<c=green>Activates</c> Venom Drench
+<c=green>Activates</c> Venom Drench
+
+
+
+
+215
+<c=green>Activates</c> Venoshock
+<c=green>Activates</c> Venoshock
+
+
+
+
+216
+Certain moves' Accuracy <icon=fieldChange> <c=green>100</c> 
+Certain moves' Accuracy <icon=fieldChange> <c=green>100</c> 
+Poison Powder, Sleep Powder, Stun Spore, Toxic
+Poison Powder, Sleep Powder, Stun Spore, Toxic
+
+
+217
+<icon=fieldSleep> Pokémon <c=red>damaged</c> unless . . .
+<icon=fieldSleep> Pokémon <c=red>damaged</c> unless . . .
+...unless Poison or Steel Type, or has Wonder Guard.
+...unless Poison or Steel Type, or has Wonder Guard.
+
+
+218
+Toxic Spikes <c=red>can't</c> be absorbed
+Toxic Spikes <c=red>can't</c> be absorbed
+
+
+
+
+219
+Becomes <c=orange>Grassy Terrain</c> when . . .
+Becomes <c=orange>Grassy Terrain</c> when . . .
+...when Seed Flare is used.
+...when Seed Flare is used.
+
+
+220
+<c=green>Activates</c> Merciless
+<c=green>Activates</c> Merciless
+
+
+
+
+221
+Corrosion damage <icon=fieldUp> <c=green>x1.5</c> 
+Corrosion damage <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+222
+Floral Healing <icon=fieldPlus,tts="additionally inflicts the"> <icon=fieldPoisonStatus> 
+Floral Healing <icon=fieldPlus,tts="additionally inflicts the"> <icon=fieldPoisonStatus> 
+
+
+
+
+223
+Nature Power <icon=fieldChange> Acid Spray
+Nature Power <icon=fieldChange> Acid Spray
+
+
+
+
+224
+Camouflage <icon=fieldChange> <icon=typePOISON> 
+Camouflage <icon=fieldChange> <icon=typePOISON> 
+
+
+
+
+225
+Secret Power effect <icon=fieldChange> <icon=fieldPoisonStatus> 
+Secret Power effect <icon=fieldChange> <icon=fieldPoisonStatus> 
+
+
+
+
+226
+Activates <c=orange>Telluric Seed</c> . . .
+Activates <c=orange>Telluric Seed</c> . . .
+Applies Baneful Bunker to the user.
+Applies Baneful Bunker to the user.
+
+
+227
+<c=orange>"Corrosive mist settles on the field!"</c> 
+<c=orange>"Corrosive mist settles on the field!"</c> 
+
+
+
+
+228
+All Pokémon get <icon=fieldPoisonStatus> each turn
+All Pokémon get <icon=fieldPoisonStatus> each turn
+
+
+
+
+229
+Aqua Ring <c=red>damages</c> user unless . . .
+Aqua Ring <c=red>damages</c> user unless . . .
+...unless Poison or Steel type.
+...unless Poison or Steel type.
+
+
+230
+Dry Skin <c=red>damages</c> user unless . . .
+Dry Skin <c=red>damages</c> user unless . . .
+...unless Poison or Steel type.
+...unless Poison or Steel type.
+
+
+231
+Certain attacks <icon=fieldPlus,tts="gain the"> <icon=typePOISON> . . . 
+Certain attacks <icon=fieldPlus,tts="gain the"> <icon=typePOISON> . . . 
+All special Flying moves, Bubble, Bubble Beam, Energy Ball, Sparkling Aria
+All special Flying moves, Bubble, Bubble Beam, Energy Ball, Sparkling Aria
+
+
+232
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Acid Spray, Bubble, Bubble Beam, Clear Smog, Smog, Sparkling Aria
+Acid Spray, Bubble, Bubble Beam, Clear Smog, Smog, Sparkling Aria
+
+
+233
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . . 
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . . 
+Acid Armor
+Acid Armor
+
+
+234
+<c=green>Activates</c> Venom Drench
+<c=green>Activates</c> Venom Drench
+
+
+
+
+235
+<c=green>Activates</c> Venoshock
+<c=green>Activates</c> Venoshock
+
+
+
+
+236
+Toxic's Accuracy <icon=fieldChange> <c=green>100</c> 
+Toxic's Accuracy <icon=fieldChange> <c=green>100</c> 
+
+
+
+
+237
+Aftermath damage <icon=fieldChange> <c=green>50 % HP</c> 
+Aftermath damage <icon=fieldChange> <c=green>50 % HP</c> 
+
+
+
+
+238
+<icon=typeFIRE> attacks <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeFIRE> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+239
+<c=green>Activates</c> Merciless
+<c=green>Activates</c> Merciless
+
+
+
+
+240
+Corrosion damage <icon=fieldUp> <c=green>x1.5</c> 
+Corrosion damage <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+241
+Floral Healing <icon=fieldPlus,tts="additionally inflicts the"> <icon=fieldPoisonStatus> 
+Floral Healing <icon=fieldPlus,tts="additionally inflicts the"> <icon=fieldPoisonStatus> 
+
+
+
+
+242
+<c=green>Activates</c> Water Compaction . . .
+<c=green>Activates</c> Water Compaction . . .
+...each turn.
+...each turn.
+
+
+243
+<c=red>Destroyed</c> by these moves . . .
+<c=red>Destroyed</c> by these moves . . .
+Defog, Eruption, Explosion, Fire Pledge, Flame Burst, Gust, Heat Wave, Hurricane, Incinerate, Inf. Overdrive, Lava Plume, Mind Blown, Razor Wind, Searing Shot, Self Destruct, Sonic Skystrike, Tailwind, Twister, Whirlwind
+Defog, Eruption, Explosion, Fire Pledge, Flame Burst, Gust, Heat Wave, Hurricane, Incinerate, Inf. Overdrive, Lava Plume, Mind Blown, Razor Wind, Searing Shot, Self Destruct, Sonic Skystrike, Tailwind, Twister, Whirlwind
+
+
+244
+All Pokémon <icon=fieldFaint> when . . .
+All Pokémon <icon=fieldFaint> when . . .
+...when one of these moves is used in the absence of Damp: Eruption, Explosion, Fire Pledge, Flame Burst, Heat Wave, Incinerate, Inf. Overdrive, Lava Plume, Mind Blown, Searing Shot, Self Destruct.
+Pokémon behind applicable protect moves, or having Flash Fire are immune to the damage.
+...when one of these moves is used in the absence of Damp: Eruption, Explosion, Fire Pledge, Flame Burst, Heat Wave, Incinerate, Inf. Overdrive, Lava Plume, Mind Blown, Searing Shot, Self Destruct.
+Pokémon behind applicable protect moves, or having Flash Fire are immune to the damage.
+
+
+245
+Becomes <c=orange>Corrosive Field</c> when . . .
+Becomes <c=orange>Corrosive Field</c> when . . .
+...when Gravity is used.
+...when Gravity is used.
+
+
+246
+Becomes <c=orange>Misty Terrain</c> when . . .
+Becomes <c=orange>Misty Terrain</c> when . . .
+...when Seed Flare is used.
+...when Seed Flare is used.
+
+
+247
+Nature Power <icon=fieldChange> Venoshock
+Nature Power <icon=fieldChange> Venoshock
+
+
+
+
+248
+Camouflage <icon=fieldChange> <icon=typePOISON> 
+Camouflage <icon=fieldChange> <icon=typePOISON> 
+
+
+
+
+249
+Secret Power effect <icon=fieldChange> <icon=fieldPoisonStatus> 
+Secret Power effect <icon=fieldChange> <icon=fieldPoisonStatus> 
+
+
+
+
+250
+Activates <c=orange>Elemental Seed</c> . . .
+Activates <c=orange>Elemental Seed</c> . . .
+Boosts Attack and Sp.Atk and badly poisons the user.
+Boosts Attack and Sp.Atk and badly poisons the user.
+
+
+251
+<c=orange>"The field is rife with sand."</c> 
+<c=orange>"The field is rife with sand."</c> 
+
+
+
+
+252
+<icon=typeGROUND> Pokémon's Sp.Def <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeGROUND> Pokémon's Sp.Def <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+253
+<c=green>Activates </c> certain abilities . . .
+<c=green>Activates </c> certain abilities . . .
+Sand Force, Sand Rush, Sand Veil
+Sand Force, Sand Rush, Sand Veil
+
+
+254
+Sun and Sand last <c=green>8</c> turns
+Sun and Sand last <c=green>8</c> turns
+
+
+
+
+255
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Burn Up, Dig, Heat Wave, Needle Arm, Pin Missile, S. Sunraze Smash, Sand Tomb, Solar Beam, Solar Blade, Thousand Waves
+Burn Up, Dig, Heat Wave, Needle Arm, Pin Missile, S. Sunraze Smash, Sand Tomb, Solar Beam, Solar Blade, Thousand Waves
+
+
+256
+Sand Attack's effect <icon=fieldUp,tts="boosted"> 
+Sand Attack's effect <icon=fieldUp,tts="boosted"> 
+
+
+
+
+257
+Dry Skin <c=red>damages</c> user
+Dry Skin <c=red>damages</c> user
+
+
+
+
+258
+Sand Tomb damage <icon=fieldChange> <c=green>1/6 HP</c> per turn
+Sand Tomb damage <icon=fieldChange> <c=green>1/6 HP</c> per turn
+
+
+
+
+259
+<icon=typeWATER> attacks <icon=fieldDown> <c=red>x0.5</c> when . . .
+<icon=typeWATER> attacks <icon=fieldDown> <c=red>x0.5</c> when . . .
+...when attacker is grounded.
+...when attacker is grounded.
+
+
+260
+<icon=typeELECTRIC> attacks <icon=fieldDown> <c=red>x0.5</c> when . . .
+<icon=typeELECTRIC> attacks <icon=fieldDown> <c=red>x0.5</c> when . . .
+...when target is grounded.
+...when target is grounded.
+
+
+261
+Shore Up heals <c=green>100 %</c> Max HP
+Shore Up heals <c=green>100 %</c> Max HP
+
+
+
+
+262
+Nature Power <icon=fieldChange> Sand Tomb
+Nature Power <icon=fieldChange> Sand Tomb
+
+
+
+
+263
+Camouflage <icon=fieldChange> <icon=typeGROUND> 
+Camouflage <icon=fieldChange> <icon=typeGROUND> 
+
+
+
+
+264
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Accuracy
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Accuracy
+
+
+
+
+265
+Activates <c=orange>Telluric Seed</c> . . .
+Activates <c=orange>Telluric Seed</c> . . .
+Boosts Defense, Sp.Def, and Speed but applies Sand Tomb to the user.
+Boosts Defense, Sp.Def, and Speed but applies Sand Tomb to the user.
+
+
+266
+<c=orange>"The field is covered in ice."</c> 
+<c=orange>"The field is covered in ice."</c> 
+
+
+
+
+267
+Certain moves <c=green>boost</c> speed when . . .
+Certain moves <c=green>boost</c> speed when . . .
+...when attacker is grounded, these moves boost Speed: All attacking physical contact priority moves, Defense Curl, Feint, Lunge, Rollout, Steamroller
+...when attacker is grounded, these moves boost Speed: All attacking physical contact priority moves, Defense Curl, Feint, Lunge, Rollout, Steamroller
+
+
+268
+<icon=typeICE> attacks <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeICE> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+269
+<icon=typeFIRE> attacks <icon=fieldDown> <c=red>x0.5</c> 
+<icon=typeFIRE> attacks <icon=fieldDown> <c=red>x0.5</c> 
+
+
+
+
+270
+Certain attacks <icon=fieldDown> <c=red>x0.5</c> . . . 
+Certain attacks <icon=fieldDown> <c=red>x0.5</c> . . . 
+Scald, Steam Eruption
+Scald, Steam Eruption
+
+
+271
+<icon=typeROCK> attacks <icon=fieldPlus,tts="gain the"> <icon=typeICE> 
+<icon=typeROCK> attacks <icon=fieldPlus,tts="gain the"> <icon=typeICE> 
+
+
+
+
+272
+<icon=typeICE> Pokémon's Defense <icon=fieldUp> <c=green>x1.5</c> when . . .
+<icon=typeICE> Pokémon's Defense <icon=fieldUp> <c=green>x1.5</c> when . . .
+...when Hail is up
+...when Hail is up
+
+
+273
+<icon=fieldBurn> damage <icon=fieldDown> <c=red>x0.5</c> 
+<icon=fieldBurn> damage <icon=fieldDown> <c=red>x0.5</c> 
+
+
+
+
+274
+Becomes <c=orange>Water Surface</c> when . . .
+Becomes <c=orange>Water Surface</c> when . . .
+...when Eruption, Fire Pledge, Flame Burst, Heat Wave, Incinerate, Inf. Overdrive, Lava Plume, Mind Blown, Scald, Searing Shot, Steam Eruption is used, or if Water Surface is already under the ice and Bulldoze, Earthquake, Fissure, Magnitude, Tectonic Rage is used. Also turns into Water Surface if Scald or Steam Eruption is used twice.
+...when Eruption, Fire Pledge, Flame Burst, Heat Wave, Incinerate, Inf. Overdrive, Lava Plume, Mind Blown, Scald, Searing Shot, Steam Eruption is used, or if Water Surface is already under the ice and Bulldoze, Earthquake, Fissure, Magnitude, Tectonic Rage is used. Also turns into Water Surface if Scald or Steam Eruption is used twice.
+
+
+275
+<c=green>Creates</c> a layer of spikes when . . .
+<c=green>Creates</c> a layer of spikes when . . .
+...when one of these moves is used and Water Surface isn't beneath the ice: Bulldoze, Earthquake, Fissure, Magnitude, Tectonic Rage.
+...when one of these moves is used and Water Surface isn't beneath the ice: Bulldoze, Earthquake, Fissure, Magnitude, Tectonic Rage.
+
+
+276
+Hail lasts <c=green>8</c> turns
+Hail lasts <c=green>8</c> turns
+
+
+
+
+277
+<c=green>Activates</c> certain abilities . . .
+<c=green>Activates</c> certain abilities . . .
+Ice Body, Snow Cloak, Slush Rush
+Ice Body, Snow Cloak, Slush Rush
+
+
+278
+Refrigerate power boost <icon=fieldChange> <c=green>x1.5</c> 
+Refrigerate power boost <icon=fieldChange> <c=green>x1.5</c> 
+
+
+
+
+279
+<c=green>Enables</c> Aurora Veil
+<c=green>Enables</c> Aurora Veil
+
+
+
+
+280
+Liquid Voice <icon=fieldChange,tts="type change becomes"> <icon=typeICE> 
+Liquid Voice <icon=fieldChange,tts="type change becomes"> <icon=typeICE> 
+
+
+
+
+281
+Nature Power <icon=fieldChange> Ice Beam
+Nature Power <icon=fieldChange> Ice Beam
+
+
+
+
+282
+Camouflage <icon=fieldChange> <icon=typeICE> 
+Camouflage <icon=fieldChange> <icon=typeICE> 
+
+
+
+
+283
+Secret Power effect <icon=fieldChange> <icon=fieldFreeze> 
+Secret Power effect <icon=fieldChange> <icon=fieldFreeze> 
+
+
+
+
+284
+Activates <c=orange>Elemental Seed</c> . . .
+Activates <c=orange>Elemental Seed</c> . . .
+Boosts Speed two stages, but damages the user with Spikes.
+Boosts Speed two stages, but damages the user with Spikes.
+
+
+285
+<c=orange>"The field is littered with rocks."</c> 
+<c=orange>"The field is littered with rocks."</c> 
+
+
+
+
+286
+Pokémon can <c=orange>dodge</c> when . . .
+Pokémon can <c=orange>dodge</c> when . . .
+...when Defense is increased or Substitute is up, attacks that can be blocked by Bulletproof can be dodged behind rocks.
+...when Defense is increased or Substitute is up, attacks that can be blocked by Bulletproof can be dodged behind rocks.
+
+
+287
+Missed contact moves <c=orange>recoil</c> . . .
+Missed contact moves <c=orange>recoil</c> . . .
+...unless user has Rock Head.
+...unless user has Rock Head.
+
+
+288
+Stealth Rock damage <icon=fieldUp> <c=green>x2</c> 
+Stealth Rock damage <icon=fieldUp> <c=green>x2</c> 
+
+
+
+
+289
+Flinched Pokémon take <c=orange>recoil</c> . . .
+Flinched Pokémon take <c=orange>recoil</c> . . .
+...unless target has Steadfast or Sturdy.
+...unless target has Steadfast or Sturdy.
+
+
+290
+<c=green>Prevents</c> flinches when . . .
+<c=green>Prevents</c> flinches when . . .
+...when Defense is increased.
+...when Defense is increased.
+
+
+291
+Certain attacks <icon=fieldPlus,tts="gain the"> <icon=typeROCK> . . .
+Certain attacks <icon=fieldPlus,tts="gain the"> <icon=typeROCK> . . .
+Bulldoze, Earthquake, Magnitude, Rock Climb, Strength
+Bulldoze, Earthquake, Magnitude, Rock Climb, Strength
+
+
+292
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Accelerock, Bulldoze, Earthquake, Magnitude, Rock Climb, Strength
+Accelerock, Bulldoze, Earthquake, Magnitude, Rock Climb, Strength
+
+
+293
+<icon=typeROCK> attacks <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeROCK> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+294
+Rock Smash <icon=fieldUp> <c=green>x2</c> 
+Rock Smash <icon=fieldUp> <c=green>x2</c> 
+
+
+
+
+295
+Rock Polish's effect <icon=fieldUp,tts="boosted"> 
+Rock Polish's effect <icon=fieldUp,tts="boosted"> 
+
+
+
+
+296
+Long Reach accuracy <icon=fieldDown> <c=red>x0.9</c> 
+Long Reach accuracy <icon=fieldDown> <c=red>x0.9</c> 
+
+
+
+
+297
+Nature Power <icon=fieldChange> Rock Smash
+Nature Power <icon=fieldChange> Rock Smash
+
+
+
+
+298
+Camouflage <icon=fieldChange> <icon=typeROCK> 
+Camouflage <icon=fieldChange> <icon=typeROCK> 
+
+
+
+
+299
+Secret Power effect <icon=fieldChange> Flinches
+Secret Power effect <icon=fieldChange> Flinches
+
+
+
+
+300
+Activates <c=orange>Telluric Seed</c> . . .
+Activates <c=orange>Telluric Seed</c> . . .
+Boosts Defense, but damages the user with Stealth Rocks.
+Boosts Defense, but damages the user with Stealth Rocks.
+
+
+301
+<c=orange>"The field is abound with trees."</c> 
+<c=orange>"The field is abound with trees."</c> 
+
+
+
+
+302
+Effect Spore chance <icon=fieldUp> <c=green>x2</c> 
+Effect Spore chance <icon=fieldUp> <c=green>x2</c> 
+
+
+
+
+303
+<c=green>Activates</c> certain abilities . . .
+<c=green>Activates</c> certain abilities . . .
+Grass Pelt, Leaf Guard, Overgrow, Swarm
+Grass Pelt, Leaf Guard, Overgrow, Swarm
+
+
+304
+<icon=typeGRASS> attacks <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeGRASS> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+305
+Special <icon=typeBUG> attacks <icon=fieldUp> <c=green>x1.5</c> 
+Special <icon=typeBUG> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+306
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Attack Order, Cut, Electroweb
+Attack Order, Cut, Electroweb
+
+
+307
+Cut <icon=fieldUp> <c=green>x2</c> vs <icon=typeGRASS> 
+Cut <icon=fieldUp> <c=green>x2</c> vs <icon=typeGRASS> 
+
+
+
+
+308
+Certain attacks <icon=fieldDown> <c=red>x0.5</c> . . . 
+Certain attacks <icon=fieldDown> <c=red>x0.5</c> . . . 
+Muddy Water, Surf
+Muddy Water, Surf
+
+
+309
+Sap Sipper slowly <c=green>restores HP</c> 
+Sap Sipper slowly <c=green>restores HP</c> 
+
+
+
+
+310
+Ingrain recovery <icon=fieldUp> <c=green>x2</c> 
+Ingrain recovery <icon=fieldUp> <c=green>x2</c> 
+
+
+
+
+311
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . .
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . .
+Defend Order, Growth
+Defend Order, Growth
+
+
+312
+Heal Order recovery <icon=fieldChange> <c=green>66 %</c> 
+Heal Order recovery <icon=fieldChange> <c=green>66 %</c> 
+
+
+
+
+313
+Sticky Web effect <icon=fieldUp> <c=green>x2</c> 
+Sticky Web effect <icon=fieldUp> <c=green>x2</c> 
+
+
+
+
+314
+Long Reach accuracy <icon=fieldDown> <c=red>x0.9</c> 
+Long Reach accuracy <icon=fieldDown> <c=red>x0.9</c> 
+
+
+
+
+315
+Strength Sap recovery <icon=fieldUp> <c=green>30 %</c> 
+Strength Sap recovery <icon=fieldUp> <c=green>30 %</c> 
+
+
+
+
+316
+Nature's Madness damage <icon=fieldChange> <c=green>75 %</c> 
+Nature's Madness damage <icon=fieldChange> <c=green>75 %</c> 
+
+
+
+
+317
+Forest's Curse <icon=fieldPlus,tts="additionally inflicts the"> Curse effect
+Forest's Curse <icon=fieldPlus,tts="additionally inflicts the"> Curse effect
+
+
+
+
+318
+Becomes a <c=orange>Burning Field</c> when . . .
+Becomes a <c=orange>Burning Field</c> when . . .
+...when Eruption, Fire Pledge, Flame Burst, Heat Wave, Incinerate, Inf. Overdrive, Lava Plume, Mind Blown, Searing Shot is used in the absence of Rain or Water Sport
+...when Eruption, Fire Pledge, Flame Burst, Heat Wave, Incinerate, Inf. Overdrive, Lava Plume, Mind Blown, Searing Shot is used in the absence of Rain or Water Sport
+
+
+319
+Nature Power <icon=fieldChange> Wood Hammer
+Nature Power <icon=fieldChange> Wood Hammer
+
+
+
+
+320
+Camouflage <icon=fieldChange> <icon=typeGRASS> 
+Camouflage <icon=fieldChange> <icon=typeGRASS> 
+
+
+
+
+321
+Secret Power effect <icon=fieldChange> <icon=fieldSleep> 
+Secret Power effect <icon=fieldChange> <icon=fieldSleep> 
+
+
+
+
+322
+Activates <c=orange>Telluric Seed</c> . . .
+Activates <c=orange>Telluric Seed</c> . . .
+Applies Spiky Shield to the user.
+Applies Spiky Shield to the user.
+
+
+323
+<c=orange>"The field is super-heated!"</c> 
+<c=orange>"The field is super-heated!"</c> 
+
+
+
+
+324
+<icon=typeFIRE> attacks <icon=fieldUp> <c=green>x1.1</c> 
+<icon=typeFIRE> attacks <icon=fieldUp> <c=green>x1.1</c> 
+
+
+
+
+325
+<icon=typeICE> attacks <icon=fieldDown> <c=red>x0.5</c> 
+<icon=typeICE> attacks <icon=fieldDown> <c=red>x0.5</c> 
+
+
+
+
+326
+<icon=typeWATER> attacks <icon=fieldDown> <c=red>x0.9</c> 
+<icon=typeWATER> attacks <icon=fieldDown> <c=red>x0.9</c> 
+
+
+
+
+327
+Certain attacks <icon=fieldDown> <c=red>x0.5</c> . . . 
+Certain attacks <icon=fieldDown> <c=red>x0.5</c> . . . 
+Hydro Vortex, Muddy Water, Ocean Operetta, Sparkling Aria, Surf, Water Pledge, Water Spout
+Hydro Vortex, Muddy Water, Ocean Operetta, Sparkling Aria, Surf, Water Pledge, Water Spout
+
+
+328
+Certain moves generate <c=orange>steam</c> . . .
+Certain moves generate <c=orange>steam</c> . . .
+Hydro Vortex, Muddy Water, Ocean Operetta, Sparkling Aria, Surf, Water Pledge, Water Spout generate steam, lowering all active Pokémon's Accuracy.
+Hydro Vortex, Muddy Water, Ocean Operetta, Sparkling Aria, Surf, Water Pledge, Water Spout generate steam, lowering all active Pokémon's Accuracy.
+
+
+329
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Scald, Steam Eruption
+Scald, Steam Eruption
+
+
+330
+Becomes <c=orange>Burning Field</c> when . . .
+Becomes <c=orange>Burning Field</c> when . . .
+...when Eruption, Explosion, Fire Pledge, Flame Burst, Heat Wave, Incinerate, Inf. Overdrive, Lava Plume, Mind Blown, Searing Shot, Self Destruct is used in the absence of Rain or Water Sport.
+...when Eruption, Explosion, Fire Pledge, Flame Burst, Heat Wave, Incinerate, Inf. Overdrive, Lava Plume, Mind Blown, Searing Shot, Self Destruct is used in the absence of Rain or Water Sport.
+
+
+331
+<c=red>Destroyed</c> by these moves . . .
+<c=red>Destroyed</c> by these moves . . .
+Blizzard, Glaciate, Subzero Slammer
+Blizzard, Glaciate, Subzero Slammer
+
+
+332
+Hail is <c=red>terminated</c> 
+Hail is <c=red>terminated</c> 
+
+
+
+
+333
+Attacks fatigue after <c=red>1</c> turn . . .
+Attacks fatigue after <c=red>1</c> turn . . .
+Applies to Outrage, Petal Dance, and Thrash
+Applies to Outrage, Petal Dance, and Thrash
+
+
+334
+Nature Power <icon=fieldChange> Heat Wave
+Nature Power <icon=fieldChange> Heat Wave
+
+
+
+
+335
+Camouflage <icon=fieldChange> <icon=typeFIRE> 
+Camouflage <icon=fieldChange> <icon=typeFIRE> 
+
+
+
+
+336
+Secret Power effect <icon=fieldChange> <icon=fieldBurn> 
+Secret Power effect <icon=fieldChange> <icon=fieldBurn> 
+
+
+
+
+337
+Activates <c=orange>Telluric Seed</c> . . .
+Activates <c=orange>Telluric Seed</c> . . .
+Boosts Defense and applies Shell Trap to the user.
+Boosts Defense and applies Shell Trap to the user.
+
+
+338
+<c=orange>"Machines whir in the background."</c> 
+<c=orange>"Machines whir in the background."</c> 
+
+
+
+
+339
+<icon=typeELECTRIC> attacks <icon=fieldUp> <c=green>x1.2</c> 
+<icon=typeELECTRIC> attacks <icon=fieldUp> <c=green>x1.2</c> 
+
+
+
+
+340
+Motor Drive boost <icon=fieldUp,tts="increased to"> <c=green>x2</c> 
+Motor Drive boost <icon=fieldUp,tts="increased to"> <c=green>x2</c> 
+
+
+
+
+341
+Download boost <icon=fieldUp,tts="increased to"> <c=green>x1.5</c> 
+Download boost <icon=fieldUp,tts="increased to"> <c=green>x1.5</c> 
+
+
+
+
+342
+Technician applies up to BP <c=green>80</c> 
+Technician applies up to BP <c=green>80</c> 
+
+
+
+
+343
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Steamroller, Techno Blast
+Steamroller, Techno Blast
+
+
+344
+Certain attacks <icon=fieldUp> <c=green>x2</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x2</c> . . . 
+Flash Cannon, Gear Grind, Gyro Ball, Magnet Bomb
+Flash Cannon, Gear Grind, Gyro Ball, Magnet Bomb
+
+
+345
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . .
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . .
+Autotomize, Iron Defense, Metal Sound, Shift Gear
+Autotomize, Iron Defense, Metal Sound, Shift Gear
+
+
+346
+Magnet Rise lasts <c=green>8</c> turns
+Magnet Rise lasts <c=green>8</c> turns
+
+
+
+
+347
+Becomes <c=orange>Short-Circuit</c> when . . .
+Becomes <c=orange>Short-Circuit</c> when . . .
+...when Bulldoze, Burning Light, Earthquake, Explosion, Fissure, Magnitude, Self Destruct, Tectonic Rage is used. Discharge additionally can alternate between the Short-Circuit and Factory Fields for each instance of damage in Double Battles.
+...when Bulldoze, Burning Light, Earthquake, Explosion, Fissure, Magnitude, Self Destruct, Tectonic Rage is used. Discharge additionally can alternate between the Short-Circuit and Factory Fields for each instance of damage in Double Battles.
+
+
+348
+Gear Up boosts user and <icon=fieldUp,tts="effect boosted by"> <c=green>x2</c> 
+Gear Up boosts user and <icon=fieldUp,tts="effect boosted by"> <c=green>x2</c> 
+
+
+
+
+349
+Galvanize power boost <icon=fieldChange> <c=green>x1.5</c> 
+Galvanize power boost <icon=fieldChange> <c=green>x1.5</c> 
+
+
+
+
+350
+Steelworker power boost <icon=fieldChange> <c=green>x2</c> 
+Steelworker power boost <icon=fieldChange> <c=green>x2</c> 
+
+
+
+
+351
+Nature Power <icon=fieldChange> Gear Grind
+Nature Power <icon=fieldChange> Gear Grind
+
+
+
+
+352
+Camouflage <icon=fieldChange> <icon=typeSTEEL> 
+Camouflage <icon=fieldChange> <icon=typeSTEEL> 
+
+
+
+
+353
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Attack
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Attack
+
+
+
+
+354
+Activates <c=orange>Synthetic Seed</c> . . .
+Activates <c=orange>Synthetic Seed</c> . . .
+Boosts Sp.Atk and applies Laser Focus to the user.
+Boosts Sp.Atk and applies Laser Focus to the user.
+
+
+355
+<c=orange>"Bzzt!"</c> 
+<c=orange>"Bzzt!"</c> 
+
+
+
+
+356
+Static chance <icon=fieldUp> <c=green>x2</c> 
+Static chance <icon=fieldUp> <c=green>x2</c> 
+
+
+
+
+357
+Volt Absorb slowly <c=green>restores HP</c> 
+Volt Absorb slowly <c=green>restores HP</c> 
+
+
+
+
+358
+<c=green>Activates</c> Plus and Minus
+<c=green>Activates</c> Plus and Minus
+
+
+
+
+359
+<icon=typeELECTRIC> attacks <icon=fieldChange,tts="inflict"> sequential damage
+<icon=typeELECTRIC> attacks <icon=fieldChange,tts="inflict"> sequential damage
+Damage rolls set multipliers between x0.5 and x2 on a specific pattern
+Damage rolls set multipliers between x0.5 and x2 on a specific pattern
+
+
+360
+Certain attacks <icon=fieldUp> <c=green>x1.3</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.3</c> . . . 
+Dark Pulse, Night Daze, Night Slash, Shadow Ball, Shadow Bone, Shadow Claw, Shadow Force, Shadow Punch, Shadow Sneak
+Dark Pulse, Night Daze, Night Slash, Shadow Ball, Shadow Bone, Shadow Claw, Shadow Force, Shadow Punch, Shadow Sneak
+
+
+361
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Dazzling Gleam, Flash Cannon, Gear Grind, Gyro Ball, Hydro Vortex, Magnet Bomb, Muddy Water, Surf
+Dazzling Gleam, Flash Cannon, Gear Grind, Gyro Ball, Hydro Vortex, Magnet Bomb, Muddy Water, Surf
+
+
+362
+Certain attacks <icon=fieldDown> <c=red>x0.5</c> . . . 
+Certain attacks <icon=fieldDown> <c=red>x0.5</c> . . . 
+Burning Light
+Burning Light
+
+
+363
+Certain attacks <icon=fieldPlus,tts="gain the"> <icon=typeELECTRIC> . . .
+Certain attacks <icon=fieldPlus,tts="gain the"> <icon=typeELECTRIC> . . .
+Flash Cannon, Gear Grind, Gyro Ball, Magnet Bomb, Muddy Water, Surf
+Flash Cannon, Gear Grind, Gyro Ball, Magnet Bomb, Muddy Water, Surf
+
+
+364
+Becomes <c=orange>Factory Field</c> when . . .
+Becomes <c=orange>Factory Field</c> when . . .
+...when Charge Beam, Gigavolt Havoc, Ion Deluge, Parabolic Charge, Wild Charge is used. Discharge additionally can alternate between the Short-Circuit and Factory Fields for each instance of damage in Double Battles.
+...when Charge Beam, Gigavolt Havoc, Ion Deluge, Parabolic Charge, Wild Charge is used. Discharge additionally can alternate between the Short-Circuit and Factory Fields for each instance of damage in Double Battles.
+
+
+365
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . .
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . .
+Flash, Metal Sound
+Flash, Metal Sound
+
+
+366
+Zap Cannon's Accuracy <icon=fieldChange> <c=green>80</c> 
+Zap Cannon's Accuracy <icon=fieldChange> <c=green>80</c> 
+
+
+
+
+367
+Magnet Rise lasts for <c=green>8</c> turns
+Magnet Rise lasts for <c=green>8</c> turns
+
+
+
+
+368
+<c=green>Activates</c> Surge Surfer
+<c=green>Activates</c> Surge Surfer
+
+
+
+
+369
+Galvanize power boost <icon=fieldChange> <c=green>x2</c> 
+Galvanize power boost <icon=fieldChange> <c=green>x2</c> 
+
+
+
+
+370
+Steelworker <icon=fieldPlus,tts="additionally works with the"> <icon=typeELECTRIC> 
+Steelworker <icon=fieldPlus,tts="additionally works with the"> <icon=typeELECTRIC> 
+
+
+
+
+371
+Nature Power <icon=fieldChange> Discharge
+Nature Power <icon=fieldChange> Discharge
+
+
+
+
+372
+Camouflage <icon=fieldChange> <icon=typeELECTRIC> 
+Camouflage <icon=fieldChange> <icon=typeELECTRIC> 
+
+
+
+
+373
+Secret Power effect <icon=fieldChange> <icon=fieldParalyze> 
+Secret Power effect <icon=fieldChange> <icon=fieldParalyze> 
+
+
+
+
+374
+Activates <c=orange>Synthetic Seed</c> . . .
+Activates <c=orange>Synthetic Seed</c> . . .
+Boosts Sp.Def and applies Magnet Rise to the user.
+Boosts Sp.Def and applies Magnet Rise to the user.
+
+
+375
+<c=orange>"The waste is watching..."</c> 
+<c=orange>"The waste is watching..."</c> 
+
+
+
+
+376
+Entry hazards are <c=orange>consumed</c> . . .
+Entry hazards are <c=orange>consumed</c> . . .
+Consumed hazards return at the end of the turn, returning a special effect to the side they were on: 
+ Stealth Rocks deal type-scaling Rock damage double the normal effect to Pokémon. 
+ Spikes deal 33% max HP to grounded Pokémon. 
+ Toxic Spikes deal 12.5% max HP to grounded non-Poison/Steel types, and inflicts Poison. 
+ Sticky Web severely lowers Pokémon's Speed.
+Consumed hazards return at the end of the turn, returning a special effect to the side they were on: 
+ Stealth Rocks deal type-scaling Rock damage double the normal effect to Pokémon. 
+ Spikes deal 33% max HP to grounded Pokémon. 
+ Toxic Spikes deal 12.5% max HP to grounded non-Poison/Steel types, and inflicts Poison. 
+ Sticky Web severely lowers Pokémon's Speed.
+
+
+377
+Certain attacks <icon=fieldUp> <c=green>x1.2</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.2</c> . . . 
+Gunk Shot, Octazooka, Sludge, Sludge Bomb, Sludge Wave
+Gunk Shot, Octazooka, Sludge, Sludge Bomb, Sludge Wave
+
+
+378
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Mud Bomb, Mud Shot, Mud-Slap, Power Whip, Vine Whip
+Mud Bomb, Mud Shot, Mud-Slap, Power Whip, Vine Whip
+
+
+379
+Certain attacks <icon=fieldDown> <c=red>x0.25</c> . . . 
+Certain attacks <icon=fieldDown> <c=red>x0.25</c> . . . 
+Bulldoze, Earthquake, Magnitude
+Bulldoze, Earthquake, Magnitude
+
+
+380
+Certain attacks <icon=fieldPlus,tts="gain the"> <icon=typePOISON> . . .
+Certain attacks <icon=fieldPlus,tts="gain the"> <icon=typePOISON> . . .
+Mud Bomb, Mud Shot, Mud-Slap
+Mud Bomb, Mud Shot, Mud-Slap
+
+
+381
+Certain moves <icon=fieldPlus,tts="additionally inflict a"> <icon=fieldAllStat> . . .
+Certain moves <icon=fieldPlus,tts="additionally inflict a"> <icon=fieldAllStat> . . .
+Acid Downpour, Gunk Shot, Octazooka, Sludge, Sludge Bomb, Sludge Wave inflict a random status unless target has Poison or Steel type, or one of these abilities: Immunity, Poison Heal, Toxic Boost
+Acid Downpour, Gunk Shot, Octazooka, Sludge, Sludge Bomb, Sludge Wave inflict a random status unless target has Poison or Steel type, or one of these abilities: Immunity, Poison Heal, Toxic Boost
+
+
+382
+Certain abilities' chance <icon=fieldUp> <c=green>x2</c> 
+Certain abilities' chance <icon=fieldUp> <c=green>x2</c> 
+Effect Spore, Poison Point, Stench
+Effect Spore, Poison Point, Stench
+
+
+383
+Liquid Ooze damage <icon=fieldUp> <c=green>x2</c> 
+Liquid Ooze damage <icon=fieldUp> <c=green>x2</c> 
+
+
+
+
+384
+<c=green>Activates</c> certain abilities . . .
+<c=green>Activates</c> certain abilities . . .
+Poison Heal, Toxic Boost, Merciless
+Poison Heal, Toxic Boost, Merciless
+
+
+385
+Gooey effect <icon=fieldPlus,tts="additionally inflicts the"> <icon=fieldPoisonStatus> 
+Gooey effect <icon=fieldPlus,tts="additionally inflicts the"> <icon=fieldPoisonStatus> 
+
+
+
+
+386
+<c=green>Activates</c> Venom Drench and Venoshock
+<c=green>Activates</c> Venom Drench and Venoshock
+
+
+
+
+387
+Spit Up <icon=fieldUp> <c=green>x2</c> 
+Spit Up <icon=fieldUp> <c=green>x2</c> 
+
+
+
+
+388
+Swallow <icon=fieldUp> <c=green>x2</c> <icon=fieldPlus> <c=green>cures</c> when max stack
+Swallow <icon=fieldUp> <c=green>x2</c> <icon=fieldPlus> <c=green>cures</c> when max stack
+
+
+
+
+389
+Leech Seed effect <icon=fieldUp> <c=green>x2</c>
+Leech Seed effect <icon=fieldUp> <c=green>x2</c>
+
+
+
+
+390
+Corrosion attacks <icon=fieldPlus,tts="additionally inflict a"> <icon=fieldAllStat> 
+Corrosion attacks <icon=fieldPlus,tts="additionally inflict a"> <icon=fieldAllStat> 
+
+
+
+
+391
+Nature Power <icon=fieldChange> Gunk Shot
+Nature Power <icon=fieldChange> Gunk Shot
+
+
+
+
+392
+Camouflage <icon=fieldChange> <icon=typePOISON> 
+Camouflage <icon=fieldChange> <icon=typePOISON> 
+
+
+
+
+393
+Secret Power effect <icon=fieldChange> <icon=fieldAllStat> 
+Secret Power effect <icon=fieldChange> <icon=fieldAllStat> 
+
+
+
+
+394
+Activates <c=orange>Telluric Seed</c> . . .
+Activates <c=orange>Telluric Seed</c> . . .
+Boosts Attack and Sp.Atk and lays Stealth Rocks on both sides of the battle.
+Boosts Attack and Sp.Atk and lays Stealth Rocks on both sides of the battle.
+
+
+395
+<c=orange>"Ash and sand line the field."</c> 
+<c=orange>"Ash and sand line the field."</c> 
+
+
+
+
+396
+Certain attacks stir up <c=orange>ash</c> . . .
+Certain attacks stir up <c=orange>ash</c> . . .
+All Special Flying attacks, Fire Spin, Leaf Tornado, Razor Wind, Twister, and Whirlpool stir up ash, lowering all active Pokémon's Accuracy.
+All Special Flying attacks, Fire Spin, Leaf Tornado, Razor Wind, Twister, and Whirlpool stir up ash, lowering all active Pokémon's Accuracy.
+
+
+397
+<icon=typeFIGHTING> Pokémon or Pokémon with . . .
+<icon=typeFIGHTING> Pokémon or Pokémon with . . .
+ ...with Inner Focus can't get confused.
+ ...with Inner Focus can't get confused.
+
+
+398
+Accuracy/Evasion <c=red>ignored</c> when . . .
+Accuracy/Evasion <c=red>ignored</c> when . . .
+...when the target does not have Unnerve, and one of these abilities is active: Own Tempo, Pure Power, Sand Veil, Steadfast
+...when the target does not have Unnerve, and one of these abilities is active: Own Tempo, Pure Power, Sand Veil, Steadfast
+
+
+399
+<c=green>Activates</c> certain abilities . . .
+<c=green>Activates</c> certain abilities . . .
+Sand Force, Sand Rush, Sand Veil
+Sand Force, Sand Rush, Sand Veil
+
+
+400
+Zen Mode <c=green>always active</c> 
+Zen Mode <c=green>always active</c> 
+
+
+
+
+401
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . .
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . .
+Calm Mind, Kinesis, Meditate, Sand Attack
+Calm Mind, Kinesis, Meditate, Sand Attack
+
+
+402
+Sand lasts <c=green>8</c> turns
+Sand lasts <c=green>8</c> turns
+
+
+
+
+403
+Psych-Up <icon=fieldPlus> <c=green>cures</c> status
+Psych-Up <icon=fieldPlus> <c=green>cures</c> status
+
+
+
+
+404
+Focus Energy's effect <icon=fieldUp,tts="boosted"> 
+Focus Energy's effect <icon=fieldUp,tts="boosted"> 
+
+
+
+
+405
+Certain attacks <icon=fieldUp> <c=green>x2</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x2</c> . . . 
+Mud Bomb, Mud Shot, Mud-Slap, Sand Tomb
+Mud Bomb, Mud Shot, Mud-Slap, Sand Tomb
+
+
+406
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Clang. Soulblaze, Hidden Power, Land's Wrath, Muddy Water, Strength, Surf, Thousand Waves
+Clang. Soulblaze, Hidden Power, Land's Wrath, Muddy Water, Strength, Surf, Thousand Waves
+
+
+407
+Certain attacks <icon=fieldUp> <c=green>x1.3</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.3</c> . . . 
+Aura Sphere, Focus Blast, Stored Power, Zen Headbutt
+Aura Sphere, Focus Blast, Stored Power, Zen Headbutt
+
+
+408
+Psychic <icon=fieldUp> <c=green>x1.2</c> 
+Psychic <icon=fieldUp> <c=green>x1.2</c> 
+
+
+
+
+409
+Strength <icon=fieldChange> <icon=typeFIGHTING>/<icon=typePSYCHIC> damage
+Strength <icon=fieldChange> <icon=typeFIGHTING>/<icon=typePSYCHIC> damage
+
+
+
+
+410
+Sand Tomb <icon=fieldPlus> <c=green>lowers</c> Accuracy
+Sand Tomb <icon=fieldPlus> <c=green>lowers</c> Accuracy
+
+
+
+
+411
+Water Compaction <c=green>boosts</c> Sp.Def
+Water Compaction <c=green>boosts</c> Sp.Def
+
+
+
+
+412
+Focus Blasts's Accuracy <icon=fieldChange> <c=green>90</c> 
+Focus Blasts's Accuracy <icon=fieldChange> <c=green>90</c> 
+
+
+
+
+413
+Shore Up recovery <icon=fieldChange> <c=green>75 %</c> HP
+Shore Up recovery <icon=fieldChange> <c=green>75 %</c> HP
+
+
+
+
+414
+Shell Bell recovery <icon=fieldChange> <c=green>25 %</c> damage dealt
+Shell Bell recovery <icon=fieldChange> <c=green>25 %</c> damage dealt
+
+
+
+
+415
+Nature Power <icon=fieldChange> Meditate
+Nature Power <icon=fieldChange> Meditate
+
+
+
+
+416
+Camouflage <icon=fieldChange> <icon=typeGROUND> 
+Camouflage <icon=fieldChange> <icon=typeGROUND> 
+
+
+
+
+417
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Accuracy
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Accuracy
+
+
+
+
+418
+Activates <c=orange>Telluric Seed</c> . . .
+Activates <c=orange>Telluric Seed</c> . . .
+Applies Focus Energy to the user.
+Applies Focus Energy to the user.
+
+
+419
+<c=orange>"The water's surface is calm."</c> 
+<c=orange>"The water's surface is calm."</c> 
+
+
+
+
+420
+Speed <icon=fieldDown> <c=red>x0.75</c> unless <icon=typeWATER> or . . .
+Speed <icon=fieldDown> <c=red>x0.75</c> unless <icon=typeWATER> or . . .
+...unless Water type, airborne, or the abilities Surge Surfer or Swift Swim are active.
+...unless Water type, airborne, or the abilities Surge Surfer or Swift Swim are active.
+
+
+421
+<c=red>Prevents</c> <icon=typeGROUND> attacks
+<c=red>Prevents</c> <icon=typeGROUND> attacks
+
+
+
+
+422
+Spikes/Toxic Spikes <c=red>terminated</c> 
+Spikes/Toxic Spikes <c=red>terminated</c> 
+
+
+
+
+423
+Dive lasts <c=green>1</c> turn
+Dive lasts <c=green>1</c> turn
+
+
+
+
+424
+Water Veil <icon=fieldPlus> <c=green>cures</c> status
+Water Veil <icon=fieldPlus> <c=green>cures</c> status
+
+
+
+
+425
+<c=green>Activates</c> certain abilities . . .
+<c=green>Activates</c> certain abilities . . .
+Hydration, Schooling, Surge Surfer, Swift Swim, Torrent, and Water Compaction each turn.
+Hydration, Schooling, Surge Surfer, Swift Swim, Torrent, and Water Compaction each turn.
+
+
+426
+Splash <icon=fieldPlus> <c=green>lowers</c> Accuracy
+Splash <icon=fieldPlus> <c=green>lowers</c> Accuracy
+
+
+
+
+427
+Aqua Ring recovery <icon=fieldChange> <c=green>1/8 HP</c> 
+Aqua Ring recovery <icon=fieldChange> <c=green>1/8 HP</c> 
+
+
+
+
+428
+Certain abilities <c=green>restore HP</c> . . .
+Certain abilities <c=green>restore HP</c> . . .
+Dry Skin, Water Absorb
+Dry Skin, Water Absorb
+
+
+429
+Shore Up <c=green>activates</c> Water Compaction
+Shore Up <c=green>activates</c> Water Compaction
+
+
+
+
+430
+Whirlpool damage <icon=fieldChange> <c=green>1/6 HP</c> 
+Whirlpool damage <icon=fieldChange> <c=green>1/6 HP</c> 
+
+
+
+
+431
+Whirlpool <icon=fieldPlus> confuses target
+Whirlpool <icon=fieldPlus> confuses target
+
+
+
+
+432
+<icon=typeWATER> attacks <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeWATER> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+433
+<icon=typeELECTRIC> attacks <icon=fieldUp> <c=green>x1.5</c> when . . .
+<icon=typeELECTRIC> attacks <icon=fieldUp> <c=green>x1.5</c> when . . .
+...when target is grounded.
+...when target is grounded.
+
+
+434
+<icon=typeFIRE> attacks <icon=fieldDown> <c=red>x0.5</c> when . . .
+<icon=typeFIRE> attacks <icon=fieldDown> <c=red>x0.5</c> when . . .
+...when target is grounded.
+...when target is grounded.
+
+
+435
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Dive, Hydro Vortex, Muddy Water, Surf, Whirlpool
+Dive, Hydro Vortex, Muddy Water, Surf, Whirlpool
+
+
+436
+Becomes <c=orange>Underwater</c> when . . .
+Becomes <c=orange>Underwater</c> when . . .
+...when Dive, Gravity is used.
+...when Dive, Gravity is used.
+
+
+437
+Becomes <c=orange>Icy Field</c> when . . .
+Becomes <c=orange>Icy Field</c> when . . .
+...when Blizzard, Glaciate, Subzero Slammer is used.
+...when Blizzard, Glaciate, Subzero Slammer is used.
+
+
+438
+Becomes <c=orange>Murkwater</c> when . . .
+Becomes <c=orange>Murkwater</c> when . . .
+...when Acid Downpour is used, or Sludge Wave is used twice.
+...when Acid Downpour is used, or Sludge Wave is used twice.
+
+
+439
+Nature Power <icon=fieldChange> Whirlpool
+Nature Power <icon=fieldChange> Whirlpool
+
+
+
+
+440
+Camouflage <icon=fieldChange> <icon=typeWATER> 
+Camouflage <icon=fieldChange> <icon=typeWATER> 
+
+
+
+
+441
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Speed
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Speed
+
+
+
+
+442
+Activates <c=orange>Elemental Seed</c> . . .
+Activates <c=orange>Elemental Seed</c> . . .
+Boosts Sp.Def and applies Aqua Ring to the user.
+Boosts Sp.Def and applies Aqua Ring to the user.
+
+
+443
+<c=orange>"Blub blub..."</c> 
+<c=orange>"Blub blub..."</c> 
+
+
+
+
+444
+Speed <icon=fieldDown> <c=red>x0.5</c> unless <icon=typeWATER> or . . .
+Speed <icon=fieldDown> <c=red>x0.5</c> unless <icon=typeWATER> or . . .
+...unless Water type, or the abilities Swift Swim or Steelworker are active.
+...unless Water type, or the abilities Swift Swim or Steelworker are active.
+
+
+445
+<c=red>Prevents</c> <icon=typeFIRE> attacks
+<c=red>Prevents</c> <icon=typeFIRE> attacks
+
+
+
+
+446
+<c=red>Prevents</c> generated Fields
+<c=red>Prevents</c> generated Fields
+
+
+
+
+447
+All weather is <c=red>terminated</c> 
+All weather is <c=red>terminated</c> 
+
+
+
+
+448
+<icon=typeWATER> attacks <icon=fieldChange,tts="change to">x1 vs <icon=typeWATER> 
+<icon=typeWATER> attacks <icon=fieldChange,tts="change to">x1 vs <icon=typeWATER> 
+
+
+
+
+449
+Physical damage <icon=fieldDown> <c=red>x0.5</c> unless . . .
+Physical damage <icon=fieldDown> <c=red>x0.5</c> unless . . .
+...unless attack is Water type or user has Steelworker.
+...unless attack is Water type or user has Steelworker.
+
+
+450
+End of turn <icon=typeWATER> <c=orange>damage</c> when . . .
+End of turn <icon=typeWATER> <c=orange>damage</c> when . . .
+...when Pokémon is weak to Water.
+...when Pokémon is weak to Water.
+
+
+451
+<c=green>Immunity</c> to <c=orange>field damage</c> when . . .
+<c=green>Immunity</c> to <c=orange>field damage</c> when . . .
+...when the abilities Magic Guard or Swift Swim are active.
+...when the abilities Magic Guard or Swift Swim are active.
+
+
+452
+<c=orange>Field damage</c> <icon=fieldRedUp> when . . .
+<c=orange>Field damage</c> <icon=fieldRedUp> when . . .
+...when the abilities Magma Armor or Flame Body are active.
+...when the abilities Magma Armor or Flame Body are active.
+
+
+453
+Dive lasts <c=green>1</c> turn
+Dive lasts <c=green>1</c> turn
+
+
+
+
+454
+Water Veil <icon=fieldPlus> <c=green>cures</c> status
+Water Veil <icon=fieldPlus> <c=green>cures</c> status
+
+
+
+
+455
+<c=green>Activates</c> certain abilities . . .
+<c=green>Activates</c> certain abilities . . .
+Hydration, Schooling, Surge Surfer, Swift Swim, Torrent, and Water Compaction each turn.
+Hydration, Schooling, Surge Surfer, Swift Swim, Torrent, and Water Compaction each turn.
+
+
+456
+Aqua Ring recovery <icon=fieldChange> <c=green>1/8 HP</c> 
+Aqua Ring recovery <icon=fieldChange> <c=green>1/8 HP</c> 
+
+
+
+
+457
+Certain abilities <c=green>restore HP</c> . . .
+Certain abilities <c=green>restore HP</c> . . .
+Dry Skin, Water Absorb
+Dry Skin, Water Absorb
+
+
+458
+Whirlpool damage <icon=fieldChange> <c=green>1/6 HP</c> 
+Whirlpool damage <icon=fieldChange> <c=green>1/6 HP</c> 
+
+
+
+
+459
+Whirlpool <icon=fieldPlus> confuses target
+Whirlpool <icon=fieldPlus> confuses target
+
+
+
+
+460
+<icon=typeGROUND> attacks <icon=fieldPlus,tts="gain"> <icon=typeWATER> damage
+<icon=typeGROUND> attacks <icon=fieldPlus,tts="gain"> <icon=typeWATER> damage
+
+
+
+
+461
+<icon=typeWATER> attacks <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeWATER> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+462
+<icon=typeELECTRIC> attacks <icon=fieldUp> <c=green>x2</c> 
+<icon=typeELECTRIC> attacks <icon=fieldUp> <c=green>x2</c> 
+
+
+
+
+463
+<icon=typeELECTRIC> attacks <icon=fieldPlus> <c=green>never miss</c> 
+<icon=typeELECTRIC> attacks <icon=fieldPlus> <c=green>never miss</c> 
+
+
+
+
+464
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Water Pulse
+Water Pulse
+
+
+465
+Certain attacks <icon=fieldUp> <c=green>x2</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x2</c> . . . 
+Anchor Shot
+Anchor Shot
+
+
+466
+Becomes <c=orange>Water Surface</c> when . . .
+Becomes <c=orange>Water Surface</c> when . . .
+...when Bounce, Dive, Fly, Sky Drop is used.
+...when Bounce, Dive, Fly, Sky Drop is used.
+
+
+467
+Becomes <c=orange>Murkwater</c> when . . .
+Becomes <c=orange>Murkwater</c> when . . .
+...when Acid Downpour is used, or Sludge Wave is used twice, KOing all non-Poison or Steel type Pokémon.
+...when Acid Downpour is used, or Sludge Wave is used twice, KOing all non-Poison or Steel type Pokémon.
+
+
+468
+Nature Power <icon=fieldChange> Water Pulse
+Nature Power <icon=fieldChange> Water Pulse
+
+
+
+
+469
+Camouflage <icon=fieldChange> <icon=typeWATER> 
+Camouflage <icon=fieldChange> <icon=typeWATER> 
+
+
+
+
+470
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Attack
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Attack
+
+
+
+
+471
+Activates <c=orange>Elemental Seed</c> . . .
+Activates <c=orange>Elemental Seed</c> . . .
+Boosts Speed and applies Soak to the user.
+Boosts Speed and applies Soak to the user.
+
+
+472
+<c=orange>"The cave echoes dully..."</c> 
+<c=orange>"The cave echoes dully..."</c> 
+
+
+
+
+473
+<icon=typeGROUND> attacks hit <icon=typeFLYING>/Levitate
+<icon=typeGROUND> attacks hit <icon=typeFLYING>/Levitate
+
+
+
+
+474
+All Pokémon <icon=fieldfaint> when . . .
+All Pokémon <icon=fieldfaint> when . . .
+...when Bulldoze, Continent Crush, Earthquake, Fissure, Magnitude, Tectonic Rage is used twice. Pokémon using Endure, or having Sturdy may survive with 1 HP from full health. Pokémon with Battle Armor and Shell Armor take 50% damage. Pokémon with Prism Armor or Solid Rock take 33% damage. Pokémon behind applicable protect moves, or having Bulletproof or Rock Head are immune to the damage.
+...when Bulldoze, Continent Crush, Earthquake, Fissure, Magnitude, Tectonic Rage is used twice. Pokémon using Endure, or having Sturdy may survive with 1 HP from full health. Pokémon with Battle Armor and Shell Armor take 50% damage. Pokémon with Prism Armor or Solid Rock take 33% damage. Pokémon behind applicable protect moves, or having Bulletproof or Rock Head are immune to the damage.
+
+
+475
+Fly and Bounce last 1 turn
+Fly and Bounce last 1 turn
+
+
+
+
+476
+<c=red>Prevents</c> Sky Drop
+<c=red>Prevents</c> Sky Drop
+
+
+
+
+477
+Stealth Rock damage <icon=fieldUp> <c=green>x2</c> 
+Stealth Rock damage <icon=fieldUp> <c=green>x2</c> 
+
+
+
+
+478
+<icon=typeROCK> attacks <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeROCK> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+479
+<icon=typeFLYING> attacks <icon=fieldDown> <c=red>x0.5</c> when . . .
+<icon=typeFLYING> attacks <icon=fieldDown> <c=red>x0.5</c> when . . .
+...when non-contact.
+...when non-contact.
+
+
+480
+Sound-based moves <icon=fieldUp> <c=green>x1.5</c> 
+Sound-based moves <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+481
+Rock Tomb <icon=fieldUp> <c=green>x1.5</c> 
+Rock Tomb <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+482
+Becomes <c=orange>Crystal Cavern</c> when . . .
+Becomes <c=orange>Crystal Cavern</c> when . . .
+...when Diamond Storm, Power Gem is used.
+...when Diamond Storm, Power Gem is used.
+
+
+483
+Nature Power <icon=fieldChange> Rock Tomb
+Nature Power <icon=fieldChange> Rock Tomb
+
+
+
+
+484
+Camouflage <icon=fieldChange> <icon=typeROCK> 
+Camouflage <icon=fieldChange> <icon=typeROCK> 
+
+
+
+
+485
+Secret Power effect <icon=fieldChange> Flinches
+Secret Power effect <icon=fieldChange> Flinches
+
+
+
+
+486
+Activates <c=orange>Telluric Seed</c> . . .
+Activates <c=orange>Telluric Seed</c> . . .
+Boosts Defense by two stages and damages the user with Stealth Rocks.
+Boosts Defense by two stages and damages the user with Stealth Rocks.
+
+
+487
+<c=orange>"1n!taliz3 .b//////attl3"</c> 
+<c=orange>"1n!taliz3 .b//////attl3"</c> 
+
+
+
+
+488
+Type attacks <icon=fieldChange,tts="are"> always Physical . . .
+Type attacks <icon=fieldChange,tts="are"> always Physical . . .
+Normal, Fighting, Poison, Ground, Flying, Bug, Rock, Ghost.
+Normal, Fighting, Poison, Ground, Flying, Bug, Rock, Ghost.
+
+
+489
+Type attacks <icon=fieldChange,tts="are"> always Special . . .
+Type attacks <icon=fieldChange,tts="are"> always Special . . .
+Fire, Water, Grass, Electric, Ice, Psychic, Dragon.
+Fire, Water, Grass, Electric, Ice, Psychic, Dragon.
+
+
+490
+Special attacks <c=orange>calculate</c> on . . .
+Special attacks <c=orange>calculate</c> on . . .
+Special Attacks, for both the attacker and defender, calculate off of the higher stat between Sp.Atk and Sp.Def.
+Special Attacks, for both the attacker and defender, calculate off of the higher stat between Sp.Atk and Sp.Def.
+
+
+491
+<icon=typeDARK>, <icon=typeSTEEL>, <icon=typeFAIRY,tts="and Fairy type"> moves <icon=fieldChange> <icon=typeNORMAL> 
+<icon=typeDARK>, <icon=typeSTEEL>, <icon=typeFAIRY,tts="and Fairy type"> moves <icon=fieldChange> <icon=typeNORMAL> 
+
+
+
+
+492
+The type chart is <c=orange>altered</c> . . .
+The type chart is <c=orange>altered</c> . . .
+Dragon always deals neutral damage. Bug now hits Poison types super-effectively. Ice now hits Fire types neutrally. Ghost now cannot hit Psychic types. Poison now hits Bug types super-effectively.
+Dragon always deals neutral damage. Bug now hits Poison types super-effectively. Ice now hits Fire types neutrally. Ghost now cannot hit Psychic types. Poison now hits Bug types super-effectively.
+
+
+493
+Critical hit chance <icon=fieldUp,tts="increased"> when . . .
+Critical hit chance <icon=fieldUp,tts="increased"> when . . .
+...when the attacker's base speed is higher than the target's.
+...when the attacker's base speed is higher than the target's.
+
+
+494
+Rage <c=red>locks</c> user into itself
+Rage <c=red>locks</c> user into itself
+
+
+
+
+495
+Recharge moves don't have <c=green>recharge</c>. . .
+Recharge moves don't have <c=green>recharge</c>. . .
+...when the move knocks out a Pokémon
+...when the move knocks out a Pokémon
+
+
+496
+<icon=typePSYCHIC> attacks <icon=fieldUp> <c=green>x1.2</c> 
+<icon=typePSYCHIC> attacks <icon=fieldUp> <c=green>x1.2</c> 
+
+
+
+
+497
+Blizzard's Accuracy <icon=fieldChange> <c=green>90</c> 
+Blizzard's Accuracy <icon=fieldChange> <c=green>90</c> 
+
+
+
+
+498
+Metronome <c=green>selects</c> attacks . . .
+Metronome <c=green>selects</c> attacks . . .
+...selects attacks of 70 base power or higher only.
+...selects attacks of 70 base power or higher only.
+
+
+499
+Self-KO attacks <c=green>halve</c> Defense
+Self-KO attacks <c=green>halve</c> Defense
+
+
+
+
+500
+RKS System <icon=fieldChange> <icon=typeQMARKS> 
+RKS System <icon=fieldChange> <icon=typeQMARKS> 
+
+
+
+
+501
+<c=green>Created</c> when . . .
+<c=green>Created</c> when . . .
+Created for 5 turns when Conversion and Conversion2 are used in succession.
+Created for 5 turns when Conversion and Conversion2 are used in succession.
+
+
+502
+Nature Power <icon=fieldChange> Metronome
+Nature Power <icon=fieldChange> Metronome
+
+
+
+
+503
+Camouflage <icon=fieldChange> <icon=typeQMARKS> 
+Camouflage <icon=fieldChange> <icon=typeQMARKS> 
+
+
+
+
+504
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Speed
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Speed
+
+
+
+
+505
+Activates <c=orange>Synthetic Seed</c> . . .
+Activates <c=orange>Synthetic Seed</c> . . .
+Boosts Defense and makes user ??? type.
+Boosts Defense and makes user ??? type.
+
+
+506
+<c=orange>"The cave is littered with crystals."</c> 
+<c=orange>"The cave is littered with crystals."</c> 
+
+
+
+
+507
+<icon=typeROCK> attacks <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeROCK> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+508
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> 
+Ancient Power, Diamond Storm, Judgment, Multi-Attack, Power Gem, Rock Climb, Rock Smash, Rock Tomb, Strength
+Ancient Power, Diamond Storm, Judgment, Multi-Attack, Power Gem, Rock Climb, Rock Smash, Rock Tomb, Strength
+
+
+509
+Certain attacks <icon=fieldPlus,tts="gain an"> extra type
+Certain attacks <icon=fieldPlus,tts="gain an"> extra type
+Rock Type attacks, as well as Judgment, Multi-Attack, Rock Climb, and Strength gain a sequential typing between Fire, Water, Grass and Psychic in that repeating pattern.
+Rock Type attacks, as well as Judgment, Multi-Attack, Rock Climb, and Strength gain a sequential typing between Fire, Water, Grass and Psychic in that repeating pattern.
+
+
+510
+Stealth Rock <icon=fieldPlus,tts="gains an"> extra type
+Stealth Rock <icon=fieldPlus,tts="gains an"> extra type
+Each occurrence of Stealth Rock damage also gains extra damage type from the same repeating pattern as the attacks above.
+Each occurrence of Stealth Rock damage also gains extra damage type from the same repeating pattern as the attacks above.
+
+
+511
+<icon=typeDRAGON> attacks <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeDRAGON> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+512
+Certain attacks <icon=fieldUp> <c=green>x1.3</c> 
+Certain attacks <icon=fieldUp> <c=green>x1.3</c> 
+Aurora Beam, Dazzling Gleam, Doom Desire, Flash Cannon, Luster Purge, M. M. Maelstrom, Mirror Shot, Moongeist Beam, Photon Geyser, Signal Beam, Techno Blast
+Aurora Beam, Dazzling Gleam, Doom Desire, Flash Cannon, Luster Purge, M. M. Maelstrom, Mirror Shot, Moongeist Beam, Photon Geyser, Signal Beam, Techno Blast
+
+
+513
+Becomes <c=orange>Dark Crystal</c> when . . .
+Becomes <c=orange>Dark Crystal</c> when . . .
+...when Burning Light, Dark Pulse, Dark Void, Night Daze is used.
+...when Burning Light, Dark Pulse, Dark Void, Night Daze is used.
+
+
+514
+Becomes a <c=orange>Cave</c> when . . .
+Becomes a <c=orange>Cave</c> when . . .
+...when Bulldoze, Earthquake, Fissure, Magnitude, Tectonic Rage is used.
+...when Bulldoze, Earthquake, Fissure, Magnitude, Tectonic Rage is used.
+
+
+515
+Rock Polish <icon=fieldPlus> <c=green>boosts</c> Atk/Sp.Atk
+Rock Polish <icon=fieldPlus> <c=green>boosts</c> Atk/Sp.Atk
+
+
+
+
+516
+<c=green>Enables</c> Aurora Veil
+<c=green>Enables</c> Aurora Veil
+
+
+
+
+517
+Prism Armor <c=green>lowers damage</c> x0.75
+Prism Armor <c=green>lowers damage</c> x0.75
+
+
+
+
+518
+Nature Power <icon=fieldChange> Power Gem
+Nature Power <icon=fieldChange> Power Gem
+
+
+
+
+519
+Camouflage <icon=fieldChange> random type . . .
+Camouflage <icon=fieldChange> random type . . .
+Camouflage may choose one of Fire, Water, Grass or Psychic typings.
+Camouflage may choose one of Fire, Water, Grass or Psychic typings.
+
+
+520
+Secret Power effect <icon=fieldChange> random status . . .
+Secret Power effect <icon=fieldChange> random status . . .
+Secret Power may choose a random status between Burn, Freeze, Sleep or Confusion.
+Secret Power may choose a random status between Burn, Freeze, Sleep or Confusion.
+
+
+521
+Activates <c=orange>Magical Seed</c> . . .
+Activates <c=orange>Magical Seed</c> . . .
+Boosts Sp.Atk and applies Magic Coat to the user.
+Boosts Sp.Atk and applies Magic Coat to the user.
+
+
+522
+<c=orange>"The water is tainted..."</c> 
+<c=orange>"The water is tainted..."</c> 
+
+
+
+
+523
+Speed <icon=fieldDown> <c=red>x0.75</c> unless <icon=typeWATER> or . . .
+Speed <icon=fieldDown> <c=red>x0.75</c> unless <icon=typeWATER> or . . .
+...unless Water type, airborne, or the abilities Surge Surfer or Swift Swim are active.
+...unless Water type, airborne, or the abilities Surge Surfer or Swift Swim are active.
+
+
+524
+End of turn <icon=typePOISON> <c=orange>damage</c> when . . .
+End of turn <icon=typePOISON> <c=orange>damage</c> when . . .
+...when grounded, and not Poison or Steel type.
+...when grounded, and not Poison or Steel type.
+
+
+525
+<c=green>Immunity</c> to field <c=orange>damage</c> when . . .
+<c=green>Immunity</c> to field <c=orange>damage</c> when . . .
+...when one of the following abilities is active: Immunity, Magic Guard, Poison Heal, Toxic Boost, Wonder Guard
+...when one of the following abilities is active: Immunity, Magic Guard, Poison Heal, Toxic Boost, Wonder Guard
+
+
+526
+<c=orange>Field damage</c> <icon=fieldRedUp> when . . .
+<c=orange>Field damage</c> <icon=fieldRedUp> when . . .
+...when Pokémon is underwater (x4) or has one of the following abilities (x2): Dry Skin, Flame Body, Magma Armor, Water Absorb
+...when Pokémon is underwater (x4) or has one of the following abilities (x2): Dry Skin, Flame Body, Magma Armor, Water Absorb
+
+
+527
+Dry Skin <c=green>restores HP</c> when . . .
+Dry Skin <c=green>restores HP</c> when . . .
+...when grounded and Poison type.
+...when grounded and Poison type.
+
+
+528
+Water Absorb <c=green>restores HP</c> when . . .
+Water Absorb <c=green>restores HP</c> when . . .
+...when grounded and Poison type.
+...when grounded and Poison type.
+
+
+529
+<c=green>Activates</c> certain abilities when . . .
+<c=green>Activates</c> certain abilities when . . .
+...when grounded, activates Merciless, Poison Heal, Schooling, Surge Surfer, Swift Swim, Toxic Boost and Water Compaction each turn.
+...when grounded, activates Merciless, Poison Heal, Schooling, Surge Surfer, Swift Swim, Toxic Boost and Water Compaction each turn.
+
+
+530
+<c=red>Prevents</c> <icon=typeGROUND> attacks
+<c=red>Prevents</c> <icon=typeGROUND> attacks
+
+
+
+
+531
+Spikes/Toxic Spikes <c=red>terminated</c> 
+Spikes/Toxic Spikes <c=red>terminated</c> 
+
+
+
+
+532
+Shore Up <c=green>activates</c> Water Compaction
+Shore Up <c=green>activates</c> Water Compaction
+
+
+
+
+533
+<icon=typeWATER> attacks <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeWATER> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+534
+<icon=typeWATER> attacks <icon=fieldPlus,tts="gain the"> <icon=typePOISON> 
+<icon=typeWATER> attacks <icon=fieldPlus,tts="gain the"> <icon=typePOISON> 
+
+
+
+
+535
+<icon=typePOISON> attacks <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typePOISON> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+536
+<icon=typeELECTRIC> attacks <icon=fieldUp> <c=green>x1.3</c> when . . .
+<icon=typeELECTRIC> attacks <icon=fieldUp> <c=green>x1.3</c> when . . .
+...when opponent is grounded.
+...when opponent is grounded.
+
+
+537
+Sludge Wave <icon=fieldPlus,tts="gains the"> <icon=typeWATER> 
+Sludge Wave <icon=fieldPlus,tts="gains the"> <icon=typeWATER> 
+
+
+
+
+538
+Certain attacks <icon=fieldChange,tts="change to"> <icon=typeWATER> / <icon=typePOISON> 
+Certain attacks <icon=fieldChange,tts="change to"> <icon=typeWATER> / <icon=typePOISON> 
+Mud Bomb, Mud Shot, Mud-Slap, Thousand Waves
+Mud Bomb, Mud Shot, Mud-Slap, Thousand Waves
+
+
+539
+Certain attacks <icon=fieldPlus,tts="gain the"> <icon=typePOISON> . . .
+Certain attacks <icon=fieldPlus,tts="gain the"> <icon=typePOISON> . . .
+Smack Down
+Smack Down
+
+
+540
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Acid, Acid Spray, Brine, Mud Bomb, Mud Shot, Mud-Slap, Smack Down, Thousand Waves
+Acid, Acid Spray, Brine, Mud Bomb, Mud Shot, Mud-Slap, Smack Down, Thousand Waves
+
+
+541
+Gooey effect <icon=fieldUp> <c=green>x2</c> 
+Gooey effect <icon=fieldUp> <c=green>x2</c> 
+
+
+
+
+542
+Stench chance <icon=fieldUp> <c=green>x2</c> 
+Stench chance <icon=fieldUp> <c=green>x2</c> 
+
+
+
+
+543
+Acid Armor's effect <icon=fieldUp> <c=green>x2</c> 
+Acid Armor's effect <icon=fieldUp> <c=green>x2</c> 
+
+
+
+
+544
+<c=green>Activates</c> Venoshock
+<c=green>Activates</c> Venoshock
+
+
+
+
+545
+<c=green>Activates</c> Venom Drench
+<c=green>Activates</c> Venom Drench
+
+
+
+
+546
+Liquid Ooze <icon=fieldUp> <c=green>x2</c> 
+Liquid Ooze <icon=fieldUp> <c=green>x2</c> 
+
+
+
+
+547
+Becomes <c=orange>Water Surface</c> when . . .
+Becomes <c=orange>Water Surface</c> when . . .
+...when Whirlpool is used.
+...when Whirlpool is used.
+
+
+548
+Becomes <c=orange>Icy Field</c> when . . .
+Becomes <c=orange>Icy Field</c> when . . .
+...when Blizzard, Glaciate, Subzero Slammer is used.
+...when Blizzard, Glaciate, Subzero Slammer is used.
+
+
+549
+Nature Power <icon=fieldChange> Sludge Wave
+Nature Power <icon=fieldChange> Sludge Wave
+
+
+
+
+550
+Camouflage <icon=fieldChange> <icon=typePOISON> 
+Camouflage <icon=fieldChange> <icon=typePOISON> 
+
+
+
+
+551
+Secret Power effect <icon=fieldChange> <icon=fieldPoisonStatus> 
+Secret Power effect <icon=fieldChange> <icon=fieldPoisonStatus> 
+
+
+
+
+552
+Activates <c=orange>Elemental Seed</c> . . .
+Activates <c=orange>Elemental Seed</c> . . .
+Boosts Speed and applies Aqua Ring, but poisons the user.
+Boosts Speed and applies Aqua Ring, but poisons the user.
+
+
+553
+<c=orange>"Adieu to disappointment and spleen,"</c> 
+<c=orange>"Adieu to disappointment and spleen,"</c> 
+What are men to rocks and mountains?
+What are men to rocks and mountains?
+
+
+554
+Tailwind lasts <c=green>5</c> turns
+Tailwind lasts <c=green>5</c> turns
+
+
+
+
+555
+Tailwind <icon=fieldPlus,tts="additionally kicks up"> Strong Winds
+Tailwind <icon=fieldPlus,tts="additionally kicks up"> Strong Winds
+
+
+
+
+556
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Avalanche, Circle Throw, Eruption, Fairy Wind, Hyper Voice, Icy Wind, Ominous Wind, Razor Wind, Silver Wind, Storm Throw, Thunder, Twister, Vital Throw
+Avalanche, Circle Throw, Eruption, Fairy Wind, Hyper Voice, Icy Wind, Ominous Wind, Razor Wind, Silver Wind, Storm Throw, Thunder, Twister, Vital Throw
+
+
+557
+Certain attacks <icon=fieldPlus,tts="are additionally"> <icon=fieldUp> <c=green>x1.5</c> when . . .
+Certain attacks <icon=fieldPlus,tts="are additionally"> <icon=fieldUp> <c=green>x1.5</c> when . . .
+...when Strong Winds are active, further boosts all Special Flying attacks, as well as Fairy Wind, Gust, Icy Wind, Ominous Wind, Razor Wind, Silver Wind, Twister
+...when Strong Winds are active, further boosts all Special Flying attacks, as well as Fairy Wind, Gust, Icy Wind, Ominous Wind, Razor Wind, Silver Wind, Twister
+
+
+558
+Sun lasts <c=green>8</c> turns
+Sun lasts <c=green>8</c> turns
+
+
+
+
+559
+Thunder <c=green>never misses</c> 
+Thunder <c=green>never misses</c> 
+
+
+
+
+560
+Becomes <c=orange>Snowy Mountain</c> when . . .
+Becomes <c=orange>Snowy Mountain</c> when . . .
+...when Blizzard, Glaciate, Subzero Slammer is used, or it has been hailing for 3 turns.
+...when Blizzard, Glaciate, Subzero Slammer is used, or it has been hailing for 3 turns.
+
+
+561
+<icon=typeFLYING> attacks <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeFLYING> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+562
+<icon=typeROCK> attacks <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeROCK> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+563
+Long Reach damage <icon=fieldUp> <c=green>x1.5</c> 
+Long Reach damage <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+564
+<c=green>Activates</c> Gale Wings when windy
+<c=green>Activates</c> Gale Wings when windy
+
+
+
+
+565
+Aerilate power boost <icon=fieldChange> <c=green>x1.5</c> 
+Aerilate power boost <icon=fieldChange> <c=green>x1.5</c> 
+
+
+
+
+566
+Nature Power <icon=fieldChange> Rock Slide
+Nature Power <icon=fieldChange> Rock Slide
+
+
+
+
+567
+Camouflage <icon=fieldChange> <icon=typeROCK> 
+Camouflage <icon=fieldChange> <icon=typeROCK> 
+
+
+
+
+568
+Secret Power effect <icon=fieldChange> Flinches
+Secret Power effect <icon=fieldChange> Flinches
+
+
+
+
+569
+Activates <c=orange>Telluric Seed</c> . . .
+Activates <c=orange>Telluric Seed</c> . . .
+Boosts Attack by two stages, but lowers Accuracy.
+Boosts Attack by two stages, but lowers Accuracy.
+
+
+570
+<c=orange>"The snow glows white on the mountain"</c> 
+<c=orange>"The snow glows white on the mountain"</c> 
+
+
+
+
+571
+Tailwind lasts <c=green>5</c> turns
+Tailwind lasts <c=green>5</c> turns
+
+
+
+
+572
+Tailwind <icon=fieldPlus,tts="additionally kicks up"> Strong Winds
+Tailwind <icon=fieldPlus,tts="additionally kicks up"> Strong Winds
+
+
+
+
+573
+<icon=typeROCK> attacks <icon=fieldPlus,tts="gain the"> <icon=typeICE> 
+<icon=typeROCK> attacks <icon=fieldPlus,tts="gain the"> <icon=typeICE> 
+
+
+
+
+574
+<icon=typeICE> attacks <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeICE> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+575
+<icon=typeROCK> attacks <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeROCK> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+576
+<icon=typeFLYING> attacks <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeFLYING> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+577
+<icon=typeFIRE> attacks <icon=fieldDown> <c=red>x0.5</c> 
+<icon=typeFIRE> attacks <icon=fieldDown> <c=red>x0.5</c> 
+
+
+
+
+578
+<icon=typeICE> Pokémon's Defense <icon=fieldUp> <c=green>x1.5</c> when . . .
+<icon=typeICE> Pokémon's Defense <icon=fieldUp> <c=green>x1.5</c> when . . .
+...when Hail is up
+...when Hail is up
+
+
+579
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Avalanche, Circle Throw, Fairy Wind, Glaciate, Hyper Voice, Ominous Wind, Powder Snow, Razor Wind, Silver Wind, Storm Throw, Twister, Vital Throw
+Avalanche, Circle Throw, Fairy Wind, Glaciate, Hyper Voice, Ominous Wind, Powder Snow, Razor Wind, Silver Wind, Storm Throw, Twister, Vital Throw
+
+
+580
+Certain attacks <icon=fieldPlus,tts="are additionally"> <icon=fieldUp> <c=green>x1.5</c> when . . .
+Certain attacks <icon=fieldPlus,tts="are additionally"> <icon=fieldUp> <c=green>x1.5</c> when . . .
+...when Strong Winds are active, further boosts all Special Flying attacks, as well as Fairy Wind, Gust, Icy Wind, Ominous Wind, Razor Wind, Silver Wind, Twister
+...when Strong Winds are active, further boosts all Special Flying attacks, as well as Fairy Wind, Gust, Icy Wind, Ominous Wind, Razor Wind, Silver Wind, Twister
+
+
+581
+Certain attacks <icon=fieldDown> <c=red>x0.5</c> . . . 
+Certain attacks <icon=fieldDown> <c=red>x0.5</c> . . . 
+Scald, Steam Eruption
+Scald, Steam Eruption
+
+
+582
+Sun and Hail last for <c=green>8</c> turns
+Sun and Hail last for <c=green>8</c> turns
+
+
+
+
+583
+Thunder <c=green>never misses</c> 
+Thunder <c=green>never misses</c> 
+
+
+
+
+584
+<c=green>Activates</c> certain abilities . . .
+<c=green>Activates</c> certain abilities . . .
+Ice Body, Slush Rush, Snow Cloak
+Ice Body, Slush Rush, Snow Cloak
+
+
+585
+Refrigerate power boost <icon=fieldChange> <c=green>x1.5</c> 
+Refrigerate power boost <icon=fieldChange> <c=green>x1.5</c> 
+
+
+
+
+586
+Becomes a <c=orange>Mountain</c> when . . .
+Becomes a <c=orange>Mountain</c> when . . .
+...when Eruption, Fire Pledge, Flame Burst, Heat Wave, Incinerate, Inf. Overdrive, Lava Plume, Mind Blown, Searing Shot is used
+...when Eruption, Fire Pledge, Flame Burst, Heat Wave, Incinerate, Inf. Overdrive, Lava Plume, Mind Blown, Searing Shot is used
+
+
+587
+<c=green>Activates</c> Gale Wings when windy
+<c=green>Activates</c> Gale Wings when windy
+
+
+
+
+588
+<c=green>Enables</c> Aurora Veil
+<c=green>Enables</c> Aurora Veil
+
+
+
+
+589
+Long Reach damage <icon=fieldUp> <c=green>x1.5</c> 
+Long Reach damage <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+590
+Aerilate power boost <icon=fieldChange> <c=green>x1.5</c> 
+Aerilate power boost <icon=fieldChange> <c=green>x1.5</c> 
+
+
+
+
+591
+Nature Power <icon=fieldChange> Avalanche
+Nature Power <icon=fieldChange> Avalanche
+
+
+
+
+592
+Camouflage <icon=fieldChange> <icon=typeICE> 
+Camouflage <icon=fieldChange> <icon=typeICE> 
+
+
+
+
+593
+Secret Power effect <icon=fieldChange> <icon=fieldFreeze> 
+Secret Power effect <icon=fieldChange> <icon=fieldFreeze> 
+
+
+
+
+594
+Activates <c=orange>Telluric Seed</c> . . .
+Activates <c=orange>Telluric Seed</c> . . .
+Boosts Sp.Atk by two stages, but lowers Accuracy.
+Boosts Sp.Atk by two stages, but lowers Accuracy.
+
+
+595
+<c=orange>"Benedictus Sanctus Spiritus..."</c> 
+<c=orange>"Benedictus Sanctus Spiritus..."</c> 
+
+
+
+
+596
+The type chart is <c=orange>altered</c> . . .
+The type chart is <c=orange>altered</c> . . .
+Normal type attacks hit Ghost and Dark type Pokémon for super-effective damage.
+Normal type attacks hit Ghost and Dark type Pokémon for super-effective damage.
+
+
+597
+<icon=typeGHOST> attacks <icon=fieldDown> <c=red>x0.5</c> 
+<icon=typeGHOST> attacks <icon=fieldDown> <c=red>x0.5</c> 
+
+
+
+
+598
+Certain attacks <icon=fieldDown> <c=red>x0.5</c> . . . 
+Certain attacks <icon=fieldDown> <c=red>x0.5</c> . . . 
+All special Dark type moves
+All special Dark type moves
+
+
+599
+Special <icon=typeFAIRY> attacks <icon=fieldUp> <c=green>x1.5</c> 
+Special <icon=typeFAIRY> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+600
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Ancient Power, Extreme Speed, Judgment, Magical Leaf, Mystical Fire, Return, Sacred Fire, Sacred Sword
+Ancient Power, Extreme Speed, Judgment, Magical Leaf, Mystical Fire, Return, Sacred Fire, Sacred Sword
+
+
+601
+Certain attacks <icon=fieldUp> <c=green>x1.3</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.3</c> . . . 
+Aeroblast, Crush Grip, Diamond Storm, Doom Desire, Dragon Ascent, Fleur Cannon, Gen. Supernova, Hyperspace Hole, Land's Wrath, Luster Purge, M. M. Maelstrom, Mist Ball, Moongeist Beam, Origin Pulse, Precipice Blades, Prismatic Laser, Psycho Boost, Psystrike, Relic Song, Roar of Time, S. Sunraze Smash, Secret Sword, Spacial Rend, Sunsteel Strike
+Aeroblast, Crush Grip, Diamond Storm, Doom Desire, Dragon Ascent, Fleur Cannon, Gen. Supernova, Hyperspace Hole, Land's Wrath, Luster Purge, M. M. Maelstrom, Mist Ball, Moongeist Beam, Origin Pulse, Precipice Blades, Prismatic Laser, Psycho Boost, Psystrike, Relic Song, Roar of Time, S. Sunraze Smash, Secret Sword, Spacial Rend, Sunsteel Strike
+
+
+602
+<icon=typePSYCHIC> attacks <icon=fieldUp> <c=green>x1.2</c> 
+<icon=typePSYCHIC> attacks <icon=fieldUp> <c=green>x1.2</c> 
+
+
+
+
+603
+<icon=typeDRAGON> attacks <icon=fieldUp> <c=green>x1.2</c> 
+<icon=typeDRAGON> attacks <icon=fieldUp> <c=green>x1.2</c> 
+
+
+
+
+604
+Special <icon=typeNORMAL> attacks <icon=fieldUp> <c=green>x1.5</c> 
+Special <icon=typeNORMAL> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+605
+Justified effect <icon=fieldUp> <c=green>x2</c> 
+Justified effect <icon=fieldUp> <c=green>x2</c> 
+
+
+
+
+606
+Wish recovery <icon=fieldChange> <c=green>75 % HP</c> 
+Wish recovery <icon=fieldChange> <c=green>75 % HP</c> 
+
+
+
+
+607
+<c=red>Prevents</c> Cursed Body
+<c=red>Prevents</c> Cursed Body
+
+
+
+
+608
+<c=green>Lifts</c> Curse each turn
+<c=green>Lifts</c> Curse each turn
+
+
+
+
+609
+Allies <c=green>avoid</c> damage from  . . 
+Allies <c=green>avoid</c> damage from  . . 
+...allies avoid damage from their partner's moves
+...allies avoid damage from their partner's moves
+
+
+610
+Miracle Eye <icon=fieldPlus> <c=green>boosts</c> Sp.Atk
+Miracle Eye <icon=fieldPlus> <c=green>boosts</c> Sp.Atk
+
+
+
+
+611
+Cosmic Power's effect <icon=fieldUp,tts="boosted"> 
+Cosmic Power's effect <icon=fieldUp,tts="boosted"> 
+
+
+
+
+612
+Nature's Madness damage <icon=fieldChange> <c=green>75 % HP</c> 
+Nature's Madness damage <icon=fieldChange> <c=green>75 % HP</c> 
+
+
+
+
+613
+RKS System <icon=fieldChange> <icon=typeDARK> 
+RKS System <icon=fieldChange> <icon=typeDARK> 
+
+
+
+
+614
+<c=red>Destroyed</c> by these moves . . .
+<c=red>Destroyed</c> by these moves . . .
+Burning Light
+Burning Light
+
+
+615
+Nature Power <icon=fieldChange> Judgment
+Nature Power <icon=fieldChange> Judgment
+
+
+
+
+616
+Camouflage <icon=fieldChange> <icon=typeNORMAL> 
+Camouflage <icon=fieldChange> <icon=typeNORMAL> 
+
+
+
+
+617
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Sp.Atk
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Sp.Atk
+
+
+
+
+618
+Activates <c=orange>Magical Seed</c> . . .
+Activates <c=orange>Magical Seed</c> . . .
+Boosts Sp.Atk and applies Magic Coat to the user.
+Boosts Sp.Atk and applies Magic Coat to the user.
+
+
+619
+<c=orange>"Mirror, Mirror on the field . . .</c> 
+<c=orange>"Mirror, Mirror on the field . . .</c> 
+Who shalt this fractured power wield?
+Who shalt this fractured power wield?
+
+
+620
+Critical hit rate <icon=fieldUp,tts="increased"> when . . .
+Critical hit rate <icon=fieldUp,tts="increased"> when . . .
+The critical hit rate is increased by one stage for each of the attacker's Evasion/Accuracy buffs, and the target's Evasion/Accuracy de-buffs.
+The critical hit rate is increased by one stage for each of the attacker's Evasion/Accuracy buffs, and the target's Evasion/Accuracy de-buffs.
+
+
+621
+Certain attacks <c=orange>reflect</c> when . . .
+Certain attacks <c=orange>reflect</c> when . . .
+Special, non-contact, single target attacks will always hit targets with raised evasion.
+Special, non-contact, single target attacks will always hit targets with raised evasion.
+
+
+622
+Certain <c=orange>reflected</c> attacks <icon=fieldUp> <c=green>x2</c> . . .
+Certain <c=orange>reflected</c> attacks <icon=fieldUp> <c=green>x2</c> . . .
+Bubble Beam, Charge Beam, Fleur Cannon, Hyper Beam, Ice Beam, Origin Pulse, Moongeist Beam, Psybeam, Solar Beam, and Tri-Attack are boosted when hitting targets with raised evasion.
+Bubble Beam, Charge Beam, Fleur Cannon, Hyper Beam, Ice Beam, Origin Pulse, Moongeist Beam, Psybeam, Solar Beam, and Tri-Attack are boosted when hitting targets with raised evasion.
+
+
+623
+Missing physical moves <c=orange>recoil</c> . . .
+Missing physical moves <c=orange>recoil</c> . . .
+Missing a physical contact attack causes 1/4 Max HP recoil damage. Also Evasion is lowered by one stage if it's raised.
+Missing a physical contact attack causes 1/4 Max HP recoil damage. Also Evasion is lowered by one stage if it's raised.
+
+
+624
+Certain abilities <c=green>boost</c> Evasion . . .
+Certain abilities <c=green>boost</c> Evasion . . .
+Color Change, Illusion, Magic Bounce, Sand Veil, Snow Cloak, and Tangled Feet boost Evasion when switched in.
+Color Change, Illusion, Magic Bounce, Sand Veil, Snow Cloak, and Tangled Feet boost Evasion when switched in.
+
+
+625
+Certain items <c=green>boost</c> Evasion . . .
+Certain items <c=green>boost</c> Evasion . . .
+Bright Powder and Lax Incense boost Evasion when switched in.
+Bright Powder and Lax Incense boost Evasion when switched in.
+
+
+626
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> and . . .
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> and . . .
+...and never miss: Aurora Beam, Burning Light, Dazzling Gleam, Doom Desire, Flash Cannon, Luster Purge, Photon Geyser, Prismatic Laser, Signal Beam, Techno Blast
+...and never miss: Aurora Beam, Burning Light, Dazzling Gleam, Doom Desire, Flash Cannon, Luster Purge, Photon Geyser, Prismatic Laser, Signal Beam, Techno Blast
+
+
+627
+Illuminate <icon=fieldPlus> <c=green>lowers</c> Accuracy . . .
+Illuminate <icon=fieldPlus> <c=green>lowers</c> Accuracy . . .
+Illuminate lowers opponents' Accuracy on switch-in
+Illuminate lowers opponents' Accuracy on switch-in
+
+
+628
+Certain abilities <c=green>boost</c> Accuracy . . .
+Certain abilities <c=green>boost</c> Accuracy . . .
+Keen Eye, Compound Eyes raises Accuracy on switch-in. They additionally apply Laser Focus
+Keen Eye, Compound Eyes raises Accuracy on switch-in. They additionally apply Laser Focus
+
+
+629
+Certain items <c=green>boost</c> Accuracy . . .
+Certain items <c=green>boost</c> Accuracy . . .
+Wide Lens, Zoom Lens raises Accuracy on switch-in. They additionally apply Laser Focus
+Wide Lens, Zoom Lens raises Accuracy on switch-in. They additionally apply Laser Focus
+
+
+630
+Magic Bounce <icon=fieldPlus> <icon=fieldUp,tts="boosts"> Evasion when . . .
+Magic Bounce <icon=fieldPlus> <icon=fieldUp,tts="boosts"> Evasion when . . .
+...when an attack is successfully bounced.
+...when an attack is successfully bounced.
+
+
+631
+Screens last <c=green>8</c> turns
+Screens last <c=green>8</c> turns
+
+
+
+
+632
+<c=green>Enables</c> Aurora Veil
+<c=green>Enables</c> Aurora Veil
+
+
+
+
+633
+Screens <icon=fieldPlus> <icon=fieldUp,tts="boost"> Evasion 
+Screens <icon=fieldPlus> <icon=fieldUp,tts="boost"> Evasion 
+
+
+
+
+634
+Mirror Coat <icon=fieldPlus> <c=green>boosts</c> stats . . .
+Mirror Coat <icon=fieldPlus> <c=green>boosts</c> stats . . .
+Mirror Coat increases Evasion, Defense and Sp.Def on successful use.
+Mirror Coat increases Evasion, Defense and Sp.Def on successful use.
+
+
+635
+Mirror Move <icon=fieldPlus> <c=green>boosts</c> stats . . .
+Mirror Move <icon=fieldPlus> <c=green>boosts</c> stats . . .
+Mirror Move increases Accuracy, Attack and Sp.Atk on successful use.
+Mirror Move increases Accuracy, Attack and Sp.Atk on successful use.
+
+
+636
+Mirror Shot <icon=fieldUp> <c=green>x2</c> 
+Mirror Shot <icon=fieldUp> <c=green>x2</c> 
+
+
+
+
+637
+Mirror Shot effect chance <icon=fieldChange> <c=green>100</c> 
+Mirror Shot effect chance <icon=fieldChange> <c=green>100</c> 
+
+
+
+
+638
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . .
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . .
+Double Team, Flash
+Double Team, Flash
+
+
+639
+<c=red>Terminated</c> by these moves and . . .
+<c=red>Terminated</c> by these moves and . . .
+...and damages all active Pokémon for 1/2 their max HP: Boomburst, Bulldoze, Earthquake, Explosion, Fissure, Hyper Voice, Magnitude, Self Destruct, Tectonic Rage.
+Pokémon behind applicable protect moves, or having Shell Armor or Battle Armor are immune to the shatter damage.
+...and damages all active Pokémon for 1/2 their max HP: Boomburst, Bulldoze, Earthquake, Explosion, Fissure, Hyper Voice, Magnitude, Self Destruct, Tectonic Rage.
+Pokémon behind applicable protect moves, or having Shell Armor or Battle Armor are immune to the shatter damage.
+
+
+640
+Nature Power <icon=fieldChange> Mirror Shot
+Nature Power <icon=fieldChange> Mirror Shot
+
+
+
+
+641
+Camouflage <icon=fieldChange> <icon=typeSTEEL> 
+Camouflage <icon=fieldChange> <icon=typeSTEEL> 
+
+
+
+
+642
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Evasion
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Evasion
+
+
+
+
+643
+Activates <c=orange>Synthetic Seed</c> . . .
+Activates <c=orange>Synthetic Seed</c> . . .
+Boosts Evasion one stage and applies Magic Coat.
+Boosts Evasion one stage and applies Magic Coat.
+
+
+644
+<c=orange>"Once upon a time..."</c> 
+<c=orange>"Once upon a time..."</c> 
+
+
+
+
+645
+<icon=typeFAIRY> attacks <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeFAIRY> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+646
+<icon=typeSTEEL> attacks <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeSTEEL> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+647
+<icon=typeDRAGON> attacks <icon=fieldUp> <c=green>x2</c> 
+<icon=typeDRAGON> attacks <icon=fieldUp> <c=green>x2</c> 
+
+
+
+
+648
+<icon=typeSTEEL> attacks <icon=fieldUp> <c=green>x2</c> vs <icon=typeDRAGON> 
+<icon=typeSTEEL> attacks <icon=fieldUp> <c=green>x2</c> vs <icon=typeDRAGON> 
+
+
+
+
+649
+<icon=typeFIRE> attacks <icon=fieldPlus,tts="gain the"> <icon=typeDRAGON> 
+<icon=typeFIRE> attacks <icon=fieldPlus,tts="gain the"> <icon=typeDRAGON> 
+
+
+
+
+650
+Certain abilities <icon=fieldPlus> <icon=fieldUp,tts="boost"> Defense . . .
+Certain abilities <icon=fieldPlus> <icon=fieldUp,tts="boost"> Defense . . .
+Battle Armor, Power of Alchemy and Shell Armor boost Defense upon switching in.
+Battle Armor, Power of Alchemy and Shell Armor boost Defense upon switching in.
+
+
+651
+Certain abilities <icon=fieldPlus> <icon=fieldUp,tts="boost"> Sp.Def . . .
+Certain abilities <icon=fieldPlus> <icon=fieldUp,tts="boost"> Sp.Def . . .
+Magic Guard, Magic Bounce and Power of Alchemy boost Sp.Def upon switching in.
+Magic Guard, Magic Bounce and Power of Alchemy boost Sp.Def upon switching in.
+
+
+652
+Magician <icon=fieldPlus> <icon=fieldUp,tts="boosts"> Sp.Atk when . . .
+Magician <icon=fieldPlus> <icon=fieldUp,tts="boosts"> Sp.Atk when . . .
+Magician boosts Sp.Atk upon switching in.
+Magician boosts Sp.Atk upon switching in.
+
+
+653
+Fairy Aura Pokémon <icon=fieldPlus> <c=green>never miss</c> 
+Fairy Aura Pokémon <icon=fieldPlus> <c=green>never miss</c> 
+
+
+
+
+654
+<c=green>Activates</c> Marvel Scale
+<c=green>Activates</c> Marvel Scale
+
+
+
+
+655
+Certain attacks <icon=fieldChange,tts="change to"> <icon=typeSTEEL> 
+Certain attacks <icon=fieldChange,tts="change to"> <icon=typeSTEEL> 
+Cut, Sacred Sword, Secret Sword, Slash
+Cut, Sacred Sword, Secret Sword, Slash
+
+
+656
+Stance Change <c=orange>alters</c> stats . . .
+Stance Change <c=orange>alters</c> stats . . .
+Pokémon with Stance Change boost and lower Attack and Defense one stage when switching between respective forms.
+Pokémon with Stance Change boost and lower Attack and Defense one stage when switching between respective forms.
+
+
+657
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Air Slash, Ancient Power, Fleur Cannon, Leaf Blade, M. M. Maelstrom, Magical Leaf, Moongeist Beam, Mystical Fire, Night Slash, Ocean Operetta, Psycho Cut, Relic Song, Smart Strike, Solar Blade, Sparkling Aria
+Air Slash, Ancient Power, Fleur Cannon, Leaf Blade, M. M. Maelstrom, Magical Leaf, Moongeist Beam, Mystical Fire, Night Slash, Ocean Operetta, Psycho Cut, Relic Song, Smart Strike, Solar Blade, Sparkling Aria
+
+
+658
+Draining Kiss <icon=fieldUp> <c=green>x2</c> 
+Draining Kiss <icon=fieldUp> <c=green>x2</c> 
+
+
+
+
+659
+Certain attacks <icon=fieldPlus> <c=green>boost</c> stats . . .
+Certain attacks <icon=fieldPlus> <c=green>boost</c> stats . . .
+Crafty Shield and Flower Shield additionally boost the user's Defense and Sp.Def one stage.
+Crafty Shield and Flower Shield additionally boost the user's Defense and Sp.Def one stage.
+
+
+660
+Certain attacks <icon=fieldPlus,tts="gain"> <c=green>protection</c> . . .
+Certain attacks <icon=fieldPlus,tts="gain"> <c=green>protection</c> . . .
+King's Shield additionally protects from non-damaging moves.
+King's Shield additionally protects from non-damaging moves.
+
+
+661
+King's Shield <icon=fieldPlus> <c=green>lowers</c> Sp.Atk
+King's Shield <icon=fieldPlus> <c=green>lowers</c> Sp.Atk
+
+
+
+
+662
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . .
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . .
+Acid Armor, Noble Roar, Swords Dance
+Acid Armor, Noble Roar, Swords Dance
+
+
+663
+Certain attacks <icon=fieldPlus> <c=green>cure</c> Sleep
+Certain attacks <icon=fieldPlus> <c=green>cure</c> Sleep
+Draining Kiss, Sweet Kiss
+Draining Kiss, Sweet Kiss
+
+
+664
+Wish recovery <icon=fieldChange> <c=green> 75 % HP</c> 
+Wish recovery <icon=fieldChange> <c=green> 75 % HP</c> 
+
+
+
+
+665
+Healing Wish <icon=fieldPlus> <c=green>boosts</c> stats . . .
+Healing Wish <icon=fieldPlus> <c=green>boosts</c> stats . . .
+Healing Wish boosts recipient's Attack and Special Attack
+Healing Wish boosts recipient's Attack and Special Attack
+
+
+666
+Miracle Eye <icon=fieldPlus> <c=green>boosts</c> Sp.Atk
+Miracle Eye <icon=fieldPlus> <c=green>boosts</c> Sp.Atk
+
+
+
+
+667
+Forest's Curse <icon=fieldPlus,tts="additionally inflicts the"> Curse effect
+Forest's Curse <icon=fieldPlus,tts="additionally inflicts the"> Curse effect
+
+
+
+
+668
+Floral Healing recovery <icon=fieldChange> <c=green>100 %</c> 
+Floral Healing recovery <icon=fieldChange> <c=green>100 %</c> 
+
+
+
+
+669
+Queenly Majesty damage <icon=fieldUp> <c=green>x1.5</c> 
+Queenly Majesty damage <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+670
+Soul Heart also <c=green>boosts</c> Sp.Def
+Soul Heart also <c=green>boosts</c> Sp.Def
+
+
+
+
+671
+Nature Power <icon=fieldChange> Secret Sword
+Nature Power <icon=fieldChange> Secret Sword
+
+
+
+
+672
+Camouflage <icon=fieldChange> <icon=typeFAIRY> 
+Camouflage <icon=fieldChange> <icon=typeFAIRY> 
+
+
+
+
+673
+Secret Power effect <icon=fieldChange> <icon=fieldSleep> 
+Secret Power effect <icon=fieldChange> <icon=fieldSleep> 
+
+
+
+
+674
+Activates <c=orange>Magical Seed</c> . . .
+Activates <c=orange>Magical Seed</c> . . .
+Applies King's Shield to the user.
+Applies King's Shield to the user.
+
+
+675
+<c=orange>"If you wish to slay a dragon..."</c> 
+<c=orange>"If you wish to slay a dragon..."</c> 
+
+
+
+
+676
+<icon=typeDRAGON> attacks <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeDRAGON> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+677
+<icon=typeFIRE> attacks <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeFIRE> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+678
+<icon=typeWATER> attacks <icon=fieldDown> <c=red>x0.5</c> 
+<icon=typeWATER> attacks <icon=fieldDown> <c=red>x0.5</c> 
+
+
+
+
+679
+<icon=typeICE> attacks <icon=fieldDown> <c=red>x0.5</c> 
+<icon=typeICE> attacks <icon=fieldDown> <c=red>x0.5</c> 
+
+
+
+
+680
+<icon=typeDRAGON> Pokémon's defenses <icon=fieldUp> <c=green>x1.3</c>
+<icon=typeDRAGON> Pokémon's defenses <icon=fieldUp> <c=green>x1.3</c>
+
+
+
+
+681
+<c=green>Activates</c> Marvel Scale
+<c=green>Activates</c> Marvel Scale
+
+
+
+
+682
+Multiscale <icon=fieldPlus,tts="gains"> <c=green>protection</c> 
+Multiscale <icon=fieldPlus,tts="gains"> <c=green>protection</c> 
+Multiscale additionally annulls user's Dragon type's weaknesses at all times
+Multiscale additionally annulls user's Dragon type's weaknesses at all times
+
+
+683
+Shed Skin <icon=fieldPlus,tts="gains"> <c=green>recovery</c> and . . . 
+Shed Skin <icon=fieldPlus,tts="gains"> <c=green>recovery</c> and . . . 
+Shed Skin heals 25% on activation, and boosts Speed and Sp.Atk by one stage each while lowering Defense and Sp.Def one stage each. 
+Always activates.
+Shed Skin heals 25% on activation, and boosts Speed and Sp.Atk by one stage each while lowering Defense and Sp.Def one stage each. 
+Always activates.
+
+
+684
+Certain attacks <icon=fieldPlus,tts="gain the"> <icon=typeFIRE> . . .
+Certain attacks <icon=fieldPlus,tts="gain the"> <icon=typeFIRE> . . .
+Continent Crush, Smack Down, Tectonic Rage, Thousand Arrows
+Continent Crush, Smack Down, Tectonic Rage, Thousand Arrows
+
+
+685
+Certain attacks <icon=fieldUp> <c=green>x2</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x2</c> . . . 
+Continent Crush, Dragon Ascent, Pay Day, Smack Down, Tectonic Rage, Thousand Arrows
+Continent Crush, Dragon Ascent, Pay Day, Smack Down, Tectonic Rage, Thousand Arrows
+
+
+686
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Lava Plume, Magma Storm, Mega Kick
+Lava Plume, Magma Storm, Mega Kick
+
+
+687
+Magma Storm damage <icon=fieldChange> <c=green>1/6 HP</c> 
+Magma Storm damage <icon=fieldChange> <c=green>1/6 HP</c> 
+
+
+
+
+688
+Magma Armor <icon=fieldPlus> <c=green>boosts</c> stats . . .
+Magma Armor <icon=fieldPlus> <c=green>boosts</c> stats . . .
+Magma Armor boosts Defense and Sp.Def upon switching in.
+Magma Armor boosts Defense and Sp.Def upon switching in.
+
+
+689
+Magma Armor <icon=fieldPlus,tts="grants"> <icon=typeFIRE> <c=red>immunity</c> 
+Magma Armor <icon=fieldPlus,tts="grants"> <icon=typeFIRE> <c=red>immunity</c> 
+
+
+
+
+690
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . .
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . .
+Dragon Dance, Noble Roar
+Dragon Dance, Noble Roar
+
+
+691
+Becomes a <c=orange>Cave</c> when . . .
+Becomes a <c=orange>Cave</c> when . . .
+...when Glaciate, Hydro Vortex, Oceanic Operetta, or Subzero Slammer is used, or when Muddy Water, Sparkling Aria, or Surf is used twice.
+...when Glaciate, Hydro Vortex, Oceanic Operetta, or Subzero Slammer is used, or when Muddy Water, Sparkling Aria, or Surf is used twice.
+
+
+692
+Nature Power <icon=fieldChange> Dragon Pulse
+Nature Power <icon=fieldChange> Dragon Pulse
+
+
+
+
+693
+Camouflage <icon=fieldChange> <icon=typeDRAGON> 
+Camouflage <icon=fieldChange> <icon=typeDRAGON> 
+
+
+
+
+694
+Secret Power effect <icon=fieldChange> <icon=fieldBurn> 
+Secret Power effect <icon=fieldChange> <icon=fieldBurn> 
+
+
+
+
+695
+Activates <c=orange>Elemental Seed</c> . . .
+Activates <c=orange>Elemental Seed</c> . . .
+Boosts Sp.Atk and applies Flash Fire's power boost to the user.
+Boosts Sp.Atk and applies Flash Fire's power boost to the user.
+
+
+696
+<c=orange>"Seeds line the field."</c> 
+<c=orange>"Seeds line the field."</c> 
+
+
+
+
+697
+<c=orange>Grows</c> from <c=orange>Stage 1</c> to <c=orange>Stage 5</c> 
+<c=orange>Grows</c> from <c=orange>Stage 1</c> to <c=orange>Stage 5</c> 
+
+
+
+
+698
+Certain attacks <c=orange>grow</c> 1 <c=orange>Stage</c> . . .
+Certain attacks <c=orange>grow</c> 1 <c=orange>Stage</c> . . .
+Bloom Doom, Flower Shield, Growth, Ingrain, Rain Dance, Rototiller, Sunny Day, Water Sport.
+Additionally, these abilities grow the field one stage on switch-in: Drizzle, Drought, Flower Gift, Flower Veil
+Bloom Doom, Flower Shield, Growth, Ingrain, Rain Dance, Rototiller, Sunny Day, Water Sport.
+Additionally, these abilities grow the field one stage on switch-in: Drizzle, Drought, Flower Gift, Flower Veil
+
+
+699
+Cut, X-Scissor <c=red>reduces</c> <c=orange>Stage</c> by 1
+Cut, X-Scissor <c=red>reduces</c> <c=orange>Stage</c> by 1
+
+
+<c=ffb347>2</c>+
+<c=ffb347>2</c>+
+700
+<c=green>Activates</c> certain abilities . . .
+<c=green>Activates</c> certain abilities . . .
+Flower Gift, Swarm
+Flower Gift, Swarm
+<c=7CFC00>1</c>+
+<c=7CFC00>1</c>+
+701
+Rototiller's effect <icon=fieldUp,tts="boosted"> 
+Rototiller's effect <icon=fieldUp,tts="boosted"> 
+
+
+<c=7CFC00>1</c>+
+<c=7CFC00>1</c>+
+702
+Rototiller <icon=fieldPlus> <c=green>boosts</c> stats . . .
+Rototiller <icon=fieldPlus> <c=green>boosts</c> stats . . .
+Rototiller additionally boosts user's Attack and Sp.Atk.
+Rototiller additionally boosts user's Attack and Sp.Atk.
+<c=7CFC00>1</c>+
+<c=7CFC00>1</c>+
+703
+Growth's effect <icon=fieldUp,tts="boosted"> . . .
+Growth's effect <icon=fieldUp,tts="boosted"> . . .
+Increases (x2,x3) at Stages (1,3)
+Increases (x2,x3) at Stages (1,3)
+<c=7CFC00>1</c>,<c=ec5800>3</c> 
+<c=7CFC00>1</c>,<c=ec5800>3</c> 
+704
+Cut <icon=fieldUp> <c=green>x1.5</c> 
+Cut <icon=fieldUp> <c=green>x1.5</c> 
+
+
+<c=ffb347>2</c>+
+<c=ffb347>2</c>+
+705
+Cut <icon=fieldUp> <c=green>x2</c> vs <icon=typeGRASS> 
+Cut <icon=fieldUp> <c=green>x2</c> vs <icon=typeGRASS> 
+
+
+<c=ffb347>2</c>+
+<c=ffb347>2</c>+
+706
+<c=green>Activates</c> certain abilities . . . 
+<c=green>Activates</c> certain abilities . . . 
+Harvest, Leaf Guard
+Harvest, Leaf Guard
+<c=ffb347>2</c>+
+<c=ffb347>2</c>+
+707
+Flower Shield <icon=fieldPlus> <c=green>boosts</c> stats . . .
+Flower Shield <icon=fieldPlus> <c=green>boosts</c> stats . . .
+Flower Shield additionally boosts Sp.Def and the user's Defense and Sp.Def.
+Flower Shield additionally boosts Sp.Def and the user's Defense and Sp.Def.
+<c=ffb347>2</c>+
+<c=ffb347>2</c>+
+708
+Certain attack's Accuracy <icon=fieldChange> <c=green>85</c> 
+Certain attack's Accuracy <icon=fieldChange> <c=green>85</c> 
+Poison Powder, Sleep Powder, Stun Spore
+Poison Powder, Sleep Powder, Stun Spore
+<c=ffb347>2</c>+
+<c=ffb347>2</c>+
+709
+Flower Veil <icon=fieldPlus> <c=green>reduces</c> damage . . .
+Flower Veil <icon=fieldPlus> <c=green>reduces</c> damage . . .
+Flower Veil passively reduces damage x0.5 to its user and allied Grass types.
+Flower Veil passively reduces damage x0.5 to its user and allied Grass types.
+<c=ec5800>3</c>+
+<c=ec5800>3</c>+
+710
+Becomes a <c=orange>Burning Field</c> when . . .
+Becomes a <c=orange>Burning Field</c> when . . .
+Eruption, Fire Pledge, Flame Burst, Heat Wave, Incinerate, Inf. Overdrive, Lava Plume, Mind Blown, Searing Shot is used in the absence of Rain or Water Sport.
+Eruption, Fire Pledge, Flame Burst, Heat Wave, Incinerate, Inf. Overdrive, Lava Plume, Mind Blown, Searing Shot is used in the absence of Rain or Water Sport.
+<c=ec5800>3</c>+
+<c=ec5800>3</c>+
+711
+Sweet Scent <icon=fieldPlus> <c=green>lowers</c> defenses
+Sweet Scent <icon=fieldPlus> <c=green>lowers</c> defenses
+
+
+<c=ec5800>3</c>+
+<c=ec5800>3</c>+
+712
+<icon=typeFIRE> attacks <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeFIRE> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+<c=ec5800>3</c>+
+<c=ec5800>3</c>+
+713
+Flower Shield's effect <icon=fieldUp,tts="boosted"> 
+Flower Shield's effect <icon=fieldUp,tts="boosted"> 
+
+
+<c=ec5800>3</c>+
+<c=ec5800>3</c>+
+714
+<c=green>Activates</c> Chlorophyll
+<c=green>Activates</c> Chlorophyll
+
+
+<c=ff2800>4</c>+
+<c=ff2800>4</c>+
+715
+Grass type's weaknesses are <c=green>annulled</c> 
+Grass type's weaknesses are <c=green>annulled</c> 
+
+
+<c=ff2800>4</c>+
+<c=ff2800>4</c>+
+716
+Certain attacks <c=green>hit all</c> opposing
+Certain attacks <c=green>hit all</c> opposing
+Petal Blizzard, Petal Dance, and all Powder moves hit both opposing Pokémon at Stage 5.
+Petal Blizzard, Petal Dance, and all Powder moves hit both opposing Pokémon at Stage 5.
+<c=ff00ff>5</c> 
+<c=ff00ff>5</c> 
+717
+<icon=typeGRASS> attacks <icon=fieldUp,tts="boosted"> 
+<icon=typeGRASS> attacks <icon=fieldUp,tts="boosted"> 
+Grass type attacks increase in base power (x1.1,x1.3,x1.5,x2) at Stages (2,3,4,5).
+Grass type attacks increase in base power (x1.1,x1.3,x1.5,x2) at Stages (2,3,4,5).
+<c=ffb347>2</c>-<c=ff00ff>5</c> 
+<c=ffb347>2</c>-<c=ff00ff>5</c> 
+718
+<icon=typeBUG> attacks <icon=fieldUp,tts="boosted"> . . .
+<icon=typeBUG> attacks <icon=fieldUp,tts="boosted"> . . .
+Bug type attacks increase in base power (x1.5,x2) at Stages (2,4).
+Bug type attacks increase in base power (x1.5,x2) at Stages (2,4).
+<c=ffb347>2</c>,<c=ff2800>4</c> 
+<c=ffb347>2</c>,<c=ff2800>4</c> 
+719
+Swarm effect <icon=fieldUp,tts="boosted"> . . .
+Swarm effect <icon=fieldUp,tts="boosted"> . . .
+Swarm increases Bug type attacks' power by (x1.8,x2) at Stages (3,5).
+Swarm increases Bug type attacks' power by (x1.8,x2) at Stages (3,5).
+<c=ec5800>3</c>,<c=ff00ff>5</c> 
+<c=ec5800>3</c>,<c=ff00ff>5</c> 
+720
+<c=green>Activates</c> Overgrow when . . .
+<c=green>Activates</c> Overgrow when . . .
+Overgrow activates at (66% HP, Any HP amount) at Stages (2,3).
+Overgrow activates at (66% HP, Any HP amount) at Stages (2,3).
+<c=ffb347>2</c>,<c=ec5800>3</c> 
+<c=ffb347>2</c>,<c=ec5800>3</c> 
+721
+Overgrow's effect <icon=fieldUp,tts="boosted"> . . .
+Overgrow's effect <icon=fieldUp,tts="boosted"> . . .
+Overgrow increases Grass type attacks' power by (x1.8,x2) at Stages (4,5).
+Overgrow increases Grass type attacks' power by (x1.8,x2) at Stages (4,5).
+<c=ff2800>4</c>,<c=ff00ff>5</c> 
+<c=ff2800>4</c>,<c=ff00ff>5</c> 
+722
+Sweet Scent's effect <icon=fieldUp,tts="boosted"> . . .
+Sweet Scent's effect <icon=fieldUp,tts="boosted"> . . .
+At Stage 3 and later, Sweet Scent additionally lowers Defense and Sp.Def. Sweet Scent's effect increases (x2,x3) at Stages (4,5).
+At Stage 3 and later, Sweet Scent additionally lowers Defense and Sp.Def. Sweet Scent's effect increases (x2,x3) at Stages (4,5).
+<c=ff2800>4</c>,<c=ff00ff>5</c> 
+<c=ff2800>4</c>,<c=ff00ff>5</c> 
+723
+Ingrain's effect <icon=fieldUp,tts="boosted"> . . .
+Ingrain's effect <icon=fieldUp,tts="boosted"> . . .
+Ingrain's effect increases (x2,x4) at Stages (2,4).
+Ingrain's effect increases (x2,x4) at Stages (2,4).
+<c=ffb347>2</c>,<c=ff2800>4</c> 
+<c=ffb347>2</c>,<c=ff2800>4</c> 
+724
+Certain attacks <icon=fieldUp,tts="boosted"> . . .
+Certain attacks <icon=fieldUp,tts="boosted"> . . .
+Fleur Cannon, Petal Blizzard and Petal Dance increase (x1.2,x1.5) at Stages (3,4).
+Fleur Cannon, Petal Blizzard and Petal Dance increase (x1.2,x1.5) at Stages (3,4).
+<c=ec5800>3</c>,<c=ff2800>4</c> 
+<c=ec5800>3</c>,<c=ff2800>4</c> 
+725
+Infestation damage <icon=fieldUp,tts="boosted"> . . .
+Infestation damage <icon=fieldUp,tts="boosted"> . . .
+Infestation deals (1/6,1/4,1/3) Max HP Damage per turn at Stages (3,4,5).
+Infestation deals (1/6,1/4,1/3) Max HP Damage per turn at Stages (3,4,5).
+<c=ec5800>3</c>-<c=ff00ff>5</c> 
+<c=ec5800>3</c>-<c=ff00ff>5</c> 
+726
+Floral Healing recovery <icon=fieldChange> <c=green>100 %</c> 
+Floral Healing recovery <icon=fieldChange> <c=green>100 %</c> 
+
+
+<c=ec5800>3</c>+
+<c=ec5800>3</c>+
+727
+Acid Downpour resets to <c=orange>Stage 1</c> 
+Acid Downpour resets to <c=orange>Stage 1</c> 
+
+
+
+
+728
+Nature Power <icon=fieldChange> Growth
+Nature Power <icon=fieldChange> Growth
+
+
+<c=7CFC00>1</c>-<c=ff2800>4</c> 
+<c=7CFC00>1</c>-<c=ff2800>4</c> 
+729
+Nature Power <icon=fieldChange> Petal Blizzard
+Nature Power <icon=fieldChange> Petal Blizzard
+
+
+<c=ff00ff>5</c> 
+<c=ff00ff>5</c> 
+730
+Camouflage <icon=fieldChange> <icon=typeGRASS> 
+Camouflage <icon=fieldChange> <icon=typeGRASS> 
+
+
+
+
+731
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> stats . . .
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> stats . . .
+Secret Power may lower Evasion. At Stage 3 and later additionally lowers Defense and Sp.Def. At Stage 5 this effect increases x2.
+Secret Power may lower Evasion. At Stage 3 and later additionally lowers Defense and Sp.Def. At Stage 5 this effect increases x2.
+<c=7CFC00>1</c> <c=ec5800>3</c> <c=ff00ff>5</c> 
+<c=7CFC00>1</c> <c=ec5800>3</c> <c=ff00ff>5</c> 
+732
+Activates <c=orange>Synthetic Seed</c> . . .
+Activates <c=orange>Synthetic Seed</c> . . .
+Boosts Sp.Def and applies Ingrain to the user, makes the field grow 1 stage.
+Boosts Sp.Def and applies Ingrain to the user, makes the field grow 1 stage.
+
+
+733
+<c=orange>"Starlight fills the battlefield."</c> 
+<c=orange>"Starlight fills the battlefield."</c> 
+
+
+
+
+734
+<c=red>Destroyed</c> when . . .
+<c=red>Destroyed</c> when . . .
+...when Light That Burns The Sky is used.
+...when Light That Burns The Sky is used.
+
+
+735
+Weather <c=red>stops</c> boosts . . .
+Weather <c=red>stops</c> boosts . . .
+...when weather is up, the field power boosts to moves and types isn't applied
+...when weather is up, the field power boosts to moves and types isn't applied
+
+
+736
+<icon=typePSYCHIC> attacks <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typePSYCHIC> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+737
+<icon=typeFAIRY> attacks <icon=fieldUp> <c=green>x1.3</c> 
+<icon=typeFAIRY> attacks <icon=fieldUp> <c=green>x1.3</c> 
+
+
+
+
+738
+<icon=typeDARK> attacks <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeDARK> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+739
+<icon=typeDARK> attacks <icon=fieldPlus,tts="gain the"> <icon=typeFAIRY> 
+<icon=typeDARK> attacks <icon=fieldPlus,tts="gain the"> <icon=typeFAIRY> 
+
+
+
+
+740
+Victory Star damage <icon=fieldUp> <c=green>x1.5</c> 
+Victory Star damage <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+741
+Geomancy <icon=fieldChange,tts="has"> <c=green>no charge turn</c> 
+Geomancy <icon=fieldChange,tts="has"> <c=green>no charge turn</c> 
+
+
+
+
+742
+<c=green>Activates</c> Marvel Scale
+<c=green>Activates</c> Marvel Scale
+
+
+
+
+743
+Illuminate <icon=fieldPlus> <c=green>boosts</c> stats . . .
+Illuminate <icon=fieldPlus> <c=green>boosts</c> stats . . .
+Illuminate boosts Sp.Atk upon switching in.
+Illuminate boosts Sp.Atk upon switching in.
+
+
+744
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Aurora Beam, Dazzling Gleam, Flash Cannon, Luster Purge, Mirror Shot, Moonblast, Photon Geyser, Signal Beam, Solar Beam, Techno Blast
+Aurora Beam, Dazzling Gleam, Flash Cannon, Luster Purge, Mirror Shot, Moonblast, Photon Geyser, Signal Beam, Solar Beam, Techno Blast
+
+
+745
+Certain attacks <icon=fieldUp> <c=green>x2</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x2</c> . . . 
+Black Hole, Comet Punch, Draco Meteor, Hyperspace Fury, Hyperspace Hole, M. M. Maelstrom, Meteor Mash, Moongeist Beam, S. Sunraze Smash, Spacial Rend, Sunsteel Strike, Swift
+Black Hole, Comet Punch, Draco Meteor, Hyperspace Fury, Hyperspace Hole, M. M. Maelstrom, Meteor Mash, Moongeist Beam, S. Sunraze Smash, Spacial Rend, Sunsteel Strike, Swift
+
+
+746
+Doom Desire <icon=fieldUp> <c=green>x4</c> and <icon=fieldPlus,tts="gains the"> <icon=typeFIRE> 
+Doom Desire <icon=fieldUp> <c=green>x4</c> and <icon=fieldPlus,tts="gains the"> <icon=typeFIRE> 
+
+
+
+
+747
+Certain attacks <icon=fieldChange,tts="change to"> <icon=typeFAIRY> . . .
+Certain attacks <icon=fieldChange,tts="change to"> <icon=typeFAIRY> . . .
+Solar Beam, Solar Blade
+Solar Beam, Solar Blade
+
+
+748
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . .
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . .
+Cosmic Power, Flash
+Cosmic Power, Flash
+
+
+749
+Wish recovery <icon=fieldChange> <c=green>75 % HP</c> 
+Wish recovery <icon=fieldChange> <c=green>75 % HP</c> 
+
+
+
+
+750
+Certain attacks <icon=fieldPlus> <c=green>boost</c> stats
+Certain attacks <icon=fieldPlus> <c=green>boost</c> stats
+Healing Wish and Lunar Dance boost recipient's Attack and Special Attack
+Healing Wish and Lunar Dance boost recipient's Attack and Special Attack
+
+
+751
+Moonlight recovery <icon=fieldChange> <c=green>75 % HP</c> 
+Moonlight recovery <icon=fieldChange> <c=green>75 % HP</c> 
+
+
+
+
+752
+<c=green>Enables</c> Aurora Veil
+<c=green>Enables</c> Aurora Veil
+
+
+
+
+753
+Shadow Shield <c=green>reduces</c> damage
+Shadow Shield <c=green>reduces</c> damage
+Shadow Shield reduces damage of super effective hits by 0.75
+Shadow Shield reduces damage of super effective hits by 0.75
+
+
+754
+Nature Power <icon=fieldChange> Moonblast
+Nature Power <icon=fieldChange> Moonblast
+
+
+
+
+755
+Camouflage <icon=fieldChange> <icon=typeDARK> 
+Camouflage <icon=fieldChange> <icon=typeDARK> 
+
+
+
+
+756
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Sp.Def
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> Sp.Def
+
+
+
+
+757
+Activates <c=orange>Magical Seed</c> . . .
+Activates <c=orange>Magical Seed</c> . . .
+Boosts Sp.Atk and applies Wish to the user.
+Boosts Sp.Atk and applies Wish to the user.
+
+
+758
+<c=orange>"From darkness, from stardust . . .</c> 
+<c=orange>"From darkness, from stardust . . .</c> 
+From memories of eons past and visions yet to come...
+From memories of eons past and visions yet to come...
+
+
+759
+Certain abilities change type . . .
+Certain abilities change type . . .
+Multitype and RKS System randomly select a new type each turn.
+Multitype and RKS System randomly select a new type each turn.
+
+
+760
+Speed <icon=fieldDown> <c=red>x0.75</c> when grounded
+Speed <icon=fieldDown> <c=red>x0.75</c> when grounded
+
+
+
+
+761
+Airborne Pokémon defenses <icon=fieldDown> <c=red>x0.9</c>
+Airborne Pokémon defenses <icon=fieldDown> <c=red>x0.9</c>
+
+
+
+
+762
+<c=red>Prevents</c> all generated weather
+<c=red>Prevents</c> all generated weather
+
+
+
+
+763
+<c=red>Prevents</c> generated Fields
+<c=red>Prevents</c> generated Fields
+
+
+
+
+764
+<icon=typeDARK> attacks <icon=fieldUp> <c=green>x1.5</c> 
+<icon=typeDARK> attacks <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+765
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+7-Star Strike, Aeroblast, Aurora Beam, Blue Flare, Bolt Strike, Continent Crush, Core Enforcer, Crush Grip, Dazzling Gleam, Diamond Storm, Dragon Ascent, Earth Power, Eruption, Flash Cannon, Fleur Cannon, Freeze Shock, Fusion Bolt, Fusion Flare, Gen. Supernova, Ice Burn, Judgment, Land's Wrath, Luster Purge, M. M. Maelstrom, Magma Storm, Mind Blown, Mirror Shot, Mist Ball, Moongeist Beam, Multi-Attack, Oblivion Wing, Origin Pulse, Photon Geyser, Plasma Fists, Power Gem, Precipice Blades, Prismatic Laser, Psycho Boost, Psystrike, Relic Song, Roar of Time, S. Sunraze Smash, Sacred Fire, Sacred Sword, Searing Shot, Secret Sword, Seed Flare, Shadow Force, Signal Beam, Spectral Thief, Steam Eruption, Sunsteel Strike, Techno Blast, Thousand Arrows, Thousand Waves, V-create
+7-Star Strike, Aeroblast, Aurora Beam, Blue Flare, Bolt Strike, Continent Crush, Core Enforcer, Crush Grip, Dazzling Gleam, Diamond Storm, Dragon Ascent, Earth Power, Eruption, Flash Cannon, Fleur Cannon, Freeze Shock, Fusion Bolt, Fusion Flare, Gen. Supernova, Ice Burn, Judgment, Land's Wrath, Luster Purge, M. M. Maelstrom, Magma Storm, Mind Blown, Mirror Shot, Mist Ball, Moongeist Beam, Multi-Attack, Oblivion Wing, Origin Pulse, Photon Geyser, Plasma Fists, Power Gem, Precipice Blades, Prismatic Laser, Psycho Boost, Psystrike, Relic Song, Roar of Time, S. Sunraze Smash, Sacred Fire, Sacred Sword, Searing Shot, Secret Sword, Seed Flare, Shadow Force, Signal Beam, Spectral Thief, Steam Eruption, Sunsteel Strike, Techno Blast, Thousand Arrows, Thousand Waves, V-create
+
+
+766
+Certain attacks <icon=fieldUp> <c=green>x2</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x2</c> . . . 
+Ancient Power, Black Hole, Comet Punch, Draco Meteor, Future Sight, Hyperspace Fury, Hyperspace Hole, Meteor Mash, Moonblast, Spacial Rend, Swift, Vacuum Wave
+Ancient Power, Black Hole, Comet Punch, Draco Meteor, Future Sight, Hyperspace Fury, Hyperspace Hole, Meteor Mash, Moonblast, Spacial Rend, Swift, Vacuum Wave
+
+
+767
+Certain attacks <icon=fieldDown> <c=red>x0.25</c> . . . 
+Certain attacks <icon=fieldDown> <c=red>x0.25</c> . . . 
+Bulldoze, Earthquake, Magnitude
+Bulldoze, Earthquake, Magnitude
+
+
+768
+Fissure <c=red>fails</c> 
+Fissure <c=red>fails</c> 
+
+
+
+
+769
+Doom Desire <icon=fieldUp> <c=green>x4</c> and <icon=fieldPlus,tts="gains the"> <icon=typeFIRE> 
+Doom Desire <icon=fieldUp> <c=green>x4</c> and <icon=fieldPlus,tts="gains the"> <icon=typeFIRE> 
+
+
+
+
+770
+Heart Swap <icon=fieldPlus,tts="additionally inflicts the"> Pain Split effect
+Heart Swap <icon=fieldPlus,tts="additionally inflicts the"> Pain Split effect
+
+
+
+
+771
+Victory Star damage <icon=fieldUp> <c=green>x1.5</c> 
+Victory Star damage <icon=fieldUp> <c=green>x1.5</c> 
+
+
+
+
+772
+Dark Void's Accuracy <icon=fieldChange> <c=green>85</c> 
+Dark Void's Accuracy <icon=fieldChange> <c=green>85</c> 
+
+
+
+
+773
+Lunar Dance <icon=fieldPlus> <c=green>boosts</c> all stats
+Lunar Dance <icon=fieldPlus> <c=green>boosts</c> all stats
+
+
+
+
+774
+Certain moves last <c=green>8</c> turns . . .
+Certain moves last <c=green>8</c> turns . . .
+Trick Room, Magic Room, Wonder Room
+Trick Room, Magic Room, Wonder Room
+
+
+775
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . .
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . .
+Cosmic Power, Flash
+Cosmic Power, Flash
+
+
+776
+Moonlight recovery <icon=fieldChange> <c=green>75 % HP</c> 
+Moonlight recovery <icon=fieldChange> <c=green>75 % HP</c> 
+
+
+
+
+777
+Becomes a <c=orange>Starlight Arena</c> when . . .
+Becomes a <c=orange>Starlight Arena</c> when . . .
+...when Geomancy is used, or when Gravity is used for as long as Gravity lasts.
+...when Geomancy is used, or when Gravity is used for as long as Gravity lasts.
+
+
+778
+Nature's Madness damage <icon=fieldChange> <c=green>75 % HP</c> 
+Nature's Madness damage <icon=fieldChange> <c=green>75 % HP</c> 
+
+
+
+
+779
+Shadow Shield <c=green>reduces</c> damage
+Shadow Shield <c=green>reduces</c> damage
+Shadow Shield reduces damage of super effective hits by 0.75
+Shadow Shield reduces damage of super effective hits by 0.75
+
+
+780
+Nature Power <icon=fieldChange> Spacial Rend
+Nature Power <icon=fieldChange> Spacial Rend
+
+
+
+
+781
+Camouflage <icon=fieldChange> random type 
+Camouflage <icon=fieldChange> random type 
+
+
+
+
+782
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> all stats
+Secret Power effect <icon=fieldChange> <c=red>lowers</c> all stats
+
+
+
+
+783
+Activates <c=orange>Magical Seed</c> . . .
+Activates <c=orange>Magical Seed</c> . . .
+Boosts all stats, but makes the user recharge.
+Boosts all stats, but makes the user recharge.
+
+
+784
+<c=orange>"!trats elttaB"</c> 
+<c=orange>"!trats elttaB"</c> 
+
+
+
+
+785
+The type chart is <c=orange> inverted</c> 
+The type chart is <c=orange> inverted</c> 
+
+
+
+
+786
+<c=green>Created</c> by Topsy Turvy when . . .
+<c=green>Created</c> by Topsy Turvy when . . .
+...Created (3 turns) when the attacker does not hold an Everstone.
+...Created (3 turns) when the attacker does not hold an Everstone.
+
+
+787
+Nature Power <icon=fieldChange> Trick Room
+Nature Power <icon=fieldChange> Trick Room
+
+
+
+
+788
+Camouflage <icon=fieldChange> <icon=typeNORMAL> 
+Camouflage <icon=fieldChange> <icon=typeNORMAL> 
+
+
+
+
+789
+Secret Power effect <icon=fieldChange> may confuse
+Secret Power effect <icon=fieldChange> may confuse
+
+
+
+
+790
+Activates <c=orange>Magical Seed</c> . . .
+Activates <c=orange>Magical Seed</c> . . .
+Boosts all stats, but makes the user recharge.
+Boosts all stats, but makes the user recharge.
+
+
+791
+<c=orange>"The field became mysterious!"</c> 
+<c=orange>"The field became mysterious!"</c> 
+
+
+
+
+792
+Priority attacks <c=red>fail</c> when . . .
+Priority attacks <c=red>fail</c> when . . .
+...when used on grounded targets.
+...when used on grounded targets.
+
+
+793
+<c=green>Created</c> when . . .
+<c=green>Created</c> when . . .
+...when one of these effects is activated: Psychic Surge, Psychic Terrain, Genesis Supernova (5 turns)
+...when one of these effects is activated: Psychic Surge, Psychic Terrain, Genesis Supernova (5 turns)
+
+
+794
+<icon=typePSYCHIC> attacks <icon=fieldUp> <c=green>x1.5</c> when . . .
+<icon=typePSYCHIC> attacks <icon=fieldUp> <c=green>x1.5</c> when . . .
+...when attacker is grounded.
+...when attacker is grounded.
+
+
+795
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Certain attacks <icon=fieldUp> <c=green>x1.5</c> . . . 
+Aura Sphere, Hex, Magical Leaf, Mind Blown, Moonblast, Mystical Fire
+Aura Sphere, Hex, Magical Leaf, Mind Blown, Moonblast, Mystical Fire
+
+
+796
+Pure Power boost <icon=fieldChange> Sp.Atk
+Pure Power boost <icon=fieldChange> Sp.Atk
+
+
+
+
+797
+Anticipation <c=green>boosts</c> Sp.Atk
+Anticipation <c=green>boosts</c> Sp.Atk
+
+
+
+
+798
+Telepathy <c=green>boosts</c> Speed <c=green>x2</c> 
+Telepathy <c=green>boosts</c> Speed <c=green>x2</c> 
+
+
+
+
+799
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . .
+Certain stat moves' effect <icon=fieldUp,tts="boosted"> . . .
+Calm Mind, Cosmic Power, Kinesis, Meditate, Nasty Plot
+Calm Mind, Cosmic Power, Kinesis, Meditate, Nasty Plot
+
+
+800
+Certain attacks <icon=fieldPlus> <c=green>boost</c> Sp.Atk . . .
+Certain attacks <icon=fieldPlus> <c=green>boost</c> Sp.Atk . . .
+Mind Reader, Miracle Eye, Psych Up boost Sp.Atk two stages
+Mind Reader, Miracle Eye, Psych Up boost Sp.Atk two stages
+
+
+801
+Hypnosis accuracy <icon=fieldChange> <c=green>90</c> 
+Hypnosis accuracy <icon=fieldChange> <c=green>90</c> 
+
+
+
+
+802
+Kinesis <icon=fieldPlus> <icon=fieldUp,tts="boosts"> Attack/Sp.Atk
+Kinesis <icon=fieldPlus> <icon=fieldUp,tts="boosts"> Attack/Sp.Atk
+
+
+
+
+803
+Telekinesis <icon=fieldPlus> <icon=fieldDown,tts=""> . . .
+Telekinesis <icon=fieldPlus> <icon=fieldDown,tts=""> . . .
+... drops opponents' Defense/Sp.Def by two stages
+... drops opponents' Defense/Sp.Def by two stages
+
+
+804
+Certain moves' effect <icon=fieldChange> <c=green>8</c> turns
+Certain moves' effect <icon=fieldChange> <c=green>8</c> turns
+Gravity, Magic Room, Trick Room, Wonder Room
+Gravity, Magic Room, Trick Room, Wonder Room
+
+
+805
+Shattered Psyche <icon=fieldPlus> confuses
+Shattered Psyche <icon=fieldPlus> confuses
+
+
+
+
+806
+Nature Power <icon=fieldChange> Psychic
+Nature Power <icon=fieldChange> Psychic
+
+
+
+
+807
+Camouflage <icon=fieldChange> <icon=typePSYCHIC> 
+Camouflage <icon=fieldChange> <icon=typePSYCHIC> 
+
+
+
+
+808
+Secret Power effect <icon=fieldChange> may confuse
+Secret Power effect <icon=fieldChange> may confuse
+
+
+
+
+809
+Activates <c=orange>Magical Seed</c> . . .
+Activates <c=orange>Magical Seed</c> . . .
+Boosts Sp.Atk by two stages, but confuses the user.
+Boosts Sp.Atk by two stages, but confuses the user.
+
+
