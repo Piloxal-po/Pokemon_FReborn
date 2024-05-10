@@ -9,3 +9,12 @@ Data/Mods/SWM - TypeBattleIcons.png
 Data/Mods/SWM - TypeBattleIcons.rb
 Graphics/Pictures/Pokedex/pokedexTypesTINY.png
 errorTranslation.txt
+discord_game_sdk.dll
+Game.exe
+libcrypto-3-x64.dll
+libssl-3-x64.dll
+libTolk.dll
+nvdaControllerClient.dll
+x64-msvcrt-ruby310.dll
+zlib1.dll
+gems/discord.so
