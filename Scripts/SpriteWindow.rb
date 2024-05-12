@@ -160,9 +160,9 @@ class AnimatedBitmap
     raise "filename is nil" if file == nil
 
     if file[/^\[(\d+)\]/]
-      @bitmap = PngAnimatedBitmap.new(file, hue)
+      @bitmap = PngAnimatedBitmap.new(getPathWithTranslation(file), hue)
     else
-      @bitmap = GifBitmap.new(file, hue)
+      @bitmap = GifBitmap.new(getPathWithTranslation(file), hue)
     end
   end
 
@@ -180,7 +180,7 @@ class AnimatedBitmap
   def dispose; @bitmap.dispose; end
   def deanimate; @bitmap.deanimate; end
   def copy; @bitmap.copy; end
-  def setBitmap(bitmap); @bitmap.setBitmap(bitmap); end
+  def setBitmap(bitmap); @bitmap.setBitmap(getPathWithTranslation(bitmap)); end
 end
 
 def pbGetTileBitmap(filename, tile_id, hue, width = 1, height = 1)
