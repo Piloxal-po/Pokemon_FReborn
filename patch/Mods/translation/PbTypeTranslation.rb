@@ -51,20 +51,20 @@ def pbItemIconFile(item, conversion = false)
     if tmmove
       type = $cache.moves[tmmove].type
       typename = getTypeName(type)
-      return getPathWithTranslation(sprintf("Graphics/Icons/TM - %s", typename))
+      return sprintf("Graphics/Icons/TM - %s", typename)
     end
     image = $cache.items[item].checkFlag?(:image)
-    return getPathWithTranslation(sprintf("Graphics/Icons/#{image}")) if image
+    return sprintf("Graphics/Icons/#{image}") if image
   
     if !conversion
-      bitmapFileName = getPathWithTranslation(sprintf("Graphics/Icons/%s.png", item)) rescue nil
+      bitmapFileName = sprintf("Graphics/Icons/%s.png", item) rescue nil
       if !pbResolveBitmap(bitmapFileName)
-        bitmapFileName = getPathWithTranslation(sprintf("Graphics/Icons/%s.png", item))
+        bitmapFileName = sprintf("Graphics/Icons/%s.png", item)
       end
     else
-      bitmapFileName = getPathWithTranslation(sprintf("Graphics/Icons/%s", $cache.items[item].checkFlag?(:ID))) rescue nil
+      bitmapFileName = sprintf("Graphics/Icons/%s", $cache.items[item].checkFlag?(:ID)) rescue nil
       if !pbResolveBitmap(bitmapFileName)
-        bitmapFileName = getPathWithTranslation(sprintf("Graphics/Icons/%03d", $cache.items[item].checkFlag?(:ID)))
+        bitmapFileName = sprintf("Graphics/Icons/%03d", $cache.items[item].checkFlag?(:ID))
       end
     end
     return bitmapFileName
