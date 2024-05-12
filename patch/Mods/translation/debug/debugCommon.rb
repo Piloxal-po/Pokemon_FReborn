@@ -39,6 +39,7 @@ def getDebugCommand
             ["[DTF] compile map info translation file", self.method(:debugCompileMapInfos)],
             ["[DTF] compile trainer translation file", self.method(:debugCompileTrainers)],
             ["[DTF] compile field translation file", self.method(:debugCompileFields)],
+            ["[DTF] compile field note translation file", self.method(:debugCompileFieldNotes)],
             ["[DTF] compile all translation file", self.method(:debugCompileAll)]
         ]
     end

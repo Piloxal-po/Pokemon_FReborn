@@ -10,6 +10,7 @@ def debugCompileAll
   debugCompileMapInfosWithLang(lang)
   debugCompileTrainersWithLang(lang)
   debugCompileFieldsWithLang(lang)
+  debugCompileFieldNotesWithLang(lang)
 end
 
 def denormalizeData(text)
@@ -557,4 +558,33 @@ def debugCompileFieldsWithLang(lang)
     i += 1
   }
   save_data(fields, dir + "/" + FIELD_FILE + ".dat")
+end
+
+def debugCompileFieldNotes
+  return debugCompileFieldNotesWithLang(choiceLanguage)
+end
+
+
+def debugCompileFieldNotesWithLang(lang)
+  quakemovenames = PBFields::QUAKEMOVES.map { |id| getMoveName(id) }.sort.join(", ")
+  File.open("Scripts/" + GAMEFOLDER + "/fieldtext.rb") { |f| eval(f.read) }
+  File.open("Scripts/" + GAMEFOLDER + "/fieldnotetext.rb") { |f| eval(f.read) }
+
+  dir = DIR_I18N + lang
+  debugMkdir(dir)
+  dict = buildData(DIR_DEBUG_I18N + lang + "/" + FIELD_NOTE_FILE + ".txt", false)
+  all_field_notes = []
+  i = 1
+  FIELDNOTEEFFECTS.each { |value|
+    v = value.clone
+    v.text = dict[i][0][0] if (dict[i][0][0] and !dict[i][0][0].empty?)
+    v.elaboration = dict[i][0][1] if (dict[i][0][1] and !dict[i][0][1].empty?)
+    v.cogwheeltext = dict[i][0][2] if (dict[i][0][2] and !dict[i][0][2].empty?)
+    all_field_notes.push(v)
+    i += 1
+  }
+
+  File.open(dir + "/" + FIELD_NOTE_FILE + ".dat", "wb") { |file|
+    Marshal.dump(all_field_notes, file)
+  }
 end

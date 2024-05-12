@@ -30,38 +30,38 @@ class Cache_Game
 
   # Caching functions
   def cacheDex
-    compileMons if !fileExists?("Data/mons.dat")
-    @pkmn = load_data("Data/mons.dat") if !@pkmn
+    compileMons if !fileExists?(getDiri18n + "mons.dat")
+    @pkmn = load_data(getDiri18n + "mons.dat") if !@pkmn
   end
 
   def cacheMoves
-    compileMoves if !fileExists?("Data/moves.dat")
-    @moves = load_data("Data/moves.dat") if !@moves
+    compileMoves if !fileExists?(getDiri18n + "moves.dat")
+    @moves = load_data(getDiri18n + "moves.dat") if !@moves
     @move2anim = load_data("Data/move2anim.dat") if !@move2anim
   end
 
   def cacheItems
-    compileItems if !fileExists?("Data/items.dat")
-    @items = load_data("Data/items.dat") if !@items
+    compileItems if !fileExists?(getDiri18n + "items.dat")
+    @items = load_data(getDiri18n + "items.dat") if !@items
   end
 
   def cacheTrainers
-    @trainers           = load_data("Data/trainers.dat") if !@trainers
+    @trainers           = load_data(getDiri18n + "trainers.dat") if !@trainers
     compileTrainerTypes if !fileExists?("Data/ttypes.dat")
     @trainertypes       = load_data("Data/ttypes.dat") if !@trainertypes
   end
 
   def cacheAbilities
-    compileAbilities if !fileExists?("Data/abil.dat")
-    @abil               = load_data("Data/abil.dat") if !@abil
+    compileAbilities if !fileExists?(getDiri18n + "abil.dat")
+    @abil               = load_data(getDiri18n + "abil.dat") if !@abil
   end
 
   def cacheBattleData
-    compileFields if !fileExists?("Data/fields.dat")
-    compileFieldNotes if !fileExists?("Data/fieldnotes.dat") && !Rejuv
+    compileFields if !fileExists?(getDiri18n + "fields.dat")
+    compileFieldNotes if !fileExists?(getDiri18n + "fieldnotes.dat") && !Rejuv
     compileBosses if Rejuv && !fileExists?("Data/bossdata.dat")
-    @FEData             = load_data("Data/fields.dat") if !@FEData
-    @FENotes            = load_data("Data/fieldnotes.dat") if !@FENotes && !Rejuv
+    @FEData             = load_data(getDiri18n + "fields.dat") if !@FEData
+    @FENotes            = load_data(getDiri18n + "fieldnotes.dat") if !@FENotes && !Rejuv
     compileTypes if !fileExists?("Data/types.dat")
     cacheAbilities
     @types              = load_data("Data/types.dat") if !@types
@@ -141,5 +141,3 @@ class MapDataCache < Array
     return data
   end
 end
-
-$cache = Cache_Game.new unless $cache

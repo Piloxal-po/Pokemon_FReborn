@@ -1703,10 +1703,8 @@ Defog, Eruption, Explosion, Fire Pledge, Flame Burst, Gust, Heat Wave, Hurricane
 244
 All Pokémon <icon=fieldFaint> when . . .
 All Pokémon <icon=fieldFaint> when . . .
-...when one of these moves is used in the absence of Damp: Eruption, Explosion, Fire Pledge, Flame Burst, Heat Wave, Incinerate, Inf. Overdrive, Lava Plume, Mind Blown, Searing Shot, Self Destruct.
-Pokémon behind applicable protect moves, or having Flash Fire are immune to the damage.
-...when one of these moves is used in the absence of Damp: Eruption, Explosion, Fire Pledge, Flame Burst, Heat Wave, Incinerate, Inf. Overdrive, Lava Plume, Mind Blown, Searing Shot, Self Destruct.
-Pokémon behind applicable protect moves, or having Flash Fire are immune to the damage.
+...when one of these moves is used in the absence of Damp: Eruption, Explosion, Fire Pledge, Flame Burst, Heat Wave, Incinerate, Inf. Overdrive, Lava Plume, Mind Blown, Searing Shot, Self Destruct.\nPokémon behind applicable protect moves, or having Flash Fire are immune to the damage.
+...when one of these moves is used in the absence of Damp: Eruption, Explosion, Fire Pledge, Flame Burst, Heat Wave, Incinerate, Inf. Overdrive, Lava Plume, Mind Blown, Searing Shot, Self Destruct.\nPokémon behind applicable protect moves, or having Flash Fire are immune to the damage.
 
 
 245
@@ -2629,16 +2627,8 @@ Boosts Sp.Def and applies Magnet Rise to the user.
 376
 Entry hazards are <c=orange>consumed</c> . . .
 Entry hazards are <c=orange>consumed</c> . . .
-Consumed hazards return at the end of the turn, returning a special effect to the side they were on: 
- Stealth Rocks deal type-scaling Rock damage double the normal effect to Pokémon. 
- Spikes deal 33% max HP to grounded Pokémon. 
- Toxic Spikes deal 12.5% max HP to grounded non-Poison/Steel types, and inflicts Poison. 
- Sticky Web severely lowers Pokémon's Speed.
-Consumed hazards return at the end of the turn, returning a special effect to the side they were on: 
- Stealth Rocks deal type-scaling Rock damage double the normal effect to Pokémon. 
- Spikes deal 33% max HP to grounded Pokémon. 
- Toxic Spikes deal 12.5% max HP to grounded non-Poison/Steel types, and inflicts Poison. 
- Sticky Web severely lowers Pokémon's Speed.
+Consumed hazards return at the end of the turn, returning a special effect to the side they were on: \n Stealth Rocks deal type-scaling Rock damage double the normal effect to Pokémon. \n Spikes deal 33% max HP to grounded Pokémon. \n Toxic Spikes deal 12.5% max HP to grounded non-Poison/Steel types, and inflicts Poison. \n Sticky Web severely lowers Pokémon's Speed.
+Consumed hazards return at the end of the turn, returning a special effect to the side they were on: \n Stealth Rocks deal type-scaling Rock damage double the normal effect to Pokémon. \n Spikes deal 33% max HP to grounded Pokémon. \n Toxic Spikes deal 12.5% max HP to grounded non-Poison/Steel types, and inflicts Poison. \n Sticky Web severely lowers Pokémon's Speed.
 
 
 377
@@ -4478,10 +4468,8 @@ Double Team, Flash
 639
 <c=red>Terminated</c> by these moves and . . .
 <c=red>Terminated</c> by these moves and . . .
-...and damages all active Pokémon for 1/2 their max HP: Boomburst, Bulldoze, Earthquake, Explosion, Fissure, Hyper Voice, Magnitude, Self Destruct, Tectonic Rage.
-Pokémon behind applicable protect moves, or having Shell Armor or Battle Armor are immune to the shatter damage.
-...and damages all active Pokémon for 1/2 their max HP: Boomburst, Bulldoze, Earthquake, Explosion, Fissure, Hyper Voice, Magnitude, Self Destruct, Tectonic Rage.
-Pokémon behind applicable protect moves, or having Shell Armor or Battle Armor are immune to the shatter damage.
+...and damages all active Pokémon for 1/2 their max HP: Boomburst, Bulldoze, Earthquake, Explosion, Fissure, Hyper Voice, Magnitude, Self Destruct, Tectonic Rage.\nPokémon behind applicable protect moves, or having Shell Armor or Battle Armor are immune to the shatter damage.
+...and damages all active Pokémon for 1/2 their max HP: Boomburst, Bulldoze, Earthquake, Explosion, Fissure, Hyper Voice, Magnitude, Self Destruct, Tectonic Rage.\nPokémon behind applicable protect moves, or having Shell Armor or Battle Armor are immune to the shatter damage.
 
 
 640
@@ -4788,10 +4776,8 @@ Multiscale additionally annulls user's Dragon type's weaknesses at all times
 683
 Shed Skin <icon=fieldPlus,tts="gains"> <c=green>recovery</c> and . . . 
 Shed Skin <icon=fieldPlus,tts="gains"> <c=green>recovery</c> and . . . 
-Shed Skin heals 25% on activation, and boosts Speed and Sp.Atk by one stage each while lowering Defense and Sp.Def one stage each. 
-Always activates.
-Shed Skin heals 25% on activation, and boosts Speed and Sp.Atk by one stage each while lowering Defense and Sp.Def one stage each. 
-Always activates.
+Shed Skin heals 25% on activation, and boosts Speed and Sp.Atk by one stage each while lowering Defense and Sp.Def one stage each. \nAlways activates.
+Shed Skin heals 25% on activation, and boosts Speed and Sp.Atk by one stage each while lowering Defense and Sp.Def one stage each. \nAlways activates.
 
 
 684
@@ -4895,10 +4881,8 @@ Boosts Sp.Atk and applies Flash Fire's power boost to the user.
 698
 Certain attacks <c=orange>grow</c> 1 <c=orange>Stage</c> . . .
 Certain attacks <c=orange>grow</c> 1 <c=orange>Stage</c> . . .
-Bloom Doom, Flower Shield, Growth, Ingrain, Rain Dance, Rototiller, Sunny Day, Water Sport.
-Additionally, these abilities grow the field one stage on switch-in: Drizzle, Drought, Flower Gift, Flower Veil
-Bloom Doom, Flower Shield, Growth, Ingrain, Rain Dance, Rototiller, Sunny Day, Water Sport.
-Additionally, these abilities grow the field one stage on switch-in: Drizzle, Drought, Flower Gift, Flower Veil
+Bloom Doom, Flower Shield, Growth, Ingrain, Rain Dance, Rototiller, Sunny Day, Water Sport.\nAdditionally, these abilities grow the field one stage on switch-in: Drizzle, Drought, Flower Gift, Flower Veil
+Bloom Doom, Flower Shield, Growth, Ingrain, Rain Dance, Rototiller, Sunny Day, Water Sport.\nAdditionally, these abilities grow the field one stage on switch-in: Drizzle, Drought, Flower Gift, Flower Veil
 
 
 699

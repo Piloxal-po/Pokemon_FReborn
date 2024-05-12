@@ -39,8 +39,8 @@ def pbSetUpSystem
       $Settings.firstTime = false
       $Settings.language = Kernel.pbShowCommands(nil,commands)
       saveClientData
+      $cache.reload
     end
-    pbLoadMessages("Data/"+LANGUAGES[$Settings.language][1] + ".dat")
   end
 end
 
