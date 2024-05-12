@@ -17,7 +17,7 @@ def generateDebugTranslationModFileWithoutMessage(lang, dir)
    generateMapInfoDebugTranslationFile(lang, dir)
    generateTrainersDebugTranslationFile(dir)
    generateFieldsDebugTranslationFile(dir)
-   generateFieldNotesDebugConvertTranslationFile(dir)
+   generateFieldNotesDebugTranslationFile(dir)
 end
 
 #just use for start fr translation
@@ -38,6 +38,7 @@ def gotText(text)
 end
 
 def normalizeData(text) 
+    text.gsub!(/\n/, "\\n")
     if text.to_i.to_s == text
         return "[]" + text
     end
@@ -356,8 +357,8 @@ def generateTrainersDebugTranslationFile(dir)
     file.close
   end
 
-def generateFieldNotesDebugConvertTranslationFile(dir)
-    file = File.new(dir + "/" + FIELD_NOTE_FILE + "2.txt", "w")
+def generateFieldNotesDebugTranslationFile(dir)
+    file = File.new(dir + "/" + FIELD_NOTE_FILE + ".txt", "w")
     quakemovenames = PBFields::QUAKEMOVES.map { |id| getMoveName(id) }.sort.join(", ")
     File.open("Scripts/" + GAMEFOLDER + "/fieldtext.rb") { |f| eval(f.read) }
     File.open("Scripts/" + GAMEFOLDER + "/fieldnotetext.rb") { |f| eval(f.read) }
@@ -366,9 +367,9 @@ def generateFieldNotesDebugConvertTranslationFile(dir)
     names = "[1]\n"
     FIELDNOTEEFFECTS.each { |value|
         names += i.to_s + "\n"
-        names += value.text + "\n" + FIELDNOTEEFFECTS_FR[i].text + "\n"
-        names += value.elaboration + "\n" + FIELDNOTEEFFECTS_FR[i].elaboration + "\n"
-        names += value.cogwheeltext + "\n" + FIELDNOTEEFFECTS_FR[i].cogwheeltext + "\n"
+        names += normalizeData(value.text) + "\n" + normalizeData(value.text) + "\n"
+        names += normalizeData(value.elaboration) + "\n" + normalizeData(value.elaboration) + "\n"
+        names += normalizeData(value.cogwheeltext) + "\n" + normalizeData(value.cogwheeltext) + "\n"
         i += 1
     }
     file.puts(names)

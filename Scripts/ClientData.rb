@@ -65,7 +65,8 @@ def startup
           Thread.new{load File.expand_path(file)}
         end
     }
-    Thread.new{$cache.reload}
+    $cache = Cache_Game.new unless $cache
+    $cache.cacheMessageReload
   rescue => e
     raise pbGetExceptionMessage(e)
   end
