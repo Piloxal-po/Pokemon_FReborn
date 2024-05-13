@@ -1,3 +1,5 @@
+$cache = nil
+
 def buildClientData
   $Unidata = {}
   $Unidata[:saveslot] = 1
@@ -65,7 +67,7 @@ def startup
           Thread.new{load File.expand_path(file)}
         end
     }
-    $cache = Cache_Game.new unless $cache
+    $cache = Cache_Game.new
     $cache.cacheMessageReload
   rescue => e
     raise pbGetExceptionMessage(e)
