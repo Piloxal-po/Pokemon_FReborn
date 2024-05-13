@@ -9,7 +9,7 @@ def getDiri18n
 end
 
 def getPathWithTranslation(path)
-    if File.exist?(getDiri18n + path) || EXTENSIONS.any? { |ex| File.exist?(getDiri18n + path + ex)}
+    if path.instance_of?(String)  && (File.exist?(getDiri18n + path) || EXTENSIONS.any? { |ex| File.exist?(getDiri18n + path + ex)})
         return getDiri18n + path
     end
     return path
