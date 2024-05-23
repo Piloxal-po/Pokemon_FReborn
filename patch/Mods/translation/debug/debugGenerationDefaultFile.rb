@@ -241,12 +241,14 @@ def generateTrainersDebugConvertTranslationFile
     }
     i = 1
     names = "[1]\n"
+
+    dict = buildData(DIR_DEBUG_I18N + "fr/" + TRAINER_FILE + ".txt")
     for trainer in TEAMARRAY
       next if trainer.nil?
       name = trainer[:teamid][0]
       pkmn = trainer[:mons]
       defeat = trainer[:defeat] ? Messages.normalizeValue(trainer[:defeat]) : ""
-      defeat2 = trainer[:defeat] ? gotText(Messages.normalizeValue(trainer[:defeat])) : ""
+      defeat2 = trainer[:defeat] ? dict[i][0][1] : ""
 
       names += i.to_s + "\n" + normalizeData(name) + "\n" + normalizeData(name) + "\n"
       names += normalizeData(defeat) + "\n" + normalizeData(defeat2) + "\n"
@@ -254,14 +256,15 @@ def generateTrainersDebugConvertTranslationFile
         pokeSpecies = value[:species].to_s
         pokeName = value[:name] ? value[:name] : ""
         pokeGender = value[:gender] ? value[:gender] : ""
+        pokeHpType = value[:hptype] ? value[:hptype].to_s : ""
         pokeItem = value[:item] ? value[:item].to_s : ""
         pokeNature = value[:nature] ? value[:nature].to_s : ""
         pokeAbility = value[:ability] ? value[:ability].to_s : ""
         pokeMoves = value[:moves] ? value[:moves].join("|") : ""
         pokeEv = value[:ev] ? value[:ev].join("|") : "0|0|0|0|0|0"
         pokeLevel = value[:level] ? value[:level].to_s : "1"
-        names += pokeSpecies + "," + pokeLevel + "," + pokeItem + "," + pokeMoves + "," + pokeGender + "," + pokeAbility + "," + pokeNature + "," + pokeName + "," + pokeEv + "\n"
-        names += pokeSpecies + "," + pokeLevel + "," + pokeItem + "," + pokeMoves + "," + pokeGender + "," + pokeAbility + "," + pokeNature + "," + pokeName + "," + pokeEv + "\n"
+        names += pokeSpecies + "," + pokeLevel + "," + pokeItem + "," + pokeHpType + "," + pokeMoves + "," + pokeGender + "," + pokeAbility + "," + pokeNature + "," + pokeName + "," + pokeEv + "\n"
+        names += pokeSpecies + "," + pokeLevel + "," + pokeItem + "," + pokeHpType + "," + pokeMoves + "," + pokeGender + "," + pokeAbility + "," + pokeNature + "," + pokeName + "," + pokeEv + "\n"
       }
       i += 1
     end
@@ -290,13 +293,14 @@ def generateTrainersDebugTranslationFile(dir)
         pokeName = value[:name] ? value[:name] : ""
         pokeGender = value[:gender] ? value[:gender] : ""
         pokeItem = value[:item] ? value[:item].to_s : ""
+        pokeHpType = value[:hptype] ? value[:hptype].to_s : ""
         pokeNature = value[:nature] ? value[:nature].to_s : ""
         pokeAbility = value[:ability] ? value[:ability].to_s : ""
         pokeMoves = value[:moves] ? value[:moves].join("|") : ""
         pokeEv = value[:ev] ? value[:ev].join("|") : "0|0|0|0|0|0"
         pokeLevel = value[:level] ? value[:level].to_s : "1"
-        names += pokeSpecies + "," + pokeLevel + "," + pokeItem + "," + pokeMoves + "," + pokeGender + "," + pokeAbility + "," + pokeNature + "," + pokeName + "," + pokeEv + "\n"
-        names += pokeSpecies + "," + pokeLevel + "," + pokeItem + "," + pokeMoves + "," + pokeGender + "," + pokeAbility + "," + pokeNature + "," + pokeName + "," + pokeEv + "\n"
+        names += pokeSpecies + "," + pokeLevel + "," + pokeItem + "," + pokeHpType + "," + pokeMoves + "," + pokeGender + "," + pokeAbility + "," + pokeNature + "," + pokeName + "," + pokeEv + "\n"
+        names += pokeSpecies + "," + pokeLevel + "," + pokeItem + "," + pokeHpType + "," + pokeMoves + "," + pokeGender + "," + pokeAbility + "," + pokeNature + "," + pokeName + "," + pokeEv + "\n"
       }
       i += 1
     end

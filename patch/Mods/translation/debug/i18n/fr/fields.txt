@@ -483,8 +483,8 @@ d38ut .//////c0mb4t!
 .0P pl$ nerf!-//
 
 
-{1}.TYPE = (:QMARKS)
-{1}.TYPE = (:QMARKS)
+{1}.TYPE = :QMARKS
+{1}.TYPE = :QMARKS
 26
 The cave is littered with crystals.
 La caverne est jonchée de cristaux.
