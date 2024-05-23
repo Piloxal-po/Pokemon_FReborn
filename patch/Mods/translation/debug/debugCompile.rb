@@ -338,19 +338,20 @@ def debugCompileTrainersWithLang(lang)
         value[:species] = customMonInformation[0].to_sym if (customMonInformation[0] && !customMonInformation[0].empty?)
         value[:level] = customMonInformation[1].to_i if (customMonInformation[1] && !customMonInformation[1].empty?)
         value[:item] = customMonInformation[2].to_sym if (customMonInformation[2] && !customMonInformation[2].empty?)
-        if customMonInformation[3] && !customMonInformation[3].empty?
-          customMonMoves = customMonInformation[3].split("|")
-          if !customMonMoves[3]
-            customMonMoves[3] = nil
+        value[:hptype] = customMonInformation[3].to_sym if (customMonInformation[3] && !customMonInformation[3].empty?)
+        if customMonInformation[4] && !customMonInformation[4].empty?
+          customMonMoves = customMonInformation[4].split("|")
+          if !customMonMoves[4]
+            customMonMoves[4] = nil
           end
           value[:moves] = customMonMoves.map{|move| move ? move.to_sym : nil}
         end
-        value[:gender] = customMonInformation[4] if (customMonInformation[4] && !customMonInformation[4].empty?)
-        value[:ability] = customMonInformation[5].to_sym if (customMonInformation[5] && !customMonInformation[5].empty?)
-        value[:nature] = customMonInformation[6].to_sym if (customMonInformation[6] && !customMonInformation[6].empty?)
-        value[:name] = customMonInformation[7] if (customMonInformation[7] && !customMonInformation[7].empty?)
-        if customMonInformation[8] && !customMonInformation[8].empty?
-          value[:ev] = customMonInformation[8].split("|").map{|ev| ev ? ev.to_i : 0}
+        value[:gender] = customMonInformation[5] if (customMonInformation[5] && !customMonInformation[5].empty?)
+        value[:ability] = customMonInformation[6].to_sym if (customMonInformation[6] && !customMonInformation[6].empty?)
+        value[:nature] = customMonInformation[7].to_sym if (customMonInformation[7] && !customMonInformation[7].empty?)
+        value[:name] = customMonInformation[8] if (customMonInformation[8] && !customMonInformation[8].empty?)
+        if customMonInformation[9] && !customMonInformation[9].empty?
+          value[:ev] = customMonInformation[9].split("|").map{|ev| ev ? ev.to_i : 0}
         end
         j += 1
       }
