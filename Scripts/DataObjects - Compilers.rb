@@ -13,7 +13,8 @@ def compileAll
   compileTrainers
   compileNatures
   compileBosses if Rejuv
-  compileTownMap
+  compileTownMap unless Desolation
+  pbCompileTownMap if Desolation
   compileBTData if Reborn
   $cache = nil
   $cache = Cache_Game.new

@@ -372,6 +372,35 @@ def pbSEPlay(param, volume = nil, pitch = nil)
   end
 end
 
+def pbAccessibilitySEPlay(param, volume = nil, pitch = nil)
+  return if !param
+
+  if $Settings.accessibilityVolume
+    if volume && $Settings.accessibilityVolume
+      volume = volume * ($Settings.accessibilityVolume / 100.00) # ($Settings.volume/100.00)
+    elsif !volume && param.is_a?(RPG::AudioFile) && $Settings.accessibilityVolume
+      volume = param.volume * ($Settings.accessibilityVolume / 100.00)
+    elsif !volume && $Settings.accessibilityVolume
+      volume = $Settings.accessibilityVolume
+    end
+  else
+    volume = 100
+  end
+  param = pbResolveAudioFile(param.clone, volume, pitch)
+  if param.name && param.name != ""
+    if $game_system && $game_system.respond_to?("se_play")
+      $game_system.se_play(param)
+      return
+    elsif (RPG.const_defined?(:SE) rescue false)
+      b = RPG::SE.new(param.name, param.volume, param.pitch)
+      if b && b.respond_to?("play")
+        b.play; return
+      end
+    end
+    Audio.se_play(canonicalize("Audio/SE/" + param.name), param.volume, param.pitch)
+  end
+end
+
 # Stops SE playback.
 def pbSEFade(x = 0.0); pbSEStop(x); end
 

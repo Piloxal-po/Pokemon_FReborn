@@ -102,7 +102,7 @@ class PokeBattle_Pokemon
     @totalhp = 1
     @ev = [0, 0, 0, 0, 0, 0]
     @iv = [rand(32), rand(32), rand(32), rand(32), rand(32), rand(32)]
-    if $cache.pkmn[species, @form].EggGroups.include?(:Undiscovered) || @species == :MANAPHY # undiscovered group or manaphy
+    if ($cache.pkmn[species, @form].EggGroups.include?(:Undiscovered) || @species == :MANAPHY) ||$game_switches[:Forced3IVs] # undiscovered group or manaphy
       stat1, stat2, stat3 = [0, 1, 2, 3, 4, 5].sample(3)
       for i in 0..5
         @iv[i] = 31 if [stat1, stat2, stat3].include?(i)
@@ -635,7 +635,7 @@ class PokeBattle_Pokemon
 
   def getForm(pkmn)
     if pkmn.species == :GIRATINA
-      return pkmn.item == :GRISEOUSORB ? 1 : 0
+      return pkmn.item == :GRISEOUSORB || DistortionWorld.include?($game_map.map_id) ? 1 : 0
     end
 
     if pkmn.species == :ARCEUS && pkmn.ability == :MULTITYPE
@@ -844,8 +844,8 @@ class PokeBattle_Pokemon
 
   def isAirborne?
     return false if @item == :IRONBALL
-    return true if (self.type1 == :FLYING || self.type2 == :FLYING)
-    return true if @ability == :LEVITATE
+    return true if self.hasType?(:FLYING)
+    return true if [:LEVITATE,:SOLARIDOL,:LUNARIDOL].include?(@ability)
     return true if @item == :AIRBALLOON
 
     return false

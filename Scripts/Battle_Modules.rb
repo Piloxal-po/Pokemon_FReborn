@@ -88,7 +88,7 @@ module PokeBattle_BattleCommon
 
   def pbBallFetch(pokeball)
     for i in 0...4
-      if self.battlers[i].ability == (:BALLFETCH) && self.battlers[i].item.nil?
+      if self.battlers[i].ability == :BALLFETCH && self.battlers[i].item.nil?
         self.battlers[i].effects[:BallFetch] = pokeball
       end
     end

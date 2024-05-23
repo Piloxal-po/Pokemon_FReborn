@@ -538,9 +538,9 @@ class Game_Player < Game_Character
            $PokemonTemp.miniupdate
       # Move player in the direction the directional button is being pressed
       @waiter = 0 if !@waiter
-      @waiter = ($speed_up ? 5 : 1) if @lastdir != dir && Graphics.frame_count - @lastdirframe != 1
+      @waiter = ($speed_up ? $Settings.turboSpeedMultiplier : 1).floor if @lastdir != dir && Graphics.frame_count - @lastdirframe != 1
       @waiter -= 1
-      if dir == @lastdir && Graphics.frame_count - @lastdirframe > 0
+      if dir == @lastdir && Graphics.frame_count - @lastdirframe > 0 && !(TAB_TURBO && Input.press?(Input::ALT))
         case dir
           when 2 then move_down
           when 4 then move_left

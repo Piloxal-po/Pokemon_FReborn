@@ -2681,7 +2681,7 @@ def pbCheckMove(move)
       aID = aIDs[rand(aIDs.length)]
       return $Trainer.party[aID]
     end
-    if move == (:HEADBUTT)
+    if move == :HEADBUTT
       aIDs = []
       for i in 0...$Trainer.party.length
         aPoke = $Trainer.party[i]

@@ -33,7 +33,7 @@ class Connect
 
   ################################################################################
   #-------------------------------------------------------------------------------
-  # Opens a connection tests if it can and is allowed toconnect to the server
+  # Opens a connection tests if it can and is allowed to connect to the server
   #-------------------------------------------------------------------------------
   ################################################################################
   def main
@@ -421,9 +421,10 @@ class Connect
   def traderequest
     loop do
       @player = Kernel.pbMessageFreeText(_INTL("Who would you like to request to trade with?"), "", false, 32)
-      Kernel.pbMessage("You cannot trade with yourself.") if @player == $network.username
-      return tradeorbattle if @player == "" || @player == $network.username
-      break if @player != "" || @player != $network.username
+      sameplayer = @player.downcase == $network.username.downcase
+      Kernel.pbMessage("You cannot trade with yourself.") if sameplayer
+      return tradeorbattle if @player == "" || sameplayer
+      break if @player != "" || !sameplayer
     end
     $network.send("<TRAREQ user=#{@player} name=#{$network.username}>")
     @waitfortrade = true
@@ -632,8 +633,9 @@ class Connect
     serialized = trainerAry.join("/g/")
     loop do
       @player = Kernel.pbMessageFreeText(_INTL("Who would you like to challenge?"), "", false, 32)
-      Kernel.pbMessage("You cannot battle with yourself.") if @player == $network.username
-      if @player == "" || @player == $network.username
+      sameplayer = @player.downcase == $network.username.downcase
+      Kernel.pbMessage("You cannot battle with yourself.") if sameplayer
+      if @player == "" || sameplayer
         restore_trainer_party
         return tradeorbattle
       end

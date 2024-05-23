@@ -1670,5 +1670,8 @@ ABILHASH = {
     :desc => "Combines abilities of fused Pokémon."
   },
 
-
+  :BATTLEBOND => {
+    :name => "Battle Bond",
+    :desc => "Defeating an opponent grants a power-up.",
+  },
 }

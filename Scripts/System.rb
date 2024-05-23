@@ -57,14 +57,21 @@ end
 
 module Input
   # JoiPlay doesn't support symbols so we need to use constants
-  KEY_RETURN = 0x0D
-  KEY_ESCAPE = 0x1B
-  KEY_BACKSPACE = 0x08
+  KEY_RETURN = $joiplay ? 0x42 : 0x0D
+  KEY_ESCAPE = $joiplay ? 0x6f : 0x1B
+  KEY_BACKSPACE = $joiplay ? 0x04 : 0x08
 
   unless defined?(update_KGC_ScreenCapture)
     class << Input
       alias update_KGC_ScreenCapture update
     end
+  end
+
+  def self.triggerexAny?(keys)
+    keys.each do |key|
+      return true if triggerex?(key)
+    end
+    return false
   end
 
   def self.update
@@ -77,7 +84,7 @@ module Input
     # end
 
     # JoiPlay doesn't accept literals but only key codes. 84 is the key code for T which I use for turbo on JoiPlay.
-    if triggerex?(:LALT) || triggerex?(:RALT) ||
+    if self.triggerexAny?(TAB_TURBO ? [:TAB] : [:LALT, :RALT]) ||
        (triggerex?(:M) && Input.text_input != true) ||
        ($joiplay && triggerex?(84))
       Graphics.toggleTurbo

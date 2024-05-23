@@ -315,25 +315,18 @@ class Updater
     if Kernel.pbConfirmMessage(_INTL("Do you want to download the latest patch?"))
       authorization = self.handleAuthorization
 
-      if self.downloadPatch(authorization)
+      # Optimized tilesets are only used on JoiPlay.
+      if self.downloadPatch(authorization) && (!$joiplay || self.downloadTilesets(authorization))
         Kernel.pbMessage(_INTL("Applying patch...\\wtnp[10]"))
         self.applyPatch('patch.zip', '.')
 
-        # Optimized tilesets are only used on JoiPlay.
         if $joiplay
-          if self.downloadTilesets(authorization)
-            Kernel.pbMessage(_INTL("Applying tilesets...\\wtnp[10]"))
-            self.applyPatch('tilesets.zip', '.')
-
-            Kernel.pbMessage(_INTL("Your game has been updated!\nExiting to apply the changes."))
-            exit
-          else
-            Kernel.pbMessage(_INTL("Incorrect password."))
-          end
-        else
-          Kernel.pbMessage(_INTL("Your game has been updated!\nExiting to apply the changes."))
-          exit
+          Kernel.pbMessage(_INTL("Applying tilesets...\\wtnp[10]"))
+          self.applyPatch('tilesets.zip', '.')
         end
+
+        Kernel.pbMessage(_INTL("Your game has been updated!\nExiting to apply the changes."))
+        exit
       else
         Kernel.pbMessage(_INTL("Incorrect password."))
       end

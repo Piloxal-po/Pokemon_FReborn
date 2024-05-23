@@ -191,7 +191,7 @@ class Scene_Map
     if (!$DEBUG || Input.press?(Input::CTRL)) && Input.trigger?(Input::F9) && $game_player && $game_map
       coordinates = sprintf("X %d, Y %d, map %d, %s", $game_player.x, $game_player.y, $game_map.map_id, $game_map.name)
       if $game_switches[:Blindstep]
-        tts(coordinates)
+        tts(coordinates, true)
       else
         Kernel.pbMessage(coordinates)
       end

@@ -532,6 +532,12 @@ class FightMenuButtons < BitmapSprite
         moveBoost = 0 if move.move == :FOCUSPUNCH
       when :CAVE
         moveBoost = 0 if move.move == :SKYDROP
+      when :DARKNESS1
+        moveBoost = 0 if [:MOONLIGHT, :SYNTHESIS, :MORNINGSUN].include?(move.move)
+      when :DARKNESS2
+        moveBoost = 0 if [:MOONLIGHT, :SYNTHESIS, :MORNINGSUN].include?(move.move)
+      when :DARKNESS3
+        moveBoost = 0 if [:MOONLIGHT, :SYNTHESIS, :MORNINGSUN].include?(move.move)
     end
     totalboost = typeBoost * moveBoost
     if totalboost > 1
@@ -1815,9 +1821,7 @@ class PokeBattle_Scene
       pbGraphicsUpdate
       Input.update
       cw.update
-      # if i == 40
-      # Changing the pause to depend on message length so that player and tts have time to read it.
-      if i == [20, msg.length].max * 2
+      if i == 40
         cw.text = ""
         cw.visible = false
         return
@@ -3382,10 +3386,14 @@ class PokeBattle_Scene
     tts("Choose a Pokémon.")
     loop do
       scene.pbSetHelpText(_INTL("Choose a Pokémon."))
-      activecmd = @switchscreen.pbChoosePokemon
+      activecmd = @switchscreen.pbChoosePokemon(shortcut_keys: true)
       if cancancel && activecmd == -1
         ret = -1
         break
+      end
+      if activecmd.is_a?(Array) && activecmd[0] == 3 # Summary
+        scene.pbSummary(activecmd[1])
+        next
       end
       if activecmd >= 0 && !party[partypos[activecmd]].nil?
         commands = []

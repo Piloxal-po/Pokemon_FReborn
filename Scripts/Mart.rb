@@ -52,7 +52,7 @@ class PokemonMartAdapter
   def getDescription(item)
     return "Quit shopping." if !item
 
-    return $cache.items[item].desc
+    return getItemDescription(item)
   end
 
   def addItem(item)

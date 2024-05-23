@@ -148,7 +148,7 @@ class PokemonRegionMapScene
     @sprites["mapbottom"].mapname = pbGetMessage(MessageTypes::RegionNames, mapindex) # kill this
     @sprites["mapbottom"].maplocation = pbGetMapLocation(@mapX, @mapY)
     @sprites["mapbottom"].mapdetails = pbGetMapDetails(@mapX, @mapY)
-    if playerpos && mapindex == playerpos[0]
+    if playerpos && mapindex == playerpos[0] && (!Desolation || Desolation && @region <4)
       @sprites["player"] = IconSprite.new(0, 0, @viewport)
       @sprites["player"].setBitmap(pbPlayerHeadFile($Trainer.trainertype))
       @sprites["player"].x = -SQUAREWIDTH / 2 + (@mapX * SQUAREWIDTH) + (Graphics.width - @sprites["map"].bitmap.width) / 2

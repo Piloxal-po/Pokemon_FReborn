@@ -264,7 +264,7 @@ class PokeBattle_Battle
     for i in 0..3
       next if @choices[i][0] != 1
 
-      side = (pbIsOpposing?(i)) ? 1 : 0
+      side = pbIsOpposing?(i) ? 1 : 0
       owner = pbGetOwnerIndex(i)
       if @zMove[side][owner] == i
         @choices[i][2].zmove = true
@@ -297,7 +297,7 @@ class PokeBattle_Battle
 
           # if Pursuit and this target ("i") was chosen
           if pbChoseMoveFunctionCode?(j.index, 0x88) && !j.effects[:Pursuit] && (@choices[j.index][3] == -1 || @choices[j.index][3] == i.index)
-            if j.status != :SLEEP && j.status != :FROZEN && (!j.ability == (:TRUANT) || !j.effects[:Truant])
+            if j.status != :SLEEP && j.status != :FROZEN && (!j.ability == :TRUANT || !j.effects[:Truant])
               # Try to Mega-evolve/Ultra-burst before using pursuit
               side = (pbIsOpposing?(j.index)) ? 1 : 0
               owner = pbGetOwnerIndex(j.index)
@@ -648,6 +648,8 @@ def trainershit(trainer)
       for i in 0...6
         pokemon.ev[i] = 252
       end
+    end
+    if $game_switches[:Max_Trainer_IVs_Password] # max ivs
       for i in 0...6
         pokemon.iv[i] = 31 if iv != 32
       end

@@ -1808,13 +1808,17 @@ class PokeBattle_AI
           miniscore *= 1.3 if @attacker.ability == :SOULHEART
         end
       when 0x40 # Flatter
-        statarray = [0, 0, 1, 0, 0]
-        statarray = [0, 0, 2, 0, 0]
-        miniscore = oppstatboost(statarray)
+        if @opponent.ability == :CONTRARY
+          miniscore = oppstatdrop(@battle.FE == :COLOSSEUM ? [0, 0, 2, 0, 0, 0, 0] : [0, 0, 1, 0, 0, 0, 0])
+        else
+          miniscore = oppstatboost(@battle.FE == :COLOSSEUM ? [0, 0, 2, 0, 0] : [0, 0, 1, 0, 0], true)
+        end
       when 0x41 # Swagger
-        statarray = [2, 0, 0, 0, 0]
-        statarray = [3, 0, 0, 0, 0]
-        miniscore = oppstatboost(statarray)
+        if @opponent.ability == :CONTRARY
+          miniscore = oppstatdrop(@battle.FE == :COLOSSEUM ? [3, 0, 0, 0, 0, 0, 0] : [2, 0, 0, 0, 0, 0, 0])
+				else
+          miniscore = oppstatboost(@battle.FE == :COLOSSEUM ? [3, 0, 0, 0, 0] : [2, 0, 0, 0, 0], true)
+				end
       when 0x42 # Growl, Aurora Beam, Baby-Doll Eyes, Play Nice, Play Rough, Lunge, Trop Kick
         statarray = [1, 0, 0, 0, 0, 0, 0]
         statarray = [1, 0, 1, 0, 0, 0, 0] if @mondata.skill >= BESTSKILL && @battle.FE == :HAUNTED && @move.move == :BITTERMALICE
@@ -1894,6 +1898,7 @@ class PokeBattle_AI
         miniscore *= oppstatdrop(statarray)
       when 0x49 # Defog
         miniscore = defogcode()
+        miniscore *= hazardremovalcode()
       when 0x4a # Tickle
         miniscore = oppstatdrop([1, 1, 0, 0, 0, 0, 0])
       when 0x4b # Feather Dance, Charm
@@ -2028,15 +2033,15 @@ class PokeBattle_AI
         miniscore = abilitychangecode(:INSOMNIA)
         miniscore *= oppstatdrop([1, 0, 0, 0, 0, 0, 0]) if Rejuv && @battle.FE == :GRASSY
       when 0x65 # Role Play
-        minisore = roleplaycode()
+        miniscore = roleplaycode()
       when 0x66 # Entrainment
         score = entraincode(score)
       when 0x67 # Skill Swap
-        minisore = skillswapcode()
+        miniscore = skillswapcode()
       when 0x68 # Gastro Acid
         miniscore = gastrocode()
       when 0x69 # Transform
-        minisore = transformcode()
+        miniscore = transformcode()
       # when 0x6A # Sonicboom
       # when 0x6B # Dragon Rage
       # when 0x6C # Super Fang, Nature Madness
@@ -2125,7 +2130,7 @@ class PokeBattle_AI
           miniscore *= 2 if pbAIfaster?(@move)
         end
       # when 0x89..0x8a # Return, Frustration
-      when 0x8B # Water Spout, Eruption
+      when 0x8B # Water Spout, Eruption, Dragon Energy
         if !pbAIfaster?(@move)
           original_power = [(150 * (@attacker.hp.to_f) / @attacker.totalhp), 1.0].max
           actual_power = [(150 * (@attacker.hp.to_f - checkAIdamage()) / @attacker.totalhp), 1.0].max
@@ -2326,7 +2331,7 @@ class PokeBattle_AI
            @battle.pbCheckGlobalAbility(:DESOLATELAND) || @battle.pbCheckGlobalAbility(:PRIMORDIALSEA) || @attacker.item == :POWERHERB || @battle.FE == :UNDERWATER || @battle.FE == :NEWWORLD || @battle.FE == :RAINBOW)
           miniscore = 0.3
         else
-          miniscore = weaselslashcode() if @battle.pbWeather != :SUNNYDAY || @battle.FE != :RAINBOW
+          miniscore = weaselslashcode() if @battle.pbWeather != :SUNNYDAY && @battle.FE != :RAINBOW
         end
         miniscore = 0 if @battle.FE == :DARKCRYSTALCAVERN
       when 0xc5 # Freeze Shock
@@ -2787,6 +2792,7 @@ class PokeBattle_AI
           score += 25 if @attacker.pbOwnSide.effects[:StickyWeb]
           score += (10 * @attacker.pbOwnSide.effects[:Spikes])
           score += (15 * @attacker.pbOwnSide.effects[:ToxicSpikes])
+          miniscore = hazardremovalcode()
         end
       when 0x111 # Future Sight, Doom Desire
         miniscore = futurecode()
@@ -3213,6 +3219,7 @@ class PokeBattle_AI
         miniscore *= oppstatdrop([0, 1, 0, 1, 0, 0, 0])
       when 0x182 # Court Change
         miniscore = defogcode()
+        miniscore *= hazardremovalcode()
       when 0x183 # Clangorous Soul
         statarray = [1, 1, 1, 1, 1, 0, 0]
         statarray = [2, 2, 2, 2, 2, 0, 0] if @mondata.skill >= BESTSKILL && [:BIGTOP, :CONCERT1, :CONCERT2, :CONCERT3, :CONCERT4].include?(@battle.FE)
@@ -3221,7 +3228,11 @@ class PokeBattle_AI
         miniscore *= 1.2 if @attacker.turncount < 1
         miniscore = 1 if (@attacker.hp.to_f) / @attacker.totalhp <= 0.333 || ((@mondata.skill >= BESTSKILL && [:BIGTOP, :CONCERT1, :CONCERT2, :CONCERT3, :CONCERT4].include?(@battle.FE)) && (@attacker.hp.to_f) / @attacker.totalhp <= 0.5)
       when 0x185 # Decorate
-        miniscore = oppstatboost([2, 0, 2, 0, 0])
+        if @opponent.ability == :CONTRARY
+          miniscore = oppstatdrop([2, 0, 2, 0, 0, 0, 0])
+        else
+          miniscore = oppstatboost([2, 0, 2, 0, 0])
+        end
       when 0x186 # Aura Wheel
         miniscore = selfstatboost([0, 0, 0, 0, 1, 0, 0])
       when 0x187 # Life Dew
@@ -3257,8 +3268,15 @@ class PokeBattle_AI
         miniscore = knockcode()
         miniscore *= oppstatdrop([1, 1, 1, 1, 1, 0, 0]) if [:BACKALLEY, :CITY].include?(@battle.FE)
       when 0x317 # Coaching
-        minicore = 0 if @opponent.index != @attacker.pbPartner.index
-        miniscore = oppstatboost([1, 1, 0, 0, 0]) if @opponent.index == @attacker.pbPartner.index
+        if @opponent.index == @attacker.pbPartner.index
+          if @opponent.ability == :CONTRARY
+            miniscore = oppstatdrop([1, 1, 0, 0, 0, 0, 0])
+          else
+            miniscore = oppstatboost([1, 1, 0, 0, 0])
+          end
+        else
+          miniscore = 0
+        end
       when 0x318 # Jungle Healing
         recoveramount = @attacker.totalhp / 4.0
         miniscore = lifedewcode(recoveramount)
@@ -4055,13 +4073,15 @@ class PokeBattle_AI
     return miniscore
   end
 
-  def oppstatboost(stats)
+  def oppstatboost(stats, confusionmove = false, alsodecrease = false)
+    return 0 if @opponent.effects[:Substitute] > 0
+
     stats.map!.with_index { |a, ind| @opponent.pbTooHigh?(ind + 1) ? 0 : a }
     # This still uses the 5-array of stats in case other games want to expand on it
     stats.unshift(0)
     miniscore = 1.0
     if @opponent.index != @attacker.pbPartner.index
-      if @opponent.pbCanConfuse?(false)
+      if @opponent.pbCanConfuse?(false) && confusionmove
         if stats[PBStats::SPATK] != 0
           miniscore *= 1 + 0.1 * @opponent.stages[PBStats::ATTACK] if @opponent.stages[PBStats::ATTACK] > 0
           if @opponent.attack > @opponent.spatk
@@ -4078,20 +4098,21 @@ class PokeBattle_AI
         end
         miniscore *= confucode
       else
-        miniscore = 0
+        # for when a move also decreases a stat avoid 0 for multiplication purposes.
+        miniscore = alsodecrease ? 1 : 0
       end
     else
       return 0 if @battle.pbOwnedByPlayer?(@attacker.pbPartner.index)
 
-      miniscore *= @opponent.pbCanConfuse?(false) ? 0.5 : 1.5
-      miniscore *= 1.5 if (@opponent.attack < @opponent.spatk && stats[PBStats::ATTACK] != 0) || (@opponent.attack > @opponent.spatk && stats[PBStats::SPATK] != 0)
+      if confusionmove
+        miniscore *= @opponent.pbCanConfuse?(false) ? 0.5 : 1.5
+        miniscore *= 1.5 if (@opponent.attack < @opponent.spatk && stats[PBStats::ATTACK] != 0) || (@opponent.attack > @opponent.spatk && stats[PBStats::SPATK] != 0)
+        miniscore *= 1.2 if @mondata.oppitemworks && (@opponent.item == :PERSIMBERRY || @opponent.item == :LUMBERRY)
+      end
       miniscore *= 0.3 if (1.0 / @opponent.totalhp) * @opponent.hp < 0.6
       if @opponent.effects[:Attract] >= 0 || @opponent.status == :PARALYSIS || @opponent.effects[:Yawn] > 0 || @opponent.status == :SLEEP
         miniscore *= 0.3
       end
-      miniscore *= 1.2 if @mondata.oppitemworks && (@opponent.item == :PERSIMBERRY || @opponent.item == :LUMBERRY)
-      miniscore *= 0 if @opponent.ability == :CONTRARY
-      miniscore *= 0 if @opponent.effects[:Substitute] > 0
       opp1 = @attacker.pbOppositeOpposing
       opp2 = opp1.pbPartner
       if @opponent.pbSpeed > opp1.pbSpeed && @opponent.pbSpeed > opp2.pbSpeed
@@ -4277,6 +4298,81 @@ class PokeBattle_AI
       miniscore *= 0.7 if @attacker.pbOwnSide.effects[:Mist] > 0
       miniscore *= 0.2 if @attacker.pbOwnSide.effects[:Tailwind] > 0
     end
+    return miniscore
+  end
+
+def hazardremovalcode
+    return 0 if @attacker.pbNonActivePokemonCount == 0 && !@battle.doublebattle
+    return 0 if @attacker.pbNonActivePokemonCount == 0 && @battle.doublebattle && @attacker.pbPartner.pbNonActivePokemonCount == 0
+
+    miniscore = 1.0
+    yourparty = @battle.pbPartySingleOwner(@attacker.index)
+    yourparty += @battle.pbPartySingleOwner(@attacker.pbPartner.index) if @battle.doublebattle
+    for i in 0...yourparty.length
+      pkmn = yourparty[i]
+      next if !pkmn || pkmn.isEgg? || pkmn.hp == 0 || pkmn.item == :HEAVYDUTYBOOTS
+
+      if @attacker.pbOwnSide.effects[:StickyWeb]
+        miniscore += 1 if !pkmn.isAirborne? && pkmn.ability != :CONTRARY
+      end
+
+      next if pkmn.ability == :MAGICGUARD || (pkmn.ability == :WONDERGUARD && @battle.FE == :COLOSSEUM)
+
+      steathrocktype = :ROCK
+      steathrocktype = :FIRE if [:VOLCANICTOP, :INFERNAL, :DRAGONSDEN].include?(@battle.FE) && Rejuv
+      steathrocktype = :POISON if @battle.FE == :CORRUPTED && Rejuv
+      stealthrockEffectiveness = PBTypes.twoTypeEff(steathrocktype, pkmn.type1, pkmn.type2)
+      knowsHPBasedMove = pkmn.moves.any? { |moveloop| moveloop != nil && [0x8b, 0xe1].include?(moveloop.function) } # Eruption / Water Spout / Dragon Energy / Final Gambit
+      needsFullHP = [:MULTISCALE, :STURDY, :GALEWINGS, :SHADOWSHIELD, :TERASHELL].include?(pkmn.ability) || pkmn.item == :FOCUSSASH
+
+      if pkmn.hp == pkmn.totalhp && needsFullHP
+        miniscore += 2.5 if @attacker.pbOwnSide.effects[:StealthRock]
+        miniscore += (1.5**@attacker.pbOwnSide.effects[:Spikes]) if !pkmn.isAirborne?
+      end
+
+      if @attacker.pbOwnSide.effects[:StealthRock]
+        if $game_switches[:Inversemode] ^ (@battle.FE == :INVERSE)
+          switcheff = { 16 => 1, 8 => 2, 4 => 4, 2 => 8, 1 => 16, 0 => 16 }
+          stealthrockEffectiveness = switcheff[stealthrockEffectiveness]
+        end
+        if stealthrockEffectiveness == 16
+          miniscore += 1.5
+          miniscore += 3 if [:ROCKY, :CAVE].include?(@battle.FE)
+        elsif stealthrockEffectiveness == 8
+          miniscore += 1
+          miniscore += 2 if [:ROCKY, :CAVE].include?(@battle.FE)
+        end
+      end
+
+      if @attacker.pbOwnSide.effects[:Spikes] && !pkmn.isAirborne? && @battle.FE == :ELECTERRAIN && Rejuv
+        spikesEffectiveness = PBTypes.twoTypeEff(:ELECTRIC, pkmn.type1, pkmn.type2)
+       if $game_switches[:Inversemode] ^ (@battle.FE == :INVERSE)
+          switcheff = { 16 => 1, 8 => 2, 4 => 4, 2 => 8, 1 => 16, 0 => 16 }
+          spikesEffectiveness = switcheff[spikesEffectiveness]
+        end
+        if spikesEffectiveness == 16
+          miniscore += (1.5**@attacker.pbOwnSide.effects[:Spikes])
+        elsif spikesEffectiveness == 8
+          miniscore += (@attacker.pbOwnSide.effects[:Spikes])
+        end
+      end
+
+      if knowsHPBasedMove
+        miniscore += 1.3 if @attacker.pbOwnSide.effects[:StealthRock]
+        miniscore += (1.3**@attacker.pbOwnSide.effects[:Spikes])
+      end
+
+      if !pkmn.isAirborne? && pkmn.status == nil
+        if !pkmn.hasType?(:POISON) && !pkmn.hasType?(:STEEL) && ![:IMMUNITY, :POISONHEAL, :TOXICBOOST, :COMATOSE, :PURIFYINGSALT, :GUTS].include?(pkmn.ability) && !(pkmn.ability == :PASTELVEIL && @battle.FE != :INFERNAL)
+          if pkmn.moves.any? { |moveloop| moveloop != nil && [0xd5, 0xd6, 0xd7, 0xd8, 0xda, 0xdb, 0xdf, 0x114, 0x162, 0x169, 0x16C, 0x172].include?(moveloop.function) } # Healing move functions except Rest
+            miniscore += (1.8**@attacker.pbOwnSide.effects[:ToxicSpikes])
+          else
+            miniscore += (1.5**@attacker.pbOwnSide.effects[:ToxicSpikes])
+          end
+        end
+      end
+    end
+
     return miniscore
   end
 
@@ -4898,30 +4994,30 @@ class PokeBattle_AI
 
   def secretcode
     case @battle.FE
-      when :ELECTERRAIN, :SHORTCIRCUIT	then return paracode()
-      when :GRASSY, :FOREST, :FAIRYTALE	then return sleepcode()
-      when :MISTY, :HOLY	then return oppstatdrop([0, 0, 1, 0, 0, 0, 0])
-      when :DARKCRYSTALCAVERN, :DESERT, :ASHENBEACH, :CLOUDS	then return oppstatdrop([0, 0, 0, 0, 0, 1, 0])
-      when :CHESS, :DARKNESS1, :DARKNESS2, :DARKNESS3	then return oppstatdrop([0, 1, 0, 0, 0, 0, 0])
-      when :BIGTOP, :STARLIGHT	then return oppstatdrop([0, 0, 0, 1, 0, 0, 0])
-      when :BURNING, :SUPERHEATED, :DRAGONSDEN, :VOLCANIC, :VOLCANICTOP, :INFERNAL, :DANCEFLOOR	then return burncode()
-      when :SWAMP, :WATERSURFACE, :GLITCH	then return oppstatdrop([0, 0, 0, 0, 1, 0, 0])
-      when :RAINBOW	then return (paracode() + poisoncode() + burncode() + freezecode() + sleepcode()) / 5
-      when :CORROSIVE, :CORROSIVEMIST, :MURKWATERSURFACE, :CORRUPTED, :BACKALLEY, :CITY 	then return poisoncode()
-      when :ICY, :SNOWYMOUNTAIN, :FROZENDIMENSION	then return freezecode()
-      when :ROCKY, :CAVE, :MOUNTAIN, :DIMENSIONAL, :DEEPEARTH, :CONCERT1, :CONCERT2, :CONCERT3, :CONCERT4	then return flinchcode()
-      when :FACTORY, :UNDERWATER	then return oppstatdrop([1, 0, 0, 0, 0, 0, 0])
-      when :WASTELAND	then return (paracode() + poisoncode() + burncode() + freezecode()) / 4
-      when :CRYSTALCAVERN	then return (confucode() + poisoncode() + burncode() + sleepcode()) / 4
-      when :MIRROR, :FLOWERGARDEN1, :FLOWERGARDEN2	then return oppstatdrop([0, 0, 0, 0, 0, 0, 1])
-      when :FLOWERGARDEN3, :FLOWERGARDEN4	then return oppstatdrop([0, 1, 0, 1, 0, 0, 1])
-      when :FLOWERGARDEN5	then return oppstatdrop([0, 2, 0, 2, 0, 0, 2])
-      when :NEWWORLD	then return oppstatdrop([1, 1, 1, 1, 1, 1, 1])
-      when :INVERSE, :PSYTERRAIN, :SKY	then return confucode()
-      when :BEWITCHED	then return (paracode() + poisoncode() + sleepcode()) / 3
-      when :HAUNTED	then return spoopycode()
-      when :COLOSSEUM	then return selfstatboost([1, 0, 0, 0, 0, 0, 0])
-      else	return paracode()
+      when :ELECTERRAIN, :SHORTCIRCUIT then return paracode()
+      when :GRASSY, :FOREST, :FAIRYTALE then return sleepcode()
+      when :MISTY, :HOLY then return oppstatdrop([0, 0, 1, 0, 0, 0, 0])
+      when :DARKCRYSTALCAVERN, :DESERT, :ASHENBEACH, :CLOUDS then return oppstatdrop([0, 0, 0, 0, 0, 1, 0])
+      when :CHESS, :DARKNESS1, :DARKNESS2, :DARKNESS3 then return oppstatdrop([0, 1, 0, 0, 0, 0, 0])
+      when :BIGTOP, :STARLIGHT then return oppstatdrop([0, 0, 0, 1, 0, 0, 0])
+      when :BURNING, :SUPERHEATED, :DRAGONSDEN, :VOLCANIC, :VOLCANICTOP, :INFERNAL, :DANCEFLOOR then return burncode()
+      when :SWAMP, :WATERSURFACE, :GLITCH then return oppstatdrop([0, 0, 0, 0, 1, 0, 0])
+      when :RAINBOW then return (paracode() + poisoncode() + burncode() + freezecode() + sleepcode()) / 5
+      when :CORROSIVE, :CORROSIVEMIST, :MURKWATERSURFACE, :CORRUPTED, :BACKALLEY, :CITY then return poisoncode()
+      when :ICY, :SNOWYMOUNTAIN, :FROZENDIMENSION then return freezecode()
+      when :ROCKY, :CAVE, :MOUNTAIN, :DIMENSIONAL, :DEEPEARTH, :CONCERT1, :CONCERT2, :CONCERT3, :CONCERT4 then return flinchcode()
+      when :FACTORY, :UNDERWATER then return oppstatdrop([1, 0, 0, 0, 0, 0, 0])
+      when :WASTELAND then return (paracode() + poisoncode() + burncode() + freezecode()) / 4
+      when :CRYSTALCAVERN then return (confucode() + poisoncode() + burncode() + sleepcode()) / 4
+      when :MIRROR, :FLOWERGARDEN1, :FLOWERGARDEN2 then return oppstatdrop([0, 0, 0, 0, 0, 0, 1])
+      when :FLOWERGARDEN3, :FLOWERGARDEN4 then return oppstatdrop([0, 1, 0, 1, 0, 0, 1])
+      when :FLOWERGARDEN5 then return oppstatdrop([0, 2, 0, 2, 0, 0, 2])
+      when :NEWWORLD then return oppstatdrop([1, 1, 1, 1, 1, 1, 1])
+      when :INVERSE, :PSYTERRAIN, :SKY then return confucode()
+      when :BEWITCHED then return (paracode() + poisoncode() + sleepcode()) / 3
+      when :HAUNTED then return spoopycode()
+      when :COLOSSEUM then return selfstatboost([1, 0, 0, 0, 0, 0, 0])
+      else return paracode()
     end
   end
 
@@ -5800,7 +5896,7 @@ class PokeBattle_AI
     miniscore = 1.0
     miniscore *= 3 if getAIMemory().length >= 4 && getAIMemory().all? { |moveloop| moveloop != nil && moveloop.basedamage > 0 }
     miniscore *= 0.1 if @initial_scores.length > 0 && hasgreatmoves()
-    miniscore *= (pbAIfaster?(@move)) ? 1.5 : 0.5
+    miniscore *= pbAIfaster?(@move) ? 1.5 : 0.5
     if @attacker.hp == @attacker.totalhp
       miniscore *= 0.2
     else
@@ -5842,15 +5938,15 @@ class PokeBattle_AI
     miniscore = 1.0
     miniscore *= 0.7 if @attacker.pbOwnSide.effects[:StealthRock]
     miniscore *= 0.6 if @attacker.pbOwnSide.effects[:StickyWeb]
-    miniscore *= 0.9**@attacker.pbOwnSide.effects[:Spikes] if @attacker.pbOwnSide.effects[:Spikes] > 0
-    miniscore *= 0.9**@attacker.pbOwnSide.effects[:ToxicSpikes] if @attacker.pbOwnSide.effects[:ToxicSpikes] > 0
+    miniscore *= 0.9 ** @attacker.pbOwnSide.effects[:Spikes] if @attacker.pbOwnSide.effects[:Spikes] > 0
+    miniscore *= 0.9 ** @attacker.pbOwnSide.effects[:ToxicSpikes] if @attacker.pbOwnSide.effects[:ToxicSpikes] > 0
     miniscore *= 1.1 if @opponent.ability == :INTIMIDATE
     miniscore *= 1.1 if @battle.FE == :DIMENSIONAL && (@opponent.ability == :PRESSURE || @opponent.ability == :UNNERVE)
     miniscore *= 1.1 if @battle.FE == :CITY && @opponent.ability == :FRISK
     miniscore *= 1.1 if @opponent.crested == :THIEVUL
-    if @attacker.ability == :REGENERATOR && ((@attacker.hp.to_f) / @attacker.totalhp) < 0.75
+    if @attacker.ability == :REGENERATOR && (@attacker.hp.to_f / @attacker.totalhp) < 0.75
       miniscore *= 1.2
-      miniscore *= 1.2 if @attacker.ability == :REGENERATOR && ((@attacker.hp.to_f) / @attacker.totalhp) < 0.5
+      miniscore *= 1.2 if @attacker.ability == :REGENERATOR && (@attacker.hp.to_f / @attacker.totalhp) < 0.5
     end
     miniscore *= 1.5 if @mondata.partyroles.any? { |role| role.include?(:SWEEPER) } && @move.move == :PARTINGSHOT
     miniscore *= 1.2 if @mondata.partyroles.any? { |role| role.include?(:SWEEPER) } && (@move.move == :UTURN || @move.move == :VOLTSWITCH || @move.move == :FLIPTURN) && !pbAIfaster?()
@@ -6111,7 +6207,7 @@ class PokeBattle_AI
     miniscore *= 0.2 if @attacker.ability == :FORECAST && [:ROCK, :FIRE, :STEEL, :FIGHTING].any? { |type| @opponent.hasType?(type) }
     miniscore *= 1.3 if (@mondata.attitemworks && @attacker.item == :ICYROCK) || [:ICY, :SNOWYMOUNTAIN, :FROZENDIMENSION, :CLOUDS, :SKY].include?(@battle.FE)
     miniscore *= 1.3 if @battle.pbWeather != 0 && @battle.pbWeather != :HAIL
-    miniscore *= (@attacker.hasType?(:ICE)) ? 5 : 0.7
+    miniscore *= @attacker.hasType?(:ICE) ? 5 : 0.7
     if @attacker.ability == :SLUSHRUSH || @attacker.crested == :EMPOLEON || (@attacker.crested == :CASTFORM && @attacker.form == 3)
       miniscore *= 2
       miniscore *= 2 if notOHKO?(@attacker, @opponent, true)
@@ -6184,6 +6280,7 @@ class PokeBattle_AI
   end
 
   def suckercode
+    return 0 if @opponent.effects[:HyperBeam] > 0
     miniscore = 1.0
     return miniscore * 1.3 if getAIMemory().length >= 4 && getAIMemory().all? { |moveloop| moveloop != nil && moveloop.basedamage > 0 }
 
@@ -6354,13 +6451,13 @@ class PokeBattle_AI
     end
     miniscore *= 0.5 if @initial_scores.length > 0 && hasgreatmoves()
     miniscore *= 0.7 if @attacker.pbNonActivePokemonCount == 0 && @opponent.pbNonActivePokemonCount != 0
-    effcheck = PBTypes.twoTypeEff(@opponent.type1, (:FIRE), (:FIRE))
+    effcheck = PBTypes.twoTypeEff(@opponent.type1, :FIRE, :FIRE)
     miniscore *= 1.5 if effcheck > 4
     miniscore *= 0.5 if effcheck < 4
-    effcheck = PBTypes.twoTypeEff(@opponent.type2, (:FIRE), (:FIRE))
+    effcheck = PBTypes.twoTypeEff(@opponent.type2, :FIRE, :FIRE)
     miniscore *= 1.5 if effcheck > 4
     miniscore *= 0.5 if effcheck < 4
-    effcheck = PBTypes.twoTypeEff(checkAIbestMove().pbType(@opponent), (:FIRE), (:FIRE))
+    effcheck = PBTypes.twoTypeEff(checkAIbestMove().pbType(@opponent), :FIRE, :FIRE)
     miniscore *= 1.5 if effcheck > 4
     miniscore *= 0.5 if effcheck < 4
     return miniscore
@@ -6500,8 +6597,7 @@ class PokeBattle_AI
   end
 
   def psychicterraincode
-    return @move.basedamage > 0 ? 1 : 0 if @battle.FE == :UNDERWATER || @battle.FE == :NEWWORLD || @battle.FE == :PSYTERRAIN || (Rejuv && @battle.FE == :DRAGONSDEN)
-
+    return @move.basedamage > 0 ? 1 : 0 if !@battle.canChangeFE?(:PSYTERRAIN)
     if Rejuv && @battle.FE != :INDOOR
       return @move.basedamage > 0 ? 1 : 0 if @battle.state.effects[:PSYTERRAIN] > 0 || @battle.FE == :FROZENDIMENSION
 
@@ -6697,7 +6793,7 @@ class PokeBattle_AI
   end
 
   def electricterraincode
-    return @move.basedamage > 0 ? 1 : 0 if @battle.FE == :ELECTERRAIN || @battle.FE == :UNDERWATER || @battle.FE == :NEWWORLD || (Rejuv && @battle.FE == :DRAGONSDEN)
+    return @move.basedamage > 0 ? 1 : 0 if !@battle.canChangeFE?(:ELECTERRAIN)
 
     if Rejuv && @battle.FE != :INDOOR
       return @move.basedamage > 0 ? 1 : 0 if @battle.state.effects[:ELECTERRAIN] > 0 || @battle.FE == :FROZENDIMENSION
@@ -6724,7 +6820,7 @@ class PokeBattle_AI
   end
 
   def grassyterraincode
-    return @move.basedamage > 0 ? 1 : 0 if @battle.FE == :GRASSY || @battle.FE == :UNDERWATER || @battle.FE == :NEWWORLD || (Rejuv && @battle.FE == :DRAGONSDEN)
+    return @move.basedamage > 0 ? 1 : 0 if !@battle.canChangeFE?(:GRASSY)
 
     if Rejuv && @battle.FE != :INDOOR
       return @move.basedamage > 0 ? 1 : 0 if @battle.state.effects[:GRASSY] > 0 || @battle.FE == :FROZENDIMENSION
@@ -6758,7 +6854,7 @@ class PokeBattle_AI
   end
 
   def mistyterraincode
-    return 0 if @battle.FE == :MISTY || @battle.FE == :UNDERWATER || @battle.FE == :NEWWORLD || (Rejuv && @battle.FE == :DRAGONSDEN)
+    return 0 if @battle.canChangeFE?(:MISTY)
 
     if Rejuv && @battle.FE != :INDOOR
       return @move.basedamage > 0 ? 1 : 0 if @battle.state.effects[:MISTY] > 0 || @battle.FE == :FROZENDIMENSION
@@ -6804,6 +6900,7 @@ class PokeBattle_AI
     miniscore *= 1.2 if hpGainPerTurn > 1
     miniscore *= 0 if @opponent.ability == :CONTRARY
     miniscore *= 2 if @battle.FE == :MISTY && stat == PBStats::SPDEF
+    return miniscore
   end
 
   def flowershieldcode(score)
@@ -7263,7 +7360,7 @@ class PokeBattle_AI
         next if i.nil?
 
         healingmove = true if $cache.moves[i] && $cache.moves[i].checkFlag?(:healingmove)
-        curemove = true if (i == :HEALBELL || i == :AROMATHERAPY)
+        curemove = true if [:HEALBELL, :AROMATHERAPY].include?(i)
         wishmove = true if i == :WISH
         phasemove = true if PBStuff::PHASEMOVE.include?(i)
         pivotmove = true if PBStuff::PIVOTMOVE.include?(i)
@@ -7272,25 +7369,25 @@ class PokeBattle_AI
         screenmove = true if PBStuff::SCREENMOVE.include?(i)
         tauntmove = true if i == :TAUNT
         restmove = true if i == :REST
-        weathermove = true if (i == :SUNNYDAY || i == :RAINDANCE || i == :HAIL || i == :SANDSTORM || i == :SHADOWSKY)
-        fieldmove = true if (i == :GRASSYTERRAIN || i == :ELECTRICTERRAIN || i == :MISTYTERRAIN || i == :PSYCHICTERRAIN || i == :MIST || i == :IONDELUGE || i == :TOPSYTURVY)
+        weathermove = true if [:SUNNYDAY, :RAINDANCE, :HAIL, :SANDSTORM, :SHADOWSKY].include?(i)
+        fieldmove = true if [:GRASSYTERRAIN, :ELECTRICTERRAIN, :MISTYTERRAIN, :PSYCHICTERRAIN, :MIST, :IONDELUGE, :TOPSYTURVY].include?(i)
       end
-      monRoles.push(:SWEEPER)	if mon.ev[3] > 251 && (mon.nature == :MODEST || mon.nature == :JOLLY || mon.nature == :TIMID || mon.nature == :ADAMANT) || (mon.item == (:CHOICEBAND) || mon.item == (:CHOICESPECS) || mon.item == (:CHOICESCARF) || mon.ability == :GORILLATACTICS)
-      monRoles.push(:PHYSICALWALL) if healingmove && (mon.ev[2] > 251 && (mon.nature == :BOLD || mon.nature == :RELAXED || mon.nature == :IMPISH || mon.nature == :LAX))
-      monRoles.push(:SPECIALWALL)	if healingmove && (mon.ev[5] > 251 && (mon.nature == :CALM || mon.nature == :GENTLE || mon.nature == :SASSY || mon.nature == :CAREFUL))
-      monRoles.push(:CLERIC) 		if curemove || (wishmove && mon.ev[0] > 251)
-      monRoles.push(:PHAZER) 		if phasemove
-      monRoles.push(:SCREENER)	if mon.item == (:LIGHTCLAY) && screenmove
-      monRoles.push(:PIVOT)	if (pivotmove && healingmove) || (mon.ability == :REGENERATOR)
-      monRoles.push(:SPINNER)	if spinmove
-      monRoles.push(:TANK)	if (mon.ev[0] > 251 && !healingmove) || mon.item == (:ASSAULTVEST)
-      monRoles.push(:BATONPASSER) 	if batonmove
-      monRoles.push(:STALLBREAKER) if tauntmove || mon.item == (:CHOICEBAND) || mon.item == (:CHOICESPECS) || mon.ability == :GORILLATACTICS
-      monRoles.push(:STATUSABSORBER) if restmove || (mon.ability == :COMATOSE) || mon.item == (:TOXICORB) || mon.item == (:FLAMEORB) || (mon.ability == :GUTS) || (mon.ability == :QUICKFEET) || (mon.ability == :FLAREBOOST) || (mon.ability == :TOXICBOOST) || (mon.ability == :NATURALCURE) || (mon.ability == :MAGICGUARD) || (mon.ability == :MAGICBOUNCE) || (mon.species == :ZANGOOSE && mon.item == :ZANGCREST) || hydrationCheck(mon)
-      monRoles.push(:TRAPPER)	if PBStuff::TRAPPINGABILITIES.include?(mon.ability)
-      monRoles.push(:WEATHERSETTER) if weathermove || (mon.ability == :DROUGHT) || (mon.ability == :SANDSPIT) || (mon.ability == :SANDSTREAM) || (mon.ability == :DRIZZLE) || (mon.ability == :SNOWWARNING) || (mon.ability == :PRIMORDIALSEA) || (mon.ability == :DESOLATELAND) || (mon.ability == :DELTASTREAM)
-      monRoles.push(:FIELDSETTER)	if fieldmove || (mon.ability == :GRASSYSURGE) || (mon.ability == :ELECTRICSURGE) || (mon.ability == :MISTYSURGE) || (mon.ability == :PSYCHICSURGE) || mon.item == (:AMPLIFIELDROCK) || (mon.ability == :DARKSURGE)
-      monRoles.push(:SECOND)	if secondhighest
+      monRoles.push(:SWEEPER) if mon.ev[PBStats::SPEED] > 251 && ([:MODEST, :JOLLY, :TIMID, :ADAMANT].include?(mon.nature) || [:CHOICEBAND, :CHOICESPECS, :CHOICESCARF].include?(mon.item) || mon.ability == :GORILLATACTICS)
+      monRoles.push(:PHYSICALWALL) if healingmove && (mon.ev[PBStats::DEFENSE] > 251 && [:BOLD, :RELAXED, :IMPISH, :LAX].include?(mon.nature))
+      monRoles.push(:SPECIALWALL) if healingmove && (mon.ev[PBStats::SPDEF] > 251 && [:CALM, :GENTLE, :SASSY, :CAREFUL].include?(mon.nature))
+      monRoles.push(:CLERIC) if curemove || (wishmove && mon.ev[PBStats::HP] > 251)
+      monRoles.push(:PHAZER) if phasemove
+      monRoles.push(:SCREENER) if screenmove && mon.item == :LIGHTCLAY
+      monRoles.push(:PIVOT) if (pivotmove && healingmove) || mon.ability == :REGENERATOR
+      monRoles.push(:SPINNER) if spinmove
+      monRoles.push(:TANK) if (mon.ev[PBStats::HP] > 251 && !healingmove) || mon.item == :ASSAULTVEST
+      monRoles.push(:BATONPASSER) if batonmove
+      monRoles.push(:STALLBREAKER) if tauntmove || [:CHOICEBAND, :CHOICESPECS].include?(mon.item) || mon.ability == :GORILLATACTICS
+      monRoles.push(:STATUSABSORBER) if restmove || [:TOXICORB, :FLAMEORB].include?(mon.item) || [:COMATOSE, :GUTS, :QUICKFEET, :FLAREBOOST, :TOXICBOOST, :NATURALCURE, :MAGICGUARD, :MAGICBOUNCE].include?(mon.ability) || (mon.species == :ZANGOOSE && mon.item == :ZANGCREST) || hydrationCheck(mon)
+      monRoles.push(:TRAPPER) if PBStuff::TRAPPINGABILITIES.include?(mon.ability)
+      monRoles.push(:WEATHERSETTER) if weathermove || [:DROUGHT, :SANDSPIT, :SANDSTREAM, :DRIZZLE, :SNOWWARNING, :PRIMORDIALSEA, :DESOLATELAND, :DELTASTREAM].include?(mon.ability)
+      monRoles.push(:FIELDSETTER) if fieldmove || [:GRASSYSURGE, :ELECTRICSURGE, :MISTYSURGE, :PSYCHICSURGE, :DARKSURGE].include?(mon.ability) || mon.item == :AMPLIFIELDROCK
+      monRoles.push(:SECOND) if secondhighest
       partyRoles.push(monRoles)
     end
     return partyRoles[0] if targetmon
@@ -7377,8 +7474,6 @@ class PokeBattle_AI
   def pbRoughStat(battler, stat)
     return battler.pbSpeed if @mondata.skill >= HIGHSKILL && stat == PBStats::SPEED
 
-    stagemul = [2, 2, 2, 2, 2, 2, 2, 3, 4, 5, 6, 7, 8]
-    stagediv = [8, 7, 6, 5, 4, 3, 2, 2, 2, 2, 2, 2, 2]
     stage = battler.stages[stat] + 6
     value = 0
     value = battler.attack if stat == PBStats::ATTACK
@@ -7386,7 +7481,7 @@ class PokeBattle_AI
     value = battler.speed if stat == PBStats::SPEED
     value = battler.spatk if stat == PBStats::SPATK
     value = battler.spdef if stat == PBStats::SPDEF
-    return (value * 1.0 * stagemul[stage] / stagediv[stage]).floor
+    return (value * PBStats::StageMul[stage]).floor
   end
 
   def pbRoughAccuracy(move, attacker, opponent)
@@ -7784,72 +7879,24 @@ class PokeBattle_AI
     end
     typemod = move.pbTypeModifier(type, attacker, opponent, zorovar)
     typemod *= 2 if type == :FIRE && opponent.effects[:TarShot]
-    case opponent.crested
-      when :LUXRAY
-        typemod /= 2 if (type == :GHOST || type == :DARK)
-        typemod = 0 if type == :PSYCHIC
-      when :SAMUROTT
-        typemod /= 2 if (type == :BUG || type == :DARK || type == :ROCK)
-      when :LEAFEON
-        typemod /= 4 if (type == :FIRE || type == :FLYING)
-      when :GLACEON
-        typemod /= 4 if (type == :ROCK || type == :FIGHTING)
-      when :SIMISEAR
-        typemod /= 2 if [:STEEL, :FIRE, :ICE].include?(type)
-        typemod /= 2 if type == :WATER && @battle.FE != :UNDERWATER
-      when :SIMIPOUR
-        typemod /= 2 if [:GROUND, :WATER, :GRASS, :ELECTRIC].include?(type)
-      when :SIMISAGE
-        typemod /= 2 if [:BUG, :STEEL, :FIRE, :GRASS, :FAIRY].include?(type)
-        typemod /= 2 if type == :ICE && @battle.FE != :GLITCH
-      when :TORTERRA
-        if !($game_switches[:Inversemode] ^ (@battle.FE == :INVERSE))
-          typemod = 16 / typemod if typemod != 0
-        end
-    end
-    typemod *= 4 if id == :FREEZEDRY && (opponent.hasType?(:WATER))
-    typemod *= 2 if id == :CUT && (opponent.hasType?(:GRASS)) && (@battle.FE == :FOREST || @battle.ProgressiveFieldCheck(PBFields::FLOWERGARDEN, 2, 5))
+    move.irregularTypeMods(attacker, opponent, typemod, type)
+
     if id == :FLYINGPRESS
       if @battle.FE == :SKY
-        if PBTypes.oneTypeEff(:FLYING, opponent.type1) > 2 || (PBTypes.oneTypeEff(:FLYING, opponent.type1) < 2 && $game_switches[:Inversemode])
-          typemod *= 2
-        end
-        if PBTypes.oneTypeEff(:FLYING, opponent.type2) > 2 || (PBTypes.oneTypeEff(:FLYING, opponent.type2) < 2 && $game_switches[:Inversemode])
-          typemod *= 2
-        end
+        typemod *= 2 if $game_switches[:Inversemode] ? PBTypes.oneTypeEff(:FLYING, opponent.type1) > 2 : PBTypes.oneTypeEff(:FLYING, opponent.type1) < 2
+        typemod *= 2 if $game_switches[:Inversemode] ? PBTypes.oneTypeEff(:FLYING, opponent.type2) > 2 : PBTypes.oneTypeEff(:FLYING, opponent.type2) < 2
       else
         typemod2 = move.pbTypeModifier(:FLYING, attacker, opponent)
-        typemod3 = ((typemod * typemod2) / 4)
-        typemod = typemod3
+        typemod2 = move.irregularTypeMods(attacker, opponent, typemod2, :FLYING)
+        typemod = (typemod * typemod2) / 4
       end
     end
-    typemod = 0 if opponent.ability == :WONDERGUARD && !moldBreakerCheck(attacker) && typemod <= 4
 
     # Field Effect type changes go here
     typemod = move.fieldTypeChange(attacker, opponent, typemod, false)
     typemod = move.overlayTypeChange(attacker, opponent, typemod, false)
+    typemod = 0 if opponent.ability == :WONDERGUARD && !moldBreakerCheck(attacker) && typemod <= 4
 
-    # Cutting super effectiveness in half
-    if @battle.pbWeather == :STRONGWINDS && ((opponent.hasType?(:FLYING)) && !opponent.effects[:Roost]) &&
-       ((PBTypes.oneTypeEff(type, :FLYING) > 2) || (PBTypes.oneTypeEff(type, :FLYING) < 2 && ($game_switches[:Inversemode] || (@battle.FE == :INVERSE))))
-      typemod /= 2
-    end
-    if @battle.FE == :SNOWYMOUNTAIN && opponent.ability == :ICESCALES && opponent.hasType?(:ICE) && !moldBreakerCheck(attacker) &&
-       ((PBTypes.oneTypeEff(type, :ICE) > 2) || (PBTypes.oneTypeEff(type, :ICE) < 2 && ($game_switches[:Inversemode] || (@battle.FE == :INVERSE))))
-      typemod /= 2
-    end
-    if @battle.FE == :DRAGONSDEN && opponent.ability == :MULTISCALE && opponent.hasType?(:DRAGON) && !moldBreakerCheck(attacker) &&
-       ((PBTypes.oneTypeEff(type, :DRAGON) > 2) || (PBTypes.oneTypeEff(type, :DRAGON) < 2 && ($game_switches[:Inversemode] || (@battle.FE == :INVERSE))))
-      typemod /= 2
-    end
-    if @battle.ProgressiveFieldCheck(PBFields::FLOWERGARDEN, 4, 5) && opponent.hasType?(:GRASS) &&
-       ((PBTypes.oneTypeEff(type, :GRASS) > 2) || (PBTypes.oneTypeEff(type, :GRASS) < 2 && ($game_switches[:Inversemode] || (@battle.FE == :INVERSE))))
-      typemod /= 2
-    end
-    if @battle.FE == :BEWITCHED && opponent.hasType?(:FAIRY) && (opponent.ability == :PASTELVEIL || opponent.pbPartner.ability == :PASTELVEIL) && !moldBreakerCheck(attacker) &&
-       ((PBTypes.oneTypeEff(type, :FAIRY) > 2) || (PBTypes.oneTypeEff(type, :FAIRY) < 2 && ($game_switches[:Inversemode] || (@battle.FE == :INVERSE))))
-      typemod /= 2
-    end
     return 1 if typemod == 0 && move.function == 0x111
 
     return typemod
@@ -7871,12 +7918,11 @@ class PokeBattle_AI
     case move.move
       when :WEATHERBALL
         weather = @battle.pbWeather
-        move.type = (:NORMAL)
+        move.type = :NORMAL
         move.type = :FIRE if (weather == :SUNNYDAY && !attacker.hasWorkingItem(:UTILITYUMBRELLA))
         move.type = :WATER if (weather == :RAINDANCE && !attacker.hasWorkingItem(:UTILITYUMBRELLA))
         move.type = :ROCK if weather == :SANDSTORM
         move.type = :ICE if weather == :HAIL
-        move.basedamage *= 2 if @battle.pbWeather != 0 || @battle.FE == :RAINBOW && move.basedamage == 50
 
       when :HIDDENPOWER
         move.type = move.pbType(attacker) if attacker
@@ -9001,12 +9047,12 @@ class PokeBattle_AI
           for opp in [@opponent, @opponent.pbPartner]
             next if opp.hp <= 0
 
-            rolescore += (10) * opp.stages[PBStats::ATTACK]	if opp.stages[PBStats::ATTACK] < 0
-            rolescore += (20) * opp.stages[PBStats::DEFENSE]	if opp.stages[PBStats::DEFENSE] < 0
-            rolescore += (10) * opp.stages[PBStats::SPATK]		if opp.stages[PBStats::SPATK] < 0
-            rolescore += (20) * opp.stages[PBStats::SPDEF]		if opp.stages[PBStats::SPDEF] < 0
-            rolescore += (10) * opp.stages[PBStats::SPEED]		if opp.stages[PBStats::SPEED] < 0
-            rolescore += (20) * opp.stages[PBStats::EVASION]	if opp.stages[PBStats::ACCURACY] < 0
+            rolescore += 10 * opp.stages[PBStats::ATTACK] if opp.stages[PBStats::ATTACK] < 0
+            rolescore += 20 * opp.stages[PBStats::DEFENSE] if opp.stages[PBStats::DEFENSE] < 0
+            rolescore += 10 * opp.stages[PBStats::SPATK] if opp.stages[PBStats::SPATK] < 0
+            rolescore += 20 * opp.stages[PBStats::SPDEF] if opp.stages[PBStats::SPDEF] < 0
+            rolescore += 10 * opp.stages[PBStats::SPEED] if opp.stages[PBStats::SPEED] < 0
+            rolescore += 20 * opp.stages[PBStats::EVASION] if opp.stages[PBStats::ACCURACY] < 0
           end
         end
         rolescore += 60 if theseRoles.include?(:SCREENER)
@@ -9053,33 +9099,33 @@ class PokeBattle_AI
         end
         if theseRoles.include?(:WEATHERSETTER)
           rolescore += 30
-          if (i.ability == :DROUGHT) || (nonmegaform.ability == :DROUGHT) || i.pbHasMove?(:SUNNYDAY)
+          if i.ability == :DROUGHT || nonmegaform.ability == :DROUGHT || i.pbHasMove?(:SUNNYDAY)
             rolescore += 60 if @battle.weather != :SUNNYDAY
-          elsif (i.ability == :DRIZZLE) || (nonmegaform.ability == :DRIZZLE) || i.pbHasMove?(:RAINDANCE)
+          elsif i.ability == :DRIZZLE || nonmegaform.ability == :DRIZZLE || i.pbHasMove?(:RAINDANCE)
             rolescore += 60 if @battle.weather != :RAINDANCE
-          elsif (i.ability == :SANDSTREAM) || (nonmegaform.ability == :SANDSTREAM) || (i.ability == :SANDSPIT) || (nonmegaform.ability == :SANDSPIT) || i.pbHasMove?(:SANDSTORM)
+          elsif i.ability == :SANDSTREAM || nonmegaform.ability == :SANDSTREAM || i.ability == :SANDSPIT || nonmegaform.ability == :SANDSPIT || i.pbHasMove?(:SANDSTORM)
             rolescore += 60 if @battle.weather != :SANDSTORM
-          elsif (i.ability == :SNOWWARNING) || (nonmegaform.ability == :SNOWWARNING) || i.pbHasMove?(:HAIL)
+          elsif i.ability == :SNOWWARNING || nonmegaform.ability == :SNOWWARNING || i.pbHasMove?(:HAIL)
             rolescore += 60 if @battle.weather != :HAIL
-          elsif (i.ability == :PRIMORDIALSEA) || (i.ability == :DESOLATELAND) || (i.ability == :DELTASTREAM) ||
-                (nonmegaform.ability == :PRIMORDIALSEA) || (nonmegaform.ability == :DESOLATELAND) || (nonmegaform.ability == :DELTASTREAM)
+          elsif i.ability == :PRIMORDIALSEA || i.ability == :DESOLATELAND || i.ability == :DELTASTREAM ||
+                nonmegaform.ability == :PRIMORDIALSEA || nonmegaform.ability == :DESOLATELAND || nonmegaform.ability == :DELTASTREAM
             rolescore += 60
           end
         end
         if theseRoles.include?(:FIELDSETTER)
           rolescore += 30
           if (i.ability == :ELECTRICSURGE) || (nonmegaform.ability == :ELECTRICSURGE) || i.pbHasMove?(:IONDELUGE) || i.pbHasMove?(:ELECTRICTERRAIN) || i.pbHasMove?(:PLASMAFISTS)
-            rolescore += 60 if @battle.FE != :ELECTERRAIN
+            rolescore += 60 if @battle.canChangeFE?(:ELECTERRAIN)
           elsif (i.ability == :GRASSYSURGE) || (nonmegaform.ability == :GRASSYSURGE) || i.pbHasMove?(:GRASSYTERRAIN) # || (i.ability == :SEEDSOWER)
-            rolescore += 60 if @battle.FE != :GRASSY && !@battle.ProgressiveFieldCheck(PBFields::FLOWERGARDEN)
+            rolescore += 60 if @battle.canChangeFE?(:GRASSY)
           elsif (i.ability == :MISTYSURGE) || (nonmegaform.ability == :MISTYSURGE) || i.pbHasMove?(:MISTYTERRAIN) || i.pbHasMove?(:MIST)
-            rolescore += 60 if @battle.FE != :MISTY
+            rolescore += 60 if @battle.canChangeFE?(:MISTY)
           elsif (i.ability == :PSYCHICSURGE) || (nonmegaform.ability == :PSYCHICSURGE) || i.pbHasMove?(:PSYCHICTERRAIN)
-            rolescore += 60 if @battle.FE != :PSYCHICTERRAIN
+            rolescore += 60 if @battle.canChangeFE?(:PSYCHICTERRAIN)
           elsif i.pbHasMove?(:CONVERSION) && i.pbHasMove?(:CONVERSION2)
-            rolescore += 60 if @battle.FE != :GLITCH
+            rolescore += 60 if @battle.canChangeFE?(:GLITCH)
           elsif i.pbHasMove?(:TOPSYTURVY)
-            rolescore += 60 if @battle.FE != :INVERSE
+            rolescore += 60 if @battle.canChangeFE?(:INVERSE)
           end
         end
       end
@@ -9089,21 +9135,21 @@ class PokeBattle_AI
       weatherscore = 0
       case @battle.weather
         when :HAIL
-          weatherscore += 25 if (i.ability == :MAGICGUARD) || (i.ability == :OVERCOAT) || i.hasType?(:ICE) || (i.ability == :WONDERGUARD && @battle.FE == :COLOSSEUM)
-          weatherscore += 50 if (i.ability == :SNOWCLOAK) || (i.ability == :ICEBODY) || i.ability == :LUNARIDOL
-          weatherscore += 80 if (i.ability == :SLUSHRUSH) || (i.item == :EMPCREST && i.species == :EMPOLEON)
-          weatherscore += 30 if (i.ability == :ICEFACE) && i.form == 1
+          weatherscore += 25 if i.ability == :MAGICGUARD || i.ability == :OVERCOAT || i.hasType?(:ICE) || (i.ability == :WONDERGUARD && @battle.FE == :COLOSSEUM)
+          weatherscore += 50 if i.ability == :SNOWCLOAK || i.ability == :ICEBODY || i.ability == :LUNARIDOL
+          weatherscore += 80 if i.ability == :SLUSHRUSH || (i.item == :EMPCREST && i.species == :EMPOLEON)
+          weatherscore += 30 if i.ability == :ICEFACE && i.form == 1
         when :RAINDANCE
-          weatherscore += 50 if (i.ability == :DRYSKIN) || (i.ability == :HYDRATION) || (i.ability == :RAINDISH)
-          weatherscore += 80 if (i.ability == :SWIFTSWIM)
+          weatherscore += 50 if i.ability == :DRYSKIN || i.ability == :HYDRATION || i.ability == :RAINDISH
+          weatherscore += 80 if i.ability == :SWIFTSWIM
         when :SUNNYDAY
-          weatherscore -= 40 if (i.ability == :DRYSKIN)
-          weatherscore += 50 if (i.ability == :SOLARPOWER) || (i.ability == :SOLARIDOL)
-          weatherscore += 80 if (i.ability == :CHLOROPHYLL)
+          weatherscore -= 40 if i.ability == :DRYSKIN
+          weatherscore += 50 if i.ability == :SOLARPOWER || i.ability == :SOLARIDOL
+          weatherscore += 80 if i.ability == :CHLOROPHYLL
         when :SANDSTORM
-          weatherscore += 25 if (i.ability == :MAGICGUARD) || (i.ability == :OVERCOAT) || i.hasType?(:ROCK) || i.hasType?(:GROUND) || i.hasType?(:STEEL) || (i.ability == :WONDERGUARD && @battle.FE == :COLOSSEUM)
-          weatherscore += 50 if (i.ability == :SANDVEIL) || (i.ability == :SANDFORCE)
-          weatherscore += 80 if (i.ability == :SANDRUSH)
+          weatherscore += 25 if i.ability == :MAGICGUARD || i.ability == :OVERCOAT || i.hasType?(:ROCK) || i.hasType?(:GROUND) || i.hasType?(:STEEL) || (i.ability == :WONDERGUARD && @battle.FE == :COLOSSEUM)
+          weatherscore += 50 if i.ability == :SANDVEIL || i.ability == :SANDFORCE
+          weatherscore += 80 if i.ability == :SANDRUSH
       end
       if @battle.trickroom > 0
         weatherscore += i.pbSpeed < @opponent.pbSpeed ? 50 : -50
@@ -9119,8 +9165,8 @@ class PokeBattle_AI
           movesscore += 30 if nonmegaform.hasType?(:FLYING) || nonmegaform.hasType?(:STEEL) || [:LEVITATE, :SOLARDIOL, :LUNARIDOL].include?(nonmegaform.ability)
         end
         if i.pbHasMove?(:CLEARSMOG) || i.pbHasMove?(:HAZE)
-          movesscore += (10) * statchangecounter(@opponent, 1, 7, 1)
-          movesscore += (10) * statchangecounter(@opponent.pbPartner, 1, 7, 1)
+          movesscore += 10 * statchangecounter(@opponent, 1, 7, 1)
+          movesscore += 10 * statchangecounter(@opponent.pbPartner, 1, 7, 1)
         end
         movesscore += 25 if i.pbHasMove?(:FAKEOUT) || i.pbHasMove?(:FIRSTIMPRESSION)
         if @attacker.pbPartner.totalhp != 0
@@ -9149,19 +9195,19 @@ class PokeBattle_AI
         case i.ability
           when :DISGUISE
             if i.effects[:Disguise]
-              abilityscore += (10) * statchangecounter(@opponent, 1, 7, 1)
-              abilityscore += (10) * statchangecounter(@opponent.pbPartner, 1, 7, 1)
+              abilityscore += 10 * statchangecounter(@opponent, 1, 7, 1)
+              abilityscore += 10 * statchangecounter(@opponent.pbPartner, 1, 7, 1)
               abilityscore += 50 if roughdamagearray[0].max >= 100 || roughdamagearray[1].max >= 100
             end
           when :ICEFACE
             if i.effects[:IceFace] && (@opponent.attack > @opponent.spatk || @battle.FE == :FROZENDIMENSION)
-              abilityscore += (10) * statchangecounter(@opponent, 1, 7, 1)
-              abilityscore += (10) * statchangecounter(@opponent.pbPartner, 1, 7, 1)
+              abilityscore += 10 * statchangecounter(@opponent, 1, 7, 1)
+              abilityscore += 10 * statchangecounter(@opponent.pbPartner, 1, 7, 1)
               abilityscore += 50 if roughdamagearray[0].max >= 100 || roughdamagearray[1].max >= 100
             end
           when :UNAWARE
-            abilityscore += (10) * statchangecounter(@opponent, 1, 7, 1)
-            abilityscore += (10) * statchangecounter(@opponent.pbPartner, 1, 7, 1)
+            abilityscore += 10 * statchangecounter(@opponent, 1, 7, 1)
+            abilityscore += 10 * statchangecounter(@opponent.pbPartner, 1, 7, 1)
           when :DROUGHT, :DESOLATELAND
             abilityscore += 40 if @opponent.hasType?(:WATER)
             abilityscore += 40 if @opponent.pbPartner.hasType?(:WATER)
@@ -9178,12 +9224,12 @@ class PokeBattle_AI
             abilityscore += 15 if checkAImoves(PBStuff::PARAMOVE, aimem)
             abilityscore += 15 if checkAImoves(PBStuff::PARAMOVE, aimem2)
           when :OBLIVIOUS
-            abilityscore += 20 if (@opponent.ability == :CUTECHARM) || (@opponent.pbPartner.ability == :CUTECHARM)
+            abilityscore += 20 if @opponent.ability == :CUTECHARM || @opponent.pbPartner.ability == :CUTECHARM
             abilityscore += 20 if checkAImoves([:ATTRACT], aimem)
             abilityscore += 20 if checkAImoves([:ATTRACT], aimem2)
           when :COMPOUNDEYES
-            abilityscore += 25 if (@opponent.item == :LAXINCENSE) || (@opponent.item == :BRIGHTPOWDER) || @opponent.stages[PBStats::EVASION] > 0 || accuracyWeatherAbilityActive?(@opponent)
-            abilityscore += 25 if (@opponent.pbPartner.item == :LAXINCENSE) || (@opponent.pbPartner.item == :BRIGHTPOWDER) || @opponent.pbPartner.stages[PBStats::EVASION] > 0 || accuracyWeatherAbilityActive?(@opponent.pbPartner)
+            abilityscore += 25 if @opponent.item == :LAXINCENSE || @opponent.item == :BRIGHTPOWDER || @opponent.stages[PBStats::EVASION] > 0 || accuracyWeatherAbilityActive?(@opponent)
+            abilityscore += 25 if @opponent.pbPartner.item == :LAXINCENSE || @opponent.pbPartner.item == :BRIGHTPOWDER || @opponent.pbPartner.stages[PBStats::EVASION] > 0 || accuracyWeatherAbilityActive?(@opponent.pbPartner)
           when :COMATOSE
             abilityscore += 20 if checkAImoves(PBStuff::BURNMOVE, aimem)
             abilityscore += 20 if checkAImoves(PBStuff::PARAMOVE, aimem)
@@ -9286,13 +9332,13 @@ class PokeBattle_AI
             abilityscore += 30 if (@opponent.pbPartner.hp > 0 && i.gender == @opponent.pbPartner.gender) && i.gender != 2
           when :SCRAPPY
             abilityscore += 30 if @opponent.hasType?(:GHOST)
-            abilityscore += 30 if (@opponent.pbPartner.hp > 0 && @opponent.pbPartner.hasType?(:GHOST))
+            abilityscore += 30 if @opponent.pbPartner.hp > 0 && @opponent.pbPartner.hasType?(:GHOST)
           when :LIGHTMETAL
             abilityscore += 10 if checkAImoves([:GRASSKNOT, :LOWKICK], aimem)
             abilityscore += 10 if checkAImoves([:GRASSKNOT, :LOWKICK], aimem2) && @mondata.skill >= BESTSKILL
           when :ANALYTIC
             abilityscore += 30 if !pbAIfaster?(nil, nil, i, @opponent)
-            abilityscore += 30 if (@opponent.pbPartner.hp > 0 && !pbAIfaster?(nil, nil, i, @opponent.pbPartner))
+            abilityscore += 30 if @opponent.pbPartner.hp > 0 && !pbAIfaster?(nil, nil, i, @opponent.pbPartner)
           when :ILLUSION
             abilityscore += 40
           when :MOXIE, :BEASTBOOST, :SOULHEART, :GRIMNEIGH, :CHILLINGNEIGH, :ASONE
@@ -9317,8 +9363,8 @@ class PokeBattle_AI
           when :BULLETPROOF
             abilityscore += 60 if (PBStuff::BULLETMOVE).include?(checkAIbestMove().move) || (@opponent.pbPartner.hp > 0 && (PBStuff::BULLETMOVE).include?(checkAIbestMove(@opponent.pbPartner).move))
           when :AURABREAK
-            abilityscore += 50 if (@opponent.ability == :FAIRYAURA) || (@opponent.ability == :DARKAURA)
-            abilityscore += 50 if (@opponent.pbPartner.hp > 0 && (@opponent.pbPartner.ability == :FAIRYAURA) || (@opponent.pbPartner.ability == :DARKAURA))
+            abilityscore += 50 if @opponent.ability == :FAIRYAURA || @opponent.ability == :DARKAURA
+            abilityscore += 50 if @opponent.pbPartner.hp > 0 && (@opponent.pbPartner.ability == :FAIRYAURA || @opponent.pbPartner.ability == :DARKAURA)
           when :PROTEAN, :LIBERO
             abilityscore += 40 if pbAIfaster?(nil, nil, i, @opponent) || (@opponent.pbPartner.hp > 0 && pbAIfaster?(nil, nil, i, @opponent.pbPartner))
           when :DANCER
@@ -9330,8 +9376,8 @@ class PokeBattle_AI
             abilityscore += 20 if checkAIpriority(aimem)
             abilityscore += 20 if checkAIpriority(aimem2) && @mondata.skill >= BESTSKILL
           when :SANDSTREAM, :SNOWWARNING, :SANDSTREAM, :SNOWWARNING, :SANDSPIT
-            abilityscore += 70 if (@opponent.ability == :WONDERGUARD)
-            abilityscore += 70 if (@opponent.pbPartner.hp > 0 && (@opponent.pbPartner.ability == :WONDERGUARD))
+            abilityscore += 70 if @opponent.ability == :WONDERGUARD
+            abilityscore += 70 if @opponent.pbPartner.hp > 0 && @opponent.pbPartner.ability == :WONDERGUARD
           when :DEFEATIST
             abilityscore -= 80 if @attacker.hp != 0 # hard switch
           when :STURDY
@@ -9350,7 +9396,7 @@ class PokeBattle_AI
         end
       end
       if transformed # pokemon has imposter ability. because we copy pokemon, we can use i to see ability opponent
-        abilityscore += 50 if (i.ability == :PUREPOWER) || (i.ability == :HUGEPOWER) || (i.ability == :MOXIE) || (i.ability == :CHILLINGNEIGH) || (i.ability == :GRIMNEIGH) || (i.ability == :SPEEDBOOST) || (i.ability == :BEASTBOOST) || (i.ability == :SOULHEART) || (i.ability == :WONDERGUARD) || (i.ability == :PROTEAN) || (i.ability == :LIBERO)
+        abilityscore += 50 if [:PUREPOWER, :HUGEPOWER, :MOXIE, :CHILLINGNEIGH, :GRIMNEIGH, :SPEEDBOOST, :BEASTBOOST, :SOULHEART, :WONDERGUARD, :PROTEAN, :LIBERO].include?(i.ability)
         abilityscore += 30 if (i.level > nonmegaform.level) || pbGetMonRoles(@opponent).include?(:SWEEPER)
         abilityscore = -200 if i.effects[:Substitute] > 0
         abilityscore = -500 if i.species == :DITTO
@@ -9360,35 +9406,35 @@ class PokeBattle_AI
       # Items
       itemscore = 0
       if @mondata.skill >= HIGHSKILL
-        if (i.item == :ROCKYHELMET)
-          itemscore += 30 if (@opponent.ability == :SKILLLINK)
-          itemscore += 30 if (@opponent.pbPartner.ability == :SKILLLINK)
+        if i.item == :ROCKYHELMET
+          itemscore += 30 if @opponent.ability == :SKILLLINK
+          itemscore += 30 if @opponent.pbPartner.ability == :SKILLLINK
           itemscore += 30 if checkAIbestMove(@opponent).contactMove? || (@opponent.pbPartner.hp > 0 && checkAIbestMove(@opponent.pbPartner).contactMove?)
         end
-        if (i.item == :AIRBALLOON)
+        if i.item == :AIRBALLOON
           allground = true
           for j in aimem
-            allground = false if !(j.pbType(@opponent) == :GROUND)
+            allground = false if j.pbType(@opponent) != :GROUND
           end
           if @mondata.skill >= BESTSKILL
             for j in aimem2
-              allground = false if !(j.pbType(@opponent.pbPartner) == :GROUND)
+              allground = false if j.pbType(@opponent.pbPartner) != :GROUND
             end
           end
           itemscore += 60 if :GROUND == checkAIbestMove().pbType(@opponent) || (@opponent.pbPartner.hp > 0 && :GROUND == checkAIbestMove(@opponent.pbPartner).pbType(@opponent.pbPartner))
           itemscore += 100 if allground
         end
-        if (i.item == :FLOATSTONE)
+        if i.item == :FLOATSTONE
           itemscore += 10 if checkAImoves([:LOWKICK, :GRASSKNOT], aimem)
         end
-        if (i.item == :DESTINYKNOT)
-          itemscore += 20 if (@opponent.ability == :CUTECHARM)
+        if i.item == :DESTINYKNOT
+          itemscore += 20 if @opponent.ability == :CUTECHARM
           itemscore += 20 if checkAImoves([:ATTRACT], aimem)
         end
-        if (i.item == :ABSORBBULB)
+        if i.item == :ABSORBBULB
           itemscore += 25 if :WATER == checkAIbestMove().pbType(@opponent) || (@opponent.pbPartner.hp > 0 && :WATER == checkAIbestMove(@opponent.pbPartner).pbType(@opponent.pbPartner))
         end
-        if (i.item == :CELLBATTERY) && !(Rejuv && @battle.FE == :ELECTERRAIN)
+        if i.item == :CELLBATTERY && !(Rejuv && @battle.FE == :ELECTERRAIN)
           itemscore += 25 if :ELECTRIC == checkAIbestMove().pbType(@opponent) || (@opponent.pbPartner.hp > 0 && :ELECTRIC == checkAIbestMove(@opponent.pbPartner).pbType(@opponent.pbPartner))
         end
         if (i.item == :FOCUSSASH || (@battle.FE == :CHESS && i.pokemon.piece == :PAWN) || i.ability == :STURDY || (@battle.FE == :CHESS && i.ability == :STALWART)) && i.hp == i.totalhp
@@ -9422,191 +9468,191 @@ class PokeBattle_AI
       if @mondata.skill >= BESTSKILL
         case @battle.FE
           when :ELECTERRAIN
-            fieldscore += 50 if (i.ability == :SURGESURFER)
-            fieldscore += 50 if Rejuv && (i.ability == :TERAVOLT)
-            fieldscore += 25 if (i.ability == :GALVANIZE)
-            fieldscore += 25 if Rejuv && (i.ability == :STEADFAST)
-            fieldscore += 25 if Rejuv && (i.ability == :QUICKFEET)
-            fieldscore += 25 if Rejuv && (i.ability == :LIGHTNINGROD)
-            fieldscore += 25 if Rejuv && (i.ability == :BATTERY)
-            fieldscore += 25 if (i.ability == :TRANSISTOR)
+            fieldscore += 50 if i.ability == :SURGESURFER
+            fieldscore += 50 if Rejuv && i.ability == :TERAVOLT
+            fieldscore += 25 if i.ability == :GALVANIZE
+            fieldscore += 25 if Rejuv && i.ability == :STEADFAST
+            fieldscore += 25 if Rejuv && i.ability == :QUICKFEET
+            fieldscore += 25 if Rejuv && i.ability == :LIGHTNINGROD
+            fieldscore += 25 if Rejuv && i.ability == :BATTERY
+            fieldscore += 25 if i.ability == :TRANSISTOR
             fieldscore += 25 if i.hasType?(:ELECTRIC)
-            fieldscore += 20 if Rejuv && (i.ability == :STATIC)
-            fieldscore += 15 if Rejuv && (i.ability == :VOLTABSORB)
+            fieldscore += 20 if Rejuv && i.ability == :STATIC
+            fieldscore += 15 if Rejuv && i.ability == :VOLTABSORB
           when :GRASSY
-            fieldscore += 30 if (i.ability == :GRASSPELT)
-            fieldscore += 30 if (i.ability == :COTTONDOWN)
-            fieldscore += 30 if Rejuv && (i.ability == :OVERGROW)
-            fieldscore += 20 if Rejuv && (i.ability == :SAPSIPPER)
-            fieldscore += 25 if Rejuv && (i.ability == :HARVEST)
+            fieldscore += 30 if i.ability == :GRASSPELT
+            fieldscore += 30 if i.ability == :COTTONDOWN
+            fieldscore += 30 if Rejuv && i.ability == :OVERGROW
+            fieldscore += 20 if Rejuv && i.ability == :SAPSIPPER
+            fieldscore += 25 if Rejuv && i.ability == :HARVEST
             fieldscore += 25 if i.hasType?(:GRASS) || i.hasType?(:FIRE)
           when :MISTY
             fieldscore += 20 if i.hasType?(:FAIRY)
-            fieldscore += 20 if (i.ability == :MARVELSCALE)
-            fieldscore += 20 if (i.ability == :DRYSKIN)
-            fieldscore += 20 if (i.ability == :WATERCOMPACTION)
-            fieldscore += 25 if (i.ability == :PIXILATE)
-            fieldscore += 25 if (i.ability == :SOULHEART)
-            fieldscore += 20 if (i.ability == :PASTELVEIL)
+            fieldscore += 20 if i.ability == :MARVELSCALE
+            fieldscore += 20 if i.ability == :DRYSKIN
+            fieldscore += 20 if i.ability == :WATERCOMPACTION
+            fieldscore += 25 if i.ability == :PIXILATE
+            fieldscore += 25 if i.ability == :SOULHEART
+            fieldscore += 20 if i.ability == :PASTELVEIL
           when :DARKCRYSTALCAVERN
-            fieldscore += 30 if (i.ability == :PRISMARMOR)
-            fieldscore += 30 if (i.ability == :SHADOWSHIELD)
+            fieldscore += 30 if i.ability == :PRISMARMOR
+            fieldscore += 30 if i.ability == :SHADOWSHIELD
           when :CHESS
-            fieldscore += 10 if (i.ability == :ADAPTABILITY)
-            fieldscore += 10 if (i.ability == :SYNCHRONIZE)
-            fieldscore += 10 if (i.ability == :ANTICIPATION)
-            fieldscore += 10 if (i.ability == :TELEPATHY)
-            fieldscore += 30 if Rejuv && (i.ability == :STANCECHANGE)
-            fieldscore += 25 if Rejuv && (i.ability == :STALL)
+            fieldscore += 10 if i.ability == :ADAPTABILITY
+            fieldscore += 10 if i.ability == :SYNCHRONIZE
+            fieldscore += 10 if i.ability == :ANTICIPATION
+            fieldscore += 10 if i.ability == :TELEPATHY
+            fieldscore += 30 if Rejuv && i.ability == :STANCECHANGE
+            fieldscore += 25 if Rejuv && i.ability == :STALL
           when :BIGTOP
-            fieldscore += 30 if (i.ability == :SHEERFORCE)
-            fieldscore += 30 if (i.ability == :PUREPOWER)
-            fieldscore += 30 if (i.ability == :HUGEPOWER)
-            fieldscore += 30 if (i.ability == :GUTS)
-            fieldscore += 10 if (i.ability == :DANCER)
+            fieldscore += 30 if i.ability == :SHEERFORCE
+            fieldscore += 30 if i.ability == :PUREPOWER
+            fieldscore += 30 if i.ability == :HUGEPOWER
+            fieldscore += 30 if i.ability == :GUTS
+            fieldscore += 10 if i.ability == :DANCER
             fieldscore += 20 if i.hasType?(:FIGHTING)
-            fieldscore += 20 if (i.ability == :PUNKROCK)
+            fieldscore += 20 if i.ability == :PUNKROCK
           when :BURNING
             fieldscore += 25 if i.hasType?(:FIRE)
-            fieldscore += 15 if (i.ability == :WATERVEIL)
-            fieldscore += 15 if (i.ability == :HEATPROOF)
-            fieldscore += 15 if (i.ability == :WATERBUBBLE)
-            fieldscore += 30 if (i.ability == :FLASHFIRE)
-            fieldscore += 30 if (i.ability == :FLAREBOOST)
-            fieldscore += 30 if (i.ability == :BLAZE)
-            fieldscore -= 30 if (i.ability == :ICEBODY)
-            fieldscore -= 30 if (i.ability == :LEAFGUARD)
-            fieldscore -= 30 if (i.ability == :GRASSPELT)
-            fieldscore -= 30 if (i.ability == :FLUFFY)
+            fieldscore += 15 if i.ability == :WATERVEIL
+            fieldscore += 15 if i.ability == :HEATPROOF
+            fieldscore += 15 if i.ability == :WATERBUBBLE
+            fieldscore += 30 if i.ability == :FLASHFIRE
+            fieldscore += 30 if i.ability == :FLAREBOOST
+            fieldscore += 30 if i.ability == :BLAZE
+            fieldscore -= 30 if i.ability == :ICEBODY
+            fieldscore -= 30 if i.ability == :LEAFGUARD
+            fieldscore -= 30 if i.ability == :GRASSPELT
+            fieldscore -= 30 if i.ability == :FLUFFY
           when :VOLCANIC
             fieldscore += 25 if i.hasType?(:FIRE)
-            fieldscore += 15 if (i.ability == :WATERVEIL)
-            fieldscore += 15 if (i.ability == :HEATPROOF)
-            fieldscore += 15 if (i.ability == :WATERBUBBLE)
-            fieldscore += 20 if (i.ability == :MAGMAARMOR) || (nonmegaform.ability == :MAGMAARMOR)
-            fieldscore += 25 if (i.ability == :STEAMENGINE)
-            fieldscore += 30 if (i.ability == :FLASHFIRE)
-            fieldscore += 30 if (i.ability == :FLAREBOOST)
-            fieldscore += 30 if (i.ability == :BLAZE)
-            fieldscore -= 30 if (i.ability == :ICEBODY)
-            fieldscore -= 30 if (i.ability == :LEAFGUARD)
-            fieldscore -= 30 if (i.ability == :GRASSPELT)
-            fieldscore -= 30 if (i.ability == :FLUFFY)
-            fieldscore -= 30 if (i.ability == :ICEFACE)
+            fieldscore += 15 if i.ability == :WATERVEIL
+            fieldscore += 15 if i.ability == :HEATPROOF
+            fieldscore += 15 if i.ability == :WATERBUBBLE
+            fieldscore += 20 if i.ability == :MAGMAARMOR || nonmegaform.ability == :MAGMAARMOR
+            fieldscore += 25 if i.ability == :STEAMENGINE
+            fieldscore += 30 if i.ability == :FLASHFIRE
+            fieldscore += 30 if i.ability == :FLAREBOOST
+            fieldscore += 30 if i.ability == :BLAZE
+            fieldscore -= 30 if i.ability == :ICEBODY
+            fieldscore -= 30 if i.ability == :LEAFGUARD
+            fieldscore -= 30 if i.ability == :GRASSPELT
+            fieldscore -= 30 if i.ability == :FLUFFY
+            fieldscore -= 30 if i.ability == :ICEFACE
           when :SWAMP
-            fieldscore += 15 if (i.ability == :GOOEY)
-            fieldscore += 20 if (i.ability == :WATERCOMPACTION)
-            fieldscore += 15 if (i.ability == :PROPELLERTAIL)
-            fieldscore += 20 if (i.ability == :DRYSKIN)
-            fieldscore += 10 if ((i.ability == :RATTLED) || (nonmegaform.ability == :RATTLED))
+            fieldscore += 15 if i.ability == :GOOEY
+            fieldscore += 20 if i.ability == :WATERCOMPACTION
+            fieldscore += 15 if i.ability == :PROPELLERTAIL
+            fieldscore += 20 if i.ability == :DRYSKIN
+            fieldscore += 10 if (i.ability == :RATTLED || nonmegaform.ability == :RATTLED)
           when :RAINBOW
-            fieldscore += 10 if (i.ability == :WONDERSKIN)
-            fieldscore += 20 if (i.ability == :MARVELSCALE)
-            fieldscore += 25 if (i.ability == :SOULHEART)
-            fieldscore += 30 if (i.ability == :CLOUDNINE)
-            fieldscore += 30 if (i.ability == :PRISMARMOR)
-            fieldscore += 20 if (i.ability == :PASTELVEIL)
+            fieldscore += 10 if i.ability == :WONDERSKIN
+            fieldscore += 20 if i.ability == :MARVELSCALE
+            fieldscore += 25 if i.ability == :SOULHEART
+            fieldscore += 30 if i.ability == :CLOUDNINE
+            fieldscore += 30 if i.ability == :PRISMARMOR
+            fieldscore += 20 if i.ability == :PASTELVEIL
           when :CORROSIVE
-            fieldscore += 20 if (i.ability == :POISONHEAL)
-            fieldscore += 25 if (i.ability == :TOXICBOOST)
-            fieldscore += 30 if (i.ability == :MERCILESS)
-            fieldscore += 30 if (i.ability == :CORROSION)
+            fieldscore += 20 if i.ability == :POISONHEAL
+            fieldscore += 25 if i.ability == :TOXICBOOST
+            fieldscore += 30 if i.ability == :MERCILESS
+            fieldscore += 30 if i.ability == :CORROSION
             fieldscore += 15 if i.hasType?(:POISON)
           when :CORROSIVEMIST
-            fieldscore += 10 if (i.ability == :WATERCOMPACTION)
-            fieldscore += 20 if (i.ability == :POISONHEAL)
-            fieldscore += 25 if (i.ability == :TOXICBOOST)
-            fieldscore += 30 if (i.ability == :MERCILESS)
-            fieldscore += 30 if (i.ability == :CORROSION)
+            fieldscore += 10 if i.ability == :WATERCOMPACTION
+            fieldscore += 20 if i.ability == :POISONHEAL
+            fieldscore += 25 if i.ability == :TOXICBOOST
+            fieldscore += 30 if i.ability == :MERCILESS
+            fieldscore += 30 if i.ability == :CORROSION
             fieldscore += 15 if i.hasType?(:POISON)
           when :DESERT
-            fieldscore += 20 if ((i.ability == :SANDSTREAM) || (nonmegaform.ability == :SANDSTREAM) || (i.ability == :SANDSPIT) || (nonmegaform.ability == :SANDSPIT))
-            fieldscore += 25 if (i.ability == :SANDVEIL)
-            fieldscore += 30 if (i.ability == :SANDFORCE)
-            fieldscore += 50 if (i.ability == :SANDRUSH)
+            fieldscore += 20 if (i.ability == :SANDSTREAM || nonmegaform.ability == :SANDSTREAM || i.ability == :SANDSPIT || nonmegaform.ability == :SANDSPIT)
+            fieldscore += 25 if i.ability == :SANDVEIL
+            fieldscore += 30 if i.ability == :SANDFORCE
+            fieldscore += 50 if i.ability == :SANDRUSH
             fieldscore += 20 if i.hasType?(:GROUND)
             fieldscore -= 25 if i.hasType?(:ELECTRIC)
           when :ICY
             fieldscore += 25 if i.hasType?(:ICE)
-            fieldscore += 25 if (i.ability == :ICEBODY)
-            fieldscore += 25 if (i.ability == :SNOWCLOAK)
-            fieldscore += 25 if (i.ability == :REFRIGERATE)
-            fieldscore += 50 if (i.ability == :SLUSHRUSH) || (i.item == :EMPCREST && i.species == :EMPOLEON)
+            fieldscore += 25 if i.ability == :ICEBODY
+            fieldscore += 25 if i.ability == :SNOWCLOAK
+            fieldscore += 25 if i.ability == :REFRIGERATE
+            fieldscore += 50 if i.ability == :SLUSHRUSH || (i.item == :EMPCREST && i.species == :EMPOLEON)
           when :ROCKY
-            fieldscore -= 15 if (i.ability == :GORILLATACTICS)
+            fieldscore -= 15 if i.ability == :GORILLATACTICS
           when :FOREST
-            fieldscore += 20 if (i.ability == :SAPSIPPER)
+            fieldscore += 20 if i.ability == :SAPSIPPER
             fieldscore += 25 if i.hasType?(:GRASS) || i.hasType?(:BUG)
-            fieldscore += 30 if (i.ability == :GRASSPELT)
-            fieldscore += 30 if (i.ability == :OVERGROW)
-            fieldscore += 30 if (i.ability == :SWARM)
-            fieldscore += 20 if (i.ability == :EFFECTSPORE)
+            fieldscore += 30 if i.ability == :GRASSPELT
+            fieldscore += 30 if i.ability == :OVERGROW
+            fieldscore += 30 if i.ability == :SWARM
+            fieldscore += 20 if i.ability == :EFFECTSPORE
           when :SUPERHEATED
             fieldscore += 15 if i.hasType?(:FIRE)
           when :VOLCANICTOP
             fieldscore += 15 if i.hasType?(:FIRE)
-            fieldscore += 25 if (i.ability == :STEAMENGINE)
-            fieldscore -= 30 if (i.ability == :ICEFACE)
+            fieldscore += 25 if i.ability == :STEAMENGINE
+            fieldscore -= 30 if i.ability == :ICEFACE
           when :FACTORY
             fieldscore += 25 if i.hasType?(:ELECTRIC)
-            fieldscore += 20 if (i.ability == :MOTORDRIVE)
-            fieldscore += 20 if (i.ability == :STEELWORKER)
-            fieldscore += 25 if (i.ability == :DOWNLOAD)
-            fieldscore += 25 if (i.ability == :TECHNICIAN)
-            fieldscore += 25 if (i.ability == :GALVANIZE)
+            fieldscore += 20 if i.ability == :MOTORDRIVE
+            fieldscore += 20 if i.ability == :STEELWORKER
+            fieldscore += 25 if i.ability == :DOWNLOAD
+            fieldscore += 25 if i.ability == :TECHNICIAN
+            fieldscore += 25 if i.ability == :GALVANIZE
           when :SHORTCIRCUIT
-            fieldscore += 20 if (i.ability == :VOLTABSORB)
-            fieldscore += 20 if (i.ability == :STATIC)
-            fieldscore += 25 if (i.ability == :GALVANIZE)
-            fieldscore += 50 if (i.ability == :SURGESURFER)
+            fieldscore += 20 if i.ability == :VOLTABSORB
+            fieldscore += 20 if i.ability == :STATIC
+            fieldscore += 25 if i.ability == :GALVANIZE
+            fieldscore += 50 if i.ability == :SURGESURFER
             fieldscore += 20 if (Rejuv && i.ability == :DOWNLOAD)
             fieldscore += 25 if i.hasType?(:ELECTRIC)
           when :WASTELAND
             fieldscore += 10 if i.hasType?(:POISON)
-            fieldscore += 10 if (i.ability == :CORROSION)
-            fieldscore += 20 if (i.ability == :POISONHEAL)
-            fieldscore += 20 if (i.ability == :EFFECTSPORE)
-            fieldscore += 20 if (i.ability == :POISONPOINT)
-            fieldscore += 20 if (i.ability == :STENCH)
-            fieldscore += 20 if (i.ability == :GOOEY)
-            fieldscore += 25 if (i.ability == :TOXICBOOST)
-            fieldscore += 30 if (i.ability == :MERCILESS)
+            fieldscore += 10 if i.ability == :CORROSION
+            fieldscore += 20 if i.ability == :POISONHEAL
+            fieldscore += 20 if i.ability == :EFFECTSPORE
+            fieldscore += 20 if i.ability == :POISONPOINT
+            fieldscore += 20 if i.ability == :STENCH
+            fieldscore += 20 if i.ability == :GOOEY
+            fieldscore += 25 if i.ability == :TOXICBOOST
+            fieldscore += 30 if i.ability == :MERCILESS
           when :ASHENBEACH
             fieldscore += 10 if i.hasType?(:FIGHTING)
-            fieldscore += 15 if (i.ability == :INNERFOCUS)
-            fieldscore += 15 if (i.ability == :OWNTEMPO)
-            fieldscore += 15 if (i.ability == :PUREPOWER)
-            fieldscore += 15 if (i.ability == :STEADFAST)
-            fieldscore += 20 if ((i.ability == :SANDSTREAM) || (nonmegaform.ability == :SANDSTREAM))
-            fieldscore += 20 if (i.ability == :WATERCOMPACTION)
-            fieldscore += 30 if (i.ability == :SANDFORCE)
-            fieldscore += 35 if (i.ability == :SANDVEIL)
-            fieldscore += 50 if (i.ability == :SANDRUSH)
+            fieldscore += 15 if i.ability == :INNERFOCUS
+            fieldscore += 15 if i.ability == :OWNTEMPO
+            fieldscore += 15 if i.ability == :PUREPOWER
+            fieldscore += 15 if i.ability == :STEADFAST
+            fieldscore += 20 if (i.ability == :SANDSTREAM || nonmegaform.ability == :SANDSTREAM)
+            fieldscore += 20 if i.ability == :WATERCOMPACTION
+            fieldscore += 30 if i.ability == :SANDFORCE
+            fieldscore += 35 if i.ability == :SANDVEIL
+            fieldscore += 50 if i.ability == :SANDRUSH
           when :WATERSURFACE
             fieldscore += 25 if i.hasType?(:WATER)
             fieldscore += 25 if i.hasType?(:ELECTRIC)
-            fieldscore += 25 if (i.ability == :WATERVEIL)
-            fieldscore += 25 if (i.ability == :HYDRATION)
-            fieldscore += 25 if (i.ability == :TORRENT)
-            fieldscore += 25 if (i.ability == :SCHOOLING)
-            fieldscore += 25 if (i.ability == :WATERCOMPACTION)
-            fieldscore += 50 if (i.ability == :SWIFTSWIM)
-            fieldscore += 50 if (i.ability == :SURGESURFER)
-            fieldscore += 25 if (i.ability == :STEAMENGINE)
+            fieldscore += 25 if i.ability == :WATERVEIL
+            fieldscore += 25 if i.ability == :HYDRATION
+            fieldscore += 25 if i.ability == :TORRENT
+            fieldscore += 25 if i.ability == :SCHOOLING
+            fieldscore += 25 if i.ability == :WATERCOMPACTION
+            fieldscore += 50 if i.ability == :SWIFTSWIM
+            fieldscore += 50 if i.ability == :SURGESURFER
+            fieldscore += 25 if i.ability == :STEAMENGINE
             mod1 = PBTypes.oneTypeEff(:WATER, i.type1)
             mod2 = (i.type1 == i.type2 || i.type2.nil?) ? 2 : PBTypes.oneTypeEff(:WATER, i.type2)
             fieldscore -= 50 if mod1 * mod2 > 4
           when :UNDERWATER
             fieldscore += 25 if i.hasType?(:WATER)
             fieldscore += 25 if i.hasType?(:ELECTRIC)
-            fieldscore += 25 if (i.ability == :WATERVEIL)
-            fieldscore += 25 if (i.ability == :HYDRATION)
-            fieldscore += 25 if (i.ability == :TORRENT)
-            fieldscore += 25 if (i.ability == :SCHOOLING)
-            fieldscore += 25 if (i.ability == :WATERCOMPACTION)
-            fieldscore += 50 if (i.ability == :SWIFTSWIM)
-            fieldscore += 50 if (i.ability == :SURGESURFER)
-            fieldscore += 25 if (i.ability == :STEAMENGINE)
+            fieldscore += 25 if i.ability == :WATERVEIL
+            fieldscore += 25 if i.ability == :HYDRATION
+            fieldscore += 25 if i.ability == :TORRENT
+            fieldscore += 25 if i.ability == :SCHOOLING
+            fieldscore += 25 if i.ability == :WATERCOMPACTION
+            fieldscore += 50 if i.ability == :SWIFTSWIM
+            fieldscore += 50 if i.ability == :SURGESURFER
+            fieldscore += 25 if i.ability == :STEAMENGINE
             mod1 = PBTypes.oneTypeEff(:WATER, i.type1)
             mod2 = (i.type1 == i.type2 || i.type2.nil?) ? 2 : PBTypes.oneTypeEff(:WATER, i.type2)
             fieldscore -= 50 if mod1 * mod2 > 4
@@ -9616,96 +9662,96 @@ class PokeBattle_AI
             fieldscore += 20 if (Rejuv && i.ability == :DOWNLOAD)
           when :CRYSTALCAVERN
             fieldscore += 25 if i.hasType?(:DRAGON)
-            fieldscore += 30 if (i.ability == :PRISMARMOR)
+            fieldscore += 30 if i.ability == :PRISMARMOR
           when :MURKWATERSURFACE
             fieldscore += 25 if i.hasType?(:WATER)
             fieldscore += 25 if i.hasType?(:POISON)
             fieldscore += 25 if i.hasType?(:ELECTRIC)
-            fieldscore += 25 if (i.ability == :SCHOOLING)
-            fieldscore += 25 if (i.ability == :WATERCOMPACTION)
-            fieldscore += 25 if (i.ability == :TOXICBOOST)
-            fieldscore += 25 if (i.ability == :POISONHEAL)
-            fieldscore += 25 if (i.ability == :MERCILESS)
-            fieldscore += 50 if (i.ability == :SWIFTSWIM)
-            fieldscore += 50 if (i.ability == :SURGESURFER)
-            fieldscore += 20 if (i.ability == :GOOEY)
-            fieldscore += 20 if (i.ability == :STENCH)
+            fieldscore += 25 if i.ability == :SCHOOLING
+            fieldscore += 25 if i.ability == :WATERCOMPACTION
+            fieldscore += 25 if i.ability == :TOXICBOOST
+            fieldscore += 25 if i.ability == :POISONHEAL
+            fieldscore += 25 if i.ability == :MERCILESS
+            fieldscore += 50 if i.ability == :SWIFTSWIM
+            fieldscore += 50 if i.ability == :SURGESURFER
+            fieldscore += 20 if i.ability == :GOOEY
+            fieldscore += 20 if i.ability == :STENCH
           when :MOUNTAIN
             fieldscore += 25 if i.hasType?(:ROCK)
             fieldscore += 25 if i.hasType?(:FLYING)
-            fieldscore += 20 if ((i.ability == :SNOWWARNING) || (nonmegaform.ability == :SNOWWARNING))
-            fieldscore += 20 if ((i.ability == :DROUGHT) || (nonmegaform.ability == :DROUGHT))
-            fieldscore += 25 if (i.ability == :LONGREACH)
-            fieldscore += 30 if (i.ability == :GALEWINGS) && @battle.weather == :STRONGWINDS
+            fieldscore += 20 if i.ability == :SNOWWARNING || nonmegaform.ability == :SNOWWARNING
+            fieldscore += 20 if i.ability == :DROUGHT || nonmegaform.ability == :DROUGHT
+            fieldscore += 25 if i.ability == :LONGREACH
+            fieldscore += 30 if i.ability == :GALEWINGS && @battle.weather == :STRONGWINDS
           when :SNOWYMOUNTAIN
             fieldscore += 25 if i.hasType?(:ROCK)
             fieldscore += 25 if i.hasType?(:FLYING)
             fieldscore += 25 if i.hasType?(:ICE)
-            fieldscore += 20 if ((i.ability == :SNOWWARNING) || (nonmegaform.ability == :DROUGHT))
-            fieldscore += 20 if ((i.ability == :DROUGHT) || (nonmegaform.ability == :DROUGHT))
-            fieldscore += 20 if (i.ability == :ICEBODY)
-            fieldscore += 20 if (i.ability == :SNOWCLOAK)
-            fieldscore += 25 if (i.ability == :LONGREACH)
-            fieldscore += 25 if (i.ability == :REFRIGERATE)
-            fieldscore += 30 if (i.ability == :GALEWINGS) && @battle.weather == :STRONGWINDS
-            fieldscore += 50 if (i.ability == :SLUSHRUSH) || (i.item == :EMPCREST && i.species == :EMPOLEON)
+            fieldscore += 20 if i.ability == :SNOWWARNING || nonmegaform.ability == :DROUGHT
+            fieldscore += 20 if i.ability == :DROUGHT || nonmegaform.ability == :DROUGHT
+            fieldscore += 20 if i.ability == :ICEBODY
+            fieldscore += 20 if i.ability == :SNOWCLOAK
+            fieldscore += 25 if i.ability == :LONGREACH
+            fieldscore += 25 if i.ability == :REFRIGERATE
+            fieldscore += 30 if i.ability == :GALEWINGS && @battle.weather == :STRONGWINDS
+            fieldscore += 50 if i.ability == :SLUSHRUSH || (i.item == :EMPCREST && i.species == :EMPOLEON)
           when :HOLY
             fieldscore += 20 if i.hasType?(:NORMAL)
-            fieldscore += 20 if (i.ability == :JUSTIFIED)
+            fieldscore += 20 if i.ability == :JUSTIFIED
             fieldscore += 25 if i.ability == :POWERSPOT
           when :MIRROR
-            fieldscore += 25 if (i.ability == :SANDVEIL)
-            fieldscore += 25 if (i.ability == :SNOWCLOAK)
-            fieldscore += 25 if (i.ability == :ILLUSION)
-            fieldscore += 25 if (i.ability == :TANGLEDFEET)
-            fieldscore += 25 if (i.ability == :MAGICBOUNCE)
-            fieldscore += 25 if (i.ability == :COLORCHANGE)
+            fieldscore += 25 if i.ability == :SANDVEIL
+            fieldscore += 25 if i.ability == :SNOWCLOAK
+            fieldscore += 25 if i.ability == :ILLUSION
+            fieldscore += 25 if i.ability == :TANGLEDFEET
+            fieldscore += 25 if i.ability == :MAGICBOUNCE
+            fieldscore += 25 if i.ability == :COLORCHANGE
           when :FAIRYTALE
             fieldscore += 25 if i.hasType?(:FAIRY)
             fieldscore += 25 if i.hasType?(:STEEL)
             fieldscore += 40 if i.hasType?(:DRAGON)
-            fieldscore += 25 if (i.ability == :POWEROFALCHEMY)
-            fieldscore += 25 if (i.ability == :MIRRORARMOR) || (nonmegaform.ability == :MIRRORARMOR)
-            fieldscore += 25 if (i.ability == :PASTELVEIL)
-            fieldscore += 25 if (i.ability == :MAGICGUARD) || (nonmegaform.ability == :MAGICGUARD)
-            fieldscore += 25 if (i.ability == :MAGICBOUNCE)
-            fieldscore += 25 if (i.ability == :FAIRYAURA)
-            fieldscore += 25 if (i.ability == :BATTLEARMOR) || (nonmegaform.ability == :BATTLEARMOR)
-            fieldscore += 25 if (i.ability == :SHELLARMOR) || (nonmegaform.ability == :SHELLARMOR)
-            fieldscore += 25 if (i.ability == :MAGICIAN)
-            fieldscore += 25 if (i.ability == :MARVELSCALE)
-            fieldscore += 30 if (i.ability == :STANCECHANGE)
-            fieldscore += 50 if (i.ability == :DAUNTLESSSHIELD)
-            fieldscore += 50 if (i.ability == :INTREPIDSWORD)
+            fieldscore += 25 if i.ability == :POWEROFALCHEMY
+            fieldscore += 25 if i.ability == :MIRRORARMOR || nonmegaform.ability == :MIRRORARMOR
+            fieldscore += 25 if i.ability == :PASTELVEIL
+            fieldscore += 25 if i.ability == :MAGICGUARD || nonmegaform.ability == :MAGICGUARD
+            fieldscore += 25 if i.ability == :MAGICBOUNCE
+            fieldscore += 25 if i.ability == :FAIRYAURA
+            fieldscore += 25 if i.ability == :BATTLEARMOR || nonmegaform.ability == :BATTLEARMOR
+            fieldscore += 25 if i.ability == :SHELLARMOR || nonmegaform.ability == :SHELLARMOR
+            fieldscore += 25 if i.ability == :MAGICIAN
+            fieldscore += 25 if i.ability == :MARVELSCALE
+            fieldscore += 30 if i.ability == :STANCECHANGE
+            fieldscore += 50 if i.ability == :DAUNTLESSSHIELD
+            fieldscore += 50 if i.ability == :INTREPIDSWORD
           when :DRAGONSDEN
             fieldscore += 25 if i.hasType?(:FIRE)
             fieldscore += 50 if i.hasType?(:DRAGON)
-            fieldscore += 20 if (i.ability == :MARVELSCALE)
-            fieldscore += 20 if (i.ability == :MULTISCALE)
-            fieldscore += 20 if ((i.ability == :MAGMAARMOR) || (nonmegaform.ability == :MAGMAARMOR))
+            fieldscore += 20 if i.ability == :MARVELSCALE
+            fieldscore += 20 if i.ability == :MULTISCALE
+            fieldscore += 20 if i.ability == :MAGMAARMOR || nonmegaform.ability == :MAGMAARMOR
           when :FLOWERGARDEN1, :FLOWERGARDEN2, :FLOWERGARDEN3, :FLOWERGARDEN4, :FLOWERGARDEN5
             fieldscore += 25 if i.hasType?(:GRASS)
             fieldscore += 25 if i.hasType?(:BUG)
-            fieldscore += 20 if (i.ability == :FLOWERGIFT)
-            fieldscore += 20 if (i.ability == :FLOWERVEIL)
-            fieldscore += 20 if ((i.ability == :DROUGHT) || (nonmegaform.ability == :DROUGHT))
-            fieldscore += 20 if ((i.ability == :DRIZZLE) || (nonmegaform.ability == :DRIZZLE))
-            fieldscore += 20 if Rejuv && ((i.ability == :GRASSYSURGE) || (nonmegaform.ability == :GRASSYSURGE))
-            fieldscore += 25 if (i.ability == :RIPEN)
+            fieldscore += 20 if i.ability == :FLOWERGIFT
+            fieldscore += 20 if i.ability == :FLOWERVEIL
+            fieldscore += 20 if i.ability == :DROUGHT || nonmegaform.ability == :DROUGHT
+            fieldscore += 20 if i.ability == :DRIZZLE || nonmegaform.ability == :DRIZZLE
+            fieldscore += 20 if Rejuv && (i.ability == :GRASSYSURGE || nonmegaform.ability == :GRASSYSURGE)
+            fieldscore += 25 if i.ability == :RIPEN
           when :STARLIGHT
             fieldscore += 25 if i.hasType?(:PSYCHIC)
             fieldscore += 25 if i.hasType?(:FAIRY)
             fieldscore += 25 if i.hasType?(:DARK)
-            fieldscore += 20 if (i.ability == :MARVELSCALE)
-            fieldscore += 20 if (i.ability == :VICTORYSTAR)
-            fieldscore += 25 if ((i.ability == :ILLUMINATE) || (nonmegaform.ability == :ILLUMINATE))
-            fieldscore += 30 if (i.ability == :SHADOWSHIELD)
+            fieldscore += 20 if i.ability == :MARVELSCALE
+            fieldscore += 20 if i.ability == :VICTORYSTAR
+            fieldscore += 25 if i.ability == :ILLUMINATE || nonmegaform.ability == :ILLUMINATE
+            fieldscore += 30 if i.ability == :SHADOWSHIELD
           when :NEWWORLD
             fieldscore += 25 if i.hasType?(:FLYING)
             fieldscore += 25 if i.hasType?(:DARK)
-            fieldscore += 20 if (i.ability == :VICTORYSTAR)
-            fieldscore += 25 if (i.ability == :LEVITATE || i.ability == :SOLARIDOL || i.ability == :LUNARIDOL)
-            fieldscore += 30 if (i.ability == :SHADOWSHIELD)
+            fieldscore += 20 if i.ability == :VICTORYSTAR
+            fieldscore += 25 if i.ability == :LEVITATE || i.ability == :SOLARIDOL || i.ability == :LUNARIDOL
+            fieldscore += 30 if i.ability == :SHADOWSHIELD
           when :INVERSE
             fieldscore += 10 if i.hasType?(:NORMAL)
             fieldscore += 10 if i.hasType?(:ICE)
@@ -9713,36 +9759,36 @@ class PokeBattle_AI
             fieldscore -= 30 if i.hasType?(:STEEL)
           when :PSYTERRAIN
             fieldscore += 25 if i.hasType?(:PSYCHIC)
-            fieldscore += 20 if (i.ability == :PUREPOWER)
-            fieldscore += 20 if ((i.ability == :ANTICIPATION) || (nonmegaform.ability == :ANTICIPATION))
-            fieldscore += 20 if Rejuv && ((i.ability == :FOREWARN) || (nonmegaform.ability == :FOREWARN))
-            fieldscore += 50 if (i.ability == :TELEPATHY)
+            fieldscore += 20 if i.ability == :PUREPOWER
+            fieldscore += 20 if i.ability == :ANTICIPATION || nonmegaform.ability == :ANTICIPATION
+            fieldscore += 20 if Rejuv && (i.ability == :FOREWARN || nonmegaform.ability == :FOREWARN)
+            fieldscore += 50 if i.ability == :TELEPATHY
             fieldscore += 25 if i.ability == :POWERSPOT
           when :DIMENSIONAL
             fieldscore += 25 if i.hasType?(:DARK)
-            fieldscore += 30 if (i.ability == :SHADOWSHIELD)
-            fieldscore += 30 if (i.ability == :BEASTBOOST)
-            fieldscore += 30 if (i.ability == :PERSIHBODY)
-            fieldscore += 20 if ((i.ability == :RATTLED) || (nonmegaform.ability == :RATTLED))
-            fieldscore += 20 if ((i.ability == :BERSERK) || (nonmegaform.ability == :BERSERK))
-            fieldscore += 20 if ((i.ability == :ANGERPOINT) || (nonmegaform.ability == :ANGERPOINT))
-            fieldscore += 20 if ((i.ability == :JUSTIFIED) || (nonmegaform.ability == :JUSTIFIED))
-            fieldscore += 20 if ((i.ability == :PRESSURE) || (nonmegaform.ability == :PRESSURE))
-            fieldscore += 20 if ((i.ability == :UNNERVE) || (nonmegaform.ability == :UNNERVE))
+            fieldscore += 30 if i.ability == :SHADOWSHIELD
+            fieldscore += 30 if i.ability == :BEASTBOOST
+            fieldscore += 30 if i.ability == :PERSIHBODY
+            fieldscore += 20 if i.ability == :RATTLED || nonmegaform.ability == :RATTLED
+            fieldscore += 20 if i.ability == :BERSERK || nonmegaform.ability == :BERSERK
+            fieldscore += 20 if i.ability == :ANGERPOINT || nonmegaform.ability == :ANGERPOINT
+            fieldscore += 20 if i.ability == :JUSTIFIED || nonmegaform.ability == :JUSTIFIED
+            fieldscore += 20 if i.ability == :PRESSURE || nonmegaform.ability == :PRESSURE
+            fieldscore += 20 if i.ability == :UNNERVE || nonmegaform.ability == :UNNERVE
           when :FROZENDIMENSION
             fieldscore += 25 if i.hasType?(:ICE)
             fieldscore += 25 if i.hasType?(:DARK)
-            fieldscore += 25 if (i.ability == :ICEBODY)
-            fieldscore += 25 if (i.ability == :SNOWCLOAK)
-            fieldscore += 25 if (i.ability == :REFRIGERATE)
-            fieldscore += 50 if (i.ability == :SLUSHRUSH) || (i.item == :EMPCREST && i.species == :EMPOLEON)
-            fieldscore += 25 if (i.ability == :ICEFACE)
-            fieldscore += 20 if ((i.ability == :RATTLED) || (nonmegaform.ability == :RATTLED))
-            fieldscore += 20 if ((i.ability == :BERSERK) || (nonmegaform.ability == :BERSERK))
-            fieldscore += 20 if ((i.ability == :ANGERPOINT) || (nonmegaform.ability == :ANGERPOINT))
-            fieldscore += 20 if ((i.ability == :JUSTIFIED) || (nonmegaform.ability == :JUSTIFIED))
-            fieldscore += 20 if ((i.ability == :PRESSURE) || (nonmegaform.ability == :PRESSURE))
-            fieldscore += 20 if ((i.ability == :UNNERVE) || (nonmegaform.ability == :UNNERVE))
+            fieldscore += 25 if i.ability == :ICEBODY
+            fieldscore += 25 if i.ability == :SNOWCLOAK
+            fieldscore += 25 if i.ability == :REFRIGERATE
+            fieldscore += 50 if i.ability == :SLUSHRUSH || (i.item == :EMPCREST && i.species == :EMPOLEON)
+            fieldscore += 25 if i.ability == :ICEFACE
+            fieldscore += 20 if i.ability == :RATTLED || nonmegaform.ability == :RATTLED
+            fieldscore += 20 if i.ability == :BERSERK || nonmegaform.ability == :BERSERK
+            fieldscore += 20 if i.ability == :ANGERPOINT || nonmegaform.ability == :ANGERPOINT
+            fieldscore += 20 if i.ability == :JUSTIFIED || nonmegaform.ability == :JUSTIFIED
+            fieldscore += 20 if i.ability == :PRESSURE || nonmegaform.ability == :PRESSURE
+            fieldscore += 20 if i.ability == :UNNERVE || nonmegaform.ability == :UNNERVE
           when :HAUNTED
             fieldscore += 25 if i.hasType?(:GHOST)
             fieldscore += 25 if i.ability == :RATTLED
@@ -9783,16 +9829,16 @@ class PokeBattle_AI
           when :INFERNAL
             fieldscore += 25 if i.hasType?(:FIRE)
             fieldscore += 25 if i.hasType?(:DARK)
-            fieldscore += 25 if (i.ability == :PERSIHBODY)
-            fieldscore += 30 if (i.ability == :MAGMAARMOR) || (nonmegaform.ability == :MAGMAARMOR)
-            fieldscore += 20 if (i.ability == :FLAMEBODY) || (nonmegaform.ability == :FLAMEBODY)
-            fieldscore += 20 if (i.ability == :DESOLATELAND) || (nonmegaform.ability == :DESOLATELAND)
-            fieldscore += 25 if (i.ability == :STEAMENGINE)
-            fieldscore += 30 if (i.ability == :FLASHFIRE)
-            fieldscore += 30 if (i.ability == :FLAREBOOST)
-            fieldscore += 30 if (i.ability == :BLAZE)
-            fieldscore -= 20 if (i.ability == :PASTELVEIL)
-            fieldscore -= 30 if (i.ability == :ICEFACE)
+            fieldscore += 25 if i.ability == :PERSIHBODY
+            fieldscore += 30 if i.ability == :MAGMAARMOR || nonmegaform.ability == :MAGMAARMOR
+            fieldscore += 20 if i.ability == :FLAMEBODY || nonmegaform.ability == :FLAMEBODY
+            fieldscore += 20 if i.ability == :DESOLATELAND || nonmegaform.ability == :DESOLATELAND
+            fieldscore += 25 if i.ability == :STEAMENGINE
+            fieldscore += 30 if i.ability == :FLASHFIRE
+            fieldscore += 30 if i.ability == :FLAREBOOST
+            fieldscore += 30 if i.ability == :BLAZE
+            fieldscore -= 20 if i.ability == :PASTELVEIL
+            fieldscore -= 30 if i.ability == :ICEFACE
           when :COLOSSEUM
             fieldscore += 15 if i.ability == :STALWART
             fieldscore += 20 if i.ability == :DEFIANT
@@ -9801,35 +9847,35 @@ class PokeBattle_AI
             fieldscore += 25 if i.ability == :WONDERGUARD
             fieldscore += 25 if i.ability == :QUICKDRAW
             fieldscore += 25 if i.ability == :EMERGENCYEXIT
-            fieldscore += 25 if (i.ability == :BATTLEARMOR) || (nonmegaform.ability == :BATTLEARMOR)
-            fieldscore += 25 if (i.ability == :SHELLARMOR) || (nonmegaform.ability == :SHELLARMOR)
-            fieldscore += 25 if (i.ability == :MIRRORARMOR) || (nonmegaform.ability == :MIRRORARMOR)
-            fieldscore += 25 if (i.ability == :MAGICGUARD) || (nonmegaform.ability == :MAGICGUARD)
+            fieldscore += 25 if i.ability == :BATTLEARMOR || nonmegaform.ability == :BATTLEARMOR
+            fieldscore += 25 if i.ability == :SHELLARMOR || nonmegaform.ability == :SHELLARMOR
+            fieldscore += 25 if i.ability == :MIRRORARMOR || nonmegaform.ability == :MIRRORARMOR
+            fieldscore += 25 if i.ability == :MAGICGUARD || nonmegaform.ability == :MAGICGUARD
             fieldscore += 25 if i.ability == :SKILLLINK
-            fieldscore += 30 if i.ability == :NOGUARD || (nonmegaform.ability == :NOGUARD)
-            fieldscore += 50 if (i.ability == :DAUNTLESSSHIELD)
-            fieldscore += 50 if (i.ability == :INTREPIDSWORD)
+            fieldscore += 30 if i.ability == :NOGUARD || nonmegaform.ability == :NOGUARD
+            fieldscore += 50 if i.ability == :DAUNTLESSSHIELD
+            fieldscore += 50 if i.ability == :INTREPIDSWORD
           when :CONCERT1, :CONCERT2, :CONCERT3, :CONCERT4
-            fieldscore += 25 if (i.ability == :TECHNICIAN)
-            fieldscore += 25 if ([:HEAVYMETAL, :SOLIDROCK, :PUNKROCK, :ROCKHEAD, :SOUNDPROOF].include?(i.ability))
-            fieldscore += 15 if ([:HEAVYMETAL, :SOLIDROCK, :PUNKROCK, :GALVANIZE, :PLUS].include?(i.ability)) && @battle.ProgressiveFieldCheck(PBFields::CONCERT, 1, 3)
-            fieldscore -= 15 if ([:KLUTZ, :MINUS].include?(i.ability)) && @battle.ProgressiveFieldCheck(PBFields::CONCERT, 2, 4)
-            fieldscore += 25 if ([:RUNAWAY, :EMERGENCYEXIT].include?(i.ability)) && @battle.ProgressiveFieldCheck(PBFields::CONCERT, 2, 4)
-            fieldscore += 30 if (i.ability == :RATTLED) && @battle.ProgressiveFieldCheck(PBFields::CONCERT, 3, 4)
+            fieldscore += 25 if i.ability == :TECHNICIAN
+            fieldscore += 25 if [:HEAVYMETAL, :SOLIDROCK, :PUNKROCK, :ROCKHEAD, :SOUNDPROOF].include?(i.ability)
+            fieldscore += 15 if [:HEAVYMETAL, :SOLIDROCK, :PUNKROCK, :GALVANIZE, :PLUS].include?(i.ability) && @battle.ProgressiveFieldCheck(PBFields::CONCERT, 1, 3)
+            fieldscore -= 15 if [:KLUTZ, :MINUS].include?(i.ability) && @battle.ProgressiveFieldCheck(PBFields::CONCERT, 2, 4)
+            fieldscore += 25 if [:RUNAWAY, :EMERGENCYEXIT].include?(i.ability) && @battle.ProgressiveFieldCheck(PBFields::CONCERT, 2, 4)
+            fieldscore += 30 if i.ability == :RATTLED && @battle.ProgressiveFieldCheck(PBFields::CONCERT, 3, 4)
           when :BACKALLEY
             fieldscore += 25 if i.hasType?(:DARK)
             fieldscore += 20 if i.hasType?(:POISON)
             fieldscore += 20 if i.hasType?(:BUG)
             fieldscore += 20 if i.hasType?(:STEEL)
             fieldscore -= 25 if i.hasType?(:FAIRY)
-            fieldscore += 20 if (i.ability == :STENCH)
-            fieldscore += 25 if (i.ability == :DOWNLOAD)
-            fieldscore += 25 if ((i.ability == :PICKPOCKET) || (nonmegaform.ability == :PICKPOCKET))
-            fieldscore += 25 if ((i.ability == :MERCILESS) || (nonmegaform.ability == :MERCILESS))
-            fieldscore += 25 if ((i.ability == :MAGICIAN) || (nonmegaform.ability == :MAGICIAN))
-            fieldscore += 25 if ((i.ability == :ANTICIPATION) || (nonmegaform.ability == :ANTICIPATION))
-            fieldscore += 25 if ((i.ability == :FOREWARN) || (nonmegaform.ability == :FOREWARN))
-            fieldscore += 25 if ((i.ability == :RATTLED) || (nonmegaform.ability == :RATTLED))
+            fieldscore += 20 if i.ability == :STENCH
+            fieldscore += 25 if i.ability == :DOWNLOAD
+            fieldscore += 25 if i.ability == :PICKPOCKET || nonmegaform.ability == :PICKPOCKET
+            fieldscore += 25 if i.ability == :MERCILESS || nonmegaform.ability == :MERCILESS
+            fieldscore += 25 if i.ability == :MAGICIAN || nonmegaform.ability == :MAGICIAN
+            fieldscore += 25 if i.ability == :ANTICIPATION || nonmegaform.ability == :ANTICIPATION
+            fieldscore += 25 if i.ability == :FOREWARN || nonmegaform.ability == :FOREWARN
+            fieldscore += 25 if i.ability == :RATTLED || nonmegaform.ability == :RATTLED
             fieldscore += 20 if i.ability == :DEFIANT
           when :CITY
             fieldscore += 25 if i.hasType?(:NORMAL)
@@ -9837,56 +9883,56 @@ class PokeBattle_AI
             fieldscore += 20 if i.hasType?(:BUG)
             fieldscore += 20 if i.hasType?(:STEEL)
             fieldscore -= 20 if i.hasType?(:FAIRY)
-            fieldscore += 20 if (i.ability == :STENCH)
-            fieldscore += 25 if (i.ability == :DOWNLOAD)
-            fieldscore += 25 if ((i.ability == :BIGPECKS) || (nonmegaform.ability == :BIGPECKS))
-            fieldscore += 25 if ((i.ability == :PICKUP) || (nonmegaform.ability == :PICKUP))
-            fieldscore += 25 if ((i.ability == :EARLYBIRD) || (nonmegaform.ability == :EARLYBIRD))
-            fieldscore += 25 if ((i.ability == :RATTLED) || (nonmegaform.ability == :RATTLED))
-            fieldscore += 20 if (i.ability == :HUSTLE)
-            fieldscore += 20 if ((i.ability == :FRISK) || (nonmegaform.ability == :FRISK))
+            fieldscore += 20 if i.ability == :STENCH
+            fieldscore += 25 if i.ability == :DOWNLOAD
+            fieldscore += 25 if i.ability == :BIGPECKS || nonmegaform.ability == :BIGPECKS
+            fieldscore += 25 if i.ability == :PICKUP || nonmegaform.ability == :PICKUP
+            fieldscore += 25 if i.ability == :EARLYBIRD || nonmegaform.ability == :EARLYBIRD
+            fieldscore += 25 if i.ability == :RATTLED || nonmegaform.ability == :RATTLED
+            fieldscore += 20 if i.ability == :HUSTLE
+            fieldscore += 20 if i.ability == :FRISK || nonmegaform.ability == :FRISK
             fieldscore += 20 if i.ability == :COMPETITIVE
           when :CLOUDS
             fieldscore += 25 if i.hasType?(:FLYING)
-            fieldscore += 20 if (i.ability == :CLOUDNINE)
-            fieldscore += 20 if (i.ability == :FLUFFY)
-            fieldscore += 20 if (i.ability == :HYDRATION)
-            fieldscore += 20 if (i.ability == :FORECAST)
-            fieldscore += 20 if (i.ability == :OVERCOAT)
+            fieldscore += 20 if i.ability == :CLOUDNINE
+            fieldscore += 20 if i.ability == :FLUFFY
+            fieldscore += 20 if i.ability == :HYDRATION
+            fieldscore += 20 if i.ability == :FORECAST
+            fieldscore += 20 if i.ability == :OVERCOAT
           when :DARKNESS1
             fieldscore += 10 if i.hasType?(:DARK)
-            fieldscore += 10 if (i.ability == :DARKAURA)
-            fieldscore -= 10 if (i.ability == :FAIRYAURA)
-            fieldscore += 20 if (i.ability == :RATTLED)
+            fieldscore += 10 if i.ability == :DARKAURA
+            fieldscore -= 10 if i.ability == :FAIRYAURA
+            fieldscore += 20 if i.ability == :RATTLED
           when :DARKNESS2
             fieldscore += 20 if i.hasType?(:DARK)
-            fieldscore += 20 if (i.ability == :DARKAURA)
-            fieldscore -= 20 if (i.ability == :FAIRYAURA)
-            fieldscore += 20 if (i.ability == :RATTLED)
-            fieldscore -= 20 if (i.ability == :INSOMNIA)
-            fieldscore += 20 if (i.ability == :BADDREAMS)
-            fieldscore += 20 if (i.ability == :SHADOWSHIELD)
+            fieldscore += 20 if i.ability == :DARKAURA
+            fieldscore -= 20 if i.ability == :FAIRYAURA
+            fieldscore += 20 if i.ability == :RATTLED
+            fieldscore -= 20 if i.ability == :INSOMNIA
+            fieldscore += 20 if i.ability == :BADDREAMS
+            fieldscore += 20 if i.ability == :SHADOWSHIELD
           when :DARKNESS3
             fieldscore += 40 if i.hasType?(:DARK)
-            fieldscore += 40 if (i.ability == :DARKAURA)
-            fieldscore -= 40 if (i.ability == :FAITTLED)
-            fieldscore -= 20 if (i.ability == :INSOMNIA)
-            fieldscore += 40 if (i.ability == :BADDREAMS)
-            fieldscore += 20 if (i.ability == :SHADOWSHIELD)
+            fieldscore += 40 if i.ability == :DARKAURA
+            fieldscore -= 40 if i.ability == :FAITTLED
+            fieldscore -= 20 if i.ability == :INSOMNIA
+            fieldscore += 40 if i.ability == :BADDREAMS
+            fieldscore += 20 if i.ability == :SHADOWSHIELD
           when :DANCEFLOOR
             fieldscore += 10 if i.hasType?(:GHOST)
             fieldscore += 10 if i.hasType?(:DARK)
             fieldscore += 20 if i.hasType?(:PSYCHIC)
-            fieldscore += 20 if (i.ability == :INSOMNIA)
-            fieldscore += 20 if (i.ability == :MAGICGUARD)
-            fieldscore += 10 if (i.ability == :MAGICIAN)
-            fieldscore += 40 if (i.ability == :DANCER)
-            fieldscore += 20 if (i.ability == :ILLUMINATE)
+            fieldscore += 20 if i.ability == :INSOMNIA
+            fieldscore += 20 if i.ability == :MAGICGUARD
+            fieldscore += 10 if i.ability == :MAGICIAN
+            fieldscore += 40 if i.ability == :DANCER
+            fieldscore += 20 if i.ability == :ILLUMINATE
           when :CROWD
-            fieldscore += 20 if (i.ability == :GUTS)
-            fieldscore += 10 if (i.ability == :INNERFOCUS)
-            fieldscore += 30 if (i.ability == :INTIMIDATE)
-            fieldscore += 20 if (i.ability == :IRONFIST)
+            fieldscore += 20 if i.ability == :GUTS
+            fieldscore += 10 if i.ability == :INNERFOCUS
+            fieldscore += 30 if i.ability == :INTIMIDATE
+            fieldscore += 20 if i.ability == :IRONFIST
         end
       end
       monscore += fieldscore
@@ -10032,7 +10078,7 @@ class PokeBattle_AI
 
       tricktreat = true if i.move == :TRICKORTREAT
       forestcurse = true if i.move == :FORESTSCURSE
-      notnorm = true if i.type != (:NORMAL)
+      notnorm = true if i.type != :NORMAL
       bothimmune = false if i.move == :DESTINYBOND
 
       for oppmon in [@opponent, @opponent.pbPartner]
@@ -10719,8 +10765,6 @@ class PokeBattle_AI
     if @mondata.skill >= MINIMUMSKILL
       type = move.pbType(attacker, type)
     end
-    stagemul = [2, 2, 2, 2, 2, 2, 2, 3, 4, 5, 6, 7, 8]
-    stagediv = [8, 7, 6, 5, 4, 3, 2, 2, 2, 2, 2, 2, 2]
     oppitemworks = opponent.itemWorks?
     attitemworks = attacker.itemWorks?
 
@@ -10771,7 +10815,7 @@ class PokeBattle_AI
       when :DEDENNE then atkstage = attacker.stages[PBStats::SPEED] + 6 if !move.pbIsSpecial?(type)
     end
     if opponent.ability != :UNAWARE || moldBreakerCheck(attacker)
-      atk = (atk * 1.0 * stagemul[atkstage] / stagediv[atkstage]).floor
+      atk = (atk * PBStats::StageMul[atkstage]).floor
     end
     if @mondata.skill >= BESTSKILL && @battle.FE != :INDOOR
       basedamage = (basedamage * move.moveFieldBoost).round
@@ -10822,8 +10866,7 @@ class PokeBattle_AI
             basedamage = (basedamage * 3.0).round
           end
         when :BIGTOP
-          if ((type == :FIGHTING && move.pbIsPhysical?(type)) ||
-              (STRIKERMOVES).include?(move.move))
+          if (type == :FIGHTING && move.pbIsPhysical?(type)) || STRIKERMOVES.include?(move.move)
             if attacker.ability == :HUGEPOWER || attacker.ability == :GUTS ||
                attacker.ability == :PUREPOWER || attacker.ability == :SHEERFORCE
               provimult = 2.2
@@ -11057,8 +11100,14 @@ class PokeBattle_AI
           basedamage = (basedamage * 1.3).round
         end
       # Steely Spirit
-      elsif type == :STEEL && attacker.ability == :STEELYSPIRIT || attacker.pbPartner.ability == :STEELYSPIRIT
+      elsif type == :STEEL && (attacker.ability == :STEELYSPIRIT || attacker.pbPartner.ability == :STEELYSPIRIT)
         if @battle.FE == :FAIRYTALE
+          basedamage = (basedamage * 2.0).round
+        else
+          basedamage = (basedamage * 1.5).round
+        end
+      elsif type == :STEEL && attacker.ability == :STEELWORKER
+        if @battle.FE == :FACTORY
           basedamage = (basedamage * 2.0).round
         else
           basedamage = (basedamage * 1.5).round
@@ -11067,6 +11116,12 @@ class PokeBattle_AI
         basedamage = (basedamage * 1.5).round
       elsif type == :DRAGON && attacker.ability == :DRAGONSMAW
         basedamage = (basedamage * 1.5).round
+      elsif type == :FIRE && attacker.ability == :SOLARIDOL
+        basedamage = (basedamage * 1.5).round
+      elsif type == :ICE && attacker.ability == :LUNARIDOL
+        basedamage = (basedamage * 1.5).round
+      elsif type == :WATER && attacker.ability == :WATERBUBBLE
+        basedamage = (basedamage * 2.0).round
       elsif type == :DRAGON && attacker.ability == :INEXORABLE
         if pbAIfaster?(move, nil, attacker, opponent)
           basedamage = (basedamage * 1.5).round
@@ -11460,7 +11515,7 @@ class PokeBattle_AI
     end
     defstage = 6 if move.function == 0xA9 # Chip Away (ignore stat stages)
     defstage = 6 if attacker.ability == :UNAWARE
-    defense = (defense * 1.0 * stagemul[defstage] / stagediv[defstage]).floor
+    defense = (defense * PBStats::StageMul[defstage]).floor
     defense = 1 if (defense == 0 || !defense)
 
     # Glitch Item and Ability Checks
@@ -11636,12 +11691,8 @@ class PokeBattle_AI
         end
     end
     if @mondata.skill >= MEDIUMSKILL
-      # Water Bubble
-      if attacker.ability == :WATERBUBBLE && type == :WATER
-        damage = (damage *= 2).round
-      end
-      if (attacker.hasType?(type) && (!attacker.effects[:DesertsMark])) || attacker.ability == :PROTEAN || attacker.ability == :LIBERO || typecrest == true
-        if attacker.ability == :ADAPTABILITY
+      if (attacker.hasType?(type) && !attacker.effects[:DesertsMark]) || attacker.ability == :PROTEAN || attacker.ability == :LIBERO || typecrest == true
+        if attacker.ability == :ADAPTABILITY || (attacker.hasType?(type) && typecrest == true && ![:GOTHITELLE, :REUNICLUS].include?(attacker.crested))
           damage = (damage * 2).round
         else
           damage = (damage * 1.5).round
@@ -11649,14 +11700,6 @@ class PokeBattle_AI
         if attacker.crested == :SILVALLY
           damage = (damage * 1.2).round
         end
-      elsif attacker.ability == :STEELWORKER && type == :STEEL
-        if @battle.FE == :FACTORY # Factory Field
-          damage = (damage * 2).round
-        else
-          damage = (damage * 1.5).round
-        end
-      elsif (attacker.ability == :SOLARIDOL && type == :FIRE) || (attacker.ability == :LUNARIDOL && type == :ICE)
-        damage = (damage * 1.5).round
       end
     end
     # Type effectiveness
@@ -11739,12 +11782,7 @@ class PokeBattle_AI
       if @battle.ProgressiveFieldCheck(PBFields::FLOWERGARDEN, 3, 5)
         if (opponent.pbPartner.ability == :FLOWERVEIL &&
          opponent.hasType?(:GRASS)) || opponent.ability == :FLOWERVEIL
-          damage = (damage * 0.5).round
-        end
-        case @battle.FE
-          when :FLOWERGARDEN3 then damage = (damage * 0.75).round if opponent.hasType?(:GRASS)
-          when :FLOWERGARDEN4 then damage = (damage * 0.67).round if opponent.hasType?(:GRASS)
-          when :FLOWERGARDEN5 then damage = (damage * 0.5).round if opponent.hasType?(:GRASS)
+          damage = (damage * 0.75).round
         end
       end
     end
@@ -11927,7 +11965,7 @@ class PokeBattle_AI
         return 102 if @battle.FE == :CONCERT4
 
         return [((255 - attacker.happiness) * 2 / 5).floor, 1].max
-      when 0x8B # Eruption / Water Spout
+      when 0x8B # Eruption / Water Spout / Dragon Energy
         return [attacker.happiness, 250].min if attacker.crested == :LUVDISC
         return 150 if @battle.FE == :CONCERT4
 
@@ -12369,7 +12407,7 @@ class PokeBattle_AI
   end
 
   def firstOpponent
-    return	@battle.doublebattle ? (@attacker.pbOppositeOpposing.hp > 0 ? @attacker.pbOppositeOpposing : @attacker.pbCrossOpposing) : @attacker.pbOppositeOpposing
+    return @battle.doublebattle ? (@attacker.pbOppositeOpposing.hp > 0 ? @attacker.pbOppositeOpposing : @attacker.pbCrossOpposing) : @attacker.pbOppositeOpposing
   end
 end
 

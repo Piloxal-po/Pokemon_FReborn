@@ -314,6 +314,7 @@ class PokeBattle_Battle
     quarkdriveCheck
     seedCheck
     noWeather
+    persistentWeather # recheck if no current Weather and previos field disallowed the persistent weather effect
   end
 
   def canChangeFE?(newfield = [])
@@ -336,6 +337,7 @@ class PokeBattle_Battle
     quarkdriveCheck
     seedCheck
     noWeather
+    persistentWeather # recheck if no current Weather and previos field disallowed the persistent weather effect
   end
 
   def endTempField
@@ -430,10 +432,12 @@ class PokeBattle_Battle
       newfieldmove = ($cache.FEData[newfield]).moveData(basemove.move)
       newfield = newfieldmove[:fieldchange]
     end
+    dont_change_backup = fieldmove[:dontchangebackup]
     if newfield == :INDOOR
       breakField
+    elsif ProgressiveFieldCheck("All") && (PBFields::CONCERT.include?(newfield) || PBFields::FLOWERGARDEN.include?(newfield) || PBFields::DARKNESS.include?(newfield))
+      setField(newfield, add_on: dont_change_backup, growth: true)
     else
-      dont_change_backup = fieldmove[:dontchangebackup]
       setField(newfield, add_on: dont_change_backup)
     end
   end
@@ -649,7 +653,7 @@ class PokeBattle_Battle
     setField(newfield, add_on: false, growth: true)
     pbDisplay(_INTL("{1} grew the garden!", text)) if @battle.ProgressiveFieldCheck(PBFields::FLOWERGARDEN)
     pbDisplay(_INTL("{1} is getting the crowd hyped!", text)) if @battle.ProgressiveFieldCheck(PBFields::CONCERT)
-    pbDisplay(_INTL("The darkness deepened!", text)) if @battle.ProgressiveFieldCheck(PBFields::DARKNESS)
+    pbDisplay(_INTL("{1}", text)) if @battle.ProgressiveFieldCheck(PBFields::DARKNESS)
   end
 
   def reduceField

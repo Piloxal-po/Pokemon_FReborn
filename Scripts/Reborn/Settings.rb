@@ -72,7 +72,7 @@ NOSIGNPOSTS = [119, 125, 119, 124, 124, 120, 120, 121, 85, 87, 94, 95,
 #===============================================================================
 # * Whether outdoor maps should be shaded according to the time of day.
 #===============================================================================
-ENABLESHADING = true
+ENABLESHADING = !$joiplay
 
 #===============================================================================
 # * The minimum number of badges required to boost each stat of a player's
@@ -335,3 +335,6 @@ USEKEYBOARD = true
 # Fixes an issue where the sheer number of variable redeclarations causes ruby
 # to crash on f12 reset.
 $VERBOSE = nil
+
+# Enu shamelessly abusing his dev status
+TAB_TURBO = false

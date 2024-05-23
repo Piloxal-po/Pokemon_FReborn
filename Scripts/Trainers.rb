@@ -48,7 +48,7 @@ def pbLoadTrainer(type, name, id)
       pokemon.iv = Array.new(6, 31)
       pokemon.iv[5] = 0
     else
-      iv = 31 if $game_switches[:Only_Pulse_2] # pulse 2 mode
+      iv = 31 if $game_switches[:Max_Trainer_IVs_Password]
       iv = 0 if $game_switches[:Empty_IVs_And_EVs_Password]
       pokemon.iv = Array.new(6, iv)
     end
@@ -272,7 +272,7 @@ def pbTrainerBattle(trainerid, trainername, endspeech, doublebattle = false, tra
     $game_switches[:In_Battle] = false
     return false
   end
-  doublebattle = true if Reborn && makeDoubles?(trainer[0].party)
+  doublebattle = true if Reborn && makeDoubles?(opponent_team.length > 0 ? opponent_team : trainer[2])
   trainer[0].outfit = vsoutfit if vsoutfit > 0
   if $PokemonGlobal.partner && ($PokemonTemp.waitingTrainer || doublebattle)
     othertrainer = PokeBattle_Trainer.new($PokemonGlobal.partner[1], $PokemonGlobal.partner[0])
@@ -458,7 +458,7 @@ def pbTrainerBattle100(trainerid, trainername, endspeech, doublebattle = false, 
     pbMissingTrainer(trainerid, trainername, trainerparty)
     return false
   end
-  doublebattle = true if Reborn && makeDoubles?(trainer[0].party)
+  doublebattle = true if Reborn && makeDoubles?(trainer[2])
   # creating player party
   if $PokemonGlobal.partner && ($PokemonTemp.waitingTrainer || doublebattle)
     othertrainer = PokeBattle_Trainer.new($PokemonGlobal.partner[1], $PokemonGlobal.partner[0])

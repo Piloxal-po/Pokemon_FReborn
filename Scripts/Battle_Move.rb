@@ -46,7 +46,6 @@ class PokeBattle_Move
       @priority   = @data.priority ? @data.priority : 0
       @effect     = @data.checkFlag?(:effect, 0)
       @moreeffect = @data.checkFlag?(:moreeffect, 0)
-      @zmove      = @data.checkFlag?(:zmove, false)
     end
     if !zbase.nil?
       @zmove      = true
@@ -54,6 +53,7 @@ class PokeBattle_Move
         @category   = zbase.category
         @name       = "Z-" + @name if zbase.basedamage == 0
         @basedamage = ZMoveBaseDamage(zbase) if zbase.basedamage > 0
+        @maxpp = 0
       end
     end
   end
@@ -158,7 +158,7 @@ class PokeBattle_Move
       when :DRAGONSDEN        then type = :ROCK       if Rejuv && [:ROCKCLIMB, :STRENGTH].include?(@move)
       when :DEEPEARTH         then type = :GROUND     if @move == :TOPSYTURVY
     end
-    if !@zmove
+    if !PBStuff::ZMOVES.include?(@move)
       case attacker.ability
         when :NORMALIZE   then type = :NORMAL
         when :PIXILATE    then type = :FAIRY    if type == :NORMAL && @battle.FE != :GLITCH
@@ -182,7 +182,7 @@ class PokeBattle_Move
           when 3  then type = :ICE    if type == :NORMAL
         end
     end
-    if (attacker.effects[:Electrify] || type == :NORMAL && @battle.state.effects[:IonDeluge]) && !@zmove
+    if attacker.effects[:Electrify] || (type == :NORMAL && @battle.state.effects[:IonDeluge])
       type = :ELECTRIC
     end
     return type
@@ -310,8 +310,6 @@ class PokeBattle_Move
       @category = betterCategory(@type)
       return
     end
-    stagemul = [10, 10, 10, 10, 10, 10, 10, 15, 20, 25, 30, 35, 40]
-    stagediv = [40, 35, 30, 25, 20, 15, 10, 10, 10, 10, 10, 10, 10]
     # Calculates how much Attack and SpAtk attacker has
     calcattackstage = attacker.stages[PBStats::ATTACK] + 6
     # if photon geyser gets to be more accurate in calculation than normal, then shell side arm also gets to as well
@@ -331,7 +329,7 @@ class PokeBattle_Move
     calcatkmult *= 2 if attacker.hasWorkingItem(:THICKCLUB) && ((attacker.pokemon.species == :CUBONE) || (attacker.pokemon.species == :MAROWAK))
     calcatkmult *= 0.5 if attacker.status == :BURN && !(attacker.ability == :GUTS && !attacker.status.nil?)
     # end attack boosts
-    calcattack = (attacker.attack * 1.0 * (stagemul[calcattackstage] / stagediv[calcattackstage]) * calcatkmult).floor
+    calcattack = (attacker.attack * PBStats::StageMul[calcattackstage] * calcatkmult).floor
     calcspatkstage = attacker.stages[PBStats::SPATK] + 6
     # same for special attack
     calcspatkmult = 1.0
@@ -344,7 +342,7 @@ class PokeBattle_Move
     calcspatkmult *= 1.3 if attacker.pbPartner.ability == :BATTERY && Rejuv
     calcspatkmult *= 2 if attacker.ability == :PUREPOWER && @battle.FE == :PSYTERRAIN
     # end spatk boosts
-    calcspatk = (attacker.spatk * 1.0 * (stagemul[calcspatkstage] / stagediv[calcspatkstage]) * calcspatkmult).floor
+    calcspatk = (attacker.spatk * PBStats::StageMul[calcspatkstage] * calcspatkmult).floor
     # Calculates how much Defense and SpDef opponent has
     calcdefensestage = opponent.stages[PBStats::DEFENSE] + 6
     # aaaand Defense
@@ -361,7 +359,7 @@ class PokeBattle_Move
     end
     calcdefmult *= 2.0 if opponent.hasWorkingItem(:METALPOWDER) && (opponent.pokemon.species == :DITTO) && !opponent.effects[:Transform]
     # end defense boosts
-    calcdefense = (opponent.defense * 1.0 * (stagemul[calcdefensestage] / stagediv[calcdefensestage]) * calcdefmult).floor
+    calcdefense = (opponent.defense * PBStats::StageMul[calcdefensestage] * calcdefmult).floor
     calcspdefstage = opponent.stages[PBStats::SPDEF] + 6
     # don't forget spdef
     calcspdefmult = 1.0
@@ -375,7 +373,7 @@ class PokeBattle_Move
     calcspdefmult *= 1.5 if opponent.hasWorkingItem(:ASSAULTVEST)
     calcspdefmult *= 2.0 if opponent.hasWorkingItem(:DEEPSEASCALE) && (opponent.pokemon.species == :CLAMPERL)
     # end spdef boosts
-    calcspdef = (opponent.spdef * 1.0 * (stagemul[calcspdefstage] / stagediv[calcspdefstage]) * calcspdefmult).floor
+    calcspdef = (opponent.spdef * PBStats::StageMul[calcspdefstage] * calcspdefmult).floor
 
     # Compares difference between Atk/Def and SpAtk/SpDef to determine Physical or Special
     @category = (calcattack - calcdefense > calcspatk - calcspdef) ? :physical : :special
@@ -418,16 +416,14 @@ class PokeBattle_Move
       otype1 = opponent.effects[:Illusion].type1 # 17
       otype2 = opponent.effects[:Illusion].type2 # 17
     end
-    if opponent.effects[:Roost]
-      otype1 = nil if otype1 == :FLYING
-      otype2 = nil if otype2 == :FLYING
+    if otype1 == :FLYING && opponent.effects[:Roost]
+      otype1 = otype2.nil? ? :QMARKS : otype2
+    end
+    if otype2 == :FLYING && opponent.effects[:Roost]
+      otype2 = nil
     end
     if otype1 == :FIRE && opponent.effects[:BurnUp]
-      if otype2.nil?
-        otype1 = :QMARKS
-      else
-        otype1 = otype2
-      end
+      otype1 = otype2.nil? ? :QMARKS : otype2
     end
     if otype2 == :FIRE && opponent.effects[:BurnUp]
       otype2 = nil
@@ -435,15 +431,11 @@ class PokeBattle_Move
     mod1 = PBTypes.oneTypeEff(atype, otype1)
     mod2 = otype1 == otype2 || otype2.nil? ? 2 : PBTypes.oneTypeEff(atype, otype2)
 
-    if attacker.ability == :SCRAPPY || opponent.effects[:Foresight]
-      mod1 = 2 if otype1 == :GHOST && (atype == :NORMAL || atype == :FIGHTING)
-      mod2 = 2 if otype2 == :GHOST && (atype == :NORMAL || atype == :FIGHTING)
-    end
     if @battle.FE == :HOLY
-      mod1 = 4 if (otype1 == :GHOST || otype1 == :DARK) && atype == :NORMAL
-      mod2 = 4 if (otype2 == :GHOST || otype2 == :DARK) && atype == :NORMAL
-      mod1 = 4 if  otype1 == :GHOST && @move == :SPIRITBREAK
-      mod2 = 4 if  otype2 == :GHOST && @move == :SPIRITBREAK
+      mod1 = 4 if [:DARK, :GHOST].include?(otype1) && atype == :NORMAL
+      mod2 = 4 if [:DARK, :GHOST].include?(otype2) && atype == :NORMAL
+      mod1 = 4 if otype1 == :GHOST && @move == :SPIRITBREAK
+      mod2 = 4 if otype2 == :GHOST && @move == :SPIRITBREAK
     end
     if @battle.FE == :UNDERWATER
       mod1 = 2 if otype1 == :WATER && atype == :WATER
@@ -453,57 +445,27 @@ class PokeBattle_Move
       mod1 = 4 if otype1 == :DRAGON && atype == :STEEL
       mod2 = 4 if otype2 == :DRAGON && atype == :STEEL
     end
-    if @battle.FE == :DARKNESS3
-      mod1 = 2 if (otype1 == :DARK || otype1 == :GHOST) && mod1 > 2
-      mod2 = 2 if (otype2 == :DARK || otype2 == :GHOST) && mod2 > 2
-    end
-    if attacker.ability == :PIXILATE || attacker.ability == :AERILATE || attacker.ability == :DUSKILATE || attacker.ability == :REFRIGERATE || attacker.ability == :GALVANIZE || (attacker.ability == :LIQUIDVOICE && isSoundBased?)
-      mod1 = 2 if otype1 == :GHOST && atype == :NORMAL
-      mod2 = 2 if otype2 == :GHOST && atype == :NORMAL
-    end
-    if [:SAWSBUCK, :SIMISAGE, :SIMISEAR, :SIMISAGE].include?(attacker.crested)
-      mod1 = 2 if otype1 == :GHOST && atype == :NORMAL
-      mod2 = 2 if otype2 == :GHOST && atype == :NORMAL
-    end
-    if attacker.ability == :NORMALIZE
-      mod1 = 2 if [:GROUND, :FAIRY, :FLYING, :NORMAL, :DARK].include?(otype1)
-      mod1 = 1 if otype1 == :STEEL
-      mod1 = 0 if otype1 == :GHOST && !opponent.effects[:Foresight]
-      mod2 = 2 if [:GROUND, :FAIRY, :FLYING, :NORMAL, :DARK].include?(otype2)
-      mod2 = 1 if otype2 == :STEEL
-      mod2 = 0 if otype2 == :GHOST && !opponent.effects[:Foresight]
-    end
-    if opponent.effects[:Electrify]
-      mod1 = 0 if otype1 == :GROUND
-      mod1 = 4 if otype1 == :FLYING
-      mod1 = 2 if [:GHOST, :FAIRY, :NORMAL, :DARK].include?(otype1)
-      mod2 = 0 if otype2 == :GROUND
-      mod2 = 4 if otype2 == :FLYING
-      mod2 = 2 if [:GHOST, :FAIRY, :NORMAL, :DARK].include?(otype2)
-    end
     if @battle.FE == :GLITCH
-      mod1 = 0 if otype1 == :GHOST && Glitchtypes.include?(atype)
-      mod2 = 0 if otype2 == :GHOST && Glitchtypes.include?(atype)
       mod1 = 2 if atype == :DRAGON
       mod2 = 2 if atype == :DRAGON
-      mod1 = 0 if atype == :GHOST && (otype1 == :PSYCHIC)
-      mod2 = 0 if atype == :GHOST && (otype2 == :PSYCHIC)
-      mod1 = 4 if atype == :BUG && (otype1 == :POISON)
-      mod2 = 4 if atype == :BUG && (otype2 == :POISON)
-      mod1 = 4 if atype == :POISON && (otype1 == :BUG)
-      mod2 = 4 if atype == :POISON && (otype2 == :BUG)
-      mod1 = 2 if atype == :ICE && (otype1 == :FIRE)
-      mod2 = 2 if atype == :ICE && (otype2 == :FIRE)
-      mod1 = 1 if Rejuv && atype == :DARK && (otype1 == :STEEL)
-      mod2 = 1 if Rejuv && atype == :DARK && (otype2 == :STEEL)
-      mod1 = 1 if Rejuv && atype == :GHOST && (otype1 == :STEEL)
-      mod2 = 1 if Rejuv && atype == :GHOST && (otype2 == :STEEL)
+      mod1 = 0 if atype == :GHOST && otype1 == :PSYCHIC
+      mod2 = 0 if atype == :GHOST && otype2 == :PSYCHIC
+      mod1 = 4 if atype == :BUG && otype1 == :POISON
+      mod2 = 4 if atype == :BUG && otype2 == :POISON
+      mod1 = 4 if atype == :POISON && otype1 == :BUG
+      mod2 = 4 if atype == :POISON && otype2 == :BUG
+      mod1 = 2 if atype == :ICE && otype1 == :FIRE
+      mod2 = 2 if atype == :ICE && otype2 == :FIRE
+      mod1 = 1 if Rejuv && atype == :DARK && otype1 == :STEEL
+      mod2 = 1 if Rejuv && atype == :DARK && otype2 == :STEEL
+      mod1 = 1 if Rejuv && atype == :GHOST && otype1 == :STEEL
+      mod2 = 1 if Rejuv && atype == :GHOST && otype2 == :STEEL
     end
     if @battle.FE == :HAUNTED
       mod1 = 2 if otype1 == :NORMAL && atype == :GHOST
       mod2 = 2 if otype2 == :NORMAL && atype == :GHOST
-      mod1 = 4 if otype1 == :GHOST && @move == :SPIRITBREAK
-      mod2 = 4 if otype2 == :GHOST && @move == :SPIRITBREAK
+      mod1 = 4 if  otype1 == :GHOST && @move == :SPIRITBREAK
+      mod2 = 4 if  otype2 == :GHOST && @move == :SPIRITBREAK
     end
     if @battle.FE == :BEWITCHED
       mod1 = 2 if otype1 == :GRASS && atype == :POISON
@@ -521,13 +483,25 @@ class PokeBattle_Move
       mod1 = 4 if otype1 == :FLYING && attacker.ability == :LONGREACH
       mod2 = 4 if otype2 == :FLYING && attacker.ability == :LONGREACH
     end
+    if (!Rejuv && @battle.FE == :FOREST) || @battle.ProgressiveFieldCheck(PBFields::FLOWERGARDEN, 2, 5)
+      mod1 = 4 if otype1 == :GRASS && @move == :CUT
+      mod2 = 4 if otype2 == :GRASS && @move == :CUT
+    end
     if @battle.FE == :INFERNAL
       mod1 = 4 if otype1 == :GHOST && atype == :FIRE
       mod2 = 4 if otype2 == :GHOST && atype == :FIRE
     end
-    if opponent.effects[:Ingrain] || opponent.effects[:SmackDown] || @battle.state.effects[:Gravity] != 0
+    if opponent.effects[:Ingrain] || opponent.effects[:SmackDown] || @battle.state.effects[:Gravity] != 0 || @battle.FE == :CAVE || @move == :THOUSANDARROWS
       mod1 = 2 if otype1 == :FLYING && atype == :GROUND
       mod2 = 2 if otype2 == :FLYING && atype == :GROUND
+    end
+    if Rejuv && @battle.FE == :ELECTERRAIN
+      mod1 = 2 if otype1 == :GROUND && atype == :ELECTRIC && attacker.ability == :TERAVOLT
+      mod2 = 2 if otype2 == :GROUND && atype == :ELECTRIC && attacker.ability == :TERAVOLT
+    end
+    if attacker.ability == :SCRAPPY || opponent.effects[:Foresight]
+      mod1 = 2 if otype1 == :GHOST && [:NORMAL, :FIGHTING].include?(otype1)
+      mod2 = 2 if otype2 == :GHOST && [:NORMAL, :FIGHTING].include?(otype2)
     end
     if opponent.effects[:MiracleEye]
       mod1 = 2 if otype1 == :DARK && atype == :PSYCHIC
@@ -537,21 +511,52 @@ class PokeBattle_Move
       mod1 = 2 if mod1 == 0
       mod2 = 2 if mod2 == 0
     end
-    if @battle.FE == :CAVE || @move == :THOUSANDARROWS
-      mod1 = 2 if otype1 == :FLYING && atype == :GROUND
-      mod2 = 2 if otype2 == :FLYING && atype == :GROUND
-    end
-    if @move == :VENAMSKISS
-      mod1 = 4 if otype1 == :STEEL && atype == :POISON
-      mod2 = 4 if otype2 == :STEEL && atype == :POISON
-    end
     mod2 = (otype1 == otype2) ? 2 : mod2
 
-    # Inversemode password
-    if $game_switches[:Inversemode] && @battle.FE != :INVERSE
+    # Inversemode password/field
+    if $game_switches[:Inversemode] ^ (@battle.FE == :INVERSE)
       mod1 = 1 if mod1 == 0
       mod2 = 1 if mod2 == 0
-      return 16 / (mod1 * mod2)
+      mod1 = 4 / mod1
+      mod2 = 4 / mod2
+    end
+    if opponent.crested == :TORTERRA
+      mod1 = 4 / mod1 if mod1 != 0
+      mod2 = 4 / mod2 if mod2 != 0
+    end
+    # effects that remove type weaknesses, what is a type weakness changes if inverse battle applies or not so needs to be checked after
+    if @battle.pbWeather == :STRONGWINDS
+      mod1 = 2 if otype1 == :FLYING && mod1 > 2
+      mod2 = 2 if otype2 == :FLYING && mod2 > 2
+    end
+    if @battle.FE == :DARKNESS3
+      mod1 = 2 if [:DARK, :GHOST].include?(otype1) && mod1 > 2
+      mod2 = 2 if [:DARK, :GHOST].include?(otype2) && mod2 > 2
+    end
+    if @battle.ProgressiveFieldCheck(PBFields::FLOWERGARDEN, 4, 5)
+      mod1 = 2 if otype1 == :GRASS && mod1 > 2
+      mod2 = 2 if otype2 == :GRASS && mod2 > 2
+    end
+    if @battle.FE == :SNOWYMOUNTAIN
+      mod1 = 2 if otype1 == :ICE && opponent.ability == :ICESCALES && !opponent.moldbroken && mod1 > 2
+      mod2 = 2 if otype2 == :ICE && opponent.ability == :ICESCALES && !opponent.moldbroken && mod2 > 2
+    end
+    if @battle.FE == :DRAGONSDEN
+      mod1 = 2 if otype1 == :DRAGON && opponent.ability == :MULTISCALE && !opponent.moldbroken && mod1 > 2
+      mod2 = 2 if otype2 == :DRAGON && opponent.ability == :MULTISCALE && !opponent.moldbroken && mod2 > 2
+    end
+    if @battle.FE == :BEWITCHED
+      mod1 = 2 if otype1 == :FAIRY && (opponent.ability == :PASTELVEIL || opponent.pbPartner.ability == :PASTELVEIL) && !opponent.moldbroken && mod1 > 2
+      mod2 = 2 if otype2 == :FAIRY && (opponent.ability == :PASTELVEIL || opponent.pbPartner.ability == :PASTELVEIL) && !opponent.moldbroken && mod2 > 2
+    end
+    # effects that ignore Inverse battles entirely
+    if @move == :VENAMSKISS
+      mod1 = 4 if otype1 == :STEEL
+      mod2 = 4 if otype2 == :STEEL
+    end
+    if @move == :FREEZEDRY
+      mod1 = 4 if otype1 == :WATER
+      mod2 = 4 if otype2 == :WATER
     end
     return mod1 * mod2
   end
@@ -563,54 +568,26 @@ class PokeBattle_Move
     otype1 = opponent.type1
     otype2 = opponent.type2
     mod1 = PBTypes.oneTypeEff(atype, otype1)
-    mod2 = otype1 == otype2 ? 2 : PBTypes.oneTypeEff(atype, otype2)
-    if @battle.FE == :CAVE || @move == :THOUSANDARROWS
+    mod2 = (otype1 == otype2) ? 2 : PBTypes.oneTypeEff(atype, otype2)
+    if @battle.FE == :CAVE || @move == :THOUSANDARROWS || @battle.state.effects[:Gravity] != 0
       mod1 = 2 if otype1 == :FLYING && atype == :GROUND
       mod2 = 2 if otype2 == :FLYING && atype == :GROUND
     end
-    if @move == :VENAMSKISS
-      mod1 = 4 if otype1 == :STEEL && atype == :POISON
-      mod2 = 4 if otype2 == :STEEL && atype == :POISON
-    end
-    if opponent.item == :RINGTARGET
-      mod1 = 2 if mod1 == 0
-      mod2 = 2 if mod2 == 0
-    end
     if attacker.ability == :SCRAPPY
-      mod1 = 2 if otype1 == :GHOST && (atype == :NORMAL || atype == :FIGHTING)
-      mod2 = 2 if otype2 == :GHOST && (atype == :NORMAL || atype == :FIGHTING)
+      mod1 = 2 if otype1 == :GHOST && [:NORMAL, :FIGHTING].include?(otype1)
+      mod2 = 2 if otype2 == :GHOST && [:NORMAL, :FIGHTING].include?(otype2)
     end
     if Rejuv && @battle.FE == :ELECTERRAIN
       mod1 = 2 if otype1 == :GROUND && atype == :ELECTRIC && attacker.ability == :TERAVOLT
       mod2 = 2 if otype2 == :GROUND && atype == :ELECTRIC && attacker.ability == :TERAVOLT
     end
     if @battle.FE == :HOLY
-      mod1 = 4 if (otype1 == :GHOST || otype1 == :DARK) && atype == :NORMAL
-      mod2 = 4 if (otype2 == :GHOST || otype2 == :DARK) && atype == :NORMAL
+      mod1 = 4 if [:DARK, :GHOST].include?(otype1) && atype == :NORMAL
+      mod2 = 4 if [:DARK, :GHOST].include?(otype2) && atype == :NORMAL
       mod1 = 4 if  otype1 == :GHOST && @move == :SPIRITBREAK
       mod2 = 4 if  otype2 == :GHOST && @move == :SPIRITBREAK
     end
-    if attacker.ability == :PIXILATE || attacker.ability == :AERILATE || attacker.ability == :DUSKILATE || attacker.ability == :REFRIGERATE || attacker.ability == :GALVANIZE || (attacker.ability == :LIQUIDVOICE && isSoundBased?)
-      mod1 = 2 if otype1 == :GHOST && atype == :NORMAL
-      mod2 = 2 if otype2 == :GHOST && atype == :NORMAL
-    end
-    if attacker.crested
-      if [:SAWSBUCK, :SIMISAGE, :SIMISEAR, :SIMISAGE, :LUXRAY].include?(attacker.species)
-        mod1 = 2 if otype1 == :GHOST && atype == :NORMAL
-        mod2 = 2 if otype2 == :GHOST && atype == :NORMAL
-      end
-    end
-    if attacker.ability == :NORMALIZE
-      mod1 = 2 if [:GROUND, :FAIRY, :FLYING, :NORMAL, :DARK].include?(otype1)
-      mod1 = 1 if otype1 == :STEEL
-      mod1 = 0 if otype1 == :GHOST
-      mod2 = 2 if [:GROUND, :FAIRY, :FLYING, :NORMAL, :DARK].include?(otype2)
-      mod2 = 1 if otype2 == :STEEL
-      mod2 = 0 if otype2 == :GHOST
-    end
     if @battle.FE == :GLITCH
-      mod1 = 0 if otype1 == :GHOST && Glitchtypes.include?(atype)
-      mod2 = 0 if otype2 == :GHOST && Glitchtypes.include?(atype)
       mod1 = 2 if atype == :DRAGON
       mod2 = 2 if atype == :DRAGON
       mod1 = 0 if atype == :GHOST && otype1 == :PSYCHIC
@@ -646,13 +623,68 @@ class PokeBattle_Move
       mod1 = 4 if otype1 == :FLYING && attacker.ability == :LONGREACH
       mod2 = 4 if otype2 == :FLYING && attacker.ability == :LONGREACH
     end
+    if (!Rejuv && @battle.FE == :FOREST) || @battle.ProgressiveFieldCheck(PBFields::FLOWERGARDEN, 2, 5)
+      mod1 = 4 if otype1 == :GRASS && @move == :CUT
+      mod2 = 4 if otype2 == :GRASS && @move == :CUT
+    end
     if @battle.FE == :INFERNAL
       mod1 = 4 if otype1 == :GHOST && atype == :FIRE
       mod2 = 4 if otype2 == :GHOST && atype == :FIRE
     end
-    if @battle.state.effects[:Gravity] != 0
-      mod1 = 2 if otype1 == :FLYING && atype == :GROUND
-      mod2 = 2 if otype2 == :FLYING && atype == :GROUND
+    if attacker.ability == :SCRAPPY
+      mod1 = 2 if otype1 == :GHOST && [:NORMAL, :FIGHTING].include?(otype1)
+      mod2 = 2 if otype2 == :GHOST && [:NORMAL, :FIGHTING].include?(otype1)
+    end
+    if opponent.item == :RINGTARGET
+      mod1 = 2 if mod1 == 0
+      mod2 = 2 if mod2 == 0
+    end
+    mod2 = (otype1 == otype2) ? 2 : mod2
+
+    # Inversemode password/field
+    if $game_switches[:Inversemode] ^ (@battle.FE == :INVERSE)
+      mod1 = 1 if mod1 == 0
+      mod2 = 1 if mod2 == 0
+      mod1 = 4 / mod1
+      mod2 = 4 / mod2
+    end
+    if opponent.species == :TORTERRA && opponent.item == :TORCREST
+      mod1 = 4 / mod1 if mod1 != 0
+      mod2 = 4 / mod2 if mod2 != 0
+    end
+    # effects that remove type weaknesses, what is a type weakness changes if inverse battle applies or not so needs to be checked after
+    if @battle.pbWeather == :STRONGWINDS
+      mod1 = 2 if otype1 == :FLYING && mod1 > 2
+      mod2 = 2 if otype2 == :FLYING && mod2 > 2
+    end
+    if @battle.FE == :DARKNESS3
+      mod1 = 2 if [:DARK, :GHOST].include?(otype1) && mod1 > 2
+      mod2 = 2 if [:DARK, :GHOST].include?(otype2) && mod2 > 2
+    end
+    if @battle.ProgressiveFieldCheck(PBFields::FLOWERGARDEN, 4, 5)
+      mod1 = 2 if otype1 == :GRASS && mod1 > 2
+      mod2 = 2 if otype2 == :GRASS && mod2 > 2
+    end
+    if @battle.FE == :SNOWYMOUNTAIN
+      mod1 = 2 if otype1 == :ICE && opponent.ability == :ICESCALES && mod1 > 2
+      mod2 = 2 if otype2 == :ICE && opponent.ability == :ICESCALES && mod2 > 2
+    end
+    if @battle.FE == :DRAGONSDEN
+      mod1 = 2 if otype1 == :DRAGON && opponent.ability == :MULTISCALE && mod1 > 2
+      mod2 = 2 if otype2 == :DRAGON && opponent.ability == :MULTISCALE && mod2 > 2
+    end
+    if @battle.FE == :BEWITCHED
+      mod1 = 2 if otype1 == :FAIRY && opponent.ability == :PASTELVEIL && mod1 > 2
+      mod2 = 2 if otype2 == :FAIRY && opponent.ability == :PASTELVEIL && mod2 > 2
+    end
+    # effects that ignore Inverse battles entirely
+    if @move == :VENAMSKISS
+      mod1 = 4 if otype1 == :STEEL
+      mod2 = 4 if otype2 == :STEEL
+    end
+    if @move == :FREEZEDRY
+      mod1 = 4 if otype1 == :WATER
+      mod2 = 4 if otype2 == :WATER
     end
     return mod1 * mod2
   end
@@ -996,83 +1028,26 @@ class PokeBattle_Move
         return 0
       end
     end
-    # UPDATE Implementing Flying Press + Freeze Dry
     typemod = pbTypeModifier(type, attacker, opponent)
-    typemod2 = nil
-    typemod3 = nil
     if type == :FIRE && opponent.effects[:TarShot]
       typemod *= 2
     end
     # Resistance-changing Crests
-    if opponent.crested
-      case opponent.species
-        when :LUXRAY
-          typemod /= 2 if (type == :GHOST || type == :DARK)
-          typemod = 0 if type == :PSYCHIC
-        when :SAMUROTT
-          typemod /= 2 if (type == :BUG || type == :DARK || type == :ROCK)
-        when :LEAFEON
-          typemod /= 4 if (type == :FIRE || type == :FLYING)
-        when :GLACEON
-          typemod /= 4 if (type == :ROCK || type == :FIGHTING)
-        when :SIMISEAR
-          typemod /= 2 if [:STEEL, :FIRE, :ICE].include?(type)
-          typemod /= 2 if type == :WATER && @battle.FE != :UNDERWATER
-        when :SIMIPOUR
-          typemod /= 2 if [:GROUND, :WATER, :GRASS, :ELECTRIC].include?(type)
-        when :SIMISAGE
-          typemod /= 2 if [:BUG, :STEEL, :FIRE, :GRASS, :FAIRY].include?(type)
-          typemod /= 2 if type == :ICE && @battle.FE != :GLITCH
-        when :TORTERRA
-          if !($game_switches[:Inversemode] ^ (@battle.FE == :INVERSE))
-            typemod = 16 / typemod if typemod != 0
-          end
-      end
-    end
-    typemod *= 4 if @move == :FREEZEDRY && opponent.hasType?(:WATER)
-    if @move == :CUT && opponent.hasType?(:GRASS) && ((!Rejuv && @battle.FE == :FOREST) || @battle.ProgressiveFieldCheck(PBFields::FLOWERGARDEN, 2, 5))
-      typemod *= 2
-    end
+    typemod = irregularTypeMods(attacker, opponent, typemod, type)
     if @move == :FLYINGPRESS
       if @battle.FE == :SKY
-        if ((PBTypes.oneTypeEff(:FLYING, opponent.type1) > 2) || (PBTypes.oneTypeEff(:FLYING, opponent.type1) < 2 && $game_switches[:Inversemode]))
-          typemod *= 2
-        end
-        if ((PBTypes.oneTypeEff(:FLYING, opponent.type2) > 2) || (PBTypes.oneTypeEff(:FLYING, opponent.type2) < 2 && $game_switches[:Inversemode]))
-          typemod *= 2
-        end
+        typemod *= 2 if $game_switches[:Inversemode] ? PBTypes.oneTypeEff(:FLYING, opponent.type1) > 2 : PBTypes.oneTypeEff(:FLYING, opponent.type1) < 2
+        typemod *= 2 if $game_switches[:Inversemode] ? PBTypes.oneTypeEff(:FLYING, opponent.type2) > 2 : PBTypes.oneTypeEff(:FLYING, opponent.type2) < 2
       else
         typemod2 = pbTypeModifier(:FLYING, attacker, opponent)
-        typemod3 = (typemod * typemod2) / 4
-        typemod = typemod3
+        typemod2 = irregularTypeMods(attacker, opponent, typemod2, :FLYING)
+        typemod = (typemod * typemod2) / 4
       end
     end
-
     # Field Effect second type changes
     typemod = fieldTypeChange(attacker, opponent, typemod, false)
     typemod = overlayTypeChange(attacker, opponent, typemod, false)
 
-    # Cutting typemod in half
-    if @battle.pbWeather == :STRONGWINDS && (opponent.hasType?(:FLYING) && !opponent.effects[:Roost]) &&
-       ((PBTypes.oneTypeEff(type, :FLYING) > 2) || (PBTypes.oneTypeEff(type, :FLYING) < 2 && ($game_switches[:Inversemode] || (@battle.FE == :INVERSE))))
-      typemod /= 2
-    end
-    if @battle.FE == :SNOWYMOUNTAIN && opponent.ability == :ICESCALES && opponent.hasType?(:ICE) && !opponent.moldbroken &&
-       ((PBTypes.oneTypeEff(type, :ICE) > 2) || (PBTypes.oneTypeEff(type, :ICE) < 2 && ($game_switches[:Inversemode] || (@battle.FE == :INVERSE))))
-      typemod /= 2
-    end
-    if @battle.FE == :DRAGONSDEN && opponent.ability == :MULTISCALE && opponent.hasType?(:DRAGON) && !opponent.moldbroken &&
-       ((PBTypes.oneTypeEff(type, :DRAGON) > 2) || (PBTypes.oneTypeEff(type, :DRAGON) < 2 && ($game_switches[:Inversemode] || (@battle.FE == :INVERSE))))
-      typemod /= 2
-    end
-    if @battle.ProgressiveFieldCheck(PBFields::FLOWERGARDEN, 4, 5) && opponent.hasType?(:GRASS) &&
-       ((PBTypes.oneTypeEff(type, :GRASS) > 2) || (PBTypes.oneTypeEff(type, :GRASS) < 2 && ($game_switches[:Inversemode] || (@battle.FE == :INVERSE))))
-      typemod /= 2
-    end
-    if @battle.FE == :BEWITCHED && opponent.hasType?(:FAIRY) && (opponent.ability == :PASTELVEIL || opponent.pbPartner.ability == :PASTELVEIL) && !opponent.moldbroken &&
-       ((PBTypes.oneTypeEff(type, :FAIRY) > 2) || (PBTypes.oneTypeEff(type, :FAIRY) < 2 && ($game_switches[:Inversemode] || (@battle.FE == :INVERSE))))
-      typemod /= 2
-    end
     if typemod == 0
       if @function == 0x111
         return 1
@@ -1086,42 +1061,54 @@ class PokeBattle_Move
     return typemod
   end
 
+  def irregularTypeMods(attacker, opponent, typemod, type)
+    inverse = ($game_switches[:Inversemode] ^ (@battle.FE == :INVERSE))
+    case opponent.crested
+    when :GLACEON
+      typemod = 2 if [:FIGHTING, :ROCK].include?(type)
+    when :LEAFEON
+      typemod = 2 if [:FIRE, :FLYING].include?(type)
+    when :LUXRAY
+      typemod /= 2 if inverse ? PBTypes.oneTypeEff(type, :DARK) > 2 : PBTypes.oneTypeEff(type, :DARK) < 2
+      typemod = 0 if PBTypes.oneTypeEff(type, :DARK) == 0 && !inverse
+    when :SAMUROTT
+      typemod /= 2 if inverse ? PBTypes.oneTypeEff(type, :FIGHTING) > 2 : PBTypes.oneTypeEff(type, :FIGHTING) < 2
+      typemod = 0 if PBTypes.oneTypeEff(type, :FIGHTING) == 0 && !inverse
+    when :SIMISEAR
+      typemod /= 2 if inverse ? PBTypes.oneTypeEff(type, :WATER) > 2 : (PBTypes.oneTypeEff(type, :WATER) < 2 && !(type == :WATER && @battle.FE == :UNDERWATER))
+      typemod = 0 if PBTypes.oneTypeEff(type, :WATER) == 0 && !inverse
+    when :SIMIPOUR
+      typemod /= 2 if inverse ? PBTypes.oneTypeEff(type, :GRASS) > 2 : PBTypes.oneTypeEff(type, :GRASS) < 2
+      typemod = 0 if PBTypes.oneTypeEff(type, :GRASS) == 0 && !inverse
+    when :SIMISAGE
+      typemod /= 2 if inverse ? PBTypes.oneTypeEff(type, :FIRE) > 2 : (PBTypes.oneTypeEff(type, :FIRE) < 2 && !(type == :ICE && @battle.FE == :GLITCH))
+      typemod = 0 if PBTypes.oneTypeEff(type, :FIRE) == 0 && !inverse
+    end
+    typemod *= 2 if type == :FIRE && opponent.effects[:TarShot]
+    return typemod
+  end
+
   def fieldTypeChange(attacker, opponent, typemod, return_type = false)
     case @battle.FE
       when :RAINBOW # Rainbow Field
-        if (pbType(attacker) == :NORMAL) && pbIsSpecial?(pbType(attacker))
+        if pbType(attacker) == :NORMAL && pbIsSpecial?(pbType(attacker))
           moddedtype = @battle.getRandomType(:NORMAL)
         end
       when :CORROSIVEMIST # Corrosive Mist Field
-        if (pbType(attacker) == :FLYING) && !pbIsPhysical?(pbType(attacker))
+        if pbType(attacker) == :FLYING && !pbIsPhysical?(pbType(attacker))
           moddedtype = :POISON
         end
       when :SHORTCIRCUIT # Shortcircuit Field
-        if (pbType(attacker) == :STEEL) && attacker.ability == :STEELWORKER
+        if pbType(attacker) == :STEEL && attacker.ability == :STEELWORKER
           moddedtype = :ELECTRIC
         end
       when :CRYSTALCAVERN # Crystal Cavern
-        if (pbType(attacker) == :ROCK) || (@move == :JUDGMENT || @move == :ROCKCLIMB || @move == :STRENGTH || @move == :MULTIATTACK || @move == :PRISMATICLASER)
+        if pbType(attacker) == :ROCK || [:JUDGMENT, :ROCKCLIMB, :STRENGTH, :MULTIATTACK, :PRISMATICLASER].include?(@move)
           moddedtype = @battle.field.getRoll(
             update_roll: caller_locations.any? { |string|
               string.to_s.include?("pbCalcDamage")
             } && !return_type
           )
-        end
-      when :INVERSE # Inverse Field
-        if !return_type
-          if !$game_switches[:Inversemode]
-            if typemod == 0
-              typevar1 = PBTypes.oneTypeEff(pbType(attacker), opponent.type1)
-              typevar2 = PBTypes.oneTypeEff(pbType(attacker), opponent.type2)
-              typevar1 = 1 if typevar1 == 0
-              typevar2 = 1 if typevar2 == 0
-              typemod = typevar1 * typevar2
-            end
-            typemod = 16 / typemod
-            # inverse field can (and should) just skip the rest
-            return typemod if !return_type
-          end
         end
     end
     if !moddedtype
@@ -1139,6 +1126,7 @@ class PokeBattle_Move
       return typemod if !moddedtype
 
       newtypemod = pbTypeModifier(moddedtype, attacker, opponent)
+      newtypemod = irregularTypeMods(attacker, opponent, newtypemod, moddedtype)
       typemod = ((typemod * newtypemod) * 0.25).ceil
       return typemod
     end
@@ -1159,6 +1147,7 @@ class PokeBattle_Move
       return typemod if !moddedtype
 
       newtypemod = pbTypeModifier(moddedtype, attacker, opponent)
+      newtypemod = irregularTypeMods(attacker, opponent, newtypemod, moddedtype)
       typemod = ((typemod * newtypemod) * 0.25).ceil
       return typemod
     end
@@ -1185,7 +1174,7 @@ class PokeBattle_Move
     baseaccuracy = fieldmove[:accmod] if fieldmove && fieldmove[:accmod]
     return precheckedacc if !precheckedacc.nil?
     return true if baseaccuracy == 0
-    return true if attacker.ability == :NOGUARD || opponent.ability == :NOGUARD || (attacker.ability == (:FAIRYAURA) && @battle.FE == :FAIRYTALE)
+    return true if attacker.ability == :NOGUARD || opponent.ability == :NOGUARD || (attacker.ability == :FAIRYAURA && @battle.FE == :FAIRYTALE)
     return true if opponent.effects[:Telekinesis] > 0
     return true if @function == 0x0D && @battle.pbWeather == :HAIL # Blizzard
     return true if (@function == 0x08 || @function == 0x15) && @battle.pbWeather == :RAINDANCE # Thunder, Hurricane
@@ -1349,8 +1338,6 @@ class PokeBattle_Move
       ratios = [24, 8, 2, 1]
       opponent.damagestate.critical = @battle.pbRandom(ratios[critchance]) == 0
     end
-    stagemul = [2, 2, 2, 2, 2, 2, 2, 3, 4, 5, 6, 7, 8]
-    stagediv = [8, 7, 6, 5, 4, 3, 2, 2, 2, 2, 2, 2, 2]
     type = pbType(attacker)
     ##### Calcuate base power of move #####
 
@@ -1444,6 +1431,9 @@ class PokeBattle_Move
       when :NORMALIZE     then basemult *= 1.2 if !@zmove
       when :TRANSISTOR    then basemult *= 1.5 if type == :ELECTRIC
       when :DRAGONSMAW    then basemult *= 1.5 if type == :DRAGON
+      when :STEELWORKER   then basemult *= @battle.FE == :FACTORY ? 2.0 : 1.5 if type == :STEEL
+      when :SOLARIDOL     then basemult *= 1.5 if type == :FIRE
+      when :LUNARIDOL     then basemult *= 1.5 if type == :ICE
       when :TERAVOLT      then basemult *= 1.5 if (Rejuv && @battle.FE == :ELECTERRAIN && type == :ELECTRIC)
       when :INEXORABLE    then basemult *= 1.3 if type == :DRAGON && (!opponent.hasMovedThisRound? || @battle.switchedOut[opponent.index])
     end
@@ -1734,11 +1724,11 @@ class PokeBattle_Move
     end
     if opponent.ability != :UNAWARE || opponent.moldbroken
       atkstage = 6 if opponent.damagestate.critical && atkstage < 6
-      atk = (atk * 1.0 * stagemul[atkstage] / stagediv[atkstage]).floor
+      atk = (atk * PBStats::StageMul[atkstage]).floor
     end
     if attacker.ability == :UNAWARE
       atkstage = attacker.stages[PBStats::ATTACK] + 6
-      atk = (atk * 1.0 * stagemul[atkstage] / stagediv[atkstage]).floor
+      atk = (atk * PBStats::StageMul[atkstage]).floor
     end
     # Stat-Copy Crests, ala Claydol//Dedenne
     case attacker.crested
@@ -1823,7 +1813,7 @@ class PokeBattle_Move
     if (@battle.pbWeather == :HAIL) && pbIsSpecial?(type)
       atkmult *= 1.5 if attacker.ability == :LUNARIDOL
     end
-    if attacker.pbPartner.ability == (:BATTERY) && pbIsSpecial?(type) && @battle.FE != :GLITCH
+    if attacker.pbPartner.ability == :BATTERY && pbIsSpecial?(type) && @battle.FE != :GLITCH
       if Rejuv && @battle.FE == :ELECTERRAIN
         atkmult *= 1.5
       else
@@ -1904,7 +1894,7 @@ class PokeBattle_Move
     if attacker.ability != :UNAWARE
       defstage = 6 if @function == 0xA9 # Chip Away (ignore stat stages)
       defstage = 6 if opponent.damagestate.critical && defstage > 6
-      defense = (defense * 1.0 * stagemul[defstage] / stagediv[defstage]).floor
+      defense = (defense * PBStats::StageMul[defstage]).floor
     end
     if @battle.pbWeather == :SANDSTORM && opponent.hasType?(:ROCK) && applysandstorm
       defense = (defense * 1.5).round
@@ -2098,10 +2088,8 @@ class PokeBattle_Move
         end
     end
     # STAB
-    if (attacker.hasType?(type) && (!attacker.effects[:DesertsMark]) || (attacker.ability == :STEELWORKER && type == :STEEL) || (attacker.ability == :SOLARIDOL && type == :FIRE) || (attacker.ability == :LUNARIDOL && type == :ICE) || typecrest == true)
-      if attacker.ability == :ADAPTABILITY
-        damage *= 2.0
-      elsif (attacker.ability == :STEELWORKER && type == :STEEL) && @battle.FE == :FACTORY # Factory Field
+    if (attacker.hasType?(type) && !attacker.effects[:DesertsMark]) || typecrest == true
+      if attacker.ability == :ADAPTABILITY || (attacker.hasType?(type) && typecrest == true)
         damage *= 2.0
       else
         damage *= 1.5
@@ -2153,19 +2141,8 @@ class PokeBattle_Move
     finalmult *= 0.5 if (opponent.ability == :PASTELVEIL || opponent.pbPartner.ability == :PASTELVEIL) && @type == :POISON && (@battle.FE == :MISTY || @battle.FE == :RAINBOW || (@battle.state.effects[:MISTY] > 0))
     if @battle.ProgressiveFieldCheck(PBFields::FLOWERGARDEN, 3, 5)
       if (opponent.pbPartner.ability == :FLOWERVEIL && opponent.hasType?(:GRASS)) || (opponent.ability == :FLOWERVEIL && !opponent.moldbroken)
-        if Reborn
-          finalmult *= 0.75
-        else
-          finalmult *= 0.5
-        end
+        finalmult *= 0.75
         @battle.pbDisplay(_INTL("The Flower Veil softened the attack!"))
-      end
-      if opponent.hasType?(:GRASS) && !Reborn
-        case @battle.FE
-          when :FLOWERGARDEN3 then finalmult *= 0.75
-          when :FLOWERGARDEN4 then finalmult *= 0.66
-          when :FLOWERGARDEN5 then finalmult *= 0.5
-        end
       end
     end
     finalmult *= 0.75 if (((opponent.ability == :SOLIDROCK || opponent.ability == :FILTER) && !opponent.moldbroken) || opponent.ability == :PRISMARMOR) && opponent.damagestate.typemod > 4

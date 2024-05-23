@@ -1439,15 +1439,16 @@ ItemHandlers::UseOnPokemon.add(:RARECANDY, proc { |item, pokemon, scene, amount 
   end
 })
 
-ItemHandlers::UseOnPokemon.add(:COMMONCANDY, proc { |item, pokemon, scene|
+ItemHandlers::UseOnPokemon.add(:COMMONCANDY, proc { |item, pokemon, scene, amount = 1|
   if pokemon.level == 1 || (pokemon.isShadow? rescue false)
     scene.pbDisplay(_INTL("It won't have any effect."))
-    next false
+    next false, 0
   else
-    pbChangeLevel(pokemon, pokemon.level - 1, scene)
+    amount = pokemon.level - 1 if amount >= pokemon.level
+    pbChangeLevel(pokemon, pokemon.level - amount, scene)
     pokemon.changeHappiness("badcandy")
     scene.pbHardRefresh
-    next true
+    next true, amount
   end
 })
 ItemHandlers::UseOnPokemon.copy(:COMMONCANDY, :REVERSECANDY)

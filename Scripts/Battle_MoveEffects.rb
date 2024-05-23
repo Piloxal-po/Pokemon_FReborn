@@ -209,7 +209,7 @@ class PokeBattle_Move_003 < PokeBattle_Move
       @battle.pbDisplay(_INTL("But {1} can't use the move!", attacker.pbThis))
       return false
     else
-      if @battle.FE == :DARKNESS2 || @battle.FE == :DARKNESS3
+      if @move == :DARKVOID && (@battle.FE == :DARKNESS2 || @battle.FE == :DARKNESS3)
         @battle.pbDisplay(_INTL("We fall..."))
         @battle.pbDisplay(_INTL(" We fall... unto the end..."))
       end
@@ -2667,6 +2667,7 @@ class PokeBattle_Move_055 < PokeBattle_Move
     for i in [PBStats::ATTACK, PBStats::DEFENSE, PBStats::SPEED, PBStats::SPATK, PBStats::SPDEF, PBStats::ACCURACY, PBStats::EVASION]
       attacker.stages[i] = opponent.stages[i]
     end
+    attacker.effects[:FocusEnergy] = opponent.effects[:FocusEnergy]
     @battle.pbDisplay(_INTL("{1} copied {2}'s stat changes!", attacker.pbThis, opponent.pbThis(true)))
     if @battle.FE == :ASHENBEACH
       t = attacker.status
@@ -3074,7 +3075,7 @@ class PokeBattle_Move_061 < PokeBattle_Move
       return -1
     end
     pbShowAnimation(@move, attacker, opponent, hitnum, alltargets, showanimation)
-    opponent.type1 = (:WATER)
+    opponent.type1 = :WATER
     opponent.type2 = nil
     typename = getTypeName((:WATER))
     @battle.pbDisplay(_INTL("{1} transformed into the {2} type!", opponent.pbThis, typename))
@@ -3306,6 +3307,7 @@ class PokeBattle_Move_069 < PokeBattle_Move
     for i in [PBStats::ATTACK, PBStats::DEFENSE, PBStats::SPEED, PBStats::SPATK, PBStats::SPDEF, PBStats::EVASION, PBStats::ACCURACY]
       attacker.stages[i] = opponent.stages[i]
     end
+    attacker.effects[:FocusEnergy] = opponent.effects[:FocusEnergy]
     for i in 0...4
       next if !opponent.moves[i]
 
@@ -5406,11 +5408,17 @@ end
 # Rock Blast / Water Shuriken)
 ################################################################################
 class PokeBattle_Move_0C0 < PokeBattle_Move
+   def pbBaseDamage(basedmg, attacker, opponent)
+    return 20 if @move == :WATERSHURIKEN && attacker.species == :GRENINJA && attacker.ability == :BATTLEBOND && attacker.form == 1 && !attacker.effects[:Transform] && Gen7
+    return basedmg
+  end
+
   def pbIsMultiHit
     return true
   end
 
   def pbNumHits(attacker)
+    return 3 if @move == :WATERSHURIKEN && attacker.species == :GRENINJA && attacker.ability == :BATTLEBOND && attacker.form == 1 && !attacker.effects[:Transform] && Gen7
     hitchances = [2, 2, 3, 3, 4, 5]
     ret = hitchances[@battle.pbRandom(hitchances.length)]
     ret = 5 if attacker.ability == :SKILLLINK
@@ -6750,7 +6758,7 @@ class PokeBattle_Move_0E9 < PokeBattle_Move
 end
 
 ################################################################################
-# User flees from battle.  Fails in trainer battles. (Teleport)
+# User flees from battle.  Fails in trainer battles. (Gen 7 Teleport)
 ################################################################################
 class PokeBattle_Move_0EA < PokeBattle_Move
   def pbEffect(attacker, opponent, hitnum = 0, alltargets = nil, showanimation = true)
@@ -6916,9 +6924,7 @@ class PokeBattle_Move_0EE < PokeBattle_Move
         attacker.userSwitch = false
         attacker.vanished = false
       end
-      if @move == :VOLTSWITCH && (opponent.ability == :MOTORDRIVE ||
-        opponent.ability == :VOLTABSORB ||
-        opponent.ability == :LIGHTNINGROD)
+      if @move == :VOLTSWITCH && [:MOTORDRIVE, :VOLTABSORB, :LIGHTNINGROD].include?(opponent.ability)
         attacker.userSwitch = false
         attacker.vanished = false
       end
@@ -7398,6 +7404,17 @@ class PokeBattle_Move_0FA < PokeBattle_Move
     end
     return ret
   end
+
+  # Replacement animation till a proper one is made
+  def pbShowAnimation(id, attacker, opponent, hitnum = 0, alltargets = nil, showanimation = true)
+    return if !showanimation
+
+    if id == :WAVECRASH
+      @battle.pbAnimation(:WATERFALL, attacker, opponent, hitnum)
+    else
+      @battle.pbAnimation(id, attacker, opponent, hitnum)
+    end
+  end
 end
 
 ################################################################################
@@ -7427,7 +7444,7 @@ end
 
 ################################################################################
 # User takes recoil damage equal to the amount specified by the recoil flag.
-# May burn the target. (Flare Blitz / Wave Crash)
+# May burn the target. (Flare Blitz)
 ################################################################################
 class PokeBattle_Move_0FE < PokeBattle_Move
   def pbEffect(attacker, opponent, hitnum = 0, alltargets = nil, showanimation = true)
@@ -7449,16 +7466,6 @@ class PokeBattle_Move_0FE < PokeBattle_Move
     return true
   end
 
-  # Replacement animation till a proper one is made
-  def pbShowAnimation(id, attacker, opponent, hitnum = 0, alltargets = nil, showanimation = true)
-    return if !showanimation
-
-    if id == :WAVECRASH
-      @battle.pbAnimation(:WATERFALL, attacker, opponent, hitnum)
-    else
-      @battle.pbAnimation(id, attacker, opponent, hitnum)
-    end
-  end
 end
 
 ################################################################################
@@ -7882,7 +7889,7 @@ class PokeBattle_Move_107 < PokeBattle_Move
 end
 
 ################################################################################
-# If used after ally's Grass Pledge, makes a swamp appear on the opposing side. (water Pledge)
+# If used after ally's Grass Pledge, makes a swamp appear on the opposing side. (Water Pledge)
 ################################################################################
 class PokeBattle_Move_108 < PokeBattle_Move
   # THIS ONE IS WATER PLEDGE
@@ -7892,7 +7899,7 @@ class PokeBattle_Move_108 < PokeBattle_Move
     fieldbefore = @battle.field.effect
     duration = 4
     duration = 7 if attacker.hasWorkingItem(:AMPLIFIELDROCK)
-    @battle.setPledge(:GRASSPLEDGE, duration)
+    @battle.setPledge(:WATERPLEDGE, duration)
     if @battle.field.effect == fieldbefore # field didn't change
       case @battle.field.effect
         when :SWAMP then @battle.pbDisplay(_INTL("The pledges combined and reinforced the swamp!"))
@@ -8354,7 +8361,7 @@ class PokeBattle_Move_116 < PokeBattle_Move
       return -1
     elsif opponent.effects[:Protect] == :SpikyShield
       @battle.pbDisplay(_INTL("{1} protected itself!", opponent.pbThis))
-      if attacker.ability != (:LONGREACH)
+      if attacker.ability != :LONGREACH
         attacker.pbReduceHP((attacker.totalhp / 8.0).floor)
         @battle.pbDisplay(_INTL("{1}'s Spiky Shield hurt {2}!", opponent.pbThis, attacker.pbThis(true)))
       end
@@ -8624,7 +8631,7 @@ class PokeBattle_Move_11F < PokeBattle_Move
 end
 
 ################################################################################
-# User switches places with its ally. (Ally Switch)
+# User switches places with its ally. (Ally Switch / Gen 8 Teleport)
 ################################################################################
 
 class PokeBattle_Move_120 < PokeBattle_Move
@@ -10306,11 +10313,8 @@ class PokeBattle_Move_172 < PokeBattle_Move
   def pbEffect(attacker, opponent, hitnum = 0, alltargets = nil, showanimation = true)
     return -1 if !opponent.pbCanReduceStatStage?(PBStats::ATTACK, true)
 
-    stagemul = [10, 10, 10, 10, 10, 10, 10, 15, 20, 25, 30, 35, 40]
-    stagediv = [40, 35, 30, 25, 20, 15, 10, 10, 10, 10, 10, 10, 10]
     statstage = opponent.stages[PBStats::ATTACK]
-
-    hpgain = opponent.attack * stagemul[statstage + 6] / stagediv[statstage + 6]
+    hpgain = opponent.attack * PBStats::StageMul[statstage + 6]
     if Rejuv && @battle.FE == :GRASSY
       hpgain = (hpgain * 1.6).floor if attacker.hasWorkingItem(:BIGROOT)
     else
@@ -10423,8 +10427,6 @@ class PokeBattle_Move_176 < PokeBattle_Move
   # Moldbreaking handled elsewhere
   def pbIsPhysical?(type = @type)
     attacker = @user
-    stagemul = [2, 2, 2, 2, 2, 2, 2, 3, 4, 5, 6, 7, 8]
-    stagediv = [8, 7, 6, 5, 4, 3, 2, 2, 2, 2, 2, 2, 2]
     # Physical Stuff
     storedatk = attacker.attack
     atkstage = 6
@@ -10440,7 +10442,7 @@ class PokeBattle_Move_176 < PokeBattle_Move
       atkmult *= 2 if attacker.hasWorkingItem(:THICKCLUB) && ((attacker.pokemon.species == :CUBONE) || (attacker.pokemon.species == :MAROWAK))
       atkmult *= 0.5 if attacker.status == :BURN && !(attacker.ability == :GUTS && !attacker.status.nil?)
     end
-    storedatk *= ((stagemul[atkstage] / stagediv[atkstage]) * atkmult)
+    storedatk *= PBStats::StageMul[atkstage] * atkmult
     # Special Stuff
     storedspatk = attacker.spatk
     spatkstage = 6
@@ -10457,7 +10459,7 @@ class PokeBattle_Move_176 < PokeBattle_Move
       spatkmult *= 1.3 if attacker.pbPartner.ability == :BATTERY
       spatkmult *= 2 if attacker.ability == :PUREPOWER && @battle.FE == :PSYTERRAIN
     end
-    storedspatk *= ((stagemul[spatkstage] / stagediv[spatkstage]) * spatkmult)
+    storedspatk *= PBStats::StageMul[spatkstage] * spatkmult
     storedspatk = attacker.getSpecialStat if @battle.FE == :GLITCH && attacker.class == PokeBattle_Battler
     # Final selection
     if storedatk > storedspatk
@@ -10981,7 +10983,7 @@ class PokeBattle_Move_774 < PokeBattle_Move
       return ret
     end
 
-    if opponent.ability == (:SAPSIPPER) && !(opponent.moldbroken)
+    if opponent.ability == :SAPSIPPER && !(opponent.moldbroken)
       if opponent.pbCanIncreaseStatStage?(PBStats::ATTACK)
         opponent.pbIncreaseStatBasic(PBStats::ATTACK, 1)
         @battle.pbCommonAnimation("StatUp", opponent, nil)
@@ -11104,7 +11106,7 @@ class PokeBattle_Move_778 < PokeBattle_Move
   end
 
   def pbAdditionalEffect(attacker, opponent)
-    if opponent.ability != (:INNERFOCUS) &&
+    if opponent.ability != :INNERFOCUS &&
        !opponent.damagestate.substitute &&
        opponent.status != :SLEEP && opponent.status != :FROZEN
       opponent.effects[:Flinch] = true
@@ -11148,7 +11150,7 @@ class PokeBattle_Move_307 < PokeBattle_Move
   def pbNumHits(attacker)
     hitchances = [2, 2, 3, 3, 4, 5]
     ret = hitchances[@battle.pbRandom(hitchances.length)]
-    ret = 5 if attacker.ability == (:SKILLLINK)
+    ret = 5 if attacker.ability == :SKILLLINK
     return ret
   end
 
@@ -11355,7 +11357,7 @@ end
 ################################################################################
 class PokeBattle_Move_316 < PokeBattle_Move
   def pbEffect(attacker, opponent, hitnum = 0, alltargets = nil, showanimation = true)
-    if opponent.pokemon.corrosiveGas || opponent.ability == (:STICKYHOLD) ||
+    if opponent.pokemon.corrosiveGas || opponent.ability == :STICKYHOLD ||
        @battle.pbIsUnlosableItem(opponent, opponent.item) || opponent.item.nil?
       #      @battle.pbDisplay(_INTL("But it failed!"))
       return -1
@@ -11449,7 +11451,7 @@ class PokeBattle_Move_318 < PokeBattle_Move
   def pbShowAnimation(id, attacker, opponent, hitnum = 0, alltargets = nil, showanimation = true)
     return if !showanimation
 
-    if id == :LUNARBLESSINg
+    if id == :LUNARBLESSING
       @battle.pbAnimation(:LUNARDANCE, attacker, opponent, hitnum)
     else
       @battle.pbAnimation(id, attacker, opponent, hitnum)

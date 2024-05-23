@@ -1,102 +1,61 @@
 module Blindstep
   def self.player_move(direction)
-    volume = $Settings.accessibilityVolume
-    pbSEPlay("Blindstep- Footstep_D", volume) if direction == 2
-    pbSEPlay("Blindstep- Footstep_L", volume) if direction == 4
-    pbSEPlay("Blindstep- Footstep_R", volume) if direction == 6
-    pbSEPlay("Blindstep- Footstep_U", volume) if direction == 8
+    pbAccessibilitySEPlay("Blindstep- Footstep_D") if direction == 2
+    pbAccessibilitySEPlay("Blindstep- Footstep_L") if direction == 4
+    pbAccessibilitySEPlay("Blindstep- Footstep_R") if direction == 6
+    pbAccessibilitySEPlay("Blindstep- Footstep_U") if direction == 8
   end
 
-  # If you think this is ugly, trust me that the original was much much worse.
-  # Feel free to rewrite it completely but I have had enough of this. ~enu
-  # For instance instead of the time shenanigans we should probably use Graphics.frame_count.
   def self.character_update()
-    time = Process.clock_gettime(Process::CLOCK_MONOTONIC, :millisecond)
-    time -= Process.clock_gettime(Process::CLOCK_MONOTONIC, :second) * 1000
-    time %= 500
-    volume = $Settings.accessibilityVolume
-
-    if time < 50
-      $game_variables[:BlindstepLastDirection] = 0
-    end
-
     return if pbMapInterpreterRunning? || $game_temp.message_window_showing
 
-    if time.between?(50, 99)
-      return if $game_variables[:BlindstepLastDirection] == 1
+    remainder = Graphics.frame_count % (40 * ($speed_up ? $Settings.turboSpeedMultiplier : 1)).floor
 
-      pbSEStop
+    if remainder == 0
       self.playAmbientSounds
-      $game_variables[:BlindstepLastDirection] = 1
-    end
 
-    if time.between?(100, 199)
-      return if $game_variables[:BlindstepLastDirection] == 8
-      return if $game_player.passable?($game_player.x, $game_player.y, 8)
+      return if self.getFacingEventType == 0
 
-      if self.getFacingEventType > 0
-        # pbSEPlay("Blindstep- Door",3*volume/4,80) if door
-        pbSEPlay("Blindstep- ImmediateEvent", 3 * volume / 4, 80)
+      if !$game_player.passable?($game_player.x, $game_player.y, 8)
+        # pbAccessibilitySEPlay("Blindstep- Door", 75, 80) if door
+        pbAccessibilitySEPlay("Blindstep- ImmediateEvent", 75, 80)
       end
-      $game_variables[:BlindstepLastDirection] = 8
-    end
-
-    if time.between?(200, 299)
-      return if $game_variables[:BlindstepLastDirection] == 2
-      return if $game_player.passable?($game_player.x, $game_player.y, 2)
-
-      if self.getFacingEventType > 0
-        # pbSEPlay("Blindstep- Door",3*volume/4,20) if door
-        pbSEPlay("Blindstep- ImmediateEvent", 3 * volume / 4, 20)
+      if !$game_player.passable?($game_player.x, $game_player.y, 2)
+        # pbAccessibilitySEPlay("Blindstep- Door", 75, 20) if door
+        pbAccessibilitySEPlay("Blindstep- ImmediateEvent", 75, 20)
       end
-      $game_variables[:BlindstepLastDirection] = 2
-    end
-
-    if time.between?(300, 399)
-      return if $game_variables[:BlindstepLastDirection] == 4
-      return if $game_player.passable?($game_player.x, $game_player.y, 4)
-
-      if self.getFacingEventType > 0
-        # pbSEPlay("Blindstep- DoorL",3*volume/4) if door
-        pbSEPlay("Blindstep- ImmediateEventL", 3 * volume / 4)
+      if !$game_player.passable?($game_player.x, $game_player.y, 4)
+        # pbAccessibilitySEPlay("Blindstep- DoorL", 75) if door
+        pbAccessibilitySEPlay("Blindstep- ImmediateEventL", 75)
       end
-      $game_variables[:BlindstepLastDirection] = 4
-    end
-
-    if time.between?(400, 499)
-      return if $game_variables[:BlindstepLastDirection] == 6
-      return if $game_player.passable?($game_player.x, $game_player.y, 6)
-
-      if self.getFacingEventType > 0
-        # pbSEPlay("Blindstep- DoorR",3*volume/4) if door
-        pbSEPlay("Blindstep- ImmediateEventR", 3 * volume / 4)
+      if !$game_player.passable?($game_player.x, $game_player.y, 6)
+        # pbAccessibilitySEPlay("Blindstep- DoorR", 75) if door
+        pbAccessibilitySEPlay("Blindstep- ImmediateEventR", 75)
       end
-      $game_variables[:BlindstepLastDirection] = 6
     end
   end
 
   def self.playAmbientSounds
-    volume = $Settings.accessibilityVolume
-    pbSEPlay("Blindstep- AmbientNorth", volume * self.getDirectionVolume(8) / 6)
-    pbSEPlay("Blindstep- AmbientSouth", volume * self.getDirectionVolume(2) / 6)
-    pbSEPlay("Blindstep- AmbientWest", volume * self.getDirectionVolume(4) / 6)
-    pbSEPlay("Blindstep- AmbientEast", volume * self.getDirectionVolume(6) / 6)
+    pbAccessibilitySEPlay("Blindstep- AmbientNorth", self.getDirectionVolume(8))
+    pbAccessibilitySEPlay("Blindstep- AmbientSouth", self.getDirectionVolume(2))
+    pbAccessibilitySEPlay("Blindstep- AmbientWest", self.getDirectionVolume(4))
+    pbAccessibilitySEPlay("Blindstep- AmbientEast", self.getDirectionVolume(6))
   end
 
   def self.getDirectionVolume(direction)
     x = $game_player.x
     y = $game_player.y
-    volume = 6
-    while volume > 0
-      return volume unless $game_player.passable?(x, y, direction)
+    intensity = 6
+    while intensity > 0
+      break unless $game_player.passable?(x, y, direction)
 
-      volume -= 1
+      intensity -= 1
       y += 1 if direction == 2
       x -= 1 if direction == 4
       x += 1 if direction == 6
       y -= 1 if direction == 8
     end
-    return 0
+    return 100 * intensity / 6
   end
 
   def self.getFacingEventType

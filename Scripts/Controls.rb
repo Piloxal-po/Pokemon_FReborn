@@ -46,7 +46,11 @@ class DefaultKeyboardControlsScene
       end
       texts.push ["Ctrl + Q / W:   Skip 10 pages up or down", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
       texts.push ["Home / End:   Jump to the first or last item", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
-      texts.push ["M / Alt:   Toggle Turbo Mode", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
+      if TAB_TURBO
+        texts.push ["Tab / M:   Toggle Turbo Mode", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
+      else
+        texts.push ["Alt / M:   Toggle Turbo Mode", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
+      end
       texts.push ["Shift:   Toggle Run", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
       texts.push ["F1:   Configure controls", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
       texts.push ["F7:   Mute, Unmute", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]

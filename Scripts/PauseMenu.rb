@@ -1,4 +1,6 @@
 class PokemonMenu_Scene
+  attr_accessor :sprites
+  attr_accessor :viewport
   def pbShowCommands(commands)
     ret = -1
     cmdwindow = @sprites["cmdwindow"]
@@ -171,7 +173,23 @@ class PokemonMenu
         #  end
         # end
       elsif cmdPokegear >= 0 && command == cmdPokegear
+        if Desolation
+          Graphics.freeze
+          @scene.pbFadeOutAndHide(@scene.sprites) 
+        end
         pbLoadRpgxpScene(Scene_Pokegear.new)
+        if Desolation && $shouldCloseMenu
+          @scene.pbFadeOutAndHide(@scene.sprites) 
+          $shouldCloseMenu =false
+          @scene.pbDisposeSpriteHash(@scene.sprites)
+          $game_temp.in_menu = false
+          @scene.viewport.dispose
+          Graphics.update
+          pbToneChangeAll(Tone.new(0, 0, 0), 8)
+          endscene=false
+        break
+        end
+        Graphics.update
       elsif cmdPokemon >= 0 && command == cmdPokemon
         sscene = PokemonScreen_Scene.new
         sscreen = PokemonScreen.new(sscene, $Trainer.party)

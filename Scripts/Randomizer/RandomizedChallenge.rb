@@ -1201,6 +1201,8 @@ def pbLoadTrainer(trainerid, trainername, partyid = 0)
           pokemon.ev[i] = 252 if pokemon.ev[i] < 252
         end
         pokemon.ev[5] = 0 if iv == 32 # speed, right...?
+      end
+      if $game_switches[:Max_Trainer_IVs_Password] # max ivs
         for i in 0...6
           pokemon.iv[i] = 31 if iv != 32
         end

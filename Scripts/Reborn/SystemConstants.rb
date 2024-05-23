@@ -85,6 +85,8 @@ Sliggoo = []
 Avalugg = []
 Decidueye = []
 
+DistortionWorld = [890, 891, 892]
+
 #===============================================================================
 # * Constants for maps to reflect sprites on
 #===============================================================================
@@ -214,6 +216,7 @@ Switches = {
   Doubles_Pass: 2230,
   No_Battles_Pass: 2232,
   Disabled_Randomizer: 2241,
+  Max_Trainer_IVs_Password: 2244,
 }
 Variables = {
   Field_Effect_End_Of_Battle: 7,
@@ -225,6 +228,7 @@ Variables = {
   Weather_Randomizer: 83,
   Current_Weather: 91,
   Weather_Override: 106,
+  BattleResult: 117,
   E10_Story: 150,
   Player_Gender: 151,
   Forced_Field_Effect: 161,
@@ -251,7 +255,6 @@ Variables = {
   Set_Weather_1: 789,
   Set_Weather_2: 790,
   EncounterRateModifier: 794,
-  BlindstepLastDirection: 802,
 }
 
 #===============================================================================

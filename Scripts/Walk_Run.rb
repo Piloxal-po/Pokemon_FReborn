@@ -55,7 +55,7 @@ class Game_Player
     if !moving? && !@move_route_forcing
       if $PokemonGlobal.playerID >= 0 && !$PokemonGlobal.bicycle && !$PokemonGlobal.diving && !$PokemonGlobal.surfing && !$PokemonGlobal.lavasurfing
         input_dir4 = Input.dir4
-        if input_dir4 != 0 && passable?(@x, @y, input_dir4) && pbCanRun?
+        if input_dir4 != 0 && passable?(@x, @y, input_dir4) && pbCanRun? && !(TAB_TURBO && Input.press?(Input::ALT))
           # Display running character sprite
           unless @lastGraphic == :run
             @character_name = pbGetPlayerCharset(:run)

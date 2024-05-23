@@ -241,8 +241,8 @@ class PokemonOptions
   end
 
   def fixMissingValues
-    @textspeed = 1 if @textspeed.nil? # Text speed (0=slow, 1=mid, 2=fast)
-    @textskipwait = 0 if @textskipwait.nil? # Wait for text skip (0 is on, 1 is off)
+    @textspeed      = 1 if @textspeed.nil? # Text speed (0=slow, 1=mid, 2=fast)
+    @textskipwait   = 0 if @textskipwait.nil? # Wait for text skip (0 is on, 1 is off)
     @volume              = 100 if @volume.nil? # Volume (0 - 100)
     @sevolume            = 100 if @sevolume.nil? # Volume (0 - 100)
     @accessibilityVolume = 100 if @accessibilityVolume.nil? # Volume (0 - 100)

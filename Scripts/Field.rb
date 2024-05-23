@@ -1075,18 +1075,28 @@ def pbPrepareBattle(battle)
     when :Rain, :Storm, :HeavyRain
       battle.weather = :RAINDANCE
       battle.weatherduration = -1
+      battle.weatherbackup = :RAINDANCE
+      battle.weatherbackupanim = "Rain"
     when :Snow, :Blizzard
       battle.weather = :HAIL
       battle.weatherduration = -1
+      battle.weatherbackup = :HAIL
+      battle.weatherbackupanim = "Hail"
     when :Sandstorm
       battle.weather = :SANDSTORM
       battle.weatherduration = -1
+      battle.weatherbackup = :SANDSTORM
+      battle.weatherbackupanim = "Sandstorm"
     when :Sunny
       battle.weather = :SUNNYDAY
       battle.weatherduration = -1
+      battle.weatherbackup = :SUNNYDAY
+      battle.weatherbackupanim = "Sunny"
     when :Winds
       battle.weather = :STRONGWINDS
       battle.weatherduration = -1
+      battle.weatherbackup = :STRONGWINDS
+      battle.weatherbackupanim = "Wind"
   end
   battle.shiftStyle = ($Settings.battlestyle == 0)
   battle.battlescene = ($Settings.battlescene == 0 && $Settings.photosensitive == 0)
@@ -1974,8 +1984,8 @@ def pbWaitForInput(msgwindow, message, frames)
 
   pbSEPlay("Fishing Prompt") if Reborn
   Kernel.pbMessageDisplay(msgwindow, message, false, tts: false)
-  frames *= 3 if $speed_up
-  frames.times do
+  frames *= $Settings.turboSpeedMultiplier if $speed_up
+  frames.floor.times do
     Graphics.update
     Input.update
     pbUpdateSceneMap
@@ -2075,7 +2085,7 @@ Events.onMapSceneChange += proc { |sender, e|
           nosignpost = true if $game_map.name == oldmapname && !oldmapnoshow
         end
         scene.spriteset.addUserSprite(LocationWindow.new($game_map.name)) if !nosignpost
-        tts($game_map.name) if !nosignpost
+        tts($game_map.name, true) if !nosignpost
       end
     end
   end

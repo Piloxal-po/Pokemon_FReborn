@@ -734,6 +734,10 @@ class Scene_Credits
 
     <T><right> im am living in ur credits
 
+    *  ~  Community Cooperation Initiative  ~  *
+    Alemi<s>Aqib
+    Pixel<s>Dred
+
     *  ~  Meme Consultant  ~  *
     Autumn
     <L>Lin

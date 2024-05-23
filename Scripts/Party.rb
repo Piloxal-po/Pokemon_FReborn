@@ -741,7 +741,7 @@ class PokemonScreen_Scene
     @activecmd = pkmn
   end
 
-  def pbChoosePokemon(switching = false, allow_party_switch = false, canswitch = 0)
+  def pbChoosePokemon(switching = false, allow_party_switch = false, canswitch = 0, shortcut_keys: false)
     for i in 0...6
       @sprites["pokemon#{i}"].preselected = (switching && i == @activecmd)
       @sprites["pokemon#{i}"].switching = switching
@@ -797,8 +797,9 @@ class PokemonScreen_Scene
         return (@activecmd == cancelsprite) ? -1 : @activecmd
       end
 
-      if canswitch == 0 && @activecmd < 6
-        if Input.trigger?(Input::Y)
+      if shortcut_keys && canswitch == 0 && @activecmd < 6
+        # Item command is not allowed in battle
+        if Input.trigger?(Input::Y) && allow_party_switch
           # Item
           return [2, @activecmd]
         end
@@ -1221,9 +1222,9 @@ class PokemonScreen
     @scene.pbSetHelpText(helptext)
   end
 
-  def pbChoosePokemon(helptext = nil)
+  def pbChoosePokemon(helptext = nil, shortcut_keys: false)
     @scene.pbSetHelpText(helptext) if helptext
-    return @scene.pbChoosePokemon
+    return @scene.pbChoosePokemon(shortcut_keys: shortcut_keys)
   end
 
   def pbChooseMove(pokemon, helptext)
@@ -1560,7 +1561,7 @@ class PokemonScreen
     @scene.pbStartScene(@party, @party.length > 1 ? _INTL("Choose a Pokémon.") : _INTL("Choose Pokémon or cancel."), nil)
     loop do
       @scene.pbSetHelpText(@party.length > 1 ? _INTL("Choose a Pokémon.") : _INTL("Choose Pokémon or cancel."))
-      pkmnid = @scene.pbChoosePokemon(false, true)
+      pkmnid = @scene.pbChoosePokemon(false, true, shortcut_keys: true)
       if pkmnid.is_a?(Array) && pkmnid[0] == 1 # Switch
         @scene.pbSetHelpText(_INTL("Move to where?"))
         oldpkmnid = pkmnid[1]

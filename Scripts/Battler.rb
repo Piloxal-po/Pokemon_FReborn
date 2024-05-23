@@ -395,6 +395,7 @@ class PokeBattle_Battler
     @iv           = [0, 0, 0, 0, 0, 0]
     @item         = nil
     @weight       = nil
+    @battle_bond_flags = []
 
     pbInitEffects(false, fakebattler)
   end
@@ -809,15 +810,13 @@ class PokeBattle_Battler
   end
 
   def pbSpeed()
-    stagemul = [10, 10, 10, 10, 10, 10, 10, 15, 20, 25, 30, 35, 40]
-    stagediv = [40, 35, 30, 25, 20, 15, 10, 10, 10, 10, 10, 10, 10]
     if @effects[:SpeedSwap] == 0
       speed = @speed
     else
       speed = @effects[:SpeedSwap]
     end
     stage = @stages[PBStats::SPEED] + 6
-    speed = (speed * stagemul[stage] / stagediv[stage]).floor
+    speed = (speed * PBStats::StageMul[stage]).floor
     if @unburdened
       if (self.ability != :UNBURDEN || self.item != nil)
         @unburdened = false
@@ -998,6 +997,8 @@ class PokeBattle_Battler
     if @species == :MIMIKYU && @pokemon.form == 1
       self.form = 0
     end
+    # Reset Greninja form if it faints. Only Gen 7 version has form difference.
+    self.form = 0 if @species == :GRENINJA && @pokemon.form == 1 && Gen7
     # stops being in middle of a spread move
     @midwayThroughMove = false
     # deactivate ability
@@ -2359,10 +2360,10 @@ class PokeBattle_Battler
         @battle.pbCommonAnimation("StatUp", self, nil)
         @battle.pbDisplay(_INTL("{1}'s Dark Surge raised its Speed!", pbThis))
       elsif @battle.FE == :DARKNESS1
-        @battle.setField(:DARKNESS2)
+        @battle.setField(:DARKNESS2, add_on: false, growth: true)
         @battle.pbDisplay(_INTL("{1}'s Dark Surge deepened the darkness!", pbThis))
       elsif @battle.FE == :DARKNESS2
-        @battle.setField(:DARKNESS3)
+        @battle.setField(:DARKNESS3, add_on: false, growth: true)
         @battle.pbDisplay(_INTL("{1}'s Dark Surge deepened the darkness!", pbThis))
       elsif @battle.canChangeFE?(:DARKNESS2)
         @battle.setField(:DARKNESS2, 3)
@@ -2374,7 +2375,7 @@ class PokeBattle_Battler
     @battle.seedCheck if @battle.turncount != 0
 
     # Curious Medicine
-    if self.ability == (:CURIOUSMEDICINE) && onactive
+    if self.ability == :CURIOUSMEDICINE && onactive
       worked = false
       for i in 1...pbPartner.stages.length # skips HP
         if pbPartner.stages[i] != 0
@@ -2638,16 +2639,14 @@ class PokeBattle_Battler
           @battle.pbDisplay(_INTL("{1}'s {2} boosted its Offenses in the broken terrain!", pbThis, getAbilityName(ability)))
         end
       else
-        stagemult = [2, 2, 2, 2, 2, 2, 2, 3, 4, 5, 6, 7, 8]
-        stagediv = [8, 7, 6, 5, 4, 3, 2, 2, 2, 2, 2, 2, 2]
         odef = ospdef = 0
         opp1 = pbOpposing1
         opp2 = pbOpposing2
-        odef += (opp1.defense * stagemult[opp1.stages[PBStats::DEFENSE] + 6] / stagediv[opp1.stages[PBStats::DEFENSE] + 6]) if opp1.hp > 0
-        ospdef += (opp1.spdef * stagemult[opp1.stages[PBStats::SPDEF] + 6] / stagediv[opp1.stages[PBStats::SPDEF] + 6]) if opp1.hp > 0
+        odef += opp1.defense * PBStats::StageMul[opp1.stages[PBStats::DEFENSE] + 6] if opp1.hp > 0
+        ospdef += opp1.spdef * PBStats::StageMul[opp1.stages[PBStats::SPDEF] + 6] if opp1.hp > 0
         if opp2
-          odef += (opp2.defense * stagemult[opp2.stages[PBStats::DEFENSE] + 6] / stagediv[opp2.stages[PBStats::DEFENSE] + 6]) if opp2.hp > 0
-          ospdef += (opp2.spdef * stagemult[opp2.stages[PBStats::SPDEF] + 6] / stagediv[opp2.stages[PBStats::SPDEF] + 6]) if opp2.hp > 0
+          odef += opp2.defense * PBStats::StageMul[opp2.stages[PBStats::DEFENSE] + 6] if opp2.hp > 0
+          ospdef += opp2.spdef * PBStats::StageMul[opp2.stages[PBStats::SPDEF] + 6] if opp2.hp > 0
         end
         if ospdef > odef
           if !pbTooHigh?(PBStats::ATTACK)
@@ -2825,11 +2824,11 @@ class PokeBattle_Battler
     end
     # Quark Drive / Protosynthesis
     if self.ability == :QUARKDRIVE && onactive
-      aBoost = self.attack * (1.0 + (0.5 * @stages[PBStats::ATTACK]))
-      dBoost = self.defense * (1.0 + (0.5 * @stages[PBStats::DEFENSE]))
-      saBoost = self.spatk * (1.0 + (0.5 * @stages[PBStats::SPATK]))
-      sdBoost = self.spdef * (1.0 + (0.5 * @stages[PBStats::SPDEF]))
-      spdBoost = self.speed * (1.0 + (0.5 * @stages[PBStats::SPEED]))
+      aBoost = (self.attack * PBStats::StageMul[@stages[PBStats::ATTACK]]).floor
+      dBoost = (self.defense * PBStats::StageMul[@stages[PBStats::DEFENSE]]).floor
+      saBoost = (self.spatk * PBStats::StageMul[@stages[PBStats::SPATK]]).floor
+      sdBoost = (self.spdef * PBStats::StageMul[@stages[PBStats::SPDEF]]).floor
+      spdBoost = (self.speed * PBStats::StageMul[@stages[PBStats::SPEED]]).floor
       stats = [aBoost, dBoost, saBoost, sdBoost, spdBoost]
       boostStat = stats.index(stats.max) + 1
       if (@battle.FE == :ELECTERRAIN || @battle.state.effects[:ELECTERRAIN] > 0) && self.effects[:Quarkdrive][0] == 0
@@ -2871,6 +2870,7 @@ class PokeBattle_Battler
         for i in [PBStats::ATTACK, PBStats::DEFENSE, PBStats::SPEED, PBStats::SPATK, PBStats::SPDEF, PBStats::EVASION, PBStats::ACCURACY]
           @stages[i] = choice.stages[i]
         end
+        @effects[:FocusEnergy] = choice.effects[:FocusEnergy]
         for i in 0...4
           next if !choice.moves[i]
 
@@ -3001,7 +3001,7 @@ class PokeBattle_Battler
           if user.ability == :CONTRARY
             user.pbReduceStat(PBStats::SPEED, 1, statmessage: false)
             @battle.pbDisplay(_INTL("{1}'s {2} boosted {3}'s Speed!", target.pbThis, getAbilityName(target.ability), user.pbThis(true)))
-          elsif user.ability == (:WHITESMOKE) || user.ability == (:CLEARBODY) || user.ability == (:FULLMETALBODY)
+          elsif user.ability == :WHITESMOKE || user.ability == :CLEARBODY || user.ability == :FULLMETALBODY
             @battle.pbDisplay(_INTL("{1}'s {2} prevents stat loss!", user.pbThis, getAbilityName(user.ability)))
           else
             user.pbReduceStat(PBStats::SPEED, 1, statmessage: false)
@@ -3015,7 +3015,7 @@ class PokeBattle_Battler
           user.pbPoison(target)
           @battle.pbDisplay(_INTL("{1}'s {2} poisoned {3}!", target.pbThis, getAbilityName(target.ability), user.pbThis(true)))
         end
-        if target.ability == :ROUGHSKIN && !user.isFainted? && user.ability != (:MAGICGUARD) && !(user.ability == (:WONDERGUARD) && @battle.FE == :COLOSSEUM)
+        if target.ability == :ROUGHSKIN && !user.isFainted? && user.ability != :MAGICGUARD && !(user.ability == :WONDERGUARD && @battle.FE == :COLOSSEUM)
           @battle.scene.pbDamageAnimation(user, 0)
           user.pbReduceHP((user.totalhp / 8.0).floor)
           @battle.pbDisplay(_INTL("{1}'s {2} hurt {3}!", target.pbThis, getAbilityName(target.ability), user.pbThis(true)))
@@ -3451,7 +3451,7 @@ class PokeBattle_Battler
           target.pbDisposeItem(false)
         end
       end
-      if target.ability == (:ANGERPOINT)
+      if target.ability == :ANGERPOINT
         if target.pbCanIncreaseStatStage?(PBStats::ATTACK) && target.damagestate.critical
           target.stages[PBStats::ATTACK] = 6
           @battle.pbCommonAnimation("StatUp", target)
@@ -3467,7 +3467,7 @@ class PokeBattle_Battler
         if choices.length != 0
           @battle.pbDisplay(_INTL("#{target.pbThis}'s Red Card activates!"))
           target.pbDisposeItem(false)
-          if user.ability == (:SUCTIONCUPS)
+          if user.ability == :SUCTIONCUPS
             @battle.pbDisplay(_INTL("{1} anchored itself with {2}!", user.pbThis, getAbilityName(user.ability)))
           elsif user.effects[:Ingrain]
             @battle.pbDisplay(_INTL("{1} anchored itself with its roots!", user.pbThis))
@@ -3484,7 +3484,7 @@ class PokeBattle_Battler
     # Synchronize here
     s = @battle.synchronize[0]
     t = @battle.synchronize[1]
-    if s >= 0 && t >= 0 && @battle.battlers[s].ability == (:SYNCHRONIZE) &&
+    if s >= 0 && t >= 0 && @battle.battlers[s].ability == :SYNCHRONIZE &&
        @battle.synchronize[2].is_a?(Symbol) && !@battle.battlers[t].isFainted?
       # see [2024281]&0xF0, [202420C]
       sbattler = @battle.battlers[s]
@@ -3951,7 +3951,7 @@ class PokeBattle_Battler
           user = i
           # Snatch's PP is reduced if old user has Pressure
           userchoice = @battle.choices[user.index][1]
-          if target.ability == (:PRESSURE) && userchoice >= 0
+          if target.ability == :PRESSURE && userchoice >= 0
             pressuremove = user.moves[userchoice]
             pbSetPP(pressuremove, pressuremove.pp - 1) if pressuremove.pp > 0
             if @battle.FE == :DIMENSIONAL || @battle.FE == :DEEPEARTH
@@ -4010,11 +4010,11 @@ class PokeBattle_Battler
     user = userandtarget[0]
     target = userandtarget[1]
     targetchoices = pbTarget(basemove)
-    unless (basemove.function == 0x179) || user.ability == (:STALWART) || user.ability == (:PROPELLERTAIL)
+    unless (basemove.function == 0x179) || user.ability == :STALWART || user.ability == :PROPELLERTAIL
       movetypes = [basemove.pbType(user), *basemove.getSecondaryType(user)]
 
       # LightningRod here, considers Hidden Power as Normal
-      if targets.length == 1 && movetypes.include?(:ELECTRIC) && target.ability != (:LIGHTNINGROD)
+      if targets.length == 1 && movetypes.include?(:ELECTRIC) && target.ability != :LIGHTNINGROD
         for i in priority # use Pokémon earliest in priority
           next if i.index == user.index || i.isFainted?
 
@@ -4027,7 +4027,7 @@ class PokeBattle_Battler
       end
 
       # Storm Drain here, considers Hidden Power as Normal
-      if targets.length == 1 && movetypes.include?(:WATER) && target.ability != (:STORMDRAIN)
+      if targets.length == 1 && movetypes.include?(:WATER) && target.ability != :STORMDRAIN
         for i in priority # use Pokémon earliest in priority
           next if i.index == user.index || i.isFainted?
 
@@ -4055,7 +4055,7 @@ class PokeBattle_Battler
       end
     end
     # TODO: Pressure here is incorrect if Magic Coat redirects target
-    if target.ability == (:PRESSURE)
+    if target.ability == :PRESSURE
       pressuredmove = (basemove.zmove && !user.zmoves.nil? && user.zmoves.include?(basemove)) ? user.moves[user.zmoves.index(basemove)] : basemove
       pbReducePP(pressuredmove) # Reduce PP
       if @battle.FE == :DIMENSIONAL || @battle.FE == :DEEPEARTH
@@ -4078,7 +4078,7 @@ class PokeBattle_Battler
           user = i
           # Snatch's PP is reduced if old user has Pressure
           userchoice = @battle.choices[user.index][1]
-          if target.ability == (:PRESSURE) && userchoice >= 0
+          if target.ability == :PRESSURE && userchoice >= 0
             pressuremove = user.moves[userchoice]
             pbSetPP(pressuremove, pressuremove.pp - 1) if pressuremove.pp > 0
             if @battle.FE == :DIMENSIONAL || @battle.FE == :DEEPEARTH
@@ -4099,7 +4099,7 @@ class PokeBattle_Battler
 
       # Magic Coat's PP is reduced if old user has Pressure
       userchoice = @battle.choices[user.index][1]
-      if target.ability == (:PRESSURE) && userchoice >= 0
+      if target.ability == :PRESSURE && userchoice >= 0
         pressuremove = user.moves[userchoice]
         pbSetPP(pressuremove, pressuremove.pp - 1) if pressuremove.pp > 0
         if @battle.FE == :DIMENSIONAL || @battle.FE == :DEEPEARTH
@@ -4108,7 +4108,7 @@ class PokeBattle_Battler
         end
       end
     end
-    if !basemove.zmove && !(user.effects[:MagicBounced]) && basemove.canMagicCoat? && target.ability == (:MAGICBOUNCE) && !(target.moldbroken) &&
+    if !basemove.zmove && !(user.effects[:MagicBounced]) && basemove.canMagicCoat? && target.ability == :MAGICBOUNCE && !(target.moldbroken) &&
        !(basemove.function == 0x103) && !(basemove.function == 0x104) && !(basemove.function == 0x105) && !(basemove.function == 0x141) &&
        !PBStuff::TWOTURNMOVE.include?(target.effects[:TwoTurnAttack]) && changeeffect != 3
       target.effects[:MagicBounced] = true
@@ -4266,7 +4266,7 @@ class PokeBattle_Battler
 
   def pbSuccessCheck(basemove, user, target, flags, accuracy = true, precheckedacc: nil)
     targetchoices = pbTarget(basemove)
-    if user.ability == (:PRANKSTER) && (!(basemove.pbIsPhysical?(basemove.type) || basemove.pbIsSpecial?(basemove.type)) || (!basemove.zmove && !flags[:instructed] && @battle.choices[user.index][2] != basemove))
+    if user.ability == :PRANKSTER && (!(basemove.pbIsPhysical?(basemove.type) || basemove.pbIsSpecial?(basemove.type)) || (!basemove.zmove && !flags[:instructed] && @battle.choices[user.index][2] != basemove))
       if target.hasType?(:DARK) && @battle.FE != :BEWITCHED
         @battle.pbDisplay(_INTL("{1} wasn't affected!", target.pbThis))
         return false
@@ -4275,12 +4275,12 @@ class PokeBattle_Battler
     if ((((target.ability == :DAZZLING || target.ability == :QUEENLYMAJESTY || (@battle.FE == :STARLIGHT && target.ability == :MIRRORARMOR)) ||
       (target.pbPartner.ability == :DAZZLING || target.pbPartner.ability == :QUEENLYMAJESTY || (@battle.FE == :STARLIGHT && target.pbPartner.ability == :MIRRORARMOR))) && !target.moldbroken) ||
       @battle.FE == :PSYTERRAIN && !target.isAirborne?) && target.pbPartner != user
-      if (basemove.priorityCheck(user) > 0) || (user.ability == (:PRANKSTER) && !basemove.zmove && !flags[:instructed] && @battle.choices[user.index][2] != basemove)
+      if (basemove.priorityCheck(user) > 0) || (user.ability == :PRANKSTER && !basemove.zmove && !flags[:instructed] && @battle.choices[user.index][2] != basemove)
         @battle.pbDisplay(_INTL("{1} wasn't affected!", target.pbThis))
         return false
       end
     end
-    if target.ability == (:SOUNDPROOF) && basemove.isSoundBased? &&
+    if target.ability == :SOUNDPROOF && basemove.isSoundBased? &&
         basemove.function != 0x19 &&   # Heal Bell handled elsewhere
         basemove.function != 0xE5 &&   # Perish Song handled elsewhere
        !(target.moldbroken)
@@ -4293,7 +4293,7 @@ class PokeBattle_Battler
       return true
     end
     # TODO: "Before Protect" applies to Counter/Mirror Coat
-    if basemove.function == 0xDE && ((target.status != :SLEEP && (target.ability != (:COMATOSE) || @battle.FE == :ELECTERRAIN) && user.ability != :WORLDOFNIGHTMARES) || user.effects[:HealBlock] != 0) # Dream Eater
+    if basemove.function == 0xDE && ((target.status != :SLEEP && (target.ability != :COMATOSE || @battle.FE == :ELECTERRAIN) && user.ability != :WORLDOFNIGHTMARES) || user.effects[:HealBlock] != 0) # Dream Eater
       @battle.pbDisplay(_INTL("{1} wasn't affected!", target.pbThis))
       return false
     end
@@ -4419,7 +4419,7 @@ class PokeBattle_Battler
       if target.effects[:SkyDrop]
         invulmiss = true unless basemove.function == 0xCE || PBStuff::AIRHITMOVES.include?(basemove.move) || (basemove.function == 0x10D && !user.hasType?(:GHOST))
       end
-      if user.ability == (:NOGUARD) || target.ability == (:NOGUARD) || (user.ability == (:FAIRYAURA) && @battle.FE == :FAIRYTALE)
+      if user.ability == :NOGUARD || target.ability == :NOGUARD || (user.ability == :FAIRYAURA && @battle.FE == :FAIRYTALE)
         invulmiss = false
       end
       if invulmiss
@@ -4432,9 +4432,9 @@ class PokeBattle_Battler
           @battle.pbDisplay(_INTL("{1} avoided the attack!", target.pbThis))
         elsif basemove.function == 0xDC # Leech Seed
           @battle.pbDisplay(_INTL("{1} evaded the attack!", target.pbThis))
-        elsif basemove.function == 0x70 && (((target.ability == (:STURDY) && !target.moldbroken) || user.level < target.level) || target.pokemon.piece == :PAWN && @battle.FE == :CHESS)
+        elsif basemove.function == 0x70 && (((target.ability == :STURDY && !target.moldbroken) || user.level < target.level) || target.pokemon.piece == :PAWN && @battle.FE == :CHESS)
           @battle.pbDisplay(_INTL("{1} is unaffected!", target.pbThis))
-        elsif basemove.function == 0x70 && !((target.ability == (:STURDY)) || (user.level < target.level))
+        elsif basemove.function == 0x70 && !((target.ability == :STURDY) || (user.level < target.level))
           @battle.pbDisplay(_INTL("{1} avoided the attack!", target.pbThis))
         else
           @battle.pbDisplay(_INTL("{1}'s attack missed!", user.pbThis))
@@ -4471,7 +4471,7 @@ class PokeBattle_Battler
           return false
         end
       end
-      if target.ability == (:WONDERGUARD) && typemod <= 4 && !(target.moldbroken)
+      if target.ability == :WONDERGUARD && typemod <= 4 && !(target.moldbroken)
         @battle.pbDisplay(_INTL("{1} avoided damage with Wonder Guard!", target.pbThis))
         return false
       end
@@ -4504,9 +4504,9 @@ class PokeBattle_Battler
           @battle.pbDisplay(_INTL("{1} avoided the attack!", target.pbThis))
         elsif basemove.function == 0xDC # Leech Seed
           @battle.pbDisplay(_INTL("{1} evaded the attack!", target.pbThis))
-        elsif basemove.function == 0x70 && (((target.ability == (:STURDY) && !target.moldbroken) || user.level < target.level) || @battle.FE == :CHESS && target.pokemon.piece == :PAWN)
+        elsif basemove.function == 0x70 && (((target.ability == :STURDY && !target.moldbroken) || user.level < target.level) || @battle.FE == :CHESS && target.pokemon.piece == :PAWN)
           @battle.pbDisplay(_INTL("{1} is unaffected!", target.pbThis))
-        elsif basemove.function == 0x70 && !((target.ability == (:STURDY)) || (user.level < target.level))
+        elsif basemove.function == 0x70 && !((target.ability == :STURDY) || (user.level < target.level))
           @battle.pbDisplay(_INTL("{1} avoided the attack!", target.pbThis))
         else
           @battle.pbDisplay(_INTL("{1}'s attack missed!", user.pbThis))
@@ -4523,6 +4523,7 @@ class PokeBattle_Battler
             return true
           end
         end
+        user.missAcc = true
         return false
       end
     end
@@ -4863,7 +4864,7 @@ class PokeBattle_Battler
       # Bastiodon Crest
       if target.crested == :BASTIODON
         if target.damagestate.calcdamage > 0 && !target.damagestate.substitute &&
-           user.ability != (:MAGICGUARD) && !(user.ability == (:WONDERGUARD) && @battle.FE == :COLOSSEUM)
+           user.ability != :MAGICGUARD && !(user.ability == :WONDERGUARD && @battle.FE == :COLOSSEUM)
           user.pbReduceHP([1, ((target.damagestate.hplost) / 2).floor].max)
           target.pbRecoverHP([1, ((target.damagestate.hplost) / 2).floor].max) if !target.isFainted?
           @battle.pbDisplay(_INTL("{1}'s crest causes {2} to take recoil damage and {3} to recover!", target.pbThis, user.pbThis(true), target.pbThis))
@@ -4890,10 +4891,10 @@ class PokeBattle_Battler
 
       # Additional effect
       if !basemove.zmove && target.damagestate.calcdamage > 0 && user.ability != :SHEERFORCE &&
-         ((target.ability != (:SHIELDDUST) || target.moldbroken || [0x1C, 0x1D, 0x1E, 0x1F, 0x20, 0x2D, 0x2F, 0x147, 0x186, 0x307].include?(basemove.function)))
+         ((target.ability != :SHIELDDUST || target.moldbroken || [0x1C, 0x1D, 0x1E, 0x1F, 0x20, 0x2D, 0x2F, 0x147, 0x186, 0x307].include?(basemove.function)))
         addleffect = basemove.effect
         addleffect = 20 if basemove.move == :OMINOUSWIND && @battle.FE == :HAUNTED
-        addleffect *= 2 if user.ability == (:SERENEGRACE) || @battle.FE == :RAINBOW
+        addleffect *= 2 if user.ability == :SERENEGRACE || @battle.FE == :RAINBOW
         addleffect = 100 if $DEBUG && Input.press?(Input::CTRL) && !@battle.isOnline?
         addleffect = 100 if basemove.move == :MIRRORSHOT && @battle.FE == :MIRROR
         addleffect = 100 if basemove.move == :STRANGESTEAM && @battle.FE == :FAIRYTALE
@@ -4905,7 +4906,7 @@ class PokeBattle_Battler
           basemove.pbAdditionalEffect(user, target)
         end
         addleffect = basemove.moreeffect
-        addleffect *= 2 if user.ability == (:SERENEGRACE) || @battle.FE == :RAINBOW
+        addleffect *= 2 if user.ability == :SERENEGRACE || @battle.FE == :RAINBOW
         addleffect = 100 if $DEBUG && Input.press?(Input::CTRL) && !@battle.isOnline?
         addleffect = 0 if (user.crested == :LEDIAN && i > 1) || (user.crested == :CINCCINO && i > 1)
         if @battle.pbRandom(100) < addleffect
@@ -4953,7 +4954,7 @@ class PokeBattle_Battler
 
       # Berserk
       if !target.isFainted? && aboveHalfHp && target.hp <= (target.totalhp / 2.0).floor && !berserkcheck
-        if target.ability == (:BERSERK)
+        if target.ability == :BERSERK
           if !pbTooHigh?(PBStats::SPATK)
             statgain = 1
             statgain = 2 if (Rejuv && @battle.FE == :DRAGONSDEN)
@@ -4970,7 +4971,7 @@ class PokeBattle_Battler
       end
       # Anger Shell
       if !target.isFainted? && aboveHalfHp && target.hp <= (target.totalhp / 2.0).floor && !angershellcheck
-        if target.ability == (:ANGERSHELL)
+        if target.ability == :ANGERSHELL
           if !target.pbCanIncreaseStatStage?(PBStats::ATTACK, false) &&
              !target.pbCanIncreaseStatStage?(PBStats::SPATK, false) &&
              !target.pbCanIncreaseStatStage?(PBStats::SPEED, false)
@@ -5096,7 +5097,7 @@ class PokeBattle_Battler
             if @battle.pbRandom(10) == 0
               target.effects[:Flinch] = true
             end
-          elsif user.ability == (:STENCH) &&
+          elsif user.ability == :STENCH &&
                 basemove.function != 0x09 && # Thunder Fang
                 basemove.function != 0x0B && # Fire Fang
                 basemove.function != 0x0E && # Ice Fang
@@ -5114,11 +5115,11 @@ class PokeBattle_Battler
       end
       if target.damagestate.calcdamage > 0 && !target.isFainted?
         # Defrost
-        if (basemove.pbType(user) == :FIRE || basemove.function == 0x0A) && target.status == :FROZEN && !(user.ability == (:PARENTALBOND) && i == 0)
+        if (basemove.pbType(user) == :FIRE || basemove.function == 0x0A) && target.status == :FROZEN && !(user.ability == :PARENTALBOND && i == 0)
           target.pbCureStatus
         end
         # Rage
-        if target.effects[:Rage] && target.pbIsOpposing?(user.index)
+        if target.effects[:Rage] && target.pbIsOpposing?(user.index) && !target.damagestate.substitute
           # TODO: Apparently triggers if opposing Pokémon uses Future Sight after a Future Sight attack
           if target.pbCanIncreaseStatStage?(PBStats::ATTACK)
             target.pbIncreaseStatBasic(PBStats::ATTACK, 1)
@@ -5160,16 +5161,16 @@ class PokeBattle_Battler
     target.pbFaint if target.isFainted?
     user.pbFaint if user.isFainted? # no return
     if target.isFainted?
-      if (user.ability == (:GRIMNEIGH) ||
-        (user.ability == (:ASONE) && user.form == 2)) && user.hp > 0 && target.hp <= 0 && totaldamage > 0
+      if (user.ability == :GRIMNEIGH ||
+        (user.ability == :ASONE && user.form == 2)) && user.hp > 0 && target.hp <= 0 && totaldamage > 0
         if !user.pbTooHigh?(PBStats::SPATK)
           @battle.pbCommonAnimation("StatUp", self, nil)
           user.pbIncreaseStatBasic(PBStats::SPATK, 1)
           @battle.pbDisplay(_INTL("{1}'s {2} raised its Special Attack!", user.pbThis, $cache.abil[user.ability].name))
         end
       end
-      if (user.ability == (:MOXIE) || user.ability == (:CHILLINGNEIGH) ||
-        (user.ability == (:ASONE) && user.form == 1)) && user.hp > 0 && target.hp <= 0 && totaldamage > 0
+      if (user.ability == :MOXIE || user.ability == :CHILLINGNEIGH ||
+        (user.ability == :ASONE && user.form == 1)) && user.hp > 0 && target.hp <= 0 && totaldamage > 0
         if !user.pbTooHigh?(PBStats::ATTACK)
           @battle.pbCommonAnimation("StatUp", self, nil)
           user.pbIncreaseStatBasic(PBStats::ATTACK, 1)
@@ -5180,11 +5181,45 @@ class PokeBattle_Battler
         hpgain = user.pbRecoverHP(self.totalhp / 8, true)
         @battle.pbDisplay(_INTL("{1}'s Execution healed some of its wounds!", user.pbThis))
       end
-      if @battle.FE == :BACKALLEY && basemove.function == 0x88 && user.hp > 0 && target.hp <= 0 && totaldamage > 0 # Pursuit
+      if @battle.FE == :BACKALLEY && basemove.move == :PURSUIT && user.hp > 0 && target.hp <= 0 && totaldamage > 0
         if !user.pbTooHigh?(PBStats::SPEED)
           @battle.pbCommonAnimation("StatUp", self, nil)
           user.pbIncreaseStatBasic(PBStats::SPEED, 1)
-          @battle.pbDisplay(_INTL("", user.pbThis, $cache.abil[user.ability].name))
+          @battle.pbDisplay(_INTL("{1}'s Pursuit raised its Special Attack!", user.pbThis))
+        end
+      end
+      if user.species == :GRENINJA && user.ability == :BATTLEBOND && user.hp > 0 && target.hp <= 0 && totaldamage > 0 && !@battle_bond_flags.include?(user.pokemon)
+        if !Gen7
+          battleBondActive = false
+          if !user.pbTooHigh?(PBStats::ATTACK)
+            @battle.pbCommonAnimation("StatUp", self, nil)
+            user.pbIncreaseStatBasic(PBStats::ATTACK, 1)
+            @battle.pbDisplay(_INTL("{1}'s {2} raised its Attack!", user.pbThis, $cache.abil[user.ability].name))
+            battleBondActive = true
+          end
+          if !user.pbTooHigh?(PBStats::SPATK)
+            @battle.pbCommonAnimation("StatUp", self, nil)
+            user.pbIncreaseStatBasic(PBStats::SPATK, 1)
+            @battle.pbDisplay(_INTL("{1}'s {2} raised its Special Attack!", user.pbThis, $cache.abil[user.ability].name))
+            battleBondActive = true
+          end
+          if !user.pbTooHigh?(PBStats::SPEED)
+            @battle.pbCommonAnimation("StatUp", self, nil)
+            user.pbIncreaseStatBasic(PBStats::SPEED, 1)
+            @battle.pbDisplay(_INTL("{1}'s {2} raised its Speed!", user.pbThis, $cache.abil[user.ability].name))
+            battleBondActive = true
+          end
+          @battle_bond_flags.push(user.pokemon) if battleBondActive
+        else
+          if !user.effects[:Transform]
+            @battle.pbDisplay(_INTL("{1} became fully charged due to its bond with its Trainer!", user.pbThis))
+            @battle.pbCommonAnimation("MegaEvolution", user, nil)
+            user.form = 1
+            user.pbUpdate(true)
+            @battle.scene.pbChangePokemon(user, user.pokemon) if user.effects[:Substitute] == 0
+            @battle.pbDisplay(_INTL("{1} transformed into Ash-Greninja!", user.pbThis))
+            @battle_bond_flags.push(user.pokemon)
+          end
         end
       end
     end
@@ -5207,7 +5242,7 @@ class PokeBattle_Battler
     end
     # Color Change
     movetype = basemove.pbType(user)
-    if target.ability == (:COLORCHANGE) && totaldamage > 0 && movetype != :SHADOW && movetype != :QMARKS && !target.hasType?(movetype)
+    if target.ability == :COLORCHANGE && totaldamage > 0 && movetype != :SHADOW && movetype != :QMARKS && !target.hasType?(movetype)
       target.type1 = movetype
       target.type2 = nil
       @battle.pbDisplay(_INTL("{1}'s {2} made it the {3} type!", target.pbThis, getAbilityName(target.ability), movetype.capitalize))
@@ -5296,7 +5331,7 @@ class PokeBattle_Battler
     # Force the use of certain moves if they're already being used
     if (@effects[:TwoTurnAttack] != 0 || @effects[:HyperBeam] > 0 || @effects[:Outrage] > 0 || @effects[:Rollout] > 0 || @effects[:Uproar] > 0 || @effects[:Bide] > 0)
       PBDebug.log("[Continuing move]") if $INTERNAL
-      choice[2] = PokeBattle_Move.pbFromPBMove(@battle, PBMove.new(@currentMove), self)
+      choice[2] = PokeBattle_Move.pbFromPBMove(@battle, PBMove.new(@currentMove), self) if @currentMove != 0
       flags[:specialusage] = true
     elsif @effects[:Encore] > 0 && !choice[2].zmove
       if @battle.pbCanShowCommands?(@index) && @battle.pbCanChooseMove?(@index, @effects[:EncoreIndex], false, flags)
@@ -5442,7 +5477,7 @@ class PokeBattle_Battler
         @battle.battlers[i].moldbroken = false
       end
     end
-    if user.ability == (:CORROSION)
+    if user.ability == :CORROSION
       for battlers in targets
         battlers.corroded = true
       end
@@ -5601,7 +5636,7 @@ class PokeBattle_Battler
           end
         end
         # Parental bond
-        if numhits == 1 && user.ability == (:PARENTALBOND) && !choice[2].zmove
+        if numhits == 1 && user.ability == :PARENTALBOND && !choice[2].zmove
           counter1 = 0
           counter2 = 0
           for k in @battle.battlers
@@ -5764,7 +5799,7 @@ class PokeBattle_Battler
           if (basemove.move == :DIG || basemove.move == :DIVE ||
             basemove.move == :FLY || basemove.move == :BOUNCE) &&
              user.effects[:TwoTurnAttack] != 0
-            combust -= 1 if user.ability == (:STURDY)
+            combust -= 1 if user.ability == :STURDY
             @battle.pbDisplay(_INTL("The corrupted field damaged {1}!", user.pbThis)) if combust != 0
             user.pbReduceHP(combust) if combust != 0
             user.pbFaint if user.isFainted?
@@ -5782,7 +5817,7 @@ class PokeBattle_Battler
       end
 
       # Sheer Force affected items
-      if !(user.ability == (:SHEERFORCE) && basemove.effect > 0)
+      if !(user.ability == :SHEERFORCE && basemove.effect > 0)
 
         # Shell Bell
         if (user.hasWorkingItem(:SHELLBELL) || (user.crested == :TORTERRA && !user.isFainted?)) && flags[:totaldamage] > 0 && @effects[:HealBlock] == 0
@@ -5794,7 +5829,7 @@ class PokeBattle_Battler
         end
 
         # Life Orb
-        if user.hasWorkingItem(:LIFEORB) && flags[:totaldamage] > 0 && user.ability != (:MAGICGUARD) && !(user.ability == (:WONDERGUARD) && @battle.FE == :COLOSSEUM)
+        if user.hasWorkingItem(:LIFEORB) && flags[:totaldamage] > 0 && user.ability != :MAGICGUARD && !(user.ability == :WONDERGUARD && @battle.FE == :COLOSSEUM)
           hploss = user.pbReduceHP([(user.totalhp / 10.0).floor, 1].max, true)
           if hploss > 0
             @battle.pbDisplay(_INTL("{1} lost some of its HP!", user.pbThis))
@@ -5914,8 +5949,6 @@ class PokeBattle_Battler
   end
 
   def getSpecialStat(unaware = false, which_is_higher: false, attacker: false, crit: false)
-    stagemul = [2, 2, 2, 2, 2, 2, 2, 3, 4, 5, 6, 7, 8]
-    stagediv = [8, 7, 6, 5, 4, 3, 2, 2, 2, 2, 2, 2, 2]
     allyfainted = self.pbFaintedPokemonCount
     spatkmult = 1
     spatkmult *= 1.5 if self.item == :CHOICESPECS
@@ -5923,7 +5956,7 @@ class PokeBattle_Battler
     spatkmult *= 2 if self.item == :LIGHTBALL && self.pokemon.species == :PIKACHU
     spatkmult *= 1.5 if [:MINUS, :PLUS].include?(self.ability) && [:MINUS, :PLUS].include?(self.pbPartner.ability)
     spatkmult *= 1.5 if self.ability == :SOLARPOWER && @battle.pbWeather == :SUNNYDAY
-    spatkmult *= 1.5 if self.crested == :CASTFORM && @battle.pbWeather == :SUNNYDAY
+    spatkmult *= 1.5 if self.crested == :CASTFORM && self.form == 1 && @battle.pbWeather == :SUNNYDAY
     spatkmult *= ((allyfainted * 0.2) + 1.0) if self.crested == :SPIRITOMB
     spatkmult *= 1.3 if self.pbPartner.ability == :BATTERY
     spdefmult = 1
@@ -5950,8 +5983,8 @@ class PokeBattle_Battler
         spdefstage = 6 if spdefstage > 6
       end
     end
-    spatk = self.spatk * stagemul[spastage] / stagediv[spastage]
-    spdef = self.spdef * stagemul[spdefstage] / stagediv[spdefstage]
+    spatk = self.spatk * PBStats::StageMul[spastage]
+    spdef = self.spdef * PBStats::StageMul[spdefstage]
     # If we only want to know which stat is higher
     return PBStats::SPATK if spatkmult * spatk > spdefmult * spdef && which_is_higher
     return PBStats::SPDEF if which_is_higher

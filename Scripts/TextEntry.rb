@@ -615,10 +615,10 @@ class Window_MultilineTextEntry < SpriteWindow_Base
       @cursorColumn = getColumnsInLine(@cursorLine)
       updateCursorPos(true)
       return
-    elsif Input.triggerex?(Input::KEY_RETURN) || Input.repeatex?(Input::KEY_RETURN)
+    elsif Input.triggerex?(Input::KEY_RETURN) || Input.repeatex?(Input::KEY_RETURN) || ($joiplay && Input.trigger?(Input::C))
       self.insert("\n")
       return
-    elsif Input.triggerex?(Input::KEY_BACKSPACE) || Input.repeatex?(Input::KEY_BACKSPACE)
+    elsif Input.triggerex?(Input::KEY_BACKSPACE) || Input.repeatex?(Input::KEY_BACKSPACE) || ($joiplay && Input.trigger?(Input::B))
       self.delete
       return
     end
@@ -716,10 +716,10 @@ class Window_TextEntry_Keyboard < Window_TextEntry
       @frame = 0
       self.refresh
       return
-    elsif Input.triggerex?(Input::KEY_BACKSPACE) || Input.repeatex?(Input::KEY_BACKSPACE)
+    elsif Input.triggerex?(Input::KEY_BACKSPACE) || Input.repeatex?(Input::KEY_BACKSPACE) || ($joiplay && Input.trigger?(Input::B))
       self.delete if @helper.cursor > 0
       return
-    elsif Input.triggerex?(Input::KEY_RETURN) || Input.triggerex?(Input::KEY_ESCAPE)
+    elsif Input.triggerex?(Input::KEY_RETURN) || Input.triggerex?(Input::KEY_ESCAPE) || ($joiplay && Input.trigger?(Input::C))
       return
     elsif Input.pressex?(:LCTRL) || Input.pressex?(:RCTRL)
       Input.clipboard = self.text if Input.triggerex?(:C) && self.text != nil
@@ -742,13 +742,14 @@ end
 
 def Kernel.pbFreeText(msgwindow, currenttext, passwordbox, maxlength, width = 240, past_texts = [])
   window = Window_TextEntry_Keyboard.new(currenttext, 0, 0, width, 64)
-  window.y = 0 if $joiplay
   Input.text_input = true
   ret = ""
   window.maxlength = maxlength
   window.visible = true
   window.z = 99999
   pbPositionNearMsgWindow(window, msgwindow, :right)
+  # Move it to the top of the screen on JoiPlay so that it isn't covered by keyboard
+  window.y = 0 if $joiplay && USEKEYBOARD
   window.text = currenttext
   window.passwordChar = "*" if passwordbox
   past_text_index = 0
@@ -767,11 +768,11 @@ def Kernel.pbFreeText(msgwindow, currenttext, passwordbox, maxlength, width = 24
       window.text = past_texts[past_text_index]
       window.helper.cursor = window.text.length
     end
-    if Input.triggerex?(Input::KEY_ESCAPE)
+    if Input.triggerex?(Input::KEY_ESCAPE) || ($joiplay && Input.trigger?(Input::B))
       ret = currenttext
       break
     end
-    if Input.triggerex?(Input::KEY_RETURN)
+    if Input.triggerex?(Input::KEY_RETURN) || ($joiplay && Input.trigger?(Input::C))
       ret = window.text
       break
     end
@@ -897,10 +898,10 @@ class PokemonEntryScene
     loop do
       Graphics.update
       Input.update
-      if Input.triggerex?(Input::KEY_ESCAPE) && @minlength == 0
+      if (Input.triggerex?(Input::KEY_ESCAPE) || ($joiplay && Input.trigger?(Input::B))) && @minlength == 0
         ret = ""
         break
-      elsif Input.triggerex?(Input::KEY_RETURN) && @sprites["entry"].text.length >= @minlength
+      elsif (Input.triggerex?(Input::KEY_RETURN) || ($joiplay && Input.trigger?(Input::C))) && @sprites["entry"].text.length >= @minlength
         ret = @sprites["entry"].text
         break
       end

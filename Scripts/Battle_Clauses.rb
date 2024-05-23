@@ -90,8 +90,7 @@ class PokeBattle_Battler
   end
 
   def pbCanSleep?(showMessages, selfsleep = false, ignorestatus = false, moldbroken = self.moldbroken)
-    if ((@battle.rules["modifiedsleepclause"]) || (!selfsleep && @battle.rules["sleepclause"])) &&
-       pbHasStatusPokemon?(:SLEEP)
+    if ((@battle.rules["modifiedsleepclause"]) || (!selfsleep && @battle.rules["sleepclause"])) && pbHasStatusPokemon?(:SLEEP)
       if showMessages
         @battle.pbDisplay(_INTL("But {1} couldn't sleep!", self.pbThis(true)))
       end

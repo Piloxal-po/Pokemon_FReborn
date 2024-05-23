@@ -49,6 +49,7 @@ class Randomizer
   end
 
   def randomItem(item, typeMatch = false, useItemCount = true)
+    typeMatch = true
     # return the original item if it's a key item, quest item, or side quest item
     return item if $cache.items[item].checkFlag?(:keyitem) || $cache.items[item].checkFlag?(:questitem) || $cache.items[item].checkFlag?(:sidequest) || (Reborn && item == :GRASSMAIL)
 
@@ -57,19 +58,39 @@ class Randomizer
     pool.delete_if { |i|
       $cache.items[i].checkFlag?(:questitem) || ($cache.items[i].checkFlag?(:keyitem) && !$cache.items[i].checkFlag?(:legendary))
     }
-    # remove any items from differing pockets
-    pool.delete_if { |i| pbGetPocket(i) != pbGetPocket(item) } if typeMatch
-    # power matching for zcrystals
-    if $cache.items[item].checkFlag?(:crystal)
-      if $cache.items[item].checkFlag?(:zcrystal)
-        pool.delete_if { |i|
-          !$cache.items[i].checkFlag?(:zcrystal) || PBStuff::MOVETOZCRYSTAL.values.include?(i)
-        }
-      else
-        pool.delete_if { |i|
-          $cache.items[i].checkFlag?(:zcrystal) && !PBStuff::MOVETOZCRYSTAL.values.include?(i)
-        }
+    # remove any unique items already gathered
+    pool.delete_if { |i|
+      ($cache.items[i].checkFlag?(:tm) && $PokemonBag.pbHasItem?(i)) ||
+      ($cache.items[i].checkFlag?(:crystal) && $PokemonBag.pbHasItem?(i)) ||
+      ($cache.items[i].checkFlag?(:crest) && $PokemonBag.pbHasItem?(i))
+    }
+    # saving in case we empty the pool
+    backupPool = pool.dup
+
+    if typeMatch
+      # remove any items from differing pockets
+      pool.delete_if { |i| pbGetPocket(i) != pbGetPocket(item) }
+
+      # power matching for zcrystals / mega stones
+      # type zcrystals always give type zcrystals
+      # mega stones / unique z crystals are interchangeable
+      if $cache.items[item].checkFlag?(:crystal)
+        if $cache.items[item].checkFlag?(:zcrystal)
+          pool.delete_if { |i|
+            !$cache.items[i].checkFlag?(:zcrystal) || PBStuff::MOVETOZCRYSTAL.values.include?(i)
+          }
+        else
+          pool.delete_if { |i|
+            $cache.items[i].checkFlag?(:zcrystal) && !PBStuff::MOVETOZCRYSTAL.values.include?(i)
+          }
+        end
       end
+
+      if $cache.items[item].checkFlag?(:crest)
+        pool.delete_if { |i| !$cache.items[i].checkFlag?(:crest) }
+      end
+
+      pool = backupPool if pool.empty?
     end
     # sample
     seed = @settings.random.seed

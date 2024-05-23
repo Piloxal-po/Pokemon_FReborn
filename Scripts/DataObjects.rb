@@ -695,6 +695,7 @@ class BTPokemon < DataObject
   attr_accessor :ev
   attr_accessor :form
   attr_accessor :ability
+  attr_accessor :hptype
 
   def initialize(data)
     @species  = data[:species]  ? data[:species] : :BULBASAUR
@@ -704,6 +705,7 @@ class BTPokemon < DataObject
     @ev       = data[:ev]       ? data[:ev] : nil
     @form     = data[:form]     ? data[:form] : 0
     @ability  = data[:ability]  ? data[:ability] : nil
+    @hptype   = data[:hptype]   ? data[:hptype] : nil
     @flags    = {}
     data.each { |key, value|
       var = "@" + key.to_s

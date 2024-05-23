@@ -1,7 +1,7 @@
 ﻿#==============================================================================#
 Pokémon Reborn
 X-- Episode 19: Final --X
-%version%
+19.5.0-rc.5
 http://www.rebornevo.com/
 #==============================================================================#
 This game contains some sequences with flashing effects, as well as mature content 
@@ -552,6 +552,11 @@ Vinny				chase_breaker	Sheep!	Kalzuna		Pyrolusite
 Alex			cybershell12		BIGJRA		Haru	TheInsurgent
 Stardust		housecarpenter		rainefall
 Many, many, many more!
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+--Community Cooperation Initiative:
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+Alemi	Aqib	Pixel	Dred
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 --Meme Consultant:

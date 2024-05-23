@@ -231,7 +231,7 @@ module ItemHandlers
   BattleUseOnBattler = ItemHandlerHash.new
   BattleUseOnPokemon = ItemHandlerHash.new
   UseInBattle = ItemHandlerHash.new
-  MultipleAtOnce = [:EXPCANDYL, :EXPCANDYXL, :EXPCANDYM, :EXPCANDYS, :EXPCANDYXS, :RARECANDY, :PHANTOMCANDYS, :PHANTOMCANDYM]
+  MultipleAtOnce = [:EXPCANDYL, :EXPCANDYXL, :EXPCANDYM, :EXPCANDYS, :EXPCANDYXS, :COMMONCANDY, :REVERSECANDY, :RARECANDY, :PHANTOMCANDYS, :PHANTOMCANDYM]
 
   def self.addUseFromBag(item, proc)
     UseFromBag.add(item, proc)

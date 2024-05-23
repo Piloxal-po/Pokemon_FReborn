@@ -58,7 +58,7 @@ class BTPokemon
     pokemon.form = @form # I hate necrozma and don't want to deal with it anymore in a clean way so this is what you get
     pokemon.moves = @moves.map { |move| PBMove.new(move) } # hi cass I don't know what's going on here but I'm going to leave it.
     pokemon.form = pokemon.getForm(pokemon) # also screw you necrozma too this is probably your fault
-    evcount = 0
+    pokemon.hptype = @hptype
     for i in 0...6
       pokemon.iv[i] = iv
       pokemon.ev[i] = @ev[i]
@@ -78,7 +78,8 @@ class BTPokemon
     ret += "moves: #{moves.inspect}, "
     ret += "ev: #{@ev.inspect}, " if !@ev.empty?
     ret += "form: #{@form}, " if @form != 0
-    ret += "ability: #{@ability.inspect} "
+    ret += "ability: #{@ability.inspect}, "
+    ret += "hptype: #{@hptype.inspect}, " if @hptype != nil
     ret += "},\n"
     return ret
   end

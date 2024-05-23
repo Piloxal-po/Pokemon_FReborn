@@ -44,7 +44,7 @@ class PokemonReadyMenu_Scene
     cmdwindow.index    = @index[@index[2]]
     cmdwindow.visible  = true
     counter = 0
-    counterlimit = $speed_up ? 20 : 8
+    counterlimit = $speed_up ? (8 * $Settings.turboSpeedMultiplier).floor : 8
     lastread = nil
     loop do
       pbUpdate

@@ -1,19 +1,12 @@
 PokeBattle_Battler.class_eval {
   def pbCalcAttack()
-    stagemul = [2, 2, 2, 2, 2, 2, 2, 3, 4, 5, 6, 7, 8]
-    stagediv = [8, 7, 6, 5, 4, 3, 2, 2, 2, 2, 2, 2, 2]
     atk = @attack
     atkstage = @stages[PBStats::ATTACK] + 6
     if @effects[:PowerTrick]
       atk = @defense
       atkstage = @stages[PBStats::DEFENSE] + 6
     end
-    if @stages[PBStats::ATTACK] >= 0
-      stagemulp = 1 + 0.5 * @stages[PBStats::ATTACK]
-      atk = (atk * 1.0 * stagemulp).floor
-    else
-      atk = (atk * 1.0 * stagemul[atkstage] / stagediv[atkstage]).floor
-    end
+    atk = (atk * PBStats::StageMul[atkstage]).floor
     atkmult = 0x1000
     if @battle.pbWeather == :SUNNYDAY || @battle.ProgressiveFieldCheck(PBFields::FLOWERGARDEN) || @battle.FE == :BEWITCHED || self.crested == :CHERRIM || self.pbPartner.crested == :CHERRIM
       if self.ability == :FLOWERGIFT && self.species == :CHERRIM
@@ -45,16 +38,9 @@ PokeBattle_Battler.class_eval {
   end
 
   def pbCalcSpAtk()
-    stagemul = [2, 2, 2, 2, 2, 2, 2, 3, 4, 5, 6, 7, 8]
-    stagediv = [8, 7, 6, 5, 4, 3, 2, 2, 2, 2, 2, 2, 2]
     atk = @spatk
     atkstage = @stages[PBStats::SPATK] + 6
-    if @stages[PBStats::SPATK] >= 0
-      stagemulp = 1 + 0.5 * @stages[PBStats::SPATK]
-      atk = (atk * 1.0 * stagemulp).floor
-    else
-      atk = (atk * 1.0 * stagemul[atkstage] / stagediv[atkstage]).floor
-    end
+    atk = (atk * PBStats::StageMul[atkstage]).floor
     atkmult = 0x1000
     if self.ability == :PLUS || self.ability == :MINUS
       if self.pbPartner.ability == :PLUS || self.pbPartner.ability == :MINUS
@@ -68,6 +54,7 @@ PokeBattle_Battler.class_eval {
     atkmult = (atkmult * 0.5).round if self.ability == :DEFEATIST && self.hp <= (self.totalhp / 2).floor
     atkmult = (atkmult * 2.0).round if self.ability == :PUREPOWER && @battle.FE == :PSYTERRAIN
     atkmult = (atkmult * 1.5).round if self.ability == :SOLARPOWER && @battle.pbWeather == :SUNNYDAY
+    atkmult = (atkmult * 1.5).round if self.crested == :CASFTFORM && self.form == 1 && @battle.pbWeather == :SUNNYDAY
     atkmult = (atkmult * 2.0).round if self.hasWorkingItem(:DEEPSEATOOTH) && self.species == :CLAMPERL
     atkmult = (atkmult * 2.0).round if self.hasWorkingItem(:LIGHTBALL) && self.species == :PIKACHU
     atkmult = (atkmult * 1.5).round if self.hasWorkingItem(:CHOICESPECS)
@@ -84,8 +71,6 @@ PokeBattle_Battler.class_eval {
   end
 
   def pbCalcDefense()
-    stagemul = [2, 2, 2, 2, 2, 2, 2, 3, 4, 5, 6, 7, 8]
-    stagediv = [8, 7, 6, 5, 4, 3, 2, 2, 2, 2, 2, 2, 2]
     defense = @defense
     defstage = @stages[PBStats::DEFENSE] + 6
     if @effects[:PowerTrick]
@@ -93,12 +78,7 @@ PokeBattle_Battler.class_eval {
       defstage = @stages[PBStats::DEFENSE] + 6
     end
     # TODO: Wonder Room should apply around here
-    if @stages[PBStats::DEFENSE] >= 0
-      stagemulp = 1 + 0.5 * @stages[PBStats::DEFENSE]
-      defense = (defense * 1.0 * stagemulp).floor
-    else
-      defense = (defense * 1.0 * stagemul[defstage] / stagediv[defstage]).floor
-    end
+    defense = (defense * PBStats::StageMul[defstage]).floor
     defmult = 0x1000
     defmult = (defmult * 1.5).round if self.ability == :MARVELSCALE && (!self.status.nil? || [:MISTY, :RAINBOW, :FAIRYTALE, :DRAGONSDEN, :STARLIGHT].include?(@battle.FE))
     defmult = (defmult * 1.5).round if self.ability == :GRASSPELT && [:GRASSY, :FOREST].include?(@battle.FE)
@@ -119,17 +99,10 @@ PokeBattle_Battler.class_eval {
   end
 
   def pbCalcSpDef()
-    stagemul = [2, 2, 2, 2, 2, 2, 2, 3, 4, 5, 6, 7, 8]
-    stagediv = [8, 7, 6, 5, 4, 3, 2, 2, 2, 2, 2, 2, 2]
     defense = @spdef
     defstage = @stages[PBStats::SPDEF] + 6
     applysandstorm = true
-    if @stages[PBStats::SPDEF] >= 0
-      stagemulp = 1 + 0.5 * @stages[PBStats::SPDEF]
-      defense = (defense * 1.0 * stagemulp).floor
-    else
-      defense = (defense * 1.0 * stagemul[defstage] / stagediv[defstage]).floor
-    end
+    defense = (defense * PBStats::StageMul[defstage]).floor
     defmult = 0x1000
     if @battle.pbWeather == :SUNNYDAY || @battle.ProgressiveFieldCheck(PBFields::FLOWERGARDEN) || @battle.FE == :BEWITCHED || self.crested == :CHERRIM || self.pbPartner.crested == :CHERRIM
       if self.ability == :FLOWERGIFT && self.species == :CHERRIM
@@ -271,12 +244,20 @@ def pbShowBattleStats(pkmn)
   end
   report.push(_INTL(stastr[8], crit, c))
   if !@battle.pbOwnedByPlayer?(pkmn.index)
-    movememory = @battle.ai.getAIMemory(pkmn, true)
-    if movememory.length > 0
-      report.push(_INTL("Revealed Moves:"))
-      for i in movememory
-        report.push(_INTL("{1}:  {2} PP left", i.name, i.pp))
-      end
+    moves = pkmn.moves
+    if @battle.pbOwnedByPlayer?(pkmn.pbPartner.index)
+      # player should have access to partner moves
+      report.push(_INTL("Moves Remaining:"))
+    elsif $DEBUG
+      # debug mode shows all moves
+      report.push(_INTL("(Debug) All Moves:"))
+    else
+      # otherwise, only show revealed moves
+      moves = @battle.ai.getAIMemory(pkmn, true)
+      report.push(_INTL("Revealed Moves:")) if moves.length > 0
+    end
+    for move in moves
+      report.push(_INTL("{1}:  {2} PP left", move.name, move.pp))
     end
   end
   dur = @battle.weatherduration

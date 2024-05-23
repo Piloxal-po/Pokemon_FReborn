@@ -427,15 +427,16 @@ PASSWORD_HASH = {
   "shinycharm" => 2189, "earlyshiny" => 2189,
   "mintyfresh" => 2190, "agiftfromace" => 2190,
   "blindstep" => :Blindstep,
+  "itemfinder" => 2245,
 
   # Difficulty passwords
   "litemode" => :Empty_IVs_And_EVs_Password, "noevs" => :Empty_IVs_And_EVs_Password, "emptyevs" => :Empty_IVs_And_EVs_Password,
   "nopenny" => :Penniless_Mode, "penniless" => :Penniless_Mode,
-  "fullevs" => :Only_Pulse_2, "pulse2" => :Only_Pulse_2, "pulse2evs" => :Only_Pulse_2,
+  "fullevs" => :Only_Pulse_2, "pulse2evs" => :Only_Pulse_2, "opp252ev" => :Only_Pulse_2,
   "noitems" => :No_Items_Password,
   "nuzlocke" => :Nuzlocke_Mode, "locke" => :Nuzlocke_Mode, "permadeath" => :Nuzlocke_Mode,
   "moneybags" => :Moneybags, "richboy" => :Moneybags, "doublemoney" => :Moneybags,
-  "fullivs" => :Full_IVs, "31ivs" => :Full_IVs, "allivs" => :Full_IVs, "mischievous" => :Full_IVs,
+  "fullivs" => :Full_IVs, "31ivs" => :Full_IVs, "allivs" => :Full_IVs, "mischievous" => :Full_IVs, "self31iv" => :Full_IVs,
   "emptyivs" => :Empty_IVs_Password, "0ivs" => :Empty_IVs_Password, "noivs" => :Empty_IVs_Password,
   "leveloffset" => :Offset_Trainer_Levels, "setlevel" => :Offset_Trainer_Levels, "flatlevel" => :Offset_Trainer_Levels,
   "percentlevel" => :Percent_Trainer_Levels, "levelpercent" => :Percent_Trainer_Levels,
@@ -443,8 +444,9 @@ PASSWORD_HASH = {
   "stopgains" => :Stop_Ev_Gain,
   "noexp" => :No_EXP_Gain, "zeroexp" => :No_EXP_Gain, "0EXP" => :No_EXP_Gain,
   "flatevs" => :Flat_EV_Password, "85evs" => :Flat_EV_Password,
-  "noevcap" => :No_Total_EV_Cap, "gen2mode" => :No_Total_EV_Cap,
+  "noevcap" => :No_Total_EV_Cap, "gen2mode" => :No_Total_EV_Cap, "self252ev" => :No_Total_EV_Cap,
   "nobattles" => :No_Battles_Pass, "storymode" => :No_Battles_Pass,
+  "highstandard" => :Max_Trainer_IVs_Password, "opp31iv" => :Max_Trainer_IVs_Password,
 
   # Shenanigans
   "budewit" => :Just_Budew, "budew" => :Just_Budew, "deargodwhy" => :Just_Budew,
@@ -512,6 +514,7 @@ BULK_PASSWORDS = {
   "qol" => ["hardcap", "easyhms", "fieldapp", "earlyincu", "stablweather", "nopoisondam", "weathermod", "unrealtime", "pinata", "freeexpall", "freeremotepc", "freescent"],
   "speedrun" => ["hardcap", "monopsychic", "easyhms", "fullivs", "norolls", "stablweather", "weathermod", "freemegaz", "earlyincu", "pinata", "mintyfresh", "freeexpall", "freescent", "nopuzzles"],
   "speedrunnotx" => ["hardcap", "monopsychic", "easyhms", "fullivs", "norolls", "stablweather", "weathermod", "freemegaz", "earlyincu", "wtfisafont", "pinata", "mintyfresh", "freeexpall", "freescent", "nopuzzles"],
+  "pulse2" => ["opp31iv", "opp252ev"],
 
   "randfields" => [
     "nofield",
@@ -623,10 +626,7 @@ def makeDoubles?(opp = nil)
   return false if $game_switches[1397] # Mix'n'Match Station
   return false if $game_switches[1583] # Battle Pavillion
   return false if $game_switches[1584] # Battle Factory
-  count = 0
-  $Trainer.party.each{ |pkmn| count += 1 if pkmn && ((pkmn.hp > 0 && !pkmn.isEgg?) || (Rejuv && pkmn.isbossmon && pkmn.shieldCount > 0)) }
-  return true if opp && opp.length > 1
-  return count > 1
+  return !opp || opp.length > 1
 end
 
 def addPassword(entrytext)
@@ -928,7 +928,7 @@ def pbTogglePassword(password, isGameStart = false)
     Kernel.pbMessage(_INTL('This password cannot be disabled anymore.'))
     return false
   end
-  if !isGameStart && ['randomizer', 'eeveeplease', 'eeveepls', 'eevee', 'vulpixpls', 'vulpixplease', 'vulpix', 'bestgamemode', 'random', 'randomized', 'randomiser', 'randomised'].include?(password_string)
+  if !isGameStart && ['randomizer', 'eeveeplease', 'eeveepls', 'eevee', 'vulpixpls', 'vulpixplease', 'vulpix', 'bestgamemode', 'random', 'randomized', 'randomiser', 'randomised', 'freestarter', 'mystarter', 'customstart'].include?(password_string)
     Kernel.pbMessage(_INTL('This password cannot be entered anymore.'))
     return false
   end
@@ -2104,11 +2104,9 @@ Events.onWildPokemonCreate += proc { |sender, e|
       pokemon.pbLearnMove(:JUDGMENT)
     when 120..145
       val = ($game_variables[232] - 120)
-      # Create hash contains alphabetical table
-      alpha_table = {}
-      (('A'..'Z').zip(1..26)).each { |x| alpha_table[x[0]] = x[1] }
       s = "ELECTRICGRASSYMISTYPSYCHIC" # String to convert
-      result = s.split('').collect { |x| alpha_table[x] }
+      y = 'A'.ord - 1
+      result = s.split('').collect { |x| x.ord - y }
       pokemon.form = (result[val] - 1) # Unown for Tapus
   end
 
@@ -2414,4 +2412,11 @@ def lauraQuestChoice()
   end
 
   return index
+end
+
+def isUsingFieldPassword?()
+  for i in 2250..2300
+    return true if $game_switches[i]
+  end
+  return false
 end

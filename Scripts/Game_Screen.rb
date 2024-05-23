@@ -336,8 +336,8 @@ class Game_Screen
       if $game_switches[:Force_Weather]
         $game_screen.weather($game_variables[:Weather_Override], 3, 20)
       else
-        current2 = Time.new
-        if @weatherVector[currentWeather][0] != 5 || (current2.hour > 6 && current2.hour < 19)
+        current2 = pbGetTimeNow
+        if @weatherVector[currentWeather] && (@weatherVector[currentWeather][0] != 5 || (current2.hour > 6 && current2.hour < 19))
           $game_variables[:Current_Weather] = @weatherVector[currentWeather][0]
           $game_screen.weather(@weatherVector[currentWeather][0], @weatherVector[currentWeather][1], 20)
         else

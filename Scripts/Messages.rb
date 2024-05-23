@@ -948,13 +948,12 @@ if System.platform[/Windows/]
   end
 end
 
-def tts(text)
-  # We can easily add interrupt parameter if we need it.
+def tts(text, interrupt = false)
   if !text.instance_of?(String)
     PBDebug.log('Incorrect tts call: ' + text.class.to_s)
     return
   end
-  $tts.call(text.encode('utf-16le'), false) unless $tts.nil?
+  $tts.call(text.encode('utf-16le'), interrupt) unless $tts.nil?
 end
 
 def Kernel.pbMessage(message, commands = nil, cmdIfCancel = 0, skin = nil, defaultCmd = 0, tts: true, &block)
@@ -1336,7 +1335,7 @@ def Kernel.pbMessageDisplay(msgwindow, message, letterbyletter = true, commandPr
   ### Controls
   textchunks = []
   controls = []
-  while text[/(?:\\([WwFf]|[Ff][Ff]|[Tt][Ss]|[Ss][Tt]|[Cc][Ll]|[Mm][Ee]|[Ss][Ee]|[Ww][Tt]|[Ww][Tt][Nn][Pp]|[Cc][Hh])\[([^\]]*)\]|\\([Gg]|[Cc][Nn]|[Aa][Pp]|[Ww][Dd]|[Ww][Mm]|[Oo][Pp]|[Ss][Hh]|[Cc][Ll]|[Ww][Uu]|[\.]|[\|]|[\!]|[\x5E])())/i]
+  while text[/(?:\\([WwFf]|[Ff][Ff]|[Ff][Ff][Rr]|[Tt][Ss]|[Ss][Tt]|[Cc][Ll]|[Mm][Ee]|[Ss][Ee]|[Ww][Tt]|[Ww][Tt][Nn][Pp]|[Cc][Hh])\[([^\]]*)\]|\\([Gg]|[Cc][Nn]|[Aa][Pp]|[Ww][Dd]|[Ww][Mm]|[Oo][Pp]|[Ss][Hh]|[Cc][Ll]|[Ww][Uu]|[\.]|[\|]|[\!]|[\x5E])())/i]
     textchunks.push($~.pre_match)
     if $~[1]
       if $~[1].downcase == "st"
@@ -1467,6 +1466,12 @@ def Kernel.pbMessageDisplay(msgwindow, message, letterbyletter = true, commandPr
           facewindow.dispose if facewindow
           facewindow = FaceWindowVX.new(param)
           pbPositionNearMsgWindow(facewindow, msgwindow, :left)
+          facewindow.viewport = msgwindow.viewport
+          facewindow.z = msgwindow.z
+        elsif control == "ffr"
+          facewindow.dispose if facewindow
+          facewindow = FaceWindowVX.new(param)
+          pbPositionNearMsgWindow(facewindow, msgwindow, :right)
           facewindow.viewport = msgwindow.viewport
           facewindow.z = msgwindow.z
         elsif control == "g" # Display gold window

@@ -43066,6 +43066,12 @@ MONHASH = {
       :BattlerAltitude => 0,
     },
 
+    "Battle Bond Form" => {
+      :BaseStats => [72, 145, 67, 153, 71, 132],
+      :Abilities => [:BATTLEBOND],
+      :HiddenAbility => :BATTLEBOND,
+    },
+
     :OnCreation => {},
   },
 
