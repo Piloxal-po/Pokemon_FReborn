@@ -408,7 +408,7 @@ class Pokedex
     if $game_switches
       return if $game_switches[:NotPlayerCharacter]
     end
-    return $cache.pkmn[pokemon.species, pokemon.form].checkFlag?(:ExcludeDex)
+    return if $cache.pkmn[pokemon.species, pokemon.form].checkFlag?(:ExcludeDex)
     if genderDifferenceArr.include?(pokemon.species)
       gender = "Male" if pokemon.gender == 0
       gender = "Female" if pokemon.gender == 1
@@ -416,9 +416,7 @@ class Pokedex
       gender = "Any"
     end
     self.dexList[pokemon.species][:lastSeen][:gender] = gender
-
     self.dexList[pokemon.species][:lastSeen][:form] = pokemon.getFormName
-
     self.dexList[pokemon.species][:lastSeen][:shiny] = pokemon.isShiny?
   end
 

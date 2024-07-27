@@ -2083,8 +2083,8 @@ class PokeBattle_Scene
     @sprites["partybarplayer"].visible = false
     ballmovedist = 16 # How far a ball moves each frame
     # Bar slides on
-    @sprites["partybarfoe"].x += 16 unless !oppside
-    @sprites["partybarplayer"].x -= 16
+    @sprites["partybarfoe"].x += ballmovedist unless !oppside
+    @sprites["partybarplayer"].x -= ballmovedist
     if oppside && @sprites["partybarfoe"].x + @sprites["partybarfoe"].bitmap.width >= PBScene::FOEPARTYBAR_X
       @sprites["partybarfoe"].x = PBScene::FOEPARTYBAR_X - @sprites["partybarfoe"].bitmap.width
       @sprites["partybarplayer"].x = PBScene::PLAYERPARTYBAR_X
@@ -2557,7 +2557,6 @@ class PokeBattle_Scene
     end
     spritePoke = @sprites["pokemon#{battlerindex}"]
     picturePoke = PictureEx.new(spritePoke.z)
-    dims = [spritePoke.x, spritePoke.y]
     center = getSpriteCenter(spritePoke)
     # starting positions
     picturePoke.moveVisible(1, true)
@@ -3045,7 +3044,6 @@ class PokeBattle_Scene
     cw = @sprites["fightwindow"]
     battler = @battle.battlers[index]
     cw.battler = battler
-    lastIndex = encored_move
     cw.setIndex(encored_move)
     pbFrameUpdate(cw, true)
     Graphics.update
@@ -3057,8 +3055,9 @@ class PokeBattle_Scene
   def pbItemMenu(index)
     ret = nil
     retindex = -1
-    pkmnid = -1
     endscene = true
+
+    posmod = @battle.pbOwnedByAIPartner?(index) ? 6 : 0
     oldsprites = pbFadeOutAndHide(@sprites)
     itemscene = PokemonBag_Scene.new
     itemscene.pbStartScene($PokemonBag)
@@ -3082,7 +3081,7 @@ class PokeBattle_Scene
           Kernel.pbMessage("The 'No Items' password is on, so items can't be used in battle.")
         elsif usetype != 3 && !$cache.items[item].checkFlag?(:battleitem)
           modparty = []
-          for i in 0...6
+          for i in posmod...(posmod + 6)
             modparty.push(@battle.party1[@battle.partyorder[i]])
           end
           pkmnlist = PokemonScreen_Scene.new
@@ -3090,7 +3089,7 @@ class PokeBattle_Scene
           itemscene.pbEndScene
           pkmnscreen.pbStartScene(_INTL("Use on which Pokémon?"), @battle.doublebattle)
           activecmd = pkmnscreen.pbChoosePokemon
-          pkmnid = @battle.partyorder[activecmd]
+          pkmnid = @battle.partyorder[activecmd + posmod]
           if activecmd != -1 && !pbCanUseBattleItem(pkmnid, item, pkmnscreen)
           else
             if activecmd >= 0 && pkmnid >= 0 && ItemHandlers.hasBattleUseOnPokemon(item)
@@ -3322,9 +3321,9 @@ class PokeBattle_Scene
     end
   end
 
-  def pbChooseTargetAcupressure(index)
+  def pbChooseTargetOneSide(index, target)
     pbShowWindow(FIGHTBOX)
-    curwindow = pbAcupressureTarget(index)
+    curwindow = target == :SingleOpposing ? pbFirstTarget(index) : pbAcupressureTarget(index)
     if curwindow == -1
       raise RuntimeError.new(_INTL("No targets somehow..."))
     end
@@ -3371,12 +3370,11 @@ class PokeBattle_Scene
     party = @battle.pbParty(index)
     partypos = @battle.partyorder
     ret = -1
-    # Fade out and hide all sprites
-    #    visiblesprites=pbFadeOutAndHide(@sprites)
     pbShowWindow(BLANK)
     pbSetMessageMode(true)
     modparty = []
-    for i in 0...6
+    posmod = @battle.pbOwnedByAIPartner?(index) ? 6 : 0
+    for i in posmod...(posmod + 6)
       modparty.push(party[partypos[i]])
     end
     visiblesprites = pbFadeOutAndHide(@sprites)
@@ -3395,11 +3393,11 @@ class PokeBattle_Scene
         scene.pbSummary(activecmd[1])
         next
       end
-      if activecmd >= 0 && !party[partypos[activecmd]].nil?
+      if activecmd >= 0 && !party[partypos[activecmd + posmod]].nil?
         commands = []
         cmdShift = -1
         cmdSummary = -1
-        pkmnindex = partypos[activecmd]
+        pkmnindex = partypos[activecmd + posmod]
         commands[cmdShift = commands.length] = _INTL("Switch In") if !party[pkmnindex].isEgg?
         commands[cmdSummary = commands.length] = _INTL("Summary")
         commands[commands.length] = _INTL("Cancel")
@@ -3421,70 +3419,96 @@ class PokeBattle_Scene
     pbSetMessageMode(false)
     # back to main battle screen
     pbFadeInAndShow(@sprites, visiblesprites)
+    @battle.logSwitch(index, ret) if ret >= 0
     return ret
   end
 
-  def pbDamageAnimation(pkmn, effectiveness)
-    pkmnsprite = @sprites["pokemon#{pkmn.index}"]
-    shadowsprite = @sprites["shadow#{pkmn.index}"]
-    sprite = @sprites["battlebox#{pkmn.index}"]
-    oldshadowvisible = shadowsprite.visible
-    oldvisible = sprite.visible
-    sprite.selected = 2
+  def pbDamageAnimation(mons, effectiveness, quick: false)
+    return if mons == []
+    mons = [mons] unless mons.is_a?(Array)
+
     @briefmessage = false
-    6.times do
+    (quick ? 0 : 6).times do
       pbGraphicsUpdate
       Input.update
     end
+
     $Settings.audiotype = 0 if !$Settings.audiotype
-    case effectiveness
-      when 0
-        @battle.pbIsOpposing?(pkmn.index) ? pbSEPlay("normaldamage#{$Settings.audiotype == 0 ? "_R" : ""}") : pbSEPlay("normaldamage#{$Settings.audiotype == 0 ? "_L" : ""}")
-      when 1
-        @battle.pbIsOpposing?(pkmn.index) ? pbSEPlay("notverydamage#{$Settings.audiotype == 0 ? "_R" : ""}") : pbSEPlay("notverydamage#{$Settings.audiotype == 0 ? "_L" : ""}")
-      when 2
-        @battle.pbIsOpposing?(pkmn.index) ? pbSEPlay("superdamage#{$Settings.audiotype == 0 ? "_R" : ""}") : pbSEPlay("superdamage#{$Settings.audiotype == 0 ? "_L" : ""}")
-    end
-    8.times do
-      pkmnsprite.visible = !pkmnsprite.visible
-      if oldshadowvisible
-        shadowsprite.visible = !shadowsprite.visible
+    if $Settings.audiotype != 0 || mons.length > 1
+      case effectiveness
+        when 0 then pbSEPlay("normaldamage")
+        when 1 then pbSEPlay("notverydamage")
+        when 2 then pbSEPlay("superdamage")
       end
+    else
+      pkmn = mons[0]
+      case effectiveness
+        when 0 then @battle.pbIsOpposing?(pkmn.index) ? pbSEPlay("normaldamage_R") : pbSEPlay("normaldamage_L")
+        when 1 then @battle.pbIsOpposing?(pkmn.index) ? pbSEPlay("notverydamage_R") : pbSEPlay("notverydamage_L")
+        when 2 then @battle.pbIsOpposing?(pkmn.index) ? pbSEPlay("superdamage_R") : pbSEPlay("superdamage_L")
+      end
+    end
+
+    blinksprites = []
+    sprites = []
+    mons.each do |pkmn|
+      pkmnsprite = @sprites["pokemon#{pkmn.index}"]
+      shadowsprite = @sprites["shadow#{pkmn.index}"]
+      sprite = @sprites["battlebox#{pkmn.index}"]
+      sprite.selected = 2
+      sprites.push [sprite, sprite.visible]
+      blinksprites.push pkmnsprite
+      blinksprites.push shadowsprite if shadowsprite.visible
+    end
+
+    8.times do
+      blinksprites.each { |s| s.visible = !s.visible }
       4.times do
         pbGraphicsUpdate
         Input.update
-        sprite.update
+        sprites.each { |pair| pair[0].update }
       end
     end
-    sprite.selected = 0
-    sprite.visible = oldvisible
+
+    sprites.each do |pair|
+      sprite, oldvisible = pair
+      sprite.selected = 0
+      sprite.visible = oldvisible
+    end
   end
 
   # This method is called whenever a Pokémon's HP changes.
   # Used to animate the HP bar.
-  def pbHPChanged(pkmn, oldhp, anim = false)
+  # Accepts an array with the following format: [[pkmn1, oldhp], [pkmn2, oldhp]]
+  def pbHPChanged(mons, anim = false)
     @briefmessage = false
-    hpchange = pkmn.hp - oldhp
-    if hpchange < 0
-      hpchange = -hpchange
-      PBDebug.log("[#{pkmn.pbThis} lost #{hpchange} HP, now has #{pkmn.hp} HP]") if $INTERNAL
-    else
-      PBDebug.log("[#{pkmn.pbThis} gained #{hpchange} HP, now has #{pkmn.hp} HP]") if $INTERNAL
-    end
-    if anim && @battle.battlescene
-      if pkmn.hp > oldhp
-        pbCommonAnimation("HealthUp", pkmn, nil)
-      elsif pkmn.hp < oldhp
-        pbCommonAnimation("HealthDown", pkmn, nil)
+    sprites = []
+    mons.each do |pair|
+      pkmn, oldhp = pair
+      hpchange = pkmn.hp - oldhp
+      if hpchange < 0
+        hpchange = -hpchange
+        PBDebug.log("[#{pkmn.pbThis} lost #{hpchange} HP, now has #{pkmn.hp} HP]") if $INTERNAL
+      else
+        PBDebug.log("[#{pkmn.pbThis} gained #{hpchange} HP, now has #{pkmn.hp} HP]") if $INTERNAL
       end
+      if anim && @battle.battlescene
+        if pkmn.hp > oldhp
+          pbCommonAnimation("HealthUp", pkmn, nil)
+        elsif pkmn.hp < oldhp
+          pbCommonAnimation("HealthDown", pkmn, nil)
+        end
+      end
+      sprite = @sprites["battlebox#{pkmn.index}"]
+      sprite.animateHP(oldhp, pkmn.hp)
+      sprites.push sprite
     end
-    sprite = @sprites["battlebox#{pkmn.index}"]
-    sprite.animateHP(oldhp, pkmn.hp)
-    while sprite.animatingHP
+
+    while sprites.any? { |sprite| sprite.animatingHP }
       pbGraphicsUpdate
       Input.update
       pbFrameUpdate(nil)
-      sprite.update
+      sprites.each { |sprite| sprite.update }
     end
   end
 
@@ -3553,7 +3577,7 @@ class PokeBattle_Scene
   def pbSyncronousVanish(array)
     return if !array || array.length == 0
 
-    for i in 0...10
+    10.times do
       array.each { |pkmn| @sprites["pokemon#{pkmn.index}"].opacity -= 30 }
       pbGraphicsUpdate
       Input.update
@@ -3563,7 +3587,7 @@ class PokeBattle_Scene
   def pbSyncronousUnvanish(array)
     return if !array || array.length == 0
 
-    for i in 0...10
+    10.times do
       array.each { |pkmn| @sprites["pokemon#{pkmn.index}"].opacity += 30 }
       pbGraphicsUpdate
       Input.update
@@ -3610,8 +3634,6 @@ class PokeBattle_Scene
 
   def pbEXPBar(pokemon, battler, startexp, endexp, tempexp1, tempexp2)
     if battler
-      pokemon.calcStats
-      battler.pbUpdate(false)
       @sprites["battlebox#{battler.index}"].refreshExpLevel
       exprange = (endexp - startexp)
       startexplevel = 0
@@ -3745,7 +3767,7 @@ class PokeBattle_Scene
     unless defined?(target.vanished).nil?
       return if target.vanished
     end
-    $cache.animations = load_data("Data/PkmnAnimations.rxdata") if !$cache.animations
+    $cache.animations = load_data("Data/battleanims.dat") if !$cache.animations
     for i in 0...$cache.animations.length
       if $cache.animations[i] && $cache.animations[i].name == "Common:" + animname
         pbAnimationCore($cache.animations[i], user, (target != nil) ? target : user)
@@ -3766,8 +3788,8 @@ class PokeBattle_Scene
     return if !animid
 
     anim = animid[0]
-    autoopp = (user.index == 1 || user.index == 3) ? true : false
-    $cache.animations = load_data("Data/PkmnAnimations.rxdata") if !$cache.animations
+    autoopp = user.index == 1 || user.index == 3
+    $cache.animations = load_data("Data/battleanims.dat") if !$cache.animations
     pbSaveShadows {
       if animid[1] # On opposing side and using OppMove animation
         pbAnimationCore($cache.animations[anim], target, user, move, true)
@@ -3775,10 +3797,6 @@ class PokeBattle_Scene
         pbAnimationCore($cache.animations[anim], user, target, move, autoopp)
       end
     }
-    if $cache.moves[move.intern].function == 0x69 && user && target # Transform
-      # Change form to transformed version
-      pbChangePokemon(user, target.pokemon)
-    end
   end
 
   def pbAnimationCore(animation, user, target, move = nil, oppmove = false)
@@ -3830,7 +3848,7 @@ class PokeBattle_Scene
     targetsprite.oy = 0 if targetsprite
     targetsprite.x = oldtargetx if targetsprite
     targetsprite.y = oldtargety if targetsprite
-    if animplayer.targetSwitch == true
+    if animplayer.targetSwitch
       animplayer.realtargetsprite.x = animplayer.realtargetOldCoords[0]
       animplayer.realtargetsprite.y = animplayer.realtargetOldCoords[1]
       animplayer.realtargetsprite.ox = animplayer.realtargetOldCoords[2]
@@ -3908,9 +3926,9 @@ class PokeBattle_Scene
   def pbThrow(ball, shakes, critical, critsuccess, targetBattler, showplayer = false)
     @briefmessage = false
     burst = -1
-    $cache.animations = load_data("Data/PkmnAnimations.rxdata") if !$cache.animations
+    $cache.animations = load_data("Data/battleanims.dat") if !$cache.animations
     for i in 0...2
-      t = (i == 0) ? ball : 0
+      t = i == 0 ? ball : 0
       for j in 0...$cache.animations.length
         if $cache.animations[j]
           if $cache.animations[j].name == "Common:BallBurst#{t}"
@@ -3961,10 +3979,8 @@ class PokeBattle_Scene
     pictureBall = PictureEx.new(spritePoke.z + 1)
     picturePoke = PictureEx.new(spritePoke.z)
     picturePlayer = PictureEx.new(spritePoke.z + 2)
-    dims = [spritePoke.x, spritePoke.y]
     pokecenter = getSpriteCenter(@sprites["pokemon1"])
     playerpos = [@sprites["player"].x, @sprites["player"].y]
-    ballendy = PBScene::FOEBATTLER_Y - 4
     # starting positions
     pictureBall.moveVisible(1, true)
     pictureBall.moveName(1, ball)
@@ -4036,10 +4052,8 @@ class PokeBattle_Scene
     picturePoke = PictureEx.new(spritePoke.z)
     picturePlayer = PictureEx.new(spritePoke.z + 2)
     pictureAnger = PictureEx.new(spritePoke.z + 1)
-    dims = [spritePoke.x, spritePoke.y]
     pokecenter = getSpriteCenter(@sprites["pokemon1"])
     playerpos = [@sprites["player"].x, @sprites["player"].y]
-    ballendy = PBScene::FOEBATTLER_Y - 4
     # starting positions
     pictureBall.moveVisible(1, true)
     pictureBall.moveName(1, ball)

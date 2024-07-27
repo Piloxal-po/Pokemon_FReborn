@@ -68,7 +68,7 @@ SCRIPTS.each do |path|
         btrace = btrace + "#{i}\n"
       end
     end
-    message = "Exception: #{e.class}\nMessage: #{e.message}\n#{btrace}"
+    message = "[#{GAMETITLE} #{GAMEVERSION}]\nException: #{e.class}\nMessage: #{e.message}\n#{btrace}"
     errorlog = "errorlog.txt"
     if (Object.const_defined?(:RTP) rescue false)
       errorlog = RTP.getSaveFileName("errorlog.txt")

@@ -13,7 +13,6 @@ class DefaultKeyboardControlsScene
     y = 8
     i = -1
 
-    followerMod = Reborn && defined?(FollowingPkmn)
     texts = []
     unless $joiplay
       texts.push ["C / Enter / Space:   Interact, Select", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
@@ -21,11 +20,7 @@ class DefaultKeyboardControlsScene
       texts.push ["C / Enter:   Interact, Select", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
     end
     texts.push ["X / Escape:   Menu, Back, Skip Text", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
-    if followerMod
-      texts.push ["A:   Mega, Z-Move, Follower Interaction, Misc.", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
-    else
-      texts.push ["A:   Mega, Z-Move, Sort, Misc.", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
-    end
+    texts.push ["A:   Mega, Z-Move, Sort, Misc.", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
     unless Rejuv
       texts.push ["S:   Use Item, Battle Field Notes", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
     else
@@ -37,13 +32,8 @@ class DefaultKeyboardControlsScene
       texts.push ["D:   Quick Save", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
     end
     unless $joiplay
-      if followerMod
-        texts.push ["Q / PgUp:   Prev. Page / Follower, Self Inspect", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
-        texts.push ["W / PgDn:   Next Page / Follower, Foe Inspect", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
-      else
-        texts.push ["Q / PgUp:   Previous Page, Self Inspect", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
-        texts.push ["W / PgDn:   Next Page, Foe Inspect", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
-      end
+      texts.push ["Q / PgUp:   Previous Page, Self Inspect", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
+      texts.push ["W / PgDn:   Next Page, Foe Inspect", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
       texts.push ["Ctrl + Q / W:   Skip 10 pages up or down", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
       texts.push ["Home / End:   Jump to the first or last item", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
       if TAB_TURBO
@@ -57,21 +47,12 @@ class DefaultKeyboardControlsScene
     else
       texts.push ["T:   Toggle Turbo Mode", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
       texts.push ["Z:   Toggle Run", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
-      if followerMod
-        texts.push ["Q:   Previous Page / Follower, Self Inspect", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
-        texts.push ["W:   Next Page / Follower, Foe Inspect", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
-      else
-        texts.push ["Q:   Previous Page, Self Inspect", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
-        texts.push ["W:   Next Page, Foe Inspect", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
-      end
+      texts.push ["Q:   Previous Page, Self Inspect", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
+      texts.push ["W:   Next Page, Foe Inspect", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
       texts.push ["M:   Mute, Unmute", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
     end
     i -= 2
     x += 270
-    if followerMod
-      i -= 1
-      texts.push ["F8:   Toggle Follower", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
-    end
     texts.push ["F9:   Read Coordinates", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
     texts.push ["F12:   Soft Reset", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
 
@@ -140,7 +121,6 @@ class DefaultGamepadControlsScene
     y = 8
     i = -1
 
-    followerMod = Reborn && defined?(FollowingPkmn)
     texts = []
     texts.push ["D-pad:   Move", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
     texts.push ["Cross / A:   Interact, Select", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
@@ -150,11 +130,7 @@ class DefaultGamepadControlsScene
     else
       texts.push ["Square / X:   Use Item", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
     end
-    if followerMod
-      texts.push ["Triangle / Y:   Mega, Z-Move, Follower Interaction", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
-    else
-      texts.push ["Triangle / Y:   Mega, Z-Move, Sort, Misc.", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
-    end
+    texts.push ["Triangle / Y:   Mega, Z-Move, Sort, Misc.", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
     unless $joiplay
       texts.push ["L2 (hold) / Back (toggle):   Turbo Mode", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
       texts.push ["R2 (hold) / Start (toggle):   Run", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
@@ -162,13 +138,8 @@ class DefaultGamepadControlsScene
       texts.push ["L2:   Toggle Turbo Mode", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
       texts.push ["R2:   Toggle Run", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
     end
-    if followerMod
-      texts.push ["L1:   Previous Page / Follower, Self Inspect", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
-      texts.push ["R1:   Next Page / Follower, Foe Inspect", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
-    else
-      texts.push ["L1:   Previous Page, Self Inspect", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
-      texts.push ["R1:   Next Page, Foe Inspect", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
-    end
+    texts.push ["L1:   Previous Page, Self Inspect", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
+    texts.push ["R1:   Next Page, Foe Inspect", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
     texts.push ["R2 + L1 / R1:   Skip 10 pages up or down", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]
     unless $joiplay
       texts.push ["Left stick:   Mute, Unmute", x, y + lineHeight * (i += 1), 0, baseColor, shadowColor]

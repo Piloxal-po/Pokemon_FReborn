@@ -2,48 +2,40 @@ class PokeBattle_Battler
   # Streamlining of Minior
   def pbShieldsUp?
     return false if @species != :MINIOR
-    return false if (@ability != :SHIELDSDOWN) || @effects[:Transform]
+    return false if @ability != :SHIELDSDOWN || @effects[:Transform]
     return false if self.form != 7
 
     return true
   end
   # End of Minior streamlining
 
-  def pbCanStatus?(showMessages, ignorestatus = false, moldbroken = self.moldbroken) # catchall true/false for situations where one can't be statused
-    if ((@ability == :FLOWERVEIL || pbPartner.ability == :FLOWERVEIL) && (hasType?(:GRASS) || @battle.FE == :BEWITCHED)) && !moldbroken
-      @battle.pbDisplay(_INTL("{1} is protected by Flower Veil!", pbThis)) if showMessages
-      return false
-    end
-    if (@battle.FE == :MISTY || @battle.state.effects[:MISTY] > 0) && !isAirborne? # Misty Field
-      @battle.pbDisplay(_INTL("Misty Terrain prevents {1} from being inflicted by status!", pbThis(true))) if showMessages
-      return false
-    end
-    if Rejuv && @battle.FE == :DRAGONSDEN && hasWorkingItem(:AMULETCOIN) # Dragon's Den
-      @battle.pbDisplay(_INTL("Amulet Coin prevents {1} from being inflicted by status on Dragon's Den!", pbThis)) if showMessages
-      return false
-    end
+  def pbCanStatus?(showMessages, ignorestatus = false, moldbroken = self.moldbroken, ownStatus = false) # catchall true/false for situations where one can't be statused
+    failure = :none
+    failure = :FLOWERVEIL if ((@ability == :FLOWERVEIL || pbPartner.ability == :FLOWERVEIL) && (hasType?(:GRASS) || @battle.FE == :BEWITCHED)) && !moldbroken
+    failure = :MISTY if (@battle.FE == :MISTY || @battle.state.effects[:MISTY] > 0) && !isAirborne? # Misty Field
+    failure = :AMULETCOIN if Rejuv && @battle.FE == :DRAGONSDEN && hasWorkingItem(:AMULETCOIN) # Dragon's Den
+    failure = :STATUSED if (!ignorestatus && !self.status.nil?) || (self.ability == :COMATOSE && @battle.FE != :ELECTERRAIN)
+    failure = :Substitute if (@damagestate.substitute || @effects[:Substitute] > 0) && (!@battle.lastMoveUsed.is_a?(Symbol) || !$cache.moves[@battle.lastMoveUsed].checkFlag?(:soundmove)) && !ownStatus
+    failure = :SHIELD if pbShieldsUp?
+    failure = :Safeguard if pbOwnSide.effects[:Safeguard] > 0 && @battle.battlers[@battle.lastMoveUser].ability != :INFILTRATOR
     if (self.ability == :LEAFGUARD && ((@battle.pbWeather == :SUNNYDAY && !hasWorkingItem(:UTILITYUMBRELLA)) ||
       @battle.FE == :FOREST || @battle.ProgressiveFieldCheck(PBFields::FLOWERGARDEN, 2, 5) || (Rejuv && @battle.FE == :GRASSY) || @battle.state.effects[:GRASSY] > 0)) && !moldbroken
-      @battle.pbDisplay(_INTL("{1} is protected by Leaf Guard!", pbThis)) if showMessages
-      return false
+      failure = :LEAFGUARD
     end
-    if (!ignorestatus && !self.status.nil?) || (self.ability == :COMATOSE && @battle.FE != :ELECTERRAIN)
-      @battle.pbDisplay(_INTL("{1} is already statused!", pbThis)) if showMessages
-      return false
+    return true if failure == :none
+    if showMessages
+      case failure
+        when :FLOWERVEIL then @battle.pbDisplay(_INTL("{1} is protected by Flower Veil!", pbThis))
+        when :MISTY then @battle.pbDisplay(_INTL("Misty Terrain prevents {1} from being inflicted by status!", pbThis(true)))
+        when :AMULETCOIN then @battle.pbDisplay(_INTL("Amulet Coin prevents {1} from being inflicted by status on Dragon's Den!", pbThis))
+        when :LEAFGUARD then @battle.pbDisplay(_INTL("{1} is protected by Leaf Guard!", pbThis))
+        when :STATUSED then @battle.pbDisplay(_INTL("{1} is already statused!", pbThis))
+        when :Substitute then @battle.pbDisplay(_INTL("{1} is hiding behind a Substitute!", pbThis))
+        when :SHIELD then @battle.pbDisplay(_INTL("{1} shielded itself from status!", pbThis))
+        when :Safeguard then @battle.pbDisplay(_INTL("{1}'s team is protected by Safeguard!", pbThis))
+      end
     end
-    if (@damagestate.substitute || @effects[:Substitute] > 0) && (!@battle.lastMoveUsed.is_a?(Symbol) || !$cache.moves[@battle.lastMoveUsed].checkFlag?(:soundmove))
-      @battle.pbDisplay(_INTL("{1} is hidding behind a Substitute!", pbThis)) if showMessages
-      return false
-    end
-    if pbShieldsUp?
-      @battle.pbDisplay(_INTL("{1} shielded itself from status!", pbThis)) if showMessages
-      return false
-    end
-    if pbOwnSide.effects[:Safeguard] > 0 && (@battle.battlers[@battle.lastMoveUser]).ability != :INFILTRATOR
-      @battle.pbDisplay(_INTL("{1}'s team is protected by Safeguard!", pbThis)) if showMessages
-      return false
-    end
-    return true
+    return false
   end
 
   #===============================================================================
@@ -51,85 +43,66 @@ class PokeBattle_Battler
   #===============================================================================
   def pbCanSleep?(showMessages, selfsleep = false, ignorestatus = false, moldbroken = self.moldbroken)
     return false if isFainted? && !(Rejuv && isbossmon && @shieldCount > 0)
-
     if (!ignorestatus && status == :SLEEP) || (self.ability == :COMATOSE && @battle.FE != :ELECTERRAIN)
       @battle.pbDisplay(_INTL("{1} is already asleep!", pbThis)) if showMessages
       return false
     end
-    return false if !pbCanStatus?(showMessages, ignorestatus, moldbroken)
+    return false if !pbCanStatus?(showMessages, ignorestatus, moldbroken, selfsleep)
 
+    failure = :none
+    failure = :ABILITY if [:VITALSPIRIT, :INSOMNIA, :SWEETVEIL].include?(self.ability) && !moldbroken
+    failure = :SWEETVEIL if pbPartner.ability == :SWEETVEIL && !moldbroken
+    failure = :NIGHTMARES if self.ability == :WORLDOFNIGHTMARES
+    failure = :ELECTERRAIN if @battle.FE == :ELECTERRAIN && !isAirborne?
+    failure = :CONCERT if @battle.ProgressiveFieldCheck(PBFields::CONCERT, 3, 4)
+    failure = :EARLYBIRD if self.ability == :EARLYBIRD && !moldbroken && @battle.FE == :SKY
     if self.ability != :SOUNDPROOF
       for i in 0...4
-        if @battle.battlers[i].effects[:Uproar] > 0
-          @battle.pbDisplay(_INTL("But the uproar kept {1} awake!", pbThis(true))) if showMessages
-          return false
-        end
+        failure = :Uproar if @battle.battlers[i].effects[:Uproar] > 0
       end
     end
-    if [:VITALSPIRIT, :INSOMNIA, :SWEETVEIL].include?(self.ability) && !moldbroken
-      abilityname = getAbilityName(self.ability)
-      @battle.pbDisplay(_INTL("{1} stayed awake using its {2}!", pbThis, abilityname)) if showMessages
-      return false
+    return true if failure == :none
+    if showMessages
+      case failure
+        when :Uproar then @battle.pbDisplay(_INTL("But the uproar kept {1} awake!", pbThis(true)))
+        when :ABILITY then @battle.pbDisplay(_INTL("{1} stayed awake using its {2}!", pbThis, getAbilityName(self.ability)))
+        when :SWEETVEIL then @battle.pbDisplay(_INTL("{1} stayed awake using its partner's {2}!", pbThis, getAbilityName(pbPartner.ability)))
+        when :NIGHTMARES then @battle.pbDisplay(_INTL("{1}'s dreams jolted them right back up!", pbThis))
+        when :ELECTERRAIN then @battle.pbDisplay(_INTL("The electricity jolted {1} awake!", pbThis))
+        when :CONCERT then @battle.pbDisplay(_INTL("The concert is too loud and hype to sleep!", pbThis))
+        when :EARLYBIRD then @battle.pbDisplay(_INTL("{1} can't fall asleep in the open skies!", pbThis))
+      end
     end
-    if pbPartner.ability == :SWEETVEIL && !moldbroken
-      abilityname = getAbilityName(pbPartner.ability)
-      @battle.pbDisplay(_INTL("{1} stayed awake using its partner's {2}!", pbThis, abilityname)) if showMessages
-      return false
-    end
-    if self.ability == :WORLDOFNIGHTMARES
-      @battle.pbDisplay(_INTL("{1}'s dreams jolted them right back up!", pbThis)) if showMessages
-      return false
-    end
-    if @battle.FE == :ELECTERRAIN && !isAirborne?
-      @battle.pbDisplay(_INTL("The electricity jolted {1} awake!", pbThis)) if showMessages
-      return false
-    end
-    if @battle.ProgressiveFieldCheck(PBFields::CONCERT, 3, 4)
-      @battle.pbDisplay(_INTL("The concert is too loud and hype to sleep!", pbThis)) if showMessages
-      return false
-    end
-    if self.ability == :EARLYBIRD && !moldbroken && @battle.FE == :SKY
-      @battle.pbDisplay(_INTL("{1} can't fall asleep in the open skies!", pbThis)) if showMessages
-      return false
-    end
-    return true
+    return false
   end
 
   def pbCanSleepYawn?
     return false if !pbCanStatus?(true)
-
     if @ability != :SOUNDPROOF
       for i in 0...4
         return false if @battle.battlers[i].effects[:Uproar] > 0
       end
     end
-    if (@ability == :VITALSPIRIT || @ability == :INSOMNIA) && !self.moldbroken || pbShieldsUp?
-      return false
-    end
+    return false if (@ability == :VITALSPIRIT || @ability == :INSOMNIA) && !self.moldbroken || pbShieldsUp?
 
-    if (pbPartner.ability == :SWEETVEIL || @ability == :SWEETVEIL) && !self.moldbroken
-      @battle.pbDisplay(_INTL("{1} is protected by Sweet Veil!", pbThis)) # if showMessages
-      return false
+    failure = :none
+    failure = :SWEETVEIL if (pbPartner.ability == :SWEETVEIL || @ability == :SWEETVEIL) && !self.moldbroken
+    failure = :NIGHTMARES if self.ability == :WORLDOFNIGHTMARES
+    failure = :ELECTERRAIN if @battle.FE == :ELECTERRAIN && !isAirborne?
+    failure = :CONCERT if @battle.ProgressiveFieldCheck(PBFields::CONCERT, 3, 4)
+    return true if failure == :none
+    case failure
+      when :SWEETVEIL then @battle.pbDisplay(_INTL("{1} is protected by Sweet Veil!", pbThis))
+      when :NIGHTMARES then @battle.pbDisplay(_INTL("{1}'s dreams jolted them right back up!", pbThis))
+      when :ELECTERRAIN then @battle.pbDisplay(_INTL("The electricity jolted {1} awake!", pbThis))
+      when :CONCERT then @battle.pbDisplay(_INTL("The concert is too loud and hype to sleep!", pbThis))
     end
-    if @ability == :WORLDOFNIGHTMARES
-      @battle.pbDisplay(_INTL("{1}'s dreams jolted them right back up!", pbThis))
-      return false
-    end
-    if @battle.FE == :ELECTERRAIN && !isAirborne?
-      @battle.pbDisplay(_INTL("The electricity jolted {1} awake!", pbThis)) # if showMessages
-      return false
-    end
-    if @battle.ProgressiveFieldCheck(PBFields::CONCERT, 3, 4)
-      @battle.pbDisplay(_INTL("The concert is too loud and hype to sleep!", pbThis)) # if showMessages
-      return false
-    end
-    return true
+    return false
   end
 
   def pbSleep
     self.status = :SLEEP
     self.statusCount = 2 + @battle.pbRandom(3)
-    pbCancelMoves
     @battle.pbCommonAnimation("Sleep", self, nil)
   end
 
@@ -140,63 +113,59 @@ class PokeBattle_Battler
     else
       self.statusCount = 2 + @battle.pbRandom(3)
     end
-    pbCancelMoves
     @battle.pbCommonAnimation("Sleep", self, nil)
   end
 
   #===============================================================================
   # Poison
   #===============================================================================
-  def pbCanPoison?(showMessages, ownToxicOrb = false, corrosion = false, moldbroken = self.moldbroken)
+  def pbCanPoison?(showMessages, ownPoison = false, corrosion = false, moldbroken = self.moldbroken)
     return false if isFainted? && !(Rejuv && isbossmon && @shieldCount > 0)
 
     if status == :POISON
       @battle.pbDisplay(_INTL("{1} is already poisoned.", pbThis)) if showMessages
       return false
     end
-    return false if !pbCanStatus?(showMessages, false, moldbroken)
+    return false if !pbCanStatus?(showMessages, false, moldbroken, ownPoison)
+    return true if ownPoison && self.ability == :CORROSION
 
-    if (hasType?(:POISON) || (hasType?(:STEEL) && !hasWorkingItem(:RINGTARGET))) && !(self.corroded || corrosion)
-      @battle.pbDisplay(_INTL("It doesn't affect {1}...", pbThis(true))) if showMessages
-      return false
+    failure = :none
+    failure = :TYPE if (hasType?(:POISON) || (hasType?(:STEEL) && !hasWorkingItem(:RINGTARGET))) && !(self.corroded || corrosion)
+    failure = :ABILITY if self.ability == :IMMUNITY || (self.ability == :PASTELVEIL && @battle.FE != :INFERNAL) && !moldbroken
+    failure = :PASTELVEIL if pbPartner.ability == :PASTELVEIL && @battle.FE != :INFERNAL && !moldbroken
+    return true if failure == :none
+    if showMessages
+      case failure
+        when :TYPE then @battle.pbDisplay(_INTL("It doesn't affect {1}...", pbThis(true)))
+        when :ABILITY then @battle.pbDisplay(_INTL("{1}'s {2} prevents poisoning!", pbThis, getAbilityName(self.ability)))
+        when :PASTELVEIL then @battle.pbDisplay(_INTL("{1} stayed healthy using its partner's {2}!", pbThis, getAbilityName(pbPartner.ability)))
+      end
     end
-    if self.ability == :IMMUNITY || (self.ability == :PASTELVEIL && @battle.FE != :INFERNAL) && !moldbroken
-      @battle.pbDisplay(_INTL("{1}'s {2} prevents poisoning!", pbThis, getAbilityName(self.ability))) if showMessages
-      return false
-    end
-    if pbPartner.ability == :PASTELVEIL && @battle.FE != :INFERNAL && !moldbroken
-      abilityname = getAbilityName(pbPartner.ability)
-      @battle.pbDisplay(_INTL("{1} stayed healthy using its partner's {2}!", pbThis, abilityname)) if showMessages
-      return false
-    end
-    return true
+    return false
   end
 
   def pbCanPoisonSynchronize?(opponent, showMessages = false)
     return false if isFainted? && !(Rejuv && isbossmon && @shieldCount > 0)
     return false if !pbCanStatus?(showMessages)
 
-    if hasType?(:POISON) || (hasType?(:STEEL) && !hasWorkingItem(:RINGTARGET))
-      @battle.pbDisplay(_INTL("{1}'s {2} had no effect on {3}!", opponent.pbThis, getAbilityName(opponent.ability), pbThis(true)))
-      return false
+    failure = :none
+    failure = :TYPE if (hasType?(:POISON) || (hasType?(:STEEL) && !hasWorkingItem(:RINGTARGET))) && !(self.corroded || corrosion)
+    failure = :ABILITY if self.ability == :IMMUNITY || (self.ability == :PASTELVEIL && @battle.FE != :INFERNAL)
+    failure = :PASTELVEIL if pbPartner.ability == :PASTELVEIL && @battle.FE != :INFERNAL
+    return true if failure == :none
+    case failure
+      when :TYPE then @battle.pbDisplay(_INTL("{1}'s {2} had no effect on {3}!", opponent.pbThis, getAbilityName(opponent.ability), pbThis(true)))
+      when :ABILITY then @battle.pbDisplay(_INTL("{1}'s {2} prevents {3}'s {4} from working!", pbThis, getAbilityName(self.ability), opponent.pbThis(true), getAbilityName(opponent.ability)))
+      when :PASTELVEIL then @battle.pbDisplay(_INTL("{1} stayed healthy using its partner's {2}!", pbThis, getAbilityName(pbPartner.ability)))
     end
-    if self.ability == :IMMUNITY || (self.ability == :PASTELVEIL && @battle.FE != :INFERNAL)
-      @battle.pbDisplay(_INTL("{1}'s {2} prevents {3}'s {4} from working!", pbThis, getAbilityName(self.ability), opponent.pbThis(true), getAbilityName(opponent.ability)))
-      return false
-    end
-    if pbPartner.ability == :PASTELVEIL && @battle.FE != :INFERNAL
-      abilityname = getAbilityName(pbPartner.ability)
-      @battle.pbDisplay(_INTL("{1} stayed healthy using its partner's {2}!", pbThis, abilityname)) if showMessages
-      return false
-    end
-    return true
+    return false
   end
 
   def pbCanPoisonSpikes?(showMessages = false)
     return false if isFainted? && !(Rejuv && isbossmon && @shieldCount > 0)
     return false if !pbCanStatus?(showMessages)
     return false if hasType?(:POISON) || hasType?(:STEEL)
-    return false if (self.ability == :IMMUNITY)
+    return false if self.ability == :IMMUNITY
     return false if (self.ability == :PASTELVEIL && @battle.FE != :INFERNAL)
 
     if (pbPartner.ability == :PASTELVEIL && @battle.FE != :INFERNAL) && !self.moldbroken
@@ -233,42 +202,40 @@ class PokeBattle_Battler
       @battle.pbDisplay(_INTL("{1} already has a burn.", pbThis)) if showMessages
       return false
     end
-    return false if !pbCanStatus?(showMessages, false, moldbroken)
+    return false if !pbCanStatus?(showMessages, false, moldbroken, ownFlameOrb)
 
-    if self.ability == :WATERBUBBLE && !moldbroken
-      @battle.pbDisplay(_INTL("{1} is protected by its Water Bubble!", pbThis)) if showMessages
-      return false
-    end
-    if hasType?(:FIRE)
-      @battle.pbDisplay(_INTL("It doesn't affect {1}...", pbThis(true))) if showMessages
-      return false
-    end
-    if self.ability == :WATERVEIL && !moldbroken
-      @battle.pbDisplay(_INTL("{1}'s {2} prevents burns!", pbThis, getAbilityName(self.ability))) if showMessages
-      return false
-    end
+    failure = :none
+    failure = :WATERBUBBLE if self.ability == :WATERBUBBLE && !moldbroken
+    failure = :TYPE if hasType?(:FIRE)
+    failure = :WATERVEIL if self.ability == :WATERVEIL && !moldbroken
 
-    return true
+
+    return true if failure == :none
+    if showMessages
+      case failure
+        when :WATERBUBBLE then @battle.pbDisplay(_INTL("{1} is protected by its Water Bubble!", pbThis))
+        when :TYPE then @battle.pbDisplay(_INTL("It doesn't affect {1}...", pbThis(true)))
+        when :WATERVEIL then @battle.pbDisplay(_INTL("{1}'s {2} prevents burns!", pbThis, getAbilityName(self.ability)))
+      end
+    end
+    return false
   end
 
   def pbCanBurnSynchronize?(opponent, showMessages = false)
     return false if isFainted? && !(Rejuv && isbossmon && @shieldCount > 0)
     return false if !pbCanStatus?(showMessages)
 
-    if self.ability == :WATERBUBBLE && !self.moldbroken
-      @battle.pbDisplay(_INTL("{1} is protected by its Water Bubble!", pbThis)) if showMessages
-      return false
+    failure = :none
+    failure = :WATERBUBBLE if self.ability == :WATERBUBBLE && !moldbroken
+    failure = :TYPE if hasType?(:FIRE)
+    failure = :WATERVEIL if self.ability == :WATERVEIL && !moldbroken
+    return true if failure == :none
+    case failure
+      when :WATERBUBBLE then @battle.pbDisplay(_INTL("{1} is protected by its Water Bubble!", pbThis))
+      when :TYPE then @battle.pbDisplay(_INTL("{1}'s {2} had no effect on {3}!", opponent.pbThis, getAbilityName(opponent.ability), pbThis(true)))
+      when :WATERVEIL then @battle.pbDisplay(_INTL("{1}'s {2} prevents {3}'s {4} from working!", pbThis, getAbilityName(self.ability), opponent.pbThis(true), getAbilityName(opponent.ability)))
     end
-    if hasType?(:FIRE)
-      @battle.pbDisplay(_INTL("{1}'s {2} had no effect on {3}!", opponent.pbThis, getAbilityName(opponent.ability), pbThis(true)))
-      return false
-    end
-    if (self.ability == :WATERVEIL)
-      @battle.pbDisplay(_INTL("{1}'s {2} prevents {3}'s {4} from working!", pbThis, getAbilityName(self.ability), opponent.pbThis(true), getAbilityName(opponent.ability)))
-      return false
-    end
-
-    return true
+    return false
   end
 
   def pbBurn(attacker)
@@ -294,28 +261,33 @@ class PokeBattle_Battler
     end
     return false if !pbCanStatus?(showMessages, false, moldbroken)
 
-    if hasType?(:ELECTRIC)
-      @battle.pbDisplay(_INTL("But it failed!")) if showMessages
-      return false
+    failure = :none
+    failure = :LIMBER if self.ability == :LIMBER && !moldbroken
+    failure = :TYPE if hasType?(:ELECTRIC)
+
+    return true if failure == :none
+    if showMessages
+      case failure
+        when :LIMBER then @battle.pbDisplay(_INTL("{1}'s {2} prevents paralysis!", pbThis, getAbilityName(self.ability)))
+        when :TYPE then @battle.pbDisplay(_INTL("But it failed!"))
+      end
     end
-    if self.ability == :LIMBER && !moldbroken
-      @battle.pbDisplay(_INTL("{1}'s {2} prevents paralysis!", pbThis, getAbilityName(self.ability))) if showMessages
-      return false
-    end
-    return true
+    return false
   end
 
   def pbCanParalyzeSynchronize?(opponent, showMessages = false)
     return false if !pbCanStatus?(showMessages)
-    if hasType?(:ELECTRIC)
-      return false
-    end
 
-    if (self.ability == :LIMBER)
-      @battle.pbDisplay(_INTL("{1}'s {2} prevents {3}'s {4} from working!", pbThis, getAbilityName(self.ability), opponent.pbThis(true), getAbilityName(opponent.ability)))
-      return false
+    failure = :none
+    failure = :LIMBER if self.ability == :LIMBER && !moldbroken
+    failure = :TYPE if hasType?(:ELECTRIC)
+
+    return true if failure == :none
+    case failure
+      when :TYPE then @battle.pbDisplay(_INTL("{1}'s {2} had no effect on {3}!", opponent.pbThis, getAbilityName(opponent.ability), pbThis(true)))
+      when :WATERVEIL then @battle.pbDisplay(_INTL("{1}'s {2} prevents {3}'s {4} from working!", pbThis, getAbilityName(self.ability), opponent.pbThis(true), getAbilityName(opponent.ability)))
     end
-    return true
+    return false
   end
 
   def pbParalyze(attacker)
@@ -376,7 +348,7 @@ class PokeBattle_Battler
     return false if self.hasType?(:ICE)
     return false if @battle.pbWeather == :SUNNYDAY && !hasWorkingItem(:UTILITYUMBRELLA)
     return false if self.ability == :MAGMAARMOR && !moldbroken && @battle.FE != :FROZENDIMENSION
-    return false if @battle.FE == :VOLCANIC
+    return false if @battle.FE == :VOLCANIC || @battle.FE == :BURNING
 
     return true
   end
@@ -384,7 +356,6 @@ class PokeBattle_Battler
   def pbFreeze
     self.status = :FROZEN
     self.statusCount = 0
-    pbCancelMoves
     @battle.pbCommonAnimation("Frozen", self, nil)
   end
 
@@ -452,40 +423,41 @@ class PokeBattle_Battler
   #===============================================================================
   # Confuse
   #===============================================================================
-  def pbCanConfuse?(showMessages = true)
+  def pbCanConfuse?(showMessages = true, inflictor: nil)
     return false if isFainted? && !(Rejuv && isbossmon && @shieldCount > 0)
 
     if damagestate.substitute || (@effects[:Substitute] > 0 && (@battle.lastMoveUsed.is_a?(Symbol) && $cache.moves[@battle.lastMoveUsed].checkFlag?(:soundmove)))
       @battle.pbDisplay(_INTL("But it failed!")) if showMessages
       return false
     end
+    if pbOwnSide.effects[:Safeguard] > 0 && (inflictor.nil? || inflictor.ability != :INFILTRATOR)
+      @battle.pbDisplay(_INTL("{1}'s team is protected by Safeguard!", pbThis)) if showMessages
+      return false
+    end
     if !pbCanConfuseSelf?(showMessages, true)
       return false
     end
-
     return true
   end
 
   def pbCanConfuseSelf?(showMessages, moldbreakercheck = false)
     return false if isFainted?
 
-    if @effects[:Confusion] > 0
-      @battle.pbDisplay(_INTL("{1} is already confused!", pbThis)) if showMessages
-      return false
+    failure = :none
+    failure = :Confusion if @effects[:Confusion] > 0
+    failure = :OWNTEMPO if self.ability == :OWNTEMPO && !(self.moldbroken && moldbreakercheck)
+    failure = :ASHENBEACH if @battle.FE == :ASHENBEACH && (hasType?(:FIGHTING) || self.ability == :INNERFOCUS)
+    failure = :MISTY if @battle.FE == :MISTY && !isAirborne? # Misty Field
+    return true if failure == :none
+    if showMessages
+      case failure
+        when :Confusion then @battle.pbDisplay(_INTL("{1} is already confused!", pbThis))
+        when :OWNTEMPO then @battle.pbDisplay(_INTL("{1}'s {2} prevents confusion!", pbThis, getAbilityName(self.ability)))
+        when :ASHENBEACH then @battle.pbDisplay(_INTL("{1} broke through the confusion!", pbThis))
+        when :MISTY then @battle.pbDisplay(_INTL("Misty Terrain prevents {1} from being inflicted by status!", pbThis(true)))
+      end
     end
-    if self.ability == :OWNTEMPO && !(self.moldbroken && moldbreakercheck)
-      @battle.pbDisplay(_INTL("{1}'s {2} prevents confusion!", pbThis, getAbilityName(self.ability))) if showMessages
-      return false
-    end
-    if @battle.FE == :ASHENBEACH && (hasType?(:FIGHTING) || (self.ability == :INNERFOCUS))
-      @battle.pbDisplay(_INTL("{1} broke through the confusion!", pbThis)) if showMessages
-      return false
-    end
-    if @battle.FE == :MISTY && !isAirborne? # Misty Field
-      @battle.pbDisplay(_INTL("Misty Terrain prevents {1} from being inflicted by status!", pbThis(true))) if showMessages
-      return false
-    end
-    return true
+    return false
   end
 
   def pbConfuseSelf
@@ -542,14 +514,22 @@ class PokeBattle_Battler
   #===============================================================================
   # Increase stat stages
   #===============================================================================
-  def pbTooHigh?(stat)
+  def pbTooHigh?(stat, ignoreContrary: false)
+    if self.ability == :CONTRARY && !self.moldbroken && !ignoreContrary
+      return pbTooLow?(stat, ignoreContrary: true)
+    end
+
     return @stages[stat] >= 6
   end
 
-  def pbCanIncreaseStatStage?(stat, showMessages = false)
+  def pbCanIncreaseStatStage?(stat, showMessages = false, ignoreContrary: false)
     return false if isFainted? && !(Rejuv && isbossmon && @shieldCount > 0)
 
-    if pbTooHigh?(stat)
+    if self.ability == :CONTRARY && !self.moldbroken && !ignoreContrary
+      return pbCanReduceStatStage?(stat, showMessages, ignoreContrary: true)
+    end
+
+    if pbTooHigh?(stat, ignoreContrary: ignoreContrary)
       @battle.pbDisplay(_INTL("{1}'s {2} won't go any higher!", pbThis, pbGetStatName(stat))) if showMessages
       return false
     end
@@ -564,11 +544,10 @@ class PokeBattle_Battler
   end
 
   # changed from: def pbIncreaseStat(stat,increment,showMessages,attacker=nil,upanim=true)
-  def pbIncreaseStat(stat, increment, abilitymessage: true, statmessage: true)
+  def pbIncreaseStat(stat, increment, abilitymessage: true, statmessage: true, ignoreContrary: false, statsource: nil)
     # Contrary handling
-    if self.ability == :CONTRARY && !self.moldbroken && !@statrepeat
-      @statrepeat = true
-      return pbReduceStat(stat, increment, abilitymessage: abilitymessage, statmessage: statmessage)
+    if self.ability == :CONTRARY && !self.moldbroken && !ignoreContrary
+      return pbReduceStat(stat, increment, abilitymessage: abilitymessage, statmessage: statmessage, ignoreContrary: true, statdropper: statsource)
     end
 
     # Increase stat only if you can
@@ -599,18 +578,20 @@ class PokeBattle_Battler
         @battle.pbDisplay(arrStatTexts[0]) if statmessage
       end
       @battle.reduceField if stat == PBStats::EVASION && @battle.ProgressiveFieldCheck(PBFields::CONCERT, 2, 4)
-      @statrepeat = false
       return true
     end
-    @statrepeat = false
     return false
   end
 
   #===============================================================================
   # Decrease stat stages
   #===============================================================================
-  def pbTooLow?(stat)
+  def pbTooLow?(stat, ignoreContrary: false)
     return @stages[stat] <= -1 if self.ability == :EXECUTION && (stat == PBStats::ATTACK || stat == PBStats::SPATK)
+
+    if self.ability == :CONTRARY && !self.moldbroken && !ignoreContrary
+      return pbTooHigh?(stat, ignoreContrary: true)
+    end
 
     return @stages[stat] <= -6
   end
@@ -618,8 +599,12 @@ class PokeBattle_Battler
   # Tickle (04A) and Memento (0E2) can't use this, but replicate it instead.
   # (Reason is they lower more than 1 stat independently, and therefore could
   # show certain messages twice which is undesirable.)
-  def pbCanReduceStatStage?(stat, showMessages = false, selfreduce = false)
+  def pbCanReduceStatStage?(stat, showMessages = false, selfreduce = false, ignoreContrary: false)
     return false if isFainted? && !(Rejuv && isbossmon && @shieldCount > 0)
+
+    if self.ability == :CONTRARY && !self.moldbroken && !ignoreContrary
+      return pbCanIncreaseStatStage?(stat, showMessages, ignoreContrary: true)
+    end
 
     if !selfreduce
       abilityname = getAbilityName(self.ability) if self.ability
@@ -627,7 +612,7 @@ class PokeBattle_Battler
         @battle.pbDisplay(_INTL("But it failed!")) if showMessages
         return false
       end
-      if pbOwnSide.effects[:Mist] > 0 && (@battle.battlers[@battle.lastMoveUser]).ability != :INFILTRATOR
+      if pbOwnSide.effects[:Mist] > 0 && @battle.battlers[@battle.lastMoveUser].ability != :INFILTRATOR
         @battle.pbDisplay(_INTL("{1} is protected by Mist!", pbThis)) if showMessages
         return false
       end
@@ -667,9 +652,9 @@ class PokeBattle_Battler
     @effects[:LashOut] = true
   end
 
-  def pbReduceStat(stat, increment, abilitymessage: true, statmessage: true, statdropper: nil, defiant_proc: true, mirrordrop: false)
+  def pbReduceStat(stat, increment, abilitymessage: true, statmessage: true, statdropper: nil, defiant_proc: true, mirrordrop: false, ignoreContrary: false)
     # here we play uno reverse if we have Mirror Armor
-    if self.ability == :MIRRORARMOR && !mirrordrop && !self.moldbroken && (statdropper != self)
+    if self.ability == :MIRRORARMOR && !mirrordrop && !self.moldbroken && statdropper != self
       if !statdropper.nil?
         if statdropper.hp != 0
           @battle.pbDisplay(_INTL("{1}'s Mirror Armor reflected the stat drop!", pbThis))
@@ -690,9 +675,8 @@ class PokeBattle_Battler
     end
 
     # here we call increase if we have contrary
-    if self.ability == :CONTRARY && !@statrepeat && !self.moldbroken
-      @statrepeat = true
-      return pbIncreaseStat(stat, increment, abilitymessage: abilitymessage, statmessage: statmessage)
+    if self.ability == :CONTRARY && !ignoreContrary && !self.moldbroken
+      return pbIncreaseStat(stat, increment, abilitymessage: abilitymessage, statmessage: statmessage, ignoreContrary: true)
     end
 
     # Reduce only if you actually can
@@ -729,7 +713,7 @@ class PokeBattle_Battler
             @battle.pbDisplay(_INTL("Defiant sharply raised {1}'s Defense!", pbThis))
           end
         end
-        if (self.ability == :COMPETITIVE && !(Rejuv && @battle.FE == :CHESS)) && pbCanIncreaseStatStage?(PBStats::SPATK) && (statdropper.nil? || self.pbIsOpposing?(statdropper.index))
+        if self.ability == :COMPETITIVE && !(Rejuv && @battle.FE == :CHESS) && pbCanIncreaseStatStage?(PBStats::SPATK) && (statdropper.nil? || self.pbIsOpposing?(statdropper.index))
           increment = 2
           increment = 3 if @battle.FE == :CITY
           pbIncreaseStat(PBStats::SPATK, increment, statmessage: false)
@@ -745,10 +729,8 @@ class PokeBattle_Battler
         end
       end
       @battle.reduceField if (stat == PBStats::EVASION || stat == PBStats::ACCURACY) && @battle.ProgressiveFieldCheck(PBFields::CONCERT, 2, 4)
-      @statrepeat = false
       return true
     end
-    @statrepeat = false
     return false
   end
 
@@ -757,7 +739,7 @@ class PokeBattle_Battler
     return false if isFainted? && !(Rejuv && isbossmon && @shieldCount > 0)
     return false if @effects[:Substitute] > 0
 
-    if [:CLEARBODY, :WHITESMOKE, :HYPERCUTTER, :FULLMETALBODY].include?(self.ability) || (!Gen7 && [:INNERFOCUS, :OBLIVIOUS, :OWNTEMPO, :SCRAPPY].include?(self.ability))
+    if [:CLEARBODY, :WHITESMOKE, :HYPERCUTTER, :FULLMETALBODY].include?(self.ability) || (Gen > 7 && [:INNERFOCUS, :OBLIVIOUS, :OWNTEMPO, :SCRAPPY].include?(self.ability))
       abilityname = getAbilityName(self.ability)
       oppabilityname = getAbilityName(opponent.ability)
       @battle.pbDisplay(_INTL("{1}'s {2} prevented {3}'s {4} from working!", pbThis, abilityname, opponent.pbThis(true), oppabilityname))
@@ -766,7 +748,7 @@ class PokeBattle_Battler
       end
       return false
     end
-    if pbOwnSide.effects[:Mist] > 0 && (@battle.battlers[@battle.lastMoveUser]).ability != :INFILTRATOR
+    if pbOwnSide.effects[:Mist] > 0
       @battle.pbDisplay(_INTL("{1} is protected by Mist!", pbThis))
       if hasWorkingItem(:ADRENALINEORB) && pbCanIncreaseStatStage?(PBStats::SPEED, false) && self.stages[PBStats::ATTACK] > -6
         triggerAdrenalineOrb
@@ -791,7 +773,7 @@ class PokeBattle_Battler
           @battle.pbDisplay(_INTL("Defiant sharply raised {1}'s Attack!", pbThis))
         end
       end
-      if (self.ability == :COMPETITIVE && !(Rejuv && @battle.FE == :CHESS))
+      if self.ability == :COMPETITIVE && !(Rejuv && @battle.FE == :CHESS)
         increment = 2
         increment = 3 if @battle.FE == :CITY
         pbIncreaseStat(PBStats::SPATK, increment, statmessage: false)
@@ -802,20 +784,19 @@ class PokeBattle_Battler
         end
       end
     end
-    if pbCanReduceStatStage?(PBStats::ATTACK, false)
-      pbReduceStat(PBStats::ATTACK, 1, statmessage: false, statdropper: opponent, defiant_proc: false)
+    if pbReduceStat(PBStats::ATTACK, 1, statmessage: false, statdropper: opponent, defiant_proc: false)
       # Battle message
       oppabilityname = getAbilityName(opponent.ability)
       @battle.pbDisplay(_INTL("{1}'s {2} cuts {3}'s Attack!", opponent.pbThis, oppabilityname, pbThis(true))) if !(self.ability == :CONTRARY)
       @battle.pbDisplay(_INTL("{1}'s {2} boosts {3}'s Attack!", opponent.pbThis, oppabilityname, pbThis(true))) if (self.ability == :CONTRARY)
 
-      if (self.ability == :RATTLED && !Gen7)
+      if self.ability == :RATTLED && Gen > 7
         pbIncreaseStat(PBStats::SPEED, 1, statmessage: false)
         @battle.pbDisplay(_INTL("{1}'s Rattled raised its Speed!", pbThis))
       end
 
       # Defiant/Competitive
-      if (self.ability == :DEFIANT)
+      if self.ability == :DEFIANT
         increment = 2
         increment = 3 if @battle.FE == :BACKALLEY
         pbIncreaseStat(PBStats::ATTACK, increment, statmessage: false)
@@ -825,7 +806,7 @@ class PokeBattle_Battler
           @battle.pbDisplay(_INTL("Defiant sharply raised {1}'s Attack!", pbThis))
         end
       end
-      if (self.ability == :COMPETITIVE && !(Rejuv && @battle.FE == :CHESS))
+      if self.ability == :COMPETITIVE && !(Rejuv && @battle.FE == :CHESS)
         increment = 2
         increment = 3 if @battle.FE == :CITY
         pbIncreaseStat(PBStats::SPATK, increment, statmessage: false)
@@ -870,21 +851,20 @@ class PokeBattle_Battler
     return false if isFainted? && !(Rejuv && isbossmon && @shieldCount > 0)
     return false if @effects[:Substitute] > 0
 
-    if (self.ability == :CLEARBODY) || (self.ability == :WHITESMOKE) ||
-       (self.ability == :FULLMETALBODY) || (self.ability == :KEENEYE)
+    if self.ability == :CLEARBODY || self.ability == :WHITESMOKE ||
+       self.ability == :FULLMETALBODY || self.ability == :KEENEYE
       abilityname = getAbilityName(self.ability)
       oppabilityname = getAbilityName(opponent.ability)
       @battle.pbDisplay(_INTL("{1}'s {2} prevented {3}'s {4} from working!", pbThis, abilityname, opponent.pbThis(true), oppabilityname))
       return false
     end
-    if pbOwnSide.effects[:Mist] > 0 && (@battle.battlers[@battle.lastMoveUser]).ability != :INFILTRATOR
+    if pbOwnSide.effects[:Mist] > 0
       @battle.pbDisplay(_INTL("{1} is protected by Mist!", pbThis))
       return false
     end
 
     # reduce stat only if you can
-    if pbCanReduceStatStage?(PBStats::ACCURACY, false)
-      pbReduceStat(PBStats::ACCURACY, 1, statmessage: false)
+    if pbReduceStat(PBStats::ACCURACY, 1, statmessage: false)
       oppabilityname = getAbilityName(opponent.ability)
       @battle.pbDisplay(_INTL("{1}'s {2} cuts {3}'s Accuracy!", opponent.pbThis, oppabilityname, pbThis(true)))
       return true

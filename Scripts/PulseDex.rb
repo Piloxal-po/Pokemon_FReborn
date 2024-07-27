@@ -189,7 +189,7 @@ class Scene_PulseDex_Info
       @index += increment
       if @index >= PULSEDexPictures.length
         @index = 0
-      elsif @index == 0
+      elsif @index < 0
         @index = PULSEDexPictures.length - 1
       end
       break unless !$game_switches[PULSEDexPictures[@index][0]]

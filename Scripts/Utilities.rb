@@ -1954,7 +1954,7 @@ end
 
 def pbNickname(pokemon)
   speciesname = getMonName(pokemon.species, pokemon.form)
-  return "" if !Kernel.pbConfirmMessage(_INTL("Would you like to give a nickname to {1}?", speciesname))
+  return "" if $Settings.nicknames == 1 || !Kernel.pbConfirmMessage(_INTL("Would you like to give a nickname to {1}?", speciesname))
 
   helptext = _INTL("{1}'s nickname?", speciesname)
   newname = pbEnterText(helptext, 0, 12, "", 2, pokemon)
@@ -1981,7 +1981,7 @@ def pbNicknameAndStore(pokemon)
   species = pokemon.species
   $Trainer.pokedex.setOwned(pokemon)
   $Trainer.pokedex.setSeen(pokemon)
-  pbNickname(pokemon)
+  pbNickname(pokemon) if $Settings.nicknames == 0
   # pbEnterPokemonName(helptext,0,12,"",pokemon)
   pbStorePokemon(pokemon)
 end
@@ -2079,7 +2079,7 @@ def pbAddToParty(pokemon, level = nil, seeform = true)
   speciesname = getMonName(pokemon.species, pokemon.form)
   Kernel.pbMessage(_INTL("{1} obtained {2}!\\se[itemlevel]\1", $Trainer.name, speciesname))
   # pbNicknameAndStore(pokemon)
-  pbNickname(pokemon)
+  pbNickname(pokemon) if $Settings.nicknames == 0
   addPkmnToPartyOrPC(pokemon)
   if seeform
     $Trainer.pokedex.dexList[pokemon.species][:seen?] = true
@@ -2395,7 +2395,7 @@ end
 
 def pbBattlerRenamer
   $cache.pkmn.each do |key, data|
-    id = $cache.pkmn[key, form].dexnum
+    id = $cache.pkmn[key, 0].dexnum
     oldfilename = sprintf("Graphics/Battlers/%03d", id)
     oldfilenameegg = sprintf("Graphics/Battlers/%03degg", id)
     oldfilenamef = sprintf("Graphics/Battlers/%03df", id)
@@ -2453,7 +2453,7 @@ end
 
 def pbIconRenamer
   $cache.pkmn.each do |key, data|
-    id = $cache.pkmn[key, form].dexnum
+    id = $cache.pkmn[key, 0].dexnum
     oldfilename = sprintf("Graphics/Icons/icon%03d", id)
     oldfilenameegg = sprintf("Graphics/Icons/icon%03degg", id)
     oldfilenamef = sprintf("Graphics/Icons/icon%03df", id)
@@ -2872,14 +2872,22 @@ def pbMoveTutorAnnotations(move, movelist = nil)
 end
 
 def pbMoveTutorListAdd(move)
-  if !($Trainer.tutorlist)
+  if !$Trainer.tutorlist
     $Trainer.tutorlist = []
   end
   if $Trainer.tutorlist == []
-    Kernel.pbMessage(_INTL("Hey did you know us Move Tutors have an app set up? Check it out on your Cybernav!"))
+    gear = Rejuv ? "Cybernav" : "Pokégear"
+    Kernel.pbMessage(_INTL("Hey did you know us Move Tutors have an app set up? Check it out on your {1}!"), gear)
   end
-  if !($Trainer.tutorlist.include?(move))
+  if !$Trainer.tutorlist.include?(move)
     $Trainer.tutorlist.push(move)
+  end
+  reorderTutorMoves
+end
+
+def reorderTutorMoves
+  $Trainer.tutorlist = $Trainer.tutorlist.uniq.sort_by do |a|
+    getMoveName(a)
   end
 end
 
@@ -2894,7 +2902,7 @@ def moveTutorRibbon(pokemon)
   return ret
 end
 
-def pbMoveTutorChoose(move, movelist = nil, bymachine = false)
+def pbMoveTutorChoose(move, movelist = nil, bymachine = false, bytutor = false)
   ret = false
   pbFadeOutIn(99999) {
     scene = PokemonScreen_Scene.new
@@ -2902,6 +2910,9 @@ def pbMoveTutorChoose(move, movelist = nil, bymachine = false)
     screen = PokemonScreen.new(scene, $Trainer.party)
     annot = pbMoveTutorAnnotations(move, movelist)
     screen.pbStartScene(_INTL("Teach which Pokémon?"), false, annot)
+    if !$Trainer.tutorlist && !Desolation
+      $Trainer.tutorlist = []
+    end
     loop do
       chosen = screen.pbChoosePokemon
       if chosen >= 0
@@ -2913,11 +2924,15 @@ def pbMoveTutorChoose(move, movelist = nil, bymachine = false)
         elsif movelist && !movelist.any? { |j| j == pokemon.species }
           Kernel.pbMessage(_INTL("{1} is not compatible with {2}.", pokemon.name, movename))
           Kernel.pbMessage(_INTL("{1} can't be learned.", movename))
+        elsif $Trainer.tutorlist.length > 0 && $Trainer.tutorlist.include?(move) && bytutor == false && !Desolation
+          gear = Rejuv ? "Cybernav" : "Pokégear"
+          Kernel.pbMessage(_INTL("You've already bought {1}. Check out the app on the {2}!", movename, gear))
         elsif !pokemon.SpeciesCompatible?(move)
           Kernel.pbMessage(_INTL("{1} is not compatible with {2}.", pokemon.name, movename))
           Kernel.pbMessage(_INTL("{1} can't be learned.", movename))
         else
           if pbLearnMove(pokemon, move, false, bymachine)
+            pbMoveTutorListAdd(move) if bymachine == false && !Desolation
             ret = true
             break
           end

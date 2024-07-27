@@ -1,6 +1,6 @@
 # DO NOT EDIT THESE VARIABLES.
 # The values are changed automatically by our GitHub Actions workflows when preparing a new patch.
-GAMEVERSION = '19.5.0-rc.5'
+GAMEVERSION = '19.5.0-rc.33'
 VERSION_URL = 'https://www.rebornevo.com/downloads/rebornremote/Reborn_b702b010/version.txt'
 PATCH_URL = 'https://www.rebornevo.com/downloads/rebornremote/Reborn_b702b010/patch.zip'
 TILESETS_URL = 'https://www.rebornevo.com/downloads/rebornremote/Reborn_b702b010/tilesets.zip'
@@ -119,6 +119,7 @@ SCRIPTS = [
   'MovesetRestorer',
   'Mart',
   'HallOfFame',
+  'MoveTutor',
 
   'MinigameSlotMachine',
   'MinigameVoltorbFlip',

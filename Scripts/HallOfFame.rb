@@ -174,7 +174,7 @@ class HallOfFameScene
   def saveHallEntry
     for i in 0...$Trainer.party.length
       # Clones every pokémon object
-      @hallEntry.push($Trainer.party[i].clone) if (!$Trainer.party[i].isEgg? || ALLOWEGGS)
+      @hallEntry.push($Trainer.party[i].clone) if !$Trainer.party[i].isEgg? || ALLOWEGGS
     end
     # Update the global variables
     $PokemonGlobal.hallOfFame.push(@hallEntry)
@@ -267,18 +267,18 @@ class HallOfFameScene
   def moveSprite(i)
     spritename = (i > -1) ? "pokemon#{i}" : "trainer"
     speed = (i > -1) ? ANIMATIONSPEED : 2
-    if (!ANIMATION) # Skips animation
+    if !ANIMATION # Skips animation
       @sprites[spritename].x -= speed * @xmovement[i]
       @xmovement[i] = 0
       @sprites[spritename].y -= speed * @ymovement[i]
       @ymovement[i] = 0
     end
-    if (@xmovement[i] != 0)
+    if @xmovement[i] != 0
       direction = (@xmovement[i] > 0) ? -1 : 1
       @sprites[spritename].x += speed * direction
       @xmovement[i] += direction
     end
-    if (@ymovement[i] != 0)
+    if @ymovement[i] != 0
       direction = (@ymovement[i] > 0) ? -1 : 1
       @sprites[spritename].y += speed * direction
       @ymovement[i] += direction
@@ -304,7 +304,7 @@ class HallOfFameScene
     end
     @xmovement[@battlerIndex] = 0
     @ymovement[@battlerIndex] = 0
-    if (ANIMATION && !SINGLEROW) # Trainer Animation
+    if ANIMATION && !SINGLEROW # Trainer Animation
       startpoint = Graphics.width / 2
       # 2 is the trainer speed
       @xmovement[@battlerIndex] = (startpoint - @sprites["trainer"].x) / 2
@@ -355,7 +355,7 @@ class HallOfFameScene
       [_INTL("IDNo.{1}", pokemon.isEgg? ? "?????" : idno), Graphics.width - 192, Graphics.height - 48, 2, BASECOLOR,
        SHADOWCOLOR]
     ]
-    if (hallNumber > -1)
+    if hallNumber > -1
       textPositions.push([_INTL("Hall of Fame No."), Graphics.width / 2 - 104, 0, 0, BASECOLOR, SHADOWCOLOR])
       textPositions.push([hallNumber.to_s, Graphics.width / 2 + 104, 0, 1, BASECOLOR, SHADOWCOLOR])
     end

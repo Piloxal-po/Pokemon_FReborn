@@ -294,7 +294,7 @@ class Game_Character
 
     if @stop_count > (40 - @move_frequency * 2) * (6 - @move_frequency)
       case @move_type
-        when 1 then move_type_random
+        when 1 then move_type_random unless $game_switches[:Blindstep]
         when 2 then move_type_toward_player
         when 3 then move_type_custom
       end

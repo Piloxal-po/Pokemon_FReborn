@@ -338,48 +338,33 @@ end
 class StandardRestriction
   def isValid?(pokemon)
     return false if !pokemon || pokemon.isEgg?
+
     # Surge abilities are banned
-    if (pokemon.ability == :GRASSYSURGE) ||
-       (pokemon.ability == :MISTYSURGE) ||
-       (pokemon.ability == :PSYCHICSURGE) ||
-       (pokemon.ability == :ELECTRICSURGE) ||
-       (pokemon.ability == :DARKSURGE)
-      return false
-    end
+    return false if [:GRASSYSURGE, :MISTYSURGE, :PSYCHICSURGE, :ELECTRICSURGE, :DARKSURGE].include?(pokemon.ability)
+
     # Ultra Beasts are banned
-    if (pokemon.ability == :BEASTBOOST)
-      return false
-    end
+    return false if pokemon.ability == :BEASTBOOST
+
     # Zygarde Complete is banned
-    if (pokemon.ability == :POWERCONSTRUCT)
-      return false
-    end
+    return false if pokemon.ability == :POWERCONSTRUCT
 
     # Kyogre & Groudon are banned
-    blacklist = [:KYOGRE, :GROUDON]
-    for i in blacklist
-      return false if pokemon.species == i
-    end
+    return false if [:KYOGRE, :GROUDON].include?(pokemon.species)
+
     # Z-Moves are banned
-    if pbIsZCrystal?(pokemon.item)
-      return false
-    end
+    return false if pbIsZCrystal?(pokemon.item)
+
     # Mega Evolutions are banned
-    if pbIsMegaStone?(pokemon.item)
-      return false
-    end
+    return false if pbIsMegaStone?(pokemon.item)
+
     # Species with total base stat more than 675 are banned
-    if pbBaseStatTotal(pokemon.species) > 675
-      return false
-    end
+    return false if pbBaseStatTotal(pokemon.species) > 675
+
     # Necrozma and Kyurem are allowed, but not their fusions
-    if (pokemon.species == :KYUREM && pokemon.form != 0) || (pokemon.species == :NECROZMA && pokemon.form != 0)
-      return false
-    end
+    return false if (pokemon.species == :KYUREM && pokemon.form != 0) || (pokemon.species == :NECROZMA && pokemon.form != 0)
+
     # Fainted mons are not eligible in a nuzlocke run
-    if $game_switches[:Nuzlocke_Mode] == true && pokemon.hp == 0
-      return false
-    end
+    return false if $game_switches[:Nuzlocke_Mode] == true && pokemon.hp == 0
 
     return true
   end

@@ -18,7 +18,7 @@ def convertSaveFolder
 
   Dir.foreach(folder) do |filename|
     next if filename == '.' || filename == '..' || filename == "Conversion Backup" || !filename.end_with?(".rxdata")
-    next if filename != "Game.rxdata" && !(filename =~ /Game_\d+\.rxdata/)
+    next if filename != "Game.rxdata" && !(filename =~ /Game_\d+\.rxdata/) && !(filename =~ /Anna's Wish Game(_\d+)?\.rxdata/)
 
     conversioncount += 1
     newsave = {}
@@ -160,12 +160,12 @@ def convertTrainer(trainer)
     newparty.push(convertMon(mon))
   end
   trainer.party = newparty
-=begin
-  $cache.trainertypes.each{|sym, data|
-    $Trainer.trainertype = sym if data.checkFlag?(:ID) == $Trainer.trainertype
-  }
-  $Trainer.trainertype = $cache.trainertypes.keys[0] if $Trainer.trainertype.is_a?(Integer)
-=end
+  if trainer.trainertype.is_a?(Integer)
+    $cache.trainertypes.each do |sym, data|
+      trainer.trainertype = sym if data.checkFlag?(:ID) == trainer.trainertype
+    end
+    # trainer.trainertype = $cache.trainertypes.keys[0] if trainer.trainertype.is_a?(Integer)
+  end
   return trainer
 end
 
@@ -198,9 +198,11 @@ def convertDex(trainer, storage)
         newdex.dexList[species][:gender].each { |gender, v| newdex.dexList[species][:gender][gender] = true }
         newdex.dexList[species][:forms].each { |form, v| newdex.dexList[species][:forms][form] = true }
       end
-      newdex.dexList[species][:lastSeen] =
-        { gender: newdex.dexList[species][:gender].keys[0], form: newdex.dexList[species][:forms].keys[0],
-          shiny: false }
+      newdex.dexList[species][:lastSeen] = {
+        gender: newdex.dexList[species][:gender].keys[0],
+        form: newdex.dexList[species][:forms].keys[0],
+        shiny: false,
+      }
     end
     trainer.party.each { |mon| newdex.dexList[mon.species][:shinySeen?] = mon.isShiny? }
     for boxes in storage.boxes

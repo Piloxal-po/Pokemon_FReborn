@@ -37,7 +37,7 @@ class PokeBattle_RealBattlePeer
                   if Kernel.pbConfirmMessage("This Pokémon is holding an item. Do you want to remove it?")
                     $PokemonBag.pbStoreItem($Trainer.party[iMon].item)
                     $Trainer.party[iMon].item = nil
-                    $Trainer.party[iMon].form = 0 if ($Trainer.party[iMon].species == :ARCEUS || $Trainer.party[iMon].species == :GENESECT || $Trainer.party[iMon].species == :SILVALLY)
+                    $Trainer.party[iMon].form = 0 if $Trainer.party[iMon].species == :ARCEUS || $Trainer.party[iMon].species == :GENESECT || $Trainer.party[iMon].species == :SILVALLY
                   end
                 end
                 screen.pbEndScene

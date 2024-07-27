@@ -21,7 +21,7 @@ class PokeBattle_Battle
         @scene.pbChooseEnemyCommand
       # AI Data collection perry
       # for i in 0...4
-      #	logAIScorings($ai_log_data[i]) if @battlers[i].hp > 0 && !pbOwnedByPlayer?(i)
+      #   logAIScorings($ai_log_data[i]) if @battlers[i].hp > 0 && !pbOwnedByPlayer?(i)
       # end
       rescue
         PBDebug.log("**Exception: #{$!.message}")
@@ -194,10 +194,7 @@ class PokeBattle_Battle
     @scene.pbResetCommandIndices
     for i in 0...4 # Reset choices if commands can be shown
       if pbCanShowCommands?(i) || @battlers[i].isFainted?
-        @choices[i][0] = 0
-        @choices[i][1] = 0
-        @choices[i][2] = nil
-        @choices[i][3] = -1
+        @choices[i] = [nil]
       else
         battler = @battlers[i]
         unless !@doublebattle && pbIsDoubleBattler?(i)
@@ -234,16 +231,16 @@ class PokeBattle_Battle
     for i in [1, 3]
       next if !@doublebattle
 
-      if @choices[i][0] == 1
+      if @choices[i][0] == :move
         @choices[i][3] = @choices[i][3] ^ 1 if @choices[i][3] >= 0
       end
     end
     # for i in 0...4
-    #	logAIScorings($ai_log_data[i]) if @battlers[i].hp > 0
+    #   logAIScorings($ai_log_data[i]) if @battlers[i].hp > 0
     # end
     switchTrainers
     # for i in 0...4
-    #	logAIScorings($ai_log_data[i]) if @battlers[i].hp > 0
+    #   logAIScorings($ai_log_data[i]) if @battlers[i].hp > 0
     # end
   end
 
@@ -251,18 +248,21 @@ class PokeBattle_Battle
     @scene.pbBeginAttackPhase
     for i in 0...4
       @successStates[i].clear
-      if @choices[i][0] != 1 && @choices[i][0] != 2
+      if @choices[i][0] != :move && @choices[i][0] != :switch
         # @battlers[i].effects[:DestinyBond]=false # Effect gets removed on move use, NOT move choice
         @battlers[i].effects[:Grudge] = false
       end
-      @battlers[i].turncount += 1 if !@battlers[i].isFainted?
-      @battlers[i].turncount += 1 if !@battlers[i].isFainted? && @battlers[i].ability == :SLOWSTART && @field.effect == :ELECTERRAIN
-      @battlers[i].effects[:Rage] = false if @battlers[i].moves[@choices[i][1]] != :RAGE
+      if !@battlers[i].isFainted?
+        @battlers[i].turncount += 1
+        @battlers[i].turncount += 1 if @battlers[i].ability == :SLOWSTART && @field.effect == :ELECTERRAIN
+        @battlers[i].missAcc = false
+      end
+      @battlers[i].effects[:Rage] = false if @choices[i][0] != :move || @choices[i][2].move != :RAGE
       # @battlers[i].pbCustapBerry # Moved to later, timing was incorrect here
     end
     # Prepare for Z Moves
     for i in 0..3
-      next if @choices[i][0] != 1
+      next if @choices[i][0] != :move
 
       side = pbIsOpposing?(i) ? 1 : 0
       owner = pbGetOwnerIndex(i)
@@ -275,7 +275,7 @@ class PokeBattle_Battle
     priority = pbPriority
     # Call at Pokémon
     for i in priority
-      if @choices[i.index][0] == 4
+      if @choices[i.index][0] == :call
         pbCall(i.index)
       end
     end
@@ -283,7 +283,7 @@ class PokeBattle_Battle
     @switching = true
     switched = []
     for i in priority
-      if @choices[i.index][0] == 2
+      if @choices[i.index][0] == :switch
         index = @choices[i.index][1] # party position of Pokémon to switch to
         self.lastMoveUser = i.index
         if !pbOwnedByPlayer?(i.index)
@@ -299,7 +299,7 @@ class PokeBattle_Battle
           if pbChoseMoveFunctionCode?(j.index, 0x88) && !j.effects[:Pursuit] && (@choices[j.index][3] == -1 || @choices[j.index][3] == i.index)
             if j.status != :SLEEP && j.status != :FROZEN && (!j.ability == :TRUANT || !j.effects[:Truant])
               # Try to Mega-evolve/Ultra-burst before using pursuit
-              side = (pbIsOpposing?(j.index)) ? 1 : 0
+              side = pbIsOpposing?(j.index) ? 1 : 0
               owner = pbGetOwnerIndex(j.index)
               if @megaEvolution[side][owner] == j.index
                 pbMegaEvolve(j.index)
@@ -344,7 +344,7 @@ class PokeBattle_Battle
     end
     # Use items
     for i in priority
-      if @choices[i.index][0] == 3
+      if @choices[i.index][0] == :item
         pbEnemyUseItem(@choices[i.index][1], i)
         i.itemUsed = true
         i.itemUsed2 = true
@@ -352,9 +352,9 @@ class PokeBattle_Battle
     end
     # Mega Evolution
     for i in priority
-      next if @choices[i.index][0] != 1
+      next if @choices[i.index][0] != :move
 
-      side = (pbIsOpposing?(i.index)) ? 1 : 0
+      side = pbIsOpposing?(i.index) ? 1 : 0
       owner = pbGetOwnerIndex(i.index)
       @megaEvolution[side][owner] -= 1 if side == 0 && @megaEvolution[side][owner] > 0
       if @megaEvolution[side][owner] == i.index
@@ -363,9 +363,9 @@ class PokeBattle_Battle
     end
     # Ultra Burst
     for i in priority
-      next if @choices[i.index][0] != 1
+      next if @choices[i.index][0] != :move
 
-      side = (pbIsOpposing?(i.index)) ? 1 : 0
+      side = pbIsOpposing?(i.index) ? 1 : 0
       owner = pbGetOwnerIndex(i.index)
       if @ultraBurst[side][owner] == i.index
         pbUltraBurst(i.index)
@@ -377,7 +377,7 @@ class PokeBattle_Battle
         i.pbSwapDefenses if !i.wonderroom
       end
     end
-    # Use Attacks
+
     for i in priority
       if pbChoseMoveFunctionCode?(i.index, 0x115) # Focus Punch
         pbCommonAnimation("FocusPunch", i, nil)
@@ -392,11 +392,36 @@ class PokeBattle_Battle
         pbDisplay(_INTL("{1} set a shell trap!", i.pbThis))
       end
     end
-    for i in priority
-      i.pbProcessTurn(@choices[i.index])
-      if i.effects[:Round]
-        i.pbPartner.selectedMove = :ROUND
+
+    # Use attacks
+    for i in 0...priority.length
+      battler = priority[i]
+      battler.pbProcessTurn(@choices[battler.index])
+
+      if @state.effects[:Round]
+        for j in (i + 1)...priority.length
+          b = priority[j]
+          if !b.hasMovedThisRound? && !@battle.switchedOut[b.index] && @choices[b.index][0] == :move && @choices[b.index][2].move == :ROUND
+            pbMoveAfter(battler, b)
+            break
+          end
+        end
       end
+
+      # Shell Trap
+      for ii in 0...4
+        if !@battlers[ii].effects[:ShellTrapTarget].nil? && @battlers[ii].effects[:ShellTrapTarget] != -1 &&
+          !@battlers[ii].effects[:ShellTrap]
+          if pbChoseMoveFunctionCode?(ii, 0x16B)
+            pbMoveAfter(battler, @battlers[ii])
+          else # Via seed
+            target = @battlers[ii].effects[:ShellTrapTarget]
+            @battlers[ii].pbUseMoveSimple(:SHELLTRAP, -1, target, false)
+            @battlers[ii].effects[:ShellTrapTarget] = -1
+          end
+        end
+      end
+
       return if @decision > 0
     end
   end
@@ -454,18 +479,13 @@ class PokeBattle_Battle
   def pbAutoChooseMove(idxPokemon, showMessages = true)
     thispkmn = @battlers[idxPokemon]
     if thispkmn.isFainted?
-      @choices[idxPokemon][0] = 0
-      @choices[idxPokemon][1] = 0
-      @choices[idxPokemon][2] = nil
+      @choices[idxPokemon] = [nil]
       return
     end
     if thispkmn.effects[:Encore] > 0 &&
        pbCanChooseMove?(idxPokemon, thispkmn.effects[:EncoreIndex], false)
       PBDebug.log("[Auto choosing Encore move...]") if $INTERNAL
-      @choices[idxPokemon][0] = 1 # "Use move"
-      @choices[idxPokemon][1] = thispkmn.effects[:EncoreIndex] # Index of move
-      @choices[idxPokemon][2] = thispkmn.moves[thispkmn.effects[:EncoreIndex]]
-      @choices[idxPokemon][3] = -1 # No target chosen yet
+      @choices[idxPokemon] = [:move, thispkmn.effects[:EncoreIndex], thispkmn.moves[thispkmn.effects[:EncoreIndex]], -1]  #No target chosen yet
       if thispkmn.effects[:EncoreMove] == :ACUPRESSURE
         @choices[idxPokemon][3] = idxPokemon
       elsif @doublebattle
@@ -477,10 +497,7 @@ class PokeBattle_Battle
       if !pbIsOpposing?(idxPokemon)
         pbDisplayPaused(_INTL("{1} has no moves left!", thispkmn.name)) if showMessages
       end
-      @choices[idxPokemon][0] = 1           # "Use move"
-      @choices[idxPokemon][1] = -1          # Index of move to be used
-      @choices[idxPokemon][2] = @struggle   # Use Struggle
-      @choices[idxPokemon][3] = -1          # No target chosen yet
+      @choices[idxPokemon] = [:move, -1, @struggle, -1]
     end
   end
 
@@ -1413,7 +1430,7 @@ class PokeBattle_Scene
       cw.setIndex(0)
     end
     cw.megaButton = 0 unless @battle.megaEvolution[(@battle.pbIsOpposing?(index)) ? 1 : 0][@battle.pbGetOwnerIndex(index)] == index && @battle.battlers[index].hasMega?
-    cw.megaButton = 1 if (@battle.pbCanMegaEvolve?(index) && !@battle.pbCanZMove?(index))
+    cw.megaButton = 1 if @battle.pbCanMegaEvolve?(index) && !@battle.pbCanZMove?(index)
     cw.ultraButton = 0
     cw.ultraButton = 1 if @battle.pbCanUltraBurst?(index)
     cw.zButton = 0
@@ -1583,7 +1600,7 @@ class PokeBattle_Scene
         break
       end
       if movecheck
-        if ((item == :ETHER) || (item == :LEPPABERRY))
+        if item == :ETHER || item == :LEPPABERRY
           move = pbChooseMove(pokemon, _INTL("Restore which move?"))
           if move >= 0
             if pbBattleRestorePP(pokemon, battler, move, 10) == 0
@@ -1595,7 +1612,7 @@ class PokeBattle_Scene
           else
             ppcheck = false
           end
-        elsif (item == :MAXETHER)
+        elsif item == :MAXETHER
           move = pbChooseMove(pokemon, _INTL("Restore which move?"))
           if move >= 0
             if pbBattleRestorePP(pokemon, battler, move, pokemon.moves[move].totalpp - pokemon.moves[move].pp) == 0
@@ -1729,10 +1746,10 @@ class PokeBattle_Scene
     return ret
   end
 
-  def pbDamageAnimation(pkmn, effectiveness)
+  def pbDamageAnimation(pkmn, effectiveness, quick: false)
   end
 
-  def pbHPChanged(pkmn, oldhp, anim = false)
+  def pbHPChanged(mons, anim = false)
   end
 
   def pbFainted(pkmn)

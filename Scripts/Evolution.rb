@@ -655,7 +655,7 @@ class PokemonEvolutionScene
         case method
           when :Shedinja then next evo if $PokemonBag.pbHasItem?(:POKEBALL)
           when :TradeItem, :DayHoldItem, :NightHoldItem
-            if evo == @newspecies
+            if evo[:species] == @newspecies
               removeItem = true # Item is now consumed
               next
             end
@@ -663,16 +663,11 @@ class PokemonEvolutionScene
       }
       newspeciesname = getMonName(@newspecies, @pokemon.form)
       oldspeciesname = getMonName(@pokemon.species, @pokemon.form)
-      abillist = @pokemon.getAbilityList
-      if abillist.include?(@pokemon.ability)
-        abilindex = abillist.index(@pokemon.ability)
-      else
-        abilindex = @pokemon.personalID % (abillist.length)
-      end
+      ability = resolveEvolutionAbility($cache.pkmn[@pokemon.species, @pokemon.form], $cache.pkmn[@newspecies, @newform], @pokemon.ability)
+
       @pokemon.form = @newform
       @pokemon.species = @newspecies
-      @pokemon.ability = @pokemon.getAbilityList[abilindex]
-      @pokemon.ability = @pokemon.abilityIndex if @pokemon.ability.nil? # because kakuna, metapod and vibrava are bitches
+      @pokemon.ability = ability
       frames = pbCryFrameLength(@pokemon)
 
       pbPlayCry(@pokemon)
@@ -695,7 +690,7 @@ class PokemonEvolutionScene
       movelist = @pokemon.getMoveList
       shedinjamoves = @pokemon.moves.clone
       for i in movelist
-        if i[0] == 0 || i[0] == @pokemon.level && !(Desolation && @pokemon.level == 1) # Learned a new move
+        if i[0] == 0 || (i[0] == @pokemon.level && (Gen <= 7 || @pokemon.level != 1)) # Learned a new move
           pbLearnMove(@pokemon, i[1], true)
         end
       end
@@ -722,6 +717,18 @@ class PokemonEvolutionScene
       end
     end
   end
+end
+
+def resolveEvolutionAbility(base, evo, ability)
+  if base.HiddenAbility == ability
+    return evo.HiddenAbility || evo.Abilities[0]
+  end
+  index = base.Abilities.index(ability)
+  unless index.nil?
+    return evo.Abilities[index] || evo.Abilities[0]
+  end
+  # Don't change ability if it already was illegal
+  return ability
 end
 
 def checkEvoConditions(pokemon, method, condition, evo)

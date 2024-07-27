@@ -55,7 +55,7 @@ end
 ################################################################################
 module PokeBattle_BattleCommon
   def pbStorePokemon(pokemon)
-    if !(pokemon.isShadow? rescue false)
+    if !(pokemon.isShadow? rescue false) && $Settings.nicknames == 0
       if pbDisplayConfirm(_INTL("Would you like to give a nickname to {1}?", pokemon.name))
         species = getMonName(pokemon.species, pokemon.form)
         nickname = @scene.pbNameEntry(_INTL("{1}'s nickname?", species), pokemon)

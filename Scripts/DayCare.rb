@@ -22,6 +22,15 @@ def pbDayCareDeposit(index)
       $Trainer.party.compact!
       $PokemonGlobal.daycareEgg = 0
       $PokemonGlobal.daycareEggSteps = 0
+      if pbDayCareDeposited == 2 && Reborn # Sword and Shield egg move transference qol
+        pkmn1 = $PokemonGlobal.daycare[0][0]
+        pkmn2 = $PokemonGlobal.daycare[1][0]
+
+        eggMovesMatch = pkmn1.getEggMoveList == pkmn2.getEggMoveList
+        if pkmn1.species == pkmn2.species && eggMovesMatch
+          pbDayCareTransferEggMoves()
+        end
+      end
       return
     end
   end
@@ -113,6 +122,7 @@ def pbDayCareWithdraw(index)
     end
     $PokemonGlobal.daycare[index][0] = nil
     $PokemonGlobal.daycare[index][1] = 0
+    $PokemonGlobal.daycare[index][2] = []
     $PokemonGlobal.daycareEgg = 0
   end
 end
@@ -157,6 +167,46 @@ def pbGetNonIncenseLowestSpecies(baby, parentform)
     when :MANTYKE     then return [:MANTINE, parentform]
   end
   return [baby, parentform]
+end
+
+def transferEggMoves(gifter, recipient, recIndex)
+  if recipient.moves.length < 4
+    $PokemonGlobal.daycare[recIndex][2] ||= []
+
+    eggmoves = gifter.getEggMoveList()
+    # Intersection of gifter's known moves and egg moves, subtracting any already known by recipient
+    passmoves = eggmoves.intersection(gifter.moves.map(&:move)) - recipient.moves.map(&:move)
+    numslots = [4 - recipient.moves.length, passmoves.length].min
+
+    numslots.times {
+      recipient.moves.append(PBMove.new(passmoves[0]))
+      $PokemonGlobal.daycare[recIndex][2].append(passmoves.shift)
+    }
+  end
+end
+
+def pbDayCareTransferEggMoves
+  pokemon1 = $PokemonGlobal.daycare[0][0]
+  pokemon2 = $PokemonGlobal.daycare[1][0]
+
+  transferEggMoves(pokemon1, pokemon2, 1)
+  transferEggMoves(pokemon2, pokemon1, 0)
+end
+
+def pbDayCareGetLearnedMoves(index, nameVariable, moveVariable)
+  pkmn = $PokemonGlobal.daycare[index][0]
+  return false if !pkmn
+  return false if !$PokemonGlobal.daycare[index][2] || $PokemonGlobal.daycare[index][2].empty?
+
+  $game_variables[nameVariable] = pkmn.name
+  moves = $PokemonGlobal.daycare[index][2]
+  case moves.length
+    when 1 then moveString = "#{getMoveName(moves[0])}"
+    when 2 then moveString = "#{getMoveName(moves[0])} and #{getMoveName(moves[1])}"
+    when 3 then moveString = "#{getMoveName(moves[0])}, #{getMoveName(moves[1])}, and #{getMoveName(moves[2])}"
+  end
+  $game_variables[moveVariable] = moveString
+  return true
 end
 
 def pbDayCareGenerateEgg
@@ -280,27 +330,27 @@ def pbDayCareGenerateEgg
   powercount = 0
   for i in 0...2
     parent = [mother, father][i]
-    if (parent.item == :POWERWEIGHT || parent.item == :CANONPOWERWEIGHT)
+    if parent.item == :POWERWEIGHT || parent.item == :CANONPOWERWEIGHT
       ivinherit[i] = PBStats::HP
       powercount += 1
     end
-    if (parent.item == :POWERBRACER || parent.item == :CANONPOWERBRACER)
+    if parent.item == :POWERBRACER || parent.item == :CANONPOWERBRACER
       ivinherit[i] = PBStats::ATTACK
       powercount += 1
     end
-    if (parent.item == :POWERBELT || parent.item == :CANONPOWERBELT)
+    if parent.item == :POWERBELT || parent.item == :CANONPOWERBELT
       ivinherit[i] = PBStats::DEFENSE
       powercount += 1
     end
-    if (parent.item == :POWERLENS || parent.item == :CANONPOWERLENS)
+    if parent.item == :POWERLENS || parent.item == :CANONPOWERLENS
       ivinherit[i] = PBStats::SPATK
       powercount += 1
     end
-    if (parent.item == :POWERBAND || parent.item == :CANONPOWERBAND)
+    if parent.item == :POWERBAND || parent.item == :CANONPOWERBAND
       ivinherit[i] = PBStats::SPDEF
       powercount += 1
     end
-    if (parent.item == :POWERANKLET || parent.item == :CANONPOWERANKLET)
+    if parent.item == :POWERANKLET || parent.item == :CANONPOWERANKLET
       ivinherit[i] = PBStats::SPEED
       powercount += 1
     end
@@ -316,7 +366,7 @@ def pbDayCareGenerateEgg
     r = (r + 1) % 2
   end
 
-  destiny = (mother.item == :DESTINYKNOT || father.item == :DESTINYKNOT)
+  destiny = mother.item == :DESTINYKNOT || father.item == :DESTINYKNOT
 
   i = 0; stats = [PBStats::HP, PBStats::ATTACK, PBStats::DEFENSE,
                   PBStats::SPEED, PBStats::SPATK, PBStats::SPDEF]
@@ -345,8 +395,8 @@ def pbDayCareGenerateEgg
 
   # Inheriting nature
   newnatures = []
-  newnatures.push(mother.nature) if (mother.item == :EVERSTONE)
-  newnatures.push(father.nature) if (father.item == :EVERSTONE)
+  newnatures.push(mother.nature) if mother.item == :EVERSTONE
+  newnatures.push(father.nature) if father.item == :EVERSTONE
   if newnatures.length > 0
     egg.setNature(newnatures[rand(newnatures.length)])
   end
@@ -354,7 +404,7 @@ def pbDayCareGenerateEgg
   shinyretries = 0
   shinyretries += 5 if father.language != mother.language
   if shinyretries > 0
-    for i in 0...shinyretries
+    shinyretries.times do
       break if egg.isShiny?
 
       egg.personalID = rand(65536) | (rand(65536) << 16)

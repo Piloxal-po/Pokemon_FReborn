@@ -88,13 +88,13 @@ class Game_Player
       elsif $game_switches[:Riding_Tauros]
         @move_speed = 5.5
       elsif pbCanRun?
-        if (Kernel.pbFacingTerrainTag == PBTerrain::SandDune)
+        if Kernel.pbFacingTerrainTag == PBTerrain::SandDune
           @move_speed = 3.8
         else
           @move_speed = 5.0
         end
       else
-        if (Kernel.pbFacingTerrainTag == PBTerrain::SandDune)
+        if Kernel.pbFacingTerrainTag == PBTerrain::SandDune
           @move_speed = 3.0
         else
           @move_speed = 4.0

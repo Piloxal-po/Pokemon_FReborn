@@ -67,7 +67,7 @@ class Scene_Credits
     Haru
     Lucent Flash
     Stardust
-    Cad48
+    Orsan
 
     - - Prior Developers - -
 
@@ -213,7 +213,7 @@ class Scene_Credits
     Haru
     Lucent Flash
     Stardust
-    Cad48
+    Orsan
 
     - - Prior Developers - -
 
@@ -381,7 +381,7 @@ class Scene_Credits
     Haru
     Lucent Flash
     Stardust
-    Cad48
+    Orsan
     <A><right> Wow! New team!
 
     - - Prior Developers - -
@@ -520,6 +520,7 @@ class Scene_Credits
     Kelazi5<s>Player_Null_Name
     Khrona<s>Sir_Bagel
     Pixl<s>ghostchanuwu
+    MoonPaw<s>MoltenLights
     <A><right>Making all the recolors as
     <A><right>a community was a lot of fun!
     <A><right>Thanks for chipping in!
@@ -607,7 +608,7 @@ class Scene_Credits
     <A><left> He helped us git good!
     Aeodyn<s>bluetowel
     Rainbow Dash<s>Nuems
-    Olxinos
+    Olxinos<s>VeryBasic
     <A><right>Whether you knew it or not,
     <A><right>thanks for helping us out!
     <L><left> if you're here, your code was probably
@@ -690,6 +691,15 @@ class Scene_Credits
     <T>ur mum last nite GOTT33M
 
 
+    *  ~  Shared Resources  ~  *
+    Big thanks to Rejuvenation and Desolation teams!
+    The game engine, battle animations and many other
+    resources are shared between Reborn, Rejuvenation
+    and Desolation.
+    As a result it's not always possible to track down
+    the credits for each individual feature or asset.
+
+
     *  ~  External Resources  ~  *
     Phasma<s>SunakazeKun
 
@@ -730,6 +740,8 @@ class Scene_Credits
     <A><right>Also thanks for the randomizer!
     TheInsurgent<s>Stardust
     housecarpenter<s>rainefall
+    shrug<s>Eggcav
+    PinkPanther
     Many, many, many more!
 
     <T><right> im am living in ur credits
@@ -737,6 +749,7 @@ class Scene_Credits
     *  ~  Community Cooperation Initiative  ~  *
     Alemi<s>Aqib
     Pixel<s>Dred
+    apophyll<s>TGuilerrr
 
     *  ~  Meme Consultant  ~  *
     Autumn
@@ -1000,7 +1013,7 @@ class Scene_Credits
     Lua<s>LisaX
     ~(^.^)~<s>pyrostar
     <A><left> A speedrun superstar!
-    Cad48<s>Alex Rose
+    Orsan<s>Alex Rose
     lester tay<s>Tibi Radu
     pyrromanis<s>ShiroOkazaki
     <L><left> *mashes the A button

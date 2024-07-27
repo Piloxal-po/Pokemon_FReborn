@@ -75,6 +75,7 @@ def pbSetResizeFactor(factor)
     if factor < 0 || factor == 4
       setScreenBorder
       Graphics.resize_screen(DEFAULTSCREENWIDTH + 2 * $ResizeOffsetX, DEFAULTSCREENHEIGHT + 2 * $ResizeOffsetY)
+      setScreenBorderName("border")
       Graphics.fullscreen = true if !Graphics.fullscreen
       resizeSpritesAndViewports
     else
@@ -96,7 +97,7 @@ def pbSetResizeFactor(factor)
 end
 
 def setScreenBorder
-  $ResizeBorder = ScreenBorder.new
+  $ResizeBorder = ScreenBorder.new if !$ResizeBorder || $ResizeBorder.sprite.disposed?
   $ResizeBorder.refresh
   border = $Settings ? $Settings.border : 0
   $ResizeOffsetX = [0, BORDERWIDTH][border]

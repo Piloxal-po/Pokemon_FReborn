@@ -12,7 +12,8 @@ class Game_Screen
   attr_reader     :brightness               # brightness
   attr_reader     :tone                     # color tone
   attr_reader     :flash_color              # flash color
-  attr_reader     :shake                    # shake positioning
+  attr_reader     :shakeX                   # shakeX positioning
+  attr_reader     :shakeY                   # shakeX positioning
   attr_reader     :pictures                 # pictures
   attr_reader     :weather_type             # weather type
   attr_reader     :weather_max              # max number of weather sprites
@@ -33,11 +34,16 @@ class Game_Screen
     @tone_duration = 0
     @flash_color = Color.new(0, 0, 0, 0)
     @flash_duration = 0
-    @shake_power = 0
-    @shake_speed = 0
-    @shake_duration = 0
-    @shake_direction = 1
-    @shake = 0
+    @shakeX_power = 0
+    @shakeX_speed = 0
+    @shakeX_duration = 0
+    @shakeX_direction = 1
+    @shakeX = 0
+    @shakeY_power = 0
+    @shakeY_speed = 0
+    @shakeY_duration = 0
+    @shakeY_direction = 1
+    @shakeY = 0
     @pictures = [nil]
     for i in 1..100
       @pictures.push(Game_Picture.new(i))
@@ -87,12 +93,41 @@ class Game_Screen
   #     speed : speed
   #     duration : time
   #-----------------------------------------------------------------------------
-  def start_shake(power, speed, duration)
+  def start_shake(power, speed, duration, axis = :x)
+    if axis == :x
+      start_shakeX(power, speed, duration)
+    else
+      start_shakeY(power, speed, duration)
+    end
+  end
+
+  def start_shakeX(power, speed, duration)
     return if $Settings.photosensitive == 1
 
-    @shake_power = power
-    @shake_speed = speed
-    @shake_duration = duration
+    @shakeX_power = power
+    @shakeX_speed = speed
+    @shakeX_duration = duration
+  end
+
+  def start_shakeY(power, speed, duration)
+    return if $Settings.photosensitive == 1
+
+    @shakeY_power = power
+    @shakeY_speed = speed
+    @shakeY_duration = duration
+  end
+
+  def initAddedVars
+    @shakeX_power = 0
+    @shakeX_speed = 0
+    @shakeX_duration = 0
+    @shakeX_direction = 1
+    @shakeX = 0
+    @shakeY_power = 0
+    @shakeY_speed = 0
+    @shakeY_duration = 0
+    @shakeY_direction = 1
+    @shakeY = 0
   end
 
   #-----------------------------------------------------------------------------
@@ -167,21 +202,38 @@ class Game_Screen
       @flash_color.alpha = @flash_color.alpha * (d - 1) / d
       @flash_duration -= 1
     end
-    if @shake_duration >= 1 || @shake != 0
-      delta = (@shake_power * @shake_speed * @shake_direction) / 10.0
-      if @shake_duration <= 1 && @shake * (@shake + delta) < 0
-        @shake = 0
+    if @shakeX_duration >= 1 || @shakeX != 0
+      delta = (@shakeX_power * @shakeX_speed * @shakeX_direction) / 10.0
+      if @shakeX_duration <= 1 && @shakeX * (@shakeX + delta) < 0
+        @shakeX = 0
       else
-        @shake += delta
+        @shakeX += delta
       end
-      if @shake > @shake_power * 2
-        @shake_direction = -1
+      if @shakeX > @shakeX_power * 2
+        @shakeX_direction = -1
       end
-      if @shake < - @shake_power * 2
-        @shake_direction = 1
+      if @shakeX < - @shakeX_power * 2
+        @shakeX_direction = 1
       end
-      if @shake_duration >= 1
-        @shake_duration -= 1
+      if @shakeX_duration >= 1
+        @shakeX_duration -= 1
+      end
+    end
+    if @shakeY_duration >= 1 || @shakeY != 0
+      delta = (@shakeY_power * @shakeY_speed * @shakeY_direction) / 10.0
+      if @shakeY_duration <= 1 && @shakeY * (@shakeY + delta) < 0
+        @shakeY = 0
+      else
+        @shakeY += delta
+      end
+      if @shakeY > @shakeY_power * 2
+        @shakeY_direction = -1
+      end
+      if @shakeY < - @shakeY_power * 2
+        @shakeY_direction = 1
+      end
+      if @shakeY_duration >= 1
+        @shakeY_duration -= 1
       end
     end
     if @weather_duration >= 1
@@ -209,7 +261,7 @@ class Game_Screen
 
   def ChangeWeatherPlan(aChoiceType)
     if $cache.mapdata[$game_map.map_id].Outdoor
-      if ($game_switches[:Force_Weather])
+      if $game_switches[:Force_Weather]
         Kernel.pbMessage("The Plot forbids this right now.")
       else
         setWeather # Let the game update its internal calendar
@@ -237,8 +289,7 @@ class Game_Screen
           currentWeather = @weatherVector[101] + regionOffset
 
           # Change the planned weather here
-          @weatherVector[currentWeather][0] = aChoiceType
-          @weatherVector[currentWeather][1] = 1
+          @weatherVector[currentWeather] = [aChoiceType, 1]
         end
 
         setWeather # Give visual feedback of the change

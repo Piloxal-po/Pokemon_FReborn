@@ -5823,6 +5823,7 @@ ITEMHASH = {
     :price => 10000,
     :noUseInBattle => true,
     :noUse => true,
+    :crystal => true
   },
 
   :BLUEORB => {
@@ -5832,6 +5833,7 @@ ITEMHASH = {
     :price => 10000,
     :noUseInBattle => true,
     :noUse => true,
+    :crystal => true
   },
 
   :PRISONBOTTLE => {

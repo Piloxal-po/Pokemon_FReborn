@@ -10,7 +10,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Using its tough and impressive horn, the user rams into the target with no letup."
   },
 
@@ -25,7 +24,6 @@ MOVEHASH = {
     :maxpp => 15,
     :effect => 100,
     :target => :SingleNonUser,
-    :kingrock => true,
     :highcrit => true,
     :desc => "The user calls out its underlings to pummel the target. Critical hits land more easily."
   },
@@ -56,7 +54,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :sharpmove => true,
     :desc => "The user slashes at the target by crossing its claws as if they were a pair of scissors."
   },
@@ -72,7 +69,6 @@ MOVEHASH = {
     :maxpp => 15,
     :effect => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :beammove => true,
     :desc => "The user attacks with a sinister beam of light. It may also confuse the target."
   },
@@ -88,7 +84,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "After making its attack, the user switches places with a party Pokémon in waiting."
   },
 
@@ -118,7 +113,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user bites the target. If the target is holding a Berry, the user eats it."
   },
 
@@ -133,7 +127,6 @@ MOVEHASH = {
     :maxpp => 5,
     :effect => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The target is hit with powdery scales blown by wind. It may raise all the user's stats."
   },
 
@@ -148,7 +141,6 @@ MOVEHASH = {
     :maxpp => 20,
     :effect => 100,
     :target => :AllOpposing,
-    :kingrock => true,
     :desc => "While resisting, the user attacks the opposing Pokémon. The targets' Sp. Atk is reduced."
   },
 
@@ -177,7 +169,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :sharpmove => true,
     :desc => "The target is slashed with claws. Its power increases if it hits in succession."
   },
@@ -206,7 +197,6 @@ MOVEHASH = {
     :accuracy => 95,
     :maxpp => 20,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "Sharp spikes are shot at the target in succession. They hit two to five times in a row."
   },
 
@@ -325,7 +315,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "This move uses the target's power. The higher the target's Attack, the more damage taken."
   },
 
@@ -340,7 +329,6 @@ MOVEHASH = {
     :maxpp => 10,
     :effect => 40,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user lets loose a black shock wave. It may also lower the target's accuracy."
   },
 
@@ -370,7 +358,6 @@ MOVEHASH = {
     :maxpp => 15,
     :effect => 20,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user releases an aura imbued with dark thoughts. It may make the target flinch."
   },
 
@@ -386,7 +373,6 @@ MOVEHASH = {
     :target => :SingleNonUser,
     :priority => 1,
     :contact => true,
-    :kingrock => true,
     :desc => "This move attacks first. It fails if the target is not attacking, however."
   },
 
@@ -401,7 +387,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :highcrit => true,
     :sharpmove => true,
     :desc => "The user slashes the target through darkness. Critical hits land more easily."
@@ -433,7 +418,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user throws a sucker punch. It hits without fail."
   },
 
@@ -448,7 +432,6 @@ MOVEHASH = {
     :maxpp => 15,
     :effect => 100,
     :target => :AllOpposing,
-    :kingrock => true,
     :soundmove => true,
     :desc => "The user yells as if it is ranting about something, making the target's Sp. Atk decrease."
   },
@@ -464,7 +447,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "If the target has already taken damage in the same turn, this attack's power is doubled."
   },
 
@@ -479,7 +461,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "If the user moves after the target, this attack's power will be doubled."
   },
 
@@ -522,7 +503,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user slaps away the target's held item, removing it from the battle."
   },
 
@@ -536,7 +516,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user gets all party Pokémon to attack. The more party Pokémon, the greater the damage."
   },
 
@@ -550,7 +529,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user flings its held item at the target. Its power and effects depend on the item."
   },
 
@@ -565,7 +543,6 @@ MOVEHASH = {
     :maxpp => 5,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "This attack's power increases the more the target has powered up with stat changes."
   },
 
@@ -747,7 +724,6 @@ MOVEHASH = {
     :accuracy => 90,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user blasts with power that distorts even time. The user must rest on the next turn."
   },
 
@@ -762,7 +738,6 @@ MOVEHASH = {
     :maxpp => 5,
     :effect => 100,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "Comets are summoned down from the sky. The attack harshly reduces the user's Sp. Atk."
   },
 
@@ -777,7 +752,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :RandomOpposing,
     :contact => true,
-    :kingrock => true,
     :desc => "The user rampages and attacks for two to three turns. It then becomes confused, however."
   },
 
@@ -793,7 +767,6 @@ MOVEHASH = {
     :effect => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user tackles the target while exhibiting menace. It may make the target flinch."
   },
 
@@ -807,7 +780,6 @@ MOVEHASH = {
     :accuracy => 95,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :highcrit => true,
     :desc => "The user tears the target along with the space around it. Critical hits land more easily."
   },
@@ -822,7 +794,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The target is attacked with a shock wave generated by the user's gaping mouth."
   },
 
@@ -837,7 +808,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user slashes the target with huge, sharp claws."
   },
 
@@ -867,7 +837,6 @@ MOVEHASH = {
     :maxpp => 20,
     :effect => 30,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user exhales a mighty gust that inflicts damage. It may leave the target paralyzed."
   },
 
@@ -882,7 +851,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user attacks its target by hitting it with brutal strikes. The target is hit twice."
   },
 
@@ -897,7 +865,6 @@ MOVEHASH = {
     :maxpp => 20,
     :effect => 20,
     :target => :AllOpposing,
-    :kingrock => true,
     :desc => "The user whips up a tornado to tear at the opposing team. It may make targets flinch."
   },
 
@@ -911,7 +878,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "This attack hits with a shock wave of pure rage. This attack always inflicts 40 damage."
   },
 
@@ -942,7 +908,6 @@ MOVEHASH = {
     :effect => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user charges its target, surrounded with electricity. It may paralyze the target."
   },
 
@@ -957,14 +922,13 @@ MOVEHASH = {
     :maxpp => 10,
     :effect => 30,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A wicked thunderbolt is dropped on the target. It may paralyze the target."
   },
 
   :VOLTTACKLE => {
     :ID => 66,
     :name => "Volt Tackle",
-    :function => 0x0FD,
+    :function => 0x007,
     :type => :ELECTRIC,
     :category => :physical,
     :basedamage => 120,
@@ -973,7 +937,6 @@ MOVEHASH = {
     :effect => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :recoil => 0.33,
     :desc => "The user electrifies itself and charges. It damages the user and may paralyze the target."
   },
@@ -1002,7 +965,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "This attack does double damage when used after fusion flare or blue flare."
   },
 
@@ -1023,7 +985,7 @@ MOVEHASH = {
   :WILDCHARGE => {
     :ID => 70,
     :name => "Wild Charge",
-    :function => 0x0FA,
+    :function => 0x000,
     :type => :ELECTRIC,
     :category => :physical,
     :basedamage => 90,
@@ -1031,7 +993,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :recoil => 0.25,
     :desc => "The user shrouds itself in electricity and smashes into its target. It damages the user."
   },
@@ -1047,7 +1008,6 @@ MOVEHASH = {
     :maxpp => 15,
     :effect => 30,
     :target => :AllNonUsers,
-    :kingrock => true,
     :desc => "Electricity is loosed to strike the area around the user. It may also cause paralysis."
   },
 
@@ -1077,7 +1037,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 20,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "After making its attack, the user rushes back to switch places with a party Pokémon."
   },
 
@@ -1109,7 +1068,6 @@ MOVEHASH = {
     :moreeffect => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user bites with electrified fangs. It may make the target flinch or paralyze it."
   },
 
@@ -1123,7 +1081,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 20,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user strikes the target with a quick jolt of electricity. This attack always hits."
   },
 
@@ -1138,7 +1095,6 @@ MOVEHASH = {
     :maxpp => 15,
     :effect => 100,
     :target => :AllOpposing,
-    :kingrock => true,
     :desc => "The user attacks opposing Pokémon with an electric net. It reduces the targets' Speed."
   },
 
@@ -1153,7 +1109,6 @@ MOVEHASH = {
     :maxpp => 10,
     :effect => 70,
     :target => :SingleNonUser,
-    :kingrock => true,
     :beammove => true,
     :desc => "The user attacks with an electric charge which may raise its Sp. Atk stat."
   },
@@ -1182,7 +1137,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The faster the user is than the target, the greater the damage this move deals."
   },
 
@@ -1259,7 +1213,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :gravityblocked => true,
     :desc => "The target is hit with a knee kick from a jump. If it misses, the user is hurt instead."
   },
@@ -1275,7 +1228,6 @@ MOVEHASH = {
     :maxpp => 5,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user fights the target without guarding. It cuts the user's Defense and Sp. Def."
   },
 
@@ -1318,7 +1270,6 @@ MOVEHASH = {
     :maxpp => 5,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :highcrit => true,
     :desc => "The user delivers a double chop with its forearms. Critical hits land more easily."
   },
@@ -1350,7 +1301,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :punchmove => true,
     :desc => "The user hits with its strong and heavy fist. It lowers the user's Speed, however."
   },
@@ -1366,7 +1316,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :gravityblocked => true,
     :desc => "The user jumps, then strikes with a kick. If the kick misses, the user hurts itself."
   },
@@ -1381,7 +1330,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 20,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user looses a blast of aura power at the target. This move always hits."
   },
 
@@ -1396,7 +1344,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :sharpmove => true,
     :desc => "The user attacks by slicing. The target's stat changes don't affect the damage."
   },
@@ -1411,7 +1358,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user cuts with its long horn. The  horn does physical damage to the target."
   },
 
@@ -1426,7 +1372,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :punchmove => true,
     :desc => "The user attacks the target with an uppercut thrown skyward with force."
   },
@@ -1434,7 +1379,7 @@ MOVEHASH = {
   :SUBMISSION => {
     :ID => 97,
     :name => "Submission",
-    :function => 0x0FA,
+    :function => 0x000,
     :type => :FIGHTING,
     :category => :physical,
     :basedamage => 80,
@@ -1442,7 +1387,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :recoil => 0.25,
     :desc => "The user grabs the target and dives for the ground. It also hurts the user slightly."
   },
@@ -1458,7 +1402,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user attacks with a chop. It also ends the effect of Light Screen and Reflect."
   },
 
@@ -1473,7 +1416,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :punchmove => true,
     :desc => "An energy-draining punch. The user's HP is restored by half the damage dealt."
   },
@@ -1490,7 +1432,6 @@ MOVEHASH = {
     :target => :SingleNonUser,
     :priority => -1,
     :contact => true,
-    :kingrock => true,
     :desc => "The user attacks last. In return, this throw move is guaranteed not to miss."
   },
 
@@ -1521,7 +1462,6 @@ MOVEHASH = {
     :effect => 30,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The target is attacked with a shock wave. It may also paralyze the target."
   },
 
@@ -1537,7 +1477,6 @@ MOVEHASH = {
     :effect => 100,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user attacks the target's legs swiftly, reducing the target's Speed stat."
   },
 
@@ -1553,7 +1492,6 @@ MOVEHASH = {
     :target => :SingleNonUser,
     :priority => -4,
     :contact => true,
-    :kingrock => true,
     :desc => "Inflicts double the damage if the user has been hurt by the opponent in the same turn."
   },
 
@@ -1569,7 +1507,6 @@ MOVEHASH = {
     :effect => 30,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user lashes out with a quick, spinning kick. It may also make the target flinch."
   },
 
@@ -1584,7 +1521,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "This attack inflicts big damage on a sleeping target. It also wakes the target up."
   },
 
@@ -1599,7 +1535,6 @@ MOVEHASH = {
     :maxpp => 25,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :highcrit => true,
     :desc => "The target is attacked with a sharp chop. Critical hits land more easily."
   },
@@ -1616,7 +1551,6 @@ MOVEHASH = {
     :target => :SingleNonUser,
     :priority => 1,
     :contact => true,
-    :kingrock => true,
     :punchmove => true,
     :desc => "The user throws a punch at blinding speed. It is certain to strike first."
   },
@@ -1647,7 +1581,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user strikes the target fiercely. This attack always results in a critical hit."
   },
 
@@ -1662,7 +1595,6 @@ MOVEHASH = {
     :maxpp => 30,
     :target => :SingleNonUser,
     :priority => 1,
-    :kingrock => true,
     :desc => "The user whirls its fists to send out a wave of pure vacuum. This move always goes first."
   },
 
@@ -1677,7 +1609,6 @@ MOVEHASH = {
     :maxpp => 30,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The target is quickly kicked twice in succession using both feet."
   },
 
@@ -1692,7 +1623,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user looses a flurry of open-palmed arm thrusts that hit two to five times in a row."
   },
 
@@ -1707,7 +1637,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "A consecutive three-kick attack that becomes more powerful with each successive hit."
   },
 
@@ -1753,7 +1682,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "A powerful kick that inflicts greater damage on heavier targets."
   },
 
@@ -1768,7 +1696,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "An all-out attack that becomes more powerful the less HP the user has."
   },
 
@@ -1783,7 +1710,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The target is thrown using gravity. It inflicts damage equal to the user's level."
   },
 
@@ -1844,7 +1770,6 @@ MOVEHASH = {
     :maxpp => 5,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "With flames on its head, it hit target. It lowers its Defense, Sp. Def, and Speed stats."
   },
 
@@ -1858,7 +1783,6 @@ MOVEHASH = {
     :accuracy => 90,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The target is razed by a fiery explosion. The user must rest on the next turn."
   },
 
@@ -1872,7 +1796,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 5,
     :target => :AllOpposing,
-    :kingrock => true,
     :desc => "The user hits the opposing team with flames. The more HP, the stronger the attack."
   },
 
@@ -1887,7 +1810,6 @@ MOVEHASH = {
     :maxpp => 5,
     :effect => 100,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user attacks the target at full power. It sharply reduces the user's Sp. Atk stat."
   },
 
@@ -1902,7 +1824,6 @@ MOVEHASH = {
     :maxpp => 5,
     :effect => 20,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user attacks by engulfing the target in intense, blue flames. It may burn the target."
   },
 
@@ -1923,7 +1844,7 @@ MOVEHASH = {
   :FLAREBLITZ => {
     :ID => 129,
     :name => "Flare Blitz",
-    :function => 0x0FE,
+    :function => 0x00A,
     :type => :FIRE,
     :category => :physical,
     :basedamage => 120,
@@ -1932,7 +1853,6 @@ MOVEHASH = {
     :effect => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :defrost => true,
     :recoil => 0.33,
     :desc => "The user sets fire and charges. It sustains serious damage and may burn the target."
@@ -1948,7 +1868,6 @@ MOVEHASH = {
     :accuracy => 75,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The target is caught in a maelstrom of fire that rages for four to five turns."
   },
 
@@ -1962,7 +1881,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :defrost => true,
     :desc => "The user brings down a giant flame. It is more powerful after a large thunderbolt."
   },
@@ -2021,7 +1939,6 @@ MOVEHASH = {
     :maxpp => 5,
     :effect => 30,
     :target => :AllNonUsers,
-    :kingrock => true,
     :desc => "An inferno torches everything around the user. It may burn the targets."
   },
 
@@ -2066,7 +1983,6 @@ MOVEHASH = {
     :maxpp => 10,
     :effect => 50,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "Cloaked in flames, the user dances. It may raise the user's Sp. Atk stat."
   },
 
@@ -2081,7 +1997,6 @@ MOVEHASH = {
     :maxpp => 15,
     :effect => 30,
     :target => :AllNonUsers,
-    :kingrock => true,
     :desc => "An inferno torches everything around the user. It may burn the targets."
   },
 
@@ -2111,7 +2026,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user attacks the target with big flames. The fire damages adjacent Pokemon also."
   },
 
@@ -2128,7 +2042,6 @@ MOVEHASH = {
     :moreeffect => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user bites with flaming fangs. It may also burn the target or make it flinch."
   },
 
@@ -2158,7 +2071,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A fiery column hits the target. When used with Grass Pledge, it causes a sea of fire."
   },
 
@@ -2174,7 +2086,6 @@ MOVEHASH = {
     :effect => 100,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user sets fire and attacks. It raises the user's Speed stat."
   },
 
@@ -2202,7 +2113,6 @@ MOVEHASH = {
     :accuracy => 85,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The target is trapped within a fierce vortex of fire that rages for four to five turns."
   },
 
@@ -2230,7 +2140,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user hits the target with its fiery body. The heavier the user, the stronger it is."
   },
 
@@ -2273,7 +2182,6 @@ MOVEHASH = {
     :maxpp => 5,
     :effect => 30,
     :target => :SingleNonUser,
-    :kingrock => true,
     :highcrit => true,
     :desc => "A two-turn attack where critical hits land more easily. It may make the target flinch."
   },
@@ -2281,7 +2189,7 @@ MOVEHASH = {
   :BRAVEBIRD => {
     :ID => 153,
     :name => "Brave Bird",
-    :function => 0x0FA,
+    :function => 0x000,
     :type => :FLYING,
     :category => :physical,
     :basedamage => 120,
@@ -2289,7 +2197,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :recoil => 0.33,
     :desc => "The user tucks in its wings and charges. The user also takes serious damage."
   },
@@ -2305,7 +2212,6 @@ MOVEHASH = {
     :maxpp => 10,
     :effect => 30,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user wraps its opponent in a fierce circular wind. It may confuse the target."
   },
 
@@ -2319,7 +2225,6 @@ MOVEHASH = {
     :accuracy => 95,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :highcrit => true,
     :desc => "A vortex of air is shot at the target to inflict damage. Critical hits land easily."
   },
@@ -2335,7 +2240,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :gravityblocked => true,
     :desc => "The user soars and strikes its target on turn two. It can be used for transportation."
   },
@@ -2352,7 +2256,6 @@ MOVEHASH = {
     :effect => 30,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :gravityblocked => true,
     :desc => "The user bounces up high, then drops on the target. It may paralyze the target."
   },
@@ -2368,7 +2271,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "A corkscrewing attack with the sharp beak acting as a drill."
   },
 
@@ -2383,7 +2285,6 @@ MOVEHASH = {
     :maxpp => 15,
     :effect => 30,
     :target => :SingleNonUser,
-    :kingrock => true,
     :sharpmove => true,
     :desc => "The user attacks with a blade of air that slices the sky. It may make the target flinch."
   },
@@ -2399,7 +2300,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :sharpmove => true,
     :desc => "The user confounds the foe with speed, then slashes. The attack lands without fail."
   },
@@ -2430,7 +2330,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user pecks the target. If the target is holding a Berry, the user gains its effect."
   },
 
@@ -2445,7 +2344,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :gravityblocked => true,
     :desc => "The target is brought to the sky and dropped the next turn. It cannot attack."
   },
@@ -2461,7 +2359,6 @@ MOVEHASH = {
     :maxpp => 35,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The target is struck with large, imposing wings spread wide to inflict damage."
   },
 
@@ -2476,7 +2373,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user nimbly hits the target. If there is no held item, it inflicts massive damage."
   },
 
@@ -2490,7 +2386,6 @@ MOVEHASH = {
     :accuracy => 95,
     :maxpp => 25,
     :target => :AllOpposing,
-    :kingrock => true,
     :highcrit => true,
     :sharpmove => true,
     :desc => "Razor-like wind is launched to slash the opposing team. Critical hits land more easily."
@@ -2506,7 +2401,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 35,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A gust of wind is whipped up and launched at the target to inflict damage."
   },
 
@@ -2521,7 +2415,6 @@ MOVEHASH = {
     :maxpp => 35,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The target is jabbed with a sharply pointed beak or horn."
   },
 
@@ -2610,7 +2503,6 @@ MOVEHASH = {
     :target => :SingleNonUser,
     :contact => true,
     :bypassprotect => true,
-    :kingrock => true,
     :desc => "The user disappears, then strikes the target on the second turn. It always hits."
   },
 
@@ -2639,7 +2531,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :highcrit => true,
     :desc => "The user slashes with a sharp claw made from shadows. Critical hits land more easily."
   },
@@ -2655,7 +2546,6 @@ MOVEHASH = {
     :maxpp => 5,
     :effect => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user blasts the target with a gust of repulsive wind. It may raise every stat."
   },
 
@@ -2670,7 +2560,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :punchmove => true,
     :desc => "The user throws a punch from the shadows. The punch lands without fail."
   },
@@ -2685,7 +2574,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "This relentless attack does massive damage to targets affected by status problems."
   },
 
@@ -2701,7 +2589,6 @@ MOVEHASH = {
     :target => :SingleNonUser,
     :priority => 1,
     :contact => true,
-    :kingrock => true,
     :desc => "The user strikes with its shadow from behind. This move always goes first."
   },
 
@@ -2745,7 +2632,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user makes the target see a horrid mirage. Its damage matches the user's level."
   },
 
@@ -2842,7 +2728,6 @@ MOVEHASH = {
     :accuracy => 90,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user slams the target with an enormous tree. The user can't move on the next turn."
   },
 
@@ -2857,7 +2742,6 @@ MOVEHASH = {
     :maxpp => 5,
     :effect => 100,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A storm of leaves attacks the target. It harshly reduces the user's Sp. Atk stat."
   },
 
@@ -2872,7 +2756,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :RandomOpposing,
     :contact => true,
-    :kingrock => true,
     :desc => "The user hits the target with petals for multiple turns. The user then becomes confused."
   },
 
@@ -2887,7 +2770,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user violently whirls its vines or tentacles to harshly lash the target."
   },
 
@@ -2902,7 +2784,6 @@ MOVEHASH = {
     :maxpp => 5,
     :effect => 40,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A shock wave slams the target. It may harshly lower the target's Sp. Def."
   },
 
@@ -2916,7 +2797,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :beammove => true,
     :desc => "A two-turn attack. The user gathers light, then blasts a beam on the second turn."
   },
@@ -2924,7 +2804,7 @@ MOVEHASH = {
   :WOODHAMMER => {
     :ID => 196,
     :name => "Wood Hammer",
-    :function => 0x0FA,
+    :function => 0x000,
     :type => :GRASS,
     :category => :physical,
     :basedamage => 120,
@@ -2932,7 +2812,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :recoil => 0.33,
     :desc => "The user slams its body into the target to attack. The user also sustains serious damage."
   },
@@ -2948,7 +2827,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :highcrit => true,
     :sharpmove => true,
     :desc => "The handles a sharp leaf like a sword. Critical hits land more easily."
@@ -2978,7 +2856,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user slams a barrage of hard-shelled seeds down on the target from above."
   },
 
@@ -3033,7 +2910,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 20,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user scatters curious leaves that chase the target. This attack will not miss."
   },
 
@@ -3062,7 +2938,6 @@ MOVEHASH = {
     :accuracy => 95,
     :maxpp => 25,
     :target => :AllOpposing,
-    :kingrock => true,
     :highcrit => true,
     :sharpmove => true,
     :desc => "Sharp-edged leaves launch at the opposing team. Critical hits land more easily."
@@ -3078,7 +2953,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A grassy column hits the target. When used with Water Pledge, its creates a vast swamp."
   },
 
@@ -3106,7 +2980,6 @@ MOVEHASH = {
     :maxpp => 25,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The target is struck with slender, whiplike vines to inflict damage."
   },
 
@@ -3120,7 +2993,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 30,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user forcefully shoots seeds at the target. Two to five seeds are shot."
   },
 
@@ -3148,7 +3020,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user snares the target with grass and trips it. Heavier targets take greater damage."
   },
 
@@ -3324,7 +3195,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :AllNonUsers,
-    :kingrock => true,
     :desc => "The user sets off an earthquake that strikes every Pokemon around it."
   },
 
@@ -3339,7 +3209,6 @@ MOVEHASH = {
     :maxpp => 10,
     :effect => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user makes the ground under the target erupt. It may lower the target's Sp. Def."
   },
 
@@ -3354,7 +3223,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user burrows, then attacks on the second turn. It can also be used to exit dungeons."
   },
 
@@ -3369,7 +3237,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :highcrit => true,
     :desc => "The user crashes into its target like a drill. Critical hits land more easily."
   },
@@ -3399,7 +3266,6 @@ MOVEHASH = {
     :maxpp => 10,
     :effect => 30,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user launches a packed mud ball to attack. It may lower the target's accuracy."
   },
 
@@ -3414,7 +3280,6 @@ MOVEHASH = {
     :maxpp => 20,
     :effect => 100,
     :target => :AllNonUsers,
-    :kingrock => true,
     :desc => "The user stomps on the ground in an area. Hit Pokemon's Speed stat is reduced."
   },
 
@@ -3429,7 +3294,6 @@ MOVEHASH = {
     :maxpp => 15,
     :effect => 100,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user attacks the target with a blob of mud. It reduces the target's Speed."
   },
 
@@ -3443,7 +3307,6 @@ MOVEHASH = {
     :accuracy => 90,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user throws a bone. The bone loops to hit the target twice, coming and going."
   },
 
@@ -3457,7 +3320,6 @@ MOVEHASH = {
     :accuracy => 85,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user traps the target inside a harshly raging sandstorm for four to five turns."
   },
 
@@ -3471,7 +3333,6 @@ MOVEHASH = {
     :accuracy => 90,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user strikes the target with a hard bone two to five times in a row."
   },
 
@@ -3512,7 +3373,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 30,
     :target => :AllNonUsers,
-    :kingrock => true,
     :desc => "The user looses a ground-shaking quake around the user. Its power varies."
   },
 
@@ -3570,7 +3430,6 @@ MOVEHASH = {
     :maxpp => 5,
     :effect => 30,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "On the second turn, the target is hit with electrical ice. It may cause paralysis."
   },
 
@@ -3585,7 +3444,6 @@ MOVEHASH = {
     :maxpp => 5,
     :effect => 30,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "On the second turn, a freezing wind surrounds the target. It may burn the target."
   },
 
@@ -3690,7 +3548,6 @@ MOVEHASH = {
     :moreeffect => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user bites with freezing fangs. It may flinch or freeze the target."
   },
 
@@ -3706,7 +3563,6 @@ MOVEHASH = {
     :target => :SingleNonUser,
     :priority => -4,
     :contact => true,
-    :kingrock => true,
     :desc => "This move deals double damage if the user is hurt by the target that turn."
   },
 
@@ -3734,7 +3590,6 @@ MOVEHASH = {
     :accuracy => 90,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "Cold breath is blown on the target. This attack is always critical."
   },
 
@@ -3749,7 +3604,6 @@ MOVEHASH = {
     :maxpp => 30,
     :target => :SingleNonUser,
     :priority => 1,
-    :kingrock => true,
     :desc => "The user hurls chunks of ice at the target. This move always goes first."
   },
 
@@ -3778,7 +3632,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user rolls into the target for 5 turns. It strengthens upon hitting."
   },
 
@@ -3792,7 +3645,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 30,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user launches icicles at the foe. It strikes 2 to 5 times in a row."
   },
 
@@ -3862,7 +3714,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 5,
     :target => :AllNonUsers,
-    :kingrock => true,
     :desc => "The user explodes to damage those around it. The user faints afterwards."
   },
 
@@ -3876,7 +3727,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 5,
     :target => :AllNonUsers,
-    :kingrock => true,
     :desc => "The user attacks everything around it by exploding. The user faints after."
   },
 
@@ -3891,7 +3741,6 @@ MOVEHASH = {
     :maxpp => 5,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user attacks the target using full power. The user must rest after."
   },
 
@@ -3905,7 +3754,6 @@ MOVEHASH = {
     :accuracy => 90,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :beammove => true,
     :desc => "The target is attacked with a powerful beam. The user must rest after."
   },
@@ -3921,14 +3769,13 @@ MOVEHASH = {
     :maxpp => 5,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "This move can be used only after the user has used all its other moves."
   },
 
   :DOUBLEEDGE => {
     :ID => 265,
     :name => "Double-Edge",
-    :function => 0x0FA,
+    :function => 0x000,
     :type => :NORMAL,
     :category => :physical,
     :basedamage => 120,
@@ -3936,7 +3783,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :recoil => 0.33,
     :desc => "A reckless, life-risking tackle. It also damages the user."
   },
@@ -3944,7 +3790,7 @@ MOVEHASH = {
   :HEADCHARGE => {
     :ID => 266,
     :name => "Head Charge",
-    :function => 0x0FA,
+    :function => 0x000,
     :type => :NORMAL,
     :category => :physical,
     :basedamage => 120,
@@ -3952,7 +3798,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :recoil => 0.25,
     :desc => "The user charges its head into its target. It also damages the user."
   },
@@ -3968,7 +3813,6 @@ MOVEHASH = {
     :maxpp => 5,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The target is attacked by a kick launched with muscle-packed power."
   },
 
@@ -3983,7 +3827,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :RandomOpposing,
     :contact => true,
-    :kingrock => true,
     :desc => "The user attacks for two to three turns. It then becomes confused."
   },
 
@@ -3997,7 +3840,6 @@ MOVEHASH = {
     :accuracy => 75,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A large egg is hurled at the target with maximum force to inflict damage."
   },
 
@@ -4011,7 +3853,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user shoots light at the target. Its type varies by plate."
   },
 
@@ -4027,7 +3868,6 @@ MOVEHASH = {
     :effect => 100,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user tucks in its head, then rams the target on the next turn."
   },
 
@@ -4057,14 +3897,13 @@ MOVEHASH = {
     :effect => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user attacks the target, smashing into it, May confuse the target."
   },
 
   :TAKEDOWN => {
     :ID => 274,
     :name => "Take Down",
-    :function => 0x0FA,
+    :function => 0x000,
     :type => :NORMAL,
     :category => :physical,
     :basedamage => 90,
@@ -4072,7 +3911,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :recoil => 0.25,
     :desc => "A reckless charge into the target. It also damages the user a little."
   },
@@ -4087,7 +3925,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :RandomOpposing,
-    :kingrock => true,
     :soundmove => true,
     :desc => "The user attacks in an uproar for three turns. No one can fall asleep."
   },
@@ -4117,7 +3954,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user fires a beam of light at its target. The type on the held Drive."
   },
 
@@ -4133,7 +3969,6 @@ MOVEHASH = {
     :target => :SingleNonUser,
     :priority => 2,
     :contact => true,
-    :kingrock => true,
     :desc => "The user charges the foe at blinding speed. This attack always goes first."
   },
 
@@ -4163,7 +3998,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :punchmove => true,
     :desc => "The target is slugged by a punch thrown with muscle-packed power."
   },
@@ -4178,7 +4012,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :AllOpposing,
-    :kingrock => true,
     :highcrit => true,
     :desc => "A two-turn attack. Wind hits the foe on the second turn. Critical hits land more often."
   },
@@ -4194,7 +4027,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The target is slammed with a long tail, vines, etc., to inflict damage."
   },
 
@@ -4209,7 +4041,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The target is slugged at maximum power. It can move heavy boulders."
   },
 
@@ -4268,7 +4099,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user strikes continually. The foe's stat changes don't affect damage."
   },
 
@@ -4328,7 +4158,6 @@ MOVEHASH = {
     :maxpp => 5,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user avenges an ally. If an ally fainted the prior turn, the damage increases."
   },
 
@@ -4357,7 +4186,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :highcrit => true,
     :sharpmove => true,
     :desc => "The target is attacked with a slash. Critical hits land more easily."
@@ -4374,7 +4202,6 @@ MOVEHASH = {
     :maxpp => 25,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The target is jabbed with a sharply pointed horn to inflict damage."
   },
 
@@ -4417,7 +4244,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :soundmove => true,
     :desc => "The user attacks the target with a song. Others can join for more damage."
   },
@@ -4446,7 +4272,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 20,
     :target => :AllOpposing,
-    :kingrock => true,
     :desc => "Star-shaped rays are shot at the opposing team. This attack never misses."
   },
 
@@ -4461,7 +4286,6 @@ MOVEHASH = {
     :maxpp => 30,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The target is gripped and squeezed from both sides to inflict damage."
   },
 
@@ -4476,7 +4300,6 @@ MOVEHASH = {
     :maxpp => 30,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :sharpmove => true,
     :desc => "The target is cut with a scythe or a claw. It can also be used to cut down thin trees."
   },
@@ -4493,7 +4316,6 @@ MOVEHASH = {
     :target => :SingleNonUser,
     :contact => true,
     :nonmirror => true,
-    :kingrock => true,
     :desc => "An attack that is used in desperation if the user has no PP. It also hurts the user."
   },
 
@@ -4508,7 +4330,6 @@ MOVEHASH = {
     :maxpp => 35,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "A physical attack in which the user charges and slams into the target with its body."
   },
 
@@ -4522,7 +4343,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "An attack move that varies in power and type depending on the weather."
   },
 
@@ -4536,7 +4356,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :soundmove => true,
     :desc => "The user hits the target with an echoing voice. If used every turn, it is more powerful."
   },
@@ -4568,7 +4387,6 @@ MOVEHASH = {
     :maxpp => 40,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "A restrained attack that leaves the target with at least 1 HP."
   },
 
@@ -4582,7 +4400,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 20,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "Numerous coins are hurled at the target to inflict damage. Money is earned after battle."
   },
 
@@ -4597,7 +4414,6 @@ MOVEHASH = {
     :maxpp => 35,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The target is physically pounded with a long tail or a foreleg, etc."
   },
 
@@ -4613,7 +4429,6 @@ MOVEHASH = {
     :target => :SingleNonUser,
     :priority => 1,
     :contact => true,
-    :kingrock => true,
     :desc => "The user slams the target at a tremendous speed. It is sure to strike first."
   },
 
@@ -4628,7 +4443,6 @@ MOVEHASH = {
     :maxpp => 35,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Hard, pointed, and sharp claws rake the target to inflict damage."
   },
 
@@ -4643,7 +4457,6 @@ MOVEHASH = {
     :maxpp => 15,
     :effect => 30,
     :target => :SingleNonUser,
-    :kingrock => true,
     :soundmove => true,
     :desc => "An attack that can be used only if the user is asleep. It may also make the target flinch."
   },
@@ -4659,7 +4472,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user slams the target with a tail, vine, or tentacle. The target is hit twice."
   },
 
@@ -4689,7 +4501,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user strikes the target with its tail. It hits the Pokémon two to five times in a row."
   },
 
@@ -4704,7 +4515,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "While the move is in use, the user's rage raises the Attack stat when the user is hit."
   },
 
@@ -4714,12 +4524,11 @@ MOVEHASH = {
     :function => 0x110,
     :type => :NORMAL,
     :category => :physical,
-    :basedamage => 50,
+    :basedamage => 20,
     :accuracy => 100,
     :maxpp => 40,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "A spin attack that can also eliminate such moves as Bind, Wrap, Leech Seed, and Spikes."
   },
 
@@ -4733,7 +4542,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "Sharp spikes are shot at the target in rapid succession. They hit two to five times."
   },
 
@@ -4748,7 +4556,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :punchmove => true,
     :desc => "The target is hit with a flurry of punches that strike two to five times in a row."
   },
@@ -4764,7 +4571,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The target is raked with sharp claws or scythes for two to five times in quick succession."
   },
 
@@ -4778,7 +4584,6 @@ MOVEHASH = {
     :accuracy => 85,
     :maxpp => 20,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "Round objects are hurled at the target to strike two to five times in a row."
   },
 
@@ -4793,7 +4598,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Things such as long bodies or tentacles are used to bind the foe for four to five turns."
   },
 
@@ -4808,7 +4612,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The target is slapped repeatedly, back and forth, two to five times in a row."
   },
 
@@ -4823,7 +4626,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The target is jabbed repeatedly with a horn or beak two to five times in a row."
   },
 
@@ -4838,7 +4640,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "A long body or vines are used to wrap and squeeze the target for four to five turns."
   },
 
@@ -4870,7 +4671,6 @@ MOVEHASH = {
     :priority => 1,
     :contact => true,
     :nonmirror => true,
-    :kingrock => true,
     :desc => "The user endures for two turns, then strikes back to cause double the damage taken."
   },
 
@@ -4885,7 +4685,6 @@ MOVEHASH = {
     :maxpp => 5,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The target is crushed. The greater the target's HP, the more powerful the attack."
   },
 
@@ -4900,7 +4699,6 @@ MOVEHASH = {
     :maxpp => 5,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "An attack move that cuts down the target's HP to equal the user's HP."
   },
 
@@ -4915,7 +4713,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user flails about to attack. It becomes more powerful the less HP the user has."
   },
 
@@ -4930,7 +4727,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "A full-power attack that grows more powerful the less the user likes its Trainer."
   },
 
@@ -4958,7 +4754,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A unique attack that varies in type depending on the Pokémon using it."
   },
 
@@ -5013,7 +4808,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "A full-power attack that grows more powerful the more the user likes its Trainer."
   },
 
@@ -5027,7 +4821,6 @@ MOVEHASH = {
     :accuracy => 90,
     :maxpp => 20,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The target is hit with a destructive shock wave that always inflicts 20 HP damage."
   },
 
@@ -5042,7 +4835,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :nonmirror => true,
-    :kingrock => true,
     :desc => "The power stored by Stockpile is released. The more power stored, the greater the damage."
   },
 
@@ -5071,7 +4863,6 @@ MOVEHASH = {
     :maxpp => 5,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The fewer PP this move has, the greater its attack power."
   },
 
@@ -5086,7 +4877,6 @@ MOVEHASH = {
     :maxpp => 5,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user wrings the target. The more HP the target has, the greater this attack's power."
   },
 
@@ -6074,7 +5864,7 @@ MOVEHASH = {
     :basedamage => 0,
     :accuracy => 0,
     :maxpp => 40,
-    :target => :SingleNonUser,
+    :target => :User,
     :nonmirror => true,
     :gravityblocked => true,
     :desc => "The user just flops and splashes around to no effect at all."
@@ -6324,7 +6114,6 @@ MOVEHASH = {
     :maxpp => 5,
     :effect => 30,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user shoots filthy garbage at the target to attack. It may poison the target."
   },
 
@@ -6368,7 +6157,6 @@ MOVEHASH = {
     :effect => 30,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The target is jabbed with a tentacle or arm covered in poison. It may poison the target."
   },
 
@@ -6384,7 +6172,6 @@ MOVEHASH = {
     :effect => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :highcrit => true,
     :sharpmove => true,
     :desc => "A slash with poisonous blades that can leave targets poisoned. Critical hits land easier."
@@ -6414,7 +6201,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user drenches the target in a poison. Its power doubles if the target is poisoned."
   },
 
@@ -6429,7 +6215,6 @@ MOVEHASH = {
     :maxpp => 15,
     :effect => 100,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user throws a clump of special mud. All status changes are returned to normal."
   },
 
@@ -6460,7 +6245,6 @@ MOVEHASH = {
     :effect => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :highcrit => true,
     :desc => "The user attacks with its tail. It may poison the target. Critical hits land easier."
   },
@@ -6633,7 +6417,6 @@ MOVEHASH = {
     :maxpp => 5,
     :effect => 100,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user hits the target at full power. The attack harshly reduces the user's Sp. Atk stat."
   },
 
@@ -6657,7 +6440,7 @@ MOVEHASH = {
     :type => :PSYCHIC,
     :category => :special,
     :basedamage => 120,
-    :accuracy => 100,
+    :accuracy => 0, # Bypass accuracy check when using the move.
     :maxpp => 10,
     :target => :SingleNonUser,
     :bypassprotect => true,
@@ -6675,7 +6458,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user creates an odd psychic wave to hit the target. This attack does physical damage."
   },
 
@@ -6717,7 +6499,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user creates an odd psychic wave to hit the target. This attack does physical damage."
   },
 
@@ -6733,7 +6514,6 @@ MOVEHASH = {
     :effect => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user focuses power to its head and hits the target. It may make the target flinch."
   },
 
@@ -6775,7 +6555,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 20,
     :target => :SingleNonUser,
-    :kingrock => true,
     :highcrit => true,
     :sharpmove => true,
     :desc => "The user tears at the target with blades formed by psychic power. Critical hits land easier."
@@ -6791,7 +6570,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :AllNonUsers,
-    :kingrock => true,
     :desc => "Using a shock wave, the user inflicts damage on Pokémon of the same type."
   },
 
@@ -6864,7 +6642,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The target is attacked with an odd psychic wave. The attack varies in intensity."
   },
 
@@ -6878,7 +6655,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user attacks the target. The more the user's stats are raised, the greater the damage."
   },
 
@@ -7388,7 +7164,7 @@ MOVEHASH = {
   :HEADSMASH => {
     :ID => 501,
     :name => "Head Smash",
-    :function => 0x0FA,
+    :function => 0x000,
     :type => :ROCK,
     :category => :physical,
     :basedamage => 150,
@@ -7396,7 +7172,6 @@ MOVEHASH = {
     :maxpp => 5,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :recoil => 0.5,
     :desc => "The user attacks the target with a full-power headbutt. The user takes terrible damage."
   },
@@ -7411,7 +7186,6 @@ MOVEHASH = {
     :accuracy => 90,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user launches a huge boulder at the target to attack. It must rest on the next turn, however."
   },
 
@@ -7425,7 +7199,6 @@ MOVEHASH = {
     :accuracy => 80,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :highcrit => true,
     :desc => "The user stabs the foe with sharpened stones from below. It has a high critical-hit ratio."
   },
@@ -7441,7 +7214,6 @@ MOVEHASH = {
     :maxpp => 10,
     :effect => 30,
     :target => :AllOpposing,
-    :kingrock => true,
     :desc => "Boulders are hurled at the opposing team. The targets may flinch."
   },
 
@@ -7455,7 +7227,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 20,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user attacks with a ray of light that sparkles as if it were made of gemstones."
   },
 
@@ -7470,7 +7241,6 @@ MOVEHASH = {
     :maxpp => 5,
     :effect => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user attacks with a prehistoric power. It may also raise all the user's stats at once."
   },
 
@@ -7484,7 +7254,6 @@ MOVEHASH = {
     :accuracy => 90,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user picks up and throws a small rock at the target to attack."
   },
 
@@ -7499,7 +7268,6 @@ MOVEHASH = {
     :maxpp => 15,
     :effect => 100,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "Boulders are hurled at the target. It also lowers the target's Speed by preventing its movement."
   },
 
@@ -7514,7 +7282,6 @@ MOVEHASH = {
     :maxpp => 15,
     :effect => 100,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user throws a stone or projectile at the opponent. Flying Pokémons will fall to the ground."
   },
 
@@ -7529,7 +7296,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user continually rolls into the target over five turns. It becomes stronger each time it hits."
   },
 
@@ -7543,7 +7309,6 @@ MOVEHASH = {
     :accuracy => 90,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user hurls hard rocks at the target. Two to five rocks are launched in quick succession."
   },
 
@@ -7614,7 +7379,7 @@ MOVEHASH = {
     :type => :STEEL,
     :category => :special,
     :basedamage => 140,
-    :accuracy => 100,
+    :accuracy => 0, # Bypass accuracy check when using the move.
     :maxpp => 5,
     :target => :SingleNonUser,
     :bypassprotect => true,
@@ -7649,7 +7414,6 @@ MOVEHASH = {
     :effect => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :punchmove => true,
     :desc => "The target is hit with a hard punch fired like a meteor. It may also raise the user's Attack."
   },
@@ -7665,7 +7429,6 @@ MOVEHASH = {
     :maxpp => 10,
     :effect => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :beammove => true,
     :desc => "The user gathers all its light energy and releases it at once. It may also lower the target's Sp. Def stat."
   },
@@ -7682,7 +7445,6 @@ MOVEHASH = {
     :effect => 30,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The foe slams the target with its steel-hard head. It may also make the target flinch."
   },
 
@@ -7698,7 +7460,6 @@ MOVEHASH = {
     :effect => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The target is hit with wings of steel. It may also raise the user's Defense stat."
   },
 
@@ -7713,7 +7474,6 @@ MOVEHASH = {
     :maxpp => 10,
     :effect => 30,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user looses a flash of energy at the target. It might lower the target's accuracy."
   },
 
@@ -7727,7 +7487,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 20,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user launches steel bombs that stick to the target. This attack will not miss."
   },
 
@@ -7742,7 +7501,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user attacks by throwing two steel gears at its target."
   },
 
@@ -7773,7 +7531,6 @@ MOVEHASH = {
     :target => :SingleNonUser,
     :priority => 1,
     :contact => true,
-    :kingrock => true,
     :punchmove => true,
     :desc => "The user strikes the target with tough punches as fast as bullets. This move always goes first."
   },
@@ -7789,7 +7546,6 @@ MOVEHASH = {
     :maxpp => 5,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user tackles the target with a high-speed spin. The slower the user, the greater the damage."
   },
 
@@ -7804,7 +7560,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user slams into the target with its heavy body. Damage varies with the user's weight."
   },
 
@@ -7891,7 +7646,6 @@ MOVEHASH = {
     :accuracy => 90,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The target is hit with a watery blast. The user must rest on the next turn, however."
   },
 
@@ -7918,7 +7672,6 @@ MOVEHASH = {
     :accuracy => 80,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The target is blasted by a huge volume of water launched under great pressure."
   },
 
@@ -7933,7 +7686,6 @@ MOVEHASH = {
     :maxpp => 10,
     :effect => 30,
     :target => :AllOpposing,
-    :kingrock => true,
     :desc => "The user attacks by shooting muddy water at the opposing team. It may also lower the target's accuracy."
   },
 
@@ -7947,7 +7699,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :AllNonUsers,
-    :kingrock => true,
     :desc => "It swamps the area around the user with a giant wave. It can also be used for crossing water."
   },
 
@@ -7962,7 +7713,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user attacks by swinging its tail as if it were a vicious wave in a raging storm."
   },
 
@@ -7977,7 +7727,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :highcrit => true,
     :desc => "The target is hammered with a large pincer. Critical hits land more easily."
   },
@@ -7993,7 +7742,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Dives on the first turn and attacks on the second. It can be used to dive deep in the ocean."
   },
 
@@ -8008,7 +7756,6 @@ MOVEHASH = {
     :maxpp => 15,
     :effect => 30,
     :target => :SingleNonUser,
-    :kingrock => true,
     :defrost => true,
     :desc => "The user shoots boiling hot water at its target. It may also leave the target with a burn."
   },
@@ -8025,7 +7772,6 @@ MOVEHASH = {
     :effect => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user charges at the target and may make it flinch. It can also be used to climb a waterfall."
   },
 
@@ -8055,7 +7801,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "If the target's HP is down to about half, this attack will hit with double the power."
   },
 
@@ -8099,7 +7844,6 @@ MOVEHASH = {
     :maxpp => 20,
     :effect => 20,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user attacks the target with a pulsing blast of water. It may also confuse the target."
   },
 
@@ -8113,7 +7857,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A column of water strikes the target. It can be combined with its fire equivalent."
   },
 
@@ -8129,7 +7872,6 @@ MOVEHASH = {
     :target => :SingleNonUser,
     :priority => 1,
     :contact => true,
-    :kingrock => true,
     :desc => "The user lunges at the target at a speed that makes it almost invisible. It is sure to strike first."
   },
 
@@ -8143,7 +7885,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 25,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The target is blasted with a forceful shot of water."
   },
 
@@ -8158,7 +7899,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The target is clamped and squeezed by the user's very thick and sturdy shell for four to five turns."
   },
 
@@ -8172,7 +7912,6 @@ MOVEHASH = {
     :accuracy => 85,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "Traps foes in a violent swirling whirlpool for four to five turns."
   },
 
@@ -8358,7 +8097,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :AllOpposing,
-    :kingrock => true,
     :desc => "The user damages opposing Pokémon by emitting a powerful flash."
   },
 
@@ -8372,7 +8110,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 15,
     :target => :AllOpposing,
-    :kingrock => true,
     :soundmove => true,
     :desc => "Letting out a charming cry, the user does emotional damage to opposing Pokémon. It never misses."
   },
@@ -8388,7 +8125,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user steals the target's energy with a kiss. Over half of the damage goes to the user's HP."
   },
 
@@ -8402,7 +8138,8 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
+    :contact => true,
+    :punchmove => true,
     :desc => "The user attacks with electrically charged fists. Normal-type moves become Electric-type."
   },
 
@@ -8470,7 +8207,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 30,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user stirs up a fairy wind and strikes the target with it."
   },
 
@@ -8486,7 +8222,6 @@ MOVEHASH = {
     :effect => 100,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "When the user knocks out a target with this move, the user's Attack stat rises sharply."
   },
 
@@ -8515,7 +8250,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user dives down onto the target from the sky. This move is Fighting and Flying type simultaneously."
   },
 
@@ -8544,7 +8278,6 @@ MOVEHASH = {
     :maxpp => 20,
     :effect => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user rapidly cools the target, which might leave the target frozen. Its SE on Water types."
   },
 
@@ -8588,7 +8321,6 @@ MOVEHASH = {
     :effect => 100,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The target is infested for four to five turns. It can't flee during this time."
   },
 
@@ -8632,7 +8364,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :AllOpposing,
-    :kingrock => true,
     :desc => "The user gathers the energy of the land and focuses that power on opposing Pokémon to damage them."
   },
 
@@ -8691,7 +8422,6 @@ MOVEHASH = {
     :maxpp => 15,
     :effect => 30,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user attacks with moon power. It might lower the target's Sp. Atk. "
   },
 
@@ -8706,7 +8436,6 @@ MOVEHASH = {
     :maxpp => 10,
     :effect => 100,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user attacks by breathing a special, hot fire. It lowers the target's Sp. Atk. "
   },
 
@@ -8737,7 +8466,6 @@ MOVEHASH = {
     :effect => 100,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user attacks by nuzzling its electrified cheeks. It paralyzes the target."
   },
 
@@ -8751,7 +8479,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user absorbs its target's HP. The HP is restored by over half of the damage."
   },
 
@@ -8765,7 +8492,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 20,
     :target => :AllNonUsers,
-    :kingrock => true,
     :desc => "The user attacks everything around it. HP is restored by half of the damage."
   },
 
@@ -8794,7 +8520,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :AllNonUsers,
-    :kingrock => true,
     :desc => "The user stirs up a violent petal blizzard and attacks everything around it."
   },
 
@@ -8810,7 +8535,6 @@ MOVEHASH = {
     :target => :SingleNonUser,
     :contact => true,
     :bypassprotect => true,
-    :kingrock => true,
     :desc => "The user vanishes, then strikes the target on the next turn. It always hits."
   },
 
@@ -8840,7 +8564,6 @@ MOVEHASH = {
     :effect => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user plays rough and attacks. This may also lower the target's Attack stat."
   },
 
@@ -8871,7 +8594,6 @@ MOVEHASH = {
     :effect => 100,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :punchmove => true,
     :desc => "Striking opponents makes the user's fists harder. Hitting a target raises the Atk."
   },
@@ -8973,7 +8695,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :priority => 1,
-    :kingrock => true,
     :desc => "The target is hit with throwing stars two to five times. It always goes first."
   },
 
@@ -8987,7 +8708,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A unique attack that varies in type depending on the Pokémon using it."
   },
 
@@ -9001,7 +8721,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A unique attack that varies in type depending on the Pokémon using it."
   },
 
@@ -9015,7 +8734,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A unique attack that varies in type depending on the Pokémon using it."
   },
 
@@ -9029,7 +8747,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A unique attack that varies in type depending on the Pokémon using it."
   },
 
@@ -9043,7 +8760,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A unique attack that varies in type depending on the Pokémon using it."
   },
 
@@ -9057,7 +8773,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A unique attack that varies in type depending on the Pokémon using it."
   },
 
@@ -9071,7 +8786,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A unique attack that varies in type depending on the Pokémon using it."
   },
 
@@ -9085,7 +8799,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A unique attack that varies in type depending on the Pokémon using it."
   },
 
@@ -9099,7 +8812,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A unique attack that varies in type depending on the Pokémon using it."
   },
 
@@ -9113,7 +8825,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A unique attack that varies in type depending on the Pokémon using it."
   },
 
@@ -9127,7 +8838,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A unique attack that varies in type depending on the Pokémon using it."
   },
 
@@ -9141,7 +8851,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A unique attack that varies in type depending on the Pokémon using it."
   },
 
@@ -9155,7 +8864,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A unique attack that varies in type depending on the Pokémon using it."
   },
 
@@ -9169,7 +8877,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A unique attack that varies in type depending on the Pokémon using it."
   },
 
@@ -9183,7 +8890,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A unique attack that varies in type depending on the Pokémon using it."
   },
 
@@ -9197,7 +8903,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A unique attack that varies in type depending on the Pokémon using it."
   },
 
@@ -9211,7 +8916,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A unique attack that varies in type depending on the Pokémon using it."
   },
 
@@ -9225,7 +8929,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "A unique attack that varies in type depending on the Pokémon using it."
   },
 
@@ -9239,7 +8942,6 @@ MOVEHASH = {
     :accuracy => 85,
     :maxpp => 10,
     :target => :AllOpposing,
-    :kingrock => true,
     :desc => "The user attacks opponents with countless beams of deep blue light."
   },
 
@@ -9253,7 +8955,6 @@ MOVEHASH = {
     :accuracy => 85,
     :maxpp => 10,
     :target => :AllOpposing,
-    :kingrock => true,
     :desc => "The user attacks opponents by manifesting fearsome blades of stone."
   },
 
@@ -9268,7 +8969,6 @@ MOVEHASH = {
     :maxpp => 5,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user soars up, then quickly drops down onto the opponent, lowering its defenses."
   },
 
@@ -9282,7 +8982,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :AllOpposing,
-    :kingrock => true,
     :desc => "This move hits opposing Pokémon that are in the air, knocking them to the ground."
   },
 
@@ -9296,7 +8995,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :AllOpposing,
-    :kingrock => true,
     :desc => "The user attacks with a wave that crawls along the ground. Those hit can't flee from battle."
   },
 
@@ -9311,7 +9009,6 @@ MOVEHASH = {
     :maxpp => 5,
     :effect => 50,
     :target => :AllOpposing,
-    :kingrock => true,
     :desc => "The user whips up a storm of diamonds. This may also sharply raise the user's Defense stat."
   },
 
@@ -9326,7 +9023,6 @@ MOVEHASH = {
     :maxpp => 5,
     :target => :SingleNonUser,
     :bypassprotect => true,
-    :kingrock => true,
     :desc => "Using a hyperspace hole, the user appears and strikes, hitting a target using Protect or Detect."
   },
 
@@ -9341,7 +9037,6 @@ MOVEHASH = {
     :maxpp => 5,
     :effect => 30,
     :target => :SingleNonUser,
-    :kingrock => true,
     :defrost => true,
     :desc => "The user immerses the target in superheated steam. This may also leave the target with a burn."
   },
@@ -9357,7 +9052,6 @@ MOVEHASH = {
     :maxpp => 5,
     :target => :SingleNonUser,
     :bypassprotect => true,
-    :kingrock => true,
     :desc => "Using its many arms, user unleashes a barrages of attack, hitting a target using Protect or Detect."
   },
 
@@ -9373,7 +9067,6 @@ MOVEHASH = {
     :target => :SingleNonUser,
     :priority => 1,
     :contact => true,
-    :kingrock => true,
     :desc => "The user smashes into the target at high speed. This move always goes first."
   },
 
@@ -9388,7 +9081,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Entangles the target with its anchor chain while attacking. The target becomes unable to flee."
   },
 
@@ -9448,7 +9140,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :AllNonUsers,
     :contact => true,
-    :kingrock => true,
     :desc => "The user swings its body around violently to inflict damage on everything in its vicinity."
   },
 
@@ -9462,7 +9153,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :defrost => true,
     :desc => "To inflict massive damage, the user burns itself out, losing its Fire type."
   },
@@ -9477,7 +9167,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 5,
     :target => :AllOpposing,
-    :kingrock => true,
     :soundmove => true,
     :desc => "The user rubs the scales on its entire body and makes a huge noise, lowering its defense."
   },
@@ -9492,7 +9181,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :AllOpposing,
-    :kingrock => true,
     :desc => "If the targets have already moved, this move eliminates the effect of their Ability."
   },
 
@@ -9507,7 +9195,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user swings both arms and hits the target. The target's stat changes don't affect the damage."
   },
 
@@ -9522,7 +9209,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user uses its body like a hammer to attack the target and inflict damage."
   },
 
@@ -9538,7 +9224,6 @@ MOVEHASH = {
     :effect => 100,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user strikes the target with a burning lash. This also lowers the target's Defense stat."
   },
 
@@ -9555,7 +9240,6 @@ MOVEHASH = {
     :target => :SingleNonUser,
     :priority => 2,
     :contact => true,
-    :kingrock => true,
     :desc => "Although this move has great power, it only works the first turn the user is in battle."
   },
 
@@ -9570,7 +9254,6 @@ MOVEHASH = {
     :maxpp => 5,
     :effect => 100,
     :target => :SingleNonUser,
-    :kingrock => true,
     :beammove => true,
     :desc => "The user unleashes a strong beam. The attack's recoil harshly lowers the user's Sp. Atk stat."
   },
@@ -9617,7 +9300,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user fiercely attacks the target using its entire body."
   },
 
@@ -9632,7 +9314,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :punchmove => true,
     :desc => "The user swings and hits with its strong, heavy fist. It lowers the user's Speed, however."
   },
@@ -9676,7 +9357,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 40,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user attacks by pelting the target with leaves."
   },
 
@@ -9692,7 +9372,6 @@ MOVEHASH = {
     :effect => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Slams into the target using a full-force blast of water. This may also lower the target's Defense."
   },
 
@@ -9708,7 +9387,6 @@ MOVEHASH = {
     :effect => 100,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user makes a full force lunge at the target. This also lowers the target's Attack stat."
   },
 
@@ -9722,7 +9400,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :beammove => true,
     :desc => "The user emits a sinister ray to attack the target, ignoring its ability."
   },
@@ -9764,7 +9441,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user boasts its strength and attacks, getting more powerful the more their stats are raised."
   },
 
@@ -9778,7 +9454,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "Shoots powerful lasers using the power of a prism. The user can't move on the next turn."
   },
 
@@ -9793,7 +9468,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user bites with its psychic capabilities. This can also destroy Light Screen and Reflect."
   },
 
@@ -9838,7 +9512,6 @@ MOVEHASH = {
     :maxpp => 15,
     :effect => 100,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user attacks the target by dancing very hard. The user's type determines the type of this move."
   },
 
@@ -9853,7 +9526,6 @@ MOVEHASH = {
     :maxpp => 10,
     :effect => 20,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "Beats the target with a bone that contains a spirit. This may also lower the target's Defense stat."
   },
 
@@ -9866,7 +9538,7 @@ MOVEHASH = {
     :basedamage => 150,
     :accuracy => 100,
     :maxpp => 5,
-    :target => :SingleNonUser,
+    :target => :AllOpposing,
     :priority => -3,
     :nonmirror => true,
     :desc => "The user sets a shell trap, which will explode if hit by a physical move."
@@ -9899,7 +9571,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user stabs the target with a sharp horn. This attack never misses."
   },
 
@@ -9914,7 +9585,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :sharpmove => true,
     :desc => "A two-turn attack. The user gathers light into a blade, attacking on the next turn."
   },
@@ -9929,7 +9599,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :AllNonUsers,
-    :kingrock => true,
     :soundmove => true,
     :desc => "The user bursts into song, emitting many bubbles which can heal burns."
   },
@@ -9945,7 +9614,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user hides in the target's shadow, steals the target's stat boosts, and then attacks."
   },
 
@@ -9972,7 +9640,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user attacks while stitching the target's shadow to the ground, preventing escape."
   },
 
@@ -10004,7 +9671,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Driven by frustration, the user attacks, doubling in power if their previous move failed."
   },
 
@@ -10034,7 +9700,6 @@ MOVEHASH = {
     :maxpp => 5,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user slams into the target with the force of a meteor, ignoring its ability."
   },
 
@@ -10063,7 +9728,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user attacks the target's throat, preventing sound-based moves for two turns."
   },
 
@@ -10093,7 +9757,6 @@ MOVEHASH = {
     :effect => 100,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user lands an intense kick of tropical origins on the target, lowering their Attack."
   },
 
@@ -10123,7 +9786,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user slams into the target, cloaked in energy. The memory held determines the move's type."
   },
 
@@ -10137,7 +9799,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 5,
     :target => :AllNonUsers,
-    :kingrock => true,
     :desc => "The user attacks everything around it by causing its own head to explode. Also damages the user."
   },
 
@@ -10151,7 +9812,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user attacks a target with a pillar of light. Uses the higher of either Attack or Sp. Attack stats."
   },
 
@@ -10165,7 +9825,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :beammove => true,
     :desc => "The user unleashes a strong beam from its core. This move deals twice the damage if the target is Dynamaxed."
   },
@@ -10180,7 +9839,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 15,
     :target => :SingleNonUser,
-    :kingrock => true,
     :highcrit => true,
     :desc => "The user ignores the effects of opposing Pokémon's moves and Abilities that draw in moves, allowing this move to hit the chosen target."
   },
@@ -10196,7 +9854,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "This move prevents the user and the target from switching out until either of them faints. The effect goes away if either of the Pokémon leaves the field."
   },
 
@@ -10255,7 +9912,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :magiccoat => true,
-    :kingrock => true,
     :desc => "The user scatters a cloud of magic powder that changes the target to Psychic type."
   },
 
@@ -10269,7 +9925,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :DragonDarts,
-    :kingrock => true,
     :desc => "The user attacks twice using Dreepy. If there are two targets, this move hits each target once."
   },
 
@@ -10298,7 +9953,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :nonmirror => true,
-    :kingrock => true,
     :desc => "The user locks the target in and prevents it from fleeing. This move also lowers the target's Defense and Sp. Def every turn."
   },
 
@@ -10313,7 +9967,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user stabs the target with its electrified beak. If the user attacks before the target, the power of this move is doubled."
   },
 
@@ -10328,7 +9981,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user rends the target with its hard gills. If the user attacks before the target, the power of this move is doubled."
   },
 
@@ -10372,7 +10024,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user attacks by slamming its body into the target. The higher the user's Defense, the more damage it can inflict on the target."
   },
 
@@ -10401,7 +10052,6 @@ MOVEHASH = {
     :maxpp => 10,
     :effect => 100,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user plays its drum, controlling the drum's roots to attack the target. This also lowers the target's Speed stat."
   },
 
@@ -10416,7 +10066,6 @@ MOVEHASH = {
     :maxpp => 15,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user snares the target in a snap trap for four to five turns."
   },
 
@@ -10431,7 +10080,6 @@ MOVEHASH = {
     :maxpp => 5,
     :effect => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user attacks by igniting a small stone and launching it as a fiery ball at the target. This may also leave the target with a burn."
   },
 
@@ -10446,7 +10094,6 @@ MOVEHASH = {
     :maxpp => 5,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :sharpmove => true,
     :desc => "The user becomes a gigantic sword and cuts the target. This move deals twice the damage if the target is Dynamaxed."
   },
@@ -10462,7 +10109,6 @@ MOVEHASH = {
     :maxpp => 5,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user becomes a gigantic shield and cuts the target. This move deals twice the damage if the target is Dynamaxed."
   },
 
@@ -10478,7 +10124,6 @@ MOVEHASH = {
     :effect => 100,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Morpeko attacks and raises its Speed with the energy stored in its cheeks. This move's type changes depending on the user's form."
   },
 
@@ -10494,7 +10139,6 @@ MOVEHASH = {
     :effect => 100,
     :target => :AllOpposing,
     :contact => true,
-    :kingrock => true,
     :desc => "The user swings its tough tail wildly and attacks opposing Pokémon. This also lowers their Attack stats."
   },
 
@@ -10509,7 +10153,6 @@ MOVEHASH = {
     :maxpp => 40,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user attacks the target by poking it with a sharply pointed branch."
   },
 
@@ -10523,7 +10166,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :AllOpposing,
-    :kingrock => true,
     :soundmove => true,
     :desc => "The user attacks opposing Pokémon by twanging a guitar or bass guitar, causing a huge echo and strong vibration."
   },
@@ -10539,14 +10181,13 @@ MOVEHASH = {
     :maxpp => 10,
     :effect => 100,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user attacks the target with an acidic liquid created from tart apples. This also lowers the target's Sp. Def stat."
   },
 
   :GRAVAPPLE => {
     :ID => 721,
     :name => "Grav Apple",
-    :function => 0x043,
+    :function => 0x18B,
     :type => :GRASS,
     :category => :physical,
     :basedamage => 80,
@@ -10554,7 +10195,6 @@ MOVEHASH = {
     :maxpp => 10,
     :effect => 100,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user attacks the target with an acidic liquid created from tart apples. This also lowers the target's Defense stat."
   },
 
@@ -10570,7 +10210,6 @@ MOVEHASH = {
     :effect => 100,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user attacks the target with so much force that it could break the target's spirit. This also lowers the target's Sp. Atk stat."
   },
 
@@ -10585,7 +10224,6 @@ MOVEHASH = {
     :maxpp => 10,
     :effect => 20,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user attacks the target by emitting steam. This may also confuse the target."
   },
 
@@ -10630,7 +10268,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user pretends to bow its head, but then it stabs the target with its disheveled hair. This attack never misses."
   },
 
@@ -10644,7 +10281,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user attacks wildly with its thick leek. The user can't move on the next turn, because the force of this move makes it stagger."
   },
 
@@ -10658,7 +10294,6 @@ MOVEHASH = {
     :accuracy => 90,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :beammove => true,
     :desc => "This is Eternatus's most powerful attack in its original form. The user can't move on the next turn."
   },
@@ -10673,7 +10308,6 @@ MOVEHASH = {
     :accuracy => 95,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :beammove => true,
     :desc => "The user fires a beam of steel that it collected from its entire body. This also damages the user."
   },
@@ -10687,7 +10321,7 @@ MOVEHASH = {
     :basedamage => 0,
     :accuracy => 0,
     :maxpp => 40,
-    :target => :SingleNonUser,
+    :target => :User,
     :nonmirror => true,
     :desc => "The Pokémon congratulates you on your special day!"
   },
@@ -10701,6 +10335,8 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 0,
     :target => :SingleNonUser,
+    :contact => true,
+    :punchmove => true,
     :desc => "The user rotates, centering the hex nut in its chest, and then strikes with its arms twice in a row. This may also make the target flinch."
   },
 
@@ -10740,7 +10376,6 @@ MOVEHASH = {
     :maxpp => 15,
     :effect => 30,
     :target => :SingleNonUser,
-    :kingrock => true,
     :defrost => true,
     :desc => "The user throws scorching sand at the target to attack. This may also leave the target with a burn."
   },
@@ -10755,7 +10390,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user slams the target with its wings. The target is hit twice in a row."
 
   },
@@ -10769,7 +10403,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user attacks the target with its psychic power. This move's power goes up and damages all opposing Pokémon on Psychic Terrain."
 
   },
@@ -10784,7 +10417,6 @@ MOVEHASH = {
     :maxpp => 5,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user attacks while destroying the terrain. This move fails when the ground hasn't turned into a terrain."
 
   },
@@ -10799,7 +10431,6 @@ MOVEHASH = {
     :maxpp => 20,
     :effect => 100,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user attacks by shooting scales two to five times in a row. This move boosts the user's Speed stat but lowers its Defense stat."
 
   },
@@ -10813,7 +10444,6 @@ MOVEHASH = {
     :accuracy => 90,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :beammove => true,
     :desc => "In this two-turn attack, the user gathers space power and boosts its Sp. Atk stat, then attacks the target on the next turn."
 
@@ -10829,7 +10459,6 @@ MOVEHASH = {
     :maxpp => 10,
     :effect => 20,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "This move inflicts physical or special damage, whichever will be more effective. This may also poison the target."
 
   },
@@ -10843,7 +10472,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 5,
     :target => :AllNonUsers,
-    :kingrock => true,
     :desc => "The user attacks everything around it and faints upon using this move. This move's power is increased on Misty Terrain."
 
   },
@@ -10858,7 +10486,6 @@ MOVEHASH = {
     :maxpp => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Gliding on the ground, the user attacks the target. This move always goes first on Grassy Terrain."
 
   },
@@ -10872,7 +10499,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 20,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user attacks with electric voltage rising from the ground. This move's power doubles when the target is on Electric Terrain."
 
   },
@@ -10886,7 +10512,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user utilizes the power of the terrain to attack. This move's type and power changes depending on the terrain when it's used."
 
   },
@@ -10902,7 +10527,6 @@ MOVEHASH = {
     :effect => 100,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user skitters behind the target to attack. This also lowers the target's Sp. Atk stat."
 
   },
@@ -10917,7 +10541,6 @@ MOVEHASH = {
     :maxpp => 5,
     :effect => 100,
     :target => :AllOpposing,
-    :kingrock => true,
     :desc => "The user attacks with energy from jealousy. This leaves all opposing Pokémon that have had their stats boosted during the turn with a burn."
 
   },
@@ -10932,7 +10555,6 @@ MOVEHASH = {
     :maxpp => 5,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "The user lashes out to vent its frustration toward the target. If its stats were lowered during the turn, the power of this move is doubled."
 
   },
@@ -10946,7 +10568,6 @@ MOVEHASH = {
     :accuracy => 90,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user attacks by controlling the target's item. The move fails if the target doesn't have an item."
 
   },
@@ -11027,6 +10648,7 @@ MOVEHASH = {
     :maxpp => 5,
     :target => :SingleNonUser,
     :contact => true,
+    :punchmove => true,
     :desc => "The user, having mastered the Water style, strikes the target with a flowing motion three times in a row. This attack always results in a critical hit."
 
   },
@@ -11041,6 +10663,7 @@ MOVEHASH = {
     :maxpp => 5,
     :target => :SingleNonUser,
     :contact => true,
+    :punchmove => true,
     :desc => "The user, having mastered the Dark style, strikes the target with a fierce blow. This attack always results in a critical hit."
 
   },
@@ -11164,7 +10787,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 0,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user builds up its momentum using its Z-Power and crashes into the target at full speed. The power varies, depending on the original move."
   },
@@ -11179,7 +10801,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 0,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user rams an energy orb created by its Z-Power into the target with full force. The power varies, depending on the original move."
   },
@@ -11194,7 +10815,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 0,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user soars up with its Z-Power and plummets toward the target at full speed. The power varies, depending on the original move."
   },
@@ -11208,7 +10828,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 0,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user creates a poisonous swamp using its Z-Power and sinks the target into it at full force. The power varies, depending on the original move."
   },
@@ -11222,7 +10841,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 0,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user burrows deep into the ground and slams into the target with the full force of its Z-Power. The power varies, depending on the original move."
   },
@@ -11237,7 +10855,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 0,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user summons a huge rock mountain using its Z-Power and drops it onto the target with full force. The power varies, depending on the original move."
   },
@@ -11251,7 +10868,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 0,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user binds the target with full force with threads of silk that the user spits using its Z-Power. The power varies, depending on the original move."
   },
@@ -11266,7 +10882,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 0,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "Deep-seated grudges summoned by the user's Z-Power trap the target. The power varies, depending on the original move."
   },
@@ -11280,7 +10895,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 0,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user spins very fast and rams into the target with the full force of its Z-Power. The power varies, depending on the original move."
   },
@@ -11295,7 +10909,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 0,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user breathes a stream of intense fire toward the target with the full force of its Z-Power. The power varies depending on the original move."
   },
@@ -11309,7 +10922,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 0,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user creates a huge whirling current using its Z-Power to swallow the target with full force. The power varies, depending on the original move."
   },
@@ -11323,7 +10935,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 0,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user collects energy from plants using its Z-Power and attacks the target with full force. The power varies, depending on the original move."
   },
@@ -11337,7 +10948,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 0,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user hits the target with a powerful electric current collected by its Z-Power. The power varies, depending on the original move."
   },
@@ -11352,7 +10962,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 0,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user controls the target with its Z-Power and hurts the target with full force. The power varies, depending on the original move."
   },
@@ -11366,7 +10975,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 0,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user dramatically drops the temperature using its Z-Power and freezes the target with full force. The power varies, depending on the original move."
   },
@@ -11381,7 +10989,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 0,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user materializes its aura using its Z-Power and attacks the target with full force. The power varies, depending on the original move."
   },
@@ -11396,7 +11003,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 0,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user gathers dark energy using its Z-Power and sucks the target into it. The power varies, depending on the original move."
   },
@@ -11410,7 +11016,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 0,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user creates a very charming space using its Z-Power and totally toys with the target. The power varies, depending on the original move."
   },
@@ -11426,7 +11031,6 @@ MOVEHASH = {
     :maxpp => 1,
     :effect => 100,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "After obtaining Z-Power, the user, Alolan Raichu, attacks the target with full force. This move leaves the target with paralysis."
   },
@@ -11441,7 +11045,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 1,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user, Decidueye, creates countless arrows using its Z-Power and shoots the target with full force."
   },
@@ -11457,7 +11060,6 @@ MOVEHASH = {
     :maxpp => 1,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user, Incineroar, strengthens its body using its Z-Power and crashes into the target with full force."
   },
@@ -11472,7 +11074,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 1,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user, Primarina, summons a massive amount of water using its Z-Power and attacks the target with full force."
   },
@@ -11501,7 +11102,6 @@ MOVEHASH = {
     :maxpp => 1,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user, Pikachu, surrounds itself with the maximum amount of electricity using its Z-Power and pounces on its target with full force."
   },
@@ -11517,7 +11117,6 @@ MOVEHASH = {
     :maxpp => 1,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :zmove => true,
     :desc => "Z-Power brings out the true capabilities of the user, Snorlax. The Pokémon moves its enormous body energetically and attacks the target with full force."
   },
@@ -11532,7 +11131,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 1,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "After obtaining Z-Power, the user, Mew, attacks the target with full force. The terrain will be charged with psychic energy."
   },
@@ -11546,7 +11144,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 1,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user, the Land Spirit Pokémon, obtains Alola's energy using its Z-Power and attacks the target with full force. This reduces the target's HP greatly."
   },
@@ -11562,7 +11159,6 @@ MOVEHASH = {
     :maxpp => 1,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :zmove => true,
     :desc => "After obtaining Z-Power, the user, Marshadow, punches and kicks the target consecutively with full force."
   },
@@ -11578,7 +11174,6 @@ MOVEHASH = {
     :maxpp => 1,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :zmove => true,
     :desc => "After obtaining Z-Power, the user, Mimikyu, punches the target with full force."
   },
@@ -11594,7 +11189,6 @@ MOVEHASH = {
     :maxpp => 1,
     :target => :AllOpposing,
     :soundmove => true,
-    :kingrock => true,
     :zmove => true,
     :desc => "After obtaining Z-Power, the user, Kommo-o, attacks the opposing Pokémon with full force. This move boosts the user's stats."
   },
@@ -11609,7 +11203,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 1,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "After obtaining Z-Power, the user, Lycanroc, attacks the target with full force. This move negates the effect on the battlefield."
   },
@@ -11625,7 +11218,6 @@ MOVEHASH = {
     :maxpp => 1,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :zmove => true,
     :desc => "After obtaining Z-Power, the user, Solgaleo, attacks the target with full force. This move can ignore the effect of the target's Ability."
   },
@@ -11640,7 +11232,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 1,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "After obtaining Z-Power, the user, Lunala, attacks the target with full force. This move can ignore the effect of the target's Ability."
   },
@@ -11655,7 +11246,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 1,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "This attack inflicts Attack or Sp. Atk damage—whichever stat is higher for the user, Necrozma. This move ignores the target's Ability."
   },
@@ -11672,7 +11262,6 @@ MOVEHASH = {
     :target => :SingleNonUser,
     :contact => true,
     :nonmirror => true,
-    :kingrock => true,
     :desc => "A shadowy aura ram attack that also rebounds on the user."
   },
 
@@ -11699,7 +11288,6 @@ MOVEHASH = {
     :maxpp => 0,
     :target => :SingleNonUser,
     :nonmirror => true,
-    :kingrock => true,
     :highcrit => true,
     :desc => "A wicked blade of air is formed using a shadowy aura."
   },
@@ -11715,7 +11303,6 @@ MOVEHASH = {
     :effect => 10,
     :target => :SingleNonUser,
     :nonmirror => true,
-    :kingrock => true,
     :desc => "A shadowy thunder attack that may paralyze."
   },
 
@@ -11730,7 +11317,6 @@ MOVEHASH = {
     :target => :SingleNonUser,
     :contact => true,
     :nonmirror => true,
-    :kingrock => true,
     :desc => "A shattering ram attack with a shadowy aura."
   },
 
@@ -11745,7 +11331,6 @@ MOVEHASH = {
     :effect => 10,
     :target => :SingleNonUser,
     :nonmirror => true,
-    :kingrock => true,
     :desc => "A shadowy ice attack that may freeze."
   },
 
@@ -11760,7 +11345,6 @@ MOVEHASH = {
     :effect => 10,
     :target => :SingleNonUser,
     :nonmirror => true,
-    :kingrock => true,
     :desc => "A shadowy fireball attack that may inflict a burn."
   },
 
@@ -11788,7 +11372,6 @@ MOVEHASH = {
     :target => :SingleNonUser,
     :contact => true,
     :nonmirror => true,
-    :kingrock => true,
     :desc => "A reckless move that also hurts the user."
   },
 
@@ -11816,7 +11399,6 @@ MOVEHASH = {
     :target => :SingleNonUser,
     :contact => true,
     :nonmirror => true,
-    :kingrock => true,
     :desc => "A Pokémon throws this tackle while casting a shadowy aura."
   },
 
@@ -11950,7 +11532,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "This relentless attack does massive damage to targets affected by status problems."
   },
 
@@ -11964,7 +11545,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Morpeko attacks and raises its Speed with the energy stored in its cheeks. This move's type changes depending on the user's form."
   },
 
@@ -11977,7 +11557,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user fires a beam of light. The move's type changes depending on the Drive the user holds."
   },
 
@@ -11990,7 +11569,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user fires a beam of light. The move's type changes depending on the Drive the user holds."
   },
 
@@ -12003,7 +11581,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user fires a beam of light. The move's type changes depending on the Drive the user holds."
   },
 
@@ -12016,7 +11593,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 5,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user fires a beam of light. The move's type changes depending on the Drive the user holds."
   },
 
@@ -12030,7 +11606,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Cloaked in high energy, the user slams the target. The held Memory defines the move's type."
   },
 
@@ -12044,7 +11619,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Cloaked in high energy, the user slams the target. The held Memory defines the move's type."
   },
 
@@ -12058,7 +11632,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Cloaked in high energy, the user slams the target. The held Memory defines the move's type."
   },
 
@@ -12072,7 +11645,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Cloaked in high energy, the user slams the target. The held Memory defines the move's type."
   },
 
@@ -12086,7 +11658,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Cloaked in high energy, the user slams the target. The held Memory defines the move's type."
   },
 
@@ -12100,7 +11671,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Cloaked in high energy, the user slams the target. The held Memory defines the move's type."
   },
 
@@ -12114,7 +11684,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Cloaked in high energy, the user slams the target. The held Memory defines the move's type."
   },
 
@@ -12128,7 +11697,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Cloaked in high energy, the user slams the target. The held Memory defines the move's type."
   },
 
@@ -12142,7 +11710,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Cloaked in high energy, the user slams the target. The held Memory defines the move's type."
   },
 
@@ -12156,7 +11723,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Cloaked in high energy, the user slams the target. The held Memory defines the move's type."
   },
 
@@ -12170,7 +11736,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Cloaked in high energy, the user slams the target. The held Memory defines the move's type."
   },
 
@@ -12184,7 +11749,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Cloaked in high energy, the user slams the target. The held Memory defines the move's type."
   },
 
@@ -12198,7 +11762,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Cloaked in high energy, the user slams the target. The held Memory defines the move's type."
   },
 
@@ -12212,7 +11775,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Cloaked in high energy, the user slams the target. The held Memory defines the move's type."
   },
 
@@ -12226,7 +11788,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Cloaked in high energy, the user slams the target. The held Memory defines the move's type."
   },
 
@@ -12240,7 +11801,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Cloaked in high energy, the user slams the target. The held Memory defines the move's type."
   },
 
@@ -12254,7 +11814,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Cloaked in high energy, the user slams the target. The held Memory defines the move's type."
   },
 
@@ -12268,7 +11827,6 @@ MOVEHASH = {
     :maxpp => 10,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Cloaked in high energy, the user slams the target. The held Memory defines the move's type."
   },
 
@@ -12281,7 +11839,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user releases countless shots of light. This move's type varies depending on the held Plate."
   },
 
@@ -12294,7 +11851,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user releases countless shots of light. This move's type varies depending on the held Plate."
   },
 
@@ -12307,7 +11863,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user releases countless shots of light. This move's type varies depending on the held Plate."
   },
 
@@ -12320,7 +11875,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user releases countless shots of light. This move's type varies depending on the held Plate."
   },
 
@@ -12333,7 +11887,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user releases countless shots of light. This move's type varies depending on the held Plate."
   },
 
@@ -12346,7 +11899,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user releases countless shots of light. This move's type varies depending on the held Plate."
   },
 
@@ -12359,7 +11911,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user releases countless shots of light. This move's type varies depending on the held Plate."
   },
 
@@ -12372,7 +11923,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user releases countless shots of light. This move's type varies depending on the held Plate."
   },
 
@@ -12385,7 +11935,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user releases countless shots of light. This move's type varies depending on the held Plate."
   },
 
@@ -12398,7 +11947,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user releases countless shots of light. This move's type varies depending on the held Plate."
   },
 
@@ -12411,7 +11959,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user releases countless shots of light. This move's type varies depending on the held Plate."
   },
 
@@ -12424,7 +11971,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user releases countless shots of light. This move's type varies depending on the held Plate."
   },
 
@@ -12437,7 +11983,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user releases countless shots of light. This move's type varies depending on the held Plate."
   },
 
@@ -12450,7 +11995,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user releases countless shots of light. This move's type varies depending on the held Plate."
   },
 
@@ -12463,7 +12007,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user releases countless shots of light. This move's type varies depending on the held Plate."
   },
 
@@ -12476,7 +12019,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user releases countless shots of light. This move's type varies depending on the held Plate."
   },
 
@@ -12489,7 +12031,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user releases countless shots of light. This move's type varies depending on the held Plate."
   },
 
@@ -12502,7 +12043,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "The user releases countless shots of light. This move's type varies depending on the held Plate."
   },
 
@@ -12515,7 +12055,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "An attack move that varies in power and type depending on the weather."
   },
 
@@ -12528,7 +12067,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "An attack move that varies in power and type depending on the weather."
   },
 
@@ -12541,7 +12079,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "An attack move that varies in power and type depending on the weather."
   },
 
@@ -12554,7 +12091,6 @@ MOVEHASH = {
     :accuracy => 100,
     :maxpp => 10,
     :target => :SingleNonUser,
-    :kingrock => true,
     :desc => "An attack move that varies in power and type depending on the weather."
   },
 
@@ -12570,7 +12106,6 @@ MOVEHASH = {
     :effect => 20,
     :target => :SingleNonUser,
     :contact => true,
-    :kingrock => true,
     :desc => "Spicy move"
   },
 
@@ -12583,7 +12118,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 0,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user, the Land Spirit Pokémon, obtains Alola's energy using its Z-Power and attacks the target with full force. This reduces the target's HP greatly."
   },
@@ -12597,7 +12131,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 0,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user, the Land Spirit Pokémon, obtains Alola's energy using its Z-Power and attacks the target with full force. This reduces the target's HP greatly."
   },
@@ -12611,7 +12144,6 @@ MOVEHASH = {
     :accuracy => 0,
     :maxpp => 0,
     :target => :SingleNonUser,
-    :kingrock => true,
     :zmove => true,
     :desc => "The user, the Land Spirit Pokémon, obtains Alola's energy using its Z-Power and attacks the target with full force. This reduces the target's HP greatly."
   },

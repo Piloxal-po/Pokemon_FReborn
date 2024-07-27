@@ -7110,7 +7110,7 @@ METAHASH = {
 
   # New World Asylum
   898 => {
-    :BattleBack => "Glitch",
+    :BattleBack => "Glitch2",
     :WildBattleBGM => "Battle- Wild4.ogg",
     :TrainerBattleBGM => "Battle- Postgame.ogg",
   },

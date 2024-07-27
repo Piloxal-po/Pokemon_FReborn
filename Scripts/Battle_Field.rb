@@ -337,7 +337,7 @@ class PokeBattle_Battle
     quarkdriveCheck
     seedCheck
     noWeather
-    persistentWeather # recheck if no current Weather and previos field disallowed the persistent weather effect
+    persistentWeather # recheck if no current Weather and previous field disallowed the persistent weather effect
   end
 
   def endTempField
@@ -347,6 +347,7 @@ class PokeBattle_Battle
     while @field.layer.length > @field.overlay
       oldfield = @field.layer.pop
     end
+    @field.layer[-1] = :FLOWERGARDEN1 if Reborn && [:FLOWERGARDEN2, :FLOWERGARDEN3, :FLOWERGARDEN4, :FLOWERGARDEN5].include?(@field.layer[-1])
     @field.overlay = nil
 
     @field.effect = @field.layer[-1] || :INDOOR
@@ -383,9 +384,9 @@ class PokeBattle_Battle
     return if @field.pledge == moveid
 
     pledgepair = [moveid, @field.pledge]
-    setField(:SWAMP, fielduration) if !(pledgepair.include?(:FIREPLEDGE))
-    setField(:RAINBOW, fielduration) if !(pledgepair.include?(:GRASSPLEDGE))
-    setField(:BURNING, fielduration) if !(pledgepair.include?(:WATERPLEDGE))
+    setField(:SWAMP, fielduration) if !pledgepair.include?(:FIREPLEDGE)
+    setField(:RAINBOW, fielduration) if !pledgepair.include?(:GRASSPLEDGE)
+    setField(:BURNING, fielduration) if !pledgepair.include?(:WATERPLEDGE)
     @field.pledge = nil
   end
 
@@ -619,9 +620,7 @@ class PokeBattle_Battle
     for i in 0...4
       canthit = PBStuff::TWOTURNMOVE.include?(@battle.battlers[i].effects[:TwoTurnAttack])
       canthit = true if @battle.battlers[i].effects[:SkyDrop]
-      if !canthit && @battle.battlers[i].pbCanReduceStatStage?(PBStats::ACCURACY)
-        @battle.battlers[i].pbReduceStat(PBStats::ACCURACY, 1, abilitymessage: false)
-      end
+      @battle.battlers[i].pbReduceStat(PBStats::ACCURACY, 1, abilitymessage: false) if !canthit
     end
   end
 
@@ -637,8 +636,8 @@ class PokeBattle_Battle
     if @battle.ProgressiveFieldCheck(PBFields::FLOWERGARDEN, 1, 4)
       stagejump = 1
       stagejump = 2 if user.ability == :RIPEN
-      newindex = (PBFields::FLOWERGARDEN.index(@battle.FE)) + stagejump
-      newindex = 5 if newindex > 5
+      newindex = PBFields::FLOWERGARDEN.index(@battle.FE) + stagejump
+      newindex = 4 if newindex > 4
       newfield = PBFields::FLOWERGARDEN[newindex]
     elsif @battle.ProgressiveFieldCheck(PBFields::CONCERT, 1, 3)
       newindex = (PBFields::CONCERT.index(@battle.FE)) + 1

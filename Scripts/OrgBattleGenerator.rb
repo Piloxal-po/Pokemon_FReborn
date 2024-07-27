@@ -16,39 +16,39 @@ def addMove(moves, move, base)
   if data.function == 0 && data.basedamage <= 40
     count = base
   end
-  if (move == :BUBBLE) ||
-     (move == :BUBBLEBEAM)
+  if move == :BUBBLE ||
+     move == :BUBBLEBEAM
     count = 0
     return
   end
   if data.basedamage <= 30 ||
-     (move == :GROWL) ||
-     (move == :TAILWHIP) ||
-     (move == :LEER)
+     move == :GROWL ||
+     move == :TAILWHIP ||
+     move == :LEER
     count = base
   end
   if data.basedamage >= 60 ||
-     (move == :REFLECT) ||
-     (move == :LIGHTSCREEN) ||
-     (move == :SAFEGUARD) ||
-     (move == :SUBSTITUTE) ||
-     (move == :FAKEOUT)
+     move == :REFLECT ||
+     move == :LIGHTSCREEN ||
+     move == :SAFEGUARD ||
+     move == :SUBSTITUTE ||
+     move == :FAKEOUT
     count = base + 2
   end
   if data.type == :NORMAL
     count = base + 8
   end
-  if (move == :PROTECT) ||
-     (move == :DETECT) ||
-     (move == :TOXIC) ||
-     (move == :AERIALACE) ||
-     (move == :WILLOWISP) ||
-     (move == :SPORE) ||
-     (move == :THUNDERWAVE) ||
-     (move == :HYPNOSIS) ||
-     (move == :CONFUSERAY) ||
-     (move == :ENDURE) ||
-     (move == :SWORDSDANCE)
+  if move == :PROTECT ||
+     move == :DETECT ||
+     move == :TOXIC ||
+     move == :AERIALACE ||
+     move == :WILLOWISP ||
+     move == :SPORE ||
+     move == :THUNDERWAVE ||
+     move == :HYPNOSIS ||
+     move == :CONFUSERAY ||
+     move == :ENDURE ||
+     move == :SWORDSDANCE
     count = base + 3
   end
   if !moves.include?(move)
@@ -742,12 +742,11 @@ def pbDecideWinnerEffectiveness(move, otype1, otype2, ability, scores)
   return 0 if data.basedamage == 0
 
   atype = data.type
-  typemod = 4
   if (ability == :LEVITATE) && data.type == :GROUND
     typemod = 4
   else
     mod1 = PBTypes.oneTypeEff(atype, otype1)
-    mod2 = (otype1 == otype2) ? 2 : oneTypeEff(atype, otype2)
+    mod2 = otype1 == otype2 ? 2 : oneTypeEff(atype, otype2)
     if ((ability == :WONDERGUARD))
       mod1 = 2 if mod1 != 4
       mod2 = 2 if mod2 != 4

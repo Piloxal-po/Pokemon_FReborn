@@ -16,7 +16,7 @@ def compileAll
   compileTownMap unless Desolation
   pbCompileTownMap if Desolation
   compileBTData if Reborn
-  $cache = nil
+  compileAnimations
   $cache = Cache_Game.new
 end
 
@@ -26,7 +26,7 @@ def compileMons
     eval(f.read)
   }
   cprint "done.\n"
-  spacetoclear = 0
+  spacetoclear = 10
   mons = MonDataHash.new()
   MONHASH.each { |key, value|
     spacetoclear = key.to_s.length
@@ -75,7 +75,7 @@ def compileMoves
   }
   cprint "done\n"
   moves = {}
-  spacetoclear = 0
+  spacetoclear = 10
   MOVEHASH.each { |key, value|
     spacetoclear = key.to_s.length
     cprint "Compiling data for #{key}#{" " * spacetoclear}\r"
@@ -93,7 +93,7 @@ def compileItems
   }
   cprint "done\n"
   items = {}
-  spacetoclear = 0
+  spacetoclear = 10
   ITEMHASH.each { |key, value|
     spacetoclear = key.to_s.length
     cprint "Compiling data for #{key}#{" " * spacetoclear}\r"
@@ -112,7 +112,7 @@ def compileAbilities
   }
   cprint "done\n"
   abilities = {}
-  spacetoclear = 0
+  spacetoclear = 10
   ABILHASH.each { |key, value|
     spacetoclear = key.to_s.length
     cprint "Compiling data for #{key}#{" " * spacetoclear}\r"
@@ -138,7 +138,7 @@ def compileMapData
   }
   cprint "done\n"
   mapdata = []
-  spacetoclear = 0
+  spacetoclear = 10
   for i in 1...1000 # rmxp's classic map limit
     encdata = ENCHASH[i]
     metadata = METAHASH[i]
@@ -174,7 +174,7 @@ def compileTownMap
   }
   cprint "done\n"
   townmap = {}
-  spacetoclear = 0
+  spacetoclear = 10
   for i in 0...TOWNMAP.length
     spacetoclear = TOWNMAP[i][:name].to_s.length
     cprint "Compiling data for #{TOWNMAP[i][:name]}#{" " * spacetoclear}\r"
@@ -205,7 +205,7 @@ def compileMetadata
     eval(f.read)
   }
   cprint "done\n"
-  spacetoclear = 0
+  spacetoclear = 10
   players = []
   METAHASH.each { |key, value|
     next if key.is_a?(Integer)
@@ -236,7 +236,7 @@ def compileTypes
   }
   cprint "done\n"
   types = {}
-  spacetoclear = 0
+  spacetoclear = 10
   TYPEHASH.each { |key, value|
     spacetoclear = key.to_s.length
     cprint "Compiling data for #{key}#{" " * spacetoclear}\r"
@@ -254,7 +254,7 @@ def compileTrainerTypes
   }
   cprint "done\n"
   ttypes = {}
-  spacetoclear = 0
+  spacetoclear = 10
   TTYPEHASH.each { |key, value|
     spacetoclear = key.to_s.length
     cprint "Compiling data for #{key}#{" " * spacetoclear}\r"
@@ -273,7 +273,7 @@ def compileTrainers
   cprint "done\n"
   # it's really more like "assembling" them but w/e
   fulltrainerdata = {}
-  spacetoclear = 0
+  spacetoclear = 10
   # iterate through, sort teams into hashes
   for trainer in TEAMARRAY
     next if trainer.nil?
@@ -310,7 +310,7 @@ def compileBosses
   cprint "Reading mapconnections.rb..."
   File.open("Scripts/" + GAMEFOLDER + "/BossInfo.rb") { |f| eval(f.read) }
   cprint "done\n"
-  spacetoclear = 0
+  spacetoclear = 10
   BOSSINFOHASH.each { |boss, data|
     spacetoclear = boss.to_s.length
     cprint "Compiling data for #{boss}#{" " * spacetoclear}\r"
@@ -328,7 +328,7 @@ def compileConnections
   }
   cprint "done\n"
   connections = {}
-  spacetoclear = 0
+  spacetoclear = 10
   MAPCONNECTIONSHASH.each { |key, value|
     spacetoclear = key.to_s.length
     cprint "Compiling data for #{key}#{" " * spacetoclear}\r"
@@ -348,7 +348,7 @@ def compileFields
 
   FIELDEFFECTS[nil] = FIELDEFFECTS[:INDOOR].clone
   FIELDEFFECTS[0] = FIELDEFFECTS[:INDOOR].clone
-  spacetoclear = 0
+  spacetoclear = 10
 
   FIELDEFFECTS.each { |key, data|
     spacetoclear = key.to_s.length if key != nil && key != 0
@@ -505,7 +505,7 @@ def compileNatures
   }
   cprint "done\n"
   natures = {}
-  spacetoclear = 0
+  spacetoclear = 10
   NATUREHASH.each { |key, value|
     spacetoclear = key.to_s.length
     cprint "Compiling data for #{key}#{" " * spacetoclear}\r"
@@ -517,15 +517,11 @@ def compileNatures
 end
 
 def compileAnimations
-  cprint "Reading PkmnAnimations.rxdata..."
-  begin
-    pbanims = load_data("Data/PkmnAnimations.rxdata")
-  rescue
-    pbanims = PBAnimations.new
-  end
+  cprint "Loading Animations/..."
+  pbanims = loadAnimations(all: true)
   cprint "done\n"
   move2anim = [{}, {}]
-  spacetoclear = 0
+  spacetoclear = 10
   for i in 0...pbanims.length
     next if !pbanims[i]
 
@@ -543,20 +539,25 @@ def compileAnimations
       end
     end
   end
-  cprint "Compiled data for PkmnAnimations.rxdata and move2anim.dat#{" " * spacetoclear}\n"
+  cprint "Compiled data for battleanims.dat and move2anim.dat#{" " * spacetoclear}\n"
   save_data(move2anim, "Data/move2anim.dat")
   cprint "Saved move2anim.dat\n\n"
-  save_data(pbanims, "Data/PkmnAnimations.rxdata")
-  cprint "Saved PkmnAnimations.rxdata\n\n"
-  animExpander
+  save_data(pbanims, "Data/battleanims.dat")
+  cprint "Saved battleanims.dat\n\n"
+  animExpander($cache.animations)
 end
 
-def animExpander
-  for i in 0...$cache.animations.length
-    for j in 1...$cache.animations[i].length
-      for k in 0...$cache.animations[i][j].length
-        if $cache.animations[i][j][k] == 0
-          $cache.animations[i][j][k] = $cache.animations[i][j - 1][k].clone
+def animExpander(animations)
+  # animations
+  for i in 0...animations.length
+    # frames
+    for j in 1...animations[i].length
+      # cels
+      for k in 0...animations[i][j].length
+        # if a cel is 0 (normally it's an array)
+        if animations[i][j][k] == 0
+          # replace it with the same cel of the previous frame
+          animations[i][j][k] = animations[i][j - 1][k].clone
         end
       end
     end
@@ -577,7 +578,7 @@ def compileBTMons
   }
   cprint "done\n"
   btmons = {}
-  spacetoclear = 0
+  spacetoclear = 10
   BTMONS.each { |key, value|
     spacetoclear = key.to_s.length
     cprint "Compiling data for #{key}#{" " * spacetoclear}\r"
@@ -600,7 +601,7 @@ def compileBTTrainers
   }
   cprint "done\n"
   bttrainers = []
-  spacetoclear = 0
+  spacetoclear = 10
   BTTRAINERS.each { |data|
     # spacetoclear = data[:tclass].to_s.length + data[:name].length + 1
     cprint "Compiling data for #{data[:tclass]} #{data[:name]}#{" " * 10}\r"

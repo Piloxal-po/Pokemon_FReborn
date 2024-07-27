@@ -5,7 +5,7 @@ SAVEFOLDER = "Pokemon Reborn"
 Reborn = true
 Desolation = false
 Rejuv = false
-Gen7 = true
+Gen = 7
 
 # Or 1161854567332450434 for testing
 DiscordAppID = 929991753027711017
@@ -106,7 +106,7 @@ STRIKERMOVES = [
   :BULLDOZE, :POUND, :ICICLECRASH, :BODYSLAM, :STOMP, :SLAM, :GIGAIMPACT, :SMACKDOWN, :IRONTAIL,
   :METEORMASH, :DRAGONRUSH, :CRABHAMMER, :BOUNCE, :HEAVYSLAM, :MAGNITUDE, :EARTHQUAKE,
   :STOMPINGTANTRUM, :BRUTALSWING, :HIGHHORSEPOWER, :ICEHAMMER, :DRAGONHAMMER, :BLAZEKICK,
-  :GRAVAPPLE, :DOUBLEIRONBASH, :CONTINENTALCRUSH
+  :CONTINENTALCRUSH
 ]
 TOTALFIELDS = 37
 
@@ -217,6 +217,11 @@ Switches = {
   No_Battles_Pass: 2232,
   Disabled_Randomizer: 2241,
   Max_Trainer_IVs_Password: 2244,
+  AI_Play: 2246,
+  Control_Partners: 2247,
+  Forced_AI_Play: 2249,
+  No_Online_Randbats: 2314,
+  No_Online_Trades: 2315,
 }
 Variables = {
   Field_Effect_End_Of_Battle: 7,
@@ -435,7 +440,7 @@ PULSEDexPictures = [
    "An experiment testing the effects of PULSE systems on unevolved Pokémon. Its function is seamless transportation. Its body seems to reject all machine input, at the apparent cost of its psyche."],
   [595, "navpulse08", "8. Hypno", :HYPNO, 1,
    "Digitally lobotomized for full efficiency. Its function is perfect control. It projects its unconsciousness onto target locations and can directly manipulate up to two individuals at a time."],
-  [596, "navpulse09", "9. Mr. Mime", :MRMIME, Gen7 ? 1 : 2,
+  [596, "navpulse09", "9. Mr. Mime", :MRMIME, Gen <= 7 ? 1 : 2,
    "Modified by repeated amputations and augmentations. Its function is impregnable defense. Its psychic power is amplified by the constant focus it requires to maintain control over its unattached limbs."],
   [597, "navpulse10", "10. Clawitzer", :CLAWITZER, 1,
    "Mechanically sculpted via scripted process. Its function is endless offensive potential. Many bodily features such as the brain have been rendered vestigial to allow manual usage of the Pokemon similar to traditional artillery."],
@@ -505,4 +510,5 @@ KNOWN_TRAINERS = {
   "Irving" => 2899,
   "Officer Dane" => 33370,
   "Laura" => 35785,
+  "Amaria" => 23120,
 }

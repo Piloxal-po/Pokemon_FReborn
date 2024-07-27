@@ -22,7 +22,7 @@ def duplicateMovesetChecker(pokemon)
       for i in 0...pokemon.moves.length
         found = false
         for j in 0...moveset[:moves].length
-          if pokemon.moves[i].move == moveset[:moves][j].move
+          if pokemon.moves[i].move == moveset[:moves][j][:move]
             found = true
           end
         end
@@ -55,7 +55,7 @@ def updateMovesetName(pokemon)
   for moveset in $PokemonGlobal.storedMovesets
     if moveset[:id] == pokemon.species
       if moveset[:name] == name
-        moveset[:moves] = pokemon.moves.clone
+        moveset[:moves] = pokemon.moves.map { |move| { move: move.move, ppup: move.ppup } }
         return true
       end
     end
@@ -66,27 +66,32 @@ end
 def movesetRecorder(pokemon)
   name = getSetName
   $PokemonGlobal.storedMovesets = [] if !$PokemonGlobal.storedMovesets
-  $PokemonGlobal.storedMovesets.append({ name: name, moves: pokemon.moves.clone, id: pokemon.species })
+  moveset = { name: name, moves: pokemon.moves.map { |move| { move: move.move, ppup: move.ppup } }, id: pokemon.species }
+  $PokemonGlobal.storedMovesets.append(moveset)
   return true
 end
 
-def getMovesets(mon_id)
+def getMovesets(mon_id, form)
   $PokemonGlobal.storedMovesets = [] if !$PokemonGlobal.storedMovesets
   mon_sets = []
   for moveset in $PokemonGlobal.storedMovesets
-    mon_sets.append(moveset) if moveset[:id] == mon_id
+    next unless moveset[:id] == mon_id
+
+    pokemon = PokeBattle_Pokemon.new(mon_id, 1, $Trainer, false, form)
+    compatible = moveset[:moves].all? { |move| pokemon.SpeciesCompatible?(move[:move]) }
+    mon_sets.append(moveset) if compatible
   end
   return mon_sets
 end
 
-def hasMovesets(mon_id)
-  return !getMovesets(mon_id).empty?
+def hasMovesets(mon_id, form)
+  return !getMovesets(mon_id, form).empty?
 end
 
 def deleteSet(pokemon, setname)
   $PokemonGlobal.storedMovesets = [] if !$PokemonGlobal.storedMovesets
   $PokemonGlobal.storedMovesets.delete_if { |moveset| moveset[:id] == pokemon.species && moveset[:name] == setname }
-  if !hasMovesets(pokemon.species)
+  if !hasMovesets(pokemon.species, pokemon.form)
     Kernel.pbMessage(_INTL("{1} has been deleted.", setname))
     return true
   else
@@ -99,7 +104,11 @@ def restoreSet(pokemon, setname)
   for moveset in $PokemonGlobal.storedMovesets
     if moveset[:id] == pokemon.species
       if moveset[:name] == setname
-        pokemon.moves = moveset[:moves].clone
+        pokemon.moves.clear()
+        moveset[:moves].each_with_index { |move, i|
+          pokemon.moves[i] = PBMove.new(move[:move])
+          pokemon.moves[i].ppup = move[:ppup]
+        }
         Kernel.pbMessage(_INTL("{1} has been restored.", setname))
         return true
       end
@@ -178,7 +187,7 @@ class MoveRestorerScene
 
   def pbStartScene(pokemon)
     @pokemon = pokemon
-    @movesets = getMovesets(pokemon.species)
+    @movesets = getMovesets(pokemon.species, pokemon.form)
     movesetCommands = []
     @movesets.each { |i| movesetCommands.push(i[:name]) }
     # Create sprite hash
@@ -214,7 +223,7 @@ class MoveRestorerScene
   end
 
   def pbUpdateList(pokemon)
-    @movesets = getMovesets(pokemon.species)
+    @movesets = getMovesets(pokemon.species, pokemon.form)
     movesetCommands = []
     @movesets.each { |i| movesetCommands.push(i[:name]) }
     @sprites["commands"] = Window_CommandPokemon.new(movesetCommands, 32)
@@ -275,11 +284,13 @@ class MoveRestorerScene
     selmoveset = @movesets[@sprites["commands"].index][:moves]
     yPos = 82
     for move in selmoveset
-      imagepos.push([sprintf("Graphics/Icons/type%s", move.type), 12, yPos + 2, 0, 0, 64, 28])
-      textpos.push([getMoveName(move.move), 80, yPos, 0, Color.new(248, 248, 248), Color.new(0, 0, 0)])
-      if move.totalpp > 0
+      m = PBMove.new(move[:move])
+      m.ppup = move[:ppup]
+      imagepos.push([sprintf("Graphics/Icons/type%s", m.type), 12, yPos + 2, 0, 0, 64, 28])
+      textpos.push([getMoveName(m.move), 80, yPos, 0, Color.new(248, 248, 248), Color.new(0, 0, 0)])
+      if m.totalpp > 0
         textpos.push([_INTL("PP"), 112, yPos + 32, 0, Color.new(64, 64, 64), Color.new(176, 176, 176)])
-        textpos.push([_ISPRINTF("{1:d}/{2:d}", move.totalpp, move.totalpp), 230, yPos + 32, 1, Color.new(64, 64, 64), Color.new(176, 176, 176)])
+        textpos.push([_ISPRINTF("{1:d}/{2:d}", m.totalpp, m.totalpp), 230, yPos + 32, 1, Color.new(64, 64, 64), Color.new(176, 176, 176)])
       end
       yPos += 64
     end

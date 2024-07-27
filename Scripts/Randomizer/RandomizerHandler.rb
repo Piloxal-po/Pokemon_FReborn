@@ -1101,7 +1101,7 @@ class RandomizerHandler
     @@itemPool = @@itemCache.keys
 
     @@itemCache.each { |item, data|
-      @@itemPool.delete(item) if  data.checkFlag?(:questitem) || (data.checkFlag?(:keyitem) && !data.checkFlag?(:legendary))
+      @@itemPool.delete(item) if data.checkFlag?(:questitem) || (data.checkFlag?(:keyitem) && !data.checkFlag?(:legendary))
       @@storyPool.store(item, data) if data.checkFlag?(:questitem)
       @@tmPool.store(item, data) if data.checkFlag?(:tm) && !@@storyPool.keys.include?(item)
     }
@@ -1440,7 +1440,7 @@ class RandomizerHandler
       :TIRTOUGA => nil, :ARCHEN => nil,
       :TYRUNT => nil, :AMAURA => nil,
     }
-    @@staticData += {:DRACOZOLT => nil, :DRACOVISH => nil, :ARCTOZOLT => nil, :ARCTOVISH => nil} if !Gen7
+    @@staticData += {:DRACOZOLT => nil, :DRACOVISH => nil, :ARCTOZOLT => nil, :ARCTOVISH => nil} if Gen > 7
     fossilMap = 0
     fossilMap = 242 if Reborn
     fossilMap = 0 if Rejuv
@@ -1453,7 +1453,7 @@ class RandomizerHandler
       :TIRTOUGA, :ARCHEN,
       :TYRUNT, :AMAURA,
     ])
-    @@staticMapData[fossilMap] += [:DRACOZOLT, :DRACOVISH, :ARCTOZOLT, :ARCTOVISH] if !Gen7
+    @@staticMapData[fossilMap] += [:DRACOZOLT, :DRACOVISH, :ARCTOZOLT, :ARCTOVISH] if Gen > 7
     gatherStaticPokemon
     @@encounterPool = @@pokemonPool.dup
     @@encounterPool.delete_if { |mon|
@@ -1769,6 +1769,33 @@ class RandomizerHandler
       tries += 1
     end
     return canPick.sample(random: rrandom)
+  end
+#
+
+# Trainer Randomization
+  def self.initTrainers
+    @@rivals = []
+    # Array of arrays of trainer classes
+    if Reborn
+      # cain, victoria, fern
+      @@rivals = [
+        [:Cain, :UMBCAIN],
+        [:Victoria, :Victoria2],
+        [:Hotshot, :FERN2, :UMBFERN]
+      ]
+    end
+    if Rejuv
+      # melia, ren, nim, aelita
+    end
+    if Desolation
+      # scarlett, hardy, shiv
+      # shiv used an unevolved mon
+    end
+    @@trainers = load_data("Data/trainers.dat")
+  end
+
+  def self.randomizeTrainers
+
   end
 #
 end

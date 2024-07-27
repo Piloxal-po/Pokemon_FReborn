@@ -323,6 +323,8 @@ class Updater
         if $joiplay
           Kernel.pbMessage(_INTL("Applying tilesets...\\wtnp[10]"))
           self.applyPatch('tilesets.zip', '.')
+          begin; File.delete('.path_cache'); rescue; end
+          begin; File.delete('.file_list'); rescue; end
         end
 
         Kernel.pbMessage(_INTL("Your game has been updated!\nExiting to apply the changes."))

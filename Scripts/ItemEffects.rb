@@ -514,7 +514,7 @@ ItemHandlers::UseOnPokemon.add(:SITRUSBERRY, proc { |item, pokemon, scene|
 })
 
 ItemHandlers::UseOnPokemon.add(:FIGYBERRY, proc { |item, pokemon, scene|
-  next pbHPItem(pokemon, (pokemon.totalhp / (Gen7 ? 2.0 : 3.0)).floor, scene)
+  next pbHPItem(pokemon, (pokemon.totalhp / (Gen <= 7 ? 2.0 : 3.0)).floor, scene)
 })
 
 ItemHandlers::UseOnPokemon.copy(:FIGYBERRY, :WIKIBERRY, :MAGOBERRY, :AGUAVBERRY, :IAPAPABERRY)
@@ -1036,7 +1036,7 @@ ItemHandlers::UseOnPokemon.add(:PPALL, proc { |item, pokemon, scene|
 
       pokemon.moves[i].ppup = 3
     end
-    scene.pbDisplay(_INTL("The PP of {1}'s moves was maximixed.", pokemon.name))
+    scene.pbDisplay(_INTL("The PP of {1}'s moves was maximized.", pokemon.name))
     next true
   end
 })
@@ -2662,7 +2662,7 @@ ItemHandlers::UseInField.add(:OLDROD, proc { |item|
   terrain = Kernel.pbFacingTerrainTag
   notCliff = $game_map.passable?($game_player.x, $game_player.y, $game_player.direction)
   if (!pbIsWaterTag?(terrain) && !pbIsGrimeTag?(terrain)) ||
-    (!notCliff && !$PokemonGlobal.surfing) # lavasurfing if needed
+     (!notCliff && !$PokemonGlobal.surfing) # lavasurfing if needed
     Kernel.pbMessage(_INTL("Can't use that here."))
     next
   end
@@ -2676,7 +2676,7 @@ ItemHandlers::UseInField.add(:GOODROD, proc { |item|
   terrain = Kernel.pbFacingTerrainTag
   notCliff = $game_map.passable?($game_player.x, $game_player.y, $game_player.direction)
   if (!pbIsWaterTag?(terrain) && !pbIsGrimeTag?(terrain)) ||
-      (!notCliff && !$PokemonGlobal.surfing) # lavasurfing if needed
+     (!notCliff && !$PokemonGlobal.surfing) # lavasurfing if needed
     Kernel.pbMessage(_INTL("Can't use that here."))
     next
   end
@@ -2690,7 +2690,7 @@ ItemHandlers::UseInField.add(:SUPERROD, proc { |item|
   terrain = Kernel.pbFacingTerrainTag
   notCliff = $game_map.passable?($game_player.x, $game_player.y, $game_player.direction)
   if (!pbIsWaterTag?(terrain) && !pbIsGrimeTag?(terrain)) ||
-  (!notCliff && !$PokemonGlobal.surfing) # lavasurfing if needed
+     (!notCliff && !$PokemonGlobal.surfing) # lavasurfing if needed
     Kernel.pbMessage(_INTL("Can't use that here."))
     next
   end
@@ -3039,7 +3039,7 @@ ItemHandlers::BattleUseOnPokemon.add(:SITRUSBERRY, proc { |item, pokemon, battle
 })
 
 ItemHandlers::BattleUseOnPokemon.add(:FIGYBERRY, proc { |item, pokemon, battler, scene|
-  next pbBattleHPItem(pokemon, battler, (pokemon.totalhp / (Gen7 ? 2.0 : 3.0)).floor, scene)
+  next pbBattleHPItem(pokemon, battler, (pokemon.totalhp / (Gen <= 7 ? 2.0 : 3.0)).floor, scene)
 })
 
 ItemHandlers::BattleUseOnPokemon.copy(:FIGYBERRY, :WIKIBERRY, :MAGOBERRY, :AGUAVBERRY, :IAPAPABERRY)
@@ -3376,8 +3376,7 @@ ItemHandlers::BattleUseOnBattler.add(:XATTACK, lambda { |item, battler, scene|
   playername = battler.battle.pbPlayer.name
   itemname = getItemName(item)
   scene.pbDisplay(_INTL("{1} used the {2}.", playername, itemname))
-  if battler.pbCanIncreaseStatStage?(PBStats::ATTACK, false)
-    battler.pbIncreaseStat(PBStats::ATTACK, 2, statmessage: true)
+  if battler.pbIncreaseStat(PBStats::ATTACK, 2, statmessage: true)
     return true
   else
     scene.pbDisplay(_INTL("But it had no effect!"))
@@ -3390,8 +3389,7 @@ ItemHandlers::BattleUseOnBattler.add(:XATTACK2, lambda { |item, battler, scene|
   playername = battler.battle.pbPlayer.name
   itemname = getItemName(item)
   scene.pbDisplay(_INTL("{1} used the {2}.", playername, itemname))
-  if battler.pbCanIncreaseStatStage?(PBStats::ATTACK, false)
-    battler.pbIncreaseStat(PBStats::ATTACK, 2, statmessage: true)
+  if battler.pbIncreaseStat(PBStats::ATTACK, 2, statmessage: true)
     return true
   else
     scene.pbDisplay(_INTL("But it had no effect!"))
@@ -3403,8 +3401,7 @@ ItemHandlers::BattleUseOnBattler.add(:XATTACK3, lambda { |item, battler, scene|
   playername = battler.battle.pbPlayer.name
   itemname = getItemName(item)
   scene.pbDisplay(_INTL("{1} used the {2}.", playername, itemname))
-  if battler.pbCanIncreaseStatStage?(PBStats::ATTACK, false)
-    battler.pbIncreaseStat(PBStats::ATTACK, 3, statmessage: true)
+  if battler.pbIncreaseStat(PBStats::ATTACK, 3, statmessage: true)
     return true
   else
     scene.pbDisplay(_INTL("But it had no effect!"))
@@ -3416,8 +3413,7 @@ ItemHandlers::BattleUseOnBattler.add(:XATTACK6, lambda { |item, battler, scene|
   playername = battler.battle.pbPlayer.name
   itemname = getItemName(item)
   scene.pbDisplay(_INTL("{1} used the {2}.", playername, itemname))
-  if battler.pbCanIncreaseStatStage?(PBStats::ATTACK, false)
-    battler.pbIncreaseStat(PBStats::ATTACK, 6, statmessage: true)
+  if battler.pbIncreaseStat(PBStats::ATTACK, 6, statmessage: true)
     return true
   else
     scene.pbDisplay(_INTL("But it had no effect!"))
@@ -3429,8 +3425,7 @@ ItemHandlers::BattleUseOnBattler.add(:XDEFEND, lambda { |item, battler, scene|
   playername = battler.battle.pbPlayer.name
   itemname = getItemName(item)
   scene.pbDisplay(_INTL("{1} used the {2}.", playername, itemname))
-  if battler.pbCanIncreaseStatStage?(PBStats::DEFENSE, false)
-    battler.pbIncreaseStat(PBStats::DEFENSE, 2, statmessage: true)
+  if battler.pbIncreaseStat(PBStats::DEFENSE, 2, statmessage: true)
     return true
   else
     scene.pbDisplay(_INTL("But it had no effect!"))
@@ -3442,8 +3437,7 @@ ItemHandlers::BattleUseOnBattler.add(:XDEFEND2, lambda { |item, battler, scene|
   playername = battler.battle.pbPlayer.name
   itemname = getItemName(item)
   scene.pbDisplay(_INTL("{1} used the {2}.", playername, itemname))
-  if battler.pbCanIncreaseStatStage?(PBStats::DEFENSE, false)
-    battler.pbIncreaseStat(PBStats::DEFENSE, 2, statmessage: true)
+  if battler.pbIncreaseStat(PBStats::DEFENSE, 2, statmessage: true)
     return true
   else
     scene.pbDisplay(_INTL("But it had no effect!"))
@@ -3455,8 +3449,7 @@ ItemHandlers::BattleUseOnBattler.add(:XDEFEND3, lambda { |item, battler, scene|
   playername = battler.battle.pbPlayer.name
   itemname = getItemName(item)
   scene.pbDisplay(_INTL("{1} used the {2}.", playername, itemname))
-  if battler.pbCanIncreaseStatStage?(PBStats::DEFENSE, false)
-    battler.pbIncreaseStat(PBStats::DEFENSE, 3, statmessage: true)
+  if battler.pbIncreaseStat(PBStats::DEFENSE, 3, statmessage: true)
     return true
   else
     scene.pbDisplay(_INTL("But it had no effect!"))
@@ -3468,8 +3461,7 @@ ItemHandlers::BattleUseOnBattler.add(:XDEFEND6, lambda { |item, battler, scene|
   playername = battler.battle.pbPlayer.name
   itemname = getItemName(item)
   scene.pbDisplay(_INTL("{1} used the {2}.", playername, itemname))
-  if battler.pbCanIncreaseStatStage?(PBStats::DEFENSE, false)
-    battler.pbIncreaseStat(PBStats::DEFENSE, 6, statmessage: true)
+  if battler.pbIncreaseStat(PBStats::DEFENSE, 6, statmessage: true)
     return true
   else
     scene.pbDisplay(_INTL("But it had no effect!"))
@@ -3481,8 +3473,7 @@ ItemHandlers::BattleUseOnBattler.add(:XSPECIAL, lambda { |item, battler, scene|
   playername = battler.battle.pbPlayer.name
   itemname = getItemName(item)
   scene.pbDisplay(_INTL("{1} used the {2}.", playername, itemname))
-  if battler.pbCanIncreaseStatStage?(PBStats::SPATK, false)
-    battler.pbIncreaseStat(PBStats::SPATK, 2, statmessage: true)
+  if battler.pbIncreaseStat(PBStats::SPATK, 2, statmessage: true)
     return true
   else
     scene.pbDisplay(_INTL("But it had no effect!"))
@@ -3494,8 +3485,7 @@ ItemHandlers::BattleUseOnBattler.add(:XSPECIAL2, lambda { |item, battler, scene|
   playername = battler.battle.pbPlayer.name
   itemname = getItemName(item)
   scene.pbDisplay(_INTL("{1} used the {2}.", playername, itemname))
-  if battler.pbCanIncreaseStatStage?(PBStats::SPATK, false)
-    battler.pbIncreaseStat(PBStats::SPATK, 2, statmessage: true)
+  if battler.pbIncreaseStat(PBStats::SPATK, 2, statmessage: true)
     return true
   else
     scene.pbDisplay(_INTL("But it had no effect!"))
@@ -3507,8 +3497,7 @@ ItemHandlers::BattleUseOnBattler.add(:XSPECIAL3, lambda { |item, battler, scene|
   playername = battler.battle.pbPlayer.name
   itemname = getItemName(item)
   scene.pbDisplay(_INTL("{1} used the {2}.", playername, itemname))
-  if battler.pbCanIncreaseStatStage?(PBStats::SPATK, false)
-    battler.pbIncreaseStat(PBStats::SPATK, 3, statmessage: true)
+  if battler.pbIncreaseStat(PBStats::SPATK, 3, statmessage: true)
     return true
   else
     scene.pbDisplay(_INTL("But it had no effect!"))
@@ -3520,8 +3509,7 @@ ItemHandlers::BattleUseOnBattler.add(:XSPECIAL6, lambda { |item, battler, scene|
   playername = battler.battle.pbPlayer.name
   itemname = getItemName(item)
   scene.pbDisplay(_INTL("{1} used the {2}.", playername, itemname))
-  if battler.pbCanIncreaseStatStage?(PBStats::SPATK, false)
-    battler.pbIncreaseStat(PBStats::SPATK, 6, statmessage: true)
+  if battler.pbIncreaseStat(PBStats::SPATK, 6, statmessage: true)
     return true
   else
     scene.pbDisplay(_INTL("But it had no effect!"))
@@ -3533,8 +3521,7 @@ ItemHandlers::BattleUseOnBattler.add(:XSPDEF, lambda { |item, battler, scene|
   playername = battler.battle.pbPlayer.name
   itemname = getItemName(item)
   scene.pbDisplay(_INTL("{1} used the {2}.", playername, itemname))
-  if battler.pbCanIncreaseStatStage?(PBStats::SPDEF, false)
-    battler.pbIncreaseStat(PBStats::SPDEF, 2, statmessage: true)
+  if battler.pbIncreaseStat(PBStats::SPDEF, 2, statmessage: true)
     return true
   else
     scene.pbDisplay(_INTL("But it had no effect!"))
@@ -3546,8 +3533,7 @@ ItemHandlers::BattleUseOnBattler.add(:XSPDEF2, lambda { |item, battler, scene|
   playername = battler.battle.pbPlayer.name
   itemname = getItemName(item)
   scene.pbDisplay(_INTL("{1} used the {2}.", playername, itemname))
-  if battler.pbCanIncreaseStatStage?(PBStats::SPDEF, false)
-    battler.pbIncreaseStat(PBStats::SPDEF, 2, statmessage: true)
+  if battler.pbIncreaseStat(PBStats::SPDEF, 2, statmessage: true)
     return true
   else
     scene.pbDisplay(_INTL("But it had no effect!"))
@@ -3559,8 +3545,7 @@ ItemHandlers::BattleUseOnBattler.add(:XSPDEF3, lambda { |item, battler, scene|
   playername = battler.battle.pbPlayer.name
   itemname = getItemName(item)
   scene.pbDisplay(_INTL("{1} used the {2}.", playername, itemname))
-  if battler.pbCanIncreaseStatStage?(PBStats::SPDEF, false)
-    battler.pbIncreaseStat(PBStats::SPDEF, 3, statmessage: true)
+  if battler.pbIncreaseStat(PBStats::SPDEF, 3, statmessage: true)
     return true
   else
     scene.pbDisplay(_INTL("But it had no effect!"))
@@ -3572,8 +3557,7 @@ ItemHandlers::BattleUseOnBattler.add(:XSPDEF6, lambda { |item, battler, scene|
   playername = battler.battle.pbPlayer.name
   itemname = getItemName(item)
   scene.pbDisplay(_INTL("{1} used the {2}.", playername, itemname))
-  if battler.pbCanIncreaseStatStage?(PBStats::SPDEF, false)
-    battler.pbIncreaseStat(PBStats::SPDEF, 6, statmessage: true)
+  if battler.pbIncreaseStat(PBStats::SPDEF, 6, statmessage: true)
     return true
   else
     scene.pbDisplay(_INTL("But it had no effect!"))
@@ -3585,8 +3569,7 @@ ItemHandlers::BattleUseOnBattler.add(:XSPEED, lambda { |item, battler, scene|
   playername = battler.battle.pbPlayer.name
   itemname = getItemName(item)
   scene.pbDisplay(_INTL("{1} used the {2}.", playername, itemname))
-  if battler.pbCanIncreaseStatStage?(PBStats::SPEED, false)
-    battler.pbIncreaseStat(PBStats::SPEED, 2, statmessage: true)
+  if battler.pbIncreaseStat(PBStats::SPEED, 2, statmessage: true)
     return true
   else
     scene.pbDisplay(_INTL("But it had no effect!"))
@@ -3598,8 +3581,7 @@ ItemHandlers::BattleUseOnBattler.add(:XSPEED2, lambda { |item, battler, scene|
   playername = battler.battle.pbPlayer.name
   itemname = getItemName(item)
   scene.pbDisplay(_INTL("{1} used the {2}.", playername, itemname))
-  if battler.pbCanIncreaseStatStage?(PBStats::SPEED, false)
-    battler.pbIncreaseStat(PBStats::SPEED, 2, statmessage: true)
+  if battler.pbIncreaseStat(PBStats::SPEED, 2, statmessage: true)
     return true
   else
     scene.pbDisplay(_INTL("But it had no effect!"))
@@ -3611,8 +3593,7 @@ ItemHandlers::BattleUseOnBattler.add(:XSPEED3, lambda { |item, battler, scene|
   playername = battler.battle.pbPlayer.name
   itemname = getItemName(item)
   scene.pbDisplay(_INTL("{1} used the {2}.", playername, itemname))
-  if battler.pbCanIncreaseStatStage?(PBStats::SPEED, false)
-    battler.pbIncreaseStat(PBStats::SPEED, 3, statmessage: true)
+  if battler.pbIncreaseStat(PBStats::SPEED, 3, statmessage: true)
     return true
   else
     scene.pbDisplay(_INTL("But it had no effect!"))
@@ -3624,8 +3605,7 @@ ItemHandlers::BattleUseOnBattler.add(:XSPEED6, lambda { |item, battler, scene|
   playername = battler.battle.pbPlayer.name
   itemname = getItemName(item)
   scene.pbDisplay(_INTL("{1} used the {2}.", playername, itemname))
-  if battler.pbCanIncreaseStatStage?(PBStats::SPEED, false)
-    battler.pbIncreaseStat(PBStats::SPEED, 6, statmessage: true)
+  if battler.pbIncreaseStat(PBStats::SPEED, 6, statmessage: true)
     return true
   else
     scene.pbDisplay(_INTL("But it had no effect!"))
@@ -3637,8 +3617,7 @@ ItemHandlers::BattleUseOnBattler.add(:XACCURACY, lambda { |item, battler, scene|
   playername = battler.battle.pbPlayer.name
   itemname = getItemName(item)
   scene.pbDisplay(_INTL("{1} used the {2}.", playername, itemname))
-  if battler.pbCanIncreaseStatStage?(PBStats::ACCURACY, false)
-    battler.pbIncreaseStat(PBStats::ACCURACY, 2, statmessage: true)
+  if battler.pbIncreaseStat(PBStats::ACCURACY, 2, statmessage: true)
     return true
   else
     scene.pbDisplay(_INTL("But it had no effect!"))
@@ -3650,8 +3629,7 @@ ItemHandlers::BattleUseOnBattler.add(:XACCURACY2, lambda { |item, battler, scene
   playername = battler.battle.pbPlayer.name
   itemname = getItemName(item)
   scene.pbDisplay(_INTL("{1} used the {2}.", playername, itemname))
-  if battler.pbCanIncreaseStatStage?(PBStats::ACCURACY, false)
-    battler.pbIncreaseStat(PBStats::ACCURACY, 2, statmessage: true)
+  if battler.pbIncreaseStat(PBStats::ACCURACY, 2, statmessage: true)
     return true
   else
     scene.pbDisplay(_INTL("But it had no effect!"))
@@ -3663,8 +3641,7 @@ ItemHandlers::BattleUseOnBattler.add(:XACCURACY3, lambda { |item, battler, scene
   playername = battler.battle.pbPlayer.name
   itemname = getItemName(item)
   scene.pbDisplay(_INTL("{1} used the {2}.", playername, itemname))
-  if battler.pbCanIncreaseStatStage?(PBStats::ACCURACY, false)
-    battler.pbIncreaseStat(PBStats::ACCURACY, 3, statmessage: true)
+  if battler.pbIncreaseStat(PBStats::ACCURACY, 3, statmessage: true)
     return true
   else
     scene.pbDisplay(_INTL("But it had no effect!"))
@@ -3676,8 +3653,7 @@ ItemHandlers::BattleUseOnBattler.add(:XACCURACY6, lambda { |item, battler, scene
   playername = battler.battle.pbPlayer.name
   itemname = getItemName(item)
   scene.pbDisplay(_INTL("{1} used the {2}.", playername, itemname))
-  if battler.pbCanIncreaseStatStage?(PBStats::ACCURACY, false)
-    battler.pbIncreaseStat(PBStats::ACCURACY, 6, statmessage: true)
+  if battler.pbIncreaseStat(PBStats::ACCURACY, 6, statmessage: true)
     return true
   else
     scene.pbDisplay(_INTL("But it had no effect!"))
@@ -3747,7 +3723,7 @@ ItemHandlers::BattleUseOnBattler.add(:GUARDSPEC, lambda { |item, battler, scene|
 
 ItemHandlers::BattleUseOnBattler.add(:POKEDOLL, lambda { |item, battler, scene|
   battle = battler.battle
-  if battle.opponent || (battler.pbOpposing1.isbossmon || battler.pbOpposing2.isbossmon)
+  if battle.opponent || battler.pbOpposing1.isbossmon || battler.pbOpposing2.isbossmon
     scene.pbDisplay(_INTL("Can't use that here."))
     return false
   else

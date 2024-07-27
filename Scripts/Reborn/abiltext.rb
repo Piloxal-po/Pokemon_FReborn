@@ -1664,8 +1664,14 @@ ABILHASH = {
     :desc => "Boosts Sp. Atk when knocking out an opponent."
   },
 
-  :ASONE => {
+  :ASONECHILLING => {
     :ID => 265,
+    :name => "As One",
+    :desc => "Combines abilities of fused Pokémon."
+  },
+
+  :ASONEGRIM => {
+    :ID => 266,
     :name => "As One",
     :desc => "Combines abilities of fused Pokémon."
   },

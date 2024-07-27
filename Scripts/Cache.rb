@@ -112,7 +112,7 @@ class Cache_Game
   end
 
   def cacheAnims
-    @animations         = load_data("Data/PkmnAnimations.rxdata") if !@animations
+    @animations         = load_data("Data/battleanims.dat") if !@animations
   end
 
   def animations=(value)

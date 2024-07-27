@@ -2259,8 +2259,7 @@ def pbCellProperties(canvas)
   set6 = sliderwin2.addSlider(_INTL("Opacity:"), 0, 255, cel[AnimFrame::OPACITY])
   set7 = sliderwin2.addSlider(_INTL("Blending:"), 0, 2, cel[AnimFrame::BLENDTYPE])
   set8 = sliderwin2.addTextSlider(_INTL("Flip:"), [_INTL("False"), _INTL("True")], cel[AnimFrame::MIRROR])
-  prio = [_INTL("Back"), _INTL("Front"), _INTL("Below focus"), _INTL("Above focus"), _INTL("Between sides"),
-          _INTL("Behind Pokémon")]
+  prio = [_INTL("Back"), _INTL("Front"), _INTL("Below focus"), _INTL("Above focus"), _INTL("Between sides"), _INTL("Behind Pokémon")]
   set9 = sliderwin2.addTextSlider(_INTL("Priority:"), prio, cel[AnimFrame::PRIORITY] || 1)
   foc = [_INTL("User"), _INTL("Target"), _INTL("User and target"), _INTL("Screen")]
   curfoc = [3, 1, 0, 2, 3][cel[AnimFrame::FOCUS] || canvas.animation.position || 4]
@@ -3870,9 +3869,8 @@ def pbAnimList(animations, canvas, animwin)
         -1
       )
       if cmd2 == 0 # Load Animation
-        canvas.loadAnimation(animations[cmdwin.index])
+        canvas.loadAnimation(animations.reload(cmdwin.index))
         animwin.animbitmap = canvas.animbitmap
-        animations.selected = cmdwin.index
         break
       elsif cmd2 == 1 # Rename
         pbAnimName(animations[cmdwin.index], cmdwin)
@@ -3977,9 +3975,8 @@ def pbSearchAnimations(animations, cmdwin, canvas, animwin)
         -1
       )
       if cmd2 == 0 # Load Animation
-        canvas.loadAnimation(hassearchterm[cmdwin.index][1])
+        canvas.loadAnimation(animations.reload(hassearchterm[cmdwin.index][0]))
         animwin.animbitmap = canvas.animbitmap
-        animations.selected = hassearchterm[cmdwin.index][0]
 
         break
       elsif cmd2 == 1 # Rename
@@ -4079,7 +4076,7 @@ def pbImportAnim(animations, canvas, animwin)
         if graphic && graphic != "" && !FileTest.image_exist?(graphic)
           Kernel.pbMessage(_INTL("The animation file {1} was not found.  The animation will load anyway.", graphic))
         end
-        canvas.loadAnimation(animations[animations.selected])
+        canvas.loadAnimation(animations.reload(animations.selected))
         animwin.animbitmap = canvas.animbitmap
         $stdout.print("done\n")
       end
@@ -4111,7 +4108,7 @@ def pbImportAnim(animations, canvas, animwin)
       if graphic && graphic != "" && !FileTest.image_exist?(graphic)
         Kernel.pbMessage(_INTL("The animation file {1} was not found.  The animation will load anyway.", graphic))
       end
-      canvas.loadAnimation(animations[animations.selected])
+      canvas.loadAnimation(animations.reload(animations.selected))
       animwin.animbitmap = canvas.animbitmap
       break
     end
@@ -4693,7 +4690,7 @@ def animationEditorMain(animation)
   Graphics.resize_screen(825, 672)
   viewport.z = 99999
   # Canvas
-  canvas = AnimationCanvas.new(animation[animation.selected], viewport)
+  canvas = AnimationCanvas.new(animation.reload(animation.selected), viewport)
   # Right hand menu
   sidewin = ControlWindow.new(640, 0, 185, 512)
   sidewin.addButton(_INTL("SE and BG..."))
@@ -4736,8 +4733,7 @@ def animationEditorMain(animation)
     end
     if Input.trigger?(Input::B)
       if Kernel.pbConfirmMessage(_INTL("Save changes?"))
-        save_data(animation, "Data/PkmnAnimations.rxdata")
-        $cache.animations = animation
+        saveAnimations(animation)
       end
       if Kernel.pbConfirmMessage(_INTL("Exit from the editor?"))
         Graphics.resize_screen(DEFAULTSCREENWIDTH + 2 * $ResizeOffsetX, DEFAULTSCREENHEIGHT + 2 * $ResizeOffsetY)
@@ -4955,15 +4951,12 @@ end
 
 def pbAnimationEditor
   pbBGMStop()
-  if !$cache.animations
-    $cache.animations = tryLoadData("Data/PkmnAnimations.rxdata")
+  animations = loadAnimations
+  if !animations || !animations[0]
+    animations = PBAnimations.new
+    animations[0].graphic = ""
   end
-  animation = $cache.animations
-  if !animation || !animation[0]
-    animation = PBAnimations.new
-    animation[0].graphic = ""
-  end
-  animationEditorMain(animation)
+  animationEditorMain(animations)
   $game_map.autoplay if $game_map
 end
 
@@ -5105,7 +5098,7 @@ end
 # Debug option for rearranging animations
 ################################################################################
 def pbAnimationsOrganiser
-  list = tryLoadData("Data/PkmnAnimations.rxdata")
+  list = loadAnimations
   if !list || !list[0]
     Kernel.pbMessage(_INTL("No animations exist."))
     return
@@ -5130,7 +5123,7 @@ def pbAnimationsOrganiser
   info.viewport = viewport
   info.z = 2
   commands = []
-  refreshlist = true; oldsel = -1
+  refreshlist = true
   cmd = [0, 0]
   loop do
     if refreshlist
@@ -5139,25 +5132,25 @@ def pbAnimationsOrganiser
         commands.push(sprintf("%d: %s", i, list[i] ? list[i].name : "???"))
       end
     end
-    refreshlist = false; oldsel = -1
+    refreshlist = false
     cmd = pbCommands3(cmdwin, commands, -1, cmd[1], true)
     if cmd[0] == 1 # Swap animation up
       if cmd[1] >= 0 && cmd[1] < commands.length - 1
         list[cmd[1] + 1], list[cmd[1]] = list[cmd[1]], list[cmd[1] + 1]
         refreshlist = true
       end
-    elsif cmd[0] == 2   # Swap animation down
+    elsif cmd[0] == 2 # Swap animation down
       if cmd[1] > 0
         list[cmd[1] - 1], list[cmd[1]] = list[cmd[1]], list[cmd[1] - 1]
         refreshlist = true
       end
-    elsif cmd[0] == 3   # Delete spot
+    elsif cmd[0] == 3 # Delete spot
       list[cmd[1]] = nil
       list.compact
       cmd[1] = [cmd[1], list.length - 1].min
       refreshlist = true
       pbWait(5)
-    elsif cmd[0] == 4   # Insert spot
+    elsif cmd[0] == 4 # Insert spot
       list[list.length] = PBAnimation.new
       i = list.length - 1
       loop do
@@ -5176,7 +5169,7 @@ def pbAnimationsOrganiser
       if cmd2 == 0 || cmd2 == 1
         if cmd2 == 0
           # Save animations here
-          save_data(list, "Data/PkmnAnimations.rxdata")
+          saveAnimations(list, all: true)
           Kernel.pbMessage(_INTL("Data saved."))
         end
         break
@@ -5234,7 +5227,7 @@ end
 def pbConvertAnimsToNewFormat
   Kernel.pbMessage(_INTL("Will convert animations now."))
   count = 0
-  animations = tryLoadData("Data/PkmnAnimations.rxdata")
+  animations = loadAnimations(all: true)
   if !animations || !animations[0]
     Kernel.pbMessage(_INTL("No animations exist."))
     return
@@ -5245,8 +5238,8 @@ def pbConvertAnimsToNewFormat
     ret = pbConvertAnimToNewFormat(animations[k])
     count += 1 if ret
   end
-  save_data(animations, "Data/PkmnAnimations.rxdata") if count > 0
-  $cache.animations = animation if count > 0
+  saveAnimations(animations, all: true) if count > 0
+  $cache.animations = animations if count > 0
   Kernel.pbMessage(_INTL("{1} animations converted to new format.", count))
 end
 
@@ -5260,7 +5253,7 @@ def animCompressor(animfile)
         next if curframe == nil
 
         prevframe = animfile[i][j - 1][k]
-        next if !(prevframe == curframe)
+        next if prevframe != curframe
 
         animfile[i][j][k] = 0
         framecount += 1
@@ -5276,4 +5269,46 @@ def animCompressor(animfile)
   puts framecount
   puts nilsremoved
   return animfile
+end
+
+def saveAnimations(animations, all: false)
+  Dir.mkdir("Animations") unless File.exists?("Animations")
+  dumper = AnimationDumper.new
+  for i in 0...animations.length
+    animation = animations[i]
+    name = sprintf("Anim%04d%s.rb", i, (animation.name != "" ? " - " + animation.name.sub(":", " ").gsub(/[^0-9A-Za-z ]/, "") : ""))
+    next unless all || animations.loaded.include?(i) || !File.exist?("Animations/" + name)
+    Dir.glob(sprintf("Animations/Anim%04d*.rb", i)).each { |file| File.delete(file) }
+    File.write("Animations/" + name, dumper.dump(animation))
+  end
+  animations.clearLoaded
+  save_data(animations, "Data/battleanims.dat")
+  $cache.animations = animations
+end
+
+def loadAnimations(all: false)
+  animations = all ? PBAnimations.new : $cache.animations
+  animations[0] = nil if all
+  factory = AnimationFactory.new
+  Dir.glob('Animations/Anim*.rb') do |file|
+    match = file.match(/^Animations\/Anim(?<index>[0-9]++)(?: - (?<name>.*))?\.rb$/)
+    if match
+      index = match["index"].to_i
+      name = match["name"]
+      if all || animations.length <= index || (animations[index].name == "" && name != "")
+        if all && !animations[index].nil?
+          raise sprintf("Two Animations/Anim%04d - *.rb file detected.", index)
+        end
+        animations[index] = factory.evaluate(File.read(file))
+      end
+    end
+  end
+  if animations[0].nil?
+    raise "No animations found. Run convertAnimations first."
+  end
+  return animations
+end
+
+def convertAnimations
+  saveAnimations($cache.animations, all: true)
 end

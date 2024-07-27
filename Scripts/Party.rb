@@ -935,18 +935,11 @@ class PokemonScreen_Scene
   end
 
   def pbAnnotate(annot, also_if_not_exist)
-    # Make sure there are annotation needed
-    if !also_if_not_exist
-      for i in 0...6
-        if annot
-          return if @sprites["pokemon#{i}"].text.nil? || @sprites["pokemon#{i}"].text == ""
-        end
-      end
-    end
+    return unless annot
     for i in 0...6
-      if annot
-        @sprites["pokemon#{i}"].text = annot[i]
-      end
+      # Make sure there are annotation needed
+      next if !also_if_not_exist && (@sprites["pokemon#{i}"].text.nil? || @sprites["pokemon#{i}"].text == "")
+      @sprites["pokemon#{i}"].text = annot[i]
     end
   end
 
@@ -1439,9 +1432,7 @@ class PokemonScreen
 
   def duplicatePokemon(pkmn, selected)
     if pbConfirm(_INTL("Are you sure you want to copy this Pokémon?"))
-      clonedpkmn = pkmn.clone
-      clonedpkmn.iv = pkmn.iv.clone
-      clonedpkmn.ev = pkmn.ev.clone
+      clonedpkmn = Marshal.load(Marshal.dump(pkmn))
       pbStorePokemon(clonedpkmn)
       pbHardRefresh
       pbDisplay(_INTL("The Pokémon was duplicated."))
@@ -1595,6 +1586,8 @@ class PokemonScreen
       cmdRename = -1
       # Build the commands
       commands[cmdSummary = commands.length] = _INTL("Summary")
+      pkmn.relearner = [pkmn.relearner, 0] if !pkmn.relearner.is_a?(Array)
+      commands[cmdRelearn = commands.length] = _INTL("Relearn") if pkmn.relearner[0] == true
       if $DEBUG || (Reborn && $game_switches[:MiniDebug_Pass])
         # Commands for debug mode only
         commands[cmdDebug = commands.length] = _INTL("Debug")
@@ -1608,8 +1601,8 @@ class PokemonScreen
         move = pkmn.moves[i]
         # Check for hidden moves and add any that were found
         if !pkmn.isEgg? && (
-           (move.move == :MILKDRINK) ||
-           (move.move == :SOFTBOILED) ||
+           move.move == :MILKDRINK ||
+           move.move == :SOFTBOILED ||
            HiddenMoveHandlers.hasHandler(move.move)
          )
           commands[cmdMoves[i] = commands.length] = getMoveName(move.move)

@@ -1,31 +1,30 @@
 class AI_MonData
-  attr_accessor	:index		# To help ensure we keep the right data with the right battler
-  attr_accessor	:roles		# This is for roles that belong to the current battler
-  attr_accessor	:trainer
-  attr_accessor	:partyroles # This is for roles that belong to the entire party
-  attr_accessor	:skill
-  attr_accessor	:party
-  attr_accessor	:scorearray
-  attr_accessor	:roughdamagearray
-  attr_accessor	:itemscore
-  attr_accessor	:shouldswitchscore
-  attr_accessor	:switchscore
-  attr_accessor	:shouldMegaOrUltraBurst
-  attr_accessor	:zmove
-  attr_accessor	:attitemworks
-  attr_accessor	:oppitemworks
+  attr_accessor :index # To help ensure we keep the right data with the right battler
+  attr_accessor :roles # This is for roles that belong to the current battler
+  attr_accessor :trainer
+  attr_accessor :partyroles # This is for roles that belong to the entire party
+  attr_accessor :skill
+  attr_accessor :party
+  attr_accessor :scorearray
+  attr_accessor :roughdamagearray
+  attr_accessor :itemscore
+  attr_accessor :shouldswitchscore
+  attr_accessor :switchscore
+  attr_accessor :shouldMegaOrUltraBurst
+  attr_accessor :zmove
+  attr_accessor :attitemworks
+  attr_accessor :oppitemworks
 
 
   def initialize(trainer, index, battle)
-    @trainer	= trainer
-    @index 		= index
-    @skill 		= trainer.nil? ? 0 : trainer.skill
-    @party 		= trainer.nil? ? [] : battle.pbPartySingleOwner(index)
-    @roles 		= []
-    # fuckin double battles
+    @trainer = trainer
+    @index   = index
+    @skill   = trainer.nil? ? 0 : trainer.skill
+    @party   = trainer.nil? ? [] : battle.pbPartySingleOwner(index)
+    @roles   = []
     # there are four move arrays, but one of them doesn't get used depending on the index of the aimon
     @scorearray = [[-1, -1, -1, -1], [-1, -1, -1, -1], [-1, -1, -1, -1], [-1, -1, -1, -1]]
-    @roughdamagearray = [[-1, -1, -1, -1], [-1, -1, -1, -1], [-1, -1, -1, -1], [-1, -1, -1, -1]]	# again, for doubles...
+    @roughdamagearray = [[-1, -1, -1, -1], [-1, -1, -1, -1], [-1, -1, -1, -1], [-1, -1, -1, -1]] # again, for doubles...
     @itemscore = {}
     @switchscore = []
     @shouldswitchscore = -10000
@@ -37,18 +36,18 @@ class AI_MonData
 end
 
 class PokeBattle_AI
-  attr_accessor		:battle	# Current battle the AI is pulling from 			(PokeBattle_Battle)
-  attr_accessor		:move	# Current move being scored						(PokeBattle_Move)
-  attr_accessor		:attacker				# User of the current move being scored			(PokeBattle_Battler)
-  attr_accessor		:opponent				# Opposing pokemon that the move will be used on	(PokeBattle_Battler)
-  attr_accessor		:aimondata	# Array of all trainers in the battle			(AI_PokemonData)
-  attr_accessor		:mondata	# Current trainer being processed				(AI_PokemonData)
-  attr_accessor		:miniscore	# holder for the miniscore						#Number
-  attr_accessor		:score					# holder for the score-score						#Number
-  attr_accessor		:index					# index of the battler being evaluated			#Number
-  attr_accessor		:aiMoveMemory	# Moves the AI knows about						#Array of move numbers
-  attr_accessor		:initial_scores	# scores of all moves for a target				#Array of scores
-  attr_accessor		:score_index	# index of current move being evaluated
+  attr_accessor :battle # Current battle the AI is pulling from (PokeBattle_Battle)
+  attr_accessor :move # Current move being scored (PokeBattle_Move)
+  attr_accessor :attacker # User of the current move being scored (PokeBattle_Battler)
+  attr_accessor :opponent # Opposing pokemon that the move will be used on (PokeBattle_Battler)
+  attr_accessor :aimondata # Array of all trainers in the battle (AI_PokemonData)
+  attr_accessor :mondata # Current trainer being processed (AI_PokemonData)
+  attr_accessor :miniscore # holder for the miniscore (Number)
+  attr_accessor :score     # holder for the score-score (Number)
+  attr_accessor :index     # index of the battler being evaluated (Number)
+  attr_accessor :aiMoveMemory # Moves the AI knows about (Array of move numbers)
+  attr_accessor :initial_scores # scores of all moves for a target (Array of scores)
+  attr_accessor :score_index # index of current move being evaluated
 
   # We can adjust the thresholds as we work on things
   MINIMUMSKILL = 1
@@ -68,8 +67,8 @@ class PokeBattle_AI
   # Do what we can to setup at the start of the battle
 
   def initialize(battle)
-    @battle	= battle
-    @aimondata	= [nil, nil, nil, nil]
+    @battle = battle
+    @aimondata = [nil, nil, nil, nil]
     @aiMoveMemory = {}
     player = @battle.player
     opponent = @battle.opponent
@@ -112,7 +111,7 @@ class PokeBattle_AI
       next if data.nil?
 
       @mondata = data
-      @mondata.partyroles = (@mondata.skill >= HIGHSKILL) ? pbGetMonRoles : Array.new(@mondata.party.length) { Array.new() }
+      @mondata.partyroles = @mondata.skill >= HIGHSKILL ? pbGetMonRoles : Array.new(@mondata.party.length) { Array.new() }
     end
     setUpDebugLog
   end
@@ -132,17 +131,25 @@ class PokeBattle_AI
     filename = "battlelog - #{timestring} - #{trainame} vs. #{oppname} (#{fieldname} #{battleformat})"
     PBDebug.setFileName(filename)
     PBDebug.log("#{GAMETITLE} #{GAMEVERSION} - #{filename}")
+    PBDebug.log("Battle seed: " + @battle.seed.to_s)
   end
 
   def processAIturn
+    # Clear old data
+    for index in 0...@aimondata.length
+      next if @aimondata[index].nil?
+      clearMonDataTurn(@aimondata[index])
+    end
+
     # Get the scores for each mon in battle
     for index in 0...@aimondata.length
       next if @aimondata[index].nil?
-      next if @battle.pbOwnedByPlayer?(index) && !@battle.controlPlayer
+      # Skip AI processing for player's pokemon unless the AI is supposed to control the player or this is a double battle with AI partner.
+      # When having AI partner the AI also determines what the player might do and then uses that prediction for coordinateActions.
+      next if @battle.pbOwnedByPlayer?(index) && !@battle.controlPlayer && !@battle.player.is_a?(Array)
       next if !@battle.pbCanShowCommands?(index) || @battle.battlers[index].hp == 0
 
       @mondata = @aimondata[index]
-      clearMonDataTurn(@mondata)
       # load up the class variables
       @index = index
       @attacker = pbCloneBattler(@index)
@@ -161,7 +168,10 @@ class PokeBattle_AI
       getSwitchingScore()
     end
     # Coordination if there are two mons on the same side
-    coordinateActions() if @battle.doublebattle
+    if @battle.doublebattle
+      coordinateActions(1, 3, 0, 2)
+      coordinateActions(0, 2, 1, 3) if @battle.controlPlayer || @battle.player.is_a?(Array)
+    end
     # At this point, the processing is done and the AI should register its decisions
     # but i don't know how to do that, and i think we can do it from the battle side anyway
     # so as far as the ai code is concerned, we're done now.
@@ -244,7 +254,7 @@ class PokeBattle_AI
         zmove = move
         break
       end
-      next if $cache.moves[move.move].category == :status	# Skip all other status moves
+      next if $cache.moves[move.move].category == :status # Skip all other status moves
 
       thisbase = move.basedamage
       if bestbase < thisbase
@@ -278,9 +288,9 @@ class PokeBattle_AI
       return
     end
     # real code time.
-    if @battle.doublebattle	# this JUST gets the numbers. other things can be computed later.
+    if @battle.doublebattle # this JUST gets the numbers. other things can be computed later.
       for monindex in 0...@battle.battlers.length
-        next if monindex == @index	# This is you! We don't want to hit ourselves.
+        next if monindex == @index # This is you! We don't want to hit ourselves.
         next if @battle.battlers[monindex].isFainted? # Can't hit 'em if they're dead
 
         @opponent = pbCloneBattler(monindex)
@@ -302,7 +312,6 @@ class PokeBattle_AI
             @mondata.roughdamagearray[monindex][moveindex] = getStatusDamage
           end
         end
-
 
         for moveindex in 0...@attacker.moves.length
           next if !@battle.pbCanChooseMove?(@index, moveindex, false)
@@ -336,7 +345,8 @@ class PokeBattle_AI
         end
       end
     else
-      @opponent = pbCloneBattler(0)	# Copy the player's mon cuz it's the only one there!
+      oppindex = @index ^ 1
+      @opponent = pbCloneBattler(oppindex)
       $ai_log_data[@index].expected_damage.push((checkAIdamage() * 100.0 / @attacker.totalhp).round(1)) if $INTERNAL
       $ai_log_data[@index].expected_damage_name.push(getMonName(@opponent.species, @opponent.form)) if $INTERNAL
       # get the moves the pokemon can choose, in case of choice item/encore/taunt/torment
@@ -345,28 +355,28 @@ class PokeBattle_AI
 
         @move = pbChangeMove(@attacker.moves[moveindex], @attacker)
         if @move.basedamage != 0
-          @mondata.roughdamagearray[0][moveindex] = [(pbRoughDamage * 100) / (@opponent.hp), 110].min
+          @mondata.roughdamagearray[oppindex][moveindex] = [(pbRoughDamage * 100) / (@opponent.hp), 110].min
         # The old function makes some adjustments for two-turn moves here. I'm leaving that for later.
         else
-          @mondata.roughdamagearray[0][moveindex] = getStatusDamage
+          @mondata.roughdamagearray[oppindex][moveindex] = getStatusDamage
         end
       end
       for moveindex in 0...@attacker.moves.length
         next if !@battle.pbCanChooseMove?(@index, moveindex, false)
 
         @move = @attacker.moves[moveindex]
-        @mondata.scorearray[0][moveindex] = getMoveScore(@mondata.roughdamagearray[0], moveindex)
+        @mondata.scorearray[oppindex][moveindex] = getMoveScore(@mondata.roughdamagearray[oppindex], moveindex)
         # at this point we have legally acquired the move scores and thus should be done.
       end
       # add z-move if relevant
       if @mondata.zmove
         @move = @mondata.zmove
         if @move.basedamage != 0
-          @mondata.roughdamagearray[0][-1] = [(pbRoughDamage * 100) / (@opponent.hp), 110].min
+          @mondata.roughdamagearray[oppindex][-1] = [(pbRoughDamage * 100) / (@opponent.hp), 110].min
         else
-          @mondata.roughdamagearray[0][-1] = getStatusDamage
+          @mondata.roughdamagearray[oppindex][-1] = getStatusDamage
         end
-        @mondata.scorearray[0][-1] = getMoveScore(@mondata.roughdamagearray[0], @mondata.scorearray[0].length - 1)
+        @mondata.scorearray[oppindex][-1] = getMoveScore(@mondata.roughdamagearray[oppindex], @mondata.scorearray[oppindex].length - 1)
       end
 
       # Add struggle
@@ -374,8 +384,8 @@ class PokeBattle_AI
       @attacker.moves.each_with_index { |move, moveindex| has_to_struggle = false if @battle.pbCanChooseMove?(@index, moveindex, false) }
       if has_to_struggle
         @move = @battle.struggle
-        @mondata.roughdamagearray[0][0] = [(pbRoughDamage * 100) / (@opponent.hp), 110].min
-        @mondata.scorearray[0][0] = getMoveScore(@mondata.roughdamagearray[0], 0)
+        @mondata.roughdamagearray[oppindex][0] = [(pbRoughDamage * 100) / (@opponent.hp), 110].min
+        @mondata.scorearray[oppindex][0] = getMoveScore(@mondata.roughdamagearray[oppindex], 0)
       end
     end
   end
@@ -387,7 +397,7 @@ class PokeBattle_AI
 
       battler = @battle.battlers[index]
       next if battler.hp == 0 || !@battle.pbCanShowCommands?(index)
-      next if @battle.choices[battler.index][0] != 0
+      next if @battle.choices[battler.index] != [nil]
 
       @mondata = @aimondata[index]
       # make move-targets coupled list bc that works way easier ?
@@ -411,7 +421,7 @@ class PokeBattle_AI
       # chooses the action that the AI pokemon will perform
       # SWITCH
       if @mondata.shouldswitchscore > maxmovescore && @mondata.switchscore.max > 100 # arbitrary
-        if battler.index == 3 && @battle.choices[1][0] == 2 && @battle.choices[1][1] == @mondata.switchscore.index(@mondata.switchscore.max)
+        if battler.index == 3 && @battle.choices[1][0] == :switch && @battle.choices[1][1] == @mondata.switchscore.index(@mondata.switchscore.max)
           if @mondata.switchscore.max(2)[1] > 100 && shouldHardSwitch?(battler, @mondata.switchscore.index(@mondata.switchscore.max(2)[1]))
             indexhighestscore = @mondata.switchscore.index(@mondata.switchscore.max(2)[1])
             highestscoremon = @battle.pbParty(battler.index)[indexhighestscore]
@@ -434,7 +444,7 @@ class PokeBattle_AI
       if !@mondata.itemscore.empty? && @mondata.itemscore.values.max > maxmovescore
         item = @mondata.itemscore.key(@mondata.itemscore.values.max)
         # check if quantity of item the battler has is 1 and if previous battler hasn't also tried to use this item
-        if battler.index == 3 && @battle.choices[1][0] == 3 && @battle.choices[1][1] == item
+        if battler.index == 3 && @battle.choices[1][0] == :item && @battle.choices[1][1] == item
           items = @battle.pbGetOwnerItems(battler.index)
           if items.count { |element| element == item } > 1
             @battle.pbRegisterItem(battler.index, item)
@@ -464,7 +474,7 @@ class PokeBattle_AI
         canusemovelist.push(moveindex) if @battle.pbCanChooseMove?(battler.index, moveindex, false)
       end
       if chooseablemoves.length == 0 && canusemovelist.length > 0
-        @battle.pbRegisterMove(battler.index, canusemovelist[rand(canusemovelist.length)], false)
+        @battle.pbRegisterMove(battler.index, canusemovelist[@battle.pbRandom(canusemovelist.length)], false)
         @battle.pbRegisterTarget(battler.index, battler.pbOppositeOpposing.index) if @battle.doublebattle
         $ai_log_data[battler.index].chosen_action = "Random Move bc only bad decisions"
         next
@@ -473,8 +483,8 @@ class PokeBattle_AI
       end
       # Minmax choices depending on AI
       if @mondata.skill >= MEDIUMSKILL
-        threshold = (@mondata.skill >= BESTSKILL) ? 1.5 : (@mondata.skill >= HIGHSKILL) ? 2 : 3
-        newscore = (@mondata.skill >= BESTSKILL) ? 5 : (@mondata.skill >= HIGHSKILL) ? 10 : 15
+        threshold = @mondata.skill >= BESTSKILL ? 1.5 : @mondata.skill >= HIGHSKILL ? 2 : 3
+        newscore = @mondata.skill >= BESTSKILL ? 5 : @mondata.skill >= HIGHSKILL ? 10 : 15
         for scoreindex in 0...chooseablemoves.length
           chooseablemoves[scoreindex][:score] = chooseablemoves[scoreindex][:score] > newscore && chooseablemoves[scoreindex][:score] * threshold < maxmovescore ? newscore : chooseablemoves[scoreindex][:score]
         end
@@ -499,13 +509,13 @@ class PokeBattle_AI
 
       preferredMoves = []
       for i in chooseablemoves
-        if (i[:score] >= (maxmovescore * 0.95))
+        if i[:score] >= (maxmovescore * 0.95)
           preferredMoves.push(i)
           preferredMoves.push(i) if i[:score] == maxmovescore # Doubly prefer the best move
         end
       end
 
-      chosen = preferredMoves[rand(preferredMoves.length)]
+      chosen = preferredMoves[@battle.pbRandom(preferredMoves.length)]
       if chosen[:zmove]
         PBDebug.log("[Prefer " + battler.zmoves[chosen[:moveindex]].name + "]") if $INTERNAL
         $ai_log_data[battler.index].chosen_action = "[Prefer " + battler.zmoves[chosen[:moveindex]].name + "]"
@@ -524,15 +534,16 @@ class PokeBattle_AI
     for moveindex in 0...4
       next if !@battle.pbCanChooseMove?(battler.index, moveindex, false)
 
+      # Wild pokemon can choose any move and can target either side in doubles.
       if !@battle.opponent && @battle.pbIsOpposing?(battler.index) && !(battler.isbossmon || battler.issossmon)
-        chooseablemoves.push({ moveindex: moveindex, target: [0, 2].sample, score: mondata.scorearray[0][moveindex], zmove: false })
+        chooseablemoves.push({ moveindex: moveindex, target: [@battle.sample([0, 2])], score: mondata.scorearray[0][moveindex], zmove: false })
         next
       end
 
       move = pbChangeMove(battler.moves[moveindex], battler)
+      oi = battler.pbOppositeOpposing.index # opposite opponent
       if @battle.doublebattle
         pi = battler.pbPartner.index # partner
-        oi = battler.pbOppositeOpposing.index # opposite opponent
         ci = battler.pbCrossOpposing.index
         case battler.pbTarget(move)
           when :SingleNonUser, :SingleOpposing
@@ -597,9 +608,9 @@ class PokeBattle_AI
         end
       else
         unless battler.pbTarget(move) == :UserOrPartner
-          chooseablemoves.push({ moveindex: moveindex, target: [0], score: mondata.scorearray[0][moveindex], zmove: false })
+          chooseablemoves.push({ moveindex: moveindex, target: [oi], score: mondata.scorearray[oi][moveindex], zmove: false })
         else
-          chooseablemoves.push({ moveindex: moveindex, target: [battler.index], score: mondata.scorearray[0][moveindex], zmove: false })
+          chooseablemoves.push({ moveindex: moveindex, target: [battler.index], score: mondata.scorearray[oi][moveindex], zmove: false })
         end
       end
     end
@@ -614,8 +625,8 @@ class PokeBattle_AI
       else
         puts "How did you fuck up this badly?"
       end
+      oi = battler.pbOppositeOpposing.index # opposite opponent
       if @battle.doublebattle
-        oi = battler.pbOppositeOpposing.index # opposite opponent
         ci = battler.pbCrossOpposing.index
         if [:CONVERSION, :CELEBRATE, :SPLASH, :CLANGOROUSSOULBLAZE].include?(mondata.zmove.move)
           chooseablemoves.push({ moveindex: originalmoveindex, target: [oi, ci], score: mondata.scorearray[oi][-1] + mondata.scorearray[ci][-1], zmove: true })
@@ -623,26 +634,19 @@ class PokeBattle_AI
           [oi, ci].each { |targetindex| chooseablemoves.push({ moveindex: originalmoveindex, target: [targetindex], score: mondata.scorearray[targetindex][-1], zmove: true }) }
         end
       else
-        chooseablemoves.push({ moveindex: originalmoveindex, target: [0], score: mondata.scorearray[0][4], zmove: true })
+        chooseablemoves.push({ moveindex: originalmoveindex, target: [oi], score: mondata.scorearray[oi][4], zmove: true })
       end
     end
     return chooseablemoves
   end
 
-  def coordinateActions # changes some scores doesn't choose
-    return if @battle.battlers[1].hp == 0 || @battle.battlers[3].hp == 0 || (@battle.pbIsWild? && !(@battle.battlers.any? { |battler| battler.isbossmon || battler.issossmon }))
+  def coordinateActions(ai_l, ai_r, op_l, op_r) # changes some scores doesn't choose
+    return if @battle.battlers[ai_l].hp == 0 || @battle.battlers[ai_r].hp == 0 || (@battle.pbIsWild? && !(@battle.battlers.any? { |battler| battler.isbossmon || battler.issossmon }))
 
-    # Threat Assesment
-    threatscore = threatAssesment()
+    threatscore = threatAssessment(ai_l, ai_r, op_l, op_r)
     biggest_threat = threatscore.index(threatscore.max)
-    aimon1 = @battle.battlers[1]
-    aimon2 = @battle.battlers[3]
-
-    # indexing
-    op_l = 0
-    op_r = 2
-    ai_l = 1
-    ai_r = 3
+    aimon1 = @battle.battlers[ai_l]
+    aimon2 = @battle.battlers[ai_r]
 
     # find targets of all killing moves
     killing_moves = [[], [], [], []]
@@ -662,16 +666,17 @@ class PokeBattle_AI
     killing_moves.map!.with_index { |arr, index|
       if arr.length == 2
         :both
-      elsif arr[0] == 0
+      elsif arr[0] == op_l
         :left
-      elsif arr[0] == 2
+      elsif arr[0] == op_r
         :right
-      elsif index == 0 || index == 2
+      elsif index == op_l || index == op_r
         :_
       else
         :none
       end
     }
+
     # if only one of them has a killing move, make it so the other one doesn't target the same mon
     if (killing_moves[ai_l] != :none && killing_moves[ai_r] == :none) || (killing_moves[ai_r] != :none && killing_moves[ai_l] == :none)
       # battlerindexes
@@ -743,43 +748,41 @@ class PokeBattle_AI
             end
         end
 
-
         scoreDecrease(biggest_threat, killing_moves, decrease_by, ai_leader)
       elsif bestmove.priority > 0
-        # priority moves fuck up jsut about everything
+        # priority moves fuck up just about everything
         biggest_threat_index = biggest_threat
         scoreDecrease(biggest_threat, killing_moves, 0.4, ai_leader)
-      elsif bestmove.target == :AllOpposing || bestmove.target == :AllNonUsers
+      elsif [:AllOpposing, :AllNonUsers].include?(leader_mon.pbTarget(bestmove))
         # fuck it if i know
       end
     end
 
     # if both of them have killing move determine who should target who, mostly just don't target both the same
-    if killing_moves[1] != :none && killing_moves[3] != :none
-
-      bestchoice1 = getMaxScoreIndex(@aimondata[1].scorearray)
-      bestchoice2 = getMaxScoreIndex(@aimondata[3].scorearray)
-      bestmove1 = bestchoice1[1] == 4 ? @aimondata[1].zmove : aimon1.moves[bestchoice1[1]]
-      bestmove2 = bestchoice2[1] == 4 ? @aimondata[3].zmove : aimon2.moves[bestchoice2[1]]
+    if killing_moves[ai_l] != :none && killing_moves[ai_r] != :none
+      bestchoice1 = getMaxScoreIndex(@aimondata[ai_l].scorearray)
+      bestchoice2 = getMaxScoreIndex(@aimondata[ai_r].scorearray)
+      bestmove1 = bestchoice1[1] == 4 ? @aimondata[ai_l].zmove : aimon1.moves[bestchoice1[1]]
+      bestmove2 = bestchoice2[1] == 4 ? @aimondata[ai_r].zmove : aimon2.moves[bestchoice2[1]]
       # make sure the best move isn't a status move or switching/item
 
       if bestmove2.betterCategory != :status && bestmove1.betterCategory != :status
         speedorder = pbMoveOrderAI()
         targetting_done = false
         case speedorder
-          when [1, 3, 2, 0], [3, 1, 2, 0], [1, 3, 0, 2], [3, 1, 0, 2] # ai,ai,player,player
+          when [ai_l, ai_r, op_r, op_l], [ai_r, ai_l, op_r, op_l], [ai_l, ai_r, op_l, op_r], [ai_r, ai_l, op_l, op_r] # ai,ai,player,player
 
-          when [1, 0, 3, 2], [1, 2, 3, 0], [3, 0, 1, 2], [3, 2, 1, 0] # ai,player,ai,player
+          when [ai_l, op_l, ai_r, op_r], [ai_l, op_r, ai_r, op_l], [ai_r, op_l, ai_l, op_r], [ai_r, op_r, ai_l, op_l] # ai,player,ai,player
             if killing_moves == [:_, :both, :_, :both]
               @aimondata[speedorder[0]].scorearray[speedorder[3]].map! { |score| score * 0.4 }
               @aimondata[speedorder[2]].scorearray[speedorder[1]].map! { |score| score * 0.4 }
               # speedorder[0] targets speedorder[1]
               # speedorder[2] targets speedorder[3]
               targetting_done = true
-            elsif speedorder == [1, 0, 3, 2] && killing_moves == [:_, :both, :_, :left] ||
-                  speedorder == [1, 2, 3, 0] && killing_moves == [:_, :both, :_, :right] ||
-                  speedorder == [3, 0, 1, 2] && killing_moves == [:_, :left, :_, :both] ||
-                  speedorder == [3, 2, 1, 0] && killing_moves == [:_, :right, :_, :both]
+            elsif speedorder == [ai_l, op_l, ai_r, op_r] && killing_moves == [:_, :both, :_, :left] ||
+                  speedorder == [ai_l, op_r, ai_r, op_l] && killing_moves == [:_, :both, :_, :right] ||
+                  speedorder == [ai_r, op_l, ai_l, op_r] && killing_moves == [:_, :left, :_, :both] ||
+                  speedorder == [ai_r, op_r, ai_l, op_l] && killing_moves == [:_, :right, :_, :both]
               if checkAIdamage(@battle.battlers[speedorder[2]], @battle.battlers[speedorder[1]]) >= @battle.battlers[speedorder[2]].hp
                 @aimondata[speedorder[0]].scorearray[speedorder[3]].map! { |score| score * 0.4 }
                 @aimondata[speedorder[2]].scorearray[speedorder[1]].map! { |score| score * 0.7 }
@@ -788,7 +791,7 @@ class PokeBattle_AI
                 targetting_done = true
               end
             end
-          when [1, 0, 2, 3], [1, 2, 0, 3], [3, 0, 2, 1], [3, 2, 0, 1] # ai,player,player,ai
+          when [ai_l, op_l, op_r, ai_r], [ai_l, op_r, op_l, ai_r], [ai_r, op_l, op_r, ai_l], [ai_r, op_r, op_l, ai_l] # ai,player,player,ai
             case killing_moves
               when [:_, :both, :_, :both]
                 @aimondata[speedorder[0]].scorearray[biggest_threat].map! { |score| score * 0.7 }
@@ -797,25 +800,25 @@ class PokeBattle_AI
                 # speedorder[3] targets other
                 targetting_done = true
               when [:_, :left, :_, :left]
-                @aimondata[speedorder[0]].scorearray[2].map! { |score| score * 0.7 }
-                @aimondata[speedorder[3]].scorearray[0].map! { |score| score * 0.7 }
+                @aimondata[speedorder[0]].scorearray[op_r].map! { |score| score * 0.7 }
+                @aimondata[speedorder[3]].scorearray[op_l].map! { |score| score * 0.7 }
                 # speedorder[0] targets the one they can kill
                 # speedorder[3] targets other
                 targetting_done = true
-              when [:_, :right, :_, :rigth]
-                @aimondata[speedorder[0]].scorearray[2].map! { |score| score * 0.7 }
-                @aimondata[speedorder[3]].scorearray[0].map! { |score| score * 0.7 }
+              when [:_, :right, :_, :right]
+                @aimondata[speedorder[0]].scorearray[op_r].map! { |score| score * 0.7 }
+                @aimondata[speedorder[3]].scorearray[op_l].map! { |score| score * 0.7 }
                 # speedorder[0] targets the one they can kill
                 # speedorder[3] targets other
                 targetting_done = true
             end
-          when [0, 1, 3, 2], [0, 3, 1, 2], [2, 1, 3, 0], [2, 3, 1, 0] # player,ai,ai,player
+          when [op_l, ai_l, ai_r, op_r], [op_l, ai_r, ai_l, op_r], [op_r, ai_l, ai_r, op_l], [op_r, ai_r, ai_l, op_l] # player,ai,ai,player
             case killing_moves
-              when [:_, :both, :_, :both], [:_, :left, :_, :left], [:_, :right, :_, :rigth]
+              when [:_, :both, :_, :both], [:_, :left, :_, :left], [:_, :right, :_, :right]
                 # don't edit the scores, who knows which mon will live
                 targetting_done = true
             end
-          when [0, 1, 2, 3], [0, 3, 2, 1], [2, 1, 0, 3], [2, 3, 0, 1] # player,ai,player,ai
+          when [op_l, ai_l, op_r, ai_r], [op_l, ai_r, op_r, ai_l], [op_r, ai_l, op_l, ai_r], [op_r, ai_r, op_l, ai_l] # player,ai,player,ai
             case killing_moves
               when [:_, :both, :_, :both]
                 @aimondata[speedorder[1]].scorearray[speedorder[0]].map! { |score| score * 0.7 }
@@ -823,9 +826,9 @@ class PokeBattle_AI
                 # speedorder[1] targets speedorder[2]
                 # speedorder[3] targets speedorder[0]
                 targetting_done = true
-              when [:_, :left, :_, :left], [:_, :right, :_, :rigth]
+              when [:_, :left, :_, :left], [:_, :right, :_, :right]
                 if checkAIdamage(@battle.battlers[speedorder[1]], @battle.battlers[speedorder[0]]) >= @battle.battlers[speedorder[1]].hp
-                  chosen_index = killing_moves == [:_, :left, :_, :left] ? 0 : 2
+                  chosen_index = killing_moves == [:_, :left, :_, :left] ? op_l : op_r
                   @aimondata[speedorder[3]].scorearray[chosen_index].map! { |score| score * 0.7 }
                   targetting_done = true
                 else
@@ -833,12 +836,12 @@ class PokeBattle_AI
                   targetting_done = true
                 end
             end
-          when [0, 2, 1, 3], [2, 0, 1, 3], [0, 2, 3, 1], [2, 0, 3, 1] # player,player,ai,ai
+          when [op_l, op_r, ai_l, ai_r], [op_r, op_l, ai_l, ai_r], [op_l, op_r, ai_r, ai_l], [op_r, op_l, ai_r, ai_l] # player,player,ai,ai
             case killing_moves
               when [:_, :both, :_, :both]
                 # don't edit the scores, who knows which mon will live
                 targetting_done = true
-              when [:_, :left, :_, :left], [:_, :right, :_, :rigth]
+              when [:_, :left, :_, :left], [:_, :right, :_, :right]
                 # don't edit the scores, who knows which mon will live
                 targetting_done = true
             end
@@ -847,47 +850,47 @@ class PokeBattle_AI
           case killing_moves
             when [:_, :both, :_, :both]
               # just target differently
-              if rand(2) == 0
-                @aimondata[1].scorearray[0].map! { |score| score * 0.7 }
-                @aimondata[3].scorearray[2].map! { |score| score * 0.7 }
+              if @battle.pbRandom(2) == 0
+                @aimondata[ai_l].scorearray[op_l].map! { |score| score * 0.7 }
+                @aimondata[ai_r].scorearray[op_r].map! { |score| score * 0.7 }
               else
-                @aimondata[1].scorearray[0].map! { |score| score * 0.7 }
-                @aimondata[3].scorearray[2].map! { |score| score * 0.7 }
+                @aimondata[ai_l].scorearray[op_l].map! { |score| score * 0.7 }
+                @aimondata[ai_r].scorearray[op_r].map! { |score| score * 0.7 }
               end
             when [:_, :left, :_, :both]
               # only need to change 3 to target 2
-              @aimondata[3].scorearray[0].map! { |score| score * 0.7 }
+              @aimondata[ai_r].scorearray[op_l].map! { |score| score * 0.7 }
             when [:_, :right, :_, :both]
               # only need to change 3 to target 0
-              @aimondata[3].scorearray[2].map! { |score| score * 0.7 }
+              @aimondata[ai_r].scorearray[op_r].map! { |score| score * 0.7 }
             when [:_, :both, :_, :left]
               # only need to change 1 to target 2
-              @aimondata[1].scorearray[0].map! { |score| score * 0.7 }
+              @aimondata[ai_l].scorearray[op_l].map! { |score| score * 0.7 }
             when [:_, :both, :_, :right]
               # only need to change 1 to target 0
-              @aimondata[3].scorearray[2].map! { |score| score * 0.7 }
+              @aimondata[ai_r].scorearray[op_r].map! { |score| score * 0.7 }
             when [:_, :left, :_, :left]
               # check which has highest score move not targetting 0
-              if @aimondata[1].scorearray[0].max > @aimondata[3].scorearray[0].max
-                @aimondata[1].scorearray[2].map! { |score| score * 0.7 }
-                @aimondata[3].scorearray[0].map! { |score| score * 0.7 }
+              if @aimondata[ai_l].scorearray[op_l].max > @aimondata[ai_r].scorearray[op_l].max
+                @aimondata[ai_l].scorearray[op_r].map! { |score| score * 0.7 }
+                @aimondata[ai_r].scorearray[op_l].map! { |score| score * 0.7 }
               else
-                @aimondata[1].scorearray[0].map! { |score| score * 0.7 }
-                @aimondata[3].scorearray[2].map! { |score| score * 0.7 }
+                @aimondata[ai_l].scorearray[op_l].map! { |score| score * 0.7 }
+                @aimondata[ai_r].scorearray[op_r].map! { |score| score * 0.7 }
               end
 
             when [:_, :left, :_, :right]
             # nothing to do here
             when [:_, :right, :_, :left]
             # nothing to do here
-            when [:_, :right, :_, :rigth]
+            when [:_, :right, :_, :right]
               # check which has highest score move not targetting 2
-              if @aimondata[1].scorearray[2].max > @aimondata[3].scorearray[2].max
-                @aimondata[1].scorearray[0].map! { |score| score * 0.7 }
-                @aimondata[3].scorearray[2].map! { |score| score * 0.7 }
+              if @aimondata[ai_l].scorearray[op_r].max > @aimondata[ai_r].scorearray[op_r].max
+                @aimondata[ai_l].scorearray[op_l].map! { |score| score * 0.7 }
+                @aimondata[ai_r].scorearray[op_r].map! { |score| score * 0.7 }
               else
-                @aimondata[1].scorearray[2].map! { |score| score * 0.7 }
-                @aimondata[3].scorearray[0].map! { |score| score * 0.7 }
+                @aimondata[ai_l].scorearray[op_r].map! { |score| score * 0.7 }
+                @aimondata[ai_r].scorearray[op_l].map! { |score| score * 0.7 }
               end
           end
         end
@@ -895,8 +898,8 @@ class PokeBattle_AI
     end
 
     # Finding the best moves for both AI
-    moves_1 = findChoosableMoves(aimon1, @aimondata[1])
-    moves_2 = findChoosableMoves(aimon2, @aimondata[3])
+    moves_1 = findChoosableMoves(aimon1, @aimondata[ai_l])
+    moves_2 = findChoosableMoves(aimon2, @aimondata[ai_r])
     return if moves_1.length == 0 || moves_2.length == 0
 
     moves_1.sort! { |a, b| b[:score] <=> a[:score] }
@@ -913,9 +916,9 @@ class PokeBattle_AI
     if bestmoves_id.all? { |bestmove| [:FOLLOWME, :RAGEPOWDER].include?(bestmove) }
       if !nextbest1.nil? || !nextbest2.nil?
         if nextbest1.nil? || !nextbest2.nil? && nextbest1[:score] > nextbest2[:score]
-          @aimondata[1].scorearray.map! { |a| a.map!.with_index { |b, i| i == bestindex1 ? 0 : b } }
+          @aimondata[ai_l].scorearray.map! { |a| a.map!.with_index { |b, i| i == bestindex1 ? 0 : b } }
         else
-          @aimondata[3].scorearray.map! { |a| a.map!.with_index { |b, i| i == bestindex2 ? 0 : b } }
+          @aimondata[ai_r].scorearray.map! { |a| a.map!.with_index { |b, i| i == bestindex2 ? 0 : b } }
         end
       end
     end
@@ -923,9 +926,9 @@ class PokeBattle_AI
     # one wants to use helping hand
     if :HELPINGHAND == bestmove1.move || :HELPINGHAND == bestmove2.move
       if :HELPINGHAND == bestmove1.move && bestmove2.basedamage == 0
-        @aimondata[1].scorearray.map! { |a| a.map!.with_index { |b, i| i == bestindex1 ? 0 : b } }
+        @aimondata[ai_l].scorearray.map! { |a| a.map!.with_index { |b, i| i == bestindex1 ? 0 : b } }
       elsif :HELPINGHAND == bestmove2.move && bestmove1.basedamage == 0
-        @aimondata[3].scorearray.map! { |a| a.map!.with_index { |b, i| i == bestindex2 ? 0 : b } }
+        @aimondata[ai_r].scorearray.map! { |a| a.map!.with_index { |b, i| i == bestindex2 ? 0 : b } }
       end
     end
 
@@ -934,9 +937,9 @@ class PokeBattle_AI
        [:STEALTHROCK, :STICKYWEB, :TAILWIND, :GRAVITY, :LIGHTSCREEN, :REFLECT, :AURORAVEIL, :TRICKROOM, :WONDERROOM, :MAGICROOM, :SUNNYDAY, :RAINDANCE, :HAIL, :SANDSTORM, :SAFEGUARD, :SHADOWSKY].include?(bestmove1.move)
       if !nextbest1.nil? && !nextbest2.nil?
         if nextbest1[:score] > nextbest2[:score]
-          @aimondata[1].scorearray.map! { |a| a.map!.with_index { |b, i| i == bestindex1 ? 0 : b } }
+          @aimondata[ai_l].scorearray.map! { |a| a.map!.with_index { |b, i| i == bestindex1 ? 0 : b } }
         else
-          @aimondata[3].scorearray.map! { |a| a.map!.with_index { |b, i| i == bestindex2 ? 0 : b } }
+          @aimondata[ai_r].scorearray.map! { |a| a.map!.with_index { |b, i| i == bestindex2 ? 0 : b } }
         end
       end
     end
@@ -951,13 +954,13 @@ class PokeBattle_AI
       }
       if !nextbest1.nil? && !nextbest2.nil?
         if nextbest1[:score] > nextbest2[:score]
-          @aimondata[1].scorearray.map!.with_index do |a, moveindex|
+          @aimondata[ai_l].scorearray.map!.with_index do |a, moveindex|
             a.map!.with_index { |b, i|
               i == bestindex1 && nextbest1[:target].include?(moveindex) ? 0 : b
             }
           end
         else
-          @aimondata[3].scorearray.map!.with_index do |a, moveindex|
+          @aimondata[ai_r].scorearray.map!.with_index do |a, moveindex|
             a.map!.with_index { |b, i|
               i == bestindex2 && nextbest2[:target].include?(moveindex) ? 0 : b
             }
@@ -976,13 +979,13 @@ class PokeBattle_AI
       }
       if !nextbest1.nil? && !nextbest2.nil?
         if nextbest1[:score] > nextbest2[:score]
-          @aimondata[1].scorearray.map!.with_index { |a, moveindex|
+          @aimondata[ai_l].scorearray.map!.with_index { |a, moveindex|
             a.map!.with_index { |b, i|
               i == bestindex1 && nextbest1[:target].include?(moveindex) ? 0 : b
             }
           }
         else
-          @aimondata[3].scorearray.map!.with_index { |a, moveindex|
+          @aimondata[ai_r].scorearray.map!.with_index { |a, moveindex|
             a.map!.with_index { |b, i|
               i == bestindex2 && nextbest2[:target].include?(moveindex) ? 0 : b
             }
@@ -1001,13 +1004,13 @@ class PokeBattle_AI
       }
       if !nextbest1.nil? && !nextbest2.nil?
         if nextbest1[:score] > nextbest2[:score]
-          @aimondata[1].scorearray.map!.with_index { |a, moveindex|
+          @aimondata[ai_l].scorearray.map!.with_index { |a, moveindex|
             a.map!.with_index { |b, i|
               i == bestindex1 && nextbest1[:target].include?(moveindex) ? 0 : b
             }
           }
         else
-          @aimondata[3].scorearray.map!.with_index { |a, moveindex|
+          @aimondata[ai_r].scorearray.map!.with_index { |a, moveindex|
             a.map!.with_index { |b, i|
               i == bestindex2 && nextbest2[:target].include?(moveindex) ? 0 : b
             }
@@ -1020,29 +1023,29 @@ class PokeBattle_AI
     if bestmoves_id.include?(:EARTHQUAKE) && bestmoves_id.include?(:ROOST)
       if :EARTHQUAKE == bestmove1.move
         if !pbAIfaster?(bestmove1, bestmove2, aimon1, aimon2)
-          @aimondata[3].scorearray.map! { |a| a.map!.with_index { |b, i| i == bestindex2 ? 0 : b } }
+          @aimondata[ai_r].scorearray.map! { |a| a.map!.with_index { |b, i| i == bestindex2 ? 0 : b } }
         end
       elsif :EARTHQUAKE == bestmove2.move
         if !pbAIfaster?(bestmove2, bestmove1, aimon2, aimon1)
-          @aimondata[1].scorearray.map! { |a| a.map!.with_index { |b, i| i == bestindex1 ? 0 : b } }
+          @aimondata[ai_l].scorearray.map! { |a| a.map!.with_index { |b, i| i == bestindex1 ? 0 : b } }
         end
       end
     end
   end
 
-  def threatAssesment
+  def threatAssessment(ai_l, ai_r, op_l, op_r)
     # Dont care about it if one of the player mons is dead
-    return [1, -1, 1, -1] if @battle.battlers[0].hp <= 0 && @battle.battlers[2].hp <= 0
-    return [0, -1, 1, -1] if @battle.battlers[0].hp <= 0
-    return [1, -1, 0, -1] if @battle.battlers[2].hp <= 0
+    return [1, -1, 1, -1] if @battle.battlers[op_l].hp <= 0 && @battle.battlers[op_r].hp <= 0
+    return [0, -1, 1, -1] if @battle.battlers[op_l].hp <= 0
+    return [1, -1, 0, -1] if @battle.battlers[op_r].hp <= 0
 
     threatscore = [-1, 1.0, -1, 1.0]
 
     # find out which of the AI mons are still Alive
-    aimons = [@battle.battlers[1], @battle.battlers[3]].find_all { |mon| mon && mon.hp > 0 }
+    aimons = [@battle.battlers[ai_l], @battle.battlers[ai_r]].find_all { |mon| mon && mon.hp > 0 }
 
     @battle.battlers.each_with_index { |opp, i|
-      next if i == 1 || i == 3 # only player needs assesed
+      next if i == ai_l || i == ai_r # only opponents need to be assessed
 
       # Base stat total
       threatscore[i] *= pbBaseStatTotal(opp.species) / 200.0
@@ -1051,15 +1054,15 @@ class PokeBattle_AI
       # Mega
       threatscore[i] *= 1.1 if opp.isMega?
       # Boosts
-      threatscore[i] *= 1 + 0.2 * opp.stages[PBStats::ATTACK]	if opp.attack > opp.spatk
-      threatscore[i] *= 1 + 0.2 * opp.stages[PBStats::SPATK]	if opp.spatk > opp.attack
-      threatscore[i] *= 1 + 0.05 * opp.stages[PBStats::DEFENSE]	if aimons.any? { |mon| mon.attack > mon.spatk }
-      threatscore[i] *= 1 + 0.05 * opp.stages[PBStats::SPDEF] 		if aimons.any? { |mon| mon.spatk > mon.attack }
-      threatscore[i] *= 1 + 0.10 * opp.stages[PBStats::SPEED] 		if (opp.stages[PBStats::SPEED] > 0) ^ @battle.trickroom != 0
-      threatscore[i] *= [1 + 0.20 * opp.stages[PBStats::ACCURACY], 0.3].max	if opp.stages[PBStats::ACCURACY] < 0
-      threatscore[i] *= 1 + 0.20 * opp.stages[PBStats::EVASION]	if opp.stages[PBStats::EVASION] > 0
+      threatscore[i] *= 1 + 0.2 * opp.stages[PBStats::ATTACK] if opp.attack > opp.spatk
+      threatscore[i] *= 1 + 0.2 * opp.stages[PBStats::SPATK] if opp.spatk > opp.attack
+      threatscore[i] *= 1 + 0.05 * opp.stages[PBStats::DEFENSE] if aimons.any? { |mon| mon.attack > mon.spatk }
+      threatscore[i] *= 1 + 0.05 * opp.stages[PBStats::SPDEF] if aimons.any? { |mon| mon.spatk > mon.attack }
+      threatscore[i] *= 1 + 0.10 * opp.stages[PBStats::SPEED] if (opp.stages[PBStats::SPEED] > 0) ^ @battle.trickroom != 0
+      threatscore[i] *= [1 + 0.20 * opp.stages[PBStats::ACCURACY], 0.3].max if opp.stages[PBStats::ACCURACY] < 0
+      threatscore[i] *= 1 + 0.20 * opp.stages[PBStats::EVASION] if opp.stages[PBStats::EVASION] > 0
       # Opp has revealed spread move
-      threatscore[i] *= 1.2 if getAIMemory(opp).any? { |moveloop| moveloop != nil && [:AllOpposing, :AllNonUsers].include?(moveloop.target) }
+      threatscore[i] *= 1.2 if getAIMemory(opp).any? { |moveloop| moveloop != nil && [:AllOpposing, :AllNonUsers].include?(opp.pbTarget(moveloop)) }
       # Opp has killing move
       threatscore[i] *= 1.5 if aimons.any? { |mon| checkAIdamage(opp, mon) >= mon.hp }
       # Abilities
@@ -1115,10 +1118,13 @@ class PokeBattle_AI
         $ai_log_data[@attacker.index].final_score_moves.push(-1)
         return -1
       end
-      $ai_log_data[@attacker.index].final_score_moves.push(0) if (@opponent.ability == :MAGICBOUNCE || @opponent.pbPartner.ability == :MAGICBOUNCE) && @move.basedamage == 0 # there is not a good way to do this section
-      $ai_log_data[@attacker.index].final_score_moves.push(0) if (@opponent.effects[:MagicCoat] == true || @opponent.pbPartner.effects[:MagicCoat] == true) && @move.basedamage == 0 # there is not a good way to do this section
-      return -1 if (@opponent.ability == :MAGICBOUNCE || @opponent.pbPartner.ability == :MAGICBOUNCE) && @move.basedamage == 0 # there is not a good way to do this section
-      return -1 if (@opponent.effects[:MagicCoat] == true || @opponent.pbPartner.effects[:MagicCoat] == true) && @move.basedamage == 0 # there is not a good way to do this section
+      if @move.basedamage == 0 && (
+           (@opponent.ability == :MAGICBOUNCE || @opponent.pbPartner.ability == :MAGICBOUNCE) ||
+           (@opponent.effects[:MagicCoat] == true || @opponent.pbPartner.effects[:MagicCoat] == true)
+         )
+        $ai_log_data[@attacker.index].final_score_moves.push(0)
+        return -1
+      end
     end
     if @move.pbType(@attacker) == :GROUND && !canGroundMoveHit?(@opponent) && @battle.FE != :CAVE && @move.move != :THOUSANDARROWS && @move.basedamage != 0
       $ai_log_data[@attacker.index].final_score_moves.push(0)
@@ -1204,7 +1210,7 @@ class PokeBattle_AI
       score *= 0 if !aifaster && @opponent.effects[:TwoTurnAttack] != 0
       score *= 0 if @battle.FE == :PSYTERRAIN && !@opponent.isAirborne?
       score *= 0 if @opponent.ability == :DAZZLING || @opponent.ability == :QUEENLYMAJESTY || @opponent.pbPartner.ability == :DAZZLING || @opponent.pbPartner.ability == :QUEENLYMAJESTY || ((opponent.ability == :MIRRORARMOR || opponent.pbPartner.ability == :MIRRORARMOR) && @battle.FE == :STARLIGHT)
-      score *= 0.2 if (checkAImoves([:QUICKGUARD]) || checkAImoves([:QUICKGUARD], getAIMemory(@opponent.pbPartner))) && move.target != :User
+      score *= 0.2 if (checkAImoves([:QUICKGUARD]) || checkAImoves([:QUICKGUARD], getAIMemory(@opponent.pbPartner))) && @attacker.pbTarget(move) != :User
       PBDebug.log(sprintf("Priority Check End")) if $INTERNAL
     elsif @move.priority < 0 && pbAIfaster?()
       score *= 0.9
@@ -1213,13 +1219,15 @@ class PokeBattle_AI
     end
     # Sound move checks
     if !@move.zmove && @move.isSoundBased?
-      $ai_log_data[@attacker.index].final_score_moves.push(0) if (@opponent.ability == :SOUNDPROOF && !moldBreakerCheck(@attacker)) || @attacker.effects[:ThroatChop] != 0
-      return 0 if (@opponent.ability == :SOUNDPROOF && !moldBreakerCheck(@attacker)) || @attacker.effects[:ThroatChop] != 0
+      if (@opponent.ability == :SOUNDPROOF && !moldBreakerCheck(@attacker)) || @attacker.effects[:ThroatChop] != 0
+        $ai_log_data[@attacker.index].final_score_moves.push(0)
+        return 0
+      end
 
       score *= 0.6 if checkAImoves([:THROATCHOP])
     end
     if @opponent.ability == :DANCER
-      if (PBStuff::DANCEMOVE).include?(@move.move)
+      if PBStuff::DANCEMOVE.include?(@move.move)
         score *= 0.5
         score *= 0.1 if @battle.FE == :BIGTOP || @battle.FE == :DANCEFLOOR
       end
@@ -1239,7 +1247,7 @@ class PokeBattle_AI
           ioncheck = true if j.move == :IONDELUGE || j.move == :PLASMAFISTS
         end
       end
-      if @move.basedamage > 0
+      if @move.basedamage > 0 && (![:FUTURESIGHT, :DOOMDESIRE].include?(@move.move) || @move.priority < 0)
         if @opponent.effects[:DestinyBond]
           score *= 0.2
         else
@@ -1249,24 +1257,28 @@ class PokeBattle_AI
       if ioncheck && @move.type == :NORMAL
         score *= 0.3 if [:LIGHTNINGROD, :VOLTABSORB, :MOTORDRIVE].include?(@opponent.ability) || @opponent.pbPartner.ability == :LIGHTNINGROD
       end
-      score *= 0.2 if widecheck && [:AllOpposing, :AllNonUsers].include?(@move.target)
+      score *= 0.2 if widecheck && [:AllOpposing, :AllNonUsers].include?(@attacker.pbTarget(@move))
       score *= 0.2 if powdercheck && @move.pbType(@attacker) == :FIRE
     end
     # If opponent about to use a recover move before being killed, check damage vs them again
-    if checkAIhealing && !pbAIfaster?(@move) && @mondata.skill >= BESTSKILL && move.basedamage > 0
+    if checkAIhealing && !pbAIfaster?(@move) && @mondata.skill >= BESTSKILL && @move.basedamage > 0
       newhp = [((@opponent.totalhp + 1) / 2) + @opponent.hp, @opponent.totalhp].min
       score *= [pbRoughDamage / newhp.to_f, 1.1].min
     end
     # Check for moves that can be nullified by any mon in doubles
-    if @battle.doublebattle && [:SingleNonUser, :RandomOpposing, :SingleOpposing, :OppositeOpposing].include?(@move.target) && !(@attacker.ability == :PROPELLERTAIL || @attacker.ability == :STALWART)
+    if @battle.doublebattle && [:SingleNonUser, :RandomOpposing, :SingleOpposing, :OppositeOpposing].include?(@attacker.pbTarget(@move)) && !(@attacker.ability == :PROPELLERTAIL || @attacker.ability == :STALWART)
       if @move.pbType(@attacker) == :ELECTRIC || (ioncheck && @move.type == :NORMAL)
-        $ai_log_data[@attacker.index].final_score_moves.push(0) if @opponent.pbPartner.ability == :LIGHTNINGROD
-        return -1 if @opponent.pbPartner.ability == :LIGHTNINGROD
+        if @opponent.pbPartner.ability == :LIGHTNINGROD
+          $ai_log_data[@attacker.index].final_score_moves.push(0)
+          return -1
+        end
 
         score *= 0.3 if @attacker.pbPartner.ability == :LIGHTNINGROD
       elsif @move.pbType(@attacker) == :WATER
-        $ai_log_data[@attacker.index].final_score_moves.push(0) if @opponent.pbPartner.ability == :STORMDRAIN
-        return -1 if @opponent.pbPartner.ability == :STORMDRAIN
+        if @opponent.pbPartner.ability == :STORMDRAIN
+          $ai_log_data[@attacker.index].final_score_moves.push(0)
+          return -1
+        end
 
         score *= 0.3 if @attacker.pbPartner.ability == :STORMDRAIN
       end
@@ -1308,12 +1320,12 @@ class PokeBattle_AI
       contactscore = 1.0
       contactscore *= @attacker.hp < 0.2 * @attacker.totalhp ? 0.5 : 0.85 if (@mondata.oppitemworks && @opponent.item == :ROCKYHELMET) || shieldcheck
       case @opponent.ability
-        when :EFFECTSPORE	then contactscore *= 0.75
-        when :PERISHBODY	then contactscore *= [:DIMENSIONAL, :HAUNTED, :INFERNAL].include?(@battle.FE) ? 0.5 : 0.75 unless @battle.FE == :HOLY
-        when :FLAMEBODY	then contactscore *= 0.75 if @attacker.pbCanBurn?(false)
-        when :STATIC	then contactscore *= 0.75 if @attacker.pbCanParalyze?(false)
-        when :POISONPOINT	then contactscore *= 0.75 if @attacker.pbCanPoison?(false)
-        when :CUTECHARM 	then contactscore *= 0.8 if @attacker.effects[:Attract] < 0 && initialscores.length > 0 && initialscores[scoreindex] < 110
+        when :EFFECTSPORE then contactscore *= 0.75
+        when :PERISHBODY then contactscore *= [:DIMENSIONAL, :HAUNTED, :INFERNAL].include?(@battle.FE) ? 0.5 : 0.75 unless @battle.FE == :HOLY
+        when :FLAMEBODY then contactscore *= 0.75 if @attacker.pbCanBurn?(false)
+        when :STATIC then contactscore *= 0.75 if @attacker.pbCanParalyze?(false)
+        when :POISONPOINT then contactscore *= 0.75 if @attacker.pbCanPoison?(false)
+        when :CUTECHARM then contactscore *= 0.8 if @attacker.effects[:Attract] < 0 && initialscores.length > 0 && initialscores[scoreindex] < 110
         when :ROUGHSKIN, :IRONBARBS then contactscore *= @attacker.hp < 0.2 * @attacker.totalhp ? 0.5 : 0.85
         when :GOOEY, :TANGLINGHAIR, :COTTONDOWN
           if @attacker.pbCanReduceStatStage?(PBStats::SPEED)
@@ -1321,7 +1333,7 @@ class PokeBattle_AI
             contactscore *= 0.8 if pbAIfaster?()
           end
         when :MUMMY, :WANDERINGSPIRIT
-          if !((PBStuff::FIXEDABILITIES).include?(@attacker.ability)) && !(@attacker.ability == :MUMMY || @attacker.ability == :SHIELDDUST)
+          if !(PBStuff::FIXEDABILITIES.include?(@attacker.ability)) && !(@attacker.ability == :MUMMY || @attacker.ability == :SHIELDDUST)
             mummyscore = getAbilityDisruptScore(@opponent, @attacker)
             mummyscore = mummyscore < 2 ? 2 - mummyscore : 0
             contactscore *= mummyscore
@@ -1384,8 +1396,10 @@ class PokeBattle_AI
           if @opponent.effects[:SkyDrop]
             miss = false if PBStuff::AIRHITMOVES.include?(@move.move)
           end
-          $ai_log_data[@attacker.index].final_score_moves.push(0) if miss
-          return 0 if miss
+          if miss
+            $ai_log_data[@attacker.index].final_score_moves.push(0)
+            return 0
+          end
         else
           $ai_log_data[@attacker.index].final_score_moves.push(0)
           return 0
@@ -1416,9 +1430,9 @@ class PokeBattle_AI
     if @attacker.status == :FROZEN && @mondata.skill >= MEDIUMSKILL
       if PBStuff::UNFREEZEMOVE.include?(@move.move)
         score += 30
-      else
-        $ai_log_data[@attacker.index].final_score_moves.push(0) if @attacker.moves.any? { |moveloop| moveloop != nil && (PBStuff::UNFREEZEMOVE).include?(moveloop.move) }
-        return 0 if @attacker.moves.any? { |moveloop| moveloop != nil && (PBStuff::UNFREEZEMOVE).include?(moveloop.move) }
+      elsif @attacker.moves.any? { |moveloop| moveloop != nil && PBStuff::UNFREEZEMOVE.include?(moveloop.move) }
+        $ai_log_data[@attacker.index].final_score_moves.push(0)
+        return 0
       end
     end
     # If target is frozen, don't prefer moves that could thaw them
@@ -1651,7 +1665,7 @@ class PokeBattle_AI
         miniscore = selfstatboost(statarray)
       when 0x1e # Defense Curl
         miniscore = selfstatboost([0, 1, 0, 0, 0, 0, 0])
-        score *= 1.3 if @attacker.pbHasMove?(:ROLLOUT) && @attacker.effects[:DefenseCurl] == false
+        score *= 1.3 if (@attacker.pbHasMove?(:ROLLOUT) || @attacker.pbHasMove?(:ICEBALL)) && @attacker.effects[:DefenseCurl] == false
       when 0x1f # Flame Charge
         miniscore = selfstatboost([0, 0, 0, 0, 1, 0, 0])
       when 0x20 # Charge Beam, Fiery Dance
@@ -1740,8 +1754,8 @@ class PokeBattle_AI
         miniscore = selfstatboost([0, 0, 0, 0, 0, 0, 2])
       when 0x35 # Shell Smash
         miniscore = selfstatboost([2, 0, 2, 0, 2, 0, 0])
-        miniscore *= selfstatdrop([0, 1, 0, 1, 0, 0, 0], score) if (@mondata.attitemworks && @attacker.item != :WHITEHERB)
-        if (@mondata.attitemworks && @attacker.item == :WHITEHERB)
+        miniscore *= selfstatdrop([0, 1, 0, 1, 0, 0, 0], score) if @mondata.attitemworks && @attacker.item != :WHITEHERB
+        if @mondata.attitemworks && @attacker.item == :WHITEHERB
           miniscore *= 1.3
         else
           miniscore *= 0.8
@@ -1776,7 +1790,7 @@ class PokeBattle_AI
           miniscore = selfstatboost(statarray)
         else
           miniscore = selfstatdrop(statarray, score)
-          miniscore *= 1.5 if @attacker.ability == :MOXIE || @attacker.ability == :CHILLINGNEIGH || (@attacker.ability == :ASONE && @attacker.form == 1)
+          miniscore *= 1.5 if [:MOXIE, :CHILLINGNEIGH, :ASONECHILLING].include?(@attacker.ability)
         end
       when 0x3c # Close Combat, Dragon Ascent
         statarray = [0, 1, 0, 1, 0, 0, 0]
@@ -1816,9 +1830,9 @@ class PokeBattle_AI
       when 0x41 # Swagger
         if @opponent.ability == :CONTRARY
           miniscore = oppstatdrop(@battle.FE == :COLOSSEUM ? [3, 0, 0, 0, 0, 0, 0] : [2, 0, 0, 0, 0, 0, 0])
-				else
+        else
           miniscore = oppstatboost(@battle.FE == :COLOSSEUM ? [3, 0, 0, 0, 0] : [2, 0, 0, 0, 0], true)
-				end
+        end
       when 0x42 # Growl, Aurora Beam, Baby-Doll Eyes, Play Nice, Play Rough, Lunge, Trop Kick
         statarray = [1, 0, 0, 0, 0, 0, 0]
         statarray = [1, 0, 1, 0, 0, 0, 0] if @mondata.skill >= BESTSKILL && @battle.FE == :HAUNTED && @move.move == :BITTERMALICE
@@ -2183,7 +2197,7 @@ class PokeBattle_AI
           end
         end
       when 0x96 # Natural Gift
-        score *= 0 if @attacker.item.nil? || !pbIsBerry?(@attacker.item) || @attacker.ability == :KLUTZ || @battle.state.effects[:MagicRoom] > 0 || @attacker.effects[:Embargo] > 0 || (@opponent.ability == :UNNERVE || @opponent.ability == :ASONE)
+        score *= 0 if @attacker.item.nil? || !pbIsBerry?(@attacker.item) || @attacker.ability == :KLUTZ || @battle.state.effects[:MagicRoom] > 0 || @attacker.effects[:Embargo] > 0 || [:UNNERVE, :ASONECHILLING, :ASONEGRIM].include?(@opponent.ability)
       when 0x97 # Trump Card
         score *= 1.2 if @attacker.hp == @attacker.totalhp
         score *= 1.3 if checkAIdamage() < (@attacker.hp / 3.0)
@@ -2253,7 +2267,7 @@ class PokeBattle_AI
           miniscore = 0
         end
       when 0xac # Wide Guard
-        if getAIMemory().any? { |moveloop| moveloop != nil && (moveloop.target == :AllOpposing || moveloop.target == :AllNonUsers) }
+        if getAIMemory().any? { |moveloop| moveloop != nil && [:AllOpposing, :AllNonUsers].include?(@opponent.pbTarget(moveloop)) }
           miniscore = specialprotectcode()
           if @battle.FE == :CORROSIVEMIST
             miniscore *= 2 if checkAImoves([:HEATWAVE, :LAVAPLUME, :ERUPTION, :MINDBLOWN])
@@ -2462,7 +2476,7 @@ class PokeBattle_AI
         end
       when 0xd3 # Rollout, Ice Ball
         miniscore = rolloutcode()
-        score += 10 * selfstatboost([0, 0, 0, 0, 1, 0, 0]) if @mondata.skill >= BESTSKILL && @battle.FE == :ICY && @move.move == :ROLLOUT
+        score += 10 * selfstatboost([0, 0, 0, 0, 1, 0, 0]) if @mondata.skill >= BESTSKILL && @battle.FE == :ICY && [:ROLLOUT, :ICEBALL].include?(@move.move)
       when 0xd4 # Bide
         miniscore = bidecode()
       when 0xd5 # Recover, Heal Order, Milk Drink, Slack Off, Soft-Boiled
@@ -2618,14 +2632,6 @@ class PokeBattle_AI
         attitemscore = [embarcode(@attacker), 1].max
         miniscore = (embarcode() / attitemscore)
         miniscore *= 0 if @battle.state.effects[:MagicRoom] > 0
-      when 0xfa # Take Down, Head Charge, Submission, Wild Charge, Wood Hammer, Brave Bird, Double-Edge, Head Smash
-        miniscore = recoilcode()
-      when 0xfd # Volt Tackle
-        miniscore = recoilcode()
-        miniscore *= paracode()
-      when 0xfe # Flare Blitz
-        miniscore = recoilcode()
-        miniscore *= burncode()
       when 0xff # Sunny Day
         miniscore = weathercode()
         miniscore *= suncode()
@@ -3064,7 +3070,7 @@ class PokeBattle_AI
           miniscore = antistatcode([0, 1, 0, 0, 0], initialscores[scoreindex])
         end
       when 0x160 # Core Enforcer
-        if !(PBStuff::FIXEDABILITIES).include?(@opponent.ability) && !@opponent.effects[:GastroAcid] && @opponent.effects[:Substitute] <= 0
+        if !PBStuff::FIXEDABILITIES.include?(@opponent.ability) && !@opponent.effects[:GastroAcid] && @opponent.effects[:Substitute] <= 0
           miniscore = getAbilityDisruptScore(@attacker, @opponent)
           miniscore *= 1.3 if !pbAIfaster?(@move)
           miniscore *= 1.3 if checkAIpriority()
@@ -3178,7 +3184,7 @@ class PokeBattle_AI
         if !@attacker.effects[:NoRetreat]
           statarray = [1, 1, 1, 1, 1, 0, 0]
           statarray = [2, 0, 2, 0, 2, 0, 0]  if @battle.FE == :CHESS
-          statarray = [2, 2, 2, 2, 2, 0, 0]	 if @battle.FE == :COLOSSEUM
+          statarray = [2, 2, 2, 2, 2, 0, 0]  if @battle.FE == :COLOSSEUM
           miniscore = selfstatboost(statarray)
           if @battle.FE == :CHESS
             miniscore *= selfstatdrop([0, 1, 0, 1, 0, 0, 0], score) if (@mondata.attitemworks && @attacker.item != :WHITEHERB)
@@ -3383,6 +3389,7 @@ class PokeBattle_AI
         miniscore *= tormentcode()
         miniscore *= oppstatdrop([2, 0, 2, 0, 0, 0, 0])
     end
+    miniscore *= recoilcode() if @move.recoil > 0
     score *= miniscore
     score = score.to_i
     score = 0 if score < 0
@@ -3405,15 +3412,14 @@ class PokeBattle_AI
       miniscore *= 1.5
     end
     miniscore *= (1.2 * hpGainPerTurn)
-    miniscore *= 2 if (attacker.species == :HYPNO && attacker.form == 1)
-    miniscore *= 1.3 if @attacker.moves.any? { |moveloop| moveloop != nil && (PBStuff::SETUPMOVE).include?(moveloop.move) }
+    miniscore *= 2 if attacker.species == :HYPNO && attacker.form == 1
+    miniscore *= 1.3 if @attacker.moves.any? { |moveloop| moveloop != nil && PBStuff::SETUPMOVE.include?(moveloop.move) }
     miniscore *= 1.3 if @attacker.pbHasMove?(:LEECHSEED)
     miniscore *= 1.3 if @attacker.pbHasMove?(:SUBSTITUTE)
     miniscore *= 1.2 if @opponent.hp == @opponent.totalhp
     miniscore *= 0.1 if checkAImoves([:SLEEPTALK, :SNORE])
     miniscore *= 0.1 if @opponent.ability == :NATURALCURE
     miniscore *= 0.8 if @opponent.ability == :MARVELSCALE
-    miniscore *= 0.5 if @opponent.ability == :SYNCHRONIZE && @attacker.pbCanSleep?(false)
     miniscore *= 0.4 if @opponent.effects[:Confusion] > 0
     miniscore *= 0.5 if @opponent.effects[:Attract] >= 0
     ministat = statchangecounter(@opponent, 1, 7)
@@ -3471,7 +3477,7 @@ class PokeBattle_AI
     return @move.basedamage > 0 ? 1 : 0 if @move.move == :THUNDERWAVE && @move.pbTypeModifier(@move.pbType(@attacker), @attacker, @opponent) == 0
 
     miniscore = 1.0
-    miniscore *= 1.1 if @attacker.moves.any? { |moveloop| moveloop != nil && (PBStuff::SETUPMOVE).include?(moveloop.move) }
+    miniscore *= 1.1 if @attacker.moves.any? { |moveloop| moveloop != nil && PBStuff::SETUPMOVE.include?(moveloop.move) }
     miniscore *= 1.2 if @opponent.hp == @opponent.totalhp
     ministat = @opponent.stages[PBStats::ATTACK] + @opponent.stages[PBStats::SPATK] + @opponent.stages[PBStats::SPEED]
     miniscore *= 1 + 0.05 * ministat if ministat > 0
@@ -3541,13 +3547,12 @@ class PokeBattle_AI
 
     miniscore = 1.2
     miniscore *= 0 if checkAImoves(PBStuff::UNFREEZEMOVE)
-    miniscore *= 1.2 if @attacker.moves.any? { |moveloop| moveloop != nil && (PBStuff::SETUPMOVE).include?(moveloop.move) }
+    miniscore *= 1.2 if @attacker.moves.any? { |moveloop| moveloop != nil && PBStuff::SETUPMOVE.include?(moveloop.move) }
     miniscore *= 1.2 if checkAIhealing()
     ministat = statchangecounter(@opponent, 1, 7)
     miniscore *= 1 + 0.05 * ministat if ministat > 0
     miniscore *= 0.3 if @opponent.ability == :NATURALCURE
     miniscore *= 0.8 if @opponent.ability == :MARVELSCALE
-    miniscore *= 0.5 if @opponent.ability == :SYNCHRONIZE && @attacker.pbCanFreeze?(false)
     miniscore = pbSereneGraceCheck(miniscore) if @move.basedamage > 0
     miniscore = pbReduceWhenKills(miniscore)
     return miniscore
@@ -3568,7 +3573,6 @@ class PokeBattle_AI
     miniscore *= 0.7 if @opponent.ability == :MARVELSCALE
     miniscore *= 0.1 if @opponent.ability == :GUTS
     miniscore *= 0.7 if @opponent.ability == :SHEDSKIN
-    miniscore *= 0.5 if @opponent.ability == :SYNCHRONIZE && @attacker.pbCanPetrify?(false)
     miniscore *= 0.5 if @opponent.ability == :MAGICGUARD || (@opponent.ability == :WONDERGUARD && @battle.FE == :COLOSSEUM)
     miniscore *= 0.3 if @opponent.ability == :QUICKFEET
     miniscore *= 1.1 if (@opponent.ability == :STURDY || (@battle.FE == :CHESS && @opponent.pokemon.piece == :PAWN) || (@battle.FE == :COLOSSEUM && @opponent.ability == :STALWART)) && @move.basedamage > 0
@@ -3613,7 +3617,7 @@ class PokeBattle_AI
   end
 
   def confucode
-    return @move.basedamage > 0 ? 1 : 0 if !@opponent.pbCanConfuse?(false)
+    return @move.basedamage > 0 ? 1 : 0 if !@opponent.pbCanConfuse?(false, inflictor: @attacker)
     return @move.basedamage > 0 ? 1 : 0 if secondaryEffectNegated?()
 
     miniscore = 1.0
@@ -3677,7 +3681,7 @@ class PokeBattle_AI
 
     miniscore = 1.2
     for mon in @battle.pbPartySingleOwner(@attacker.index)
-      next if mon.nil? || mon.hp <= 0 || mon.status.nil?
+      next if mon.nil? || mon.hp <= 0 || mon.isEgg? || mon.status.nil?
 
       miniscore *= 0.5 if mon.status == :POISON && mon.ability == :POISONHEAL
       miniscore *= 0.8 if mon.ability == :GUTS || mon.ability == :QUICKFEET || mon.knowsMove?(:FACADE)
@@ -3755,13 +3759,13 @@ class PokeBattle_AI
       end
       miniscore = statsboosted
       # weight categories based on combinations of boosted stats
-      if (stats[PBStats::ATTACK] > 0 || stats[PBStats::SPATK] > 0) && (stats[PBStats::SPEED] > 0) # Speed and offense i.e dragon dance
+      if (stats[PBStats::ATTACK] > 0 || stats[PBStats::SPATK] > 0) && stats[PBStats::SPEED] > 0 # Speed and offense i.e dragon dance
         miniscore *= 1.8
-      elsif (stats[PBStats::ATTACK] > 1 || stats[PBStats::SPATK] > 1) # Double offense i.e swords dance, nasty plot
+      elsif stats[PBStats::ATTACK] > 1 || stats[PBStats::SPATK] > 1 # Double offense i.e swords dance, nasty plot
         miniscore *= 1.5
       elsif (stats[PBStats::ATTACK] > 0 || stats[PBStats::SPATK] > 0) && (stats[PBStats::DEFENSE] > 0 || stats[PBStats::SPDEF] > 0) # Defense and offense i.e bulk up
         miniscore *= 1.5
-      elsif (stats[PBStats::DEFENSE] > 0 && stats[PBStats::SPDEF] > 0) # Both defenses i.e cosmic power
+      elsif stats[PBStats::DEFENSE] > 0 && stats[PBStats::SPDEF] > 0 # Both defenses i.e cosmic power
         miniscore *= 1.5
       end
     end
@@ -3830,7 +3834,7 @@ class PokeBattle_AI
                moveloop != nil && moveloop.basedamage > 0 && moveloop.priority < 1 && @mondata.roughdamagearray.transpose[@attacker.moves.find_index(moveloop)].max > 10
              } # thank u perry 4 saving me
             # Moxie/Soul Heart
-            miniscore *= 1.5 if (physmove && (@attacker.ability == :MOXIE || @attacker.ability == :CHILLINGNEIGH || (@attacker.ability == :ASONE && @attacker.form == 1))) || (specmove && (@attacker.ability == :SOULHEART || @attacker.ability == :GRIMNEIGH || (@attacker.ability == :ASONE && @attacker.form == 2)))
+            miniscore *= 1.5 if (physmove && [:MOXIE, :CHILLINGNEIGH, :ASONECHILLING].include?(@attacker.ability)) || (specmove && [:SOULHEART, :GRIMNEIGH, :ASONEGRIM].include?(@attacker.ability))
             if @attacker.attack < @attacker.spatk
               miniscore *= (1 + 0.05 * @attacker.stages[PBStats::SPATK]) if @attacker.stages[PBStats::SPATK] < 0
             else
@@ -4081,7 +4085,7 @@ class PokeBattle_AI
     stats.unshift(0)
     miniscore = 1.0
     if @opponent.index != @attacker.pbPartner.index
-      if @opponent.pbCanConfuse?(false) && confusionmove
+      if @opponent.pbCanConfuse?(false, inflictor: @attacker) && confusionmove
         if stats[PBStats::SPATK] != 0
           miniscore *= 1 + 0.1 * @opponent.stages[PBStats::ATTACK] if @opponent.stages[PBStats::ATTACK] > 0
           if @opponent.attack > @opponent.spatk
@@ -4105,7 +4109,7 @@ class PokeBattle_AI
       return 0 if @battle.pbOwnedByPlayer?(@attacker.pbPartner.index)
 
       if confusionmove
-        miniscore *= @opponent.pbCanConfuse?(false) ? 0.5 : 1.5
+        miniscore *= @opponent.pbCanConfuse?(false, inflictor: @attacker) ? 0.5 : 1.5
         miniscore *= 1.5 if (@opponent.attack < @opponent.spatk && stats[PBStats::ATTACK] != 0) || (@opponent.attack > @opponent.spatk && stats[PBStats::SPATK] != 0)
         miniscore *= 1.2 if @mondata.oppitemworks && (@opponent.item == :PERSIMBERRY || @opponent.item == :LUMBERRY)
       end
@@ -4176,7 +4180,7 @@ class PokeBattle_AI
       miniscore *= 1.1
       miniscore *= 1.2 if checkAIdamage() < @opponent.hp
       miniscore *= 1.5 if @move.function == 0x4C
-    else	# non-defense stuff
+    else # non-defense stuff
       if @mondata.roles.include?(:PHYSICALWALL) || @mondata.roles.include?(:SPECIALWALL)
         miniscore *= 1.3 if stats[PBStats::ATTACK] > 0 || stats[PBStats::SPATK] > 0 || stats[PBStats::ACCURACY] > 0
         miniscore *= 1.1 if stats[PBStats::SPEED] > 0
@@ -4301,20 +4305,19 @@ class PokeBattle_AI
     return miniscore
   end
 
-def hazardremovalcode
+  def hazardremovalcode
     return 0 if @attacker.pbNonActivePokemonCount == 0 && !@battle.doublebattle
     return 0 if @attacker.pbNonActivePokemonCount == 0 && @battle.doublebattle && @attacker.pbPartner.pbNonActivePokemonCount == 0
 
-    miniscore = 1.0
+    miniscore = 0.0
     yourparty = @battle.pbPartySingleOwner(@attacker.index)
     yourparty += @battle.pbPartySingleOwner(@attacker.pbPartner.index) if @battle.doublebattle
+
     for i in 0...yourparty.length
       pkmn = yourparty[i]
       next if !pkmn || pkmn.isEgg? || pkmn.hp == 0 || pkmn.item == :HEAVYDUTYBOOTS
 
-      if @attacker.pbOwnSide.effects[:StickyWeb]
-        miniscore += 1 if !pkmn.isAirborne? && pkmn.ability != :CONTRARY
-      end
+      miniscore += 1 if @attacker.pbOwnSide.effects[:StickyWeb] && !pkmn.isAirborne? && pkmn.ability != :CONTRARY
 
       next if pkmn.ability == :MAGICGUARD || (pkmn.ability == :WONDERGUARD && @battle.FE == :COLOSSEUM)
 
@@ -4327,7 +4330,7 @@ def hazardremovalcode
 
       if pkmn.hp == pkmn.totalhp && needsFullHP
         miniscore += 2.5 if @attacker.pbOwnSide.effects[:StealthRock]
-        miniscore += (1.5**@attacker.pbOwnSide.effects[:Spikes]) if !pkmn.isAirborne?
+        miniscore += (1.5**@attacker.pbOwnSide.effects[:Spikes]) if @attacker.pbOwnSide.effects[:Spikes] > 0 && !pkmn.isAirborne?
       end
 
       if @attacker.pbOwnSide.effects[:StealthRock]
@@ -4346,23 +4349,23 @@ def hazardremovalcode
 
       if @attacker.pbOwnSide.effects[:Spikes] && !pkmn.isAirborne? && @battle.FE == :ELECTERRAIN && Rejuv
         spikesEffectiveness = PBTypes.twoTypeEff(:ELECTRIC, pkmn.type1, pkmn.type2)
-       if $game_switches[:Inversemode] ^ (@battle.FE == :INVERSE)
+        if $game_switches[:Inversemode] ^ (@battle.FE == :INVERSE)
           switcheff = { 16 => 1, 8 => 2, 4 => 4, 2 => 8, 1 => 16, 0 => 16 }
           spikesEffectiveness = switcheff[spikesEffectiveness]
         end
         if spikesEffectiveness == 16
-          miniscore += (1.5**@attacker.pbOwnSide.effects[:Spikes])
+          miniscore += (1.5**@attacker.pbOwnSide.effects[:Spikes]) if @attacker.pbOwnSide.effects[:Spikes] > 0
         elsif spikesEffectiveness == 8
-          miniscore += (@attacker.pbOwnSide.effects[:Spikes])
+          miniscore += @attacker.pbOwnSide.effects[:Spikes]
         end
       end
 
       if knowsHPBasedMove
         miniscore += 1.3 if @attacker.pbOwnSide.effects[:StealthRock]
-        miniscore += (1.3**@attacker.pbOwnSide.effects[:Spikes])
+        miniscore += (1.3**@attacker.pbOwnSide.effects[:Spikes]) if @attacker.pbOwnSide.effects[:Spikes] > 0
       end
 
-      if !pkmn.isAirborne? && pkmn.status == nil
+      if !pkmn.isAirborne? && pkmn.status == nil && @attacker.pbOwnSide.effects[:ToxicSpikes] > 0
         if !pkmn.hasType?(:POISON) && !pkmn.hasType?(:STEEL) && ![:IMMUNITY, :POISONHEAL, :TOXICBOOST, :COMATOSE, :PURIFYINGSALT, :GUTS].include?(pkmn.ability) && !(pkmn.ability == :PASTELVEIL && @battle.FE != :INFERNAL)
           if pkmn.moves.any? { |moveloop| moveloop != nil && [0xd5, 0xd6, 0xd7, 0xd8, 0xda, 0xdb, 0xdf, 0x114, 0x162, 0x169, 0x16C, 0x172].include?(moveloop.function) } # Healing move functions except Rest
             miniscore += (1.8**@attacker.pbOwnSide.effects[:ToxicSpikes])
@@ -4681,7 +4684,7 @@ def hazardremovalcode
   end
 
   def abilitychangecode(ability)
-    return 0 if @opponent.ability == ability || (PBStuff::FIXEDABILITIES).include?(@opponent.ability)
+    return 0 if @opponent.ability == ability || PBStuff::FIXEDABILITIES.include?(@opponent.ability)
 
     miniscore = getAbilityDisruptScore(@attacker, @opponent)
     if @opponent.index == @attacker.pbPartner.index
@@ -4692,7 +4695,7 @@ def hazardremovalcode
       end
     end
     if ability == :SIMPLE
-      miniscore *= 1.3 if @opponent.index == @attacker.pbPartner.index && @opponent.moves.any? { |moveloop| moveloop != nil && (PBStuff::SETUPMOVE).include?(moveloop) }
+      miniscore *= 1.3 if @opponent.index == @attacker.pbPartner.index && @opponent.moves.any? { |moveloop| moveloop != nil && PBStuff::SETUPMOVE.include?(moveloop) }
       miniscore *= 0.5 if checkAImoves(PBStuff::SETUPMOVE)
     elsif ability == :INSOMNIA
       miniscore *= 1.3 if checkAImoves([:SNORE, :SLEEPTALK])
@@ -4704,7 +4707,7 @@ def hazardremovalcode
 
   def roleplaycode # Role Play
     return 0 if (PBStuff::ABILITYBLACKLIST).include?(@opponent.ability)
-    return 0 if (PBStuff::FIXEDABILITIES).include?(@attacker.ability)
+    return 0 if PBStuff::FIXEDABILITIES.include?(@attacker.ability)
     return 0 if @opponent.ability == 0 || @attacker.ability == @opponent.ability
 
     miniscore = getAbilityDisruptScore(@opponent, @attacker)
@@ -4713,7 +4716,7 @@ def hazardremovalcode
   end
 
   def entraincode(score)
-    return 0 if (PBStuff::FIXEDABILITIES).include?(@opponent.ability)
+    return 0 if PBStuff::FIXEDABILITIES.include?(@opponent.ability)
     return 0 if @opponent.ability == :TRUANT
     return 0 if (PBStuff::ABILITYBLACKLIST).include?(@attacker.ability) && @attacker.ability != :WONDERGUARD
     return 0 if @opponent.ability == 0 || @attacker.ability == @opponent.ability
@@ -4742,8 +4745,8 @@ def hazardremovalcode
   end
 
   def skillswapcode
-    return 0 if (PBStuff::FIXEDABILITIES).include?(@attacker.ability) && @attacker.ability != :ZENMODE
-    return 0 if (PBStuff::FIXEDABILITIES).include?(@opponent.ability) && @opponent.ability != :ZENMODE
+    return 0 if PBStuff::FIXEDABILITIES.include?(@attacker.ability) && @attacker.ability != :ZENMODE
+    return 0 if PBStuff::FIXEDABILITIES.include?(@opponent.ability) && @opponent.ability != :ZENMODE
     return 0 if @opponent.ability == :ILLUSION || @attacker.ability == :ILLUSION
     return 0 if @opponent.ability == 0 || @attacker.ability == @opponent.ability
 
@@ -4756,7 +4759,7 @@ def hazardremovalcode
   end
 
   def gastrocode
-    return 0 if @opponent.effects[:GastroAcid] || @opponent.effects[:Substitute] > 0 || (PBStuff::FIXEDABILITIES).include?(@opponent.ability)
+    return 0 if @opponent.effects[:GastroAcid] || @opponent.effects[:Substitute] > 0 || PBStuff::FIXEDABILITIES.include?(@opponent.ability)
 
     return getAbilityDisruptScore(@attacker, @opponent)
   end
@@ -5088,7 +5091,7 @@ def hazardremovalcode
     miniscore *= 1.3 if @battle.field.duration > 0 && getFieldDisruptScore(@attacker, @opponent) > 1.0
     miniscore *= 1.3 if @attacker.pbOpposingSide.screenActive?
     miniscore *= 1.2 if @attacker.pbOpposingSide.effects[:Tailwind] > 0
-    miniscore *= 0.3 if @opponent.moves.any? { |moveloop| moveloop != nil && (PBStuff::SETUPMOVE).include?(moveloop.move) }
+    miniscore *= 0.3 if @opponent.moves.any? { |moveloop| moveloop != nil && PBStuff::SETUPMOVE.include?(moveloop.move) }
     if @attacker.ability == :SPEEDBOOST && !pbAIfaster?() && @battle.trickroom == 0
       miniscore *= 8
       # experimental -- cancels out drop if killing moves
@@ -5111,7 +5114,7 @@ def hazardremovalcode
     end
     miniscore *= 1.3 if @opponent.effects[:LeechSeed] >= 0
     miniscore *= 4 if @opponent.effects[:PerishSong] != 0
-    if (PBStuff::TRAPPINGABILITIESAI.include?(@attacker.ability) || (@attacker.ability == :MAGNETPULL && @opponent.hasType?(:STEEL)) || @opponent.effects[:MeanLook])
+    if PBStuff::TRAPPINGABILITIESAI.include?(@attacker.ability) || (@attacker.ability == :MAGNETPULL && @opponent.hasType?(:STEEL)) || @opponent.effects[:MeanLook]
       miniscore *= 4 if @opponent.effects[:PerishSong] == 3
       miniscore *= 8 if @opponent.effects[:PerishSong] == 1
     end
@@ -5278,7 +5281,7 @@ def hazardremovalcode
         miniscore *= 1.3
         miniscore *= 1.5 if maxdam * 3 < @attacker.totalhp
       end
-      miniscore *= 1.5 if @attacker.moves.any? { |moveloop| moveloop != nil && (PBStuff::PROTECTMOVE).include?(moveloop.move) } && @opponent.ability != :UNSEENFIST
+      miniscore *= 1.5 if @attacker.moves.any? { |moveloop| moveloop != nil && PBStuff::PROTECTMOVE.include?(moveloop.move) } && @opponent.ability != :UNSEENFIST
       miniscore *= 1.3 if hpGainPerTurn > 1
     else
       miniscore *= 0.5
@@ -5377,7 +5380,7 @@ def hazardremovalcode
     if pbRoughDamage(oldmove, @opponent, @attacker) * 4 > @attacker.hp
       miniscore *= 0.3
     elsif @opponent.stages[PBStats::SPEED] > 0
-      if (@opponent.hasType?(:DARK) || @attacker.ability != :PRANKSTER || @opponent.ability == :SPEEDBOOST)
+      if @opponent.hasType?(:DARK) || @attacker.ability != :PRANKSTER || @opponent.ability == :SPEEDBOOST
         miniscore *= 0.5
       else
         miniscore *= 2
@@ -5519,9 +5522,9 @@ def hazardremovalcode
     miniscore *= 1.3 if @opponent.effects[:Attract] > -1
     miniscore *= 1.3 if @opponent.effects[:Confusion] > 0
     miniscore *= 1.2 if @mondata.roles.include?(:PHYSICALWALL) || @mondata.roles.include?(:SPECIALWALL)
-    miniscore *= 1.1 if @attacker.moves.any? { |moveloop| moveloop != nil && (PBStuff::PROTECTMOVE).include?(moveloop.move) } && !(@opponent.ability == :UNSEENFIST)
-    miniscore *= 1.3 if (@mondata.attitemworks && @attacker.item == :BINDINGBAND)
-    miniscore *= 1.1 if (@mondata.attitemworks && @attacker.item == :GRIPCLAW)
+    miniscore *= 1.1 if @attacker.moves.any? { |moveloop| moveloop != nil && PBStuff::PROTECTMOVE.include?(moveloop.move) } && @opponent.ability != :UNSEENFIST
+    miniscore *= 1.3 if @mondata.attitemworks && @attacker.item == :BINDINGBAND
+    miniscore *= 1.1 if @mondata.attitemworks && @attacker.item == :GRIPCLAW
     return miniscore
   end
 
@@ -5574,7 +5577,7 @@ def hazardremovalcode
     theirpartycount = @battle.pbPokemonCount(@battle.pbParty(@opponent.index))
     miniscore *= 1.1 if yourpartycount == 1
     miniscore *= 0.3 if theirpartycount == 1 && hasgreatmoves()
-    miniscore *= 0.7 if @opponent.moves.any? { |moveloop| moveloop != nil && (PBStuff::SETUPMOVE).include?(moveloop.move) }
+    miniscore *= 0.7 if @opponent.moves.any? { |moveloop| moveloop != nil && PBStuff::SETUPMOVE.include?(moveloop.move) }
     if (@attacker.hp.to_f) / @attacker.totalhp < 0.5
       miniscore *= 1.5
       miniscore *= 2 if @attacker.effects[:Curse]
@@ -5616,7 +5619,7 @@ def hazardremovalcode
     miniscore = recovercode
     maxdam = checkAIdamage()
     recoverhp = [@attacker.hp + @attacker.totalhp / 2.0, @attacker.totalhp].min # the amount of hp we expect to have after recover
-    if @attacker.moves.any? { |moveloop| moveloop != nil && (PBStuff::PROTECTMOVE).include?(moveloop.move) } && @opponent.ability != :UNSEENFIST # if we have protect
+    if @attacker.moves.any? { |moveloop| moveloop != nil && PBStuff::PROTECTMOVE.include?(moveloop.move) } && @opponent.ability != :UNSEENFIST # if we have protect
       if (maxdam > @attacker.hp) && (maxdam < recoverhp) && !hasgreatmoves() # and we expect to die, and can't kill the opponent, and we can save ourselves
         miniscore *= 4
       else
@@ -5644,7 +5647,7 @@ def hazardremovalcode
       miniscore *= 2 if maxdam * 2 > @attacker.hp && !pbAIfaster?()
     end
     miniscore *= @attacker.hp < 0.5 * @attacker.totalhp ? 1.5 : 0.5
-    miniscore *= 1.2 if (@mondata.roles.include?(:PHYSICALWALL) || @mondata.roles.include?(:SPECIALWALL))
+    miniscore *= 1.2 if @mondata.roles.include?(:PHYSICALWALL) || @mondata.roles.include?(:SPECIALWALL)
     if @opponent.status == :POISON || @opponent.status == :BURN || @opponent.effects[:LeechSeed] >= 0 || @opponent.effects[:Curse]
       miniscore *= 1.3
       miniscore *= 1.3 if @opponent.effects[:Toxic] > 0
@@ -5684,7 +5687,7 @@ def hazardremovalcode
         reflectdamage = maxdam
         reflectdamage = @attacker.hp - 1 if maxdam >= @attacker.hp
         reflectdamage *= 0.5
-        if (reflectdamage >= @opponent.hp)
+        if reflectdamage >= @opponent.hp
           miniscore *= 4
           miniscore *= 6 if @initial_scores.length > 0 && hasgreatmoves() # experimental -- cancels out drop if killing moves
         end
@@ -5708,20 +5711,21 @@ def hazardremovalcode
       miniscore *= 0.5 if attackerHPpercent < 0.33
     end
     miniscore *= 1.2 if checkAIhealing()
-    miniscore *= 1.2 if @attacker.moves.any? { |moveloop| moveloop != nil && (PBStuff::PROTECTMOVE).include?(moveloop.move) } && @opponent.ability != :UNSEENFIST
-    miniscore *= 0.8 if @attacker.moves.any? { |moveloop| moveloop != nil && (PBStuff::PIVOTMOVE).include?(moveloop.move) }
+    miniscore *= 1.2 if @attacker.moves.any? { |moveloop| moveloop != nil && PBStuff::PROTECTMOVE.include?(moveloop.move) } && @opponent.ability != :UNSEENFIST
+    miniscore *= 0.8 if @attacker.moves.any? { |moveloop| moveloop != nil && PBStuff::PIVOTMOVE.include?(moveloop.move) }
     if checkAIdamage() * 5 < @attacker.totalhp && (getAIMemory().length > 0)
       miniscore *= 1.2
     elsif checkAIdamage() > @attacker.totalhp * 0.4
       miniscore *= 0.3
     end
-    miniscore *= 1.2 if (@mondata.roles.include?(:PHYSICALWALL) || @mondata.roles.include?(:SPECIALWALL) || @mondata.roles.include?(:TANK))
+    miniscore *= 1.2 if @mondata.roles.include?(:PHYSICALWALL) || @mondata.roles.include?(:SPECIALWALL) || @mondata.roles.include?(:TANK)
     miniscore *= 0.3 if checkAImoves(PBStuff::PHASEMOVE)
     miniscore *= 0.5 if @battle.doublebattle
     return miniscore
   end
 
   def absorbcode(score)
+    return 0 if @attacker.effects[:HealBlock] > 0
     return @move.basedamage > 0 ? 1 : 0 if (@attacker.hp == @attacker.totalhp && pbAIfaster?(@move) || @opponent.effects[:Substitute] > 0)
 
     hpdrained = ([score, 100].min) * @opponent.hp * 0.01 / 2.0
@@ -5734,13 +5738,13 @@ def hazardremovalcode
     end
     hpdrained *= 1.3 if @attacker.crested == :SHIINOTIC
     if pbAIfaster?(@move)
-      hpdrained = (@attacker.totalhp - @attacker.hp) if hpdrained > (@attacker.totalhp - @attacker.hp)
+      hpdrained = @attacker.totalhp - @attacker.hp if hpdrained > (@attacker.totalhp - @attacker.hp)
     else
       maxdam = checkAIdamage()
-      hpdrained = (@attacker.totalhp - (@attacker.hp - maxdam)) if hpdrained > (@attacker.totalhp - (@attacker.hp - maxdam))
+      hpdrained = @attacker.totalhp - (@attacker.hp - maxdam) if hpdrained > (@attacker.totalhp - (@attacker.hp - maxdam))
     end
     miniscore = hpdrained / @opponent.totalhp.to_f
-    return (1 - miniscore) if @opponent.ability == :LIQUIDOOZE
+    return 1 - miniscore if @opponent.ability == :LIQUIDOOZE
 
     miniscore *= 0.5 # arbitrary multiplier to make it value the HP less
     miniscore += 1
@@ -5829,7 +5833,7 @@ def hazardremovalcode
       miniscore *= 1 - (@attacker.hp / @attacker.totalhp)
       if @attacker.hp * 4 < @attacker.totalhp
         miniscore *= 1.3
-        miniscore *= 1.4 if (@mondata.attitemworks && @attacker.item == :CUSTAPBERRY)
+        miniscore *= 1.4 if @mondata.attitemworks && @attacker.item == :CUSTAPBERRY
       end
     end
     miniscore *= pbAIfaster?(@move) ? 1.3 : 0.5
@@ -5864,7 +5868,7 @@ def hazardremovalcode
       miniscore *= 1 - (@attacker.hp / @attacker.totalhp)
       if @attacker.hp * 4 < @attacker.totalhp
         miniscore *= 1.3
-        miniscore *= 1.4 if (@mondata.attitemworks && @attacker.item == :CUSTAPBERRY)
+        miniscore *= 1.4 if @mondata.attitemworks && @attacker.item == :CUSTAPBERRY
       end
     end
     miniscore *= pbAIfaster?(@move) ? 1.1 : 0.5
@@ -5879,9 +5883,9 @@ def hazardremovalcode
     return 0 if checkAIdamage() < @attacker.hp
 
     miniscore = 1.0
-    miniscore *= (pbAIfaster?(nil, nil, @attacker, @opponent.pbPartner)) ? 1.3 : 0.5
+    miniscore *= pbAIfaster?(nil, nil, @attacker, @opponent.pbPartner) ? 1.3 : 0.5
     if pbAIfaster?(nil, nil, @attacker, @opponent.pbPartner)
-      miniscore *= 3 if (@attacker.pbHasMove?(:PAINSPLIT) || @attacker.pbHasMove?(:FLAIL) || @attacker.pbHasMove?(:REVERSAL))
+      miniscore *= 3 if @attacker.pbHasMove?(:PAINSPLIT) || @attacker.pbHasMove?(:FLAIL) || @attacker.pbHasMove?(:REVERSAL)
       miniscore *= 5 if @attacker.pbHasMove?(:ENDEAVOR)
       miniscore *= 5 if @opponent.effects[:TwoTurnAttack] != 0
     end
@@ -5971,7 +5975,7 @@ def hazardremovalcode
       else
         miniscore *= 2 if (checkAIdamage() * 2) > @attacker.hp && (getAIMemory().length > 0)
       end
-    else	# U-turn / Volt Switch / Parting Shot
+    else # U-turn / Volt Switch / Parting Shot
       miniscore *= 1 - 0.15 * statchangecounter(@attacker, 1, 7, -1)
       miniscore *= 1 - 0.25 * statchangecounter(@attacker, 1, 7, 1)
       miniscore *= 1.1 if @mondata.roles.include?(:LEAD)
@@ -5985,7 +5989,7 @@ def hazardremovalcode
         @opponent.hp -= pbRoughDamage()
         can_hard_switch = false
         @battle.pbParty(@attacker.index).each_with_index { |mon, monindex|
-          next if mon.nil? || mon.hp <= 0
+          next if mon.nil? || mon.hp <= 0 || mon.isEgg?
           next if !@battle.pbIsOwner?(@attacker.index, monindex)
 
           can_hard_switch = true if shouldHardSwitch?(@attacker, monindex)
@@ -6007,7 +6011,7 @@ def hazardremovalcode
     if @opponent.effects[:MeanLook] >= 0 || @opponent.effects[:Ingrain] ||
        (@opponent.hasType?(:GHOST) && @move.move == :THOUSANDWAVES) ||
        secondaryEffectNegated?() || @opponent.effects[:Substitute] > 0 || @battle.pbPokemonCount(@battle.pbPartySingleOwner(@opponent.index)) == 1
-      return (@move.basedamage > 0) ? miniscore : 0
+      return @move.basedamage > 0 ? miniscore : 0
     end
 
     miniscore *= 0.1 if checkAImoves(PBStuff::PIVOTMOVE)
@@ -6108,7 +6112,7 @@ def hazardremovalcode
     return @move.basedamage > 0 ? 1 : 0 if @attacker.ability == :ROCKHEAD || @attacker.crested == :RAMPARDOS || @attacker.ability == :MAGICGUARD || (@attacker.ability == :WONDERGUARD && @battle.FE == :COLOSSEUM)
     return @move.basedamage > 0 ? 1 : 0 if @move.move == :WILDCHARGE && @battle.FE == :ELECTERRAIN
 
-    recoilamount = @move.hasFlag?(:recoil)
+    recoilamount = @move.recoil
     miniscore = 0.9
     miniscore *= 0.7 if notOHKO?(@attacker, @opponent, true)
     miniscore *= 0.8 if @attacker.hp > 0.1 * @attacker.totalhp && @attacker.hp < 0.4 * @attacker.totalhp
@@ -6221,8 +6225,8 @@ def hazardremovalcode
   end
 
   def subcode
-    return 0 if @attacker.hp * 4 <= @attacker.totalhp && @move.function != 0x80C
-    return 0 if @attacker.effects[:Substitute] > 0 && pbAIfaster?(@move) || @opponent.effects[:LeechSeed] < 0
+    return 0 if @attacker.hp * 4 <= @attacker.totalhp
+    return 0 if @attacker.effects[:Substitute] > 0 && pbAIfaster?(@move)
 
     miniscore = 1.0
     miniscore *= (@attacker.hp == @attacker.totalhp) ? 1.1 : (@attacker.hp * (1.0 / @attacker.totalhp))
@@ -6287,7 +6291,7 @@ def hazardremovalcode
     miniscore *= 0.6 if checkAIhealing()
     miniscore *= 0.8 if checkAImoves(PBStuff::SETUPMOVE)
     if @attacker.lastMoveUsed == :SUCKERPUNCH # Sucker Punch last turn
-      miniscore *= 0.3 if rand(3) != 1
+      miniscore *= 0.3 if @battle.pbRandom(3) != 1
       miniscore *= 0.5 if checkAImoves(PBStuff::SETUPMOVE)
     end
     if pbAIfaster?()
@@ -6308,7 +6312,7 @@ def hazardremovalcode
     miniscore *= 1.2 if @mondata.roles.include?(:PHYSICALWALL) || @mondata.roles.include?(:SPECIALWALL)
     miniscore *= 1.3 if @attacker.pbPartner.ability == :MOODY
     miniscore *= (@attacker.pbPartner.turncount < 1) ? 1.2 : 0.8
-    miniscore *= 1.3 if @attacker.pbPartner.moves.any? { |moveloop| moveloop != nil && (PBStuff::SETUPMOVE).include?(moveloop.move) }
+    miniscore *= 1.3 if @attacker.pbPartner.moves.any? { |moveloop| moveloop != nil && PBStuff::SETUPMOVE.include?(moveloop.move) }
     bestmove1, maxdam1 = checkAIMovePlusDamage(@attacker.pbOpposing1, @attacker.pbPartner)
     bestmove2, maxdam2 = checkAIMovePlusDamage(@attacker.pbOpposing2, @attacker.pbPartner)
     miniscore *= 1.5 if notOHKO?(@attacker, @opponent, true)
@@ -6332,6 +6336,7 @@ def hazardremovalcode
 
     miniscore = 1.0
     miniscore *= 2 if @attacker.moves.any? { |moveloop| moveloop != nil && moveloop.accuracy <= 70 }
+    miniscore *= 2 if @attacker.pbPartner.pbHasMove?(:GRAVAPPLE)
     miniscore *= 3 if @attacker.pbHasMove?(:ZAPCANNON) || @attacker.pbHasMove?(:INFERNO)
     miniscore *= 2 if [:SKYDROP, :BOUNCE, :FLY, :JUMPKICK, :FLYINGPRESS, :HIJUMPKICK].include?(checkAIbestMove().move)
     miniscore *= 2 if @attacker.hasType?(:GROUND) && (@opponent.hasType?(:FLYING) || [:LEVITATE, :SOLARDIOL, :LUNARIDOL].include?(@opponent.ability) || (@mondata.oppitemworks && @opponent.item == :AIRBALLOON))
@@ -6404,14 +6409,14 @@ def hazardremovalcode
     miniscore = 1.0
     miniscore *= 1.3 if (@mondata.attitemworks && @attacker.item == :AMPLIFIELDROCK) || @battle.FE == :NEWWORLD || @battle.FE == :PSYTERRAIN || (Rejuv && @battle.FE == :STARLIGHT)
     if pbRoughStat(@opponent, PBStats::ATTACK) > pbRoughStat(@opponent, PBStats::SPATK)
-      miniscore *= (@attacker.defense > @attacker.spdef) ? 0.5 : 2
+      miniscore *= @attacker.defense > @attacker.spdef ? 0.5 : 2
     else
-      miniscore *= (@attacker.defense > @attacker.spdef) ? 2 : 0.5
+      miniscore *= @attacker.defense > @attacker.spdef ? 2 : 0.5
     end
     if @attacker.attack > @attacker.spatk
-      miniscore *= (pbRoughStat(@opponent, PBStats::DEFENSE) > pbRoughStat(@opponent, PBStats::SPDEF)) ? 2 : 0.5
+      miniscore *= pbRoughStat(@opponent, PBStats::DEFENSE) > pbRoughStat(@opponent, PBStats::SPDEF) ? 2 : 0.5
     else
-      miniscore *= (pbRoughStat(@opponent, PBStats::DEFENSE) > pbRoughStat(@opponent, PBStats::SPDEF)) ? 0.5 : 2
+      miniscore *= pbRoughStat(@opponent, PBStats::DEFENSE) > pbRoughStat(@opponent, PBStats::SPDEF) ? 0.5 : 2
     end
     return miniscore
   end
@@ -6607,7 +6612,7 @@ def hazardremovalcode
       miniscore *= 0.5 if @opponent.hasType?(:PSYCHIC)
       miniscore *= 1.5 if @attacker.ability == :FOREWARN || @attacker.ability == :ANTICIPATION
       miniscore *= 0.7 if @attacker.moves.any? { |moveloop| moveloop != nil && moveloop.pbIsPriorityMoveAI(@attacker) } && @attacker.isAirborne?
-      miniscore *= 2 if (@mondata.attitemworks && @attacker.item == :AMPLIFIELDROCK)
+      miniscore *= 2 if @mondata.attitemworks && @attacker.item == :AMPLIFIELDROCK
     else
       miniscore = getFieldDisruptScore(@attacker, @opponent)
       miniscore *= 1.5 if @attacker.ability == :TELEPATHY
@@ -6617,7 +6622,7 @@ def hazardremovalcode
       miniscore *= 1.5 if @attacker.ability == :ANTICIPATION
       miniscore *= 0.7 if @attacker.moves.any? { |moveloop| moveloop != nil && moveloop.pbIsPriorityMoveAI(@attacker) } && @attacker.isAirborne?
       miniscore *= 1.3 if checkAIpriority() && !@opponent.isAirborne?
-      miniscore *= 2 if (@mondata.attitemworks && @attacker.item == :AMPLIFIELDROCK)
+      miniscore *= 2 if @mondata.attitemworks && @attacker.item == :AMPLIFIELDROCK
     end
     return miniscore
   end
@@ -6690,7 +6695,7 @@ def hazardremovalcode
         miniscore *= 2 if @opponent.effects[:TwoTurnAttack] != 0
       end
     end
-    if (@opponent.hasType?(:FLYING) || [:LEVITATE, :SOLARDIOL, :LUNARIDOL].include?(@opponent.ability))
+    if @opponent.hasType?(:FLYING) || [:LEVITATE, :SOLARDIOL, :LUNARIDOL].include?(@opponent.ability)
       miniscore *= (@attacker.moves.any? { |moveloop| moveloop != nil && moveloop.pbType(@attacker) == :GROUND && moveloop.basedamage > 0 }) ? 2 : 1.2
     end
     return miniscore
@@ -6731,7 +6736,7 @@ def hazardremovalcode
 
     miniscore = 0.7
     miniscore *= 0.5 if !pbAIfaster?(@move)
-    miniscore *= 1.3 if (getAIMemory().length > 0) && checkAIdamage() * 5 < @attacker.hp if @move.function == 0x10d
+    miniscore *= 1.3 if getAIMemory().length > 0 && checkAIdamage() * 5 < @attacker.hp if @move.function == 0x10d
     miniscore *= 1.2 if @attacker.moves.any? { |moveloop| moveloop != nil && moveloop.isHealingMove? }
     miniscore *= (1 + 0.05 * statchangecounter(@opponent, 1, 7))
     if PBStuff::TRAPPINGABILITIESAI.include?(@attacker.ability) || (@attacker.ability == :MAGNETPULL && @opponent.hasType?(:STEEL)) || @opponent.effects[:MeanLook] >= 0 || @opponent.pbNonActivePokemonCount == 0
@@ -6772,7 +6777,7 @@ def hazardremovalcode
     miniscore *= 0.9 if @attacker.stages[PBStats::ATTACK] > 0 || @attacker.stages[PBStats::SPATK] > 0 && @move.basedamage == 0
     if @move.basedamage == 0
       if @opponent.pbNonActivePokemonCount > 2
-        miniscore *= 0.2 * (@opponent.pbNonActivePokemonCount)
+        miniscore *= 0.2 * @opponent.pbNonActivePokemonCount
       else
         miniscore *= 0.2
       end
@@ -7028,7 +7033,7 @@ def hazardremovalcode
 
   def flingcode
     return 0 if @attacker.item.nil? || @battle.pbIsUnlosableItem(@attacker, @attacker.item) || @attacker.ability == :KLUTZ ||
-                (pbIsBerry?(@attacker.item) && (@opponent.ability == :UNNERVE || @opponent.ability == :ASONE)) ||
+                (pbIsBerry?(@attacker.item) && [:UNNERVE, :ASONECHILLING, :ASONEGRIM].include?(@opponent.ability)) ||
                 @attacker.effects[:Embargo] > 0 || @battle.state.effects[:MagicRoom] > 0
 
     miniscore = 1.0
@@ -7054,7 +7059,7 @@ def hazardremovalcode
     end
     if !@attacker.item.nil? && pbIsBerry?(@attacker.item)
       if @attacker.item == :FIGYBERRY || @attacker.item == :WIKIBERRY || @attacker.item == :MAGOBERRY || @attacker.item == :AGUAVBERRY || @attacker.item == :IAPAPABERRY
-        miniscore *= 1.3 if @opponent.pbCanConfuse?(false)
+        miniscore *= 1.3 if @opponent.pbCanConfuseSelf?(false)
       else
         miniscore *= 0
       end
@@ -7078,7 +7083,7 @@ def hazardremovalcode
     end
 
     if !@attacker.item.nil? && pbIsBerry?(@attacker.pokemon.itemRecycle)
-      miniscore *= 0 if @opponent.ability == :UNNERVE || @opponent.ability == :ASONE
+      miniscore *= 0 if [:UNNERVE, :ASONECHILLING, :ASONEGRIM].include?(@opponent.ability)
       miniscore *= 0 if checkAImoves([:INCINERATE, :PLUCK, :BUGBITE])
     end
     return miniscore
@@ -7165,7 +7170,7 @@ def hazardremovalcode
     miniscore *= 3 if PBStuff::TRAPPINGABILITIESAI.include?(@attacker.ability) || (@attacker.ability == :MAGNETPULL && @opponent.hasType?(:STEEL)) || @opponent.effects[:MeanLook] > 0
     miniscore *= 1.2 if @mondata.partyroles.any? { |role| role.include?(:SWEEPER) }
     miniscore *= 1.2 if @attacker.moves.any? { |moveloop| moveloop != nil && moveloop.isHealingMove? }
-    miniscore *= 1.2 if @attacker.moves.any? { |moveloop| moveloop != nil && (PBStuff::PROTECTMOVE).include?(moveloop.move) } && @opponent.ability != :UNSEENFIST
+    miniscore *= 1.2 if @attacker.moves.any? { |moveloop| moveloop != nil && PBStuff::PROTECTMOVE.include?(moveloop.move) } && @opponent.ability != :UNSEENFIST
     miniscore *= 1 - 0.05 * statchangecounter(@attacker, 1, 7)
     miniscore *= 1 + 0.05 * statchangecounter(@opponent, 1, 7)
     miniscore *= 0.5 if checkAImoves(PBStuff::PIVOTMOVE)
@@ -7190,7 +7195,7 @@ def hazardremovalcode
     return 0 if noLeechSeed(@opponent)
 
     miniscore = 1.0
-    miniscore *= 1.2 if (@mondata.roles.include?(:PHYSICALWALL) || @mondata.roles.include?(:SPECIALWALL) || @mondata.roles.include?(:TANK))
+    miniscore *= 1.2 if @mondata.roles.include?(:PHYSICALWALL) || @mondata.roles.include?(:SPECIALWALL) || @mondata.roles.include?(:TANK)
     miniscore *= 1.3 if @attacker.effects[:Substitute] > 0
     miniscore *= 1.2 if hpGainPerTurn(@opponent) > 1 || (@mondata.attitemworks && @attacker.item == :BIGROOT) || @attacker.crested == :SHIINOTIC
     miniscore *= 1.2 if @opponent.status == :PARALYSIS || @opponent.status == :SLEEP
@@ -7201,11 +7206,11 @@ def hazardremovalcode
     if @opponent.hp == @opponent.totalhp
       miniscore *= 1.1
     else
-      miniscore *= (@opponent.hp * (1.0 / @opponent.totalhp))
+      miniscore *= @opponent.hp * (1.0 / @opponent.totalhp)
     end
     miniscore *= 0.8 if @opponent.hp * 2 < @opponent.totalhp
     miniscore *= 0.2 if @opponent.hp * 4 < @opponent.totalhp
-    miniscore *= 1.2 if @attacker.moves.any? { |moveloop| moveloop != nil && (PBStuff::PROTECTMOVE).include?(moveloop.move) } && @opponent.ability != :UNSEENFIST
+    miniscore *= 1.2 if @attacker.moves.any? { |moveloop| moveloop != nil && PBStuff::PROTECTMOVE.include?(moveloop.move) } && @opponent.ability != :UNSEENFIST
     miniscore *= 1 + 0.05 * statchangecounter(@opponent, 1, 7, 1)
     return miniscore
   end
@@ -7488,13 +7493,17 @@ def hazardremovalcode
     # start with stuff that has set accuracy
     # Override accuracy
     return 100 if attacker.ability == :NOGUARD || opponent.ability == :NOGUARD || (attacker.ability == :FAIRYAURA && @battle.FE == :FAIRYTALE) && @mondata.skill >= MEDIUMSKILL
-    return 100 if move.accuracy == 0 # Doesn't do accuracy check (always hits)
+    if move.accuracy == 0 # Doesn't do accuracy check (always hits)...
+      # ...except for Future Sight and Doom Desire which are set to 0 to bypass accuracy when using the move
+      # their move dummies which are used when executing the move have accuracy as normal
+      return 100 if move.function != 0x111
+    end
 
     if @mondata.skill >= BESTSKILL
       baseaccuracy = move.accuracy
       fieldmove = @battle.field.moveData(move.move)
       baseaccuracy = fieldmove[:accmod] if fieldmove && fieldmove[:accmod]
-      return 100 if baseaccuracy == 0 # Doesn't do accuracy check (always hits)
+      return 100 if baseaccuracy == 0 && move.function != 0x111 # Doesn't do accuracy check (always hits) except Future Sight and Doom Desire (see comment above)
     end
     return 100 if move.function == 0xA5 # Swift
 
@@ -7516,11 +7525,12 @@ def hazardremovalcode
       if @mondata.skill >= HIGHSKILL
         return 100 if (move.function == 0x10 || move.move == :BODYSLAM || move.function == 0x137 || move.function == 0x9B || move.function == 0x806) && opponent.effects[:Minimize] # Flying Press, Stomp, DRush, Mal. Moonsault
         return 100 if @battle.FE == :MIRROR && (PBFields::BLINDINGMOVES + [:MIRRORSHOT]).include?(move.move)
-        return 100 if @battle.FE == :MIRROR && move.basedamage > 0 && move.target == :SingleNonUser && !move.contactMove? && move.pbIsSpecial?(move.type) && opponent.stages[PBStats::EVASION] > 0
+        return 100 if @battle.FE == :MIRROR && move.basedamage > 0 && attacker.pbTarget(move) == :SingleNonUser && !move.contactMove? && move.pbIsSpecial?(move.type) && opponent.stages[PBStats::EVASION] > 0
       end
     end
     # Get base accuracy
     baseaccuracy = move.accuracy
+    baseaccuracy = 100 if move.function == 0x111 # Future Sight, Doom Desire
 
     if @mondata.skill >= BESTSKILL
       fieldmove = @battle.field.moveData(move.move)
@@ -7532,13 +7542,14 @@ def hazardremovalcode
     # Accuracy stages
     accstage = attacker.stages[PBStats::ACCURACY]
     accstage = 0 if opponent.ability == :UNAWARE && !moldBreakerCheck(attacker)
-    accuracy = (accstage >= 0) ? (accstage + 3) * 100.0 / 3 : 300.0 / (3 - accstage)
     evastage = opponent.stages[PBStats::EVASION]
-    evastage -= 2 if @battle.state.effects[:Gravity] != 0
-    evastage = -6 if evastage < -6
-    evastage = 0 if opponent.effects[:Foresight] || opponent.effects[:MiracleEye] || move.function == 0xA9 || attacker.ability == :UNAWARE && !moldBreakerCheck(opponent)
-    evasion = (evastage >= 0) ? (evastage + 3) * 100.0 / 3 : 300.0 / (3 - evastage)
+    evastage = 0 if opponent.effects[:Foresight] || opponent.effects[:MiracleEye] || move.function == 0xA9 || [:UNAWARE, :KEENEYE].include?(attacker.ability) && !moldBreakerCheck(opponent)
+    accstage -= evastage
+    accstage = accstage.clamp(-6, 6)
+    accuracy = accstage >= 0 ? (accstage + 3) * 100.0 / 3 : 300.0 / (3 - accstage)
+
     # Accuracy modifiers
+    accuracy *= 1.67 if @battle.state.effects[:Gravity] != 0
     if @mondata.skill >= MEDIUMSKILL
       accuracy *= 1.3 if attacker.ability == :COMPOUNDEYES
       accuracy *= 1.1 if attacker.ability == :VICTORYSTAR
@@ -7550,9 +7561,9 @@ def hazardremovalcode
         accuracy *= 0.9 if attacker.ability == :LONGREACH && (@battle.FE == :ROCKY || @battle.FE == :FOREST) # Rocky Field # Forest Field
         accuracy *= @battle.FE == :RAINBOW ? 0 : 0.5 if opponent.ability == :WONDERSKIN && @basedamage == 0 && attacker.pbIsOpposing?(opponent.index) && !moldBreakerCheck(attacker)
         accuracy *= 0.5 if Rejuv && @battle.FE == :PSYTERRAIN && opponent.ability == :MAGICIAN && @basedamage == 0 && attacker.pbIsOpposing?(opponent.index) && !moldBreakerCheck(attacker)
-        evasion *= 1.2 if opponent.ability == :TANGLEDFEET && opponent.effects[:Confusion] > 0 && !moldBreakerCheck(attacker)
-        evasion *= 1.2 if (@battle.pbWeather == :SANDSTORM || @battle.FE == :DESERT || @battle.FE == :ASHENBEACH) && opponent.ability == :SANDVEIL && !moldBreakerCheck(attacker)
-        evasion *= 1.2 if (@battle.pbWeather == :HAIL || @battle.FE == :ICY || @battle.FE == :SNOWYMOUNTAIN) && opponent.ability == :SNOWCLOAK && !moldBreakerCheck(attacker)
+        accuracy *= 0.5 if opponent.ability == :TANGLEDFEET && opponent.effects[:Confusion] > 0 && !moldBreakerCheck(attacker)
+        accuracy *= 0.8 if (@battle.pbWeather == :SANDSTORM || @battle.FE == :DESERT || @battle.FE == :ASHENBEACH) && opponent.ability == :SANDVEIL && !moldBreakerCheck(attacker)
+        accuracy *= 0.8 if (@battle.pbWeather == :HAIL || @battle.FE == :ICY || @battle.FE == :SNOWYMOUNTAIN) && opponent.ability == :SNOWCLOAK && !moldBreakerCheck(attacker)
       end
       if attacker.itemWorks?
         accuracy *= 1.1 if attacker.item == :WIDELENS
@@ -7561,14 +7572,13 @@ def hazardremovalcode
           accuracy *= 1.2 if (attacker.ability == :GLUTTONY && attacker.hp <= (attacker.totalhp / 2.0).floor) || attacker.hp <= (attacker.totalhp / 4.0).floor
         end
         if @mondata.skill >= HIGHSKILL
-          evasion *= 1.1 if opponent.item == :BRIGHTPOWDER
-          evasion *= 1.1 if opponent.item == :LAXINCENSE
+          accuracy *= 0.9 if opponent.item == :BRIGHTPOWDER
+          accuracy *= 0.9 if opponent.item == :LAXINCENSE
         end
       end
     end
-    evasion = 100 if attacker.ability == :KEENEYE
-    evasion = 100 if @mondata.skill >= BESTSKILL && @battle.FE == :ASHENBEACH && [:OWNTEMPO, :INNERFOCUS, :PUREPOWER, :SANDVEIL, :STEADFAST].include?(attacker.ability) && opponent.ability != :UNNERVE && @opponent.ability != :ASONE
-    accuracy *= baseaccuracy / evasion.to_f
+    accuracy = 100.0 if @mondata.skill >= BESTSKILL && @battle.FE == :ASHENBEACH && [:OWNTEMPO, :INNERFOCUS, :PUREPOWER, :SANDVEIL, :STEADFAST].include?(attacker.ability) && ![:UNNERVE, :ASONECHILLING, :ASONEGRIM].include?(opponent.ability)
+    accuracy *= baseaccuracy / 100.0
     accuracy = 100 if accuracy > 100
     return accuracy
   end
@@ -7596,10 +7606,10 @@ def hazardremovalcode
       pri = battlermove.priority if !battlermove.zmove
       pri = pri.nil? ? 0 : pri
       pri += 1 if battler.ability == :PRANKSTER && battlermove.basedamage == 0 # Is status move
-      pri += 1 if battler.ability == :GALEWINGS && battlermove.type == :FLYING && ((battler.hp == battler.totalhp) || @battle.FE == :SKY || ((@battle.FE == :MOUNTAIN || @battle.FE == :SNOWYMOUNTAIN || @battle.FE == :VOLCANICTOP) && @battle.pbWeather == :STRONGWINDS))
+      pri += 1 if battler.ability == :GALEWINGS && battlermove.type == :FLYING && (battler.hp == battler.totalhp || @battle.FE == :SKY || ((@battle.FE == :MOUNTAIN || @battle.FE == :SNOWYMOUNTAIN || @battle.FE == :VOLCANICTOP) && @battle.pbWeather == :STRONGWINDS))
       pri += 1 if @battle.FE == :CHESS && battler.pokemon && battler.pokemon.piece == :KING
       pri += 1 if battlermove.move == :GRASSYGLIDE && (@battle.FE == :GRASSY || @battle.state.effects[:GRASSY] > 0)
-      pri += 3 if battler.ability == :TRIAGE && (PBStuff::HEALFUNCTIONS).include?(battlermove.function)
+      pri += 3 if battler.ability == :TRIAGE && PBStuff::HEALFUNCTIONS.include?(battlermove.function)
       pri -= 1 if @battle.FE == :DEEPEARTH && battlermove.move == :COREENFORCER
       priorityarray[index][0] = pri
     end
@@ -7667,7 +7677,7 @@ def hazardremovalcode
       healing -= 0.0625 if attacker.effects[:AquaRing] && @battle.FE == :CORROSIVEMIST && !attacker.hasType?(:STEEL) && !attacker.hasType?(:POISON) || !@battle.pbCheckGlobalAbility(:NEUTRALIZINGGAS)
       healing -= 0.0625 if attacker.effects[:Ingrain] && (@battle.FE == :SWAMP || @battle.FE == :CORROSIVE || @battle.FE == :CORRUPTED) && !(attacker.hasType?(:STEEL) || attacker.hasType?(:POISON))
       healing -= 0.0625 if @battle.FE == :HAUNTED && attacker.status == :SLEEP && !attacker.hasType?(:GHOST)
-      healing -= 0.0625 if (@battle.FE == :DIMENSIONAL && attacker.effects[:HealBlock])
+      healing -= 0.0625 if @battle.FE == :DIMENSIONAL && attacker.effects[:HealBlock]
       healing -= 0.125 if @battle.FE == :CORROSIVE && (attacker.ability == :GRASSPELT || attacker.ability == :LEAFGUARD || attacker.ability == :FLOWERVEIL)
       healing -= 0.125 if @battle.FE == :INFERNAL && attacker.effects[:Torment]
 
@@ -7750,7 +7760,7 @@ def hazardremovalcode
       else
         subscore *= 1.3 if attacker.itemWorks? && attacker.item == :BIGROOT
       end
-      subscore *= 1.3 if (@attacker.crested == :SHIINOTIC)
+      subscore *= 1.3 if @attacker.crested == :SHIINOTIC
       subscore *= 2.0 if @battle.FE == :MISTY || @battle.FE == :SWAMP || @battle.FE == :WATERSURFACE || @battle.FE == :UNDERWATER
       healing += subscore
     end
@@ -7763,9 +7773,9 @@ def hazardremovalcode
       else
         subscore *= 1.3 if attacker.itemWorks? && attacker.item == :BIGROOT
       end
-      subscore *= 1.3 if (@attacker.crested == :SHIINOTIC)
+      subscore *= 1.3 if @attacker.crested == :SHIINOTIC
       subscore *= 2.0 if (@battle.FE == :FOREST || @battle.ProgressiveFieldCheck(PBFields::FLOWERGARDEN) || (Rejuv && @battle.FE == :GRASSY)) || @battle.state.effects[:GRASSY] > 0
-      subscore *= 2.0 if (@battle.ProgressiveFieldCheck(PBFields::FLOWERGARDEN, 4, 5))
+      subscore *= 2.0 if @battle.ProgressiveFieldCheck(PBFields::FLOWERGARDEN, 4, 5)
       healing += subscore
     end
     if attacker.ability == :DRYSKIN
@@ -7815,27 +7825,27 @@ def hazardremovalcode
     secondtype = move.getSecondaryType(attacker)
     if !moldBreakerCheck(attacker)
       case opponent.ability
-        when :SAPSIPPER	then return -1 if type == :GRASS || (!secondtype.nil? && secondtype.include?(:GRASS))
-        when :LEVITATE, :SOLARIDOL, :LUNARIDOL	then return 0 if (type == :GROUND || (!secondtype.nil? && secondtype.include?(:GROUND))) && @battle.FE != :CAVE && !opponent.hasWorkingItem(:IRONBALL) && @battle.state.effects[:Gravity] == 0
-        when :MAGNETPULL, :CONTRARY, :UNAWARE, :OBLIVIOUS	then return 0 if (type == :GROUND || (!secondtype.nil? && secondtype.include?(:GROUND))) && @battle.FE == :DEEPEARTH
-        when :STORMDRAIN	then return -1 if type == :WATER || (!secondtype.nil? && secondtype.include?(:WATER))
-        when :LIGHTNINGROD, :MOTORDRIVE	then return -1 if type == :ELECTRIC || (!secondtype.nil? && secondtype.include?(:ELECTRIC))
-        when :DRYSKIN	then return -1 if type == :WATER || (!secondtype.nil? && secondtype.include?(:WATER)) && opponent.effects[:HealBlock] == 0
-        when :VOLTABSORB	then return -1 if type == :ELECTRIC || (!secondtype.nil? && secondtype.include?(:ELECTRIC)) && opponent.effects[:HealBlock] == 0
-        when :WATERABSORB 						then return -1 if type == :WATER || (!secondtype.nil? && secondtype.include?(:WATER)) && opponent.effects[:HealBlock] == 0
-        when :BULLETPROOF 						then return 0 if (PBStuff::BULLETMOVE).include?(id)
-        when :FLASHFIRE	then return -1 if type == :FIRE || (!secondtype.nil? && secondtype.include?(:FIRE))
-        when :MAGMAARMOR	then return 0 if (type == :FIRE || (!secondtype.nil? && secondtype.include?(:FIRE))) && (@battle.FE == :DRAGONSDEN || @battle.FE == :INFERNAL || @battle.FE == :VOLCANICTOP)
-        when :TELEPATHY	then return 0 if  move.basedamage > 0 && opponent.index == attacker.pbPartner.index
+        when :SAPSIPPER then return -1 if type == :GRASS || (!secondtype.nil? && secondtype.include?(:GRASS))
+        when :LEVITATE, :SOLARIDOL, :LUNARIDOL then return 0 if (type == :GROUND || (!secondtype.nil? && secondtype.include?(:GROUND))) && @battle.FE != :CAVE && !opponent.hasWorkingItem(:IRONBALL) && @battle.state.effects[:Gravity] == 0
+        when :MAGNETPULL, :CONTRARY, :UNAWARE, :OBLIVIOUS then return 0 if (type == :GROUND || (!secondtype.nil? && secondtype.include?(:GROUND))) && @battle.FE == :DEEPEARTH
+        when :STORMDRAIN then return -1 if type == :WATER || (!secondtype.nil? && secondtype.include?(:WATER))
+        when :LIGHTNINGROD, :MOTORDRIVE then return -1 if type == :ELECTRIC || (!secondtype.nil? && secondtype.include?(:ELECTRIC))
+        when :DRYSKIN then return -1 if type == :WATER || (!secondtype.nil? && secondtype.include?(:WATER)) && opponent.effects[:HealBlock] == 0
+        when :VOLTABSORB then return -1 if type == :ELECTRIC || (!secondtype.nil? && secondtype.include?(:ELECTRIC)) && opponent.effects[:HealBlock] == 0
+        when :WATERABSORB then return -1 if type == :WATER || (!secondtype.nil? && secondtype.include?(:WATER)) && opponent.effects[:HealBlock] == 0
+        when :BULLETPROOF then return 0 if PBStuff::BULLETMOVE.include?(id)
+        when :FLASHFIRE then return -1 if type == :FIRE || (!secondtype.nil? && secondtype.include?(:FIRE))
+        when :MAGMAARMOR then return 0 if (type == :FIRE || (!secondtype.nil? && secondtype.include?(:FIRE))) && (@battle.FE == :DRAGONSDEN || @battle.FE == :INFERNAL || @battle.FE == :VOLCANICTOP)
+        when :TELEPATHY then return 0 if move.basedamage > 0 && opponent.index == attacker.pbPartner.index
       end
     end
     case opponent.crested
-      when :WHISCASH					 		then return -1 if type == :GRASS || (!secondtype.nil? && secondtype.include?(:GRASS))
-      when :SKUNTANK 							then return -1 if type == :GROUND || (!secondtype.nil? && secondtype.include?(:GROUND))
-      when :DRUDDIGON							then return -1 if type == :FIRE || (!secondtype.nil? && secondtype.include?(:FIRE))
+      when :WHISCASH then return -1 if type == :GRASS || (!secondtype.nil? && secondtype.include?(:GRASS))
+      when :SKUNTANK then return -1 if type == :GROUND || (!secondtype.nil? && secondtype.include?(:GROUND))
+      when :DRUDDIGON then return -1 if type == :FIRE || (!secondtype.nil? && secondtype.include?(:FIRE))
     end
     if @battle.FE == :ROCKY && (opponent.effects[:Substitute] > 0 || opponent.stages[PBStats::EVASION] > 0)
-      return 0 if (PBStuff::BULLETMOVE).include?(id)
+      return 0 if PBStuff::BULLETMOVE.include?(id)
     end
     if (@battle.FE == :WATERSURFACE || @battle.FE == :MURKWATERSURFACE) && (type == :GROUND || (!secondtype.nil? && secondtype.include?(:GROUND)))
       return 0
@@ -7866,11 +7876,17 @@ def hazardremovalcode
     end
     if opponent.effects[:Illusion]
       if skill >= BESTSKILL
-        zorovar = !(opponent.turncount > 1 || faintedcount > 2)
-        moveinfo = $cache.moves[attacker.lastMoveUsed]
-        zorovar = false if moveinfo && opponent.turncount > 0 && moveinfo.basedamage > 0 && ((moveinfo.type == :PSYCHIC && opponent.pokemon.form == 0) || ((moveinfo.type == :NORMAL || moveinfo.type == :FIGHTING) && opponent.pokemon.form == 1))
+        zorovar = opponent.turncount <= 1 && faintedcount <= 2
+        moveinfo = $cache.moves[opponent.lastMoveTaken]
+        if moveinfo
+          typemod = move.pbTypeModifier(moveinfo.type, attacker, opponent, false)
+          typemod = move.irregularTypeMods(attacker, opponent, typemod, moveinfo.type)
+          typemod = move.fieldTypeChange(attacker, opponent, typemod, false)
+          typemod = move.overlayTypeChange(attacker, opponent, typemod, false)
+          zorovar = false if opponent.turncount >= 0 && !attacker.missAcc && !attacker.effects[:Tantrum] && moveinfo.basedamage > 0 && typemod == 0
+        end
       elsif skill >= MEDIUMSKILL
-        zorovar = !(faintedcount > 4)
+        zorovar = faintedcount <= 4
       else
         zorovar = true
       end
@@ -7878,8 +7894,7 @@ def hazardremovalcode
       zorovar = false
     end
     typemod = move.pbTypeModifier(type, attacker, opponent, zorovar)
-    typemod *= 2 if type == :FIRE && opponent.effects[:TarShot]
-    move.irregularTypeMods(attacker, opponent, typemod, type)
+    typemod = move.irregularTypeMods(attacker, opponent, typemod, type)
 
     if id == :FLYINGPRESS
       if @battle.FE == :SKY
@@ -7919,8 +7934,8 @@ def hazardremovalcode
       when :WEATHERBALL
         weather = @battle.pbWeather
         move.type = :NORMAL
-        move.type = :FIRE if (weather == :SUNNYDAY && !attacker.hasWorkingItem(:UTILITYUMBRELLA))
-        move.type = :WATER if (weather == :RAINDANCE && !attacker.hasWorkingItem(:UTILITYUMBRELLA))
+        move.type = :FIRE if weather == :SUNNYDAY && !attacker.hasWorkingItem(:UTILITYUMBRELLA)
+        move.type = :WATER if weather == :RAINDANCE && !attacker.hasWorkingItem(:UTILITYUMBRELLA)
         move.type = :ROCK if weather == :SANDSTORM
         move.type = :ICE if weather == :HAIL
 
@@ -7936,15 +7951,16 @@ def hazardremovalcode
   end
 
   def scoreDecrease(threat_index, killable, decreased_by, ai_leader)
+    offset = (ai_leader % 2) ^ 1
     if killable[ai_leader] == :both
       # changing scoring for leader on mon that the leader doesn't kill
       @aimondata[ai_leader].scorearray[threat_index ^ 2].map! { |score| score > 80 ? 80 : score }
       # decreasing score for follower on mon that the leader kills
       @aimondata[ai_leader ^ 2].scorearray[threat_index].map! { |score| score * decreased_by }
     elsif killable[ai_leader] == :left
-      @aimondata[ai_leader ^ 2].scorearray[0].map! { |score| score * decreased_by }
+      @aimondata[ai_leader ^ 2].scorearray[0 + offset].map! { |score| score * decreased_by }
     elsif killable[ai_leader] == :right
-      @aimondata[ai_leader ^ 2].scorearray[2].map! { |score| score * decreased_by }
+      @aimondata[ai_leader ^ 2].scorearray[2 + offset].map! { |score| score * decreased_by }
     end
   end
 
@@ -7972,7 +7988,7 @@ def hazardremovalcode
       elsif @mondata.skill > BESTSKILL && @battle.FE == :CORRUPTED
         eff = PBTypes.twoTypeEff(:POISON, pkmn.type1, pkmn.type2)
       elsif @mondata.skill > BESTSKILL && (@battle.FE == :VOLCANICTOP || @battle.FE == :INFERNAL || (Rejuv && @battle.FE == :DRAGONSDEN))
-        eff1 = PBTypes.twoTypeEff(:FIRE, pkmn.type1, pkmn.type2)
+        eff = PBTypes.twoTypeEff(:FIRE, pkmn.type1, pkmn.type2)
       end
       if eff > 0
         eff *= 2 if @mondata.skill > BESTSKILL && (@battle.FE == :ROCKY || @battle.FE == :CAVE)
@@ -8016,6 +8032,7 @@ def hazardremovalcode
   def getAbilityDisruptScore(attacker, opponent)
     abilityscore = 100.0
     return (abilityscore / 100) if opponent.ability.nil? # if the ability doesn't work, then nothing here matters
+    return 0 if PBStuff::FIXEDABILITIES.include?(opponent.ability)
 
     case opponent.ability
       when :SPEEDBOOST
@@ -8118,8 +8135,6 @@ def hazardremovalcode
         abilityscore *= 1.7
       when :SLOWSTART
         abilityscore *= 0.3
-      when :MULTITYPE, :STANCECHANGE, :SCHOOLING, :SHIELDSDOWN, :DISGUISE, :RKSSYSTEM, :POWERCONSTRUCT, :ICEFACE
-        abilityscore *= 0
       when :SHEERFORCE
         abilityscore *= 1.2
       when :CONTRARY
@@ -8555,13 +8570,12 @@ def hazardremovalcode
       end
     end
     highdamage = checkAIdamage()
-    highratio = -1
     # expected damage percentage
     highratio = highdamage * (1.0 / @attacker.hp) if @attacker.hp != 0
     PBDebug.log(sprintf("Beginning AI Item use check.\n")) if $INTERNAL
     for i in items
       next @mondata.itemscore[i] = -100000 if $cache.items[i].checkFlag?(:noUseInBattle)
-      next @mondata.itemscore[i] = -8000 if $game_switches[:Stop_Items_Password] || $game_switches[:No_Items_Password]
+      next @mondata.itemscore[i] = -8000 if $game_switches[:Stop_Items_Password] || $game_switches[:No_Items_Password] || $game_switches[:AI_Play]
       next if @mondata.itemscore.key?(i)
 
       itemscore = 100
@@ -8569,20 +8583,20 @@ def hazardremovalcode
         PBDebug.log(sprintf("This is a HP-healing item.")) if $INTERNAL
         restoreamount = 0
         case i
-          when  :POTION	then restoreamount = 20
-          when  :ULTRAPOTION 	then restoreamount = 200
-          when  :SUPERPOTION 	then restoreamount = 60
-          when  :HYPERPOTION 	then restoreamount = 120
-          when  :MAXPOTION, :FULLRESTORE then restoreamount = @attacker.totalhp
-          when  :FRESHWATER	then restoreamount = 30
-          when  :SODAPOP 		then restoreamount = 50
-          when  :LEMONADE 	then restoreamount = 70
-          when  :MOOMOOMILK	then restoreamount = 100
-          when  :BUBBLETEA 	then restoreamount = 180
-          when  :MEMEONADE 	then restoreamount = 103
-          when  :STRAWBIC	then restoreamount = 90
-          when  :CHOCOLATEIC	then restoreamount = 70
-          when  :BLUEMIC	then restoreamount = 200
+          when :POTION then restoreamount = 20
+          when :ULTRAPOTION then restoreamount = 200
+          when :SUPERPOTION then restoreamount = 60
+          when :HYPERPOTION then restoreamount = 120
+          when :MAXPOTION, :FULLRESTORE then restoreamount = @attacker.totalhp
+          when :FRESHWATER then restoreamount = 30
+          when :SODAPOP then restoreamount = 50
+          when :LEMONADE then restoreamount = 70
+          when :MOOMOOMILK then restoreamount = 100
+          when :BUBBLETEA then restoreamount = 180
+          when :MEMEONADE then restoreamount = 103
+          when :STRAWBIC then restoreamount = 90
+          when :CHOCOLATEIC then restoreamount = 70
+          when :BLUEMIC then restoreamount = 200
         end
         resratio = restoreamount * (1.0 / @attacker.totalhp)
         itemscore *= (2 - (2.0 * @attacker.hp / @attacker.totalhp))
@@ -8821,7 +8835,7 @@ def hazardremovalcode
 
       ranvar = 0
       1000.times do
-        ranvar = rand(party.length)
+        ranvar = @battle.pbRandom(party.length)
         break if @battle.pbCanSwitchLax?(@attacker.index, ranvar, false)
       end
       partyScores[ranvar] = 100
@@ -8899,7 +8913,7 @@ def hazardremovalcode
         i.type1 = type
         i.type2 = nil
       end
-      if (i.ability == :IMPOSTER)
+      if i.ability == :IMPOSTER
         transformed = true
         i = pbMakeFakeBattler(@opponent.pokemon)
         i.hp = nonmegaform.hp
@@ -8927,7 +8941,7 @@ def hazardremovalcode
         roughdamagearray[0][moveindex] = [(pbRoughDamage(@move, i, @opponent) * 100) / (@opponent.hp.to_f), 100].min if @opponent.hp > 0
         if @battle.doublebattle
           roughdamagearray[1][moveindex] = [(pbRoughDamage(@move, i, @opponent.pbPartner) * 100) / (@opponent.pbPartner.hp.to_f), 100].min if @opponent.pbPartner.hp > 0
-          next if @move.target != :AllNonUsers && !PARTNERFUNCTIONS.include?(@move.function)
+          next if i.pbTarget(@move) != :AllNonUsers && !PARTNERFUNCTIONS.include?(@move.function)
 
           roughdamagearray[2][moveindex] = [(pbRoughDamage(@move, i, @attacker.pbPartner) * 100) / (@attacker.pbPartner.hp.to_f), 100].min if @attacker.pbPartner.hp > 0
         end
@@ -9114,13 +9128,13 @@ def hazardremovalcode
         end
         if theseRoles.include?(:FIELDSETTER)
           rolescore += 30
-          if (i.ability == :ELECTRICSURGE) || (nonmegaform.ability == :ELECTRICSURGE) || i.pbHasMove?(:IONDELUGE) || i.pbHasMove?(:ELECTRICTERRAIN) || i.pbHasMove?(:PLASMAFISTS)
+          if i.ability == :ELECTRICSURGE || nonmegaform.ability == :ELECTRICSURGE || i.pbHasMove?(:IONDELUGE) || i.pbHasMove?(:ELECTRICTERRAIN) || i.pbHasMove?(:PLASMAFISTS)
             rolescore += 60 if @battle.canChangeFE?(:ELECTERRAIN)
-          elsif (i.ability == :GRASSYSURGE) || (nonmegaform.ability == :GRASSYSURGE) || i.pbHasMove?(:GRASSYTERRAIN) # || (i.ability == :SEEDSOWER)
+          elsif i.ability == :GRASSYSURGE || nonmegaform.ability == :GRASSYSURGE || i.pbHasMove?(:GRASSYTERRAIN) # || (i.ability == :SEEDSOWER)
             rolescore += 60 if @battle.canChangeFE?(:GRASSY)
-          elsif (i.ability == :MISTYSURGE) || (nonmegaform.ability == :MISTYSURGE) || i.pbHasMove?(:MISTYTERRAIN) || i.pbHasMove?(:MIST)
+          elsif i.ability == :MISTYSURGE || nonmegaform.ability == :MISTYSURGE || i.pbHasMove?(:MISTYTERRAIN) || i.pbHasMove?(:MIST)
             rolescore += 60 if @battle.canChangeFE?(:MISTY)
-          elsif (i.ability == :PSYCHICSURGE) || (nonmegaform.ability == :PSYCHICSURGE) || i.pbHasMove?(:PSYCHICTERRAIN)
+          elsif i.ability == :PSYCHICSURGE || nonmegaform.ability == :PSYCHICSURGE || i.pbHasMove?(:PSYCHICTERRAIN)
             rolescore += 60 if @battle.canChangeFE?(:PSYCHICTERRAIN)
           elsif i.pbHasMove?(:CONVERSION) && i.pbHasMove?(:CONVERSION2)
             rolescore += 60 if @battle.canChangeFE?(:GLITCH)
@@ -9183,8 +9197,8 @@ def hazardremovalcode
         end
         if i.pbHasMove?(:PURSUIT) || (i.pbHasMove?(:SANDSTORM) || i.pbHasMove?(:HAIL)) && @opponent.item != :SAFETYGOGGLES ||
            i.pbHasMove?(:TOXIC) || i.pbHasMove?(:LEECHSEED)
-          movesscore += 150 if (@opponent.ability == :WONDERGUARD)
-          movesscore += 150 if (@opponent.pbPartner.ability == :WONDERGUARD)
+          movesscore += 150 if @opponent.ability == :WONDERGUARD
+          movesscore += 150 if @opponent.pbPartner.ability == :WONDERGUARD
         end
       end
       monscore += movesscore
@@ -9243,11 +9257,16 @@ def hazardremovalcode
             abilityscore += 20 if checkAImoves([:LEECHSEED], aimem)
             abilityscore += 20 if checkAImoves([:WILLOWISP], aimem)
             abilityscore += 20 if checkAImoves(PBStuff::POISONMOVE, aimem)
-          when :WATERBUBBLE, :WATERVEIL, :FLAREBOOST
+          when :WATERVEIL, :FLAREBOOST
             if checkAImoves(PBStuff::BURNMOVE, aimem)
               abilityscore += 10
               abilityscore += 10 if (i.ability == :FLAREBOOST)
             end
+          when :WATERBUBBLE
+            if checkAImoves(PBStuff::BURNMOVE, aimem)
+              abilityscore += 10
+            end
+            abilityscore += 30 if :FIRE == checkAIbestMove().pbType(@opponent) || (@opponent.pbPartner.hp > 0 && :FIRE == checkAIbestMove(@opponent.pbPartner).pbType(@opponent.pbPartner))
           when :OWNTEMPO
             abilityscore += 20 if checkAImoves(PBStuff::CONFUMOVE, aimem)
           when :SCREENCLEANER
@@ -9263,7 +9282,7 @@ def hazardremovalcode
             abilityscore -= 20 if @attacker.pbOwnSide.effects[:AuroraVeil] > 0
             abilityscore -= 20 if @attacker.pbOwnSide.effects[:AreniteWall] > 0
           when :CURIOUSMEDICINE
-            abilityscore -= (10) * statchangecounter(@opponent, 1, 7, 1)
+            abilityscore -= 10 * statchangecounter(@opponent, 1, 7, 1)
           when :INTIMIDATE, :FURCOAT, :STAMINA
             abilityscore += 40 if @opponent.attack > @opponent.spatk
             abilityscore += 40 if @opponent.pbPartner.attack > @opponent.pbPartner.spatk
@@ -9294,10 +9313,16 @@ def hazardremovalcode
             dievar = true if moldBreakerCheck(@opponent.pbPartner)
             abilityscore += 90 if !dievar
             abilityscore -= 90 if instantdievar
-          when :EFFECTSPORE, :STATIC, :POISONPOINT, :ROUGHSKIN, :IRONBARBS, :FLAMEBODY, :CUTECHARM, :MUMMY, :AFTERMATH, :GOOEY, :FLUFFY, :PERISHBODY, :WANDERINGSPIRIT
+          when :EFFECTSPORE, :STATIC, :POISONPOINT, :FLAMEBODY, :CUTECHARM, :MUMMY, :AFTERMATH, :GOOEY, :FLUFFY, :PERISHBODY, :WANDERINGSPIRIT
             if checkAIbestMove(@opponent).contactMove? || (@opponent.pbPartner.hp > 0 && checkAIbestMove(@opponent.pbPartner).contactMove?)
               abilityscore += 30 unless (i.ability == :FLUFFY && (@opponent.hasType?(:FIRE) || @opponent.pbPartner.hasType?(:FIRE))) || (i.ability == :PERISHBODY && @battle.FE == :HOLY)
             end
+          when :IRONBARBS, :ROUGHSKIN
+            if checkAIbestMove(@opponent).contactMove? || (@opponent.pbPartner.hp > 0 && checkAIbestMove(@opponent.pbPartner).contactMove?)
+              abilityscore += 30
+            end
+            abilityscore += 30 if @opponent.ability == :SKILLLINK
+            abilityscore += 30 if @opponent.pbPartner.hp > 0 && @opponent.pbPartner.ability == :SKILLLINK
           when :COTTONDOWN
             if incomingpercentage < 0.5
               if roughdamagearray[0].max >= 60
@@ -9308,10 +9333,9 @@ def hazardremovalcode
             end
           when :TRACE
             if [:WATERABSORB, :VOLTABSORB, :STORMDRAIN, :MOTORDRIVE, :FLASHFIRE, :LEVITATE, :LUNARIDOL, :SOLARIDOL, :LIGHTNINGROD,
-                :SAPSIPPER, :DRYSKIN, :SLUSHRUSH, :SANDRUSH, :SWIFTSWIM, :CHLOROPHYLL, :SPEEDBOOST,
-                :WONDERGUARD, :PRANKSTER].include?(@opponent.ability) ||
-               (pbAIfaster?() && ((@opponent.ability == :ADAPTABILITY) || (@opponent.ability == :DOWNLOAD) || (@opponent.ability == :PROTEAN) || (@opponent.ability == :LIBERO))) ||
-               (@opponent.attack > @opponent.spatk && (@opponent.ability == :INTIMIDATE)) || (@opponent.ability == :UNAWARE) || (i.hp == i.totalhp && ((@opponent.ability == :MULTISCALE) || (@opponent.ability == :SHADOWSHIELD)))
+                :SAPSIPPER, :DRYSKIN, :SLUSHRUSH, :SANDRUSH, :SWIFTSWIM, :CHLOROPHYLL, :SPEEDBOOST, :WONDERGUARD, :PRANKSTER].include?(@opponent.ability) ||
+               (pbAIfaster?() && [:ADAPTABILITY, :DOWNLOAD, :PROTEAN, :LIBERO].include?(@opponent.ability)) ||
+               (@opponent.attack > @opponent.spatk && @opponent.ability == :INTIMIDATE) || @opponent.ability == :UNAWARE || (i.hp == i.totalhp && (@opponent.ability == :MULTISCALE || @opponent.ability == :SHADOWSHIELD))
               abilityscore += 60
             end
           when :MAGMAARMOR
@@ -9321,8 +9345,6 @@ def hazardremovalcode
             abilityscore += 60 if checkAIbestMove(@opponent).isSoundBased? || (@opponent.pbPartner.hp > 0 && checkAIbestMove(@opponent.pbPartner).isSoundBased?)
           when :THICKFAT
             abilityscore += 30 if (@opponent.pbPartner.hp > 0 && ([:ICE, :FIRE].include?(checkAIbestMove().pbType(@opponent)) || [:ICE, :FIRE].include?(checkAIbestMove(@opponent.pbPartner).pbType(@opponent.pbPartner))))
-          when :WATERBUBBLE
-            abilityscore += 30 if :FIRE == checkAIbestMove().pbType(@opponent) || (@opponent.pbPartner.hp > 0 && :FIRE == checkAIbestMove(@opponent.pbPartner).pbType(@opponent.pbPartner))
           when :LIQUIDOOZE
             for j in aimem
               abilityscore += 40 if j.move == :LEECHSEED || j.function == 0xDD || j.function == 0x139 || j.function == 0x158
@@ -9341,7 +9363,7 @@ def hazardremovalcode
             abilityscore += 30 if @opponent.pbPartner.hp > 0 && !pbAIfaster?(nil, nil, i, @opponent.pbPartner)
           when :ILLUSION
             abilityscore += 40
-          when :MOXIE, :BEASTBOOST, :SOULHEART, :GRIMNEIGH, :CHILLINGNEIGH, :ASONE
+          when :MOXIE, :BEASTBOOST, :SOULHEART, :GRIMNEIGH, :CHILLINGNEIGH, :ASONECHILLING, :ASONEGRIM
             abilityscore += 40 if pbAIfaster?(nil, nil, i, @opponent) && ((@opponent.hp.to_f) / @opponent.totalhp < 0.5)
             abilityscore += 40 if (@opponent.pbPartner.hp > 0 && pbAIfaster?(nil, nil, i, @opponent.pbPartner) && ((@opponent.pbPartner.hp.to_f) / @opponent.pbPartner.totalhp < 0.5))
           when :SPEEDBOOST
@@ -9351,9 +9373,6 @@ def hazardremovalcode
             abilityscore += 30 if (@opponent.pbPartner.hp > 0 && :DARK == checkAIbestMove().pbType(@opponent) || :DARK == checkAIbestMove(@opponent.pbPartner).pbType(@opponent.pbPartner))
           when :RATTLED
             abilityscore += 15 if [:DARK, :GHOST, :BUG].include?(checkAIbestMove().pbType(@opponent)) || (@opponent.pbPartner.hp > 0 && [:DARK, :GHOST, :BUG].include?(checkAIbestMove(@opponent.pbPartner).pbType(@opponent.pbPartner)))
-          when :IRONBARBS, :ROUGHSKIN
-            abilityscore += 30 if (@opponent.ability == :SKILLLINK)
-            abilityscore += 30 if (@opponent.pbPartner.hp > 0 && @opponent.pbPartner.ability == :SKILLLINK)
           when :PRANKSTER
             abilityscore += 50 if !pbAIfaster?(nil, nil, i, @opponent) && !@opponent.hasType?(:DARK)
             abilityscore += 50 if (@opponent.pbPartner.hp > 0 && !pbAIfaster?(nil, nil, i, @opponent.pbPartner) && !@opponent.pbPartner.hasType?(:DARK))
@@ -9361,7 +9380,7 @@ def hazardremovalcode
             abilityscore += 50 if !pbAIfaster?(nil, nil, i, @opponent) && i.hp == i.totalhp && !@attacker.pbOwnSide.effects[:StealthRock]
             abilityscore += 50 if @opponent.pbPartner.hp > 0 && !pbAIfaster?(nil, nil, i, @opponent.pbPartner) && i.hp == i.totalhp && !@attacker.pbOwnSide.effects[:StealthRock]
           when :BULLETPROOF
-            abilityscore += 60 if (PBStuff::BULLETMOVE).include?(checkAIbestMove().move) || (@opponent.pbPartner.hp > 0 && (PBStuff::BULLETMOVE).include?(checkAIbestMove(@opponent.pbPartner).move))
+            abilityscore += 60 if PBStuff::BULLETMOVE.include?(checkAIbestMove().move) || (@opponent.pbPartner.hp > 0 && PBStuff::BULLETMOVE.include?(checkAIbestMove(@opponent.pbPartner).move))
           when :AURABREAK
             abilityscore += 50 if @opponent.ability == :FAIRYAURA || @opponent.ability == :DARKAURA
             abilityscore += 50 if @opponent.pbPartner.hp > 0 && (@opponent.pbPartner.ability == :FAIRYAURA || @opponent.pbPartner.ability == :DARKAURA)
@@ -9375,7 +9394,7 @@ def hazardremovalcode
           when :DAZZLING, :QUEENLYMAJESTY
             abilityscore += 20 if checkAIpriority(aimem)
             abilityscore += 20 if checkAIpriority(aimem2) && @mondata.skill >= BESTSKILL
-          when :SANDSTREAM, :SNOWWARNING, :SANDSTREAM, :SNOWWARNING, :SANDSPIT
+          when :SANDSTREAM, :SNOWWARNING, :SANDSPIT
             abilityscore += 70 if @opponent.ability == :WONDERGUARD
             abilityscore += 70 if @opponent.pbPartner.hp > 0 && @opponent.pbPartner.ability == :WONDERGUARD
           when :DEFEATIST
@@ -9397,7 +9416,7 @@ def hazardremovalcode
       end
       if transformed # pokemon has imposter ability. because we copy pokemon, we can use i to see ability opponent
         abilityscore += 50 if [:PUREPOWER, :HUGEPOWER, :MOXIE, :CHILLINGNEIGH, :GRIMNEIGH, :SPEEDBOOST, :BEASTBOOST, :SOULHEART, :WONDERGUARD, :PROTEAN, :LIBERO].include?(i.ability)
-        abilityscore += 30 if (i.level > nonmegaform.level) || pbGetMonRoles(@opponent).include?(:SWEEPER)
+        abilityscore += 30 if i.level > nonmegaform.level || pbGetMonRoles(@opponent).include?(:SWEEPER)
         abilityscore = -200 if i.effects[:Substitute] > 0
         abilityscore = -500 if i.species == :DITTO
       end
@@ -9438,9 +9457,9 @@ def hazardremovalcode
           itemscore += 25 if :ELECTRIC == checkAIbestMove().pbType(@opponent) || (@opponent.pbPartner.hp > 0 && :ELECTRIC == checkAIbestMove(@opponent.pbPartner).pbType(@opponent.pbPartner))
         end
         if (i.item == :FOCUSSASH || (@battle.FE == :CHESS && i.pokemon.piece == :PAWN) || i.ability == :STURDY || (@battle.FE == :CHESS && i.ability == :STALWART)) && i.hp == i.totalhp
-          if	(((@battle.weather == :SANDSTORM && !(i.hasType?(:ROCK) || i.hasType?(:GROUND) || i.hasType?(:STEEL))) || (@battle.weather == :HAIL && !(i.hasType?(:ICE)))) && !((i.ability == :OVERCOAT))) || @attacker.pbOwnSide.effects[:StealthRock] ||
-             @attacker.pbOwnSide.effects[:Spikes] > 0 || @attacker.pbOwnSide.effects[:ToxicSpikes] > 0
-            if !(i.ability == :MAGICGUARD) && !(i.ability == :WONDERGUARD && @battle.FE == :COLOSSEUM)
+          if (((@battle.weather == :SANDSTORM && !(i.hasType?(:ROCK) || i.hasType?(:GROUND) || i.hasType?(:STEEL))) || (@battle.weather == :HAIL && !(i.hasType?(:ICE)))) && i.ability != :OVERCOAT) ||
+             @attacker.pbOwnSide.effects[:StealthRock] || @attacker.pbOwnSide.effects[:Spikes] > 0 || @attacker.pbOwnSide.effects[:ToxicSpikes] > 0
+            if i.ability != :MAGICGUARD && !(i.ability == :WONDERGUARD && @battle.FE == :COLOSSEUM)
               itemscore -= 40
             end
           end
@@ -9451,11 +9470,12 @@ def hazardremovalcode
           itemscore += (30) * @opponent.stages[PBStats::SPATK]
           itemscore += (30) * @opponent.stages[PBStats::SPEED]
         end
-        if (i.item == :SNOWBALL)
+        if i.item == :SNOWBALL
           itemscore += 25 if :ICE == checkAIbestMove().pbType(@opponent) || (@opponent.pbPartner.hp > 0 && :ICE == checkAIbestMove(@opponent.pbPartner).pbType(@opponent.pbPartner))
         end
-        if (i.item == :PROTECTIVEPADS)
-          itemscore += 25 if (i.ability == :EFFECTSPORE) || (i.ability == :STATIC) || (i.ability == :POISONPOINT) || (i.ability == :ROUGHSKIN) || (i.ability == :WANDERINGSPIRIT) || (i.ability == :PERISHBODY && @battle.FE != :HOLY) || (i.ability == :IRONBARBS) || (i.ability == :FLAMEBODY) || (i.ability == :CUTECHARM) || (i.ability == :MUMMY) || (i.ability == :AFTERMATH) || (i.ability == :GOOEY) || ((i.ability == :FLUFFY) && (!@opponent.hasType?(:FIRE) && !@opponent.pbPartner.hasType?(:FIRE))) || (@opponent.item == :ROCKYHELMET)
+        if i.item == :PROTECTIVEPADS
+          itemscore += 25 if [:EFFECTSPORE, :STATIC, :POISONPOINT, :ROUGHSKIN, :WANDERINGSPIRIT, :IRONBARBS, :FLAMEBODY, :CUTECHARM, :MUMMY, :AFTERMATH, :GOOEY].include?(i.ability) ||
+                             (i.ability == :PERISHBODY && @battle.FE != :HOLY) || (i.ability == :FLUFFY && !@opponent.hasType?(:FIRE) && !@opponent.pbPartner.hasType?(:FIRE)) || @opponent.item == :ROCKYHELMET
         end
         if i.item == :MAGICALSEED
           itemscore += 75 if (@battle.FE == :NEWWORLD || (!Rejuv && @battle.FE == :INVERSE)) && @attacker.hp != 0 # New World or Inverse Field, hard switch
@@ -9544,7 +9564,7 @@ def hazardremovalcode
             fieldscore += 20 if i.ability == :WATERCOMPACTION
             fieldscore += 15 if i.ability == :PROPELLERTAIL
             fieldscore += 20 if i.ability == :DRYSKIN
-            fieldscore += 10 if (i.ability == :RATTLED || nonmegaform.ability == :RATTLED)
+            fieldscore += 10 if i.ability == :RATTLED || nonmegaform.ability == :RATTLED
           when :RAINBOW
             fieldscore += 10 if i.ability == :WONDERSKIN
             fieldscore += 20 if i.ability == :MARVELSCALE
@@ -9566,7 +9586,7 @@ def hazardremovalcode
             fieldscore += 30 if i.ability == :CORROSION
             fieldscore += 15 if i.hasType?(:POISON)
           when :DESERT
-            fieldscore += 20 if (i.ability == :SANDSTREAM || nonmegaform.ability == :SANDSTREAM || i.ability == :SANDSPIT || nonmegaform.ability == :SANDSPIT)
+            fieldscore += 20 if i.ability == :SANDSTREAM || nonmegaform.ability == :SANDSTREAM || i.ability == :SANDSPIT || nonmegaform.ability == :SANDSPIT
             fieldscore += 25 if i.ability == :SANDVEIL
             fieldscore += 30 if i.ability == :SANDFORCE
             fieldscore += 50 if i.ability == :SANDRUSH
@@ -9605,7 +9625,7 @@ def hazardremovalcode
             fieldscore += 20 if i.ability == :STATIC
             fieldscore += 25 if i.ability == :GALVANIZE
             fieldscore += 50 if i.ability == :SURGESURFER
-            fieldscore += 20 if (Rejuv && i.ability == :DOWNLOAD)
+            fieldscore += 20 if Rejuv && i.ability == :DOWNLOAD
             fieldscore += 25 if i.hasType?(:ELECTRIC)
           when :WASTELAND
             fieldscore += 10 if i.hasType?(:POISON)
@@ -9623,7 +9643,7 @@ def hazardremovalcode
             fieldscore += 15 if i.ability == :OWNTEMPO
             fieldscore += 15 if i.ability == :PUREPOWER
             fieldscore += 15 if i.ability == :STEADFAST
-            fieldscore += 20 if (i.ability == :SANDSTREAM || nonmegaform.ability == :SANDSTREAM)
+            fieldscore += 20 if i.ability == :SANDSTREAM || nonmegaform.ability == :SANDSTREAM
             fieldscore += 20 if i.ability == :WATERCOMPACTION
             fieldscore += 30 if i.ability == :SANDFORCE
             fieldscore += 35 if i.ability == :SANDVEIL
@@ -10116,11 +10136,20 @@ def hazardremovalcode
       forcedscore += 200 if encoreScore <= 30
       forcedscore += 110 if @attacker.effects[:Torment]
     end
-    if (@attacker.item == :CHOICEBAND || @attacker.item == :CHOICESPECS || @attacker.item == :CHOICESCARF || @attacker.ability == :GORILLATACTICS) && @attacker.effects[:ChoiceBand] != nil
-      for i in 0...@attacker.moves.length
-        if @attacker.moves[i].move == @attacker.effects[:ChoiceBand]
-          choiceindex = i
-          break
+    if @attacker.item == :CHOICEBAND || @attacker.item == :CHOICESPECS || @attacker.item == :CHOICESCARF || @attacker.ability == :GORILLATACTICS
+      if @attacker.effects[:ChoiceBand] != nil
+        for i in 0...@attacker.moves.length
+          if @attacker.moves[i].move == @attacker.effects[:ChoiceBand]
+            choiceindex = i
+            break
+          end
+        end
+      elsif @attacker.effects[:GorillaLock] != nil
+        for i in 0...@attacker.moves.length
+          if @attacker.moves[i].move == @attacker.effects[:GorillaLock]
+            choiceindex = i
+            break
+          end
         end
       end
       if choiceindex
@@ -10129,12 +10158,10 @@ def hazardremovalcode
         elsif @opponent.pbPartner.hp > 0
           choiceScore = @mondata.scorearray[@opponent.pbPartner.index][choiceindex]
         end
-      else
-        choiceScore = 0
+        forcedscore += 50 if choiceScore <= 50
+        forcedscore += 130 if choiceScore <= 30
+        forcedscore += 150 if choiceScore <= 10
       end
-      forcedscore += 50 if choiceScore <= 50
-      forcedscore += 130 if choiceScore <= 30
-      forcedscore += 150 if choiceScore <= 10
     end
     PBDebug.log(sprintf("Initial switchscore building: fsteak (%d)", forcedscore)) if $INTERNAL
     # Type effectiveness
@@ -10299,6 +10326,7 @@ def hazardremovalcode
     temppartyko = true
     for i in @mondata.party
       next if i.nil?
+      next if i.isEgg?
       next if @mondata.party.index(i) == @attacker.pokemonIndex
       next if @mondata.partyroles[@mondata.party.find_index(i)].include?(:ACE) && hazardantiscore > 0
 
@@ -10353,7 +10381,7 @@ def hazardremovalcode
     if mon.pbOwnSide.effects[:StickyWeb] && !mon.isAirborne?
       drop = @battle.FE == :FOREST ? 2 : 1
       mon.stages[PBStats::SPEED] -= drop unless mon.item == :WHITEHERB || mon.ability == :WHITESMOKE || mon.ability == :CLEARBODY || mon.item == :HEAVYDUTYBOOTS
-      mon.unburdened = true 			  if mon.ability == :UNBURDEN && mon.item == :WHITEHERB
+      mon.unburdened = true if mon.ability == :UNBURDEN && mon.item == :WHITEHERB
     end
     # Iron Ball Deep Earth
     if mon.item == :IRONBALL && @battle.FE == :DEEPEARTH
@@ -10484,8 +10512,8 @@ def hazardremovalcode
     end
     # Colosseum
     if @battle.FE == :COLOSSEUM
-      mon.stages[PBStats::DEFENSE] += 1 if (mon.ability == :BATTLEARMOR || mon.ability == :SHELLARMOR)
-      mon.stages[PBStats::SPDEF] += 1 if  (mon.ability == :MIRRORARMOR || mon.ability == :MAGICGUARD)
+      mon.stages[PBStats::DEFENSE] += 1 if mon.ability == :BATTLEARMOR || mon.ability == :SHELLARMOR
+      mon.stages[PBStats::SPDEF] += 1 if mon.ability == :MIRRORARMOR || mon.ability == :MAGICGUARD
       mon.stages[PBStats::ATTACK] += 1 if mon.ability == :JUSTIFIED || mon.ability == :NOGUARD
       mon.stages[PBStats::SPATK] += 1 if mon.ability == :JUSTIFIED || mon.ability == :NOGUARD
     end
@@ -10501,7 +10529,7 @@ def hazardremovalcode
     end
     if @battle.FE == :BACKALLEY
       mon.stages[PBStats::DEFENSE] += 1 if mon.ability == :ANTICIPATION || mon.ability == :FOREWARN
-      mon.stages[PBStats::SPDEF] += 1 if  mon.ability == :ANTICIPATION || mon.ability == :FOREWARN
+      mon.stages[PBStats::SPDEF] += 1 if mon.ability == :ANTICIPATION || mon.ability == :FOREWARN
       mon.stages[PBStats::ATTACK] += 1 if mon.ability == :PICKPOCKET || mon.ability == :MERCILESS
       mon.stages[PBStats::SPATK] += 1 if mon.ability == :MAGICIAN
     end
@@ -10670,7 +10698,7 @@ def hazardremovalcode
     # "does the other mon have moves that don't miss"
     for j in memory
       move = pbChangeMove(j, @opponent)
-      return true if move.accuracy == 0
+      return true if move.accuracy == 0 && move.function != 0x111 # Exclude Future Sight and Doom Desire
     end
     return false
   end
@@ -10829,7 +10857,7 @@ def hazardremovalcode
           end
         when :CHESS
           # Chess Move boost
-          if (CHESSMOVES).include?(move.move)
+          if CHESSMOVES.include?(move.move)
             if (opponent.ability == :ADAPTABILITY) || (opponent.ability == :ANTICIPATION) || (opponent.ability == :SYNCHRONIZE) || (opponent.ability == :TELEPATHY)
               basedamage = (basedamage * 0.5).round
             end
@@ -10906,21 +10934,21 @@ def hazardremovalcode
             basedamage = (basedamage * provimult).round
           end
         when :MOUNTAIN
-          if (PBFields::WINDMOVES).include?(move.move) && @battle.pbWeather == :STRONGWINDS
+          if PBFields::WINDMOVES.include?(move.move) && @battle.pbWeather == :STRONGWINDS
             provimult = 1.5
             provimult = 1.25 if $game_variables[:DifficultyModes] == 1
             provimult = ((provimult - 1.0) * 2.0) + 1.0 if $game_switches[:FieldFrenzy]
             basedamage = (basedamage * provimult).round
           end
         when :SNOWYMOUNTAIN
-          if (PBFields::WINDMOVES).include?(move.move) && @battle.pbWeather == :STRONGWINDS
+          if PBFields::WINDMOVES.include?(move.move) && @battle.pbWeather == :STRONGWINDS
             provimult = 1.5
             provimult = 1.25 if $game_variables[:DifficultyModes] == 1
             provimult = ((provimult - 1.0) * 2.0) + 1.0 if $game_switches[:FieldFrenzy]
             basedamage = (basedamage * provimult).round
           end
         when :MIRROR
-          if (PBFields::MIRRORMOVES).include?(move.move) && opponent.stages[PBStats::EVASION] > 0
+          if PBFields::MIRRORMOVES.include?(move.move) && opponent.stages[PBStats::EVASION] > 0
             provimult = 2.0
             provimult = 1.5 if $game_variables[:DifficultyModes] == 1
             provimult = ((provimult - 1.0) * 2.0) + 1.0 if $game_switches[:FieldFrenzy]
@@ -10970,176 +10998,97 @@ def hazardremovalcode
 
     if @mondata.skill >= MEDIUMSKILL
       ############ ATTACKER ABILITY CHECKS ############
-      # Technician
-      if attacker.ability == :TECHNICIAN
-        basedamage = (basedamage * 1.5).round if (basedamage <= 60) || ([:FACTORY, :CONCERT1, :CONCERT2, :CONCERT3, :CONCERT4].include?(@battle.FE) && basedamage <= 80)
-      # Iron Fist
-      elsif attacker.ability == :IRONFIST
-        basedamage = (basedamage * 1.2).round if move.punchMove?
-      # Strong Jaw
-      elsif attacker.ability == :STRONGJAW
-        basedamage = (basedamage * 1.5).round if (PBStuff::BITEMOVE).include?(move.move)
-      # Sharpness
-      elsif attacker.ability == :SHARPNESS
-        basedamage = (basedamage * 1.5).round if move.sharpMove?
-      # True Shot
-      elsif attacker.ability == :TRUESHOT
-        basedamage = (basedamage * 1.3).round if (PBStuff::BULLETMOVE).include?(move.move)
-      # Tough Claws
-      elsif attacker.ability == :TOUGHCLAWS
-        basedamage = (basedamage * 1.3).round if move.contactMove?
-      # Reckless
-      elsif attacker.ability == :RECKLESS
-        if move.function == 0xFA || # Take Down, etc.
-           move.function == 0xFD ||  # Volt Tackle
-           move.function == 0xFE ||  # Flare Blitz
-           move.function == 0x10B || # Jump Kick, Hi Jump Kick
-           move.function == 0x130    # Shadow End
-          basedamage = (basedamage * 1.2).round
-        end
-      # Flare Boost
-      elsif attacker.ability == :FLAREBOOST && @battle.FE != :FROZENDIMENSION
-        if (attacker.status == :BURN || [:BURNING, :VOLCANIC, :INFERNAL].include?(@battle.FE)) && move.pbIsSpecial?(type)
-          basedamage = (basedamage * 1.5).round
-        end
-      # Toxic Boost
-      elsif attacker.ability == :TOXICBOOST
-        if (attacker.status == :POISON || @battle.FE == :CORROSIVE || @battle.FE == :CORROSIVEMIST || @battle.FE == :WASTELAND || @battle.FE == :MURKWATERSURFACE) && move.pbIsPhysical?(type)
-          basedamage = @battle.FE == :CORRUPTED ? (basedamage * 2.0).round : (basedamage * 1.5).round
-        end
-      # Rivalry
-      elsif attacker.ability == :RIVALRY
-        if attacker.gender != 2 && opponent.gender != 2
-          if attacker.gender == opponent.gender
-            basedamage = (basedamage * 1.25).round
-          else
-            basedamage = (basedamage * 0.75).round
+      case attacker.ability
+        when :TECHNICIAN then basedamage = (basedamage * 1.5).round if (basedamage <= 60) || ([:FACTORY, :CONCERT1, :CONCERT2, :CONCERT3, :CONCERT4].include?(@battle.FE) && basedamage <= 80)
+        when :IRONFIST then basedamage = (basedamage * 1.2).round if move.punchMove?
+        when :STRONGJAW then basedamage = (basedamage * 1.5).round if PBStuff::BITEMOVE.include?(move.move)
+        when :SHARPNESS then basedamage = (basedamage * 1.5).round if move.sharpMove?
+        when :TRUESHOT then basedamage = (basedamage * 1.3).round if PBStuff::BULLETMOVE.include?(move.move)
+        when :TOUGHCLAWS then basedamage = (basedamage * 1.3).round if move.contactMove?
+        when :RECKLESS then basedamage = (basedamage * 1.2).round if move.recoil > 0 || [0x130, 0x10B, 0x506].include?(move.function) # Shadow End, High Jump Kick, Axe Kick
+        when :FLAREBOOST then basedamage = (basedamage * 1.5).round if (attacker.status == :BURN || [:BURNING, :VOLCANIC, :INFERNAL].include?(@battle.FE)) && move.pbIsSpecial?(type) && @battle.FE != :FROZENDIMENSION
+        when :TOXICBOOST
+          if (attacker.status == :POISON || @battle.FE == :CORROSIVE || @battle.FE == :CORROSIVEMIST || @battle.FE == :WASTELAND || @battle.FE == :MURKWATERSURFACE) && move.pbIsPhysical?(type)
+            basedamage = @battle.FE == :CORRUPTED ? (basedamage * 2.0).round : (basedamage * 1.5).round
           end
-        end
-      # Mega Launcher
-      elsif (attacker.ability == :MEGALAUNCHER)
-        if move.move == :AURASPHERE || move.move == :DRAGONPULSE || move.move == :DARKPULSE || move.move == :WATERPULSE || move.move == :ORIGINPULSE
-          basedamage = (basedamage * 1.5).round
-        end
-      # Sand Force
-      elsif attacker.ability == :SANDFORCE
-        if @battle.pbWeather == :SANDSTORM && (type == :ROCK || type == :GROUND || type == :STEEL)
-          basedamage = (basedamage * 1.3).round
-        elsif @mondata.skill >= BESTSKILL && (@battle.FE == :DESERT || @battle.FE == :ASHENBEACH) &&
-              (type == :ROCK || type == :GROUND || type == :STEEL)
-          basedamage = (basedamage * 1.3).round
-        end
-      # Analytic
-      elsif attacker.ability == :ANALYTIC
-        if pbAIfaster?(move, nil, attacker, opponent)
-          basedamage = (basedamage * 1.3).round
-        end
-      # Sheer Force
-      elsif attacker.ability == :SHEERFORCE
-        basedamage = (basedamage * 1.3).round if move.effect > 0
-      # Normalize
-      elsif attacker.ability == :NORMALIZE
-        basedamage = (basedamage * 1.2).round
-      # Hustle
-      elsif attacker.ability == :HUSTLE
-        atk = [:BACKALLEY, :CITY].include?(@battle.FE) ? (atk * 1.75).round : (atk * 1.5).round if move.pbIsPhysical?(type)
-      # Guts
-      elsif attacker.ability == :GUTS
-        atk = (atk * 1.5).round if !attacker.status.nil? && move.pbIsPhysical?(type)
-      # Plus/Minus
-      elsif attacker.ability == :PLUS || attacker.ability == :MINUS
-        if move.pbIsSpecial?(type)
-          partner = attacker.pbPartner
-          if partner.ability == :PLUS || partner.ability == :MINUS
-            atk = (atk * 1.5).round
-          elsif (@battle.FE == :SHORTCIRCUIT || (Rejuv && @battle.FE == :ELECTERRAIN) || @battle.state.effects[:ELECTERRAIN] > 0) && @mondata.skill >= BESTSKILL
-            atk = (atk * 1.5).round
+        when :RIVALRY
+          if attacker.gender != 2 && opponent.gender != 2
+            if attacker.gender == opponent.gender
+              basedamage = (basedamage * 1.25).round
+            else
+              basedamage = (basedamage * 0.75).round
+            end
           end
-        end
-      # Defeatist
-      elsif attacker.ability == :DEFEATIST
-        atk = (atk * 0.5).round if attacker.hp <= (attacker.totalhp / 2.0).floor
-      # Pure/Huge Power
-      elsif attacker.ability == :PUREPOWER || attacker.ability == :HUGEPOWER
-        if @mondata.skill >= BESTSKILL
-          if attacker.ability == :PUREPOWER && (@battle.FE == :PSYTERRAIN || @battle.state.effects[:PSYTERRAIN] > 0)
-            atk = (atk * 2.0).round if move.pbIsSpecial?(type)
-          else
-            atk = (atk * 2.0).round if move.pbIsPhysical?(type)
+        when :MEGALAUNCHER then basedamage = (basedamage * 1.5).round if [:AURASPHERE, :DRAGONPULSE, :DARKPULSE, :WATERPULSE, :ORIGINPULSE, :TERRAINPULSE].include?(move.move)
+        when :SANDFORCE
+          if @battle.pbWeather == :SANDSTORM && (type == :ROCK || type == :GROUND || type == :STEEL)
+            basedamage = (basedamage * 1.3).round
+          elsif @mondata.skill >= BESTSKILL && (@battle.FE == :DESERT || @battle.FE == :ASHENBEACH) && (type == :ROCK || type == :GROUND || type == :STEEL)
+            basedamage = (basedamage * 1.3).round
           end
-        elsif move.pbIsPhysical?(type)
-          atk = (atk * 2.0).round
-        end
-      # Solar Power
-      elsif attacker.ability == :SOLARPOWER
-        if @battle.pbWeather == :SUNNYDAY && move.pbIsSpecial?(type)
-          atk = (atk * 1.5).round
-        end
-      # Flash Fire
-      elsif attacker.effects[:FlashFire]
-        if type == :FIRE
-          atk = (atk * 1.5).round
-        end
-      # Slow Start
-      elsif attacker.ability == :SLOWSTART
-        if attacker.turncount < 5 && move.pbIsPhysical?(type)
-          atk = (atk * 0.5).round
-        end
-      # Punk Rock (offensive)
-      elsif attacker.ability == :PUNKROCK && move.isSoundBased?
-        if @battle.FE == :BIGTOP || @battle.FE == :CAVE
-          basedamage = (basedamage * 1.5).round
-        else
-          basedamage = (basedamage * 1.3).round
-        end
-      # Power Spot
-      elsif attacker.pbPartner.ability == :POWERSPOT
-        if [:HOLY, :PSYTERRAIN, :HAUNTED, :BEWITCHED].include?(@battle.FE)
-          basedamage = (basedamage * 1.5).round
-        else
-          basedamage = (basedamage * 1.3).round
-        end
-      # Steely Spirit
-      elsif type == :STEEL && (attacker.ability == :STEELYSPIRIT || attacker.pbPartner.ability == :STEELYSPIRIT)
-        if @battle.FE == :FAIRYTALE
-          basedamage = (basedamage * 2.0).round
-        else
-          basedamage = (basedamage * 1.5).round
-        end
-      elsif type == :STEEL && attacker.ability == :STEELWORKER
-        if @battle.FE == :FACTORY
-          basedamage = (basedamage * 2.0).round
-        else
-          basedamage = (basedamage * 1.5).round
-        end
-      elsif type == :ELECTRIC && attacker.ability == :TRANSISTOR
-        basedamage = (basedamage * 1.5).round
-      elsif type == :DRAGON && attacker.ability == :DRAGONSMAW
-        basedamage = (basedamage * 1.5).round
-      elsif type == :FIRE && attacker.ability == :SOLARIDOL
-        basedamage = (basedamage * 1.5).round
-      elsif type == :ICE && attacker.ability == :LUNARIDOL
-        basedamage = (basedamage * 1.5).round
-      elsif type == :WATER && attacker.ability == :WATERBUBBLE
-        basedamage = (basedamage * 2.0).round
-      elsif type == :DRAGON && attacker.ability == :INEXORABLE
-        if pbAIfaster?(move, nil, attacker, opponent)
-          basedamage = (basedamage * 1.5).round
-        end
-      elsif attacker.ability == :GORILLATACTICS && move.pbIsPhysical?(type)
-        atk = (atk * 1.5).round
-      # Type Changing Abilities
-      elsif move.type == :NORMAL && attacker.ability != :NORMALIZE
-        # Aerilate
-        if attacker.ability == :AERILATE
-          if [:MOUNTAIN, :SNOWYMOUNTAIN, :SKY].include?(@battle.FE)
-            basedamage = (basedamage * 1.5).round
-          else
-            basedamage = (basedamage * 1.2).round
+        when :ANALYTIC then basedamage = (basedamage * 1.3).round if pbAIfaster?(move, nil, attacker, opponent)
+        when :SHEERFORCE then basedamage = (basedamage * 1.3).round if move.effect > 0
+        when :NORMALIZE then basedamage = (basedamage * 1.2).round
+        when :HUSTLE then atk = [:BACKALLEY, :CITY].include?(@battle.FE) ? (atk * 1.75).round : (atk * 1.5).round if move.pbIsPhysical?(type)
+        when :GUTS then atk = (atk * 1.5).round if !attacker.status.nil? && move.pbIsPhysical?(type)
+        when :PLUS, :MINUS
+          if move.pbIsSpecial?(type)
+            partner = attacker.pbPartner
+            if partner.ability == :PLUS || partner.ability == :MINUS
+              atk = (atk * 1.5).round
+            elsif (@battle.FE == :SHORTCIRCUIT || (Rejuv && @battle.FE == :ELECTERRAIN) || @battle.state.effects[:ELECTERRAIN] > 0) && @mondata.skill >= BESTSKILL
+              atk = (atk * 1.5).round
+            end
           end
-        # Galvanize
-        elsif attacker.ability == :GALVANIZE
+        when :DEFEATIST then atk = (atk * 0.5).round if attacker.hp <= (attacker.totalhp / 2.0).floor
+        when :PUREPOWER, :HUGEPOWER
           if @mondata.skill >= BESTSKILL
+            if attacker.ability == :PUREPOWER && (@battle.FE == :PSYTERRAIN || @battle.state.effects[:PSYTERRAIN] > 0)
+              atk = (atk * 2.0).round if move.pbIsSpecial?(type)
+            else
+              atk = (atk * 2.0).round if move.pbIsPhysical?(type)
+            end
+          elsif move.pbIsPhysical?(type)
+            atk = (atk * 2.0).round
+          end
+        when :SOLARPOWER then atk = (atk * 1.5).round if @battle.pbWeather == :SUNNYDAY && move.pbIsSpecial?(type)
+        when :SLOWSTART then atk = (atk * 0.5).round if attacker.turncount < 5 && move.pbIsPhysical?(type)
+        when :PUNKROCK then basedamage = [:BIGTOP,:CAVE].include?(@battle.FE) ? (basedamage * 1.5).round : (basedamage * 1.3).round if move.isSoundBased?
+        # only check attacker ability here, partner ability is checked seperately
+        when :STEELYSPIRIT then basedamage = @battle.FE == :FAIRYTALE ? (basedamage * 2.0).round : (basedamage * 1.5).round if type == :STEEL
+        when :STEELWORKER then basedamage = @battle.FE == :FACTORY ? (basedamage * 2.0).round : (basedamage * 1.5).round if type == :STEEL
+        when :TRANSISTOR then basedamage = (basedamage * 1.5).round if type == :ELECTRIC
+        when :DRAGONSMAW then basedamage = (basedamage * 1.5).round if type == :DRAGON
+        when :WATERBUBBLE then basedamage = (basedamage * 2.0).round if type == :WATER
+        when :INEXORABLE then basedamage = (basedamage * 1.5).round if pbAIfaster?(move, nil, attacker, opponent) && type == :DRAGON
+        when :GORILLATACTICS then atk = (atk * 1.5).round if move.pbIsPhysical?(type)
+        when :FLOWERGIFT
+          # only check attacker ability here, partner ability is checked seperately
+          if attacker.species == :CHERRIM && (@battle.pbWeather == :SUNNYDAY || @battle.FE == :BEWITCHED || @battle.ProgressiveFieldCheck(PBFields::FLOWERGARDEN) || attacker.crested == :CHERRIM) && move.pbIsPhysical?(type)
+            atk = (atk * 1.5).round
+          end
+        when  :QUARKDRIVE then basedamage = (basedamage * 1.3).round if (attacker.effects[:Quarkdrive][0] == PBStats::ATTACK && move.pbIsPhysical?(type)) || (attacker.effects[:Quarkdrive][0] == PBStats::SPATK && move.pbIsSpecial?(type))
+        # Execution
+        when :EXECUTION then basedamage = (basedamage * 2.0).round if opponent.hp <= (opponent.totalhp / 2.0).floor
+        # Solar Idol
+        when :SOLARIDOL
+          if type == :FIRE
+            basedamage = (basedamage * 1.5).round
+          end
+          if @battle.pbWeather == :SUNNYDAY && move.pbIsPhysical?(type)
+            atk = (atk * 1.5).round
+          end
+        # Solar Idol
+        when :LUNARIDOL
+          if type == :ICE
+            basedamage = (basedamage * 1.5).round
+          end
+          if @battle.pbWeather == :HAIL && move.pbIsSpecial?(type)
+            atk = (atk * 1.5).round
+          end
+        when :AERILATE then basedamage = [:MOUNTAIN, :SNOWYMOUNTAIN, :SKY].include?(@battle.FE) ? (basedamage * 1.5).round : (basedamage * 1.2).round if move.type == :NORMAL
+        when :GALVANIZE
+          if move.type == :NORMAL
             if @battle.FE == :ELECTERRAIN || @battle.FE == :FACTORY || @battle.state.effects[:ELECTERRAIN] > 0 # Electric or Factory Fields
               basedamage = (basedamage * 1.5).round
             elsif @battle.FE == :SHORTCIRCUIT # Short-Circuit Field
@@ -11147,71 +11096,38 @@ def hazardremovalcode
             else
               basedamage = (basedamage * 1.2).round
             end
-          else
-            basedamage = (basedamage * 1.2).round
           end
-        # Pixilate
-        elsif attacker.ability == :PIXILATE
-          if @mondata.skill >= BESTSKILL
+        when :PIXILATE
+          if move.type == :NORMAL
             if @battle.FE == :MISTY || @battle.state.effects[:MISTY] > 0
               basedamage = (basedamage * 1.5).round # Misty Field
             else
               basedamage = (basedamage * 1.2).round
             end
-          else
-            basedamage = (basedamage * 1.2).round
           end
-        # Refrigerate
-        elsif attacker.ability == :REFRIGERATE
-          if @mondata.skill >= BESTSKILL
-            if @battle.FE == :ICY || @battle.FE == :SNOWYMOUNTAIN || @battle.FE == :FROZENDIMENSION # Icy Fields
-              basedamage = (basedamage * 1.5).round
-            else
-              basedamage = (basedamage * 1.2).round
-            end
-          else
-            basedamage = (basedamage * 1.2).round
+        when :REFRIGERATE then basedamage = [:ICY, :SNOWYMOUNTAIN, :FROZENDIMENSION].include?(@battle.FE) ? (basedamage * 1.5).round : (basedamage * 1.2).round if move.type == :NORMAL
+      end
+
+      ############ PARTNER ABILITY CHECKS ############
+      case attacker.pbPartner.ability
+        when :POWERSPOT then basedamage = [:HOLY, :PSYTERRAIN, :HAUNTED, :BEWITCHED].include?(@battle.FE) ? (basedamage * 1.5).round : (basedamage * 1.3).round
+        # Steely Spirit does not stack if user AND partner have the ability
+        when :STEELYSPIRIT then basedamage = @battle.FE == :FAIRYTALE ? (basedamage * 2.0).round : (basedamage * 1.5).round if type == :STEEL && attacker.ability != :STEELYSPIRIT
+        when :BATTERY then atk = (Rejuv && @battle.FE == :ELECTERRAIN) ? (atk * 1.5).round : (atk * 1.3).round if move.pbIsSpecial?(type)
+        when :FLOWERGIFT
+          # only check partner here, attacker has been checked earlier
+          if attacker.pbPartner.species == :CHERRIM && (@battle.pbWeather == :SUNNYDAY || @battle.FE == :BEWITCHED || @battle.ProgressiveFieldCheck(PBFields::FLOWERGARDEN) || attacker.pbPartner.crested == :CHERRIM) && move.pbIsPhysical?(type)
+            atk = (atk * 1.5).round
           end
-        end
-      # Quark Drive (offense boost)
-      elsif attacker.ability == :QUARKDRIVE
-        basedamage = (basedamage * 1.3).round if (attacker.effects[:Quarkdrive][0] == PBStats::ATTACK && move.pbIsPhysical?(type)) || (attacker.effects[:Quarkdrive][0] == PBStats::SPATK && move.pbIsSpecial?(type))
-      # Execution
-      elsif attacker.ability == :EXECUTION
-        basedamage = (basedamage * 2.0).round if opponent.hp <= (opponent.totalhp / 2.0).floor
-      # Solar Idol
-      elsif attacker.ability == :SOLARIDOL
-        if @battle.pbWeather == :SUNNYDAY && move.pbIsPhysical?(type)
-          atk = (atk * 1.5).round
-        end
-      # Solar Idol
-      elsif attacker.ability == :LUNARIDOL
-        if @battle.pbWeather == :HAIL && move.pbIsSpecial?(type)
-          atk = (atk * 1.5).round
-        end
       end
 
       ############ OPPONENT ABILITY CHECKS ############
       if !moldBreakerCheck(attacker)
-        # Heatproof
-        if opponent.ability == :HEATPROOF
-          if type == :FIRE
-            basedamage = (basedamage * 0.5).round
-          end
-        # Dry Skin
-        elsif opponent.ability == :DRYSKIN
-          if type == :FIRE
-            basedamage = (basedamage * 1.25).round
-          end
-        elsif opponent.ability == :THICKFAT
-          if type == :ICE || type == :FIRE
-            atk = (atk * 0.5).round
-          end
-        # Punk Rock (defensive)
-        elsif opponent.ability == :PUNKROCK
-          if move.isSoundBased?
-            basedamage = (basedamage * 0.5).round
-          end
+        case opponent.ability
+          when :HEATPROOF then basedamage = (basedamage * 0.5).round if type == :FIRE
+          when :DRYSKIN then basedamage = (basedamage * 1.25).round if type == :FIRE
+          when :THICKFAT then atk = (atk * 0.5).round if type == :ICE || type == :FIRE
+          when :PUNKROCK then basedamage = (basedamage * 0.5).round if move.isSoundBased?
         end
       end
 
@@ -11336,15 +11252,15 @@ def hazardremovalcode
           end
         elsif attacker.crested
           if attacker.crested == :FERALIGATR
-            basedamage = (basedamage * 1.5).round if (PBStuff::BITEMOVE).include?(move.move)
+            basedamage = (basedamage * 1.5).round if PBStuff::BITEMOVE.include?(move.move)
           elsif attacker.crested == :BOLTUND
-            basedamage = (basedamage * 1.5).round if (PBStuff::BITEMOVE).include?(move.move) && pbAIfaster?(move, nil, attacker, opponent)
+            basedamage = (basedamage * 1.5).round if PBStuff::BITEMOVE.include?(move.move) && pbAIfaster?(move, nil, attacker, opponent)
           elsif attacker.crested == :CLAYDOL
             basedamage = (basedamage * 1.5).round if move.isBeamMove?
           elsif attacker.crested == :DRUDDIGON
-            basedamage = (basedamage * 1.3).round if (type == :DRAGON || type == :FIRE)
+            basedamage = (basedamage * 1.3).round if type == :DRAGON || type == :FIRE
           elsif attacker.crested == :FEAROW
-            basedamage = (basedamage * 1.5).round if (PBStuff::STABBINGMOVE).include?(move.move)
+            basedamage = (basedamage * 1.5).round if PBStuff::STABBINGMOVE.include?(move.move)
           elsif attacker.crested == :DUSKNOIR
             basedamage = (basedamage * 1.5).round if (move.basedamage <= 60 || ((@battle.FE == :FACTORY || @battle.ProgressiveFieldCheck(PBFields::CONCERT)) && move.basedamage <= 80))
           elsif attacker.crested == :CRABOMINABLE
@@ -11376,6 +11292,10 @@ def hazardremovalcode
       if attacker.effects[:HelpingHand]
         basedamage = (basedamage * 1.5).round
       end
+      # Flash Fire
+      if attacker.effects[:FlashFire] && type == :FIRE
+        atk = (atk * 1.5).round
+      end
       # Water/Mud Sport
       if type == :FIRE
         if @battle.state.effects[:WaterSport] > 0
@@ -11389,45 +11309,32 @@ def hazardremovalcode
       elsif type == :DARK
         if @battle.battlers.any? { |battler| battler.ability == :DARKAURA }
           if @battle.FE == :DARKNESS1
-            basedamage *= @battle.battlers.any? { |battler| battler.ability == :AURABREAK } ? (0.6) : (1.4)
+            basedamage *= @battle.battlers.any? { |battler| battler.ability == :AURABREAK } ? 0.6 : 1.4
           elsif @battle.FE == :DARKNESS2
-            basedamage *= @battle.battlers.any? { |battler| battler.ability == :AURABREAK } ? (0.5) : (1.5)
+            basedamage *= @battle.battlers.any? { |battler| battler.ability == :AURABREAK } ? 0.5 : 1.5
           elsif @battle.FE == :DARKNESS3
-            basedamage *= @battle.battlers.any? { |battler| battler.ability == :AURABREAK } ? (0.33) : (1.66)
+            basedamage *= @battle.battlers.any? { |battler| battler.ability == :AURABREAK } ? 0.33 : 1.66
           else
-            basedamage *= @battle.battlers.any? { |battler| battler.ability == :AURABREAK } ? (2.0 / 3) : (4.0 / 3)
+            basedamage *= @battle.battlers.any? { |battler| battler.ability == :AURABREAK } ? 2.0 / 3 : 4.0 / 3
           end
         end
       # Fairy Aura/Aurabreak
       elsif type == :FAIRY
         if @battle.battlers.any? { |battler| battler.ability == :FAIRYAURA }
           if @battle.FE == :DARKNESS1
-            basedamage *= @battle.battlers.any? { |battler| battler.ability == :AURABREAK } ? (0.7) : (1.3)
+            basedamage *= @battle.battlers.any? { |battler| battler.ability == :AURABREAK } ? 0.7 : 1.3
           elsif @battle.FE == :DARKNESS2
-            basedamage *= @battle.battlers.any? { |battler| battler.ability == :AURABREAK } ? (0.8) : (1.2)
+            basedamage *= @battle.battlers.any? { |battler| battler.ability == :AURABREAK } ? 0.8 : 1.2
           elsif @battle.FE == :DARKNESS3
-            basedamage *= @battle.battlers.any? { |battler| battler.ability == :AURABREAK } ? (0.9) : (1.1)
+            basedamage *= @battle.battlers.any? { |battler| battler.ability == :AURABREAK } ? 0.9 : 1.1
           else
-            basedamage *= @battle.battlers.any? { |battler| battler.ability == :AURABREAK } ? (2.0 / 3) : (4.0 / 3)
+            basedamage *= @battle.battlers.any? { |battler| battler.ability == :AURABREAK } ? 2.0 / 3 : 4.0 / 3
           end
         end
-      end
-      # Battery
-      if attacker.pbPartner.ability == :BATTERY && move.pbIsSpecial?(type)
-        atk = (Rejuv && @battle.FE == :ELECTERRAIN) ? (atk * 1.5).round : (atk * 1.3).round
       end
       # Spiritomb Crest
       if attacker.crested == :SPIRITOMB
         atk = (atk * (1.0 + (attacker.pbFaintedPokemonCount * 0.2))).round
-      end
-      # Flower Gift
-      if (@battle.pbWeather == :SUNNYDAY || @battle.FE == :BEWITCHED || @battle.ProgressiveFieldCheck(PBFields::FLOWERGARDEN) || attacker.crested == :CHERRIM || attacker.pbPartner.crested == :CHERRIM) && move.pbIsPhysical?(type)
-        if attacker.ability == :FLOWERGIFT && attacker.species == :CHERRIM
-          atk = (atk * 1.5).round
-        end
-        if attacker.pbPartner.ability == :FLOWERGIFT && attacker.pbPartner.species == :CHERRIM
-          atk = (atk * 1.5).round
-        end
       end
     end
 
@@ -11466,16 +11373,16 @@ def hazardremovalcode
 
     # Attack-boosting items
     if @mondata.skill >= HIGHSKILL
-      if (attitemworks && attacker.item == :THICKCLUB)
-        if ((attacker.pokemon.species == :CUBONE) || (attacker.pokemon.species == :MAROWAK)) && move.pbIsPhysical?(type)
+      if attitemworks && attacker.item == :THICKCLUB
+        if (attacker.pokemon.species == :CUBONE || attacker.pokemon.species == :MAROWAK) && move.pbIsPhysical?(type)
           atk = (atk * 2.0).round
         end
-      elsif (attitemworks && attacker.item == :DEEPSEATOOTH)
-        if (attacker.pokemon.species == :CLAMPERL) && move.pbIsSpecial?(type)
+      elsif attitemworks && attacker.item == :DEEPSEATOOTH
+        if attacker.pokemon.species == :CLAMPERL && move.pbIsSpecial?(type)
           atk = (atk * 2.0).round
         end
-      elsif (attitemworks && attacker.item == :LIGHTBALL)
-        if (attacker.pokemon.species == :PIKACHU)
+      elsif attitemworks && attacker.item == :LIGHTBALL
+        if attacker.pokemon.species == :PIKACHU
           atk = (atk * 2.0).round
         end
       elsif (attitemworks && attacker.item == :CHOICEBAND) && move.pbIsPhysical?(type)
@@ -11571,9 +11478,9 @@ def hazardremovalcode
         when :ASSAULTVEST
           defense = (defense * 1.5).round if move.pbIsSpecial?(type)
         when :DEEPSEASCALE
-          defense = (defense * 2.0).round if (opponent.pokemon.species == :CLAMPERL) && move.pbIsSpecial?(type)
+          defense = (defense * 2.0).round if opponent.pokemon.species == :CLAMPERL && move.pbIsSpecial?(type)
         when :METALPOWDER
-          defense = (defense * 2.0).round if (opponent.pokemon.species == :DITTO) && !opponent.effects[:Transform] && move.pbIsPhysical?(type)
+          defense = (defense * 2.0).round if opponent.pokemon.species == :DITTO && !opponent.effects[:Transform] && move.pbIsPhysical?(type)
         # when :EEVIUMZ
         # defense=(defense*1.5).round if opponent.pokemon.species == :EEVEE
         when :PIKANIUMZ
@@ -11666,7 +11573,7 @@ def hazardremovalcode
     if ai_mon_attacking
       random = 100
       random = 93 if @mondata.skill >= HIGHSKILL
-      random = 85 if @mondata.skill >= BESTSKILL	# This is something that could be tweaked based on skill
+      random = 85 if @mondata.skill >= BESTSKILL # This is something that could be tweaked based on skill
       random = 93 if $game_switches[:No_Damage_Rolls] # damage rolls
       random = 85 if @mondata.skill >= BESTSKILL && @battle.FE == :CONCERT1
       random = 100 if @mondata.skill >= BESTSKILL && @battle.FE == :CONCERT4
@@ -11788,38 +11695,38 @@ def hazardremovalcode
     end
     # Final damage-altering items
     if @mondata.skill >= HIGHSKILL
-      if (attitemworks && (attacker.item == :METRONOME || @battle.FE == :CONCERT4))
+      if attitemworks && (attacker.item == :METRONOME || @battle.FE == :CONCERT4)
         if attacker.effects[:Metronome] > 4
           damage = (damage * 2.0).round
         else
           met = 1.0 + attacker.effects[:Metronome] * 0.2
           damage = (damage * met).round
         end
-      elsif (attitemworks && attacker.item == :EXPERTBELT) && typemod > 4
+      elsif attitemworks && attacker.item == :EXPERTBELT && typemod > 4
         damage = (damage * 1.2).round
-      elsif (attitemworks && attacker.item == :LIFEORB)
+      elsif attitemworks && attacker.item == :LIFEORB
         damage = (damage * 1.3).round
       end
       if typemod > 4 && oppitemworks && !ai_mon_attacking
         berrymod = opponent.ability == :RIPEN ? 0.25 : 0.5
         case opponent.item
-          when :CHOPLEBERRY	then damage = (damage * berrymod).round if type == :FIGHTING
-          when :COBABERRY		then damage = (damage * berrymod).round if type == :FLYING
-          when :KEBIABERRY	then damage = (damage * berrymod).round if type == :POISON
-          when :SHUCABERRY	then damage = (damage * berrymod).round if type == :GROUND
+          when :CHOPLEBERRY then damage = (damage * berrymod).round if type == :FIGHTING
+          when :COBABERRY then damage = (damage * berrymod).round if type == :FLYING
+          when :KEBIABERRY then damage = (damage * berrymod).round if type == :POISON
+          when :SHUCABERRY then damage = (damage * berrymod).round if type == :GROUND
           when :CHARTIBERRY then damage = (damage * berrymod).round if type == :ROCK
-          when :TANGABERRY	then damage = (damage * berrymod).round if type == :BUG
-          when :KASIBBERRY	then damage = (damage * berrymod).round if type == :GHOST
-          when :BABIRIBERRY	then damage = (damage * berrymod).round if type == :STEEL
-          when :OCCABERRY	then damage = (damage * berrymod).round if type == :FIRE
-          when :PASSHOBERRY	then damage = (damage * berrymod).round if type == :WATER
-          when :RINDOBERRY 	then damage = (damage * berrymod).round if type == :GRASS
-          when :WACANBERRY 	then damage = (damage * berrymod).round if type == :ELECTRIC
-          when :PAYAPABERRY	then damage = (damage * berrymod).round if type == :PSYCHIC
-          when :YACHEBERRY 	then damage = (damage * berrymod).round if type == :ICE
-          when :HABANBERRY 	then damage = (damage * berrymod).round if type == :DRAGON
-          when :COLBURBERRY 	then damage = (damage * berrymod).round if type == :DARK
-          when :ROSELIBERRY 	then damage = (damage * berrymod).round if type == :FAIRY
+          when :TANGABERRY then damage = (damage * berrymod).round if type == :BUG
+          when :KASIBBERRY then damage = (damage * berrymod).round if type == :GHOST
+          when :BABIRIBERRY then damage = (damage * berrymod).round if type == :STEEL
+          when :OCCABERRY then damage = (damage * berrymod).round if type == :FIRE
+          when :PASSHOBERRY then damage = (damage * berrymod).round if type == :WATER
+          when :RINDOBERRY then damage = (damage * berrymod).round if type == :GRASS
+          when :WACANBERRY then damage = (damage * berrymod).round if type == :ELECTRIC
+          when :PAYAPABERRY then damage = (damage * berrymod).round if type == :PSYCHIC
+          when :YACHEBERRY then damage = (damage * berrymod).round if type == :ICE
+          when :HABANBERRY then damage = (damage * berrymod).round if type == :DRAGON
+          when :COLBURBERRY then damage = (damage * berrymod).round if type == :DARK
+          when :ROSELIBERRY then damage = (damage * berrymod).round if type == :FAIRY
         end
       end
     end
@@ -11867,15 +11774,15 @@ def hazardremovalcode
 
         return 40
       when 0x6C # Super Fang
-        if (move.move == :NATURESMADNESS) && (@battle.FE == :GRASSY || @battle.FE == :FOREST || @battle.FE == :NEWWORLD)
+        if move.move == :NATURESMADNESS && (@battle.FE == :GRASSY || @battle.FE == :FOREST || @battle.FE == :NEWWORLD)
           return (opponent.hp * 0.75).floor
-        elsif (move.move == :NATURESMADNESS) && @battle.FE == :HOLY
+        elsif move.move == :NATURESMADNESS && @battle.FE == :HOLY
           return (opponent.hp * 0.66).floor
         end
 
         return (opponent.hp / 2.0).floor
       when 0x6D # Night Shade
-        return attacker.level * 1.5 if (@battle.FE == :HAUNTED && move.move == :NIGHTSHADE || @battle.FE == :DEEPEARTH && move.move == :SEISMICTOSS)
+        return attacker.level * 1.5 if (@battle.FE == :HAUNTED && move.move == :NIGHTSHADE) || (@battle.FE == :DEEPEARTH && move.move == :SEISMICTOSS)
 
         return attacker.level
       when 0x6E # Endeavor
@@ -11888,7 +11795,6 @@ def hazardremovalcode
         return 20
       when 0x6F # Psywave
         return ((attacker.level + attacker.level * 1.5) / 2).floor
-        return attacker.level
       when 0x70 # OHKO
         return 0 if move.move == :FISSURE && @battle.FE == :NEWWORLD
 
@@ -11955,7 +11861,7 @@ def hazardremovalcode
       when 0x86 # Acrobatics
         return basedamage * 2 if attacker.item.nil? || attacker.hasWorkingItem(:FLYINGGEM) || @battle.FE == :BIGTOP
       when 0x87 # Weather Ball
-        return basedamage * 2 if (@battle.pbWeather != 0 || @battle.FE == :RAINBOW)
+        return basedamage * 2 if @battle.pbWeather != 0 || @battle.FE == :RAINBOW
       when 0x89 # Return
         return [attacker.happiness, 250].min if attacker.crested == :LUVDISC
         return 102 if @battle.FE == :CONCERT4
@@ -11972,12 +11878,12 @@ def hazardremovalcode
         return [(150 * (attacker.hp.to_f) / attacker.totalhp).floor, 1].max
       when 0x8C # Crush Grip / Wring Out
         return [attacker.happiness, 250].min if attacker.crested == :LUVDISC
-        return 120 if (@battle.FE == :CONCERT4 || @battle.FE == :DEEPEARTH)
+        return 120 if @battle.FE == :CONCERT4 || @battle.FE == :DEEPEARTH
 
         return [(120 * (opponent.hp.to_f) / opponent.totalhp).floor, 1].max
       when 0x8D # Gyro Ball
         return [attacker.happiness, 250].min if attacker.crested == :LUVDISC
-        return 150 if (@battle.FE == :CONCERT4 || @battle.FE == :DEEPEARTH)
+        return 150 if @battle.FE == :CONCERT4 || @battle.FE == :DEEPEARTH
 
         ospeed = pbRoughStat(opponent, PBStats::SPEED)
         aspeed = pbRoughStat(attacker, PBStats::SPEED)
@@ -11989,7 +11895,7 @@ def hazardremovalcode
         end
         bp = 20
         bp = 40 if move.move == :POWERTRIP && @battle.FE == :FROZENDIMENSION
-        return ([attacker.happiness, 250].min) + (bp * mult) if attacker.crested == :LUVDISC
+        return [attacker.happiness, 250].min + (bp * mult) if attacker.crested == :LUVDISC
 
         return bp * (mult + 1)
       when 0x8F # Punishment
@@ -12154,6 +12060,8 @@ def hazardremovalcode
         return basedamage * 2 if !@battle.doublebattle || move.pbDragonDartTargetting(attacker).length < 2
       when 0x181 # Fishious Rend/Bolt beak
         return basedamage * 2 if pbAIfaster?(move, nil, attacker, opponent)
+      when 0x18B # Grav Apple
+        return basedamage * 1.5 if @battle.state.effects[:Gravity] != 0
       when 0x307 # Scale Shot
         if attacker.ability == :SKILLLINK
           return basedamage * 5
@@ -12161,7 +12069,7 @@ def hazardremovalcode
           return (basedamage * 19 / 6).floor
         end
       when 0x30A # Misty explosion
-        return basedamage * 1.5 if (@battle.FE == :MISTY || @battle.state.effects[:MISTY] > 0)
+        return basedamage * 1.5 if @battle.FE == :MISTY || @battle.state.effects[:MISTY] > 0
       when 0x311 # Rising Voltage
         return basedamage * 2 if (@battle.FE == :ELECTERRAIN || @battle.state.effects[:ELECTERRAIN] > 0) && !opponent.isAirborne?
       when 0x314 # Lash Out
@@ -12253,7 +12161,7 @@ def hazardremovalcode
   def mirrorNeverMiss
     return (@attacker.stages[PBStats::ACCURACY] < 0 || @opponent.stages[PBStats::EVASION] > 0 || @opponent.item == :BRIGHTPOWDER ||
       @opponent.item == :LAXINCENSE || accuracyWeatherAbilityActive?(@opponent) || @opponent.vanished) &&
-           @opponent.ability != :NOGUARD && @attacker.ability != :NOGUARD && !(@attacker.ability == :FAIRYAURA && @battle.FE == :FAIRYTALE)
+      @opponent.ability != :NOGUARD && @attacker.ability != :NOGUARD && !(@attacker.ability == :FAIRYAURA && @battle.FE == :FAIRYTALE)
   end
 
   def mistExplosion
@@ -12264,7 +12172,7 @@ def hazardremovalcode
     return @battle.state.effects[:WaterSport] <= 0 && @battle.pbWeather != :RAINDANCE
   end
 
-  def suncheck;	end
+  def suncheck; end
 
   def pbAegislashStats(aegi)
     if aegi.form == 1
@@ -12280,7 +12188,7 @@ def hazardremovalcode
 
   def moveSuccesful?(move, attacker, opponent)
     if move.pbIsPriorityMoveAI(attacker)
-      return false if @battle.FE == :PSYTERRAIN && !attacker.isAirborne?
+      return false if (@battle.FE == :PSYTERRAIN || @battle.state.effects[:PSYTERRAIN] > 0) && !opponent.isAirborne?
       return false if opponent.ability == :DAZZLING || opponent.ability == :QUEENLYMAJESTY || (opponent.ability == :MIRRORARMOR && @battle.FE == :STARLIGHT)
       return false if opponent.pbPartner.ability == :DAZZLING || opponent.pbPartner.ability == :QUEENLYMAJESTY || (opponent.pbPartner.ability == :MIRRORARMOR && @battle.FE == :STARLIGHT)
       return false if @battle.FE != :BEWITCHED && attacker.ability == :PRANKSTER && opponent.hasType?(:DARK) && move.pbIsStatus?
@@ -12294,9 +12202,9 @@ def hazardremovalcode
     # Castform
     if pkmn.species == :CASTFORM && pkmn.ability == :FORECAST && !i.hasWorkingItem(:UTILITYUMBRELLA)
       case @battle.pbWeather
-        when :SUNNYDAY 			then i.form = 1
-        when :RAINDANCE			then i.form = 2
-        when :HAIL	then i.form = 3
+        when :SUNNYDAY then i.form = 1
+        when :RAINDANCE then i.form = 2
+        when :HAIL then i.form = 3
         else i.form = 0
       end
     end
@@ -12334,8 +12242,8 @@ def hazardremovalcode
       end
     end
     # Primal Reversion
-    if (i.species == :KYOGRE && i.item == :BLUEORB && i.form == 0 ||
-      i.species == :GROUDON && i.item == :REDORB && i.form == 0)
+    if (i.species == :KYOGRE && i.item == :BLUEORB && i.form == 0) ||
+       (i.species == :GROUDON && i.item == :REDORB && i.form == 0)
       pkmn.makePrimal
       i.form = pkmn.form
     end
@@ -12346,7 +12254,7 @@ def hazardremovalcode
   end
 
   #####################################################
-  ## Utility functions							    #
+  ## Utility functions                                #
   #####################################################
 
   def moldBreakerCheck(battler)
@@ -12370,7 +12278,7 @@ def hazardremovalcode
     return true  if attacker.ability == :RESUSCITATION && attacker.form == 1
     return true  if attacker.hasWorkingItem(:FOCUSSASH)
     return true  if @battle.FE == :CHESS && attacker.pokemon.piece == :PAWN && !attacker.damagestate.pawnsturdyused && @mondata.skill >= HIGHSKILL
-    return true	 if attacker.ability == :STURDY && !moldBreakerCheck(opponent)
+    return true  if attacker.ability == :STURDY && !moldBreakerCheck(opponent)
     return true  if Rejuv && attacker.crested == :RAMPARDOS && attacker.pokemon.rampCrestUsed == false
     return true  if @battle.FE == :COLOSSEUM && attacker.ability == :STALWART && !moldBreakerCheck(opponent)
 
@@ -12415,7 +12323,7 @@ end
 ## Other Classes
 #####################################################
 
-class PokeBattle_Move_FFF < PokeBattle_Move	# Fake move used by AI to determine damage if no damaging AI memory move
+class PokeBattle_Move_FFF < PokeBattle_Move # Fake move used by AI to determine damage if no damaging AI memory move
   def initialize(battle, user, type)
     type = :QMARKS if !type
     @move = :FAKEMOVE
@@ -12425,12 +12333,13 @@ class PokeBattle_Move_FFF < PokeBattle_Move	# Fake move used by AI to determine 
       :function => 0xFFF,
       :basedamage => (user.level >= 40 ? 80 : [2 * user.level, 40].max),
       :type => type,
-      :effect	=> 0,
+      :effect => 0,
       :moreeffect => 0,
       :category => (user.attack > user.spatk ? 0 : 1),
       :accuracy => 100,
       :target => :SingleNonUser,
-      :maxpp => 15
+      :maxpp => 15,
+      :recoil => 0,
     }
     @priority    = 0
     @zmove       = false
@@ -12447,6 +12356,7 @@ class PokeBattle_Move_FFF < PokeBattle_Move	# Fake move used by AI to determine 
       @target     = @data.target
       @effect     = @data.checkFlag?(:effect, 0)
       @moreeffect = @data.checkFlag?(:moreeffect, 0)
+      @recoil     = @data.checkFlag?(:recoil, 0)
     end
   end
 end
@@ -12471,43 +12381,43 @@ class PokeBattle_AI_Info # info per battler for debuglogging
   attr_accessor :battler_hp_percentage
 
   def initialize
-    @battler_name	= ""
-    @battler_item	= ""
-    @battler_ability							= ""
-    @battler_hp_percentage	= 0
-    @field_effect	= 0
-    @items	= []
-    @items_scores	= []
-    @switch_scores	= []
-    @switch_name	= []
-    @should_switch_score	= 0
-    @move_names	= []
-    @opponent_name	= []
-    @init_score_moves	= []
-    @final_score_moves	= []
-    @chosen_action	= ""
-    @expected_damage	= []
-    @expected_damage_name	= []
+    @battler_name = ""
+    @battler_item = ""
+    @battler_ability = ""
+    @battler_hp_percentage = 0
+    @field_effect = 0
+    @items = []
+    @items_scores = []
+    @switch_scores = []
+    @switch_name = []
+    @should_switch_score = 0
+    @move_names = []
+    @opponent_name = []
+    @init_score_moves = []
+    @final_score_moves = []
+    @chosen_action = ""
+    @expected_damage = []
+    @expected_damage_name = []
   end
 
   def reset(battler)
-    @battler_name	= battler.nil? ? "" : battler.name
-    @battler_item	= battler.nil? || battler.item.nil? ? "" : getItemName(battler.item)
-    @battler_ability							= battler.nil? || battler.ability.nil? ? "" : getAbilityName(battler.ability)
-    @battler_hp_percentage	= (battler.hp * 100.0 / battler.totalhp).round(1)
-    @field_effect	= battler.battle.FE
-    @items	= []
-    @items_scores	= []
-    @switch_scores	= []
-    @switch_name	= []
-    @should_switch_score	= 0
-    @move_names	= []
-    @opponent_name	= []
-    @init_score_moves	= []
-    @final_score_moves	= []
-    @chosen_action	= ""
-    @expected_damage	= []
-    @expected_damage_name	= []
+    @battler_name = battler.nil? ? "" : battler.name
+    @battler_item = battler.nil? || battler.item.nil? ? "" : getItemName(battler.item)
+    @battler_ability = battler.nil? || battler.ability.nil? ? "" : getAbilityName(battler.ability)
+    @battler_hp_percentage = (battler.hp * 100.0 / battler.totalhp).round(1)
+    @field_effect = battler.battle.FE
+    @items = []
+    @items_scores = []
+    @switch_scores = []
+    @switch_name = []
+    @should_switch_score = 0
+    @move_names = []
+    @opponent_name = []
+    @init_score_moves = []
+    @final_score_moves = []
+    @chosen_action = ""
+    @expected_damage = []
+    @expected_damage_name = []
   end
 
   def logAIScorings()
@@ -12526,7 +12436,7 @@ class PokeBattle_AI_Info # info per battler for debuglogging
 
     # Add scores for items and switching to string
     to_be_printed += "Scoring for Switching to other mon".ljust(60) + "|" + "#{@should_switch_score} \n \n"
-    to_be_printed += "Scoring for items".ljust(60) + "|".ljust(21) + "| \n"	if @items.length != 0
+    to_be_printed += "Scoring for items".ljust(60) + "|".ljust(21) + "| \n" if @items.length != 0
     @items.each_with_index { |item_name, index|
       to_be_printed += item_name.ljust(60) + "|" + @items_scores[index].to_s.ljust(20) + "\n"
     }

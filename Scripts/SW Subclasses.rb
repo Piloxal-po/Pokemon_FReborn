@@ -430,7 +430,7 @@ class Window_CommandPokemon < Window_DrawableCommand
 
   def commands=(value)
     @commands = value
-    Kernel.tts(@commands[0]) if @commands && @tts
+    Kernel.tts(@commands[0]) if @commands && @commands[0] && @tts
     @item_max = commands.length
     self.update_cursor_rect
     self.refresh
@@ -1000,7 +1000,7 @@ class Window_AdvancedTextPokemon < SpriteWindow_Base
         next if @fmtchars[i][1] >= maxX
         next if @fmtchars[i][2] >= maxY
       end
-      drawSingleFormattedChar(self.contents, @fmtchars[i])
+      drawSingleFormattedChar(self.contents, @fmtchars[i]) if !Rejuv
       customFormatting(i) if Rejuv
       @lastDrawnChar = i
     end
