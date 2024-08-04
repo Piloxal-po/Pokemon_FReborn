@@ -12,6 +12,7 @@ class Game_Switches
   def initialize
     @data = []
   end
+
   #-----------------------------------------------------------------------------
   # * Get Switch
   #     switch_id : switch ID
@@ -25,6 +26,7 @@ class Game_Switches
       return false
     end
   end
+
   #-----------------------------------------------------------------------------
   # * Set Switch
   #     switch_id : switch ID
@@ -33,6 +35,7 @@ class Game_Switches
   def []=(switch_id, value)
     switch_id = Switches[switch_id] if switch_id.is_a?(Symbol)
     return if switch_id.nil?
+
     if switch_id <= 5000
       @data[switch_id] = value
     end
@@ -53,13 +56,15 @@ class Game_SelfSwitches
   def initialize
     @data = {}
   end
+
   #-----------------------------------------------------------------------------
-  # * Get Self Switch 
+  # * Get Self Switch
   #     key : key
   #-----------------------------------------------------------------------------
   def [](key)
-    return @data[key] == true ? true : false
+    return @data[key] ? true : false
   end
+
   #-----------------------------------------------------------------------------
   # * Set Self Switch
   #     key   : key
@@ -84,18 +89,21 @@ class Game_Variables
   def initialize
     @data = []
   end
+
   #-----------------------------------------------------------------------------
   # * Get Variable
   #     variable_id : variable ID
   #-----------------------------------------------------------------------------
   def [](variable_id)
     variable_id = Variables[variable_id] if variable_id.is_a?(Symbol)
+    return 0 if !variable_id
     if variable_id <= 5000 && @data[variable_id] != nil
       return @data[variable_id]
     else
       return 0
     end
   end
+
   #-----------------------------------------------------------------------------
   # * Set Variable
   #     variable_id : variable ID
@@ -103,6 +111,8 @@ class Game_Variables
   #-----------------------------------------------------------------------------
   def []=(variable_id, value)
     variable_id = Variables[variable_id] if variable_id.is_a?(Symbol)
+    return if variable_id.nil?
+
     if variable_id <= 5000
       @data[variable_id] = value
     end

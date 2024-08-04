@@ -1,50 +1,41 @@
 class PBTypes
-  @@TypeData=nil # internal
-
-  def PBTypes.loadTypeData # internal
-    if !@@TypeData
-      @@TypeData=load_data("Data/types.dat")
-      @@TypeData[0].freeze
-      @@TypeData[1].freeze
-      @@TypeData[2].freeze
-      @@TypeData.freeze
-    end
-    return @@TypeData
-  end
-
-  def PBTypes.isPseudoType?(type)
-    return PBTypes.loadTypeData()[0].include?(type)
+  def PBTypes.maxValue
+    return $cache.types.length
   end
 
   def PBTypes.isSpecialType?(type)
-    return PBTypes.loadTypeData()[1].include?(type)
+    return $cache.types[type].specialtype?(type)
   end
 
-  def PBTypes.getEffectiveness(attackType,opponentType)
-    return PBTypes.loadTypeData()[2][opponentType][attackType]
+  def PBTypes.oneTypeEff(attackType, opponentType)
+    return 2 if opponentType.nil?
+    return 4 if $cache.types[opponentType].weak?(attackType)
+    return 1 if $cache.types[opponentType].resists?(attackType)
+    return 0 if $cache.types[opponentType].immune?(attackType)
+
+    return 2
   end
 
-  def PBTypes.getCombinedEffectiveness(attackType,opponentType1,opponentType2=nil)
-    if opponentType2==nil
-      return PBTypes.getEffectiveness(attackType,opponentType1)*2
+  def PBTypes.twoTypeEff(attackType, opponentType1, opponentType2 = nil)
+    if opponentType2 == nil
+      return oneTypeEff(attackType, opponentType1) * 2
     else
-      mod1=PBTypes.getEffectiveness(attackType,opponentType1)
-      mod2=(opponentType1==opponentType2) ? 2 : PBTypes.getEffectiveness(attackType,opponentType2)
-      return (mod1*mod2)
+      mod1 = oneTypeEff(attackType, opponentType1)
+      mod2 = (opponentType1 == opponentType2) ? 2 : oneTypeEff(attackType, opponentType2)
+      return (mod1 * mod2)
     end
   end
 
-  def PBTypes.getTypesThatResist(type)
+  def PBTypes.typeResists(type)
     resists = []
-    PBTypes.loadTypeData() if !@@TypeData
-    for i in 0...PBTypes.maxValue
-      resists.push(i) if @@TypeData[2][i][type] == 1 || @@TypeData[2][i][type] == 0
+    for i in $cache.types.keys
+      resists.push(i) if $cache.types[i].resists?(type) || $cache.types[i].immune?(type)
     end
     return resists
   end
 
-  def PBTypes.isSuperEffective?(attackType,opponentType1,opponentType2=nil)
-    e=PBTypes.getCombinedEffectiveness(attackType,opponentType1,opponentType2)
-    return e>4
+  def PBTypes.isTypeSE?(attackType, opponentType1, opponentType2 = nil)
+    e = PBTypes.twoTypeEff(attackType, opponentType1, opponentType2)
+    return e > 4
   end
 end

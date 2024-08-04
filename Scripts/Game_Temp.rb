@@ -52,6 +52,7 @@ class Game_Temp
   attr_accessor :last_file_index          # last save file no.
   attr_accessor :map_refresh              # map needs redrawing
   attr_accessor :in_menu                  # menu is open
+
   #-----------------------------------------------------------------------------
   # * Object Initialization
   #-----------------------------------------------------------------------------

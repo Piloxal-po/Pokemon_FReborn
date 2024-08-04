@@ -31,17 +31,20 @@ class Interpreter
     @wait_count = 0                   # wait count
     @child_interpreter = nil          # child interpreter
     @branch = {}                      # branch data
+    @movingEvents = []                # moving events fix
   end
+  attr_accessor :move_route_waiting
+
   #-----------------------------------------------------------------------------
   # * Event Setup
   #     list     : list of event commands
   #     event_id : event ID
   #-----------------------------------------------------------------------------
-  def setup(list, event_id, map_id=nil) #### CHANGED
+  def setup(list, event_id, map_id = nil) #### CHANGED
     # Clear inner situation of interpreter
     clear
     # Remember map ID
-    @map_id = map_id ? map_id : $game_map.map_id#### CHANGED
+    @map_id = map_id ? map_id : $game_map.map_id #### CHANGED
     # Remember event ID
     @event_id = event_id
     # Remember list of event commands
@@ -50,6 +53,13 @@ class Interpreter
     @index = 0
     # Clear branch data hash
     @branch.clear
+  end
+
+  def fixlock
+    if @message_waiting || @move_route_waiting
+      @message_waiting = false
+      @move_route_waiting = false
+    end
   end
 
   def running?
@@ -78,10 +88,10 @@ class Interpreter
           # Clear starting flag
           event.clear_starting
           # Lock
-          event.lock
+          event.lock if event.name != "BerryPlant"
         end
         # Set up event
-        setup(event.list, event.id, event.map.map_id)#### CHANGED
+        setup(event.list, event.id, event.map.map_id) #### CHANGED
         return
       end
     end
@@ -96,6 +106,7 @@ class Interpreter
       end
     end
   end
+
   #-----------------------------------------------------------------------------
   # * Frame Update
   #-----------------------------------------------------------------------------
@@ -114,7 +125,7 @@ class Interpreter
       end
       # If map is different than event startup time
       if $game_map.map_id != @map_id &&
-         (!$MapFactory || !$MapFactory.areConnected?($game_map.map_id,@map_id))
+         (!$MapFactory || !$MapFactory.areConnected?($game_map.map_id, @map_id))
         # Change event ID to 0
         @event_id = 0
       end
@@ -136,19 +147,28 @@ class Interpreter
       if @message_waiting
         return
       end
+
       # If waiting for move to end
       if @move_route_waiting
         # If player is forcing move route
         if $game_player.move_route_forcing
           return
         end
+
         # Loop (map events)
         for event in $game_map.events.values
           # If this event is forcing move route
           if event.move_route_forcing
+            @movingEvents.push(event) if !@movingEvents.include?(event)
             return
           end
         end
+        for event in @movingEvents
+          if $PokemonMap && !event.is_a?(Game_Player)
+            $PokemonMap.addMovedEvent(event.id)
+          end
+        end
+        @movingEvents = []
         # Clear move end waiting flag
         @move_route_waiting = false
       end
@@ -177,6 +197,7 @@ class Interpreter
          $game_temp.gameover
         return
       end
+
       # If list of event commands is empty
       if @list == nil
         # If main map event
@@ -190,13 +211,15 @@ class Interpreter
         end
       end
       # If return value is false when trying to execute event command
-      if execute_command == false
+      if !execute_command
         return
       end
+
       # Advance index
       @index += 1
     end
   end
+
   #-----------------------------------------------------------------------------
   # * Button Input
   #-----------------------------------------------------------------------------
@@ -217,6 +240,7 @@ class Interpreter
       @button_input_variable_id = 0
     end
   end
+
   #-----------------------------------------------------------------------------
   # * Setup Choices
   #-----------------------------------------------------------------------------
@@ -235,56 +259,63 @@ class Interpreter
   end
 
   def command_dummy
-   return true
+    return true
   end
 
   def pbExecuteScript(script)
-		begin
-			result = eval(script)
-			return result
-		rescue Exception
-			e=$!
-			raise if e.is_a?(Hangup) || e.is_a?(SystemExit) || "#{e.class}"=="Reset"
-			event=get_character(0)
-			s=""
-			message=pbGetExceptionMessage(e)
-			if e.is_a?(SyntaxError)
-				script.each_line {|line|
-					line.gsub!(/\s+$/,"")
-					if line[/\:\:\s*$/]
-						message+="\r\n***Line '#{line}' can't begin with '::'. Try putting\r\n"
-						message+="the next word on the same line, e.g. 'PBSpecies:"+":MEW'"
-					end
-					if line[/^\s*\(/]
-						message+="\r\n***Line '#{line}' shouldn't begin with '('. Try\r\n"
-						message+="putting '(' at the end of the previous line instead,\r\n"
-						message+="or using Extendtext."
-					end
-				}
-			else
-				for bt in e.backtrace[0,10]
-					s+=bt+"\r\n"
-				end
-				s.gsub!(/Section(\d+)/){$RGSS_SCRIPTS[$1.to_i][1]}
-			end
-			message="Exception: #{e.class}\r\nMessage: "+message
-			message+="\r\n***Full script:\r\n#{script}"
-			if event && $game_map
-				mapname="???"
-				mapname=$game_map.name rescue nil
-				raise "Script error within event #{event.id}, map #{$game_map.map_id} ".concat(
-					"(#{mapname}):\r\n#{message}\r\n#{s}")
-			elsif $game_map
-				mapname="???"
-				mapname=$game_map.name rescue nil
-				raise "Script error within map #{$game_map.map_id} ".concat(
-					"(#{mapname}):\r\n#{message}\r\n#{s}")        
-			else
-				raise "Script error in interpreter:\r\n#{message}\r\n#{s}"
-			end
-			return false
-		end
-	end
+    result = eval(script)
+    return result
+  end
+
+=begin
+  def pbExecuteScript(script)
+    begin
+      result = eval(script)
+      return result
+    rescue Exception
+      e=$!
+      raise if e.is_a?(Hangup) || e.is_a?(SystemExit) || "#{e.class}"=="Reset"
+      event=get_character(0)
+      s=""
+      message=pbGetExceptionMessage(e)
+      if e.is_a?(SyntaxError)
+        script.each_line {|line|
+          line.gsub!(/\s+$/,"")
+          if line[/\:\:\s*$/]
+            message+="\r\n***Line '#{line}' can't begin with '::'. Try putting\r\n"
+            message+="the next word on the same line, e.g. '"+":MEW'"
+          end
+          if line[/^\s*\(/]
+            message+="\r\n***Line '#{line}' shouldn't begin with '('. Try\r\n"
+            message+="putting '(' at the end of the previous line instead,\r\n"
+            message+="or using Extendtext."
+          end
+        }
+      else
+        for bt in e.backtrace[0,10]
+          s+=bt+"\r\n"
+        end
+        s.gsub!(/Section(\d+)/){$RGSS_SCRIPTS[$1.to_i][1]}
+      end
+      message="Exception: #{e.class}\r\nMessage: "+message
+      message+="\r\n***Full script:\r\n#{script}"
+      if event && $game_map
+        mapname="???"
+        mapname=$game_map.name rescue nil
+        raise "Script error within event #{event.id}, map #{$game_map.map_id} ".concat(
+          "(#{mapname}):\r\n#{message}\r\n#{s}")
+      elsif $game_map
+        mapname="???"
+        mapname=$game_map.name rescue nil
+        raise "Script error within map #{$game_map.map_id} ".concat(
+          "(#{mapname}):\r\n#{message}\r\n#{s}")
+      else
+        raise "Script error in interpreter:\r\n#{message}\r\n#{s}"
+      end
+      return false
+    end
+  end
+=end
   #-----------------------------------------------------------------------------
   # * Event Command Execution
   #-----------------------------------------------------------------------------
@@ -300,7 +331,7 @@ class Interpreter
     @parameters = @list[@index].parameters
     # Branch by command code
     case @list[@index].code
-      when 101 then return command_101  # Show Text
+      when 101 then return command_101 # Show Text
       when 102 then return command_102 # Show Choices
       when 402 then return command_402 # When [**]
       when 403 then return command_403 # When Cancel
@@ -346,8 +377,8 @@ class Interpreter
       when 221 then return command_221 # Prepare for Transition [Not in VX, now called Fadeout Screen]
       when 222 then return command_222 # Execute Transition [Not in VX, now called Fadein Screen]
       when 223 then return command_223 # Change Screen Color Tone
-      when 224 then return $idk[:settings].photosensitive==0 ? command_224 : true  # Screen Flash
-      when 225 then return $idk[:settings].photosensitive==0 ? command_225 : true  # Screen Shake
+      when 224 then return $Settings.photosensitive == 0 ? command_224 : true  # Screen Flash
+      when 225 then return $Settings.photosensitive == 0 ? command_225 : true  # Screen Shake
       when 231 then return command_231 # Show Picture
       when 232 then return command_232 # Move Picture
       when 233 then return command_233 # Rotate Picture
@@ -366,19 +397,20 @@ class Interpreter
       when 301...313 then return command_dummy
       when 314 then return command_314
       when 315...340 then return command_dummy
-      when 601...603 then return command_if(@list[@index].code-601) # If Win
+      when 601...603 then return command_if(@list[@index].code - 601) # If Win
       when 351 then return command_351 # Call Menu Screen
       when 352 then return command_352 # Call Save Screen
       when 353 then return command_353 # Game Over
       when 354 then return command_354 #  then return to Title Screen
       when 355 then return command_355 # Script
-      else          return true  # Other
+      else return true # Other
     end
   end
 
   def command_dummy
-   return true
+    return true
   end
+
   #-----------------------------------------------------------------------------
   # * End Event
   #-----------------------------------------------------------------------------
@@ -391,6 +423,7 @@ class Interpreter
       $game_map.events[@event_id].unlock
     end
   end
+
   #-----------------------------------------------------------------------------
   # * Command Skip
   #-----------------------------------------------------------------------------
@@ -400,14 +433,16 @@ class Interpreter
     # Loop
     loop do
       # If next event command is at the same level as indent
-      if @list[@index+1].indent == indent
+      if @list[@index + 1].indent == indent
         # Continue
         return true
       end
+
       # Advance index
       @index += 1
     end
   end
+
   #-----------------------------------------------------------------------------
   # * Get Character
   #     parameter : parameter
@@ -415,16 +450,17 @@ class Interpreter
   def get_character(parameter)
     # Branch by parameter
     case parameter
-      when -1  # player
+      when -1 # player
         return $game_player
-      when 0  # this event
+      when 0 # this event
         events = $game_map.events
         return events == nil ? nil : events[@event_id]
-      else  # specific event
+      else # specific event
         events = $game_map.events
         return events == nil ? nil : events[parameter]
     end
   end
+
   #-----------------------------------------------------------------------------
   # * Calculate Operated Value
   #     operation    : operation
@@ -445,6 +481,7 @@ class Interpreter
     # Return value
     return value
   end
+
   #-----------------------------------------------------------------------------
   # * Show Text
   #-----------------------------------------------------------------------------
@@ -454,6 +491,7 @@ class Interpreter
       # End
       return false
     end
+
     # Set message end waiting flag and callback
     @message_waiting = true
     $game_temp.message_proc = Proc.new { @message_waiting = false }
@@ -463,16 +501,16 @@ class Interpreter
     # Loop
     loop do
       # If next event command text is on the second line or after
-      if @list[@index+1].code == 401
+      if @list[@index + 1].code == 401
         # Add the second line or after to message_text
-        $game_temp.message_text += @list[@index+1].parameters[0] + "\n"
+        $game_temp.message_text += @list[@index + 1].parameters[0] + "\n"
         line_count += 1
       # If event command is not on the second line or after
       else
         # If next event command is show choices
-        if @list[@index+1].code == 102
+        if @list[@index + 1].code == 102
           # If choices fit on screen
-          if @list[@index+1].parameters[0].size <= 4 - line_count
+          if @list[@index + 1].parameters[0].size <= 4 - line_count
             # Advance index
             @index += 1
             # Choices setup
@@ -480,7 +518,7 @@ class Interpreter
             setup_choices(@list[@index].parameters)
           end
         # If next event command is input number
-        elsif @list[@index+1].code == 103
+        elsif @list[@index + 1].code == 103
           # If number input window fits on screen
           if line_count < 4
             # Advance index
@@ -498,6 +536,7 @@ class Interpreter
       @index += 1
     end
   end
+
   #-----------------------------------------------------------------------------
   # * Show Choices
   #-----------------------------------------------------------------------------
@@ -507,6 +546,7 @@ class Interpreter
       # End
       return false
     end
+
     # Set message end waiting flag and callback
     @message_waiting = true
     $game_temp.message_proc = Proc.new { @message_waiting = false }
@@ -517,6 +557,7 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * When [**]
   #-----------------------------------------------------------------------------
@@ -531,6 +572,7 @@ class Interpreter
     # If it doesn't meet the condition: command skip
     return command_skip
   end
+
   #-----------------------------------------------------------------------------
   # * When Cancel
   #-----------------------------------------------------------------------------
@@ -542,9 +584,10 @@ class Interpreter
       # Continue
       return true
     end
-    # If it doen't meet the condition: command skip
+    # If it doesn't meet the condition: command skip
     return command_skip
   end
+
   #-----------------------------------------------------------------------------
   # * Input Number
   #-----------------------------------------------------------------------------
@@ -554,6 +597,7 @@ class Interpreter
       # End
       return false
     end
+
     # Set message end waiting flag and callback
     @message_waiting = true
     $game_temp.message_proc = Proc.new { @message_waiting = false }
@@ -565,6 +609,7 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Change Text Options
   #-----------------------------------------------------------------------------
@@ -574,12 +619,14 @@ class Interpreter
       # End
       return false
     end
+
     # Change each option
     $game_system.message_position = @parameters[0]
     $game_system.message_frame = @parameters[1]
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Button Input Processing
   #-----------------------------------------------------------------------------
@@ -591,6 +638,7 @@ class Interpreter
     # End
     return false
   end
+
   #-----------------------------------------------------------------------------
   # * Wait
   #-----------------------------------------------------------------------------
@@ -600,6 +648,7 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Conditional Branch
   #-----------------------------------------------------------------------------
@@ -609,7 +658,7 @@ class Interpreter
     case @parameters[0]
       when 0  # switch
         result = false
-        switchname=$cache.RXsystem.switches[@parameters[1]]
+        switchname = $cache.RXsystem.switches[@parameters[1]]
         if switchname && switchname[/^s\:/]
           result = (eval($~.post_match) == (@parameters[2] == 0))
         else
@@ -617,6 +666,10 @@ class Interpreter
         end
       when 1  # variable
         value1 = $game_variables[@parameters[1]]
+        varname = $cache.RXsystem.variables[@parameters[1]]
+        if varname && varname[/^s\:/]
+          value1 = eval($~.post_match)
+        end
         if @parameters[2] == 0
           value2 = @parameters[3]
         else
@@ -655,7 +708,7 @@ class Interpreter
           end
         end
       when 4, 5 # actor, enemy
-      when 6  # character
+      when 6 # character
         character = get_character(@parameters[1])
         if character != nil
           result = (character.direction == @parameters[2])
@@ -666,7 +719,7 @@ class Interpreter
         else
           result = $Trainer && ($Trainer.money <= @parameters[1])
         end
-      when 8, 9, 10  # item, weapon, armor
+      when 8, 9, 10 # item, weapon, armor
       when 11  # button
         result = (Input.press?(@parameters[1]))
       when 12  # script
@@ -684,6 +737,7 @@ class Interpreter
     # If it doesn't meet the conditions: command skip
     return command_skip
   end
+
   #-----------------------------------------------------------------------------
   # * Else
   #-----------------------------------------------------------------------------
@@ -698,6 +752,7 @@ class Interpreter
     # If it doesn't meet the conditions: command skip
     return command_skip
   end
+
   #-----------------------------------------------------------------------------
   # * Loop
   #-----------------------------------------------------------------------------
@@ -705,6 +760,7 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Repeat Above
   #-----------------------------------------------------------------------------
@@ -722,6 +778,7 @@ class Interpreter
       end
     end
   end
+
   #-----------------------------------------------------------------------------
   # * Break Loop
   #-----------------------------------------------------------------------------
@@ -735,10 +792,11 @@ class Interpreter
       # Advance index
       temp_index += 1
       # If a fitting loop was not found
-      if temp_index >= @list.size-1
+      if temp_index >= @list.size - 1
         # Continue
         return true
       end
+
       # If this event command is [repeat above] and indent is shallow
       if @list[temp_index].code == 413 && @list[temp_index].indent < indent
         # Update index
@@ -748,6 +806,7 @@ class Interpreter
       end
     end
   end
+
   #-----------------------------------------------------------------------------
   # * Exit Event Processing
   #-----------------------------------------------------------------------------
@@ -757,6 +816,7 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Erase Event
   #-----------------------------------------------------------------------------
@@ -772,6 +832,7 @@ class Interpreter
     # End
     return false
   end
+
   #-----------------------------------------------------------------------------
   # * Call Common Event
   #-----------------------------------------------------------------------------
@@ -787,6 +848,7 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Label
   #-----------------------------------------------------------------------------
@@ -794,6 +856,7 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Jump to Label
   #-----------------------------------------------------------------------------
@@ -805,10 +868,11 @@ class Interpreter
     # Loop
     loop do
       # If a fitting label was not found
-      if temp_index >= @list.size-1
+      if temp_index >= @list.size - 1
         # Continue
         return true
       end
+
       # If this event command is a designated label name
       if @list[temp_index].code == 118 &&
          @list[temp_index].parameters[0] == label_name
@@ -821,12 +885,13 @@ class Interpreter
       temp_index += 1
     end
   end
+
   #-----------------------------------------------------------------------------
   # * Control Switches
   #-----------------------------------------------------------------------------
   def command_121
     # Loop for group control
-    for i in @parameters[0] .. @parameters[1]
+    for i in @parameters[0]..@parameters[1]
       # Change switch
       $game_switches[i] = (@parameters[2] == 0)
     end
@@ -835,6 +900,7 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Control Variables
   #-----------------------------------------------------------------------------
@@ -849,8 +915,8 @@ class Interpreter
         value = $game_variables[@parameters[4]]
       when 2  # random number
         value = @parameters[4] + rand(@parameters[5] - @parameters[4] + 1)
-      when 3, 4, 5  # item, actor, enemy
-      when 6  # character
+      when 3, 4, 5 # item, actor, enemy
+      when 6 # character
         character = get_character(@parameters[4])
         if character != nil
           case @parameters[5]
@@ -868,11 +934,11 @@ class Interpreter
               value = character.terrain_tag
           end
         end
-      when 7  # other
+      when 7 # other
         case @parameters[4]
-          when 0  # map ID
+          when 0 # map ID
             value = $game_map.map_id
-          when 1, 3  # number of party members, steps
+          when 1, 3 # number of party members, steps
           when 2  # gold
             value = $Trainer ? $Trainer.money : 0
           when 4  # play time
@@ -884,7 +950,7 @@ class Interpreter
         end
     end
     # Loop for group control
-    for i in @parameters[0] .. @parameters[1]
+    for i in @parameters[0]..@parameters[1]
       # Branch with control
       case @parameters[2]
         when 0  # substitute
@@ -918,6 +984,7 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Control Self Switch
   #-----------------------------------------------------------------------------
@@ -934,6 +1001,7 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Control Timer
   #-----------------------------------------------------------------------------
@@ -960,21 +1028,23 @@ class Interpreter
   def command_128; command_dummy; end # Change Armor
 
   def command_129; command_dummy; end # Change Party Member
+
   #-----------------------------------------------------------------------------
   # * Change Windowskin
   #-----------------------------------------------------------------------------
   def command_131
     # Change windowskin file name
     for i in 0...SpeechFrames.length
-      if SpeechFrames[i]==@parameters[0]
-        $idk[:settings].textskin=i
-        MessageConfig.pbSetSpeechFrame("Graphics/Windowskins/"+SpeechFrames[i])
+      if SpeechFrames[i] == @parameters[0]
+        $Settings.textskin = i
+        MessageConfig.pbSetSpeechFrame("Graphics/Windowskins/" + SpeechFrames[i])
         return true
       end
     end
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Change Battle BGM
   #-----------------------------------------------------------------------------
@@ -984,6 +1054,7 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Change Battle End ME
   #-----------------------------------------------------------------------------
@@ -993,6 +1064,7 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Change Save Access
   #-----------------------------------------------------------------------------
@@ -1002,6 +1074,7 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Change Menu Access
   #-----------------------------------------------------------------------------
@@ -1011,6 +1084,7 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Change Encounter
   #-----------------------------------------------------------------------------
@@ -1022,6 +1096,7 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Transfer Player
   #-----------------------------------------------------------------------------
@@ -1038,6 +1113,7 @@ class Interpreter
       # End
       return false
     end
+
     # Set transferring player flag
     $game_temp.player_transferring = true
     # If appointment method is [direct appointment]
@@ -1068,6 +1144,7 @@ class Interpreter
     # End
     return false
   end
+
   #-----------------------------------------------------------------------------
   # * Set Event Location
   #-----------------------------------------------------------------------------
@@ -1077,6 +1154,7 @@ class Interpreter
       # Continue
       return true
     end
+
     # Get character
     character = get_character(@parameters[0])
     # If no character exists
@@ -1084,6 +1162,7 @@ class Interpreter
       # Continue
       return true
     end
+
     # If appointment method is [direct appointment]
     if @parameters[1] == 0
       # Set character position
@@ -1091,8 +1170,7 @@ class Interpreter
     # If appointment method is [appoint with variables]
     elsif @parameters[1] == 1
       # Set character position
-      character.moveto($game_variables[@parameters[2]],
-        $game_variables[@parameters[3]])
+      character.moveto($game_variables[@parameters[2]], $game_variables[@parameters[3]])
     # If appointment method is [exchange with another event]
     else
       old_x = character.x
@@ -1115,8 +1193,12 @@ class Interpreter
         character.turn_left
     end
     # Continue
+    if $PokemonMap && !character.is_a?(Game_Player)
+      $PokemonMap.addMovedEvent(character.id)
+    end
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Scroll Map
   #-----------------------------------------------------------------------------
@@ -1131,11 +1213,13 @@ class Interpreter
       # End
       return false
     end
+
     # Start scroll
     $game_map.start_scroll(@parameters[0], @parameters[1], @parameters[2])
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Change Map Settings
   #-----------------------------------------------------------------------------
@@ -1159,6 +1243,7 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Change Fog Color Tone
   #-----------------------------------------------------------------------------
@@ -1168,6 +1253,7 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Change Fog Opacity
   #-----------------------------------------------------------------------------
@@ -1177,6 +1263,7 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Show Animation
   #-----------------------------------------------------------------------------
@@ -1188,11 +1275,13 @@ class Interpreter
       # Continue
       return true
     end
+
     # Set animation ID
     character.animation_id = @parameters[1]
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Change Transparent Flag
   #-----------------------------------------------------------------------------
@@ -1202,6 +1291,7 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Set Move Route
   #-----------------------------------------------------------------------------
@@ -1213,11 +1303,13 @@ class Interpreter
       # Continue
       return true
     end
+
     # Force move route
     character.force_move_route(@parameters[1])
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Wait for Move's Completion
   #-----------------------------------------------------------------------------
@@ -1230,6 +1322,7 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Prepare for Transition
   #-----------------------------------------------------------------------------
@@ -1239,11 +1332,13 @@ class Interpreter
       # End
       return false
     end
+
     # Prepare for transition
     Graphics.freeze
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Execute Transition
   #-----------------------------------------------------------------------------
@@ -1253,6 +1348,7 @@ class Interpreter
       # End
       return false
     end
+
     # Set transition processing flag
     $game_temp.transition_processing = true
     $game_temp.transition_name = @parameters[0]
@@ -1261,6 +1357,7 @@ class Interpreter
     # End
     return false
   end
+
   #-----------------------------------------------------------------------------
   # * Change Screen Color Tone
   #-----------------------------------------------------------------------------
@@ -1270,6 +1367,7 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Screen Flash
   #-----------------------------------------------------------------------------
@@ -1279,16 +1377,17 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Screen Shake
   #-----------------------------------------------------------------------------
   def command_225
     # Start shake
-    $game_screen.start_shake(@parameters[0], @parameters[1],
-      @parameters[2] * 2)
+    $game_screen.start_shake(@parameters[0], @parameters[1], @parameters[2] * 2)
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Show Picture
   #-----------------------------------------------------------------------------
@@ -1305,11 +1404,14 @@ class Interpreter
       y = $game_variables[@parameters[5]]
     end
     # Show picture
-    $game_screen.pictures[number].show(@parameters[1], @parameters[2],
-       x, y, @parameters[6], @parameters[7], @parameters[8], @parameters[9])
+    $game_screen.pictures[number].show(
+      @parameters[1], @parameters[2],
+      x, y, @parameters[6], @parameters[7], @parameters[8], @parameters[9]
+    )
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Move Picture
   #-----------------------------------------------------------------------------
@@ -1326,11 +1428,14 @@ class Interpreter
       y = $game_variables[@parameters[5]]
     end
     # Move picture
-    $game_screen.pictures[number].move(@parameters[1] * 2, @parameters[2],
-       x, y, @parameters[6], @parameters[7], @parameters[8], @parameters[9])
+    $game_screen.pictures[number].move(
+      @parameters[1] * 2, @parameters[2],
+      x, y, @parameters[6], @parameters[7], @parameters[8], @parameters[9]
+    )
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Rotate Picture
   #-----------------------------------------------------------------------------
@@ -1342,6 +1447,7 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Change Picture Color Tone
   #-----------------------------------------------------------------------------
@@ -1349,11 +1455,14 @@ class Interpreter
     # Get picture number
     number = @parameters[0] + ($game_temp.in_battle ? 50 : 0)
     # Start changing color tone
-    $game_screen.pictures[number].start_tone_change(@parameters[1],
-       @parameters[2] * 2)
+    $game_screen.pictures[number].start_tone_change(
+      @parameters[1],
+      @parameters[2] * 2
+    )
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Erase Picture
   #-----------------------------------------------------------------------------
@@ -1365,6 +1474,7 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Set Weather Effects
   #-----------------------------------------------------------------------------
@@ -1382,6 +1492,7 @@ class Interpreter
     # Continue
     return true
   end
+
   #-----------------------------------------------------------------------------
   # * Restore BGM/BGS
   #-----------------------------------------------------------------------------
@@ -1412,6 +1523,7 @@ class Interpreter
     # End
     return false
   end
+
   #-----------------------------------------------------------------------------
   # * Call Save Screen
   #-----------------------------------------------------------------------------
@@ -1423,6 +1535,7 @@ class Interpreter
     # End
     return false
   end
+
   #-----------------------------------------------------------------------------
   # * Game Over
   #-----------------------------------------------------------------------------
@@ -1432,6 +1545,7 @@ class Interpreter
     # End
     return false
   end
+
   #-----------------------------------------------------------------------------
   # * Return to Title Screen
   #-----------------------------------------------------------------------------
@@ -1441,14 +1555,15 @@ class Interpreter
     # End
     return false
   end
+
   #-----------------------------------------------------------------------------
   # * Script
   #-----------------------------------------------------------------------------
   def command_355
     script = @list[@index].parameters[0] + "\n"
     loop do
-      if @list[@index+1].code == 655 || @list[@index+1].code == 355
-        script += @list[@index+1].parameters[0] + "\n"
+      if @list[@index + 1].code == 655 || @list[@index + 1].code == 355
+        script += @list[@index + 1].parameters[0] + "\n"
       else
         break
       end
@@ -1456,5 +1571,11 @@ class Interpreter
     end
     result = pbExecuteScript(script)
     return true
+  end
+
+  def exitFallback
+    return if @list[@index].code == 111
+
+    command_end
   end
 end

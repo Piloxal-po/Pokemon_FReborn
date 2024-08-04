@@ -4,7 +4,7 @@
 #===============================================================================
 # Add here the animations (ids) you want to be fixed
 #===============================================================================
-ANIMATIONS_TO_FIX=[
+ANIMATIONS_TO_FIX = [
   GRASS_ANIMATION_ID,
   DUST_ANIMATION_ID,
 ]
@@ -12,53 +12,53 @@ ANIMATIONS_TO_FIX=[
 
 class Spriteset_Map
   attr_accessor :viewport1
-  
-  def addUserAnimation(animID,x,y,tinting=false)
-    rsprite=nil
+
+  def addUserAnimation(animID, x, y, tinting = false)
+    rsprite = nil
     for sprite in @character_sprites.values
-      rsprite=sprite if sprite.character.x==x && sprite.character.y==y
+      rsprite = sprite if sprite.character.x == x && sprite.character.y == y
     end
-    sprite=AnimationSprite.new(rsprite,animID,$game_map,x,y,@viewport1,tinting)
+    sprite = AnimationSprite.new(rsprite, animID, $game_map, x, y, @viewport1, tinting)
     addUserSprite(sprite)
     return sprite
   end
 end
 
 class AnimationSprite < RPG::Sprite
-  def initialize(rsprite,animID,map,tileX,tileY,viewport=nil,tinting=false)
+  def initialize(rsprite, animID, map, tileX, tileY, viewport = nil, tinting = false)
     super(viewport)
-    @rsprite=rsprite
-    @tileX=tileX
-    @tileY=tileY
-    self.bitmap=Bitmap.new(1,1)
+    @rsprite = rsprite
+    @tileX = tileX
+    @tileY = tileY
+    self.bitmap = Bitmap.new(1, 1)
     self.bitmap.clear
-    @map=map
-    self.x=((@tileX*Game_Map.realResX)-@map.display_x+3)/4+(Game_Map::TILEWIDTH/2)
-    self.y=((@tileY*Game_Map.realResY)-@map.display_y+3)/4+(Game_Map::TILEHEIGHT)
+    @map = map
+    self.x = ((@tileX * Game_Map.realResX) - @map.display_x + 3) / 4 + (Game_Map::TILEWIDTH / 2)
+    self.y = ((@tileY * Game_Map.realResY) - @map.display_y + 3) / 4 + (Game_Map::TILEHEIGHT)
     pbDayNightTint(self) if tinting
-    self.animation($cache.RXanimations[animID],true,@rsprite,tileY,animID)
+    self.animation($cache.RXanimations[animID], true, @rsprite, tileY, animID)
   end
 end
 
 module RPG
   class Sprite < ::Sprite
-    def animation(animation, hit,rsprite=nil,tileY=nil,animID=nil)
-      anim=SpriteAnimation.new(self,rsprite,tileY,animID)
-      anim.animation(animation,hit)
-      pushAnimation(@animations,anim)
+    def animation(animation, hit, rsprite = nil, tileY = nil, animID = nil)
+      anim = SpriteAnimation.new(self, rsprite, tileY, animID)
+      anim.animation(animation, hit)
+      pushAnimation(@animations, anim)
     end
   end
 end
 
 class SpriteAnimation
-  def initialize(sprite,rsprite,tileY,animID)
-    @sprite=sprite
-    @rsprite=rsprite
-    @tileY=tileY
-    @real_y=tileY==nil ? 0 : @tileY*Game_Map.realResY 
-    @alwaysontop=true
+  def initialize(sprite, rsprite, tileY, animID)
+    @sprite = sprite
+    @rsprite = rsprite
+    @tileY = tileY
+    @real_y = tileY == nil ? 0 : @tileY * Game_Map.realResY
+    @alwaysontop = true
     for anims in ANIMATIONS_TO_FIX
-      @alwaysontop=false if anims==animID
+      @alwaysontop = false if anims == animID
     end
     update_z
   end
@@ -90,34 +90,34 @@ class SpriteAnimation
       dispose_animation
     end
   end
-  
+
   def screen_z
     z = (@real_y - $game_map.display_y.floor + 3) / 4 + 32
     z = 2000 if @alwaysontop
     return z + ((48 > 32) ? 31 : 0)
   end
-  
+
   def update_z
-    @z=(@tileY==nil && @rsprite==nil) ? 2000 : screen_z
+    @z = (@tileY == nil && @rsprite == nil) ? 2000 : screen_z
     if !@_animation_sprites.nil?
       for sprite in @_animation_sprites
-        sprite.z=@z
+        sprite.z = @z
       end
     end
   end
-  
+
   alias klein_update_fix update
   def update
     update_z
     klein_update_fix
   end
-  
+
   alias klein_update_animation_fix update_animation
   def update_animation
     update_z
     klein_update_animation_fix
   end
-  
+
   def animation_set_sprites(sprites, cell_data, position)
     update_z
     for i in 0..15
@@ -152,7 +152,7 @@ class SpriteAnimation
       sprite.zoom_y = cell_data[i, 3] / 100.0
       sprite.angle = cell_data[i, 4]
       sprite.mirror = (cell_data[i, 5] == 1)
-      sprite.tone=self.tone
+      sprite.tone = self.tone
       sprite.opacity = cell_data[i, 6] * self.opacity / 255.0
       sprite.blend_type = cell_data[i, 7]
     end
