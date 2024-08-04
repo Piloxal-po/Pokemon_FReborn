@@ -1095,7 +1095,8 @@ def getSkinColor(windowskin, color, isDarkSkin)
       "<c3=F8C471,8a461e>",   # Yellow
       "<c3=4F4E4E,979797>",   # Grey
       "<c3=f8f8f8,b8b8b8>",   # White
-      "<c3=8407FA,080000>"    # Black Red
+      "<c3=8407FA,080000>",    # Placeholder
+      "<c3=ec9f03,843f0b>"    # Orange
     ]
     color = 0 if color > textcolors.length
     return textcolors[color]
@@ -1355,8 +1356,7 @@ def Kernel.pbMessageDisplay(msgwindow, message, letterbyletter = true, commandPr
     textchunks.push($~.pre_match)
     if $~[1]
       if $~[1].downcase == "st"
-        controls.push([$~[1].downcase, $~[2], -1])
-        text = "<o=0>#{$~[2]}</o>" + $~.post_match
+        text = "\3#{$~[2]}\4" + $~.post_match
         next
       else
         controls.push([$~[1].downcase, $~[2], -1])
@@ -1421,8 +1421,6 @@ def Kernel.pbMessageDisplay(msgwindow, message, letterbyletter = true, commandPr
       end
     elsif control == "wtnp" || control == "^"
       text = text.sub(/\001\z/, "") # fix: '$' can match end of line as well
-    elsif control == "st"
-      msgwindow.shakeText(controls[i])
     end
   end
   if startSE != nil

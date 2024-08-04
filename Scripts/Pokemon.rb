@@ -102,7 +102,7 @@ class PokeBattle_Pokemon
     @totalhp = 1
     @ev = [0, 0, 0, 0, 0, 0]
     @iv = [rand(32), rand(32), rand(32), rand(32), rand(32), rand(32)]
-    if ($cache.pkmn[species, @form].EggGroups.include?(:Undiscovered) || @species == :MANAPHY) ||$game_switches[:Forced3IVs] # undiscovered group or manaphy
+    if ($cache.pkmn[species, @form].EggGroups.include?(:Undiscovered) || @species == :MANAPHY) || $game_switches[:Forced3IVs] # undiscovered group or manaphy
       stat1, stat2, stat3 = [0, 1, 2, 3, 4, 5].sample(3)
       for i in 0..5
         @iv[i] = 31 if [stat1, stat2, stat3].include?(i)
@@ -151,7 +151,7 @@ class PokeBattle_Pokemon
     shinyretries += 2 if $PokemonBag.pbQuantity(:SHINYCHARM) > 0 # 3 tries with shiny charm aka 3 times as likely
     shinyretries += 4 if $game_variables[:LuckShinies] > 0 # 5 tries with Luck contract aka 5 times as likely
     if shinyretries > 0
-      for i in 0...shinyretries
+      shinyretries.times do
         break if self.isShiny?
         @personalID = (rand(65536) | (rand(65536) << 16))
       end
@@ -266,7 +266,7 @@ class PokeBattle_Pokemon
     v = []
     $cache.pkmn[@species, self.form].Abilities.each { |abil| v.push(abil) }
     v.push($cache.pkmn[@species, self.form].HiddenAbility) if $cache.pkmn[@species, self.form].HiddenAbility
-    return v.uniq
+    return v
   end
 
   ################################################################################
@@ -354,7 +354,7 @@ class PokeBattle_Pokemon
         movelist.push(i[1])
       end
     end
-    movelist |= [] # Remove duplicatesx
+    movelist |= [] # Remove duplicates
     listend = movelist.length - 4
     listend = 0 if listend < 0
     for i in listend...listend + 4
@@ -365,9 +365,7 @@ class PokeBattle_Pokemon
   end
 
   def pbLearnMove(move)
-    if knowsMove?(move)
-      @moves.delete(move)
-    end
+    return if knowsMove?(move)
     @moves = @moves.push(PBMove.new(move))
     if @moves.length > 4
       @moves = @moves.drop(1)
@@ -400,6 +398,9 @@ class PokeBattle_Pokemon
 
     tmmovelist = $cache.pkmn[@species, @form].compatiblemoves
     return true if tmmovelist.include?(move)
+
+    relearnermovelist = $cache.pkmn[@species, @form].RelearnerMoves
+    return true if relearnermovelist.include?(move)
 
     movelist = getMoveList
     leveluplist = []
@@ -712,7 +713,7 @@ class PokeBattle_Pokemon
   def getFormName
     formnames = $cache.pkmn[@species].forms
     return if formnames.empty?
-    return "Female" if (cancelledgenders.include?(@species) && self.isFemale?)
+    return "Female" if cancelledgenders.include?(@species) && self.isFemale?
 
     return formnames[@form].clone
   end
@@ -1095,6 +1096,17 @@ class PokeBattle_Pokemon
       @timeEggHatched = value
     end
     $Settings.unrealTimeDiverge = timediverge if timediverge
+  end
+
+  def canRelearnAll?
+    @relearner = [false, 0] if !@relearner
+    return @relearner[0]
+  end
+
+  def updateRelearnBar
+    @relearner = [false, 0] if !@relearner
+    @relearner[1] += 1 if relearner[1] < 3
+    activateRelearner() if @relearner[1] >= 3
   end
 
   def activateRelearner()

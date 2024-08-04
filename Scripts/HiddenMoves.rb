@@ -611,7 +611,7 @@ HiddenMoveHandlers::CanUseMove.add(:SURF, lambda { |move, pkmn|
     Kernel.pbMessage(_INTL("It can't be used when you have someone with you."))
     return false
   end
-  if !pbIsSurfableTag?(terrain) || !notCliff
+  if !pbIsSurfableTag?(terrain) || !notCliff || $game_switches[:Cant_Surf]
     Kernel.pbMessage(_INTL("No surfing here!"))
     return false
   end
@@ -1415,10 +1415,6 @@ end
 # Sweet Scent
 #===============================================================================
 def pbSweetScent
-  if $game_screen.weather_type != 0
-    Kernel.pbMessage(_INTL("The sweet scent faded for some reason..."))
-    return
-  end
   viewport = Viewport.new(0, 0, Graphics.width, Graphics.height)
   viewport.z = 99999
   count = 0
@@ -1441,8 +1437,7 @@ def pbSweetScent
   end until viewport.color.alpha <= 0
   viewport.dispose
   enctype = $PokemonEncounters.pbEncounterType
-  if enctype < 0 || !$PokemonEncounters.isEncounterPossibleHere?() ||
-     !pbEncounter(enctype)
+  if enctype < 0 || !$PokemonEncounters.isEncounterPossibleHere?() || !pbEncounter(enctype)
     Kernel.pbMessage(_INTL("There appears to be nothing here..."))
   end
 end
@@ -1497,7 +1492,7 @@ end
 
 # Play BGS while over a dive spot
 def playDiveSpotBGS
-  return unless Reborn
+  return unless Reborn && $game_switches[:Blindstep]
   if $game_player.terrain_tag == PBTerrain::DeepWater
     pbBGSPlay("Ambient Depth")
     return

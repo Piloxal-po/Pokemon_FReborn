@@ -170,7 +170,7 @@ class PokemonGlobalMetadata
     @stepcount            = 0
     @happinessSteps       = 0
     @pokerusTime          = nil
-    @daycare              = [[nil, 0], [nil, 0]]
+    @daycare              = [[nil, 0, []], [nil, 0, []]]
     @daycareEgg           = false
     @daycareEggSteps      = 0
     numRegions = 0

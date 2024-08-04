@@ -6,7 +6,7 @@ module EncounterTypes
   OldRod       = 4
   GoodRod      = 5
   SuperRod     = 6
-  Headbutt = 7
+  Headbutt     = 7
   LandMorning  = 8
   LandDay      = 9
   LandNight    = 10
@@ -368,13 +368,13 @@ class PokemonEncounters
     encount = $game_switches[:FirstUse] ? $game_variables[:EncounterRateModifier] : 1
     encount *= @density[enctype] * 16
     if $PokemonGlobal.bicycle
-      encount *= 4 / 5
+      encount *= 0.8
     end
     if $PokemonMap.blackFluteUsed
       encount /= 2
     end
     if $PokemonMap.whiteFluteUsed
-      encount *= 3 / 2
+      encount *= 1.5
     end
     if $Trainer.party.length > 0 && !$Trainer.party[0].isEgg?
       case $Trainer.party[0].ability
@@ -384,16 +384,14 @@ class PokemonEncounters
         when :INFILTRATOR then encount /= 2
         when :SNOWCLOAK then encount /= 2 if [:Snow, :Hail, :Blizzard].include?($game_screen.weather_type)
         when :SANDVEIL then encount /= 2 if $game_screen.weather_type == :Sandstorm
-        when :SWARM then encount *= 3 / 2
+        when :SWARM then encount *= 1.5
         when :ILLUMINATE then encount *= 2
         when :ARENATRAP then encount *= 2
         when :NOGUARD then encount *= 2
         else
           # Item doesn't stack with ability
-          if $Trainer.party[0].item == :CLEANSETAG
-            encount *= 2 / 3
-          elsif $Trainer.party[0].item == :PUREINCENSE
-            encount *= 2 / 3
+          if [:CLEANSETAG, :PUREINCENSE].include?($Trainer.party[0].item)
+            encount *= 2.0 / 3
           end
       end
     end

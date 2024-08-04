@@ -387,12 +387,13 @@ def necrozmaLightFinisher()
 end
 
 def checkTutorMove(moveid)
-  $PokemonGlobal.tutoredMoves = [] if !$PokemonGlobal.tutoredMoves
-  return $PokemonGlobal.tutoredMoves.include?(moveid)
+  $Trainer.tutorlist = [] if !$Trainer.tutorlist
+  return $Trainer.tutorlist.include?(moveid)
 end
 
 def addTutorMove(moveid)
-  $PokemonGlobal.tutoredMoves.push(moveid)
+  $Trainer.tutorlist.push(moveid)
+  reorderTutorMoves
 end
 
 #########################################################################
@@ -439,6 +440,7 @@ PASSWORD_HASH = {
   "mintyfresh" => 2190, "agiftfromace" => 2190,
   "blindstep" => :Blindstep,
   "itemfinder" => 2245,
+  "nopartnerai" => :Control_Partners, "fullcontrol" => :Control_Partners,
 
   # Difficulty passwords
   "litemode" => :Empty_IVs_And_EVs_Password, "noevs" => :Empty_IVs_And_EVs_Password, "emptyevs" => :Empty_IVs_And_EVs_Password,
@@ -458,6 +460,7 @@ PASSWORD_HASH = {
   "noevcap" => :No_Total_EV_Cap, "gen2mode" => :No_Total_EV_Cap, "self252ev" => :No_Total_EV_Cap,
   "nobattles" => :No_Battles_Pass, "storymode" => :No_Battles_Pass,
   "highstandard" => :Max_Trainer_IVs_Password, "opp31iv" => :Max_Trainer_IVs_Password,
+  "levelfloor" => 2316, "minlevel" => 2316, "lesslvlgap" => 2316,
 
   # Shenanigans
   "budewit" => :Just_Budew, "budew" => :Just_Budew, "deargodwhy" => :Just_Budew,
@@ -475,6 +478,8 @@ PASSWORD_HASH = {
   "debug" => :MiniDebug_Pass, "debugmode" => :MiniDebug_Pass,
   "nopuzzles" => :No_Puzzles_Pass, "puzzleskip" => :No_Puzzles_Pass,
   "doubles" => :Doubles_Pass, "colosseum" => :Doubles_Pass, "blueberry" => :Doubles_Pass,
+  "battlebond" => 2311,
+  "aiplay" => :AI_Play, "battlepalace" => :AI_Play, "nocontrol" => :AI_Play,
 
   # Random fields
   "nofield" => 2250,
@@ -680,11 +685,15 @@ def addPassword(entrytext)
     end
   end
 
+  if entrytext == "unrealtime" && $game_switches[:Unreal_Time]
+    Kernel.pbMessage("You can enable and adjust unreal time in Options menu.")
+  end
+
   # check for level passwords to go to adjustment section in event
-  if ((entrytext == "leveloffset") || (entrytext == "setlevel") || (entrytext == "flatlevel"))
+  if entrytext == "leveloffset" || entrytext == "setlevel" || entrytext == "flatlevel"
     $game_variables[47] = 1
   end
-  if ((entrytext == "percentlevel") || (entrytext == "levelpercent"))
+  if entrytext == "percentlevel" || entrytext == "levelpercent"
     $game_variables[47] = 2
   end
   case entrytext
@@ -741,6 +750,10 @@ def addPassword(entrytext)
     $game_switches[635] = true
     $game_switches[636] = true
   end
+
+  # Restrict online play
+  $game_switches[:No_Online_Randbats] = true if [$game_switches[:No_Total_EV_Cap], $game_switches[:MiniDebug_Pass]].any?
+  $game_switches[:No_Online_Trades] = true if [$game_switches[:Full_IVs], $game_switches[:No_Total_EV_Cap], $game_switches[:MiniDebug_Pass]].any?
 end
 
 def checkPasswordActivation(entrytext)
@@ -935,10 +948,6 @@ end
 
 def pbTogglePassword(password, isGameStart = false)
   password_string = password.downcase()
-  if !isGameStart && ['fullivs'].include?(password_string) && checkPasswordActivation(password_string)
-    Kernel.pbMessage(_INTL('This password cannot be disabled anymore.'))
-    return false
-  end
   if !isGameStart && ['randomizer', 'eeveeplease', 'eeveepls', 'eevee', 'vulpixpls', 'vulpixplease', 'vulpix', 'bestgamemode', 'random', 'randomized', 'randomiser', 'randomised', 'freestarter', 'mystarter', 'customstart'].include?(password_string)
     Kernel.pbMessage(_INTL('This password cannot be entered anymore.'))
     return false
@@ -982,10 +991,10 @@ def aChangeNature(pkmn) # thanks waynolt
   ]
 
   aNatImp = Kernel.pbMessage(_INTL("What could we improve on?"), aNatureChoices, 6)
-  if (aNatImp >= 0) && (aNatImp < 5)
+  if aNatImp >= 0 && aNatImp < 5
     aNatRed = Kernel.pbMessage(_INTL("What can we let go of?"), aNatureChoices, 6)
 
-    if (aNatRed >= 0) && (aNatRed < 5)
+    if aNatRed >= 0 && aNatRed < 5
       pkmn.setNature(natureList[aNatImp][aNatRed])
       pkmn.calcStats
       return true
@@ -1182,18 +1191,6 @@ def pbMonoRandEvents
       end
     else
       $game_variables[var] = j[randevent]
-    end
-  end
-end
-
-def animExpander
-  for i in 0...$cache.animations.length
-    for j in 1...$cache.animations[i].length
-      for k in 0...$cache.animations[i][j].length
-        if $cache.animations[i][j][k] == 0
-          $cache.animations[i][j][k] = $cache.animations[i][j - 1][k].clone
-        end
-      end
     end
   end
 end
@@ -1713,6 +1710,7 @@ class Scene_Map
   # The map is forcing the surf music to be Atmosphere- Majesty. We need to reset it back when the player leaves the map by any means.
   alias __reborn__transfer_player transfer_player unless method_defined?(:__reborn__transfer_player)
   def transfer_player(*args)
+    $game_switches[:Cant_Surf] = false
     $cache.metadata[:Surf] = "Atmosphere- Surfing"
     __reborn__transfer_player(*args)
   end
@@ -2390,6 +2388,7 @@ LAURA_QUEST_MONS = [
   -> (pkmn) { pkmn.species == :MEOWSCARADA },
   -> (pkmn) { pkmn.species == :GLIMMORA },
   -> (pkmn) { pkmn.species == :OGERPON },
+  -> (pkmn) { pkmn.species == :CACNEA },
 ]
 
 def lauraQuestChoice()
@@ -2431,3 +2430,16 @@ def isUsingFieldPassword?()
   end
   return false
 end
+
+# Need to be excluded from Metronome
+Gen8Moves = [
+  :SCORCHINGSANDS, :DUALWINGBEAT, :EXPANDINGFORCE, :STEELROLLER, :SCALESHOT, :METEORBEAM, :SHELLSIDEARM,
+  :MISTYEXPLOSION, :GRASSYGLIDE, :RISINGVOLTAGE, :TERRAINPULSE, :SKITTERSMACK, :BURNINGJEALOUSY, :LASHOUT,
+  :POLTERGEIST, :CORROSIVEGAS, :COACHING, :FLIPTURN, :TRIPLEAXEL, :JUNGLEHEALING, :SURGINGSTRIKES, :WICKEDBLOW,
+  :THUNDERCAGE, :DRAGONENERGY, :FREEZINGGLARE, :FIERYWRATH, :THUNDEROUSKICK, :GLACIALLANCE, :ASTRALBARRAGE,
+  :EERIESPELL, :DYNAMAXCANNON, :SNIPESHOT, :JAWLOCK, :STUFFCHEEKS, :NORETREAT, :TARSHOT, :MAGICPOWDER, :DRAGONDARTS,
+  :TEATIME, :OCTOLOCK, :BOLTBEAK, :FISHIOUSREND, :COURTCHANGE, :CLANGOROUSSOUL, :BODYPRESS, :DECORATE, :DRUMBEATING,
+  :SNAPTRAP, :PYROBALL, :BEHEMOTHBLADE, :BEHEMOTHBASH, :AURAWHEEL, :BREAKINGSWIPE, :BRANCHPOKE, :OVERDRIVE,
+  :APPLEACID, :GRAVAPPLE, :SPIRITBREAK, :STRANGESTEAM, :LIFEDEW, :OBSTRUCT, :FALSESURRENDER, :METEORASSAULT,
+  :ETERNABEAM, :STEELBEAM, :DOUBLEIRONBASH,
+]

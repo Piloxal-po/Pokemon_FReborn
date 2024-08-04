@@ -57,6 +57,7 @@ def startup
   saveSettings(PokemonOptions.new) unless File.exist?(RTP.getSaveFileName("Settings.dat"))
   loadClientData
   loadSettings
+  Graphics.frameskip = $Settings.frameskip == 1 unless $joiplay
   pbSetUpSystem
   # Dir["./Data/Mods/*.rb"].each { |file| load File.expand_path(file) }
   begin

@@ -13,6 +13,11 @@ class Scene_FieldNotes
   def buildFieldMenu
     seenFields = checkSeenFields.keys.collect { |i| fieldIDToSym(i) }
     menu = []
+    general = {
+      label: "General",
+      field: :INDOOR,
+    }
+    menu.push(general)
     for i in 1..TOTALFIELDS
       field = fieldIDToSym(i)
       if seenFields.include?(field)
@@ -61,7 +66,7 @@ class Scene_FieldNotes
     @sprites["command_window"].shadowColor = Color.new(0, 0, 0)
     @sprites["command_window"].index = @menu_index
     @sprites["command_window"].setHW_XYZ(282, 324, 94, 46, 256)
-    tts(@choices[@menu_index])
+    tts(@choices[@menu_index].gsub(/<\/?c3(?:=[0-f]+,[0-f]+)?>/, ""))
     # Execute transition
     Graphics.transition
     # Main loop
@@ -98,7 +103,7 @@ class Scene_FieldNotes
         @sprites["command_window"].index -= 1
         @sprites["command_window"].index = Input.trigger?(Input::UP) ? @menu.size - 1 : 1 if menuindex == 0
       end
-      tts(@choices[@sprites["command_window"].index])
+      tts(@choices[@sprites["command_window"].index].gsub(/<\/?c3(?:=[0-f]+,[0-f]+)?>/, ""))
     end
     if Input.repeat?(Input::DOWN) || Input.repeat?(Input::R)
       menuindex = @sprites["command_window"].index
@@ -106,7 +111,7 @@ class Scene_FieldNotes
       if item[:skip]
         @sprites["command_window"].index += 1
       end
-      tts(@choices[@sprites["command_window"].index])
+      tts(@choices[@sprites["command_window"].index].gsub(/<\/?c3(?:=[0-f]+,[0-f]+)?>/, ""))
     end
 
     # update command window and the info if it's active
@@ -225,6 +230,7 @@ def ttsNote(note)
     "fieldDown" => "lowered by",
     "fieldPlus" => "additionally",
     "fieldNoSleep" => "unable to sleep",
+    "fieldNoFreeze" => "unable to freeze",
     "fieldAllStat" => "random status",
     "fieldBurn" => "Burn status",
     "fieldFaint" => "faint",
@@ -437,7 +443,7 @@ class Scene_FieldNotes_Info
     pbDisposeSpriteHash(@sprites)
     @fieldnotes, @choices = prepareFieldNoteInfo(@fieldeffect)
     @sprites = prepareFieldNoteSprites(@viewport, @fieldnotes, @fieldeffect)
-    tts(@menu[@menu_index][:label])
+    tts(@menu[@menu_index][:label].gsub(/<\/?c3(?:=[0-f]+,[0-f]+)?>/, ""))
     ttsNote(@choices[0])
   end
 end

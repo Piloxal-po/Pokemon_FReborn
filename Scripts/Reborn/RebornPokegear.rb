@@ -1,4 +1,51 @@
 class Scene_Pokegear
+  def main
+    setup()
+    @viewport = Viewport.new(0, 0, Graphics.width, Graphics.height)
+    @viewport.z = 99999
+    @button = AnimatedBitmap.new("Graphics/Pictures/Pokegear/pokegearButton")
+    @sprites = {}
+    @sprites["background"] = IconSprite.new(0, 0)
+    @sprites["background"].setBitmap("Graphics/Pictures/Pokegear/pokegearbg")
+    @sprites["command_window"] = Window_CommandPokemon.new(@buttons, 160)
+    @sprites["command_window"].index = @menu_index
+    @sprites["command_window"].x = Graphics.width
+    @sprites["command_window"].y = -3000 # 0
+    for i in 0...@buttons.length
+      x = 118
+      y = 206 - (@buttons.length * 24) + (i * 44)
+      @sprites["button#{i}"] = PokegearButton.new(x, y, @buttons[i], i, @viewport)
+      @sprites["button#{i}"].selected = i == @sprites["command_window"].index
+      @sprites["button#{i}"].update
+    end
+    Graphics.transition
+    loop do
+      Graphics.update
+      Input.update
+      update
+      break if $scene != self
+    end
+    Graphics.freeze
+    pbDisposeSpriteHash(@sprites)
+  end
+
+  def refresh
+    self.bitmap.clear
+    self.bitmap.blt(0, 0, @button.bitmap, Rect.new(0, 0, @button.width, @button.height))
+    pbSetSystemFont(self.bitmap)
+    textpos = [          # Name is written on both unselected and selected buttons
+      [@name, self.bitmap.width / 2, 10, 2, Color.new(248, 248, 248), Color.new(40, 40, 40)],
+      [@name, self.bitmap.width / 2, 62, 2, Color.new(248, 248, 248), Color.new(40, 40, 40)],
+    ]
+    pbDrawTextPositions(self.bitmap, textpos)
+    icon = sprintf("Graphics/Pictures/Pokegear/pokegear" + @name)
+    imagepos = [         # Icon is put on both unselected and selected buttons
+      [icon, 20, 10, 0, 0, -1, -1],
+      [icon, 20, 62, 0, 0, -1, -1],
+    ]
+    pbDrawImagePositions(self.bitmap, imagepos)
+  end
+
   def setup
     @buttons = []
     @cmdMap = -1
@@ -7,14 +54,12 @@ class Scene_Pokegear
     @cmdOnline = -1
     @cmdPulse = -1
     @cmdNotes = -1
+    @cmdTutor = -1
     @cmdWeather = -1
     @cmdTracker = -1
-    if $game_switches[:Field_Notes]
-      @buttons[@cmdNotes = @buttons.length] = _INTL("Field Notes")
-    end
-    if $game_switches[:Pulse_Dex]
-      @buttons[@cmdPulse = @buttons.length] = _INTL("PULSE Dex")
-    end
+    @buttons[@cmdNotes = @buttons.length] = _INTL("Field Notes") if $game_switches[:Field_Notes]
+    @buttons[@cmdPulse = @buttons.length] = _INTL("PULSE Dex") if $game_switches[:Pulse_Dex]
+    @buttons[@cmdTutor = @buttons.length] = _INTL("Move Tutor")
     @buttons[@cmdMap = @buttons.length] = _INTL("Region Map")
     @buttons[@cmdOnline = @buttons.length] = _INTL("Online Play")
     @buttons[@cmdJukebox = @buttons.length] = _INTL("Jukebox")
@@ -50,6 +95,10 @@ class Scene_Pokegear
       pbPlayDecisionSE()
       $scene = Scene_FieldNotes.new
     end
+    if @cmdTutor >= 0 && @sprites["command_window"].index == @cmdTutor
+      pbPlayDecisionSE()
+      pbRelearnMoveTutorScreen
+    end
     if @cmdWeather >= 0 && @sprites["command_window"].index == @cmdWeather
       pbPlayDecisionSE()
       $scene = Scene_TimeWeather.new
@@ -66,7 +115,7 @@ class Scene_Pokegear
 end
 
 FIELD_NOTES_MENU = {
-  "<c3=3498DB,1B4F72>Elemental Fields" => [
+  "<c3=5fade2,1b4f72>Elemental Fields" => [
     :ELECTERRAIN,
     :MISTY,
     :CORROSIVEMIST,
@@ -78,7 +127,7 @@ FIELD_NOTES_MENU = {
     :UNDERWATER,
     :DRAGONSDEN,
   ],
-  "<c3=00bf0a,006205>Telluric Fields" => [
+  "<c3=52dc5c,006205>Telluric Fields" => [
     :DESERT,
     :FOREST,
     :CORROSIVE,
@@ -91,7 +140,7 @@ FIELD_NOTES_MENU = {
     :MOUNTAIN,
     :SNOWYMOUNTAIN,
   ],
-  "<c3=F8C471,8a461e>Synthetic Fields" => [
+  "<c3=ec7063,7b241c>Synthetic Fields" => [
     :FACTORY,
     :SHORTCIRCUIT,
     :MIRROR,
@@ -100,7 +149,7 @@ FIELD_NOTES_MENU = {
     :GLITCH,
     :FLOWERGARDEN1,
   ],
-  "<c3=BB8FCE,5B2C6F>Magical Fields" => [
+  "<c3=bb8fce,5b2c6f>Magical Fields" => [
     :RAINBOW,
     :CRYSTALCAVERN,
     :DARKCRYSTALCAVERN,
@@ -117,6 +166,11 @@ class Scene_FieldNotes
   def buildFieldMenu
     seenFields = checkSeenFields.keys.collect { |i| fieldIDToSym(i) }
     menu = []
+    general = {
+      label: "<c3=f8c471,8a461e>General",
+      field: :INDOOR,
+    }
+    menu.push(general)
     FIELD_NOTES_MENU.each do |category, fields|
       item = {
         label: _INTL(category),
@@ -126,7 +180,7 @@ class Scene_FieldNotes
       fields.each do |field|
         if seenFields.include?(field)
           item = {
-            label: "      " + $cache.FEData[field].name,
+            label: "      <c3=f8f8f8,5c5c5c>" + $cache.FEData[field].name,
             field: field,
           }
         else
@@ -138,7 +192,7 @@ class Scene_FieldNotes
       end
     end
     back = {
-      label: _INTL("Back"),
+      label: _INTL("<c3=a7a7a7,4e4e4e>Back"),
       back: true,
     }
     menu.push(back)

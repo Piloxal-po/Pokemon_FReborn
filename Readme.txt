@@ -1,7 +1,7 @@
 ﻿#==============================================================================#
 Pokémon Reborn
 X-- Episode 19: Final --X
-19.5.0-rc.5
+19.5.0-rc.33
 http://www.rebornevo.com/
 #==============================================================================#
 This game contains some sequences with flashing effects, as well as mature content 
@@ -249,7 +249,23 @@ MACINTOSH:
 		This works for almost every case, but if it is not working, instead try running from the Desktop folder.
 		Alternatively, if you are on an M1 click, view App Info and tick the checkbox to open with Rosetta.
 		
-		
+
+
+JOIPLAY:
+
+	Issue:
+		Game freezes after printing one letter
+	Fix:
+		Go to Developer settings of your phone and change the OpenGL driver for RPG Maker Plugin to ANGLE.
+
+
+	Issue:
+		Unable to confirm my name with Enter
+	Fix:
+		Swipe to close the keyboard and confirm with Action button.
+		JoiPlay has broken Keyboard support unfortunately and there is nothing we can do on our side to fix this.
+
+
 #==============================================================================#
 [VI.] Randomizer
 #==============================================================================#
@@ -377,7 +393,7 @@ enumag
 Haru
 Lucent Flash
 Stardust
-Cad48
+Orsan
 
 --Prior Developers:
 Kurotsune
@@ -452,7 +468,7 @@ Bakerlite		Gamien	Rielly987	smeargletail	Nsuprem
 15gamer2000		dragon in night		Nova		Night Fighter
 Serythe		MetalKing1417	roqi	Jan			MMM		Kelazi5
 Player_Name_Null	Khrona 		Sir_Bagel	Pixl	Crim 
-ghostchanuwu
+ghostchanuwu	MoonPaw		MoltenLights
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 --Animations:
@@ -490,7 +506,7 @@ Woobowiz	FL				XmarkXalanX		JV			madf0x
 Joeyhugg	Nickaloose 		mej71		Suzerain 		Rayd2smitty
 Beba 		worldslayer89	the dekay	saving raven	Truegee
 Wootius		Waynolt			AiedailEclipsed		enumag	KleinStudido
-Aeodyn 		bluetowel 	Rainbow Dash	Nuems	Olxinos
+Aeodyn 		bluetowel 	Rainbow Dash	Nuems	Olxinos	VeryBasic
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 --Scenario & Eventing:
@@ -527,6 +543,15 @@ Dragon-Tamer795		O Colosso		RichViola		Darius
 djtheS
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+--Shared Resources:
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+Big thanks to Rejuvenation and Desolation teams!
+The game engine, battle animations and many other resources are
+shared between Reborn, Rejuvenation and Desolation.
+As a result it's not always possible to track down the credits for
+each individual feature or asset.
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 --External Resources:
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 Phasma 		SunakazeKun	
@@ -550,13 +575,14 @@ Guigui			DarkLucario79		grasssnake485		Acquiescence
 SonOfRed			Rimmintine	Arkhidon	Mike		Tacos&Flowers
 Vinny				chase_breaker	Sheep!	Kalzuna		Pyrolusite
 Alex			cybershell12		BIGJRA		Haru	TheInsurgent
-Stardust		housecarpenter		rainefall
+Stardust		housecarpenter		rainefall	shrug	Eggcav
+PinkPanther
 Many, many, many more!
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 --Community Cooperation Initiative:
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
-Alemi	Aqib	Pixel	Dred
+Alemi	Aqib	Pixel	Dred	apophyll	TGuilerrr
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 --Meme Consultant:
@@ -659,7 +685,7 @@ Monkeydog		Anthony Laster		pjplatypus
 Malignant		Vanner		Epharam		qwop9992
 hamfam000		CharredBrown		Kim Rinaldo
 Artstyle		Lua			LisaX 		~(^.^)~
-pyrostar		Cad48		Alex Rose		lester tay
+pyrostar		Orsan		Alex Rose		lester tay
 Tibi Radu		pyrromanis		ShiroOkazaki
 steelpenguins	iMadMatthew		Fehish		ajefk12555
 3333percent		bluetowel		Ryan Beaulne		J P

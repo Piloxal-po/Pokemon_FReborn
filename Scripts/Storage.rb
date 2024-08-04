@@ -179,6 +179,8 @@ class PokemonStorage
 
   def pbStoreCaught(pkmn)
     pkmn.makeUnmega if pkmn.isMega?
+    pkmn.makeUnprimal if pkmn.isPrimal?
+    pkmn.makeUnultra if pkmn.isUltra?
     pkmn.form = 0 if pkmn.species == :MIMIKYU && pkmn.form == 1
     pkmn.form = 0 if pkmn.species == :EISCUE && pkmn.form == 1
     pkmn.form = 0 if pkmn.species == :MORPEKO && pkmn.form == 1
@@ -522,6 +524,8 @@ class PokemonStorageScreen
       _INTL("Wallpaper"),
       _INTL("Name"),
       _INTL("Find"),
+      _INTL("Sort Box"),
+      _INTL("Sort PC"),
       _INTL("Cancel"),
     ]
     command = pbShowCommands(
@@ -620,6 +624,30 @@ class PokemonStorageScreen
         @scene.pbBoxName(_INTL("Box name?"), 0, 18)
       when 3
         pbFindPokemon
+      when 4 # Sort Box
+        ret = pbSortPokemon()
+        if ret == -2
+          pbDisplay(_INTL("{1} is empty.", $PokemonStorage[$PokemonStorage.currentBox].name))
+        elsif ret == -1
+        else
+          @scene.pbHardRefresh
+          pbDisplay(_INTL("{1} was sorted.", $PokemonStorage[$PokemonStorage.currentBox].name))
+        end
+      when 5 # Sort PC
+        minbox = @scene.pbChooseBox(_INTL("Which box to sort first?"))
+        return if minbox == -1
+
+        maxbox = @scene.pbChooseBox(_INTL("Which box to sort last?"))
+        return if maxbox == -1
+
+        ret = pbSortPokemon(minbox, maxbox)
+        if ret == -2
+          pbDisplay(_INTL("#{minbox == maxbox ? $PokemonStorage[minbox].name : "{1} to {2}"} is empty.", $PokemonStorage[minbox].name, $PokemonStorage[maxbox].name))
+        elsif ret == -1
+        else
+          @scene.pbHardRefresh
+          pbDisplay(_INTL("#{minbox == maxbox ? $PokemonStorage[minbox].name : "{1} to {2}"} was sorted.", $PokemonStorage[minbox].name, $PokemonStorage[maxbox].name))
+        end
     end
   end
 
@@ -792,6 +820,111 @@ class PokemonStorageScreen
         Kernel.pbMessage(_INTL("Sorry, didn't find anything.", sSearch))
       else
         Kernel.pbMessage(_INTL("Sorry, '{1}' was not found.", sSearch))
+      end
+    end
+  end
+
+  # Sorting derived from VeryBasic's sorting mod
+  def pbSortPokemon(minbox = $PokemonStorage.currentBox, maxbox = $PokemonStorage.currentBox)
+    pcempty = true
+
+    boxes = minbox <= maxbox ? (minbox..maxbox).to_a : (minbox...STORAGEBOXES).to_a + (0..maxbox).to_a
+
+    for box in boxes
+      for slot in 0...$PokemonStorage[box].length
+        if $PokemonStorage[box, slot]
+          pcempty = false
+          break
+        end
+      end
+    end
+    return -2 if pcempty
+
+    commands = [
+      _INTL("Name"),
+      _INTL("Level"),
+      _INTL("Dex No."),
+      _INTL("Species"),
+      _INTL("Type"),
+      _INTL("Shiny"),
+      _INTL("Item"),
+      _INTL("Total IV"),
+    ]
+    command = pbShowCommands(_INTL("How would you like to sort\n#{minbox == maxbox ? $PokemonStorage[minbox].name : "{1} to {2}"}?", $PokemonStorage[minbox].name, $PokemonStorage[maxbox].name), commands)
+    return -1 if command == -1
+
+    pokemon = []
+    eggs = []
+    for box in boxes
+      for slot in 0...$PokemonStorage[box].length
+        poke = $PokemonStorage[box, slot]
+        if poke
+          poke.isEgg? ? eggs.push(poke) : pokemon.push(poke)
+          $PokemonStorage[box, slot] = nil
+        end
+      end
+    end
+
+    default = ->(x, y) { 2 * (x.dexnum <=> y.dexnum) + (x.form <=> y.form) }
+    case command
+      when 0 # Name
+        pokes = pokemon.sort do |x, y|
+          name = x.name <=> y.name
+          name == 0 ? default.call(x, y) : name
+        end
+      when 1 # Level
+        pokes = pokemon.sort do |x, y|
+          level = y.level <=> x.level
+          level == 0 ? default.call(x, y) : level
+        end
+      when 2 # Dex No.
+        pokes = pokemon.sort do |x, y|
+          default.call(x, y)
+        end
+      when 3 # Species
+        pokes = pokemon.sort do |x, y|
+          species = x.species <=> y.species
+          species == 0 ? default.call(x, y) : species
+        end
+      when 4 # Type
+        pokes = pokemon.sort do |x, y|
+          type = (2 * (x.type1 <=> y.type1) + (x.type2.to_s <=> y.type2.to_s))
+          type == 0 ? default.call(x, y) : type
+        end
+      when 5 # Shiny
+        pokes = pokemon.sort do |x, y|
+          if !x.isShiny? && y.isShiny?
+            1
+          elsif x.isShiny? && !y.isShiny?
+            -1
+          else
+            default.call(x, y)
+          end
+        end
+      when 6 # Item
+        pokes = pokemon.sort do |x, y|
+          if x.item.nil? && !y.item.nil?
+            1
+          elsif !x.item.nil? && y.item.nil?
+            -1
+          else
+            item = x.item <=> y.item
+            item == 0 ? default.call(x, y) : item
+          end
+        end
+      when 7 # Total IV
+        pokes = pokemon.sort do |x, y|
+          totaliv = y.iv.sum <=> x.iv.sum
+          totaliv == 0 ? default.call(x, y) : totaliv
+        end
+    end
+    eggs = eggs.sort { |x, y| default.call(x, y) }
+    pokes += eggs
+
+    for box in boxes
+      for slot in 0...$PokemonStorage[box].length
+        $PokemonStorage[box, slot] = pokes.shift
+        break if pokes.empty?
       end
     end
   end
@@ -1057,9 +1190,7 @@ class PokemonStorageScreen
 
   def duplicatePokemon(pkmn, selected)
     if pbConfirm(_INTL("Are you sure you want to copy this Pokémon?"))
-      clonedpkmn = pkmn.clone
-      clonedpkmn.iv = pkmn.iv.clone
-      clonedpkmn.ev = pkmn.ev.clone
+      clonedpkmn = Marshal.load(Marshal.dump(pkmn))
       if @storage.pbMoveCaughtToParty(clonedpkmn)
         if selected[0] != -1
           pbDisplay(_INTL("The duplicated Pokémon was moved to your party."))

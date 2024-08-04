@@ -188,7 +188,10 @@ class MonData < DataObject
   end
 
   def HiddenAbility
-    return @HiddenAbility || $cache.pkmn[@species, @baseForm].instance_variable_get(:@HiddenAbility) || nil
+    # Fixes Galarian Articuno, Zapdos, Moltres and Dusk Lycanroc to not inherit hidden ability from the base form
+    ability = @HiddenAbility || $cache.pkmn[@species, @baseForm].instance_variable_get(:@HiddenAbility) || nil
+    return nil if self.Abilities.include?(ability)
+    return ability
   end
 
   def GrowthRate
@@ -538,13 +541,13 @@ class TrainerData < DataObject
     @flags = {}
     data.each do |key, value|
       case key
-        when :title     then 	@title = value
-        when :trainerID then  @trainerID = value
-        when :skill     then 	@skill      = value
-        when :moneymult then  @moneymult  = value
-        when :battleBGM then 	@battleBGM  = value
-        when :winBGM    then 	@winBGM     = value
-        when :sprite    then  @sprite = value
+        when :title     then @title = value
+        when :trainerID then @trainerID = value
+        when :skill     then @skill      = value
+        when :moneymult then @moneymult  = value
+        when :battleBGM then @battleBGM  = value
+        when :winBGM    then @winBGM     = value
+        when :sprite    then @sprite = value
         else @flags[key] = value
       end
     end
@@ -627,7 +630,6 @@ class BossData < DataObject
         when :barGraphic      then @barGraphic      = value
         when :entryText       then @entryText       = value
         when :shieldCount     then @shieldCount     = value
-        when :immunities      then @immunities      = value
         when :capturable      then @capturable      = value
         when :canrun          then @canrun          = value
         when :moninfo         then @moninfo         = value

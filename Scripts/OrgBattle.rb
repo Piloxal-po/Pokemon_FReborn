@@ -1161,6 +1161,7 @@ def pbOrganizedBattleEx(opponent, challengedata, endspeech, endspeechwin)
   olditems2 = opponent.party.transform { |p| p.item }
   opponent.skill = PokeBattle_AI::BESTSKILL # making sure every battle trainer is smort
   battle = challengedata.createBattle(scene, $Trainer, opponent)
+  battle.controlPlayer = $game_switches[:AI_Play] || $game_switches[:Forced_AI_Play]
   battle.internalbattle = false
   battle.endspeech = endspeech
   battle.endspeechwin = endspeechwin

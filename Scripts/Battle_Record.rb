@@ -223,10 +223,7 @@ module PokeBattle_BattlePlayerModule
     for i in 0...4
       next if @rounds[@roundindex][i].length == 0
 
-      @choices[i][0] = 0
-      @choices[i][1] = 0
-      @choices[i][2] = nil
-      @choices[i][3] = -1
+      @choices[i] = [nil]
       case @rounds[@roundindex][i][0]
         when Commands::Fight
           if @rounds[@roundindex][i][1] == -1

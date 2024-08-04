@@ -183,7 +183,8 @@ class Spriteset_Map
     @viewport1.rect.set(0, 0, Graphics.width, Graphics.height)
     @viewport1.ox = 0
     @viewport1.oy = 0
-    @viewport1.ox += $game_screen.shake
+    @viewport1.ox += $game_screen.shakeX
+    @viewport1.oy += $game_screen.shakeY
 
     # Character sprite update
     for sprite in @character_sprites.values
@@ -234,7 +235,8 @@ class Spriteset_Map
     end
     @timer_sprite.update
     @viewport1.tone = $game_screen.tone
-    @viewport1a.ox += $game_screen.shake
+    @viewport1a.ox += $game_screen.shakeX
+    @viewport1a.oy += $game_screen.shakeY
     @viewport3.color = $game_screen.flash_color
     @viewport1.update
     @viewport1a.update

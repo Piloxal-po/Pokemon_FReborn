@@ -278,6 +278,13 @@ def getMonOutput(mon)
     exporttext += "      :form => #{mon.preevo[:form]}\n"
     exporttext += "    },\n"
   end
+  if mon.RelearnerMoves
+    exporttext += "    :RelearnerMoves => ["
+    for j in mon.RelearnerMoves
+      exporttext += ":#{j},"
+    end
+    exporttext += "],\n"
+  end
   if mon
     check = 1
     exporttext += "    :Moveset => [\n"

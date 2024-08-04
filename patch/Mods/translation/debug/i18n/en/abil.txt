@@ -794,6 +794,9 @@ Grim Neigh
 265
 As One
 As One
+266
+As One
+As One
 [2]
 1
 The stench may cause the target to flinch.
@@ -1588,5 +1591,8 @@ Boosts Attack when knocking out an opponent.
 Boosts Sp. Atk when knocking out an opponent.
 Boosts Sp. Atk when knocking out an opponent.
 265
+Combines abilities of fused Pokémon.
+Combines abilities of fused Pokémon.
+266
 Combines abilities of fused Pokémon.
 Combines abilities of fused Pokémon.

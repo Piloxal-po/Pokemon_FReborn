@@ -43,7 +43,7 @@ class RandomizerUtils
 
   def self.itemBlacklist
     ret = []
-    if Gen7
+    if Gen <= 7
       ret += [
         :TARTAPPLE, :SWEETAPPLE, :CHIPPEDPOT, :CRACKEDPOT, :RUSTEDSWORD, :RUSTEDSHIELD, :FOSSILIZEDBIRD, :FOSSILIZEDDINO,
         :FOSSILIZEDDRAKE, :FOSSILIZEDFISH,
@@ -376,7 +376,7 @@ class MonData
     exporttext += "      :name => \"#{@name}\",\n" if @name
     exporttext += "      :dexnum => #{@dexnum},\n" if @dexnum
     exporttext += "      :Type1 => :#{@Type1},\n" if @Type1
-    exporttext += "      :Type2 => :#{@Type2},\n" if @Type2 && (@Type1 != @Type2)
+    exporttext += "      :Type2 => :#{@Type2},\n" if @Type2 # && (@Type1 != @Type2) # Same type is necessary for M-Aggron
     exporttext += "      :BaseStats => #{@BaseStats.inspect},\n" if @BaseStats
     exporttext += "      :EVs => #{@EVs.inspect},\n" if @EVs
     exporttext += "      :Abilities => #{@Abilities},\n" if @Abilities
@@ -395,31 +395,52 @@ class MonData
         exporttext += "        "
         i = 0
         for eggmove in @EggMoves
-          exporttext += ":#{eggmove}#{eggmove == @EggMoves.last ? "" : ", "}"
+          exporttext += ":#{eggmove}, "
           i += eggmove.length + 3
           if i > 120 && eggmove != @EggMoves.last # 120 is about 10 moves, and should be the majority of the screen on a regular sized, 100% zoom monitor.
+            exporttext.rstrip!
             exporttext += "\n        "
             i = 0
           end
         end
+        exporttext.rstrip!
         exporttext += "\n      ],\n"
       end
     end
     if @preevo
       exporttext += "      :preevo => {\n"
       exporttext += "        :species => :#{@preevo[:species]},\n"
-      exporttext += "        :form => #{@preevo[:form]}\n"
+      exporttext += "        :form => #{@preevo[:form]},\n"
       exporttext += "      },\n"
+    end
+    if @RelearnerMoves
+      if @RelearnerMoves.empty?
+        exporttext += "      :RelearnerMoves => [],\n"
+      else
+        exporttext += "      :RelearnerMoves => [\n"
+        exporttext += "        "
+        i = 0
+        for j in @RelearnerMoves
+          exporttext += ":#{j}, "
+          i += j.length + 3
+          if i > 120 && j != @RelearnerMoves.last
+            exporttext.rstrip!
+            exporttext += "\n        "
+            i = 0
+          end
+        end
+        exporttext.rstrip!
+        exporttext += "\n      ],\n"
+      end
     end
     if @Moveset
       check = 1
       exporttext += "      :Moveset => [\n"
       for move in @Moveset
-        exporttext += "        [#{move[0]}, :#{move[1]}]"
-        exporttext += ",\n" if check != @Moveset.length
+        exporttext += "        [#{move[0]}, :#{move[1]}],\n"
         check += 1
       end
-      exporttext += "\n      ],\n"
+      exporttext += "      ],\n"
     end
     if @compatiblemoves
       if @compatiblemoves.empty?
@@ -433,13 +454,15 @@ class MonData
           next if PBStuff::UNIVERSALTMS.include?(j)
           next if dupes.include?(j)
           dupes.push(j)
-          exporttext += ":#{j}#{j == @compatiblemoves.last ? "" : ", "}"
+          exporttext += ":#{j}, "
           i += j.length + 3
           if i > 120 && j != @compatiblemoves.last
+            exporttext.rstrip!
             exporttext += "\n        "
             i = 0
           end
         end
+        exporttext.rstrip!
         exporttext += "\n      ],\n"
       end
     end
@@ -451,13 +474,15 @@ class MonData
         exporttext += "        "
         i = 0
         for j in @moveexceptions
-          exporttext += ":#{j}#{j == @moveexceptions.last ? "" : ", "}"
+          exporttext += ":#{j}, "
           i += j.length + 3
           if i > 120 && j != @moveexceptions.last
+            exporttext.rstrip!
             exporttext += "\n        "
             i = 0
           end
         end
+        exporttext.rstrip!
         exporttext += "\n      ],\n"
       end
     end
@@ -469,13 +494,15 @@ class MonData
         exporttext += "        "
         i = 0
         for shadowmove in @shadowmoves
-          exporttext += ":#{shadowmove}#{shadowmove == @shadowmoves.last ? "" : ", "}"
+          exporttext += ":#{shadowmove}, "
           i += shadowmove.length + 3
           if i > 120 && shadowmove != @shadowmoves.last
+            exporttext.rstrip!
             exporttext += "\n        "
             i = 0
           end
         end
+        exporttext.rstrip!
         exporttext += "\n      ],\n"
       end
     end
@@ -494,14 +521,12 @@ class MonData
       exporttext += "      :evolutions => [\n"
       for evo in evos
         if evo.is_a?(Array)
-          exporttext += "        {species: #{evo[0].inspect}, method: #{evo[1].inspect}, parameter: #{evo[2].inspect}}"
-          exporttext += "," if evo != evos.last
+          exporttext += "        {species: #{evo[0].inspect}, method: #{evo[1].inspect}, parameter: #{evo[2].inspect}},"
           exporttext += "\n"
         else
           exporttext += "        {species: #{evo[:species].inspect}, method: #{evo[:method].inspect}, parameter: #{evo[:parameter].inspect}"
           exporttext += ", form: #{evo[:form].inspect}" if evo[:form]
-          exporttext += "}"
-          exporttext += "," if evo != evos.last
+          exporttext += "},"
           exporttext += "\n"
         end
       end
@@ -926,11 +951,11 @@ end
 def extractTutorMove(move, *args); move; end
 
 alias __hr_moveTutor pbMoveTutorChoose
-def pbMoveTutorChoose(move, movelist = nil, bymachine = false)
+def pbMoveTutorChoose(move, movelist = nil, bymachine = false, bytutor = false)
   if $game_switches && $game_switches[:Randomized_Challenge] && !bymachine && $Randomizer.randomMoveTutors
     move = $rndcache.tutors[move]
   end
-  __hr_moveTutor(move, movelist, bymachine)
+  __hr_moveTutor(move, movelist, bymachine, bytutor)
 end
 
 alias __hr_addTutorMove addTutorMove

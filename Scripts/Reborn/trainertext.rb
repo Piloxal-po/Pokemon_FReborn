@@ -42,7 +42,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :happiness => 0,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       }
     ]
   },
@@ -60,7 +60,7 @@ TEAMARRAY = [
         :form => 2,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 4, 252, 0, 0, 0]
+        :ev => [252, 4, 0, 0, 252, 0]
       }
     ]
   },
@@ -185,7 +185,7 @@ TEAMARRAY = [
         :species => :MEOWSTIC,
         :level => 44,
         :moves => [:CHARGEBEAM, :PSYCHIC, :SHADOWBALL, :LIGHTSCREEN],
-        :ability => :PRANKSTER,
+        :ability => :COMPETITIVE,
         :gender => "F",
         :shiny => true,
         :nature => :TIMID,
@@ -248,7 +248,7 @@ TEAMARRAY = [
         :species => :MEOWSTIC,
         :level => 44,
         :moves => [:CHARGEBEAM, :PSYCHIC, :SHADOWBALL, :LIGHTSCREEN],
-        :ability => :PRANKSTER,
+        :ability => :COMPETITIVE,
         :gender => "F",
         :shiny => true,
         :nature => :TIMID,
@@ -305,7 +305,7 @@ TEAMARRAY = [
         :level => 54,
         :item => :WISEGLASSES,
         :moves => [:CHARGEBEAM, :PSYCHIC, :SHADOWBALL, :LIGHTSCREEN],
-        :ability => :PRANKSTER,
+        :ability => :COMPETITIVE,
         :gender => "F",
         :shiny => true,
         :nature => :TIMID,
@@ -357,14 +357,14 @@ TEAMARRAY = [
         :form => 1,
         :nature => :ADAMANT,
         :iv => 15,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :MEOWSTIC,
         :level => 81,
         :item => :DAMPROCK,
         :moves => [:CHARGEBEAM, :PSYCHIC, :REFLECT, :RAINDANCE],
-        :ability => :PRANKSTER,
+        :ability => :COMPETITIVE,
         :gender => "F",
         :shiny => true,
         :nature => :TIMID,
@@ -403,7 +403,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :BRAVE,
         :iv => 15,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :NIDOKING,
@@ -730,7 +730,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       }
     ]
   },
@@ -804,7 +804,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       }
     ]
   },
@@ -876,7 +876,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       }
     ]
   },
@@ -1984,7 +1984,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :GLACEON,
@@ -1995,7 +1995,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :ALAKAZAM,
@@ -2028,7 +2028,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :MAGNEZONE,
@@ -2042,7 +2042,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :happiness => 0,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       }
     ]
   },
@@ -2118,7 +2118,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :happiness => 0,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       }
     ]
   },
@@ -2275,7 +2275,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :FERROTHORN,
@@ -2286,7 +2286,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :SANDSLASH,
@@ -2309,7 +2309,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :SASSY,
         :iv => 31,
-        :ev => [248, 0, 252, 0, 8, 0]
+        :ev => [248, 0, 8, 0, 252, 0]
       },
       {
         :species => :CRADILY,
@@ -2320,7 +2320,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 4, 252, 0, 0, 0]
+        :ev => [252, 4, 0, 0, 252, 0]
       }
     ]
   },
@@ -2349,7 +2349,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 252, 4, 0, 0]
+        :ev => [252, 0, 0, 4, 252, 0]
       },
       {
         :species => :FERROTHORN,
@@ -2361,7 +2361,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :SANDSLASH,
@@ -2384,7 +2384,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :CRADILY,
@@ -2395,7 +2395,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 4, 252, 0, 0, 0]
+        :ev => [252, 4, 0, 0, 252, 0]
       }
     ]
   },
@@ -2532,7 +2532,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :EXEGGUTOR,
@@ -2544,7 +2544,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :KOMALA,
@@ -2557,7 +2557,7 @@ TEAMARRAY = [
         :nature => :SASSY,
         :iv => 32,
         :happiness => 255,
-        :ev => [248, 0, 252, 0, 8, 0]
+        :ev => [248, 0, 8, 0, 252, 0]
       },
       {
         :species => :GLISCOR,
@@ -2568,7 +2568,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :MINIOR,
@@ -2577,7 +2577,7 @@ TEAMARRAY = [
         :moves => [:SHELLSMASH, :ACROBATICS, :POWERGEM, :EARTHQUAKE],
         :ability => :SHIELDSDOWN,
         :gender => "M",
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
         :ev => [0, 252, 0, 148, 0, 108]
       },
@@ -2608,7 +2608,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :GLISCOR,
@@ -2619,7 +2619,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :EXEGGUTOR,
@@ -2631,7 +2631,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :KOMALA,
@@ -2644,7 +2644,7 @@ TEAMARRAY = [
         :nature => :CAREFUL,
         :iv => 31,
         :happiness => 255,
-        :ev => [248, 0, 252, 0, 8, 0]
+        :ev => [248, 0, 8, 0, 252, 0]
       },
       {
         :species => :MINIOR,
@@ -2692,7 +2692,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :KLEFKI,
@@ -2703,7 +2703,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :GLISCOR,
@@ -2714,7 +2714,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :KOMALA,
@@ -2727,7 +2727,7 @@ TEAMARRAY = [
         :nature => :CAREFUL,
         :iv => 31,
         :happiness => 255,
-        :ev => [248, 0, 252, 0, 8, 0]
+        :ev => [248, 0, 8, 0, 252, 0]
       },
       {
         :species => :MINIOR,
@@ -2986,7 +2986,7 @@ TEAMARRAY = [
         :ability => :SHEERFORCE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :KLINKLANG,
@@ -3007,7 +3007,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       }
     ]
   },
@@ -3919,7 +3919,7 @@ TEAMARRAY = [
         :species => :MAGMORTAR,
         :level => 93,
         :item => :ELEMENTALSEED,
-        :moves => [:FOCUSBLAST, :THUNDERBOLT, :LAVAPLUME, :BLASTBURN],
+        :moves => [:FOCUSBLAST, :THUNDERBOLT, :LAVAPLUME, :PSYCHIC],
         :ability => :FLAMEBODY,
         :gender => "M",
         :nature => :TIMID,
@@ -3946,7 +3946,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :KOMMOO,
@@ -3990,7 +3990,7 @@ TEAMARRAY = [
         :species => :MAGMORTAR,
         :level => 93,
         :item => :ASSAULTVEST,
-        :moves => [:FOCUSBLAST, :THUNDERBOLT, :HEATWAVE, :SPLASH],
+        :moves => [:FOCUSBLAST, :THUNDERBOLT, :HEATWAVE, :PSYCHIC],
         :ability => :FLAMEBODY,
         :gender => "M",
         :nature => :TIMID,
@@ -4017,7 +4017,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :KOMMOO,
@@ -4229,7 +4229,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :GYARADOS,
@@ -4251,7 +4251,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :EXCADRILL,
@@ -4601,7 +4601,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [200, 0, 0, 252, 56, 0]
+        :ev => [200, 0, 56, 252, 0, 0]
       },
       {
         :species => :DRAMPA,
@@ -4612,7 +4612,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :RAICHU,
@@ -4624,7 +4624,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :ROTOM,
@@ -4646,7 +4646,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :ELECTIVIRE,
@@ -4657,7 +4657,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       }
     ]
   },
@@ -4951,7 +4951,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :VENOMOTH,
@@ -5128,7 +5128,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :BRAVE,
         :iv => 15,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :JYNX,
@@ -5178,7 +5178,7 @@ TEAMARRAY = [
         :form => 2,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 4, 252, 0, 0, 0]
+        :ev => [252, 4, 0, 0, 252, 0]
       }
     ]
   },
@@ -5196,7 +5196,7 @@ TEAMARRAY = [
         :form => 2,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [3252, 252, 252, 0, 4, 0]
+        :ev => [3252, 252, 4, 0, 252, 0]
       }
     ]
   },
@@ -5267,7 +5267,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 0, 52, 204, 0]
+        :ev => [252, 0, 204, 52, 0, 0]
       }
     ]
   },
@@ -5336,7 +5336,7 @@ TEAMARRAY = [
         :nature => :SASSY,
         :iv => 32,
         :name => "G.Gardevoir",
-        :ev => [252, 0, 5, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 5, 0]
       }
     ]
   },
@@ -5353,7 +5353,7 @@ TEAMARRAY = [
         :ability => :MAGICGUARD,
         :gender => "M",
         :iv => 15,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :BISHARP,
@@ -5364,7 +5364,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :ADAMANT,
         :iv => 15,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :METAGROSS,
@@ -5374,7 +5374,7 @@ TEAMARRAY = [
         :ability => :CLEARBODY,
         :nature => :ADAMANT,
         :iv => 15,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :ALAKAZAM,
@@ -5427,7 +5427,7 @@ TEAMARRAY = [
         :nature => :IMPISH,
         :iv => 31,
         :name => "Carpenter",
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :ABSOL,
@@ -5451,7 +5451,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "Jubjub Bird",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :WEAVILE,
@@ -5476,7 +5476,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "Bandersnatch",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :UMBREON,
@@ -5488,7 +5488,7 @@ TEAMARRAY = [
         :nature => :CALM,
         :iv => 31,
         :name => "Cheshire",
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       }
     ]
   },
@@ -5517,7 +5517,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :MISMAGIUS,
@@ -5562,7 +5562,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       }
     ]
   },
@@ -5589,7 +5589,7 @@ TEAMARRAY = [
         :ability => :INTIMIDATE,
         :nature => :SERIOUS,
         :iv => 31,
-        :ev => [128, 252, 0, 128, 4, 0]
+        :ev => [128, 252, 4, 128, 0, 0]
       },
       {
         :species => :DONPHAN,
@@ -5599,7 +5599,7 @@ TEAMARRAY = [
         :ability => :STURDY,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :PRIMARINA,
@@ -5609,7 +5609,7 @@ TEAMARRAY = [
         :ability => :TORRENT,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :BLAZIKEN,
@@ -5619,7 +5619,7 @@ TEAMARRAY = [
         :ability => :SPEEDBOOST,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -5638,7 +5638,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :MIENSHAO,
@@ -5693,7 +5693,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       }
     ]
   },
@@ -5735,7 +5735,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :DELPHOX,
@@ -5789,7 +5789,7 @@ TEAMARRAY = [
         :nature => :BRAVE,
         :iv => 31,
         :happiness => 0,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       }
     ]
   },
@@ -5845,7 +5845,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :SANDSLASH,
@@ -5873,7 +5873,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :BOLD,
         :iv => 20,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :MAMOSWINE,
@@ -6044,7 +6044,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "HIPHOPOTAMUS",
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :EXCADRILL,
@@ -6068,7 +6068,7 @@ TEAMARRAY = [
         :nature => :RASH,
         :iv => 31,
         :name => "GIVE SANDY",
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :QUAGSIRE,
@@ -6080,7 +6080,7 @@ TEAMARRAY = [
         :nature => :BOLD,
         :iv => 20,
         :name => "SWAGSIRE",
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :GARCHOMP,
@@ -6092,7 +6092,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "RAWRCHOMP",
-        :ev => [4, 0, 252, 0, 0, 252]
+        :ev => [4, 0, 0, 0, 252, 252]
       }
     ]
   },
@@ -6145,7 +6145,7 @@ TEAMARRAY = [
         :nature => :BOLD,
         :iv => 31,
         :name => "SWAGSIRE",
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :PORYGONZ,
@@ -6168,7 +6168,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "RAWRCHOMP",
-        :ev => [4, 0, 252, 0, 0, 252]
+        :ev => [4, 0, 0, 0, 252, 252]
       }
     ]
   },
@@ -6187,7 +6187,7 @@ TEAMARRAY = [
         :nature => :CALM,
         :iv => 27,
         :happiness => 0,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       }
     ]
   },
@@ -6206,7 +6206,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 4, 252]
+        :ev => [252, 0, 4, 0, 0, 252]
       },
       {
         :species => :MINIOR,
@@ -6240,7 +6240,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :ORICORIO,
@@ -6262,7 +6262,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :RASH,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 0, 252]
+        :ev => [252, 0, 0, 0, 4, 252]
       }
     ]
   },
@@ -6429,7 +6429,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "Eolande",
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :GARDEVOIR,
@@ -6441,7 +6441,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Kailen",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :TOGEKISS,
@@ -6453,7 +6453,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Orin",
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :WHIMSICOTT,
@@ -6477,7 +6477,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "Orphne",
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :FLORGES,
@@ -6492,7 +6492,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Rhyannon",
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       }
     ]
   },
@@ -6592,7 +6592,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :BOLD,
         :iv => 31,
-        :ev => [192, 0, 64, 0, 252, 0]
+        :ev => [192, 0, 252, 0, 64, 0]
       },
       {
         :species => :SCIZOR,
@@ -6603,7 +6603,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :AEGISLASH,
@@ -6614,7 +6614,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 4, 252, 0, 0, 0]
+        :ev => [252, 4, 0, 0, 252, 0]
       }
     ]
   },
@@ -6667,7 +6667,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :BOLD,
         :iv => 31,
-        :ev => [192, 0, 64, 0, 252, 0]
+        :ev => [192, 0, 252, 0, 64, 0]
       },
       {
         :species => :SCIZOR,
@@ -6678,7 +6678,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :AEGISLASH,
@@ -6689,7 +6689,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 4, 252, 0, 0, 0]
+        :ev => [252, 4, 0, 0, 252, 0]
       }
     ]
   },
@@ -6760,7 +6760,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "Kipkip",
-        :ev => [252, 4, 0, 0, 252, 0]
+        :ev => [252, 4, 252, 0, 0, 0]
       },
       {
         :species => :KINGDRA,
@@ -6784,7 +6784,7 @@ TEAMARRAY = [
         :nature => :CAREFUL,
         :iv => 31,
         :name => "Deliverance",
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       }
     ]
   },
@@ -6804,7 +6804,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Cirrus",
-        :ev => [252, 0, 0, 156, 100, 0]
+        :ev => [252, 0, 100, 156, 0, 0]
       },
       {
         :species => :SEISMITOAD,
@@ -6840,7 +6840,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Nimbus",
-        :ev => [252, 0, 0, 200, 56, 0]
+        :ev => [252, 0, 56, 200, 0, 0]
       },
       {
         :species => :BLASTOISE,
@@ -6864,7 +6864,7 @@ TEAMARRAY = [
         :nature => :CALM,
         :iv => 31,
         :name => "Deliverance",
-        :ev => [252, 0, 100, 0, 156, 0]
+        :ev => [252, 0, 156, 0, 100, 0]
       }
     ]
   },
@@ -6920,7 +6920,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "Kipkip",
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :KINGDRA,
@@ -6944,7 +6944,7 @@ TEAMARRAY = [
         :nature => :CAREFUL,
         :iv => 31,
         :name => "Deliverance",
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       }
     ]
   },
@@ -6964,7 +6964,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Cirrus",
-        :ev => [252, 0, 0, 156, 100, 0]
+        :ev => [252, 0, 100, 156, 0, 0]
       },
       {
         :species => :SEISMITOAD,
@@ -7000,7 +7000,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Nimbus",
-        :ev => [252, 0, 0, 200, 56, 0]
+        :ev => [252, 0, 56, 200, 0, 0]
       },
       {
         :species => :BLASTOISE,
@@ -7024,7 +7024,7 @@ TEAMARRAY = [
         :nature => :CALM,
         :iv => 31,
         :name => "Deliverance",
-        :ev => [252, 0, 100, 0, 156, 0]
+        :ev => [252, 0, 156, 0, 100, 0]
       }
     ]
   },
@@ -7077,7 +7077,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "Kipkip",
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :TENTACRUEL,
@@ -7101,7 +7101,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Deliverance",
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       }
     ]
   },
@@ -7131,7 +7131,7 @@ TEAMARRAY = [
       {
         :species => :LYCANROC,
         :level => 92,
-        :moves => [:ROCKSLIDE, :DRILLRUN, :ROCKSMASH, :ZENHEADBUTT],
+        :moves => [:ROCKSLIDE, :DRILLRUN, :ROCKCLIMB, :ZENHEADBUTT],
         :ability => :SANDRUSH,
         :gender => "F",
         :nature => :ADAMANT,
@@ -7146,7 +7146,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :ARCHEOPS,
@@ -7207,7 +7207,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :AERODACTYL,
@@ -7241,7 +7241,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :RAMPARDOS,
@@ -7282,7 +7282,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [236, 0, 252, 0, 16, 0]
+        :ev => [236, 0, 16, 0, 252, 0]
       }
     ]
   },
@@ -7299,7 +7299,7 @@ TEAMARRAY = [
         :gender => "F",
         :form => 1,
         :nature => :TIMID,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :MAMOSWINE,
@@ -7319,7 +7319,7 @@ TEAMARRAY = [
         :moves => [:BLIZZARD, :HYDROPUMP, :PSYCHIC, :DRAGONPULSE],
         :ability => :WATERABSORB,
         :nature => :MODEST,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :AURORUS,
@@ -7330,7 +7330,7 @@ TEAMARRAY = [
         :ability => :SNOWWARNING,
         :gender => "F",
         :nature => :MODEST,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :GOODRA,
@@ -7340,7 +7340,7 @@ TEAMARRAY = [
         :ability => :SAPSIPPER,
         :gender => "F",
         :nature => :MODEST,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :GLACEON,
@@ -7351,7 +7351,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 0, 252, 252]
+        :ev => [0, 0, 252, 0, 4, 252]
       }
     ]
   },
@@ -7396,7 +7396,7 @@ TEAMARRAY = [
         :ability => :MAGICGUARD,
         :gender => "M",
         :nature => :MODEST,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :METAGROSS,
@@ -7406,7 +7406,7 @@ TEAMARRAY = [
         :ability => :CLEARBODY,
         :nature => :JOLLY,
         :happiness => 255,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :ESPEON,
@@ -7692,7 +7692,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :DITTO,
@@ -7769,7 +7769,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 0, 4, 252, 0]
+        :ev => [252, 0, 252, 4, 0, 0]
       },
       {
         :species => :METAGROSS,
@@ -7790,7 +7790,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Nostra",
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       }
     ]
   },
@@ -8226,7 +8226,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 56, 0, 200, 0]
+        :ev => [0, 252, 200, 0, 56, 0]
       },
       {
         :species => :COMFEY,
@@ -8259,7 +8259,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :LILLIGANT,
@@ -8321,7 +8321,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :REGIGIGAS,
@@ -8681,7 +8681,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "Mr.Biggles",
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       }
     ]
   },
@@ -8752,7 +8752,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :AMOONGUSS,
@@ -8762,7 +8762,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :CRABOMINABLE,
@@ -8785,7 +8785,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 0,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       }
     ]
   },
@@ -8800,7 +8800,7 @@ TEAMARRAY = [
         :moves => [:HEARTSTAMP, :HIDDENPOWER, :UPROAR, :BRICKBREAK],
         :hptype => :ELECTRIC,
         :ability => :LIGHTNINGROD,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
       },
       {
@@ -9202,7 +9202,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 56, 0, 200, 0]
+        :ev => [252, 0, 200, 0, 56, 0]
       },
       {
         :species => :CACTURNE,
@@ -9224,7 +9224,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 252, 4]
+        :ev => [252, 0, 252, 0, 0, 4]
       },
       {
         :species => :SANDSLASH,
@@ -9305,7 +9305,7 @@ TEAMARRAY = [
         :nature => :BOLD,
         :iv => 31,
         :name => "Pyukmuk",
-        :ev => [252, 0, 160, 0, 100, 0]
+        :ev => [252, 0, 100, 0, 160, 0]
       }
     ]
   },
@@ -9383,7 +9383,7 @@ TEAMARRAY = [
         :ability => :TECHNICIAN,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :SAMUROTT,
@@ -9393,7 +9393,7 @@ TEAMARRAY = [
         :ability => :TORRENT,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :HERACROSS,
@@ -9403,7 +9403,7 @@ TEAMARRAY = [
         :ability => :SWARM,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :BRELOOM,
@@ -9413,7 +9413,7 @@ TEAMARRAY = [
         :ability => :TECHNICIAN,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :FARFETCHD,
@@ -9423,7 +9423,7 @@ TEAMARRAY = [
         :ability => :DEFIANT,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       }
     ]
   },
@@ -9439,7 +9439,7 @@ TEAMARRAY = [
         :ability => :DEFIANT,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :TORTERRA,
@@ -9480,7 +9480,7 @@ TEAMARRAY = [
         :ability => :DEFIANT,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       }
     ]
   },
@@ -9556,7 +9556,7 @@ TEAMARRAY = [
         :ability => :ROCKHEAD,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :AGGRON,
@@ -9566,7 +9566,7 @@ TEAMARRAY = [
         :ability => :ROCKHEAD,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :AGGRON,
@@ -9576,7 +9576,7 @@ TEAMARRAY = [
         :ability => :ROCKHEAD,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :AGGRON,
@@ -9586,7 +9586,7 @@ TEAMARRAY = [
         :ability => :ROCKHEAD,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       }
     ]
   },
@@ -9602,7 +9602,7 @@ TEAMARRAY = [
         :ability => :ROCKHEAD,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :AGGRON,
@@ -9612,7 +9612,7 @@ TEAMARRAY = [
         :ability => :ROCKHEAD,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :AGGRON,
@@ -9622,7 +9622,7 @@ TEAMARRAY = [
         :ability => :ROCKHEAD,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :AGGRON,
@@ -9632,7 +9632,7 @@ TEAMARRAY = [
         :ability => :ROCKHEAD,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       }
     ]
   },
@@ -9777,7 +9777,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :GENGAR,
@@ -9820,7 +9820,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 4, 252, 0, 0, 0]
+        :ev => [252, 4, 0, 0, 252, 0]
       }
     ]
   },
@@ -16226,6 +16226,27 @@ TEAMARRAY = [
     ]
   },
   {
+    :teamid => ["Kaz", :COOLTRAINER_Male, 0],
+    :defeat => "Oh, thank god. Someone who can actually give me a challenge.",
+    :mons => [
+      {
+        :species => :DIGGERSBY,
+        :level => 51,
+        :ability => :HUGEPOWER,
+      },
+      {
+        :species => :OMASTAR,
+        :level => 51,
+        :ability => :SWIFTSWIM,
+      },
+      {
+        :species => :PILOSWINE,
+        :level => 52,
+        :ability => :THICKFAT,
+      }
+    ]
+  },
+  {
     :teamid => ["Rufus", :HIKER, 0],
     :defeat => "I regret it not!",
     :mons => [
@@ -16431,7 +16452,7 @@ TEAMARRAY = [
         :species => :MEOWSTIC,
         :level => 52,
         :moves => [:CALMMIND, :THUNDERBOLT, :SHADOWBALL, :STOREDPOWER],
-        :ability => :PRANKSTER,
+        :ability => :COMPETITIVE,
         :gender => "F",
       }
     ]
@@ -16821,7 +16842,7 @@ TEAMARRAY = [
         :ability => :HYDRATION,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -17721,7 +17742,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :CALM,
         :happiness => 255,
-        :ev => [248, 0, 252, 0, 8, 0]
+        :ev => [248, 0, 8, 0, 252, 0]
       },
       {
         :species => :SIMIPOUR,
@@ -17840,7 +17861,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :ADAMANT,
         :happiness => 255,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :DUSKNOIR,
@@ -17862,7 +17883,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :CAREFUL,
         :happiness => 255,
-        :ev => [144, 176, 0, 0, 188, 0]
+        :ev => [144, 176, 188, 0, 0, 0]
       }
     ]
   },
@@ -17957,7 +17978,7 @@ TEAMARRAY = [
         :ability => :STURDY,
         :nature => :BOLD,
         :happiness => 255,
-        :ev => [252, 0, 0, 4, 252, 0]
+        :ev => [252, 0, 252, 4, 0, 0]
       },
       {
         :species => :KLINKLANG,
@@ -18017,7 +18038,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :BOLD,
         :happiness => 255,
-        :ev => [252, 0, 120, 0, 136, 0]
+        :ev => [252, 0, 136, 0, 120, 0]
       }
     ]
   },
@@ -18034,7 +18055,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :BOLD,
         :happiness => 255,
-        :ev => [240, 0, 16, 0, 252, 0]
+        :ev => [240, 0, 252, 0, 16, 0]
       },
       {
         :species => :BEWEAR,
@@ -18045,7 +18066,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :CALM,
         :happiness => 255,
-        :ev => [252, 0, 4, 0, 0, 252]
+        :ev => [252, 0, 0, 0, 4, 252]
       },
       {
         :species => :BLISSEY,
@@ -18990,7 +19011,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       }
     ]
   },
@@ -19081,7 +19102,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 6, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 6, 0]
       },
       {
         :species => :CARRACOSTA,
@@ -19091,7 +19112,7 @@ TEAMARRAY = [
         :ability => :SWIFTSWIM,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :ARMALDO,
@@ -19101,7 +19122,7 @@ TEAMARRAY = [
         :ability => :SWIFTSWIM,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       }
     ]
   },
@@ -19117,7 +19138,7 @@ TEAMARRAY = [
         :ability => :SNOWWARNING,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 6, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 6, 0]
       },
       {
         :species => :MAMOSWINE,
@@ -19127,7 +19148,7 @@ TEAMARRAY = [
         :ability => :SNOWCLOAK,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       }
     ]
   },
@@ -19180,7 +19201,7 @@ TEAMARRAY = [
         :ability => :ZENMODE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [248, 0, 0, 10, 252, 0]
+        :ev => [248, 0, 252, 10, 0, 0]
       },
       {
         :species => :MAGCARGO,
@@ -19190,7 +19211,7 @@ TEAMARRAY = [
         :ability => :WEAKARMOR,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 6, 252, 252]
+        :ev => [0, 0, 252, 6, 0, 252]
       },
       {
         :species => :RAMPARDOS,
@@ -19198,7 +19219,7 @@ TEAMARRAY = [
         :item => :LIFEORB,
         :moves => [:ROCKSLIDE, :ZENHEADBUTT, :FIREBLAST, :SUPERPOWER],
         :ability => :SHEERFORCE,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
         :ev => [6, 252, 0, 0, 0, 252]
       }
@@ -19245,7 +19266,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :METAGROSS,
@@ -19255,7 +19276,7 @@ TEAMARRAY = [
         :ability => :CLEARBODY,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [240, 252, 0, 0, 16, 0]
+        :ev => [240, 252, 16, 0, 0, 0]
       },
       {
         :species => :FLYGON,
@@ -19266,7 +19287,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :AZUMARILL,
@@ -19277,7 +19298,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [240, 252, 16, 0, 0, 0]
+        :ev => [240, 252, 0, 0, 16, 0]
       }
     ]
   },
@@ -19324,7 +19345,7 @@ TEAMARRAY = [
         :ability => :IRONFIST,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :VAPOREON,
@@ -19334,7 +19355,7 @@ TEAMARRAY = [
         :ability => :WATERABSORB,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :NOIVERN,
@@ -19360,7 +19381,7 @@ TEAMARRAY = [
         :ability => :CLOUDNINE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :MAWILE,
@@ -19370,7 +19391,7 @@ TEAMARRAY = [
         :ability => :INTIMIDATE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :GARCHOMP,
@@ -19396,7 +19417,7 @@ TEAMARRAY = [
         :ability => :DEFIANT,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :ARCANINE,
@@ -19406,7 +19427,7 @@ TEAMARRAY = [
         :ability => :INTIMIDATE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :HAXORUS,
@@ -19443,7 +19464,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :SALAMENCE,
@@ -21312,7 +21333,7 @@ TEAMARRAY = [
         :ability => :DROUGHT,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :CHANDELURE,
@@ -21322,7 +21343,7 @@ TEAMARRAY = [
         :ability => :FLAMEBODY,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :GARDEVOIR,
@@ -21332,7 +21353,7 @@ TEAMARRAY = [
         :ability => :TELEPATHY,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :MILOTIC,
@@ -21342,7 +21363,7 @@ TEAMARRAY = [
         :ability => :MARVELSCALE,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :LILLIGANT,
@@ -21353,7 +21374,7 @@ TEAMARRAY = [
         :ability => :CHLOROPHYLL,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :MISMAGIUS,
@@ -21364,7 +21385,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -21380,7 +21401,7 @@ TEAMARRAY = [
         :ability => :SERENEGRACE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :CHANDELURE,
@@ -21391,7 +21412,7 @@ TEAMARRAY = [
         :ability => :FLAMEBODY,
         :nature => :MODEST,
         :iv => 32,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :TALONFLAME,
@@ -21401,7 +21422,7 @@ TEAMARRAY = [
         :ability => :GALEWINGS,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :CONKELDURR,
@@ -21411,7 +21432,7 @@ TEAMARRAY = [
         :ability => :GUTS,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :ROTOM,
@@ -21479,7 +21500,7 @@ TEAMARRAY = [
         :ability => :SWIFTSWIM,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :KABUTOPS,
@@ -21489,7 +21510,7 @@ TEAMARRAY = [
         :ability => :SWIFTSWIM,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :SALAMENCE,
@@ -21499,7 +21520,7 @@ TEAMARRAY = [
         :ability => :MOXIE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       }
     ]
   },
@@ -21527,7 +21548,7 @@ TEAMARRAY = [
         :ability => :MAGICGUARD,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SERPERIOR,
@@ -21538,7 +21559,7 @@ TEAMARRAY = [
         :ability => :CONTRARY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :WEAVILE,
@@ -21548,7 +21569,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :DRAGONITE,
@@ -21558,7 +21579,7 @@ TEAMARRAY = [
         :ability => :MULTISCALE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :SCIZOR,
@@ -21568,7 +21589,7 @@ TEAMARRAY = [
         :ability => :TECHNICIAN,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -21584,7 +21605,7 @@ TEAMARRAY = [
         :ability => :GUTS,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :SLOWBRO,
@@ -21594,7 +21615,7 @@ TEAMARRAY = [
         :ability => :REGENERATOR,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :CHANDELURE,
@@ -21604,7 +21625,7 @@ TEAMARRAY = [
         :ability => :FLAMEBODY,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :AMOONGUSS,
@@ -21615,7 +21636,7 @@ TEAMARRAY = [
         :ability => :REGENERATOR,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 80, 0, 176, 0]
+        :ev => [252, 0, 176, 0, 80, 0]
       },
       {
         :species => :TYRANITAR,
@@ -21625,7 +21646,7 @@ TEAMARRAY = [
         :ability => :SANDSTREAM,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :GLISCOR,
@@ -21635,7 +21656,7 @@ TEAMARRAY = [
         :ability => :POISONHEAL,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       }
     ]
   },
@@ -21661,7 +21682,7 @@ TEAMARRAY = [
         :ability => :TORRENT,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :LUDICOLO,
@@ -21671,7 +21692,7 @@ TEAMARRAY = [
         :ability => :SWIFTSWIM,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :AEGISLASH,
@@ -21681,7 +21702,7 @@ TEAMARRAY = [
         :ability => :STANCECHANGE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :CONKELDURR,
@@ -21691,7 +21712,7 @@ TEAMARRAY = [
         :ability => :GUTS,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :NOIVERN,
@@ -21717,7 +21738,7 @@ TEAMARRAY = [
         :ability => :CONTRARY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :BISHARP,
@@ -21727,7 +21748,7 @@ TEAMARRAY = [
         :ability => :DEFIANT,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :DRUDDIGON,
@@ -21737,7 +21758,7 @@ TEAMARRAY = [
         :ability => :SHEERFORCE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :REUNICLUS,
@@ -21747,7 +21768,7 @@ TEAMARRAY = [
         :ability => :MAGICGUARD,
         :nature => :QUIET,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :CHANDELURE,
@@ -21757,7 +21778,7 @@ TEAMARRAY = [
         :ability => :FLAMEBODY,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :ESCAVALIER,
@@ -21767,7 +21788,7 @@ TEAMARRAY = [
         :ability => :OVERCOAT,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       }
     ]
   },
@@ -21784,7 +21805,7 @@ TEAMARRAY = [
         :ability => :FLASHFIRE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :FERALIGATR,
@@ -21794,7 +21815,7 @@ TEAMARRAY = [
         :ability => :SHEERFORCE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :ESPEON,
@@ -21805,7 +21826,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SABLEYE,
@@ -21815,7 +21836,7 @@ TEAMARRAY = [
         :ability => :PRANKSTER,
         :nature => :IMPISH,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :LUCARIO,
@@ -21835,7 +21856,7 @@ TEAMARRAY = [
         :ability => :MOLDBREAKER,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       }
     ]
   },
@@ -21851,7 +21872,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :SASSY,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :ALAKAZAM,
@@ -21861,7 +21882,7 @@ TEAMARRAY = [
         :ability => :MAGICGUARD,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :WEAVILE,
@@ -21871,7 +21892,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :MISMAGIUS,
@@ -21883,7 +21904,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :DRAGONITE,
@@ -21903,7 +21924,7 @@ TEAMARRAY = [
         :ability => :STURDY,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -21930,7 +21951,7 @@ TEAMARRAY = [
         :ability => :FLAMEBODY,
         :nature => :QUIET,
         :iv => 32,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :PORYGON2,
@@ -21986,7 +22007,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :ESPEON,
@@ -21997,7 +22018,7 @@ TEAMARRAY = [
         :ability => :MAGICBOUNCE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :SCEPTILE,
@@ -22007,7 +22028,7 @@ TEAMARRAY = [
         :ability => :OVERGROW,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :CARRACOSTA,
@@ -22017,7 +22038,7 @@ TEAMARRAY = [
         :ability => :SOLIDROCK,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :SCRAFTY,
@@ -22027,7 +22048,7 @@ TEAMARRAY = [
         :ability => :MOXIE,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :VOLCARONA,
@@ -22037,7 +22058,7 @@ TEAMARRAY = [
         :ability => :SWARM,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 252, 4]
+        :ev => [252, 0, 252, 0, 0, 4]
       }
     ]
   },
@@ -22054,7 +22075,7 @@ TEAMARRAY = [
         :ability => :MAGICGUARD,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :HONCHKROW,
@@ -22064,7 +22085,7 @@ TEAMARRAY = [
         :ability => :MOXIE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :PORYGONZ,
@@ -22075,7 +22096,7 @@ TEAMARRAY = [
         :ability => :ADAPTABILITY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :MACHAMP,
@@ -22085,7 +22106,7 @@ TEAMARRAY = [
         :ability => :NOGUARD,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :VOLCARONA,
@@ -22095,7 +22116,7 @@ TEAMARRAY = [
         :ability => :SWARM,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 252, 4]
+        :ev => [252, 0, 252, 0, 0, 4]
       },
       {
         :species => :GARCHOMP,
@@ -22122,7 +22143,7 @@ TEAMARRAY = [
         :ability => :CURSEDBODY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :LUCARIO,
@@ -22142,7 +22163,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :EXCADRILL,
@@ -22152,7 +22173,7 @@ TEAMARRAY = [
         :ability => :SANDRUSH,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :TYRANITAR,
@@ -22162,7 +22183,7 @@ TEAMARRAY = [
         :ability => :SANDSTREAM,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :TOGEKISS,
@@ -22172,7 +22193,7 @@ TEAMARRAY = [
         :ability => :SERENEGRACE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -22198,7 +22219,7 @@ TEAMARRAY = [
         :ability => :RECKLESS,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :ESCAVALIER,
@@ -22208,7 +22229,7 @@ TEAMARRAY = [
         :ability => :OVERCOAT,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [128, 252, 128, 0, 0, 0]
+        :ev => [128, 252, 0, 0, 128, 0]
       },
       {
         :species => :TANGROWTH,
@@ -22219,7 +22240,7 @@ TEAMARRAY = [
         :ability => :REGENERATOR,
         :nature => :BRAVE,
         :iv => 31,
-        :ev => [252, 4, 252, 0, 0, 0]
+        :ev => [252, 4, 0, 0, 252, 0]
       },
       {
         :species => :EELEKTROSS,
@@ -22239,7 +22260,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -22265,7 +22286,7 @@ TEAMARRAY = [
         :ability => :HYDRATION,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 4, 252, 0, 0, 0]
+        :ev => [252, 4, 0, 0, 252, 0]
       },
       {
         :species => :SCIZOR,
@@ -22275,7 +22296,7 @@ TEAMARRAY = [
         :ability => :TECHNICIAN,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 100, 156, 0, 0, 0]
+        :ev => [252, 100, 0, 0, 156, 0]
       },
       {
         :species => :DRAGONITE,
@@ -22296,7 +22317,7 @@ TEAMARRAY = [
         :ability => :VOLTABSORB,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :AMOONGUSS,
@@ -22307,7 +22328,7 @@ TEAMARRAY = [
         :ability => :REGENERATOR,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 80, 0, 176, 0]
+        :ev => [252, 0, 176, 0, 80, 0]
       }
     ]
   },
@@ -22323,7 +22344,7 @@ TEAMARRAY = [
         :ability => :SANDSTREAM,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :GENGAR,
@@ -22334,7 +22355,7 @@ TEAMARRAY = [
         :ability => :CURSEDBODY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :LUCARIO,
@@ -22354,7 +22375,7 @@ TEAMARRAY = [
         :ability => :SANDRUSH,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :GARCHOMP,
@@ -22375,7 +22396,7 @@ TEAMARRAY = [
         :ability => :CONTRARY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -22391,7 +22412,7 @@ TEAMARRAY = [
         :ability => :SOLIDROCK,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 4, 252, 0, 0, 0]
+        :ev => [252, 4, 0, 0, 252, 0]
       },
       {
         :species => :NINETALES,
@@ -22401,7 +22422,7 @@ TEAMARRAY = [
         :ability => :DROUGHT,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :LEAFEON,
@@ -22412,7 +22433,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :CHANDELURE,
@@ -22422,7 +22443,7 @@ TEAMARRAY = [
         :ability => :FLAMEBODY,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :CHARIZARD,
@@ -22432,7 +22453,7 @@ TEAMARRAY = [
         :ability => :SOLARPOWER,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SAWSBUCK,
@@ -22444,7 +22465,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       }
     ]
   },
@@ -22460,7 +22481,7 @@ TEAMARRAY = [
         :ability => :CURSEDBODY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SCEPTILE,
@@ -22470,7 +22491,7 @@ TEAMARRAY = [
         :ability => :UNBURDEN,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :PORYGON2,
@@ -22500,7 +22521,7 @@ TEAMARRAY = [
         :ability => :REGENERATOR,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :INFERNAPE,
@@ -22508,9 +22529,9 @@ TEAMARRAY = [
         :item => :LIFEORB,
         :moves => [:HEATWAVE, :ROCKSLIDE, :MACHPUNCH, :FAKEOUT],
         :ability => :BLAZE,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       }
     ]
   },
@@ -22536,7 +22557,7 @@ TEAMARRAY = [
         :ability => :HYDRATION,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 4, 252, 0, 0, 0]
+        :ev => [252, 4, 0, 0, 252, 0]
       },
       {
         :species => :LUDICOLO,
@@ -22546,7 +22567,7 @@ TEAMARRAY = [
         :ability => :SWIFTSWIM,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SEISMITOAD,
@@ -22556,7 +22577,7 @@ TEAMARRAY = [
         :ability => :SWIFTSWIM,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :KINGDRA,
@@ -22566,7 +22587,7 @@ TEAMARRAY = [
         :ability => :SWIFTSWIM,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :GOREBYSS,
@@ -22577,7 +22598,7 @@ TEAMARRAY = [
         :ability => :SWIFTSWIM,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -22594,7 +22615,7 @@ TEAMARRAY = [
         :ability => :CURSEDBODY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :EMPOLEON,
@@ -22604,7 +22625,7 @@ TEAMARRAY = [
         :ability => :TORRENT,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :DITTO,
@@ -22626,7 +22647,7 @@ TEAMARRAY = [
         :ability => :FLAMEBODY,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :TYRANITAR,
@@ -22636,7 +22657,7 @@ TEAMARRAY = [
         :ability => :SANDSTREAM,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :HAXORUS,
@@ -22646,7 +22667,7 @@ TEAMARRAY = [
         :ability => :MOLDBREAKER,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       }
     ]
   },
@@ -22662,7 +22683,7 @@ TEAMARRAY = [
         :ability => :SANDSTREAM,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :MAMOSWINE,
@@ -22672,7 +22693,7 @@ TEAMARRAY = [
         :ability => :THICKFAT,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :EXCADRILL,
@@ -22682,7 +22703,7 @@ TEAMARRAY = [
         :ability => :SANDRUSH,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :CRADILY,
@@ -22692,7 +22713,7 @@ TEAMARRAY = [
         :ability => :STORMDRAIN,
         :nature => :CALM,
         :iv => 31,
-        :ev => [0, 0, 252, 252, 4, 0]
+        :ev => [0, 0, 4, 252, 252, 0]
       },
       {
         :species => :OMASTAR,
@@ -22703,7 +22724,7 @@ TEAMARRAY = [
         :ability => :SHELLARMOR,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :GOLURK,
@@ -22729,7 +22750,7 @@ TEAMARRAY = [
         :ability => :CLEARBODY,
         :nature => :BRAVE,
         :iv => 31,
-        :ev => [0, 252, 252, 0, 4, 0]
+        :ev => [0, 252, 4, 0, 252, 0]
       },
       {
         :species => :SERPERIOR,
@@ -22740,7 +22761,7 @@ TEAMARRAY = [
         :ability => :CONTRARY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :JOLTEON,
@@ -22751,7 +22772,7 @@ TEAMARRAY = [
         :ability => :VOLTABSORB,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :HAXORUS,
@@ -22761,7 +22782,7 @@ TEAMARRAY = [
         :ability => :MOLDBREAKER,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :NINETALES,
@@ -22771,7 +22792,7 @@ TEAMARRAY = [
         :ability => :DROUGHT,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SALAMENCE,
@@ -22816,9 +22837,9 @@ TEAMARRAY = [
         :item => :LIFEORB,
         :moves => [:HEATWAVE, :ROCKSLIDE, :CLOSECOMBAT, :FAKEOUT],
         :ability => :BLAZE,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :SERPERIOR,
@@ -22829,7 +22850,7 @@ TEAMARRAY = [
         :ability => :CONTRARY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :STARMIE,
@@ -22839,7 +22860,7 @@ TEAMARRAY = [
         :ability => :ANALYTIC,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :HONCHKROW,
@@ -22849,7 +22870,7 @@ TEAMARRAY = [
         :ability => :MOXIE,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -22888,7 +22909,7 @@ TEAMARRAY = [
         :ability => :CONTRARY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SCIZOR,
@@ -22898,7 +22919,7 @@ TEAMARRAY = [
         :ability => :TECHNICIAN,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :ALAKAZAM,
@@ -22909,7 +22930,7 @@ TEAMARRAY = [
         :ability => :MAGICGUARD,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :INFERNAPE,
@@ -22917,9 +22938,9 @@ TEAMARRAY = [
         :item => :TELLURICSEED,
         :moves => [:HEATWAVE, :ROCKSLIDE, :CLOSECOMBAT, :FAKEOUT],
         :ability => :BLAZE,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       }
     ]
   },
@@ -22935,7 +22956,7 @@ TEAMARRAY = [
         :ability => :CURSEDBODY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :DRAGONITE,
@@ -22955,7 +22976,7 @@ TEAMARRAY = [
         :ability => :ANALYTIC,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :JOLTEON,
@@ -22966,7 +22987,7 @@ TEAMARRAY = [
         :ability => :VOLTABSORB,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :WEAVILE,
@@ -22976,7 +22997,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :SCIZOR,
@@ -22986,7 +23007,7 @@ TEAMARRAY = [
         :ability => :TECHNICIAN,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       }
     ]
   },
@@ -23018,7 +23039,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :AMOONGUSS,
@@ -23028,7 +23049,7 @@ TEAMARRAY = [
         :ability => :REGENERATOR,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 0, 4, 252, 0]
+        :ev => [252, 0, 252, 4, 0, 0]
       },
       {
         :species => :MUSHARNA,
@@ -23038,7 +23059,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 0, 4, 252, 0]
+        :ev => [252, 0, 252, 4, 0, 0]
       },
       {
         :species => :JUMPLUFF,
@@ -23048,7 +23069,7 @@ TEAMARRAY = [
         :ability => :INFILTRATOR,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :CRESSELIA,
@@ -23086,7 +23107,7 @@ TEAMARRAY = [
         :form => 3,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 252, 0]
+        :ev => [0, 0, 252, 252, 4, 0]
       },
       {
         :species => :FROSLASS,
@@ -23155,7 +23176,7 @@ TEAMARRAY = [
         :ability => :AROMAVEIL,
         :nature => :QUIET,
         :iv => 32,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :URSARING,
@@ -23165,7 +23186,7 @@ TEAMARRAY = [
         :ability => :GUTS,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :VILEPLUME,
@@ -23176,7 +23197,7 @@ TEAMARRAY = [
         :ability => :CHLOROPHYLL,
         :nature => :QUIET,
         :iv => 32,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :CAMERUPT,
@@ -23186,7 +23207,7 @@ TEAMARRAY = [
         :ability => :MAGMAARMOR,
         :nature => :QUIET,
         :iv => 32,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :PRIMARINA,
@@ -23196,7 +23217,7 @@ TEAMARRAY = [
         :ability => :TORRENT,
         :nature => :QUIET,
         :iv => 32,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :ENTEI,
@@ -23232,7 +23253,7 @@ TEAMARRAY = [
         :ability => :HYDRATION,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :GOODRA,
@@ -23242,7 +23263,7 @@ TEAMARRAY = [
         :ability => :SAPSIPPER,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :LAPRAS,
@@ -23252,7 +23273,7 @@ TEAMARRAY = [
         :ability => :HYDRATION,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 252, 4]
+        :ev => [0, 252, 252, 0, 0, 4]
       },
       {
         :species => :VAPOREON,
@@ -23262,7 +23283,7 @@ TEAMARRAY = [
         :ability => :HYDRATION,
         :nature => :CALM,
         :iv => 31,
-        :ev => [0, 0, 252, 252, 0, 4]
+        :ev => [0, 0, 0, 252, 252, 4]
       },
       {
         :species => :SUICUNE,
@@ -23289,7 +23310,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :TYRANITAR,
@@ -23299,7 +23320,7 @@ TEAMARRAY = [
         :ability => :UNNERVE,
         :nature => :QUIET,
         :iv => 32,
-        :ev => [252, 0, 4, 0, 0, 252]
+        :ev => [252, 0, 0, 0, 4, 252]
       },
       {
         :species => :MAWILE,
@@ -23309,7 +23330,7 @@ TEAMARRAY = [
         :ability => :HYPERCUTTER,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :REGIROCK,
@@ -23355,7 +23376,7 @@ TEAMARRAY = [
         :ability => :INTIMIDATE,
         :nature => :SERIOUS,
         :iv => 31,
-        :ev => [128, 252, 0, 128, 4, 0]
+        :ev => [128, 252, 4, 128, 0, 0]
       },
       {
         :species => :PYROAR,
@@ -23377,7 +23398,7 @@ TEAMARRAY = [
         :ability => :STURDY,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :PRIMARINA,
@@ -23387,7 +23408,7 @@ TEAMARRAY = [
         :ability => :TORRENT,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :HAWLUCHA,
@@ -23397,7 +23418,7 @@ TEAMARRAY = [
         :ability => :UNBURDEN,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :BLAZIKEN,
@@ -23407,7 +23428,7 @@ TEAMARRAY = [
         :ability => :SPEEDBOOST,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -23469,7 +23490,7 @@ TEAMARRAY = [
         :ability => :RKSSYSTEM,
         :nature => :QUIET,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :SILVALLY,
@@ -23479,7 +23500,7 @@ TEAMARRAY = [
         :ability => :RKSSYSTEM,
         :nature => :QUIET,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       }
     ]
   },
@@ -23495,7 +23516,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :JOLLY,
         :iv => 20,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :CHARIZARD,
@@ -23562,7 +23583,7 @@ TEAMARRAY = [
         :ability => :JUSTIFIED,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 0, 252]
+        :ev => [252, 0, 0, 0, 4, 252]
       },
       {
         :species => :TERRAKION,
@@ -23581,7 +23602,7 @@ TEAMARRAY = [
         :ability => :JUSTIFIED,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SEISMITOAD,
@@ -23591,7 +23612,7 @@ TEAMARRAY = [
         :ability => :WATERABSORB,
         :nature => :MODEST,
         :iv => 20,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :VAPOREON,
@@ -23602,7 +23623,7 @@ TEAMARRAY = [
         :ability => :WATERABSORB,
         :nature => :BOLD,
         :iv => 20,
-        :ev => [0, 0, 0, 252, 252, 4]
+        :ev => [0, 0, 252, 252, 0, 4]
       },
       {
         :species => :LUCARIO,
@@ -23612,7 +23633,7 @@ TEAMARRAY = [
         :ability => :STEADFAST,
         :nature => :TIMID,
         :iv => 20,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -23745,7 +23766,7 @@ TEAMARRAY = [
         :ability => :TORRENT,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :HONCHKROW,
@@ -23771,7 +23792,7 @@ TEAMARRAY = [
         :ability => :NATURALCURE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [248, 0, 8, 0, 252, 0]
+        :ev => [248, 0, 252, 0, 8, 0]
       },
       {
         :species => :DITTO,
@@ -23783,7 +23804,7 @@ TEAMARRAY = [
         :iv => 31,
         :happiness => 255,
         :hptype => :GRASS,
-        :ev => [252, 4, 0, 0, 252, 0]
+        :ev => [252, 4, 252, 0, 0, 0]
       },
       {
         :species => :CLEFABLE,
@@ -23793,7 +23814,7 @@ TEAMARRAY = [
         :ability => :MAGICGUARD,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :DRAGONITE,
@@ -23803,7 +23824,7 @@ TEAMARRAY = [
         :ability => :MULTISCALE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :PERSIAN,
@@ -23823,7 +23844,7 @@ TEAMARRAY = [
         :ability => :THICKFAT,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 0, 252]
+        :ev => [252, 0, 0, 0, 4, 252]
       }
     ]
   },
@@ -23839,7 +23860,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :TYRANITAR,
@@ -23849,7 +23870,7 @@ TEAMARRAY = [
         :ability => :SANDSTREAM,
         :nature => :QUIET,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :REGISTEEL,
@@ -23869,7 +23890,7 @@ TEAMARRAY = [
         :ability => :CLEARBODY,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :REGICE,
@@ -23879,7 +23900,7 @@ TEAMARRAY = [
         :ability => :CLEARBODY,
         :nature => :QUIET,
         :iv => 32,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :REGIGIGAS,
@@ -23923,7 +23944,7 @@ TEAMARRAY = [
         :item => :LIFEORB,
         :moves => [:EARTHPOWER, :ROCKSLIDE, :KNOCKOFF, :FOCUSBLAST],
         :ability => :SHEERFORCE,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 23,
         :ev => [0, 252, 0, 4, 0, 252]
       },
@@ -23947,7 +23968,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :TIMID,
         :iv => 23,
-        :ev => [252, 0, 0, 0, 4, 252]
+        :ev => [252, 0, 4, 0, 0, 252]
       },
       {
         :species => :LANDORUS,
@@ -24117,7 +24138,7 @@ TEAMARRAY = [
         :ability => :QUEENLYMAJESTY,
         :nature => :ADAMANT,
         :iv => 0,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :AEGISLASH,
@@ -24127,7 +24148,7 @@ TEAMARRAY = [
         :ability => :STANCECHANGE,
         :nature => :ADAMANT,
         :iv => 0,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :DIGGERSBY,
@@ -24137,7 +24158,7 @@ TEAMARRAY = [
         :ability => :HUGEPOWER,
         :nature => :ADAMANT,
         :iv => 0,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :AGGRON,
@@ -24147,7 +24168,7 @@ TEAMARRAY = [
         :ability => :ROCKHEAD,
         :nature => :ADAMANT,
         :iv => 0,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :GARDEVOIR,
@@ -24176,7 +24197,7 @@ TEAMARRAY = [
         :nature => :CAREFUL,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :BIBAREL,
@@ -24187,7 +24208,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :LUCARIO,
@@ -24244,7 +24265,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :happiness => 255,
-        :ev => [4, 0, 0, 0, 252, 252]
+        :ev => [4, 0, 252, 0, 0, 252]
       },
       {
         :species => :CELEBI,
@@ -24336,7 +24357,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 252, 0]
+        :ev => [0, 252, 252, 0, 4, 0]
       },
       {
         :species => :AERODACTYL,
@@ -24425,7 +24446,7 @@ TEAMARRAY = [
         :iv => 31,
         :happiness => 255,
         :name => "Althena",
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :WHIMSICOTT,
@@ -24438,7 +24459,7 @@ TEAMARRAY = [
         :iv => 31,
         :happiness => 255,
         :name => "Topaz",
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :ABSOL,
@@ -24470,7 +24491,7 @@ TEAMARRAY = [
         :nature => :CAREFUL,
         :iv => 31,
         :name => "Cain",
-        :ev => [0, 252, 252, 0, 0, 4]
+        :ev => [0, 252, 0, 0, 252, 4]
       },
       {
         :species => :SCIZOR,
@@ -24482,7 +24503,7 @@ TEAMARRAY = [
         :nature => :CAREFUL,
         :iv => 31,
         :name => "Titania",
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :YANMEGA,
@@ -24648,7 +24669,7 @@ TEAMARRAY = [
         :species => :VENUSAUR,
         :level => 119,
         :item => :LIFEORB,
-        :moves => [:SOLARBEAM, :SLUDGEWAVE, :GIGADRAIN, :SLEEPPOWDER],
+        :moves => [:SOLARBEAM, :SLUDGEBOMB, :GIGADRAIN, :SLEEPPOWDER],
         :ability => :CHLOROPHYLL,
         :nature => :MODEST,
         :iv => 31,
@@ -24698,7 +24719,7 @@ TEAMARRAY = [
         :ability => :STORMDRAIN,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :UMBREON,
@@ -24744,7 +24765,7 @@ TEAMARRAY = [
         :ability => :POISONTOUCH,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :VILEPLUME,
@@ -24755,7 +24776,7 @@ TEAMARRAY = [
         :ability => :CHLOROPHYLL,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :VICTREEBEL,
@@ -24765,7 +24786,7 @@ TEAMARRAY = [
         :ability => :CHLOROPHYLL,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :SWALOT,
@@ -24785,7 +24806,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :ABSOL,
@@ -24813,7 +24834,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "No.1",
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :HIPPOWDON,
@@ -24825,7 +24846,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "No.2",
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :MUDSDALE,
@@ -24836,7 +24857,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "No.3",
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :DARMANITAN,
@@ -24847,7 +24868,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "No.4",
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :MAROWAK,
@@ -24859,7 +24880,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "No.5",
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :SCEPTILE,
@@ -24887,7 +24908,7 @@ TEAMARRAY = [
         :ability => :COMPOUNDEYES,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :ROTOM,
@@ -24898,7 +24919,7 @@ TEAMARRAY = [
         :form => 2,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :AMPHAROS,
@@ -24908,7 +24929,7 @@ TEAMARRAY = [
         :ability => :STATIC,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :RAICHU,
@@ -24919,7 +24940,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :MAGNEZONE,
@@ -24930,7 +24951,7 @@ TEAMARRAY = [
         :ability => :MAGNETPULL,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :XURKITREE,
@@ -24940,7 +24961,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -24957,7 +24978,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :HEATMOR,
@@ -24979,7 +25000,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :BASHFUL,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :CHARIZARD,
@@ -24990,7 +25011,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :CHANDELURE,
@@ -25075,7 +25096,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 0, 4]
+        :ev => [252, 0, 0, 0, 252, 4]
       },
       {
         :species => :SHARPEDO,
@@ -25180,7 +25201,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :AMOONGUSS,
@@ -25190,7 +25211,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :CRABOMINABLE,
@@ -25224,7 +25245,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 0,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       }
     ]
   },
@@ -25286,7 +25307,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :SLOWBRO,
@@ -25297,7 +25318,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :BOLD,
         :iv => 31,
-        :ev => [4, 0, 0, 252, 252, 0]
+        :ev => [4, 0, 252, 252, 0, 0]
       }
     ]
   },
@@ -25369,7 +25390,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [4, 252, 0, 0, 252, 0]
+        :ev => [4, 252, 252, 0, 0, 0]
       }
     ]
   },
@@ -25387,7 +25408,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :BOLD,
         :iv => 0,
-        :ev => [252, 0, 56, 0, 200, 0]
+        :ev => [252, 0, 200, 0, 56, 0]
       },
       {
         :species => :CACTURNE,
@@ -25409,7 +25430,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :ADAMANT,
         :iv => 0,
-        :ev => [252, 0, 0, 0, 252, 4]
+        :ev => [252, 0, 252, 0, 0, 4]
       },
       {
         :species => :SANDSLASH,
@@ -25454,7 +25475,7 @@ TEAMARRAY = [
         :species => :CARBINK,
         :level => 120,
         :item => :AMPLIFIELDROCK,
-        :moves => [:TRICKROOM, :STEALTHROCK, :EXPLOSION, :HELPINGHAND],
+        :moves => [:TRICKROOM, :STEALTHROCK, :EXPLOSION, :SKILLSWAP],
         :ability => :STURDY,
         :nature => :BRAVE,
         :iv => 32,
@@ -25468,7 +25489,7 @@ TEAMARRAY = [
         :ability => :FRISK,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :STAKATAKA,
@@ -25478,7 +25499,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :COMFEY,
@@ -25488,7 +25509,7 @@ TEAMARRAY = [
         :ability => :TRIAGE,
         :nature => :MODEST,
         :iv => 32,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :SABLEYE,
@@ -25498,7 +25519,7 @@ TEAMARRAY = [
         :ability => :STALL,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :HOOPA,
@@ -25605,7 +25626,7 @@ TEAMARRAY = [
         :ability => :CHLOROPHYLL,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :KOMMOO,
@@ -25625,7 +25646,7 @@ TEAMARRAY = [
         :ability => :SCRAPPY,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -25641,7 +25662,7 @@ TEAMARRAY = [
         :ability => :COMPOUNDEYES,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :ROTOM,
@@ -25652,7 +25673,7 @@ TEAMARRAY = [
         :form => 2,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :AMPHAROS,
@@ -25662,7 +25683,7 @@ TEAMARRAY = [
         :ability => :STATIC,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -25678,7 +25699,7 @@ TEAMARRAY = [
         :ability => :MAGNETPULL,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :MAGEARNA,
@@ -25688,7 +25709,7 @@ TEAMARRAY = [
         :ability => :SOULHEART,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :BRELOOM,
@@ -25717,7 +25738,7 @@ TEAMARRAY = [
         :ability => :UNBURDEN,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :BLAZIKEN,
@@ -25727,7 +25748,7 @@ TEAMARRAY = [
         :ability => :SPEEDBOOST,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :PRIMARINA,
@@ -25737,7 +25758,7 @@ TEAMARRAY = [
         :ability => :TORRENT,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       }
     ]
   },
@@ -25756,7 +25777,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Amethyst",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :CINCCINO,
@@ -25768,7 +25789,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "Meech",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :GARDEVOIR,
@@ -25780,7 +25801,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -25796,7 +25817,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :NECROZMA,
@@ -25807,7 +25828,7 @@ TEAMARRAY = [
         :form => 2,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :RAYQUAZA,
@@ -25818,7 +25839,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -25855,7 +25876,7 @@ TEAMARRAY = [
         :ability => :SNOWWARNING,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 4, 252]
+        :ev => [252, 0, 4, 0, 0, 252]
       },
       {
         :species => :MALAMAR,
@@ -25902,7 +25923,7 @@ TEAMARRAY = [
         :ability => :RUNAWAY,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [4, 0, 252, 0, 0, 252]
+        :ev => [4, 0, 0, 0, 252, 252]
       },
       {
         :species => :CELEBI,
@@ -25972,7 +25993,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :MISMAGIUS,
@@ -26003,7 +26024,7 @@ TEAMARRAY = [
         :ability => :TECHNICIAN,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [148, 0, 0, 100, 4, 252]
+        :ev => [148, 0, 4, 100, 0, 252]
       },
       {
         :species => :ROTOM,
@@ -26014,7 +26035,7 @@ TEAMARRAY = [
         :form => 5,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 4, 252]
+        :ev => [252, 0, 4, 0, 0, 252]
       },
       {
         :species => :VENUSAUR,
@@ -26025,7 +26046,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [232, 0, 104, 4, 128, 20]
+        :ev => [232, 0, 128, 4, 104, 20]
       }
     ]
   },
@@ -26051,7 +26072,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :ROTOM,
@@ -26062,7 +26083,7 @@ TEAMARRAY = [
         :form => 5,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 4, 252]
+        :ev => [252, 0, 4, 0, 0, 252]
       }
     ]
   },
@@ -26099,7 +26120,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [232, 0, 104, 4, 128, 20]
+        :ev => [232, 0, 128, 4, 104, 20]
       }
     ]
   },
@@ -26115,7 +26136,7 @@ TEAMARRAY = [
         :form => 5,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 4, 252]
+        :ev => [252, 0, 4, 0, 0, 252]
       },
       {
         :species => :TSAREENA,
@@ -26126,7 +26147,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :ROSERADE,
@@ -26136,7 +26157,7 @@ TEAMARRAY = [
         :ability => :TECHNICIAN,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [148, 0, 0, 100, 4, 252]
+        :ev => [148, 0, 4, 100, 0, 252]
       }
     ]
   },
@@ -26173,7 +26194,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [232, 0, 104, 4, 128, 20]
+        :ev => [232, 0, 128, 4, 104, 20]
       }
     ]
   },
@@ -26273,7 +26294,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 56, 0, 200, 0]
+        :ev => [0, 252, 200, 0, 56, 0]
       },
       {
         :species => :COMFEY,
@@ -26306,7 +26327,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :LILLIGANT,
@@ -26368,7 +26389,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :DITTO,
@@ -26498,7 +26519,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 252, 0, 0, 4]
+        :ev => [0, 252, 0, 0, 252, 4]
       },
       {
         :species => :KLINKLANG,
@@ -26518,7 +26539,7 @@ TEAMARRAY = [
         :ability => :IRONBARBS,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :CINCCINO,
@@ -26555,7 +26576,7 @@ TEAMARRAY = [
         :ability => :SANDSTREAM,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :EXCADRILL,
@@ -26576,7 +26597,7 @@ TEAMARRAY = [
         :ability => :LIQUIDVOICE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :CHARIZARD,
@@ -26632,7 +26653,7 @@ TEAMARRAY = [
         :ability => :STEELWORKER,
         :nature => :ADAMANT,
         :iv => 15,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :NIDOKING,
@@ -26652,7 +26673,7 @@ TEAMARRAY = [
         :ability => :UNNERVE,
         :nature => :MODEST,
         :iv => 15,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :DRAMPA,
@@ -26662,7 +26683,7 @@ TEAMARRAY = [
         :ability => :BERSERK,
         :nature => :MODEST,
         :iv => 15,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :MANAPHY,
@@ -26708,7 +26729,7 @@ TEAMARRAY = [
         :ability => :CUTECHARM,
         :nature => :SASSY,
         :iv => 31,
-        :ev => [252, 0, 0, 200, 56, 0]
+        :ev => [252, 0, 56, 200, 0, 0]
       },
       {
         :species => :STARMIE,
@@ -26821,7 +26842,7 @@ TEAMARRAY = [
         :ability => :OWNTEMPO,
         :nature => :TIMID,
         :iv => 15,
-        :ev => [4, 0, 252, 252, 128, 0]
+        :ev => [4, 0, 128, 252, 252, 0]
       },
       {
         :species => :LICKILICKY,
@@ -26831,7 +26852,7 @@ TEAMARRAY = [
         :ability => :OWNTEMPO,
         :nature => :MODEST,
         :iv => 15,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :PORYGONZ,
@@ -26862,7 +26883,7 @@ TEAMARRAY = [
         :ability => :REGENERATOR,
         :nature => :MODEST,
         :iv => 15,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :CLEFABLE,
@@ -26872,7 +26893,7 @@ TEAMARRAY = [
         :ability => :CUTECHARM,
         :nature => :BOLD,
         :iv => 15,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       }
     ]
   },
@@ -26909,7 +26930,7 @@ TEAMARRAY = [
         :ability => :OWNTEMPO,
         :nature => :MODEST,
         :iv => 5,
-        :ev => [252, 0, 106, 100, 52, 0]
+        :ev => [252, 0, 52, 100, 106, 0]
       },
       {
         :species => :GARDEVOIR,
@@ -27064,7 +27085,7 @@ TEAMARRAY = [
         :ability => :LEAFGUARD,
         :nature => :MODEST,
         :iv => 5,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :SCEPTILE,
@@ -27324,7 +27345,7 @@ TEAMARRAY = [
         :ability => :VOLTABSORB,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :XURKITREE,
@@ -27356,7 +27377,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SWAMPERT,
@@ -27392,7 +27413,7 @@ TEAMARRAY = [
         :ability => :UNAWARE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 252, 4]
+        :ev => [252, 0, 252, 0, 0, 4]
       },
       {
         :species => :GARDEVOIR,
@@ -27402,7 +27423,7 @@ TEAMARRAY = [
         :ability => :TELEPATHY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :VICTINI,
@@ -27458,7 +27479,7 @@ TEAMARRAY = [
         :ability => :IRONBARBS,
         :nature => :IMPISH,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :GENGAR,
@@ -27546,7 +27567,7 @@ TEAMARRAY = [
         :ability => :MARVELSCALE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 56, 0, 200, 0]
+        :ev => [252, 0, 200, 0, 56, 0]
       },
       {
         :species => :SYLVEON,
@@ -27556,7 +27577,7 @@ TEAMARRAY = [
         :ability => :PIXILATE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :MAGEARNA,
@@ -27566,7 +27587,7 @@ TEAMARRAY = [
         :ability => :SOULHEART,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 0, 252]
+        :ev => [252, 0, 0, 0, 4, 252]
       },
       {
         :species => :TAPUFINI,
@@ -27600,7 +27621,7 @@ TEAMARRAY = [
         :moves => [:AERIALACE, :EARTHQUAKE, :ROCKSLIDE, :SACREDSWORD],
         :ability => :JUSTIFIED,
         :nature => :ADAMANT,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :TALONFLAME,
@@ -27618,7 +27639,7 @@ TEAMARRAY = [
         :moves => [:AERIALACE, :SMARTSTRIKE, :ROCKSLIDE, :STOMPINGTANTRUM],
         :ability => :SANDRUSH,
         :nature => :ADAMANT,
-        :ev => [0, 0, 100, 0, 156, 252]
+        :ev => [0, 0, 156, 0, 100, 252]
       },
       {
         :species => :ZAPDOS,
@@ -27653,7 +27674,7 @@ TEAMARRAY = [
         :moves => [:TAILWIND, :AERIALACE, :BRUTALSWING, :ROCKSLIDE],
         :ability => :ROCKHEAD,
         :nature => :JOLLY,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :TYRANITAR,
@@ -27662,7 +27683,7 @@ TEAMARRAY = [
         :moves => [:EARTHQUAKE, :ROCKSLIDE, :BRUTALSWING, :AVALANCHE],
         :ability => :SANDSTREAM,
         :nature => :ADAMANT,
-        :ev => [0, 252, 252, 0, 0, 4]
+        :ev => [0, 252, 0, 0, 252, 4]
       },
       {
         :species => :RHYPERIOR,
@@ -27671,7 +27692,7 @@ TEAMARRAY = [
         :moves => [:AVALANCHE, :BRUTALSWING, :ROCKSLIDE, :SMARTSTRIKE],
         :ability => :LIGHTNINGROD,
         :nature => :ADAMANT,
-        :ev => [0, 252, 252, 0, 0, 4]
+        :ev => [0, 252, 0, 0, 252, 4]
       },
       {
         :species => :DECIDUEYE,
@@ -27726,7 +27747,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 2, 252, 0, 0, 0]
+        :ev => [252, 2, 0, 0, 252, 0]
       },
       {
         :species => :FERROTHORN,
@@ -27737,7 +27758,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :BRAVE,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :VIRIZION,
@@ -27747,7 +27768,7 @@ TEAMARRAY = [
         :ability => :JUSTIFIED,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :CRADILY,
@@ -27758,7 +27779,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 4, 252, 0, 0, 0]
+        :ev => [252, 4, 0, 0, 252, 0]
       },
       {
         :species => :KARTANA,
@@ -27768,7 +27789,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 0, 0]
       }
     ]
   },
@@ -27787,7 +27808,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :GLACEON,
@@ -27798,7 +27819,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 0, 252, 252]
+        :ev => [0, 0, 252, 0, 4, 252]
       },
       {
         :species => :LAPRAS,
@@ -27819,7 +27840,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :QUIET,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :GOODRA,
@@ -27830,7 +27851,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :SERIOUS,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :LATIAS,
@@ -27891,7 +27912,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :METAGROSS,
@@ -27902,7 +27923,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :LATIOS,
@@ -27939,7 +27960,7 @@ TEAMARRAY = [
         :ability => :OVERGROW,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 4, 252]
+        :ev => [252, 0, 4, 0, 0, 252]
       },
       {
         :species => :NAGANADEL,
@@ -27959,7 +27980,7 @@ TEAMARRAY = [
         :ability => :INTIMIDATE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :SKARMORY,
@@ -27969,13 +27990,13 @@ TEAMARRAY = [
         :ability => :STURDY,
         :nature => :IMPISH,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :SHAYMIN,
         :level => 130,
         :item => :LIFEORB,
-        :moves => [:SEEDFLARE, :MOONBLAST, :EARTHPOWER, :AIRSLASH],
+        :moves => [:SEEDFLARE, :DAZZLINGGLEAM, :EARTHPOWER, :AIRSLASH],
         :ability => :SERENEGRACE,
         :form => 1,
         :nature => :TIMID,
@@ -27996,7 +28017,7 @@ TEAMARRAY = [
         :ability => :PRANKSTER,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :ROSERADE,
@@ -28017,7 +28038,7 @@ TEAMARRAY = [
         :ability => :SWARM,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :CRESSELIA,
@@ -28072,7 +28093,7 @@ TEAMARRAY = [
         :ability => :POISONPOINT,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :AMOONGUSS,
@@ -28082,7 +28103,7 @@ TEAMARRAY = [
         :ability => :EFFECTSPORE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :HEATMOR,
@@ -28092,7 +28113,7 @@ TEAMARRAY = [
         :ability => :GLUTTONY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :TORKOAL,
@@ -28101,7 +28122,7 @@ TEAMARRAY = [
         :ability => :DROUGHT,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :CROBAT,
@@ -28110,7 +28131,7 @@ TEAMARRAY = [
         :ability => :INNERFOCUS,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -28132,11 +28153,11 @@ TEAMARRAY = [
         :species => :GOLISOPOD,
         :level => 130,
         :item => :ASSAULTVEST,
-        :moves => [:FIRSTIMPRESSION, :STRENGTH, :LIQUIDATION, :KNOCKOFF],
+        :moves => [:FIRSTIMPRESSION, :SUCKERPUNCH, :LIQUIDATION, :KNOCKOFF],
         :ability => :EMERGENCYEXIT,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [4, 252, 252, 0, 0, 0]
+        :ev => [4, 252, 0, 0, 252, 0]
       },
       {
         :species => :AEGISLASH,
@@ -28146,7 +28167,7 @@ TEAMARRAY = [
         :ability => :STANCECHANGE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :HYPNO,
@@ -28157,7 +28178,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :SASSY,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :RHYPERIOR,
@@ -28167,7 +28188,7 @@ TEAMARRAY = [
         :ability => :SOLIDROCK,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [4, 252, 252, 0, 0, 0]
+        :ev => [4, 252, 0, 0, 252, 0]
       },
       {
         :species => :BANETTE,
@@ -28177,7 +28198,7 @@ TEAMARRAY = [
         :ability => :CURSEDBODY,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 4, 252]
+        :ev => [252, 0, 4, 0, 0, 252]
       }
     ]
   },
@@ -28195,7 +28216,7 @@ TEAMARRAY = [
         :nature => :RELAXED,
         :iv => 0,
         :name => "Suzy",
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :AVALUGG,
@@ -28206,7 +28227,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :BRAVE,
         :iv => 0,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :TANGROWTH,
@@ -28218,7 +28239,7 @@ TEAMARRAY = [
         :nature => :SASSY,
         :iv => 0,
         :name => "Mary-Lou",
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :SWALOT,
@@ -28229,7 +28250,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :SASSY,
         :iv => 0,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :TANGROWTH,
@@ -28241,7 +28262,7 @@ TEAMARRAY = [
         :nature => :BRAVE,
         :iv => 0,
         :name => "Cindy",
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       }
     ]
   },
@@ -28291,7 +28312,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :MUK,
@@ -28302,7 +28323,7 @@ TEAMARRAY = [
         :form => 2,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 0, 4]
+        :ev => [252, 0, 0, 0, 252, 4]
       }
     ]
   },
@@ -28329,7 +28350,7 @@ TEAMARRAY = [
         :ability => :PRANKSTER,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 4, 252]
+        :ev => [252, 0, 4, 0, 0, 252]
       },
       {
         :species => :MEOWSTIC,
@@ -28340,7 +28361,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :KLEFKI,
@@ -28350,7 +28371,7 @@ TEAMARRAY = [
         :ability => :PRANKSTER,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 0, 4, 252, 0]
+        :ev => [252, 0, 252, 4, 0, 0]
       },
       {
         :species => :AMOONGUSS,
@@ -28360,7 +28381,7 @@ TEAMARRAY = [
         :ability => :EFFECTSPORE,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       }
     ]
   },
@@ -28598,7 +28619,7 @@ TEAMARRAY = [
         :ability => :POISONHEAL,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :SABLEYE,
@@ -28608,7 +28629,7 @@ TEAMARRAY = [
         :ability => :PRANKSTER,
         :nature => :RELAXED,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :DARKRAI,
@@ -28627,9 +28648,9 @@ TEAMARRAY = [
         :moves => [:RELICSONG, :WAKEUPSLAP, :KNOCKOFF, :STONEEDGE],
         :ability => :SERENEGRACE,
         :form => 1,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :HYPNO,
@@ -28640,7 +28661,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       }
     ]
   },
@@ -28742,7 +28763,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 252, 4, 0, 0]
+        :ev => [252, 0, 0, 4, 252, 0]
       },
       {
         :species => :VENUSAUR,
@@ -28797,7 +28818,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       }
     ]
   },
@@ -29121,7 +29142,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :ADAMANT,
         :iv => 15,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :DIANCIE,
@@ -29166,7 +29187,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :BRAVE,
         :iv => 15,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :NIDOKING,
@@ -29306,7 +29327,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :BOLD,
         :iv => 31,
-        :ev => [192, 0, 64, 0, 252, 0]
+        :ev => [192, 0, 252, 0, 64, 0]
       },
       {
         :species => :CELESTEELA,
@@ -29350,7 +29371,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :AEGISLASH,
@@ -29361,7 +29382,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 252, 4, 0, 0]
+        :ev => [252, 0, 0, 4, 252, 0]
       }
     ]
   },
@@ -29387,7 +29408,7 @@ TEAMARRAY = [
         :ability => :SWIFTSWIM,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :BLASTOISE,
@@ -29397,7 +29418,7 @@ TEAMARRAY = [
         :ability => :TORRENT,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :LANTURN,
@@ -29407,7 +29428,7 @@ TEAMARRAY = [
         :ability => :VOLTABSORB,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 252, 4]
+        :ev => [252, 0, 252, 0, 0, 4]
       },
       {
         :species => :SUICUNE,
@@ -29444,7 +29465,7 @@ TEAMARRAY = [
         :ability => :DRIZZLE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :ESCAVALIER,
@@ -29454,7 +29475,7 @@ TEAMARRAY = [
         :ability => :SWARM,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :EMPOLEON,
@@ -29485,7 +29506,7 @@ TEAMARRAY = [
         :ability => :STURDY,
         :nature => :BRAVE,
         :iv => 31,
-        :ev => [252, 0, 0, 4, 252, 0]
+        :ev => [252, 0, 252, 4, 0, 0]
       },
       {
         :species => :GENESECT,
@@ -29523,7 +29544,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :NIHILEGO,
@@ -29546,7 +29567,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :RAMPARDOS,
@@ -29586,7 +29607,7 @@ TEAMARRAY = [
         :ability => :ZENMODE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :CACTURNE,
@@ -29596,7 +29617,7 @@ TEAMARRAY = [
         :ability => :SANDVEIL,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       }
     ]
   },
@@ -29612,7 +29633,7 @@ TEAMARRAY = [
         :ability => :STURDY,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :STOUTLAND,
@@ -29644,7 +29665,7 @@ TEAMARRAY = [
         :ability => :INNERFOCUS,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       }
     ]
   },
@@ -29692,7 +29713,7 @@ TEAMARRAY = [
         :ability => :INNERFOCUS,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -29708,7 +29729,7 @@ TEAMARRAY = [
         :ability => :MEGALAUNCHER,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :LUDICOLO,
@@ -29718,7 +29739,7 @@ TEAMARRAY = [
         :ability => :OWNTEMPO,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :GASTRODON,
@@ -29729,7 +29750,7 @@ TEAMARRAY = [
         :ability => :SANDFORCE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :SHARPEDO,
@@ -29838,7 +29859,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :SERPERIOR,
@@ -29883,7 +29904,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       }
     ]
   },
@@ -29940,7 +29961,7 @@ TEAMARRAY = [
         :ability => :PIXILATE,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 252, 4]
+        :ev => [252, 0, 252, 0, 0, 4]
       },
       {
         :species => :MEWTWO,
@@ -30038,7 +30059,7 @@ TEAMARRAY = [
         :ability => :CUTECHARM,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :BLISSEY,
@@ -30048,7 +30069,7 @@ TEAMARRAY = [
         :ability => :NATURALCURE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :AZUMARILL,
@@ -30059,7 +30080,7 @@ TEAMARRAY = [
         :ability => :SAPSIPPER,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :AUDINO,
@@ -30070,7 +30091,7 @@ TEAMARRAY = [
         :ability => :REGENERATOR,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       }
     ]
   },
@@ -30086,7 +30107,7 @@ TEAMARRAY = [
         :ability => :ILLUMINATE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :JOLTEON,
@@ -30096,7 +30117,7 @@ TEAMARRAY = [
         :ability => :VOLTABSORB,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :VAPOREON,
@@ -30106,7 +30127,7 @@ TEAMARRAY = [
         :ability => :WATERABSORB,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :ROTOM,
@@ -30117,7 +30138,7 @@ TEAMARRAY = [
         :form => 2,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :DRAMPA,
@@ -30127,7 +30148,7 @@ TEAMARRAY = [
         :ability => :BERSERK,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :ALTARIA,
@@ -30153,7 +30174,7 @@ TEAMARRAY = [
         :ability => :MULTISCALE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :COMFEY,
@@ -30163,7 +30184,7 @@ TEAMARRAY = [
         :ability => :TRIAGE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [4, 0, 0, 252, 252, 0]
+        :ev => [4, 0, 252, 252, 0, 0]
       },
       {
         :species => :SNORLAX,
@@ -30174,7 +30195,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :SLURPUFF,
@@ -30202,7 +30223,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 128, 0, 0, 128, 0]
+        :ev => [252, 128, 128, 0, 0, 0]
       },
       {
         :species => :DRAGALGE,
@@ -30213,7 +30234,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :AROMATISSE,
@@ -30224,7 +30245,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :KOMALA,
@@ -30235,7 +30256,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       }
     ]
   },
@@ -30275,7 +30296,7 @@ TEAMARRAY = [
         :nature => :CALM,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :KOMMOO,
@@ -30314,7 +30335,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :MELOETTA,
@@ -30325,7 +30346,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :happiness => 255,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :JIRACHI,
@@ -30398,7 +30419,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :MELOETTA,
@@ -30410,7 +30431,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :happiness => 255,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :KELDEO,
@@ -30542,9 +30563,10 @@ TEAMARRAY = [
         :item => :CUSTAPBERRY,
         :moves => [:EXPLOSION, :ROCKSLIDE, :STEAMROLLER, :WILDCHARGE],
         :ability => :STURDY,
+        :form => 1,
         :nature => :ADAMANT,
         :iv => 3,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :MIMIKYU,
@@ -30602,7 +30624,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :ADAMANT,
         :iv => 3,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :BANETTE,
@@ -30612,7 +30634,7 @@ TEAMARRAY = [
         :ability => :INSOMNIA,
         :nature => :ADAMANT,
         :iv => 3,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :GUZZLORD,
@@ -30668,7 +30690,7 @@ TEAMARRAY = [
         :ability => :SOULHEART,
         :nature => :BASHFUL,
         :iv => 3,
-        :ev => [252, 0, 252, 4, 0, 0]
+        :ev => [252, 0, 0, 4, 252, 0]
       },
       {
         :species => :SHAYMIN,
@@ -30726,7 +30748,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :BOLD,
         :iv => 3,
-        :ev => [252, 0, 0, 4, 252, 0]
+        :ev => [252, 0, 252, 4, 0, 0]
       },
       {
         :species => :SALAMENCE,
@@ -30747,7 +30769,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :ADAMANT,
         :iv => 3,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :VICTINI,
@@ -30793,7 +30815,7 @@ TEAMARRAY = [
         :ability => :BLAZE,
         :gender => "M",
         :nature => :ADAMANT,
-        :ev => [4, 252, 0, 0, 252, 0]
+        :ev => [4, 252, 252, 0, 0, 0]
       },
       {
         :species => :KLEFKI,
@@ -30803,7 +30825,7 @@ TEAMARRAY = [
         :ability => :PRANKSTER,
         :gender => "M",
         :nature => :MODEST,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :CHANDELURE,
@@ -30825,7 +30847,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :ADAMANT,
         :happiness => 255,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :BLACEPHALON,
@@ -30864,7 +30886,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :EXEGGUTOR,
@@ -30876,7 +30898,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :BRAVE,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :KLEFKI,
@@ -30887,7 +30909,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :GLISCOR,
@@ -30983,7 +31005,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :HOUNDOOM,
@@ -31076,7 +31098,7 @@ TEAMARRAY = [
         :species => :ARTICUNO,
         :level => 135,
         :item => :SYNTHETICSEED,
-        :moves => [:AURORAVEIL, :AURORABEAM, :ANCIENTPOWER, :ROOST],
+        :moves => [:AURORAVEIL, :ICEBEAM, :ANCIENTPOWER, :ROOST],
         :ability => :SNOWCLOAK,
         :nature => :TIMID,
         :iv => 31,
@@ -31101,7 +31123,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :CALM,
         :iv => 31,
-        :ev => [4, 0, 252, 252, 0, 0]
+        :ev => [4, 0, 0, 252, 252, 0]
       },
       {
         :species => :LATIAS,
@@ -31111,7 +31133,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :HYDREIGON,
@@ -31165,9 +31187,9 @@ TEAMARRAY = [
         :item => :KOMMONIUMZ,
         :moves => [:POISONJAB, :CLANGINGSCALES, :EARTHQUAKE, :CLOSECOMBAT],
         :ability => :BULLETPROOF,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :MEW,
@@ -31215,7 +31237,7 @@ TEAMARRAY = [
         :form => 3,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 4, 252]
+        :ev => [252, 0, 4, 0, 0, 252]
       },
       {
         :species => :METAGROSS,
@@ -31255,7 +31277,7 @@ TEAMARRAY = [
         :ability => :UNAWARE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :DEOXYS,
@@ -31394,9 +31416,9 @@ TEAMARRAY = [
         :species => :GROUDON,
         :level => 135,
         :item => :REDORB,
-        :moves => [:ROCKTOMB, :PRECIPICEBLADES, :ROCKPOLISH, :HEATWAVE],
+        :moves => [:ROCKTOMB, :PRECIPICEBLADES, :ROCKPOLISH, :ERUPTION],
         :ability => :DROUGHT,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
         :ev => [252, 252, 252, 252, 252, 252]
       }
@@ -31415,7 +31437,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MILD,
         :iv => 0,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :PRIMARINA,
@@ -31426,7 +31448,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MILD,
         :iv => 0,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :MEGANIUM,
@@ -31437,7 +31459,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :NAUGHTY,
         :iv => 0,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :QUAGSIRE,
@@ -31448,7 +31470,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :RASH,
         :iv => 0,
-        :ev => [0, 128, 0, 128, 4, 252]
+        :ev => [0, 128, 4, 128, 0, 252]
       },
       {
         :species => :LAPRAS,
@@ -31459,7 +31481,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :RASH,
         :iv => 0,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :KYOGRE,
@@ -31469,7 +31491,7 @@ TEAMARRAY = [
         :ability => :DRIZZLE,
         :nature => :RASH,
         :iv => 0,
-        :ev => [0, 52, 0, 200, 4, 252]
+        :ev => [0, 52, 4, 200, 0, 252]
       }
     ]
   },
@@ -31486,7 +31508,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MILD,
         :iv => 0,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :GENGAR,
@@ -31497,7 +31519,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MILD,
         :iv => 0,
-        :ev => [0, 52, 0, 200, 4, 252]
+        :ev => [0, 52, 4, 200, 0, 252]
       },
       {
         :species => :FLYGON,
@@ -31508,7 +31530,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MILD,
         :iv => 0,
-        :ev => [0, 200, 0, 52, 4, 252]
+        :ev => [0, 200, 4, 52, 0, 252]
       },
       {
         :species => :EXPLOUD,
@@ -31519,7 +31541,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :NAUGHTY,
         :iv => 0,
-        :ev => [0, 52, 0, 200, 4, 252]
+        :ev => [0, 52, 4, 200, 0, 252]
       },
       {
         :species => :VICTINI,
@@ -31529,7 +31551,7 @@ TEAMARRAY = [
         :ability => :VICTORYSTAR,
         :nature => :MILD,
         :iv => 0,
-        :ev => [0, 200, 0, 52, 4, 252]
+        :ev => [0, 200, 4, 52, 0, 252]
       },
       {
         :species => :GROUDON,
@@ -31539,7 +31561,7 @@ TEAMARRAY = [
         :ability => :DROUGHT,
         :nature => :LONELY,
         :iv => 0,
-        :ev => [0, 200, 0, 52, 4, 252]
+        :ev => [0, 200, 4, 52, 0, 252]
       }
     ]
   },
@@ -31675,7 +31697,7 @@ TEAMARRAY = [
         :item => :REDORB,
         :moves => [:ERUPTION, :PRECIPICEBLADES, :SOLARBEAM, :ROCKSLIDE],
         :ability => :DROUGHT,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
         :ev => [252, 252, 252, 252, 252, 252]
       }
@@ -31720,7 +31742,7 @@ TEAMARRAY = [
         :species => :TOXAPEX,
         :level => 142,
         :item => :ELEMENTALSEED,
-        :moves => [:RECOVER, :WHIRLPOOL, :BANEFULBUNKER, :WIDEGUARD],
+        :moves => [:RECOVER, :SCALD, :BANEFULBUNKER, :WIDEGUARD],
         :ability => :MERCILESS,
         :gender => "F",
         :nature => :CALM,
@@ -31756,7 +31778,7 @@ TEAMARRAY = [
         :species => :VOLCANION,
         :level => 142,
         :item => :LEFTOVERS,
-        :moves => [:HEATWAVE, :SURF, :EARTHPOWER, :PROTECT],
+        :moves => [:HEATWAVE, :STEAMERUPTION, :EARTHPOWER, :PROTECT],
         :ability => :WATERABSORB,
         :nature => :MODEST,
         :iv => 15,
@@ -31770,7 +31792,7 @@ TEAMARRAY = [
         :ability => :HYDRATION,
         :nature => :MODEST,
         :iv => 15,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :SWAMPERT,
@@ -31803,7 +31825,7 @@ TEAMARRAY = [
         :form => 2,
         :nature => :RASH,
         :iv => 15,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :KYOGRE,
@@ -31839,7 +31861,7 @@ TEAMARRAY = [
         :ability => :FULLMETALBODY,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :LUNALA,
@@ -31855,11 +31877,11 @@ TEAMARRAY = [
         :species => :MILOTIC,
         :level => 145,
         :item => :MAGICALSEED,
-        :moves => [:TOXIC, :WISH, :PROTECT, :HYDROPUMP],
+        :moves => [:TOXIC, :RECOVER, :PROTECT, :HYDROPUMP],
         :ability => :MARVELSCALE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :XERNEAS,
@@ -31915,7 +31937,7 @@ TEAMARRAY = [
         :ability => :INFILTRATOR,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :BLAZIKEN,
@@ -31935,7 +31957,7 @@ TEAMARRAY = [
         :ability => :MULTISCALE,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 0, 4, 252, 0]
+        :ev => [252, 0, 252, 4, 0, 0]
       },
       {
         :species => :XERNEAS,
@@ -32137,7 +32159,7 @@ TEAMARRAY = [
         :item => :MAGICALSEED,
         :moves => [:GEOMANCY, :MOONBLAST, :AURORABEAM, :CLOSECOMBAT],
         :ability => :FAIRYAURA,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
         :ev => [252, 252, 252, 252, 252, 252]
       },
@@ -32303,7 +32325,7 @@ TEAMARRAY = [
         :ability => :DRYSKIN,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :WEAVILE,
@@ -32313,7 +32335,7 @@ TEAMARRAY = [
         :ability => :PICKPOCKET,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :LUGIA,
@@ -32323,7 +32345,7 @@ TEAMARRAY = [
         :ability => :MULTISCALE,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :MELOETTA,
@@ -32334,7 +32356,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :YVELTAL,
@@ -32372,7 +32394,7 @@ TEAMARRAY = [
         :ability => :NATURALCURE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 252, 0, 4, 252]
+        :ev => [0, 0, 4, 0, 252, 252]
       },
       {
         :species => :NIDOKING,
@@ -32382,7 +32404,7 @@ TEAMARRAY = [
         :ability => :SHEERFORCE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 252, 4]
+        :ev => [252, 0, 252, 0, 0, 4]
       },
       {
         :species => :JIRACHI,
@@ -32392,7 +32414,7 @@ TEAMARRAY = [
         :ability => :SERENEGRACE,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       }
     ]
   },
@@ -32408,7 +32430,7 @@ TEAMARRAY = [
         :ability => :WATERBUBBLE,
         :nature => :RASH,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :LICKILICKY,
@@ -32428,7 +32450,7 @@ TEAMARRAY = [
         :ability => :VICTORYSTAR,
         :nature => :CALM,
         :iv => 31,
-        :ev => [4, 0, 252, 0, 0, 252]
+        :ev => [4, 0, 0, 0, 252, 252]
       },
       {
         :species => :TYRANITAR,
@@ -32438,7 +32460,7 @@ TEAMARRAY = [
         :ability => :SANDSTREAM,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 4, 252, 0, 0, 0]
+        :ev => [252, 4, 0, 0, 252, 0]
       }
     ]
   },
@@ -32455,7 +32477,7 @@ TEAMARRAY = [
         :form => 3,
         :nature => :CALM,
         :iv => 31,
-        :ev => [4, 0, 252, 0, 0, 252]
+        :ev => [4, 0, 0, 0, 252, 252]
       },
       {
         :species => :TAUROS,
@@ -32475,7 +32497,7 @@ TEAMARRAY = [
         :ability => :MAGICIAN,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [4, 0, 252, 0, 0, 252]
+        :ev => [4, 0, 0, 0, 252, 252]
       },
       {
         :species => :EXEGGUTOR,
@@ -32485,7 +32507,7 @@ TEAMARRAY = [
         :ability => :HARVEST,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SWELLOW,
@@ -32512,7 +32534,7 @@ TEAMARRAY = [
         :ability => :CLEARBODY,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :WHIMSICOTT,
@@ -32522,7 +32544,7 @@ TEAMARRAY = [
         :ability => :PRANKSTER,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :SLOWBRO,
@@ -32532,7 +32554,7 @@ TEAMARRAY = [
         :ability => :OBLIVIOUS,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :MUK,
@@ -32543,7 +32565,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :ADAMANT,
         :iv => 15,
-        :ev => [252, 4, 252, 0, 0, 0]
+        :ev => [252, 4, 0, 0, 252, 0]
       },
       {
         :species => :NINETALES,
@@ -32554,7 +32576,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [4, 0, 252, 0, 0, 252]
+        :ev => [4, 0, 0, 0, 252, 252]
       },
       {
         :species => :LANDORUS,
@@ -32562,9 +32584,9 @@ TEAMARRAY = [
         :item => :AIRBALLOON,
         :moves => [:EARTHQUAKE, :ROCKSLIDE, :FOCUSBLAST, :KNOCKOFF],
         :ability => :SHEERFORCE,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       }
     ]
   },
@@ -32581,7 +32603,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 4, 252]
+        :ev => [252, 0, 4, 0, 0, 252]
       },
       {
         :species => :DIANCIE,
@@ -32591,7 +32613,7 @@ TEAMARRAY = [
         :ability => :CLEARBODY,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :REGICE,
@@ -32601,7 +32623,7 @@ TEAMARRAY = [
         :ability => :CLEARBODY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 0, 252]
+        :ev => [252, 0, 0, 0, 4, 252]
       },
       {
         :species => :MILOTIC,
@@ -32611,7 +32633,7 @@ TEAMARRAY = [
         :ability => :MARVELSCALE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 0, 4]
+        :ev => [252, 0, 0, 0, 252, 4]
       },
       {
         :species => :VOLCARONA,
@@ -32631,7 +32653,7 @@ TEAMARRAY = [
         :ability => :UNAWARE,
         :nature => :NAUGHTY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       }
     ]
   },
@@ -32659,7 +32681,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :RASH,
         :iv => 31,
-        :ev => [4, 0, 0, 252, 252, 0]
+        :ev => [4, 0, 252, 252, 0, 0]
       },
       {
         :species => :GYARADOS,
@@ -32669,7 +32691,7 @@ TEAMARRAY = [
         :ability => :MOXIE,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [4, 0, 252, 0, 0, 252]
+        :ev => [4, 0, 0, 0, 252, 252]
       },
       {
         :species => :CHANSEY,
@@ -32679,7 +32701,7 @@ TEAMARRAY = [
         :ability => :SERENEGRACE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 0, 4]
+        :ev => [252, 0, 0, 0, 252, 4]
       },
       {
         :species => :TOXAPEX,
@@ -32689,7 +32711,7 @@ TEAMARRAY = [
         :ability => :MERCILESS,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :ZYGARDE,
@@ -32785,7 +32807,7 @@ TEAMARRAY = [
         :ability => :PRISMARMOR,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :NECROZMA,
@@ -32797,7 +32819,7 @@ TEAMARRAY = [
         :form => 2,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :NECROZMA,
@@ -32808,7 +32830,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :LUNALA,
@@ -32818,7 +32840,7 @@ TEAMARRAY = [
         :ability => :SHADOWSHIELD,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SOLGALEO,
@@ -32826,9 +32848,9 @@ TEAMARRAY = [
         :item => :MAGICALSEED,
         :moves => [:SUNSTEELSTRIKE, :FLAMECHARGE, :ROCKSLIDE, :PSYCHIC],
         :ability => :FULLMETALBODY,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :NECROZMA,
@@ -33109,9 +33131,9 @@ TEAMARRAY = [
         :item => :KOMMONIUMZ,
         :moves => [:CLANGINGSCALES, :CLOSECOMBAT, :POISONJAB, :BRUTALSWING],
         :ability => :OVERCOAT,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :LUNALA,
@@ -33198,7 +33220,7 @@ TEAMARRAY = [
         :ability => :SERENEGRACE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :MEW,
@@ -33410,7 +33432,7 @@ TEAMARRAY = [
         :item => :SYNTHETICSEED,
         :moves => [:CLANGINGSCALES, :CLOSECOMBAT, :DRAGONDANCE, :POISONJAB],
         :ability => :SOUNDPROOF,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
         :ev => [252, 252, 252, 252, 252, 252]
       },
@@ -33710,7 +33732,7 @@ TEAMARRAY = [
         :ability => :HONEYGATHER,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :BEEDRILL,
@@ -33720,7 +33742,7 @@ TEAMARRAY = [
         :ability => :SWARM,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :NAGANADEL,
@@ -33731,7 +33753,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -33746,7 +33768,7 @@ TEAMARRAY = [
         :ability => :HONEYGATHER,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :VESPIQUEN,
@@ -33756,7 +33778,7 @@ TEAMARRAY = [
         :ability => :UNNERVE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :BEEDRILL,
@@ -33766,7 +33788,7 @@ TEAMARRAY = [
         :ability => :SWARM,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :NAGANADEL,
@@ -33777,7 +33799,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -33792,7 +33814,7 @@ TEAMARRAY = [
         :ability => :IRONBARBS,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :GOODRA,
@@ -33802,7 +33824,7 @@ TEAMARRAY = [
         :ability => :SAPSIPPER,
         :nature => :HASTY,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :GARBODOR,
@@ -33829,7 +33851,7 @@ TEAMARRAY = [
         :ability => :IRONBARBS,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :GOODRA,
@@ -33839,7 +33861,7 @@ TEAMARRAY = [
         :ability => :SAPSIPPER,
         :nature => :HASTY,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SWAMPERT,
@@ -33849,7 +33871,7 @@ TEAMARRAY = [
         :ability => :TORRENT,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :GARBODOR,
@@ -33877,7 +33899,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 0, 4, 252, 0]
+        :ev => [252, 0, 252, 4, 0, 0]
       },
       {
         :species => :AZUMARILL,
@@ -33897,7 +33919,7 @@ TEAMARRAY = [
         :ability => :SERENEGRACE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       }
     ]
   },
@@ -33913,7 +33935,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 0, 4, 252, 0]
+        :ev => [252, 0, 252, 4, 0, 0]
       },
       {
         :species => :NINETALES,
@@ -33944,7 +33966,7 @@ TEAMARRAY = [
         :ability => :SERENEGRACE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       }
     ]
   },
@@ -33960,7 +33982,7 @@ TEAMARRAY = [
         :form => 3,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 4, 252]
+        :ev => [252, 0, 4, 0, 0, 252]
       },
       {
         :species => :AEGISLASH,
@@ -33980,7 +34002,7 @@ TEAMARRAY = [
         :ability => :MAGICGUARD,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -33996,7 +34018,7 @@ TEAMARRAY = [
         :form => 3,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 4, 252]
+        :ev => [252, 0, 4, 0, 0, 252]
       },
       {
         :species => :AEGISLASH,
@@ -34016,7 +34038,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :SASSY,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :ALAKAZAM,
@@ -34026,7 +34048,7 @@ TEAMARRAY = [
         :ability => :MAGICGUARD,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -34042,7 +34064,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :SEISMITOAD,
@@ -34053,7 +34075,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :LUDICOLO,
@@ -34064,7 +34086,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -34080,7 +34102,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :SEISMITOAD,
@@ -34091,7 +34113,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :PALOSSAND,
@@ -34102,7 +34124,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :LUDICOLO,
@@ -34113,7 +34135,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -34129,7 +34151,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :RHYPERIOR,
@@ -34140,7 +34162,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 252, 0, 4, 0]
+        :ev => [0, 252, 4, 0, 252, 0]
       },
       {
         :species => :LYCANROC,
@@ -34151,7 +34173,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       }
     ]
   },
@@ -34167,7 +34189,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :RHYPERIOR,
@@ -34178,7 +34200,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 252, 0, 4, 0]
+        :ev => [0, 252, 4, 0, 252, 0]
       },
       {
         :species => :LYCANROC,
@@ -34201,7 +34223,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       }
     ]
   },
@@ -34216,7 +34238,7 @@ TEAMARRAY = [
         :ability => :IRONBARBS,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :DHELMISE,
@@ -34226,7 +34248,7 @@ TEAMARRAY = [
         :ability => :STEELWORKER,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :NIDOKING,
@@ -34236,7 +34258,7 @@ TEAMARRAY = [
         :ability => :SHEERFORCE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -34251,7 +34273,7 @@ TEAMARRAY = [
         :ability => :IRONBARBS,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :PALOSSAND,
@@ -34261,7 +34283,7 @@ TEAMARRAY = [
         :ability => :WATERCOMPACTION,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :DHELMISE,
@@ -34271,7 +34293,7 @@ TEAMARRAY = [
         :ability => :STEELWORKER,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :NIDOKING,
@@ -34281,7 +34303,7 @@ TEAMARRAY = [
         :ability => :SHEERFORCE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -34296,7 +34318,7 @@ TEAMARRAY = [
         :ability => :OVERGROW,
         :nature => :QUIET,
         :iv => 32,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :AVALUGG,
@@ -34306,7 +34328,7 @@ TEAMARRAY = [
         :ability => :OWNTEMPO,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :ABOMASNOW,
@@ -34316,7 +34338,7 @@ TEAMARRAY = [
         :ability => :SNOWWARNING,
         :nature => :QUIET,
         :iv => 32,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       }
     ]
   },
@@ -34331,7 +34353,7 @@ TEAMARRAY = [
         :ability => :OVERGROW,
         :nature => :QUIET,
         :iv => 32,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :RHYPERIOR,
@@ -34341,7 +34363,7 @@ TEAMARRAY = [
         :ability => :SOLIDROCK,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :EXPLOUD,
@@ -34351,7 +34373,7 @@ TEAMARRAY = [
         :ability => :SOUNDPROOF,
         :nature => :QUIET,
         :iv => 32,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :ABOMASNOW,
@@ -34361,7 +34383,7 @@ TEAMARRAY = [
         :ability => :SNOWWARNING,
         :nature => :QUIET,
         :iv => 32,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       }
     ]
   },
@@ -34377,7 +34399,7 @@ TEAMARRAY = [
         :form => 4,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :MAGEARNA,
@@ -34387,7 +34409,7 @@ TEAMARRAY = [
         :ability => :SOULHEART,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :BRELOOM,
@@ -34416,7 +34438,7 @@ TEAMARRAY = [
         :form => 4,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :MAGNEZONE,
@@ -34426,7 +34448,7 @@ TEAMARRAY = [
         :ability => :STURDY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :MAGEARNA,
@@ -34436,7 +34458,7 @@ TEAMARRAY = [
         :ability => :SOULHEART,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :BRELOOM,
@@ -34475,7 +34497,7 @@ TEAMARRAY = [
         :ability => :MAGICIAN,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :DELPHOX,
@@ -34485,7 +34507,7 @@ TEAMARRAY = [
         :ability => :MAGICIAN,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -34510,7 +34532,7 @@ TEAMARRAY = [
         :ability => :INTIMIDATE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :HOOPA,
@@ -34521,7 +34543,7 @@ TEAMARRAY = [
         :ability => :MAGICIAN,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :DELPHOX,
@@ -34531,7 +34553,7 @@ TEAMARRAY = [
         :ability => :MAGICIAN,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -34560,7 +34582,7 @@ TEAMARRAY = [
         :form => 4,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       }
     ]
   },
@@ -34595,7 +34617,7 @@ TEAMARRAY = [
         :form => 4,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       }
     ]
   },
@@ -34610,7 +34632,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :NECROZMA,
@@ -34620,7 +34642,7 @@ TEAMARRAY = [
         :ability => :PRISMARMOR,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :MILOTIC,
@@ -34630,7 +34652,7 @@ TEAMARRAY = [
         :ability => :CUTECHARM,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       }
     ]
   },
@@ -34645,7 +34667,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :NECROZMA,
@@ -34655,7 +34677,7 @@ TEAMARRAY = [
         :ability => :PRISMARMOR,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :MILOTIC,
@@ -34665,7 +34687,7 @@ TEAMARRAY = [
         :ability => :CUTECHARM,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :MAGEARNA,
@@ -34675,7 +34697,7 @@ TEAMARRAY = [
         :ability => :SOULHEART,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       }
     ]
   },
@@ -34690,7 +34712,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :MEW,
@@ -34700,7 +34722,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :MEW,
@@ -34710,7 +34732,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       }
     ]
   },
@@ -34725,7 +34747,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :MEW,
@@ -34735,7 +34757,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :MEW,
@@ -34745,7 +34767,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :MEW,
@@ -34755,7 +34777,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 4, 252]
+        :ev => [252, 0, 4, 0, 0, 252]
       }
     ]
   },
@@ -34771,7 +34793,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :SWAMPERT,
@@ -34782,7 +34804,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :SHARPEDO,
@@ -34793,7 +34815,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -34809,7 +34831,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :SWAMPERT,
@@ -34820,7 +34842,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :SHARPEDO,
@@ -34831,7 +34853,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :TENTACRUEL,
@@ -34842,7 +34864,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [128, 0, 128, 252, 0, 0]
+        :ev => [128, 0, 0, 252, 128, 0]
       }
     ]
   },
@@ -34858,7 +34880,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :CHARIZARD,
@@ -34869,7 +34891,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :HOUNDOOM,
@@ -34881,7 +34903,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :happiness => 255,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -34897,7 +34919,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :CHANDELURE,
@@ -34908,7 +34930,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :CHARIZARD,
@@ -34919,7 +34941,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :HOUNDOOM,
@@ -34931,7 +34953,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :happiness => 255,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -34946,7 +34968,7 @@ TEAMARRAY = [
         :ability => :TORRENT,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :HAWLUCHA,
@@ -34956,7 +34978,7 @@ TEAMARRAY = [
         :ability => :UNBURDEN,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :BLAZIKEN,
@@ -34966,7 +34988,7 @@ TEAMARRAY = [
         :ability => :SPEEDBOOST,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -34981,7 +35003,7 @@ TEAMARRAY = [
         :ability => :UNBURDEN,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :DONPHAN,
@@ -34991,7 +35013,7 @@ TEAMARRAY = [
         :ability => :STURDY,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :PRIMARINA,
@@ -35001,7 +35023,7 @@ TEAMARRAY = [
         :ability => :LIQUIDVOICE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :BLAZIKEN,
@@ -35011,7 +35033,7 @@ TEAMARRAY = [
         :ability => :SPEEDBOOST,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -35026,7 +35048,7 @@ TEAMARRAY = [
         :ability => :JUSTIFIED,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :ZERAORA,
@@ -35034,7 +35056,7 @@ TEAMARRAY = [
         :item => :LIFEORB,
         :moves => [:PLASMAFISTS, :CLOSECOMBAT, :KNOCKOFF, :VOLTSWITCH],
         :ability => :VOLTABSORB,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
         :ev => [0, 252, 0, 4, 0, 252]
       },
@@ -35046,7 +35068,7 @@ TEAMARRAY = [
         :ability => :WATERABSORB,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       }
     ]
   },
@@ -35061,7 +35083,7 @@ TEAMARRAY = [
         :ability => :JUSTIFIED,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :ZERAORA,
@@ -35069,7 +35091,7 @@ TEAMARRAY = [
         :item => :LIFEORB,
         :moves => [:PLASMAFISTS, :CLOSECOMBAT, :KNOCKOFF, :VOLTSWITCH],
         :ability => :VOLTABSORB,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
         :ev => [0, 252, 0, 4, 0, 252]
       },
@@ -35081,7 +35103,7 @@ TEAMARRAY = [
         :ability => :DOWNLOAD,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :VOLCANION,
@@ -35091,7 +35113,7 @@ TEAMARRAY = [
         :ability => :WATERABSORB,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       }
     ]
   },
@@ -35106,7 +35128,7 @@ TEAMARRAY = [
         :ability => :STATIC,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :PIKACHU,
@@ -35116,7 +35138,7 @@ TEAMARRAY = [
         :ability => :STATIC,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :PIKACHU,
@@ -35126,7 +35148,7 @@ TEAMARRAY = [
         :ability => :STATIC,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       }
     ]
   },
@@ -35141,7 +35163,7 @@ TEAMARRAY = [
         :ability => :LIGHTNINGROD,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :PIKACHU,
@@ -35151,7 +35173,7 @@ TEAMARRAY = [
         :ability => :LIGHTNINGROD,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :PIKACHU,
@@ -35161,7 +35183,7 @@ TEAMARRAY = [
         :ability => :LIGHTNINGROD,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :PIKACHU,
@@ -35171,7 +35193,7 @@ TEAMARRAY = [
         :ability => :LIGHTNINGRODs,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       }
     ]
   },
@@ -35187,7 +35209,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "Bastian",
-        :ev => [252, 0, 0, 0, 4, 252]
+        :ev => [252, 0, 4, 0, 0, 252]
       },
       {
         :species => :ZYGARDE,
@@ -35198,7 +35220,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "Argus",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :ZYGARDE,
@@ -35209,7 +35231,7 @@ TEAMARRAY = [
         :nature => :CALM,
         :iv => 31,
         :name => "Medusa",
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       }
     ]
   },
@@ -35224,7 +35246,7 @@ TEAMARRAY = [
         :ability => :PRANKSTER,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :SPIRITOMB,
@@ -35234,7 +35256,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :UMBREON,
@@ -35244,7 +35266,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       }
     ]
   },
@@ -35259,7 +35281,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :UMBREON,
@@ -35269,7 +35291,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :DARKRAI,
@@ -35279,7 +35301,7 @@ TEAMARRAY = [
         :ability => :BADDREAMS,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -35294,7 +35316,7 @@ TEAMARRAY = [
         :ability => :PRANKSTER,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :MANDIBUZZ,
@@ -35304,7 +35326,7 @@ TEAMARRAY = [
         :ability => :BIGPECKS,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :SPIRITOMB,
@@ -35314,7 +35336,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :UMBREON,
@@ -35324,7 +35346,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       }
     ]
   },
@@ -35339,7 +35361,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :MANDIBUZZ,
@@ -35349,7 +35371,7 @@ TEAMARRAY = [
         :ability => :BIGPECKS,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :UMBREON,
@@ -35359,7 +35381,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :DARKRAI,
@@ -35369,7 +35391,7 @@ TEAMARRAY = [
         :ability => :BADDREAMS,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -35385,7 +35407,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :DIANCIE,
@@ -35405,7 +35427,7 @@ TEAMARRAY = [
         :ability => :BADDREAMS,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -35422,7 +35444,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "Meech",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :MELOETTA,
@@ -35433,7 +35455,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Melo",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :GARDEVOIR,
@@ -35444,7 +35466,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -35459,7 +35481,7 @@ TEAMARRAY = [
         :ability => :SPEEDBOOST,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :SCIZOR,
@@ -35469,7 +35491,7 @@ TEAMARRAY = [
         :ability => :TECHNICIAN,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :WEAVILE,
@@ -35479,7 +35501,7 @@ TEAMARRAY = [
         :ability => :PICKPOCKET,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -35494,7 +35516,7 @@ TEAMARRAY = [
         :ability => :SPEEDBOOST,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :AERODACTYL,
@@ -35504,7 +35526,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :SCIZOR,
@@ -35514,7 +35536,7 @@ TEAMARRAY = [
         :ability => :TECHNICIAN,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :WEAVILE,
@@ -35524,7 +35546,7 @@ TEAMARRAY = [
         :ability => :PICKPOCKET,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -35549,7 +35571,7 @@ TEAMARRAY = [
         :ability => :CHLOROPHYLL,
         :nature => :MILD,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :EXPLOUD,
@@ -35559,7 +35581,7 @@ TEAMARRAY = [
         :ability => :SCRAPPY,
         :nature => :MILD,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -35584,7 +35606,7 @@ TEAMARRAY = [
         :ability => :TORRENT,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :LEAVANNY,
@@ -35594,7 +35616,7 @@ TEAMARRAY = [
         :ability => :CHLOROPHYLL,
         :nature => :MILD,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :EXPLOUD,
@@ -35604,7 +35626,7 @@ TEAMARRAY = [
         :ability => :SCRAPPY,
         :nature => :MILD,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -35620,7 +35642,7 @@ TEAMARRAY = [
         :form => 2,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :ARTICUNO,
@@ -35631,7 +35653,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :ARAQUANID,
@@ -35641,7 +35663,7 @@ TEAMARRAY = [
         :ability => :WATERBUBBLE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       }
     ]
   },
@@ -35658,7 +35680,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :RASH,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :GARCHOMP,
@@ -35669,7 +35691,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :LYCANROC,
@@ -35697,7 +35719,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :RASH,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :GARCHOMP,
@@ -35708,7 +35730,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :ARCANINE,
@@ -35719,7 +35741,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :RASH,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :LYCANROC,
@@ -35746,7 +35768,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :TAUROS,
@@ -35757,7 +35779,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :MILTANK,
@@ -35768,7 +35790,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -35784,7 +35806,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :GOGOAT,
@@ -35795,7 +35817,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :TAUROS,
@@ -35806,7 +35828,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :MILTANK,
@@ -35817,7 +35839,7 @@ TEAMARRAY = [
         :gender => "F",
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -35842,7 +35864,7 @@ TEAMARRAY = [
         :ability => :SERENEGRACE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :DUSCLOPS,
@@ -35852,7 +35874,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       }
     ]
   },
@@ -35877,7 +35899,7 @@ TEAMARRAY = [
         :ability => :SERENEGRACE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :KADABRA,
@@ -35887,7 +35909,7 @@ TEAMARRAY = [
         :ability => :MAGICGUARD,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :DUSCLOPS,
@@ -35897,7 +35919,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       }
     ]
   },
@@ -35912,7 +35934,7 @@ TEAMARRAY = [
         :ability => :OWNTEMPO,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :SLOWKING,
@@ -35922,7 +35944,7 @@ TEAMARRAY = [
         :ability => :OWNTEMPO,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 252, 0]
+        :ev => [0, 0, 252, 252, 4, 0]
       },
       {
         :species => :LILLIGANT,
@@ -35933,7 +35955,7 @@ TEAMARRAY = [
         :ability => :OWNTEMPO,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -35948,7 +35970,7 @@ TEAMARRAY = [
         :ability => :OWNTEMPO,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :SLOWKING,
@@ -35958,7 +35980,7 @@ TEAMARRAY = [
         :ability => :OWNTEMPO,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 252, 0]
+        :ev => [0, 0, 252, 252, 4, 0]
       },
       {
         :species => :GRUMPIG,
@@ -35968,7 +35990,7 @@ TEAMARRAY = [
         :ability => :OWNTEMPO,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 252, 0]
+        :ev => [0, 0, 252, 252, 4, 0]
       },
       {
         :species => :LILLIGANT,
@@ -35979,7 +36001,7 @@ TEAMARRAY = [
         :ability => :OWNTEMPO,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -35994,7 +36016,7 @@ TEAMARRAY = [
         :ability => :FRISK,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :GOURGEIST,
@@ -36004,17 +36026,17 @@ TEAMARRAY = [
         :ability => :FRISK,
         :nature => :IMPISH,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :MARSHADOW,
         :level => 100,
         :item => :TELLURICSEED,
-        :moves => [:CUT, :SWORDSDANCE, :SHADOWSNEAK, :CLOSECOMBAT],
+        :moves => [:ROCKTOMB, :SWORDSDANCE, :SHADOWSNEAK, :CLOSECOMBAT],
         :ability => :TECHNICIAN,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -36029,7 +36051,7 @@ TEAMARRAY = [
         :ability => :PICKUP,
         :nature => :IMPISH,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :MUK,
@@ -36040,7 +36062,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :form => 1,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :TREVENANT,
@@ -36050,17 +36072,17 @@ TEAMARRAY = [
         :ability => :FRISK,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :MARSHADOW,
         :level => 100,
         :item => :TELLURICSEED,
-        :moves => [:CUT, :SWORDSDANCE, :SHADOWSNEAK, :CLOSECOMBAT],
+        :moves => [:ROCKTOMB, :SWORDSDANCE, :SHADOWSNEAK, :CLOSECOMBAT],
         :ability => :TECHNICIAN,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -36075,7 +36097,7 @@ TEAMARRAY = [
         :ability => :ILLUSION,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :ZANGOOSE,
@@ -36085,7 +36107,7 @@ TEAMARRAY = [
         :ability => :TOXICBOOST,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :ZAPDOS,
@@ -36096,7 +36118,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -36111,7 +36133,7 @@ TEAMARRAY = [
         :ability => :VOLTABSORB,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :ZEBSTRIKA,
@@ -36121,7 +36143,7 @@ TEAMARRAY = [
         :ability => :MOTORDRIVE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :ZYGARDE,
@@ -36131,7 +36153,7 @@ TEAMARRAY = [
         :ability => :AURABREAK,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :ZAPDOS,
@@ -36142,7 +36164,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -36157,7 +36179,7 @@ TEAMARRAY = [
         :ability => :TOXICBOOST,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :BRELOOM,
@@ -36167,7 +36189,7 @@ TEAMARRAY = [
         :ability => :POISONHEAL,
         :nature => :IMPISH,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :GLISCOR,
@@ -36177,7 +36199,7 @@ TEAMARRAY = [
         :ability => :POISONHEAL,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -36192,7 +36214,7 @@ TEAMARRAY = [
         :ability => :MARVELSCALE,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 0, 4, 252, 0]
+        :ev => [252, 0, 252, 4, 0, 0]
       },
       {
         :species => :FLAREON,
@@ -36202,7 +36224,7 @@ TEAMARRAY = [
         :ability => :GUTS,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :CONKELDURR,
@@ -36212,7 +36234,7 @@ TEAMARRAY = [
         :ability => :GUTS,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :GLISCOR,
@@ -36222,7 +36244,7 @@ TEAMARRAY = [
         :ability => :POISONHEAL,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -36237,7 +36259,7 @@ TEAMARRAY = [
         :ability => :DROUGHT,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :TURTONATOR,
@@ -36247,7 +36269,7 @@ TEAMARRAY = [
         :ability => :SHELLARMOR,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :HEATRAN,
@@ -36257,7 +36279,7 @@ TEAMARRAY = [
         :ability => :FLASHFIRE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -36272,7 +36294,7 @@ TEAMARRAY = [
         :ability => :DROUGHT,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :TURTONATOR,
@@ -36282,7 +36304,7 @@ TEAMARRAY = [
         :ability => :SHELLARMOR,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :TYPHLOSION,
@@ -36292,7 +36314,7 @@ TEAMARRAY = [
         :ability => :FLASHFIRE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :HEATRAN,
@@ -36302,7 +36324,7 @@ TEAMARRAY = [
         :ability => :FLASHFIRE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -36317,7 +36339,7 @@ TEAMARRAY = [
         :ability => :WATERABSORB,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :LILLIGANT,
@@ -36328,7 +36350,7 @@ TEAMARRAY = [
         :ability => :CHLOROPHYLL,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :DRAGONITE,
@@ -36338,7 +36360,7 @@ TEAMARRAY = [
         :ability => :MULTISCALE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -36353,7 +36375,7 @@ TEAMARRAY = [
         :ability => :WATERABSORB,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :METAGROSS,
@@ -36363,7 +36385,7 @@ TEAMARRAY = [
         :ability => :CLEARBODY,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :LILLIGANT,
@@ -36374,7 +36396,7 @@ TEAMARRAY = [
         :ability => :CHLOROPHYLL,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :DRAGONITE,
@@ -36384,7 +36406,7 @@ TEAMARRAY = [
         :ability => :MULTISCALE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -36399,17 +36421,17 @@ TEAMARRAY = [
         :ability => :MAGNETPULL,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :STARMIE,
         :level => 100,
         :item => :MAGICALSEED,
-        :moves => [:DAZZLINGGLEAM, :AURORABEAM, :HYDROPUMP, :PSYSHOCK],
+        :moves => [:DAZZLINGGLEAM, :SWIFT, :HYDROPUMP, :PSYSHOCK],
         :ability => :ILLUMINATE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :DEOXYS,
@@ -36434,7 +36456,7 @@ TEAMARRAY = [
         :ability => :OBLIVIOUS,
         :nature => :QUIET,
         :iv => 32,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :MAGNEZONE,
@@ -36444,7 +36466,7 @@ TEAMARRAY = [
         :ability => :STURDY,
         :nature => :QUIET,
         :iv => 32,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :BRONZONG,
@@ -36465,7 +36487,7 @@ TEAMARRAY = [
         :nature => :QUIET,
         :form => 1,
         :iv => 32,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       }
     ]
   },
@@ -36498,7 +36520,7 @@ TEAMARRAY = [
         :item => :MAGICALSEED,
         :moves => [:SACREDFIRE, :EXTREMESPEED, :STONEEDGE, :ERUPTION],
         :ability => :INNERFOCUS,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
         :ev => [0, 4, 0, 252, 0, 252]
       }
@@ -36543,7 +36565,7 @@ TEAMARRAY = [
         :item => :MAGICALSEED,
         :moves => [:SACREDFIRE, :EXTREMESPEED, :STONEEDGE, :ERUPTION],
         :ability => :INNERFOCUS,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
         :ev => [0, 4, 0, 252, 0, 252]
       }
@@ -36581,7 +36603,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :ADAMANT,
         :iv => 32,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       }
     ]
   },
@@ -36606,7 +36628,7 @@ TEAMARRAY = [
         :ability => :MAGICGUARD,
         :nature => :BOLD,
         :iv => 32,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :ABSOL,
@@ -36627,7 +36649,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :ADAMANT,
         :iv => 32,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       }
     ]
   },
@@ -36680,7 +36702,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :NAGANADEL,
@@ -36691,7 +36713,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -36707,7 +36729,7 @@ TEAMARRAY = [
         :ability => :COMPOUNDEYES,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :ROTOM,
@@ -36718,7 +36740,7 @@ TEAMARRAY = [
         :form => 2,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :AMPHAROS,
@@ -36728,7 +36750,7 @@ TEAMARRAY = [
         :ability => :STATIC,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :RAICHU,
@@ -36739,7 +36761,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :MAGNEZONE,
@@ -36750,7 +36772,7 @@ TEAMARRAY = [
         :ability => :MAGNETPULL,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :XURKITREE,
@@ -36760,7 +36782,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -36776,7 +36798,7 @@ TEAMARRAY = [
         :ability => :ELECTRICSURGE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :ZAPDOS,
@@ -36786,7 +36808,7 @@ TEAMARRAY = [
         :ability => :STATIC,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :ROTOM,
@@ -36797,7 +36819,7 @@ TEAMARRAY = [
         :form => 2,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :ZEKROM,
@@ -36807,7 +36829,7 @@ TEAMARRAY = [
         :ability => :TERAVOLT,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :MANECTRIC,
@@ -36828,7 +36850,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -36845,7 +36867,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Sploosh",
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :LANTURN,
@@ -36855,7 +36877,7 @@ TEAMARRAY = [
         :ability => :VOLTABSORB,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :VIKAVOLT,
@@ -36865,7 +36887,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :EELEKTROSS,
@@ -36875,7 +36897,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :RAICHU,
@@ -36886,7 +36908,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :ZAPDOS,
@@ -36896,7 +36918,7 @@ TEAMARRAY = [
         :ability => :STATIC,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -36913,7 +36935,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Sploosh",
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :ROTOM,
@@ -36926,7 +36948,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Vroom",
-        :ev => [252, 0, 4, 0, 0, 252]
+        :ev => [252, 0, 0, 0, 4, 252]
       },
       {
         :species => :ROTOM,
@@ -36939,7 +36961,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Whoosh",
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :ROTOM,
@@ -36952,7 +36974,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Brrr",
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :ROTOM,
@@ -36965,7 +36987,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Hottie ;)",
-        :ev => [252, 0, 4, 0, 0, 252]
+        :ev => [252, 0, 0, 0, 4, 252]
       },
       {
         :species => :ROTOM,
@@ -36976,7 +36998,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Bzzt",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -36992,7 +37014,7 @@ TEAMARRAY = [
         :ability => :VOLTABSORB,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :THUNDURUS,
@@ -37002,7 +37024,7 @@ TEAMARRAY = [
         :ability => :PRANKSTER,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :ZERAORA,
@@ -37012,7 +37034,7 @@ TEAMARRAY = [
         :ability => :VOLTABSORB,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :LANTURN,
@@ -37022,7 +37044,7 @@ TEAMARRAY = [
         :ability => :VOLTABSORB,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :ELECTIVIRE,
@@ -37032,7 +37054,7 @@ TEAMARRAY = [
         :ability => :MOTORDRIVE,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [252, 4, 0, 0, 252, 0]
+        :ev => [252, 4, 252, 0, 0, 0]
       },
       {
         :species => :MAGNEZONE,
@@ -37042,7 +37064,7 @@ TEAMARRAY = [
         :ability => :MAGNETPULL,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -37100,7 +37122,7 @@ TEAMARRAY = [
         :ability => :PRANKSTER,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :FERROTHORN,
@@ -37120,7 +37142,7 @@ TEAMARRAY = [
         :ability => :TECHNICIAN,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :SHAYMIN,
@@ -37131,7 +37153,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :VENUSAUR,
@@ -37152,7 +37174,7 @@ TEAMARRAY = [
         :ability => :OVERGROW,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       }
     ]
   },
@@ -37179,7 +37201,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :VENUSAUR,
@@ -37200,7 +37222,7 @@ TEAMARRAY = [
         :ability => :GRASSYSURGE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :KARTANA,
@@ -37210,7 +37232,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 0, 0]
       },
       {
         :species => :CELEBI,
@@ -37220,7 +37242,7 @@ TEAMARRAY = [
         :ability => :NATURALCURE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -37235,7 +37257,7 @@ TEAMARRAY = [
         :ability => :PRANKSTER,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :LEAFEON,
@@ -37245,7 +37267,7 @@ TEAMARRAY = [
         :ability => :CHLOROPHYLL,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :TANGROWTH,
@@ -37255,7 +37277,7 @@ TEAMARRAY = [
         :ability => :CHLOROPHYLL,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 252, 252, 0, 4]
+        :ev => [0, 0, 0, 252, 252, 4]
       },
       {
         :species => :VILEPLUME,
@@ -37265,7 +37287,7 @@ TEAMARRAY = [
         :ability => :CHLOROPHYLL,
         :nature => :CALM,
         :iv => 31,
-        :ev => [0, 0, 252, 252, 0, 4]
+        :ev => [0, 0, 0, 252, 252, 4]
       },
       {
         :species => :SAWSBUCK,
@@ -37276,7 +37298,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :LILLIGANT,
@@ -37287,7 +37309,7 @@ TEAMARRAY = [
         :ability => :CHLOROPHYLL,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -37302,7 +37324,7 @@ TEAMARRAY = [
         :ability => :OVERGROW,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 0, 4]
+        :ev => [252, 0, 0, 0, 252, 4]
       },
       {
         :species => :MEGANIUM,
@@ -37312,7 +37334,7 @@ TEAMARRAY = [
         :ability => :OVERGROW,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 0, 4]
+        :ev => [252, 0, 0, 0, 252, 4]
       },
       {
         :species => :VENUSAUR,
@@ -37322,7 +37344,7 @@ TEAMARRAY = [
         :ability => :OVERGROW,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 0, 4]
+        :ev => [252, 0, 0, 0, 252, 4]
       },
       {
         :species => :SCEPTILE,
@@ -37332,7 +37354,7 @@ TEAMARRAY = [
         :ability => :OVERGROW,
         :nature => :RASH,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :DECIDUEYE,
@@ -37342,7 +37364,7 @@ TEAMARRAY = [
         :ability => :OVERGROW,
         :nature => :RASH,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SERPERIOR,
@@ -37352,7 +37374,7 @@ TEAMARRAY = [
         :ability => :OVERGROW,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -37367,7 +37389,7 @@ TEAMARRAY = [
         :ability => :LONGREACH,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :FERROTHORN,
@@ -37377,7 +37399,7 @@ TEAMARRAY = [
         :ability => :IRONBARBS,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :SHAYMIN,
@@ -37388,7 +37410,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :HASTY,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :CRADILY,
@@ -37398,7 +37420,7 @@ TEAMARRAY = [
         :ability => :SUCTIONCUPS,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :ROTOM,
@@ -37409,7 +37431,7 @@ TEAMARRAY = [
         :form => 5,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 0, 252]
+        :ev => [252, 0, 0, 0, 4, 252]
       },
       {
         :species => :ABOMASNOW,
@@ -37419,7 +37441,7 @@ TEAMARRAY = [
         :ability => :SNOWWARNING,
         :nature => :BRAVE,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       }
     ]
   },
@@ -37434,7 +37456,7 @@ TEAMARRAY = [
         :ability => :IRONBARBS,
         :nature => :SASSY,
         :iv => 32,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :LUDICOLO,
@@ -37444,7 +37466,7 @@ TEAMARRAY = [
         :ability => :SWIFTSWIM,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :JUMPLUFF,
@@ -37454,7 +37476,7 @@ TEAMARRAY = [
         :ability => :INFILTRATOR,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :VENUSAUR,
@@ -37464,7 +37486,7 @@ TEAMARRAY = [
         :ability => :OVERGROW,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :VILEPLUME,
@@ -37474,7 +37496,7 @@ TEAMARRAY = [
         :ability => :CHLOROPHYLL,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :ROSERADE,
@@ -37484,7 +37506,7 @@ TEAMARRAY = [
         :ability => :NATURALCURE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -37500,7 +37522,7 @@ TEAMARRAY = [
         :ability => :OWNTEMPO,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :TSAREENA,
@@ -37510,7 +37532,7 @@ TEAMARRAY = [
         :ability => :QUEENLYMAJESTY,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :BRELOOM,
@@ -37520,7 +37542,7 @@ TEAMARRAY = [
         :ability => :TECHNICIAN,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :SHAYMIN,
@@ -37530,7 +37552,7 @@ TEAMARRAY = [
         :ability => :NATURALCURE,
         :nature => :HASTY,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :TROPIUS,
@@ -37540,7 +37562,7 @@ TEAMARRAY = [
         :ability => :HARVEST,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :CHESNAUGHT,
@@ -37550,7 +37572,7 @@ TEAMARRAY = [
         :ability => :BULLETPROOF,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -37567,7 +37589,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Anna",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SCIZOR,
@@ -37578,7 +37600,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "Titania",
-        :ev => [252, 4, 0, 0, 252, 0]
+        :ev => [252, 4, 252, 0, 0, 0]
       },
       {
         :species => :GENESECT,
@@ -37589,7 +37611,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Saphira",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :VOLCARONA,
@@ -37601,7 +37623,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Cal",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :HERACROSS,
@@ -37612,7 +37634,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "Victoria",
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :PINSIR,
@@ -37623,7 +37645,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       }
     ]
   },
@@ -37640,7 +37662,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Anna",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SCIZOR,
@@ -37651,7 +37673,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "Titania",
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :GENESECT,
@@ -37662,7 +37684,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Saphira",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :VOLCARONA,
@@ -37674,7 +37696,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Cal",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :PHEROMOSA,
@@ -37685,7 +37707,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "Serra",
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :PINSIR,
@@ -37696,7 +37718,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       }
     ]
   },
@@ -37712,7 +37734,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Anna",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :LILLIGANT,
@@ -37724,7 +37746,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Laura",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :PHEROMOSA,
@@ -37735,7 +37757,7 @@ TEAMARRAY = [
         :nature => :HASTY,
         :iv => 31,
         :name => "Serra",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :VENOMOTH,
@@ -37746,7 +37768,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Eve",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :VOLCARONA,
@@ -37757,7 +37779,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Cal",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :VIVILLON,
@@ -37768,7 +37790,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Noel",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -37784,7 +37806,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Charlotte",
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :ARMALDO,
@@ -37794,7 +37816,7 @@ TEAMARRAY = [
         :ability => :SWIFTSWIM,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :ARAQUANID,
@@ -37804,7 +37826,7 @@ TEAMARRAY = [
         :ability => :WATERBUBBLE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :GOLISOPOD,
@@ -37814,7 +37836,7 @@ TEAMARRAY = [
         :ability => :EMERGENCYEXIT,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :PINSIR,
@@ -37825,7 +37847,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :YANMEGA,
@@ -37836,7 +37858,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Heather",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -37852,7 +37874,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Anna",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :BEEDRILL,
@@ -37863,7 +37885,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "Aya",
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :NINJASK,
@@ -37873,7 +37895,7 @@ TEAMARRAY = [
         :ability => :SPEEDBOOST,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :PHEROMOSA,
@@ -37885,7 +37907,7 @@ TEAMARRAY = [
         :iv => 31,
         :happiness => 255,
         :name => "Serra",
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :ACCELGOR,
@@ -37895,7 +37917,7 @@ TEAMARRAY = [
         :ability => :HYDRATION,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SCOLIPEDE,
@@ -37907,7 +37929,7 @@ TEAMARRAY = [
         :iv => 31,
         :happiness => 255,
         :name => "Cain",
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       }
     ]
   },
@@ -37924,7 +37946,7 @@ TEAMARRAY = [
         :nature => :CALM,
         :iv => 31,
         :name => "Hardy",
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :LEDIAN,
@@ -37935,7 +37957,7 @@ TEAMARRAY = [
         :nature => :CALM,
         :iv => 31,
         :name => "Lumi",
-        :ev => [0, 0, 252, 0, 4, 252]
+        :ev => [0, 0, 4, 0, 252, 252]
       },
       {
         :species => :ARAQUANID,
@@ -37946,7 +37968,7 @@ TEAMARRAY = [
         :ability => :WATERBUBBLE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :SHEDINJA,
@@ -37958,7 +37980,7 @@ TEAMARRAY = [
         :iv => 31,
         :happiness => 255,
         :name => "Shade",
-        :ev => [252, 0, 0, 4, 252, 0]
+        :ev => [252, 0, 252, 4, 0, 0]
       },
       {
         :species => :PHEROMOSA,
@@ -37970,7 +37992,7 @@ TEAMARRAY = [
         :iv => 31,
         :happiness => 255,
         :name => "Serra",
-        :ev => [252, 4, 0, 0, 252, 0]
+        :ev => [252, 4, 252, 0, 0, 0]
       },
       {
         :species => :WORMADAM,
@@ -37983,7 +38005,7 @@ TEAMARRAY = [
         :iv => 31,
         :happiness => 255,
         :name => "Florinia",
-        :ev => [0, 0, 4, 252, 252, 0]
+        :ev => [0, 0, 252, 252, 4, 0]
       }
     ]
   },
@@ -38001,7 +38023,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :GENGAR,
@@ -38011,7 +38033,7 @@ TEAMARRAY = [
         :ability => :CURSEDBODY,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :CHANDELURE,
@@ -38021,7 +38043,7 @@ TEAMARRAY = [
         :ability => :FLASHFIRE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :MIMIKYU,
@@ -38032,7 +38054,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :MISMAGIUS,
@@ -38042,7 +38064,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :AEGISLASH,
@@ -38052,7 +38074,7 @@ TEAMARRAY = [
         :ability => :STANCECHANGE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       }
     ]
   },
@@ -38070,7 +38092,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :GENGAR,
@@ -38080,7 +38102,7 @@ TEAMARRAY = [
         :ability => :CURSEDBODY,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :GIRATINA,
@@ -38091,7 +38113,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :MIMIKYU,
@@ -38102,7 +38124,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :MARSHADOW,
@@ -38113,7 +38135,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 4, 0, 0, 252, 0]
+        :ev => [252, 4, 252, 0, 0, 0]
       },
       {
         :species => :AEGISLASH,
@@ -38123,7 +38145,7 @@ TEAMARRAY = [
         :ability => :STANCECHANGE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       }
     ]
   },
@@ -38138,7 +38160,7 @@ TEAMARRAY = [
         :ability => :LONGREACH,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :DHELMISE,
@@ -38149,18 +38171,18 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :TREVENANT,
         :level => 100,
         :item => :ELEMENTALSEED,
-        :moves => [:POWERWHIP, :ROCKSLIDE, :SHADOWCLAW, :SYNTHESIS],
+        :moves => [:HORNLEECH, :ROCKSLIDE, :SHADOWCLAW, :SYNTHESIS],
         :ability => :HARVEST,
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :MAROWAK,
@@ -38172,7 +38194,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :CHANDELURE,
@@ -38182,7 +38204,7 @@ TEAMARRAY = [
         :ability => :FLASHFIRE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :BLACEPHALON,
@@ -38193,7 +38215,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -38208,7 +38230,7 @@ TEAMARRAY = [
         :ability => :SNOWCLOAK,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :MIMIKYU,
@@ -38220,7 +38242,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :GIRATINA,
@@ -38230,7 +38252,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :AEGISLASH,
@@ -38241,7 +38263,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :LUNALA,
@@ -38251,7 +38273,7 @@ TEAMARRAY = [
         :ability => :SHADOWSHIELD,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :TREVENANT,
@@ -38262,7 +38284,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       }
     ]
   },
@@ -38278,7 +38300,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :DRAGALGE,
@@ -38288,7 +38310,7 @@ TEAMARRAY = [
         :ability => :ADAPTABILITY,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :VILEPLUME,
@@ -38298,7 +38320,7 @@ TEAMARRAY = [
         :ability => :EFFECTSPORE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :GENGAR,
@@ -38308,7 +38330,7 @@ TEAMARRAY = [
         :ability => :CURSEDBODY,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :TOXAPEX,
@@ -38318,7 +38340,7 @@ TEAMARRAY = [
         :ability => :REGENERATOR,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :MUK,
@@ -38329,7 +38351,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       }
     ]
   },
@@ -38345,7 +38367,7 @@ TEAMARRAY = [
         :ability => :SPEEDBOOST,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :GENGAR,
@@ -38355,7 +38377,7 @@ TEAMARRAY = [
         :ability => :CURSEDBODY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :NAGANADEL,
@@ -38365,7 +38387,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :NIHILEGO,
@@ -38375,7 +38397,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :TOXAPEX,
@@ -38385,7 +38407,7 @@ TEAMARRAY = [
         :ability => :REGENERATOR,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :MUK,
@@ -38396,7 +38418,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       }
     ]
   },
@@ -38412,7 +38434,7 @@ TEAMARRAY = [
         :ability => :LIQUIDOOZE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :TOXAPEX,
@@ -38422,7 +38444,7 @@ TEAMARRAY = [
         :ability => :REGENERATOR,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :DRAGALGE,
@@ -38432,7 +38454,7 @@ TEAMARRAY = [
         :ability => :ADAPTABILITY,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :QWILFISH,
@@ -38442,7 +38464,7 @@ TEAMARRAY = [
         :ability => :SWIFTSWIM,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :TOXICROAK,
@@ -38452,7 +38474,7 @@ TEAMARRAY = [
         :ability => :DRYSKIN,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :CROBAT,
@@ -38462,7 +38484,7 @@ TEAMARRAY = [
         :ability => :INFILTRATOR,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -38477,7 +38499,7 @@ TEAMARRAY = [
         :ability => :NATURALCURE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SALAZZLE,
@@ -38488,7 +38510,7 @@ TEAMARRAY = [
         :ability => :CORROSION,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :TOXAPEX,
@@ -38498,7 +38520,7 @@ TEAMARRAY = [
         :ability => :REGENERATOR,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :VENUSAUR,
@@ -38519,7 +38541,7 @@ TEAMARRAY = [
         :ability => :CHLOROPHYLL,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :TENTACRUEL,
@@ -38529,7 +38551,7 @@ TEAMARRAY = [
         :ability => :LIQUIDOOZE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -38557,7 +38579,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :WEAVILE,
@@ -38567,7 +38589,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :MAMOSWINE,
@@ -38577,7 +38599,7 @@ TEAMARRAY = [
         :ability => :THICKFAT,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :BEARTIC,
@@ -38587,7 +38609,7 @@ TEAMARRAY = [
         :ability => :SWIFTSWIM,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :ROTOM,
@@ -38598,7 +38620,7 @@ TEAMARRAY = [
         :form => 3,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       }
     ]
   },
@@ -38616,7 +38638,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :ARTICUNO,
@@ -38626,7 +38648,7 @@ TEAMARRAY = [
         :ability => :SNOWCLOAK,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :KYUREM,
@@ -38637,7 +38659,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :KYUREM,
@@ -38648,7 +38670,7 @@ TEAMARRAY = [
         :form => 2,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :WEAVILE,
@@ -38658,7 +38680,7 @@ TEAMARRAY = [
         :ability => :PICKPOCKET,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :GLACEON,
@@ -38668,7 +38690,7 @@ TEAMARRAY = [
         :ability => :SNOWCLOAK,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -38683,7 +38705,7 @@ TEAMARRAY = [
         :ability => :REFRIGERATE,
         :nature => :SASSY,
         :iv => 32,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :ABOMASNOW,
@@ -38693,7 +38715,7 @@ TEAMARRAY = [
         :ability => :SOUNDPROOF,
         :nature => :SASSY,
         :iv => 32,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :AVALUGG,
@@ -38703,7 +38725,7 @@ TEAMARRAY = [
         :ability => :ICEBODY,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :CRABOMINABLE,
@@ -38713,7 +38735,7 @@ TEAMARRAY = [
         :ability => :IRONFIST,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :REGICE,
@@ -38723,7 +38745,7 @@ TEAMARRAY = [
         :ability => :ICEBODY,
         :nature => :SASSY,
         :iv => 32,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :ARTICUNO,
@@ -38733,7 +38755,7 @@ TEAMARRAY = [
         :ability => :SNOWCLOAK,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -38747,9 +38769,9 @@ TEAMARRAY = [
         :moves => [:SPIKES, :EXPLOSION, :HYPERBEAM, :HIDDENPOWER],
         :hptype => :FIRE,
         :ability => :INNERFOCUS,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :ARTICUNO,
@@ -38759,7 +38781,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [0, 0, 252, 0, 4, 252]
+        :ev => [0, 0, 4, 0, 252, 252]
       },
       {
         :species => :GLACEON,
@@ -38769,7 +38791,7 @@ TEAMARRAY = [
         :ability => :SNOWCLOAK,
         :nature => :RASH,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :KYUREM,
@@ -38780,7 +38802,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :RASH,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :CLOYSTER,
@@ -38788,9 +38810,9 @@ TEAMARRAY = [
         :item => :WIKIBERRY,
         :moves => [:SHELLSMASH, :ICICLESPEAR, :POISONJAB, :ROCKBLAST],
         :ability => :SKILLLINK,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :REGICE,
@@ -38800,7 +38822,7 @@ TEAMARRAY = [
         :ability => :CLEARBODY,
         :nature => :CALM,
         :iv => 31,
-        :ev => [128, 0, 252, 0, 0, 128]
+        :ev => [128, 0, 0, 0, 252, 128]
       }
     ]
   },
@@ -38816,7 +38838,7 @@ TEAMARRAY = [
         :ability => :RIVALRY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :PORYGONZ,
@@ -38826,7 +38848,7 @@ TEAMARRAY = [
         :ability => :ADAPTABILITY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :CHANSEY,
@@ -38846,7 +38868,7 @@ TEAMARRAY = [
         :ability => :KEENEYE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :MELOETTA,
@@ -38856,7 +38878,7 @@ TEAMARRAY = [
         :ability => :SERENEGRACE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :HELIOLISK,
@@ -38866,7 +38888,7 @@ TEAMARRAY = [
         :ability => :SOLARPOWER,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -38882,7 +38904,7 @@ TEAMARRAY = [
         :ability => :ADAPTABILITY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :CHANSEY,
@@ -38902,7 +38924,7 @@ TEAMARRAY = [
         :ability => :KEENEYE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :MELOETTA,
@@ -38912,7 +38934,7 @@ TEAMARRAY = [
         :ability => :SERENEGRACE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :PYROAR,
@@ -38922,7 +38944,7 @@ TEAMARRAY = [
         :ability => :RIVALRY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :CLEFABLE,
@@ -38947,7 +38969,7 @@ TEAMARRAY = [
         :ability => :SKILLLINK,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :REGIGIGAS,
@@ -38957,7 +38979,7 @@ TEAMARRAY = [
         :ability => :SLOWSTART,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :MELOETTA,
@@ -38967,7 +38989,7 @@ TEAMARRAY = [
         :ability => :SERENEGRACE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :BEWEAR,
@@ -38977,7 +38999,7 @@ TEAMARRAY = [
         :ability => :FLUFFY,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :STARAPTOR,
@@ -38987,7 +39009,7 @@ TEAMARRAY = [
         :ability => :RECKLESS,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :LOPUNNY,
@@ -38997,7 +39019,7 @@ TEAMARRAY = [
         :ability => :CUTECHARM,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -39012,7 +39034,7 @@ TEAMARRAY = [
         :ability => :RECKLESS,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :LOPUNNY,
@@ -39022,7 +39044,7 @@ TEAMARRAY = [
         :ability => :CUTECHARM,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :CINCCINO,
@@ -39032,7 +39054,7 @@ TEAMARRAY = [
         :ability => :SKILLLINK,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :DODRIO,
@@ -39042,7 +39064,7 @@ TEAMARRAY = [
         :ability => :RUNAWAY,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :SAWSBUCK,
@@ -39052,7 +39074,7 @@ TEAMARRAY = [
         :ability => :CHLOROPHYLL,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :SWELLOW,
@@ -39062,7 +39084,7 @@ TEAMARRAY = [
         :ability => :SCRAPPY,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -39077,7 +39099,7 @@ TEAMARRAY = [
         :ability => :OWNTEMPO,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 0, 252]
+        :ev => [252, 0, 0, 0, 4, 252]
       },
       {
         :species => :SLAKING,
@@ -39087,7 +39109,7 @@ TEAMARRAY = [
         :ability => :TRUANT,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :REGIGIGAS,
@@ -39097,7 +39119,7 @@ TEAMARRAY = [
         :ability => :SLOWSTART,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :PORYGONZ,
@@ -39107,7 +39129,7 @@ TEAMARRAY = [
         :ability => :ADAPTABILITY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :LOPUNNY,
@@ -39117,7 +39139,7 @@ TEAMARRAY = [
         :ability => :CUTECHARM,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :PYROAR,
@@ -39127,7 +39149,7 @@ TEAMARRAY = [
         :ability => :MOXIE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -39143,7 +39165,7 @@ TEAMARRAY = [
         :ability => :ADAPTABILITY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :DRAMPA,
@@ -39154,7 +39176,7 @@ TEAMARRAY = [
         :ability => :CLOUDNINE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :MELOETTA,
@@ -39165,7 +39187,7 @@ TEAMARRAY = [
         :ability => :SERENEGRACE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :BLISSEY,
@@ -39211,7 +39233,7 @@ TEAMARRAY = [
         :ability => :MAGICBOUNCE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :STARMIE,
@@ -39221,7 +39243,7 @@ TEAMARRAY = [
         :ability => :ILLUMINATE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :LUNALA,
@@ -39231,7 +39253,7 @@ TEAMARRAY = [
         :ability => :SHADOWSHIELD,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :ALAKAZAM,
@@ -39241,7 +39263,7 @@ TEAMARRAY = [
         :ability => :MAGICGUARD,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :DELPHOX,
@@ -39261,7 +39283,7 @@ TEAMARRAY = [
         :ability => :LIGHTMETAL,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -39278,7 +39300,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :DEOXYS,
@@ -39287,9 +39309,9 @@ TEAMARRAY = [
         :moves => [:PSYCHOBOOST, :DARKPULSE, :EXTREMESPEED, :METEORMASH],
         :ability => :PRESSURE,
         :form => 1,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :LUNALA,
@@ -39299,7 +39321,7 @@ TEAMARRAY = [
         :ability => :SHADOWSHIELD,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 252, 4]
+        :ev => [0, 0, 252, 252, 0, 4]
       },
       {
         :species => :MEWTWO,
@@ -39309,7 +39331,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :LUGIA,
@@ -39331,7 +39353,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -39346,7 +39368,7 @@ TEAMARRAY = [
         :ability => :TELEPATHY,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :GARDEVOIR,
@@ -39358,7 +39380,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "G.Gardevoir",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :BEHEEYEM,
@@ -39368,27 +39390,27 @@ TEAMARRAY = [
         :ability => :TELEPATHY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :ORANGURU,
         :level => 100,
         :item => :FOCUSSASH,
-        :moves => [:NASTYPLOT, :PSYCHIC, :HYPERVOICE, :ENERGYBALL],
+        :moves => [:NASTYPLOT, :PSYCHIC, :FOCUSBLAST, :ENERGYBALL],
         :ability => :TELEPATHY,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :MUSHARNA,
         :level => 100,
         :item => :FOCUSSASH,
-        :moves => [:CALMMIND, :MOONBLAST, :PSYSHOCK, :HYPNOSIS],
+        :moves => [:CALMMIND, :DAZZLINGGLEAM, :PSYSHOCK, :HYPNOSIS],
         :ability => :TELEPATHY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :ALAKAZAM,
@@ -39398,7 +39420,7 @@ TEAMARRAY = [
         :ability => :MAGICGUARD,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -39413,7 +39435,7 @@ TEAMARRAY = [
         :ability => :OVERCOAT,
         :nature => :QUIET,
         :iv => 32,
-        :ev => [0, 0, 252, 252, 4, 0]
+        :ev => [0, 0, 4, 252, 252, 0]
       },
       {
         :species => :BRONZONG,
@@ -39423,7 +39445,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :RELAXED,
         :iv => 32,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :BEHEEYEM,
@@ -39433,7 +39455,7 @@ TEAMARRAY = [
         :ability => :TELEPATHY,
         :nature => :QUIET,
         :iv => 32,
-        :ev => [0, 0, 252, 252, 4, 0]
+        :ev => [0, 0, 4, 252, 252, 0]
       },
       {
         :species => :MUSHARNA,
@@ -39443,7 +39465,7 @@ TEAMARRAY = [
         :ability => :FOREWARN,
         :nature => :SASSY,
         :iv => 32,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :SLOWBRO,
@@ -39453,7 +39475,7 @@ TEAMARRAY = [
         :ability => :OBLIVIOUS,
         :nature => :RELAXED,
         :iv => 32,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :MALAMAR,
@@ -39463,7 +39485,7 @@ TEAMARRAY = [
         :ability => :CONTRARY,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       }
     ]
   },
@@ -39478,7 +39500,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :LUNALA,
@@ -39488,7 +39510,7 @@ TEAMARRAY = [
         :ability => :SHADOWSHIELD,
         :nature => :RASH,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 252, 4]
+        :ev => [0, 0, 252, 252, 0, 4]
       },
       {
         :species => :DEOXYS,
@@ -39499,7 +39521,7 @@ TEAMARRAY = [
         :form => 2,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :CRESSELIA,
@@ -39509,7 +39531,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :LUGIA,
@@ -39519,7 +39541,7 @@ TEAMARRAY = [
         :ability => :MULTISCALE,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :NECROZMA,
@@ -39531,7 +39553,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :NAUGHTY,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -39547,7 +39569,7 @@ TEAMARRAY = [
         :ability => :NATURALCURE,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :MEDICHAM,
@@ -39557,7 +39579,7 @@ TEAMARRAY = [
         :ability => :TELEPATHY,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :MEWTWO,
@@ -39567,7 +39589,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :LUGIA,
@@ -39577,7 +39599,7 @@ TEAMARRAY = [
         :ability => :MULTISCALE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :STARMIE,
@@ -39588,7 +39610,7 @@ TEAMARRAY = [
         :ability => :ILLUMINATE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :GARDEVOIR,
@@ -39601,7 +39623,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "G.Gardevoir",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -39616,7 +39638,7 @@ TEAMARRAY = [
         :ability => :SERENEGRACE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :MEWTWO,
@@ -39626,7 +39648,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :LUNALA,
@@ -39636,7 +39658,7 @@ TEAMARRAY = [
         :ability => :SHADOWSHIELD,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :TAPULELE,
@@ -39647,7 +39669,7 @@ TEAMARRAY = [
         :ability => :PSYCHICSURGE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :LATIOS,
@@ -39657,7 +39679,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :MEW,
@@ -39667,7 +39689,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -39684,7 +39706,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "Carpenter",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :GRENINJA,
@@ -39695,7 +39717,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Bill",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :DARKRAI,
@@ -39706,7 +39728,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Red Queen",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :TYRANITAR,
@@ -39717,7 +39739,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "Bandersnatch",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :WEAVILE,
@@ -39728,7 +39750,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "KnaveOfHearts",
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :HYDREIGON,
@@ -39739,7 +39761,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Jabberwocky",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -39756,7 +39778,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "Bandersnatch",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :GRENINJA,
@@ -39767,7 +39789,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Bill",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :DARKRAI,
@@ -39778,7 +39800,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Red Queen",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :HYDREIGON,
@@ -39789,7 +39811,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Jabberwocky",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :YVELTAL,
@@ -39800,7 +39822,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Duchess",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :HOOPA,
@@ -39812,7 +39834,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "Snark",
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       }
     ]
   },
@@ -39828,7 +39850,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "Mock Turtle",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :YVELTAL,
@@ -39839,7 +39861,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Duchess",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :HYDREIGON,
@@ -39850,18 +39872,18 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Jabberwocky",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :GRENINJA,
         :level => 100,
         :item => :ELEMENTALSEED,
-        :moves => [:GUNKSHOT, :ICEBEAM, :HYDROPUMP, :WHIRLPOOL],
+        :moves => [:GUNKSHOT, :ICEBEAM, :HYDROPUMP, :UTURN],
         :ability => :PROTEAN,
         :nature => :MILD,
         :iv => 31,
         :name => "Bill",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :GYARADOS,
@@ -39872,7 +39894,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "Borogove",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :SHARPEDO,
@@ -39883,7 +39905,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "Rath",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -39900,7 +39922,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "HumptyDumpty",
-        :ev => [0, 252, 252, 0, 4, 0]
+        :ev => [0, 252, 4, 0, 252, 0]
       },
       {
         :species => :HYDREIGON,
@@ -39911,7 +39933,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Jabberwocky",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :HOOPA,
@@ -39923,7 +39945,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Snark",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :ABSOL,
@@ -39934,7 +39956,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "White Rabbit",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :BISHARP,
@@ -39945,7 +39967,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "Carpenter",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :WEAVILE,
@@ -39956,7 +39978,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "KnaveOfHearts",
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       }
     ]
   },
@@ -39972,7 +39994,7 @@ TEAMARRAY = [
         :ability => :TECHNICIAN,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :HAWLUCHA,
@@ -39982,7 +40004,7 @@ TEAMARRAY = [
         :ability => :UNBURDEN,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :KOMMOO,
@@ -39992,7 +40014,7 @@ TEAMARRAY = [
         :ability => :BULLETPROOF,
         :nature => :HASTY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :BLAZIKEN,
@@ -40002,7 +40024,7 @@ TEAMARRAY = [
         :ability => :BLAZE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :MARSHADOW,
@@ -40012,7 +40034,7 @@ TEAMARRAY = [
         :ability => :TECHNICIAN,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :LUCARIO,
@@ -40022,7 +40044,7 @@ TEAMARRAY = [
         :ability => :STEADFAST,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -40038,7 +40060,7 @@ TEAMARRAY = [
         :ability => :JUSTIFIED,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :HAWLUCHA,
@@ -40048,7 +40070,7 @@ TEAMARRAY = [
         :ability => :UNBURDEN,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :KOMMOO,
@@ -40058,7 +40080,7 @@ TEAMARRAY = [
         :ability => :BULLETPROOF,
         :nature => :HASTY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :PHEROMOSA,
@@ -40068,7 +40090,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :RASH,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :MARSHADOW,
@@ -40078,7 +40100,7 @@ TEAMARRAY = [
         :ability => :TECHNICIAN,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :LUCARIO,
@@ -40088,7 +40110,7 @@ TEAMARRAY = [
         :ability => :STEADFAST,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -40103,7 +40125,7 @@ TEAMARRAY = [
         :ability => :BULLETPROOF,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :INFERNAPE,
@@ -40114,7 +40136,7 @@ TEAMARRAY = [
         :ability => :BLAZE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :MEDICHAM,
@@ -40124,7 +40146,7 @@ TEAMARRAY = [
         :ability => :PUREPOWER,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :KELDEO,
@@ -40135,7 +40157,7 @@ TEAMARRAY = [
         :ability => :JUSTIFIED,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :LUCARIO,
@@ -40146,7 +40168,7 @@ TEAMARRAY = [
         :ability => :INNERFOCUS,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :VIRIZION,
@@ -40157,7 +40179,7 @@ TEAMARRAY = [
         :ability => :JUSTIFIED,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -40172,7 +40194,7 @@ TEAMARRAY = [
         :ability => :OVERGROW,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :HERACROSS,
@@ -40182,7 +40204,7 @@ TEAMARRAY = [
         :ability => :SWARM,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :HARIYAMA,
@@ -40202,7 +40224,7 @@ TEAMARRAY = [
         :ability => :EFFECTSPORE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :PHEROMOSA,
@@ -40212,7 +40234,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :VIRIZION,
@@ -40222,7 +40244,7 @@ TEAMARRAY = [
         :ability => :JUSTIFIED,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       }
     ]
   },
@@ -40239,7 +40261,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 0, 252]
+        :ev => [252, 0, 0, 0, 4, 252]
       },
       {
         :species => :GROUDON,
@@ -40249,7 +40271,7 @@ TEAMARRAY = [
         :ability => :DROUGHT,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :CHANDELURE,
@@ -40259,7 +40281,7 @@ TEAMARRAY = [
         :ability => :FLASHFIRE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :BLAZIKEN,
@@ -40269,7 +40291,7 @@ TEAMARRAY = [
         :ability => :SPEEDBOOST,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :CHARIZARD,
@@ -40279,7 +40301,7 @@ TEAMARRAY = [
         :ability => :BLAZE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :VOLCARONA,
@@ -40289,7 +40311,7 @@ TEAMARRAY = [
         :ability => :FLAMEBODY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -40305,7 +40327,7 @@ TEAMARRAY = [
         :ability => :DROUGHT,
         :nature => :MILD,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :HEATRAN,
@@ -40315,7 +40337,7 @@ TEAMARRAY = [
         :ability => :FLASHFIRE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :RESHIRAM,
@@ -40325,7 +40347,7 @@ TEAMARRAY = [
         :ability => :TURBOBLAZE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :BLAZIKEN,
@@ -40335,7 +40357,7 @@ TEAMARRAY = [
         :ability => :SPEEDBOOST,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :HOOH,
@@ -40345,7 +40367,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :VOLCARONA,
@@ -40355,7 +40377,7 @@ TEAMARRAY = [
         :ability => :FLAMEBODY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -40370,7 +40392,7 @@ TEAMARRAY = [
         :ability => :BLAZE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :BLAZIKEN,
@@ -40380,7 +40402,7 @@ TEAMARRAY = [
         :ability => :SPEEDBOOST,
         :nature => :RASH,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :EMBOAR,
@@ -40400,7 +40422,7 @@ TEAMARRAY = [
         :ability => :BLAZE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :DELPHOX,
@@ -40410,7 +40432,7 @@ TEAMARRAY = [
         :ability => :BLAZE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :INFERNAPE,
@@ -40420,7 +40442,7 @@ TEAMARRAY = [
         :ability => :BLAZE,
         :nature => :RASH,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -40435,7 +40457,7 @@ TEAMARRAY = [
         :ability => :DROUGHT,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :RESHIRAM,
@@ -40445,7 +40467,7 @@ TEAMARRAY = [
         :ability => :TURBOBLAZE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :CHARIZARD,
@@ -40455,7 +40477,7 @@ TEAMARRAY = [
         :ability => :BLAZE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :CHANDELURE,
@@ -40465,7 +40487,7 @@ TEAMARRAY = [
         :ability => :FLASHFIRE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :NINETALES,
@@ -40475,7 +40497,7 @@ TEAMARRAY = [
         :ability => :FLASHFIRE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :VOLCARONA,
@@ -40485,7 +40507,7 @@ TEAMARRAY = [
         :ability => :FLAMEBODY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -40520,7 +40542,7 @@ TEAMARRAY = [
         :ability => :DROUGHT,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :RESHIRAM,
@@ -40530,7 +40552,7 @@ TEAMARRAY = [
         :ability => :TURBOBLAZE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :CHARIZARD,
@@ -40540,7 +40562,7 @@ TEAMARRAY = [
         :ability => :BLAZE,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :TURTONATOR,
@@ -40550,7 +40572,7 @@ TEAMARRAY = [
         :ability => :SHELLARMOR,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -40578,7 +40600,7 @@ TEAMARRAY = [
         :nature => :LONELY,
         :iv => 31,
         :name => "FLYGONDEEZ",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :LANDORUS,
@@ -40589,7 +40611,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "STEVE",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :EXCADRILL,
@@ -40600,7 +40622,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "EXCAKILL",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :GARCHOMP,
@@ -40611,7 +40633,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "RAWRCHOMP",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :GLISCOR,
@@ -40622,7 +40644,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "GLISWHORE",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -40650,7 +40672,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "STEVE",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :EXCADRILL,
@@ -40661,7 +40683,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "EXCAKILL",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :GARCHOMP,
@@ -40672,7 +40694,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "RAWRCHOMP",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :GROUDON,
@@ -40683,7 +40705,7 @@ TEAMARRAY = [
         :nature => :MILD,
         :iv => 31,
         :name => "POUNDON",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :ZYGARDE,
@@ -40694,7 +40716,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "MEGAZ0RD",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -40721,7 +40743,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "GlOVANl",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :NIDOKING,
@@ -40732,7 +40754,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "GIOVANNI",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :STEELIX,
@@ -40743,7 +40765,7 @@ TEAMARRAY = [
         :nature => :BRAVE,
         :iv => 32,
         :name => "YOUR MOM",
-        :ev => [128, 252, 128, 0, 0, 0]
+        :ev => [128, 252, 0, 0, 128, 0]
       },
       {
         :species => :EXCADRILL,
@@ -40754,7 +40776,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "EXCAKILL",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :DUGTRIO,
@@ -40766,7 +40788,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "3MEN1HOLE",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -40783,7 +40805,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "GIVE SANDY",
-        :ev => [128, 0, 128, 252, 0, 0]
+        :ev => [128, 0, 0, 252, 128, 0]
       },
       {
         :species => :GASTRODON,
@@ -40795,7 +40817,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "GASTRODONG",
-        :ev => [128, 0, 128, 252, 0, 0]
+        :ev => [128, 0, 0, 252, 128, 0]
       },
       {
         :species => :EXCADRILL,
@@ -40806,7 +40828,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "EXCAKILL",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :LANDORUS,
@@ -40817,7 +40839,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "STEVE",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :GARCHOMP,
@@ -40828,7 +40850,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "RAWRCHOMP",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :ZYGARDE,
@@ -40839,7 +40861,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "MEGAZ0RD",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -40855,7 +40877,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "SWAMPERT",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :SWAMPERT,
@@ -40866,7 +40888,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "PIKACHU",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :QUAGSIRE,
@@ -40877,7 +40899,7 @@ TEAMARRAY = [
         :nature => :BOLD,
         :iv => 31,
         :name => "SWAGSIRE",
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :WHISCASH,
@@ -40888,7 +40910,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "CASHMONEY",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :GASTRODON,
@@ -40899,7 +40921,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "GASTRODONG",
-        :ev => [0, 0, 252, 252, 4, 0]
+        :ev => [0, 0, 4, 252, 252, 0]
       },
       {
         :species => :GROUDON,
@@ -40911,7 +40933,7 @@ TEAMARRAY = [
         :nature => :MILD,
         :iv => 31,
         :name => "KYOGRE",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -40938,7 +40960,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "STEVE",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :GLISCOR,
@@ -40960,7 +40982,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "GET BONED",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :GARCHOMP,
@@ -40971,7 +40993,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "RAWRCHOMP",
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :SEISMITOAD,
@@ -40998,7 +41020,7 @@ TEAMARRAY = [
         :ability => :SPEEDBOOST,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :TOGEKISS,
@@ -41008,7 +41030,7 @@ TEAMARRAY = [
         :ability => :SERENEGRACE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :GLISCOR,
@@ -41018,7 +41040,7 @@ TEAMARRAY = [
         :ability => :POISONHEAL,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :SALAMENCE,
@@ -41029,7 +41051,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :happiness => 255,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :HAWLUCHA,
@@ -41040,7 +41062,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :SHAYMIN,
@@ -41051,7 +41073,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -41067,7 +41089,7 @@ TEAMARRAY = [
         :ability => :MULTISCALE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :LANDORUS,
@@ -41078,7 +41100,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :happiness => 255,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :YVELTAL,
@@ -41088,7 +41110,7 @@ TEAMARRAY = [
         :ability => :DARKAURA,
         :nature => :MILD,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :HOOH,
@@ -41098,7 +41120,7 @@ TEAMARRAY = [
         :ability => :REGENERATOR,
         :nature => :MILD,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SALAMENCE,
@@ -41109,7 +41131,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :happiness => 255,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :SHAYMIN,
@@ -41120,7 +41142,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -41145,7 +41167,7 @@ TEAMARRAY = [
         :ability => :DEFIANT,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :LUGIA,
@@ -41155,7 +41177,7 @@ TEAMARRAY = [
         :ability => :MULTISCALE,
         :nature => :NAUGHTY,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :ZAPDOS,
@@ -41175,7 +41197,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :GYARADOS,
@@ -41185,7 +41207,7 @@ TEAMARRAY = [
         :ability => :INTIMIDATE,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -41200,7 +41222,7 @@ TEAMARRAY = [
         :ability => :SERENEGRACE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :YVELTAL,
@@ -41210,7 +41232,7 @@ TEAMARRAY = [
         :ability => :DARKAURA,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :HOOH,
@@ -41220,7 +41242,7 @@ TEAMARRAY = [
         :ability => :REGENERATOR,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :LUGIA,
@@ -41230,7 +41252,7 @@ TEAMARRAY = [
         :ability => :MULTISCALE,
         :nature => :NAUGHTY,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :SHAYMIN,
@@ -41241,7 +41263,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :RAYQUAZA,
@@ -41251,7 +41273,7 @@ TEAMARRAY = [
         :ability => :AIRLOCK,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       }
     ]
   },
@@ -41266,7 +41288,7 @@ TEAMARRAY = [
         :ability => :BLAZE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :HOOH,
@@ -41276,7 +41298,7 @@ TEAMARRAY = [
         :ability => :REGENERATOR,
         :nature => :HASTY,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SALAMENCE,
@@ -41286,7 +41308,7 @@ TEAMARRAY = [
         :ability => :INTIMIDATE,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :NOIVERN,
@@ -41296,7 +41318,7 @@ TEAMARRAY = [
         :ability => :INFILTRATOR,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :DRAGONITE,
@@ -41306,7 +41328,7 @@ TEAMARRAY = [
         :ability => :MULTISCALE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :RAYQUAZA,
@@ -41316,7 +41338,7 @@ TEAMARRAY = [
         :ability => :AIRLOCK,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       }
     ]
   },
@@ -41341,7 +41363,7 @@ TEAMARRAY = [
         :ability => :SIMPLE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :LUGIA,
@@ -41351,7 +41373,7 @@ TEAMARRAY = [
         :ability => :MULTISCALE,
         :nature => :NAUGHTY,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :SIGILYPH,
@@ -41361,7 +41383,7 @@ TEAMARRAY = [
         :ability => :MAGICGUARD,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :TOGEKISS,
@@ -41371,7 +41393,7 @@ TEAMARRAY = [
         :ability => :SERENEGRACE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :THUNDURUS,
@@ -41382,7 +41404,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -41474,7 +41496,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Fand",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :CLEFABLE,
@@ -41485,7 +41507,7 @@ TEAMARRAY = [
         :nature => :BOLD,
         :iv => 31,
         :name => "Breena",
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :SYLVEON,
@@ -41496,7 +41518,7 @@ TEAMARRAY = [
         :nature => :BOLD,
         :iv => 31,
         :name => "Siofra",
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :MIMIKYU,
@@ -41507,7 +41529,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "Mab",
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :MAGEARNA,
@@ -41518,7 +41540,7 @@ TEAMARRAY = [
         :nature => :BOLD,
         :iv => 31,
         :name => "Rhoslyn",
-        :ev => [252, 0, 0, 104, 152, 0]
+        :ev => [252, 0, 152, 104, 0, 0]
       },
       {
         :species => :MAWILE,
@@ -41558,7 +41580,7 @@ TEAMARRAY = [
         :nature => :BOLD,
         :iv => 31,
         :name => "Siofra",
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :XERNEAS,
@@ -41569,7 +41591,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Raisie",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :GARDEVOIR,
@@ -41591,7 +41613,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 0, 104, 152, 0]
+        :ev => [252, 0, 152, 104, 0, 0]
       },
       {
         :species => :TAPULELE,
@@ -41602,7 +41624,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Orla",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -41618,7 +41640,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Orlaith",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :TAPUBULU,
@@ -41629,7 +41651,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :name => "Orlagh",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :TAPULELE,
@@ -41640,7 +41662,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Orla",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :TAPUFINI,
@@ -41651,7 +41673,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Orlyna",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :GARDEVOIR,
@@ -41673,7 +41695,7 @@ TEAMARRAY = [
         :nature => :BOLD,
         :iv => 31,
         :name => "Siofra",
-        :ev => [0, 0, 4, 252, 252, 0]
+        :ev => [0, 0, 252, 252, 4, 0]
       }
     ]
   },
@@ -41689,7 +41711,7 @@ TEAMARRAY = [
         :nature => :CALM,
         :iv => 31,
         :name => "Siusan",
-        :ev => [252, 0, 152, 0, 104, 0]
+        :ev => [252, 0, 104, 0, 152, 0]
       },
       {
         :species => :TAPUKOKO,
@@ -41700,7 +41722,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Orlaith",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :XERNEAS,
@@ -41711,7 +41733,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Raisie",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :MIMIKYU,
@@ -41733,7 +41755,7 @@ TEAMARRAY = [
         :nature => :HASTY,
         :iv => 31,
         :name => "Aine",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :MAGEARNA,
@@ -41744,7 +41766,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Rhoslyn",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -41772,7 +41794,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Meriol",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :ALTARIA,
@@ -41783,7 +41805,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Shae",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :TAPUFINI,
@@ -41794,7 +41816,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Orlyna",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :KLEFKI,
@@ -41805,7 +41827,7 @@ TEAMARRAY = [
         :nature => :CAREFUL,
         :iv => 31,
         :name => "Siusan",
-        :ev => [252, 0, 152, 0, 104, 0]
+        :ev => [252, 0, 104, 0, 152, 0]
       },
       {
         :species => :MAGEARNA,
@@ -41816,7 +41838,7 @@ TEAMARRAY = [
         :nature => :CALM,
         :iv => 31,
         :name => "Rhoslyn",
-        :ev => [252, 0, 152, 104, 0, 0]
+        :ev => [252, 0, 0, 104, 152, 0]
       }
     ]
   },
@@ -41832,7 +41854,7 @@ TEAMARRAY = [
         :nature => :SASSY,
         :iv => 31,
         :name => "Aine",
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :TOGEKISS,
@@ -41843,7 +41865,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Orin",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :MAWILE,
@@ -41865,7 +41887,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Orlaith",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :NINETALES,
@@ -41888,7 +41910,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Meriol",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -41913,7 +41935,7 @@ TEAMARRAY = [
         :ability => :SOULHEART,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 152, 104, 0, 0]
+        :ev => [252, 0, 0, 104, 152, 0]
       },
       {
         :species => :GARDEVOIR,
@@ -41933,7 +41955,7 @@ TEAMARRAY = [
         :ability => :UNAWARE,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 252, 0]
+        :ev => [0, 0, 252, 252, 4, 0]
       },
       {
         :species => :TOGEKISS,
@@ -41953,7 +41975,7 @@ TEAMARRAY = [
         :ability => :TELEPATHY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -41969,7 +41991,7 @@ TEAMARRAY = [
         :ability => :MOLDBREAKER,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :DIALGA,
@@ -41989,7 +42011,7 @@ TEAMARRAY = [
         :ability => :STANCECHANGE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 4, 252, 0, 0, 0]
+        :ev => [252, 4, 0, 0, 252, 0]
       },
       {
         :species => :METAGROSS,
@@ -42045,7 +42067,7 @@ TEAMARRAY = [
         :ability => :STANCECHANGE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 4, 252, 0, 0, 0]
+        :ev => [252, 4, 0, 0, 252, 0]
       },
       {
         :species => :LUCARIO,
@@ -42055,7 +42077,7 @@ TEAMARRAY = [
         :ability => :STEADFAST,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :MAGEARNA,
@@ -42065,7 +42087,7 @@ TEAMARRAY = [
         :ability => :SOULHEART,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 152, 104, 0, 0]
+        :ev => [252, 0, 0, 104, 152, 0]
       },
       {
         :species => :NECROZMA,
@@ -42086,7 +42108,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -42137,7 +42159,7 @@ TEAMARRAY = [
         :species => :DUGTRIO,
         :level => 100,
         :item => :LIFEORB,
-        :moves => [:EARTHPOWER, :IRONHEAD, :SUCKERPUNCH, :ROCKSLIDE],
+        :moves => [:EARTHQUAKE, :IRONHEAD, :SUCKERPUNCH, :ROCKSLIDE],
         :ability => :SANDFORCE,
         :form => 1,
         :nature => :JOLLY,
@@ -42167,7 +42189,7 @@ TEAMARRAY = [
         :ability => :KEENEYE,
         :nature => :IMPISH,
         :iv => 31,
-        :ev => [252, 0, 56, 0, 200, 0]
+        :ev => [252, 0, 200, 0, 56, 0]
       },
       {
         :species => :EMPOLEON,
@@ -42188,7 +42210,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :FERROTHORN,
@@ -42234,7 +42256,7 @@ TEAMARRAY = [
         :ability => :FLASHFIRE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :HEATRAN,
@@ -42244,7 +42266,7 @@ TEAMARRAY = [
         :ability => :FLASHFIRE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :HEATRAN,
@@ -42254,7 +42276,7 @@ TEAMARRAY = [
         :ability => :FLASHFIRE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :HEATRAN,
@@ -42264,7 +42286,7 @@ TEAMARRAY = [
         :ability => :FLASHFIRE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :HEATRAN,
@@ -42274,7 +42296,7 @@ TEAMARRAY = [
         :ability => :FLASHFIRE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :HEATRAN,
@@ -42284,7 +42306,7 @@ TEAMARRAY = [
         :ability => :FLASHFIRE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -42309,7 +42331,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :NECROZMA,
@@ -42330,7 +42352,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :MAGEARNA,
@@ -42340,7 +42362,7 @@ TEAMARRAY = [
         :ability => :SOULHEART,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :FERROTHORN,
@@ -42365,7 +42387,7 @@ TEAMARRAY = [
         :ability => :IRONBARBS,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :EMPOLEON,
@@ -42375,7 +42397,7 @@ TEAMARRAY = [
         :ability => :DEFIANT,
         :nature => :BRAVE,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :GENESECT,
@@ -42385,7 +42407,7 @@ TEAMARRAY = [
         :ability => :DOWNLOAD,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :BISHARP,
@@ -42395,7 +42417,7 @@ TEAMARRAY = [
         :ability => :DEFIANT,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :CELESTEELA,
@@ -42405,7 +42427,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :SERIOUS,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :AEGISLASH,
@@ -42415,7 +42437,7 @@ TEAMARRAY = [
         :ability => :STANCECHANGE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       }
     ]
   },
@@ -42432,7 +42454,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "Kipkip",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :ROTOM,
@@ -42444,7 +42466,7 @@ TEAMARRAY = [
         :nature => :BOLD,
         :iv => 31,
         :name => "Arcus",
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :KYOGRE,
@@ -42455,18 +42477,18 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Lemuria",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :TOXAPEX,
         :level => 100,
         :item => :ELEMENTALSEED,
-        :moves => [:RECOVER, :TOXIC, :SCALD, :WHIRLPOOL],
+        :moves => [:RECOVER, :TOXIC, :SCALD, :HAZE],
         :ability => :REGENERATOR,
         :nature => :CALM,
         :iv => 31,
         :name => "Mammatus",
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :GRENINJA,
@@ -42477,7 +42499,7 @@ TEAMARRAY = [
         :nature => :MILD,
         :iv => 31,
         :name => "Lenticula",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :PRIMARINA,
@@ -42488,7 +42510,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "LaReine",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -42505,7 +42527,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Lenticula",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :TAPUFINI,
@@ -42517,7 +42539,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Avalon",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :KELDEO,
@@ -42528,7 +42550,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Thule",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :SWAMPERT,
@@ -42539,7 +42561,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :name => "Kipkip",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :PALKIA,
@@ -42550,7 +42572,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Mu",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :KYOGRE,
@@ -42561,7 +42583,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Lemuria",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -42578,7 +42600,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Cumulus",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :GRENINJA,
@@ -42589,7 +42611,7 @@ TEAMARRAY = [
         :nature => :RASH,
         :iv => 31,
         :name => "Lenticula",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :BLASTOISE,
@@ -42600,7 +42622,7 @@ TEAMARRAY = [
         :nature => :CALM,
         :iv => 31,
         :name => "Shellebelle",
-        :ev => [0, 0, 252, 0, 4, 252]
+        :ev => [0, 0, 4, 0, 252, 252]
       },
       {
         :species => :SWAMPERT,
@@ -42611,7 +42633,7 @@ TEAMARRAY = [
         :nature => :CAREFUL,
         :iv => 31,
         :name => "Kipkip",
-        :ev => [0, 0, 252, 0, 4, 252]
+        :ev => [0, 0, 4, 0, 252, 252]
       },
       {
         :species => :SAMUROTT,
@@ -42622,7 +42644,7 @@ TEAMARRAY = [
         :nature => :RASH,
         :iv => 31,
         :name => "Alto",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :PRIMARINA,
@@ -42633,7 +42655,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "LaReine",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -42644,12 +42666,12 @@ TEAMARRAY = [
         :species => :QWILFISH,
         :level => 100,
         :item => :TELLURICSEED,
-        :moves => [:TOXICSPIKES, :POISONJAB, :KNOCKOFF, :SWORDSDANCE],
+        :moves => [:TOXICSPIKES, :POISONJAB, :LIQUIDATION, :SWORDSDANCE],
         :ability => :SWIFTSWIM,
         :nature => :ADAMANT,
         :iv => 31,
         :name => "Southerna",
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :SWAMPERT,
@@ -42660,7 +42682,7 @@ TEAMARRAY = [
         :nature => :CAREFUL,
         :iv => 31,
         :name => "Kipkip",
-        :ev => [0, 0, 252, 0, 4, 252]
+        :ev => [0, 0, 4, 0, 252, 252]
       },
       {
         :species => :GRENINJA,
@@ -42671,7 +42693,7 @@ TEAMARRAY = [
         :nature => :HASTY,
         :iv => 31,
         :name => "Lenticula",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :VOLCANION,
@@ -42682,7 +42704,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Agartha",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :OMASTAR,
@@ -42693,7 +42715,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Nacreous",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :TOXAPEX,
@@ -42704,7 +42726,7 @@ TEAMARRAY = [
         :nature => :CALM,
         :iv => 31,
         :name => "Mammatus",
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       }
     ]
   },
@@ -42720,7 +42742,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Lemuria",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :KELDEO,
@@ -42732,7 +42754,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Thule",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :SLOWBRO,
@@ -42743,7 +42765,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Stratus",
-        :ev => [0, 0, 252, 252, 4, 0]
+        :ev => [0, 0, 4, 252, 252, 0]
       },
       {
         :species => :BLASTOISE,
@@ -42755,7 +42777,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Shellebelle",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :STARMIE,
@@ -42767,7 +42789,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Twinkle",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :PALKIA,
@@ -42778,7 +42800,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Mu",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -42805,7 +42827,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Mu",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :SLOWBRO,
@@ -42816,7 +42838,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Stratus",
-        :ev => [0, 0, 252, 252, 4, 0]
+        :ev => [0, 0, 4, 252, 252, 0]
       },
       {
         :species => :STARMIE,
@@ -42827,7 +42849,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Twinkle",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :MILOTIC,
@@ -42838,7 +42860,7 @@ TEAMARRAY = [
         :nature => :BOLD,
         :iv => 31,
         :name => "Virga",
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :KYOGRE,
@@ -42849,7 +42871,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "Lemuria",
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -42865,7 +42887,7 @@ TEAMARRAY = [
         :ability => :SANDSTREAM,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :AERODACTYL,
@@ -42875,7 +42897,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :TERRAKION,
@@ -42885,7 +42907,7 @@ TEAMARRAY = [
         :ability => :JUSTIFIED,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :LYCANROC,
@@ -42906,7 +42928,7 @@ TEAMARRAY = [
         :ability => :SANDRUSH,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :TYRANITAR,
@@ -42916,7 +42938,7 @@ TEAMARRAY = [
         :ability => :SANDSTREAM,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -42932,7 +42954,7 @@ TEAMARRAY = [
         :ability => :SANDSTREAM,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :AERODACTYL,
@@ -42942,7 +42964,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :TERRAKION,
@@ -42952,7 +42974,7 @@ TEAMARRAY = [
         :ability => :JUSTIFIED,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :DIANCIE,
@@ -42962,7 +42984,7 @@ TEAMARRAY = [
         :ability => :CLEARBODY,
         :nature => :HASTY,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :NIHILEGO,
@@ -42972,7 +42994,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :TYRANITAR,
@@ -42982,7 +43004,7 @@ TEAMARRAY = [
         :ability => :SANDSTREAM,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -42997,7 +43019,7 @@ TEAMARRAY = [
         :ability => :SWIFTSWIM,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :AERODACTYL,
@@ -43007,7 +43029,7 @@ TEAMARRAY = [
         :ability => :UNNERVE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :NIHILEGO,
@@ -43017,7 +43039,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :KABUTOPS,
@@ -43027,7 +43049,7 @@ TEAMARRAY = [
         :ability => :SWIFTSWIM,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :OMASTAR,
@@ -43038,7 +43060,7 @@ TEAMARRAY = [
         :ability => :SWIFTSWIM,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :ARCHEOPS,
@@ -43048,7 +43070,7 @@ TEAMARRAY = [
         :ability => :DEFEATIST,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -43063,7 +43085,7 @@ TEAMARRAY = [
         :ability => :SHIELDSDOWN,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :AERODACTYL,
@@ -43073,7 +43095,7 @@ TEAMARRAY = [
         :ability => :ROCKHEAD,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :NIHILEGO,
@@ -43083,7 +43105,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :AURORUS,
@@ -43093,7 +43115,7 @@ TEAMARRAY = [
         :ability => :REFRIGERATE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :TERRAKION,
@@ -43103,7 +43125,7 @@ TEAMARRAY = [
         :ability => :JUSTIFIED,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :LYCANROC,
@@ -43114,7 +43136,7 @@ TEAMARRAY = [
         :form => 2,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -43139,17 +43161,17 @@ TEAMARRAY = [
         :ability => :SANDSTREAM,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :AURORUS,
         :level => 100,
         :item => :MAGICALSEED,
-        :moves => [:NATUREPOWER, :AURORABEAM, :SIGNALBEAM, :FLASHCANNON],
+        :moves => [:NATUREPOWER, :AURORABEAM, :EARTHPOWER, :FLASHCANNON],
         :ability => :REFRIGERATE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :RAMPARDOS,
@@ -43159,7 +43181,7 @@ TEAMARRAY = [
         :ability => :SHEERFORCE,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :RHYPERIOR,
@@ -43169,7 +43191,7 @@ TEAMARRAY = [
         :ability => :SOLIDROCK,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :REGIROCK,
@@ -43179,7 +43201,7 @@ TEAMARRAY = [
         :ability => :STURDY,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       }
     ]
   },
@@ -43194,7 +43216,7 @@ TEAMARRAY = [
         :ability => :SANDSTREAM,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :LYCANROC,
@@ -43214,7 +43236,7 @@ TEAMARRAY = [
         :ability => :SANDSTREAM,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :RHYPERIOR,
@@ -43224,7 +43246,7 @@ TEAMARRAY = [
         :ability => :SOLIDROCK,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :GOLEM,
@@ -43234,7 +43256,7 @@ TEAMARRAY = [
         :ability => :SANDVEIL,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :DIANCIE,
@@ -43280,7 +43302,7 @@ TEAMARRAY = [
         :ability => :NATURALCURE,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :NAGANADEL,
@@ -43326,7 +43348,7 @@ TEAMARRAY = [
         :ability => :TELEPATHY,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :NECROZMA,
@@ -43337,7 +43359,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :RAYQUAZA,
@@ -43347,7 +43369,7 @@ TEAMARRAY = [
         :ability => :AIRLOCK,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :KYUREM,
@@ -43435,7 +43457,7 @@ TEAMARRAY = [
         :form => 2,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :LATIAS,
@@ -43445,7 +43467,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -43460,7 +43482,7 @@ TEAMARRAY = [
         :ability => :SWIFTSWIM,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :PALKIA,
@@ -43470,7 +43492,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :LATIAS,
@@ -43480,7 +43502,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :LATIOS,
@@ -43490,7 +43512,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :GIRATINA,
@@ -43511,7 +43533,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -43526,7 +43548,7 @@ TEAMARRAY = [
         :ability => :TELEPATHY,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :ALTARIA,
@@ -43536,7 +43558,7 @@ TEAMARRAY = [
         :ability => :NATURALCURE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :NECROZMA,
@@ -43547,7 +43569,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :LATIAS,
@@ -43557,7 +43579,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :GARCHOMP,
@@ -43567,7 +43589,7 @@ TEAMARRAY = [
         :ability => :SANDVEIL,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :RAYQUAZA,
@@ -43577,7 +43599,7 @@ TEAMARRAY = [
         :ability => :AIRLOCK,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -43592,7 +43614,7 @@ TEAMARRAY = [
         :ability => :TELEPATHY,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :LATIAS,
@@ -43602,7 +43624,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :DRAMPA,
@@ -43613,7 +43635,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :PALKIA,
@@ -43623,17 +43645,17 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :LATIOS,
         :level => 100,
         :item => :SOULDEW,
-        :moves => [:CALMMIND, :LUSTERPURGE, :RECOVER, :HYPERVOICE],
+        :moves => [:CALMMIND, :LUSTERPURGE, :RECOVER, :DRAGONPULSE],
         :ability => :LEVITATE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :RAYQUAZA,
@@ -43643,7 +43665,7 @@ TEAMARRAY = [
         :ability => :AIRLOCK,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -43669,7 +43691,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SYLVEON,
@@ -43679,7 +43701,7 @@ TEAMARRAY = [
         :ability => :PIXILATE,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 0, 4, 252, 0]
+        :ev => [252, 0, 252, 4, 0, 0]
       },
       {
         :species => :JIRACHI,
@@ -43689,7 +43711,7 @@ TEAMARRAY = [
         :ability => :SERENEGRACE,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 0, 128, 128, 0]
+        :ev => [252, 0, 128, 128, 0, 0]
       },
       {
         :species => :PORYGONZ,
@@ -43699,7 +43721,7 @@ TEAMARRAY = [
         :ability => :ADAPTABILITY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :DARKRAI,
@@ -43734,7 +43756,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :AURORUS,
@@ -43744,13 +43766,13 @@ TEAMARRAY = [
         :ability => :REFRIGERATE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :BISHARP,
         :level => 100,
         :item => :BLACKGLASSES,
-        :moves => [:SWORDSDANCE, :KNOCKOFF, :IRONHEAD, :STRENGTH],
+        :moves => [:SWORDSDANCE, :KNOCKOFF, :IRONHEAD, :SUCKERPUNCH],
         :ability => :DEFIANT,
         :nature => :JOLLY,
         :iv => 31,
@@ -43766,7 +43788,7 @@ TEAMARRAY = [
         :nature => :BOLD,
         :iv => 31,
         :name => "Pyukmuk",
-        :ev => [252, 0, 156, 0, 100, 0]
+        :ev => [252, 0, 100, 0, 156, 0]
       },
       {
         :species => :REGIROCK,
@@ -43776,7 +43798,7 @@ TEAMARRAY = [
         :ability => :CLEARBODY,
         :nature => :IMPISH,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       }
     ]
   },
@@ -43801,7 +43823,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 56, 0, 200, 0]
+        :ev => [252, 0, 200, 0, 56, 0]
       },
       {
         :species => :SIGILYPH,
@@ -43811,7 +43833,7 @@ TEAMARRAY = [
         :ability => :MAGICGUARD,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [4, 0, 0, 0, 252, 252]
+        :ev => [4, 0, 252, 0, 0, 252]
       },
       {
         :species => :GARDEVOIR,
@@ -43822,7 +43844,7 @@ TEAMARRAY = [
         :ability => :TRACE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :XATU,
@@ -43877,7 +43899,7 @@ TEAMARRAY = [
         :ability => :TORRENT,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :NOIVERN,
@@ -43898,7 +43920,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :VOLCARONA,
@@ -43919,7 +43941,7 @@ TEAMARRAY = [
         :species => :STARMIE,
         :level => 100,
         :item => :MAGICALSEED,
-        :moves => [:POWERGEM, :SHADOWBALL, :HYDROPUMP, :DAZZLINGGLEAM],
+        :moves => [:POWERGEM, :FLASHCANNON, :HYDROPUMP, :DAZZLINGGLEAM],
         :ability => :NATURALCURE,
         :nature => :TIMID,
         :iv => 31,
@@ -43933,7 +43955,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :AEGISLASH,
@@ -43943,7 +43965,7 @@ TEAMARRAY = [
         :ability => :STANCECHANGE,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :DHELMISE,
@@ -43953,7 +43975,7 @@ TEAMARRAY = [
         :ability => :STEELWORKER,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :DOUBLADE,
@@ -43963,7 +43985,7 @@ TEAMARRAY = [
         :ability => :NOGUARD,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :DUSCLOPS,
@@ -43973,7 +43995,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :QUIET,
         :iv => 32,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       }
     ]
   },
@@ -44000,7 +44022,7 @@ TEAMARRAY = [
         :ability => :FRISK,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :LANTURN,
@@ -44010,7 +44032,7 @@ TEAMARRAY = [
         :ability => :VOLTABSORB,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :PRIMARINA,
@@ -44020,7 +44042,7 @@ TEAMARRAY = [
         :ability => :TORRENT,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 4, 252]
+        :ev => [252, 0, 4, 0, 0, 252]
       },
       {
         :species => :JOLTEON,
@@ -44042,7 +44064,7 @@ TEAMARRAY = [
         :ability => :STATIC,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       }
     ]
   },
@@ -44058,7 +44080,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [204, 252, 8, 0, 0, 44]
+        :ev => [204, 252, 0, 0, 8, 44]
       },
       {
         :species => :MANECTRIC,
@@ -44090,7 +44112,7 @@ TEAMARRAY = [
         :form => 2,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 4, 252]
+        :ev => [252, 0, 4, 0, 0, 252]
       },
       {
         :species => :ZAPDOS,
@@ -44106,7 +44128,8 @@ TEAMARRAY = [
         :species => :JOLTEON,
         :level => 100,
         :item => :SYNTHETICSEED,
-        :moves => [:SHADOWBALL, :THUNDERBOLT, :IRONHEAD, :XSCISSOR],
+        :moves => [:SHADOWBALL, :THUNDERBOLT, :SIGNALBEAM, :HIDDENPOWER],
+        :hptype => :ICE,
         :ability => :VOLTABSORB,
         :nature => :TIMID,
         :iv => 31,
@@ -44126,7 +44149,7 @@ TEAMARRAY = [
         :form => 3,
         :nature => :CALM,
         :iv => 31,
-        :ev => [0, 0, 252, 0, 4, 252]
+        :ev => [0, 0, 4, 0, 252, 252]
       },
       {
         :species => :ROTOM,
@@ -44138,7 +44161,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :CALM,
         :iv => 31,
-        :ev => [0, 0, 252, 0, 4, 252]
+        :ev => [0, 0, 4, 0, 252, 252]
       },
       {
         :species => :ROTOM,
@@ -44150,7 +44173,7 @@ TEAMARRAY = [
         :form => 5,
         :nature => :CALM,
         :iv => 31,
-        :ev => [0, 0, 252, 0, 4, 252]
+        :ev => [0, 0, 4, 0, 252, 252]
       },
       {
         :species => :ROTOM,
@@ -44161,7 +44184,7 @@ TEAMARRAY = [
         :form => 2,
         :nature => :CALM,
         :iv => 31,
-        :ev => [0, 0, 252, 0, 4, 252]
+        :ev => [0, 0, 4, 0, 252, 252]
       },
       {
         :species => :PORYGON2,
@@ -44171,7 +44194,7 @@ TEAMARRAY = [
         :ability => :DOWNLOAD,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 252, 0, 4, 252]
+        :ev => [0, 0, 4, 0, 252, 252]
       },
       {
         :species => :PORYGONZ,
@@ -44181,7 +44204,7 @@ TEAMARRAY = [
         :ability => :ADAPTABILITY,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 252, 0, 4, 252]
+        :ev => [0, 0, 4, 0, 252, 252]
       }
     ]
   },
@@ -44196,7 +44219,7 @@ TEAMARRAY = [
         :ability => :SNOWWARNING,
         :nature => :SASSY,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :WALREIN,
@@ -44206,7 +44229,7 @@ TEAMARRAY = [
         :ability => :ICEBODY,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 128, 0, 0, 128]
+        :ev => [252, 0, 0, 0, 128, 128]
       },
       {
         :species => :ABOMASNOW,
@@ -44226,7 +44249,7 @@ TEAMARRAY = [
         :ability => :ICEBODY,
         :nature => :IMPISH,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :GLACEON,
@@ -44236,18 +44259,18 @@ TEAMARRAY = [
         :ability => :ICEBODY,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 128, 0, 0, 128]
+        :ev => [252, 0, 0, 0, 128, 128]
       },
       {
         :species => :GLALIE,
         :level => 100,
         :item => :LEFTOVERS,
-        :moves => [:SUBSTITUTE, :PROTECT, :OVERHEAT, :FRUSTRATION],
+        :moves => [:SUBSTITUTE, :PROTECT, :ICEBEAM, :FRUSTRATION],
         :ability => :MOODY,
         :nature => :IMPISH,
         :iv => 31,
         :happiness => 0,
-        :ev => [252, 0, 56, 0, 200, 0]
+        :ev => [252, 0, 200, 0, 56, 0]
       }
     ]
   },
@@ -44262,7 +44285,7 @@ TEAMARRAY = [
         :ability => :THICKFAT,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 200, 0, 56, 0]
+        :ev => [252, 0, 56, 0, 200, 0]
       },
       {
         :species => :STARMIE,
@@ -44272,7 +44295,7 @@ TEAMARRAY = [
         :ability => :ILLUMINATE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 4, 252]
+        :ev => [252, 0, 4, 0, 0, 252]
       },
       {
         :species => :GLACEON,
@@ -44292,7 +44315,7 @@ TEAMARRAY = [
         :ability => :TRACE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 200, 0, 56, 0]
+        :ev => [252, 0, 56, 0, 200, 0]
       },
       {
         :species => :GLALIE,
@@ -44302,7 +44325,7 @@ TEAMARRAY = [
         :ability => :MOODY,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :SANDSLASH,
@@ -44314,7 +44337,7 @@ TEAMARRAY = [
         :nature => :IMPISH,
         :iv => 31,
         :happiness => 0,
-        :ev => [252, 0, 56, 0, 200, 0]
+        :ev => [252, 0, 200, 0, 56, 0]
       }
     ]
   },
@@ -44330,7 +44353,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :PRIMARINA,
@@ -44342,7 +44365,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :GARDEVOIR,
@@ -44354,7 +44377,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :BELLOSSOM,
@@ -44366,7 +44389,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 128, 128, 0, 252]
+        :ev => [0, 0, 0, 128, 128, 252]
       },
       {
         :species => :MISMAGIUS,
@@ -44378,7 +44401,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :LOPUNNY,
@@ -44389,7 +44412,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       }
     ]
   },
@@ -44414,7 +44437,7 @@ TEAMARRAY = [
         :ability => :WATERABSORB,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :CLEFABLE,
@@ -44424,7 +44447,7 @@ TEAMARRAY = [
         :ability => :MAGICGUARD,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 0, 4, 252, 0]
+        :ev => [252, 0, 252, 4, 0, 0]
       },
       {
         :species => :ALTARIA,
@@ -44434,7 +44457,7 @@ TEAMARRAY = [
         :ability => :NATURALCURE,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :MELOETTA,
@@ -44455,7 +44478,7 @@ TEAMARRAY = [
         :ability => :TORRENT,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       }
     ]
   },
@@ -44481,7 +44504,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :MIMIKYU,
@@ -44501,7 +44524,7 @@ TEAMARRAY = [
         :ability => :SERENEGRACE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :ROSERADE,
@@ -44511,7 +44534,7 @@ TEAMARRAY = [
         :ability => :POISONPOINT,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :NIDOKING,
@@ -44538,7 +44561,7 @@ TEAMARRAY = [
         :ability => :BLAZE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :LUCARIO,
@@ -44548,7 +44571,7 @@ TEAMARRAY = [
         :ability => :STEADFAST,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :DARMANITAN,
@@ -44559,7 +44582,7 @@ TEAMARRAY = [
         :ability => :ZENMODE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :BLAZIKEN,
@@ -44579,9 +44602,9 @@ TEAMARRAY = [
         :moves => [:FOCUSBLAST, :HIDDENPOWER, :SPECTRALTHIEF, :SHADOWSNEAK],
         :hptype => :ICE,
         :ability => :TECHNICIAN,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :KELDEO,
@@ -44592,7 +44615,7 @@ TEAMARRAY = [
         :ability => :JUSTIFIED,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -44607,7 +44630,7 @@ TEAMARRAY = [
         :ability => :VICTORYSTAR,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :DRAMPA,
@@ -44617,7 +44640,7 @@ TEAMARRAY = [
         :ability => :BERSERK,
         :nature => :QUIET,
         :iv => 32,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :TORKOAL,
@@ -44627,7 +44650,7 @@ TEAMARRAY = [
         :ability => :WHITESMOKE,
         :nature => :QUIET,
         :iv => 32,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :CAMERUPT,
@@ -44637,7 +44660,7 @@ TEAMARRAY = [
         :ability => :MAGMAARMOR,
         :nature => :QUIET,
         :iv => 32,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :FLAREON,
@@ -44648,7 +44671,7 @@ TEAMARRAY = [
         :ability => :FLASHFIRE,
         :nature => :QUIET,
         :iv => 32,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :TURTONATOR,
@@ -44658,7 +44681,7 @@ TEAMARRAY = [
         :ability => :SHELLARMOR,
         :nature => :QUIET,
         :iv => 32,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       }
     ]
   },
@@ -44672,7 +44695,7 @@ TEAMARRAY = [
         :moves => [:EXTREMESPEED, :SACREDFIRE, :HIDDENPOWER, :SOLARBEAM],
         :hptype => :GROUND,
         :ability => :PRESSURE,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
         :ev => [0, 80, 0, 252, 0, 176]
       },
@@ -44684,7 +44707,7 @@ TEAMARRAY = [
         :ability => :PUREPOWER,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :DELPHOX,
@@ -44714,9 +44737,9 @@ TEAMARRAY = [
         :moves => [:SOLARBEAM, :THUNDERBOLT, :FLAMETHROWER, :HIDDENPOWER],
         :hptype => :ICE,
         :ability => :FLAMEBODY,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :VICTINI,
@@ -44727,7 +44750,7 @@ TEAMARRAY = [
         :ability => :VICTORYSTAR,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -44798,7 +44821,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :hptype => :PSYCHIC,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -44813,7 +44836,7 @@ TEAMARRAY = [
         :ability => :FAIRYAURA,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :DRAMPA,
@@ -44824,7 +44847,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :XURKITREE,
@@ -44834,17 +44857,17 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :CELEBI,
         :level => 100,
         :item => :MINDPLATE,
-        :moves => [:NATUREPOWER, :UTURN, :HYPERVOICE, :RECOVER],
+        :moves => [:NATUREPOWER, :UTURN, :MAGICALLEAF, :RECOVER],
         :ability => :NATURALCURE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 4, 252]
+        :ev => [252, 0, 4, 0, 0, 252]
       },
       {
         :species => :HEATRAN,
@@ -44854,7 +44877,7 @@ TEAMARRAY = [
         :ability => :FLASHFIRE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SHAYMIN,
@@ -44866,7 +44889,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -44891,7 +44914,7 @@ TEAMARRAY = [
         :ability => :ADAPTABILITY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :MELOETTA,
@@ -44911,7 +44934,7 @@ TEAMARRAY = [
         :ability => :ROUGHSKIN,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 4, 252]
+        :ev => [252, 0, 4, 0, 0, 252]
       },
       {
         :species => :DRAMPA,
@@ -44921,7 +44944,7 @@ TEAMARRAY = [
         :ability => :BERSERK,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :KANGASKHAN,
@@ -44948,7 +44971,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :GARCHOMP,
@@ -44959,7 +44982,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :SERIOUS,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 4, 252]
+        :ev => [252, 0, 4, 0, 0, 252]
       },
       {
         :species => :TAPUBULU,
@@ -44969,7 +44992,7 @@ TEAMARRAY = [
         :ability => :GRASSYSURGE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :SAWSBUCK,
@@ -44980,7 +45003,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :happiness => 255,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :PYROAR,
@@ -44992,7 +45015,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :MODEST,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :KOMMOO,
@@ -45000,7 +45023,7 @@ TEAMARRAY = [
         :item => :ASSAULTVEST,
         :moves => [:CLANGINGSCALES, :CLOSECOMBAT, :FIREPUNCH, :POISONJAB],
         :ability => :BULLETPROOF,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
         :ev => [4, 252, 0, 0, 0, 252]
       }
@@ -45013,11 +45036,11 @@ TEAMARRAY = [
         :species => :EMPOLEON,
         :level => 100,
         :item => :TELLURICSEED,
-        :moves => [:AQUAJET, :STEALTHROCK, :KNOCKOFF, :IRONHEAD],
+        :moves => [:AQUAJET, :STEALTHROCK, :KNOCKOFF, :STEELWING],
         :ability => :DEFIANT,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :MILOTIC,
@@ -45027,7 +45050,7 @@ TEAMARRAY = [
         :ability => :COMPETITIVE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [128, 0, 0, 252, 128, 0]
+        :ev => [128, 0, 128, 252, 0, 0]
       },
       {
         :species => :LURANTIS,
@@ -45037,7 +45060,7 @@ TEAMARRAY = [
         :ability => :CONTRARY,
         :nature => :RASH,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :SERPERIOR,
@@ -45058,7 +45081,7 @@ TEAMARRAY = [
         :ability => :CONTRARY,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :BISHARP,
@@ -45068,7 +45091,7 @@ TEAMARRAY = [
         :ability => :DEFIANT,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       }
     ]
   },
@@ -45093,7 +45116,7 @@ TEAMARRAY = [
         :ability => :QUEENLYMAJESTY,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :WHIMSICOTT,
@@ -45103,7 +45126,7 @@ TEAMARRAY = [
         :ability => :PRANKSTER,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SCEPTILE,
@@ -45113,7 +45136,7 @@ TEAMARRAY = [
         :ability => :OVERGROW,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :TORTERRA,
@@ -45123,7 +45146,7 @@ TEAMARRAY = [
         :ability => :SHELLARMOR,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :TREVENANT,
@@ -45133,7 +45156,7 @@ TEAMARRAY = [
         :ability => :HARVEST,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       }
     ]
   },
@@ -45158,7 +45181,7 @@ TEAMARRAY = [
         :ability => :FRISK,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :MANAPHY,
@@ -45168,7 +45191,7 @@ TEAMARRAY = [
         :ability => :HYDRATION,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :RAICHU,
@@ -45179,7 +45202,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :AMBIPOM,
@@ -45216,7 +45239,7 @@ TEAMARRAY = [
         :ability => :SWEETVEIL,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 4, 252]
+        :ev => [252, 0, 4, 0, 0, 252]
       },
       {
         :species => :LOPUNNY,
@@ -45237,7 +45260,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 56, 0, 200, 0]
+        :ev => [252, 0, 200, 0, 56, 0]
       },
       {
         :species => :DELCATTY,
@@ -45268,7 +45291,7 @@ TEAMARRAY = [
         :ability => :SNOWCLOAK,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       }
     ]
   },
@@ -45294,7 +45317,7 @@ TEAMARRAY = [
         :ability => :DRIZZLE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :ROTOM,
@@ -45316,7 +45339,7 @@ TEAMARRAY = [
         :ability => :SERENEGRACE,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :BEARTIC,
@@ -45336,7 +45359,7 @@ TEAMARRAY = [
         :ability => :WATERABSORB,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       }
     ]
   },
@@ -45362,7 +45385,7 @@ TEAMARRAY = [
         :ability => :MAGICIAN,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SOLGALEO,
@@ -45403,7 +45426,7 @@ TEAMARRAY = [
         :ability => :GOOEY,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 200, 56, 0, 0]
+        :ev => [252, 0, 0, 56, 200, 0]
       }
     ]
   },
@@ -45418,7 +45441,7 @@ TEAMARRAY = [
         :ability => :ILLUSION,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 4, 252, 0, 0]
+        :ev => [252, 0, 0, 252, 4, 0]
       },
       {
         :species => :ZAPDOS,
@@ -45429,7 +45452,7 @@ TEAMARRAY = [
         :ability => :STATIC,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :ZEBSTRIKA,
@@ -45450,7 +45473,7 @@ TEAMARRAY = [
         :nature => :IMPISH,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 0, 200, 0, 56, 0]
+        :ev => [252, 0, 56, 0, 200, 0]
       },
       {
         :species => :ZERAORA,
@@ -45487,7 +45510,7 @@ TEAMARRAY = [
         :ability => :DARKAURA,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :UMBREON,
@@ -45497,7 +45520,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 200, 0, 56, 0]
+        :ev => [252, 0, 56, 0, 200, 0]
       },
       {
         :species => :HOUNDOOM,
@@ -45540,7 +45563,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :happiness => 255,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -45555,7 +45578,7 @@ TEAMARRAY = [
         :ability => :ADAPTABILITY,
         :nature => :IMPISH,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :UMBREON,
@@ -45565,7 +45588,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :ESPEON,
@@ -45597,7 +45620,7 @@ TEAMARRAY = [
         :ability => :WATERABSORB,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       },
       {
         :species => :JOLTEON,
@@ -45623,7 +45646,7 @@ TEAMARRAY = [
         :ability => :TECHNICIAN,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :CINCCINO,
@@ -45653,7 +45676,7 @@ TEAMARRAY = [
         :ability => :TECHNICIAN,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :MRMIME,
@@ -45673,7 +45696,7 @@ TEAMARRAY = [
         :ability => :TECHNICIAN,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       }
     ]
   },
@@ -45689,7 +45712,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :RASH,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :NAGANADEL,
@@ -45697,7 +45720,7 @@ TEAMARRAY = [
         :item => :CHOICESPECS,
         :moves => [:OUTRAGE, :FIREBLAST, :THUNDERBOLT, :UTURN],
         :ability => :BEASTBOOST,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
         :ev => [4, 0, 0, 252, 0, 252]
       },
@@ -45710,7 +45733,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [4, 0, 0, 252, 252, 0]
+        :ev => [4, 0, 252, 252, 0, 0]
       },
       {
         :species => :PHEROMOSA,
@@ -45718,7 +45741,7 @@ TEAMARRAY = [
         :item => :LIFEORB,
         :moves => [:UTURN, :HIJUMPKICK, :BLIZZARD, :OUTRAGE],
         :ability => :BEASTBOOST,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
         :ev => [4, 252, 0, 0, 0, 252]
       },
@@ -45730,7 +45753,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [4, 0, 0, 0, 252, 252]
+        :ev => [4, 0, 252, 0, 0, 252]
       },
       {
         :species => :STAKATAKA,
@@ -45740,7 +45763,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 4, 252, 0, 0, 0]
+        :ev => [252, 4, 0, 0, 252, 0]
       }
     ]
   },
@@ -45755,7 +45778,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 0, 56, 200, 0]
+        :ev => [252, 0, 200, 56, 0, 0]
       },
       {
         :species => :UMBREON,
@@ -45765,7 +45788,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [252, 0, 0, 0, 4, 252]
+        :ev => [252, 0, 4, 0, 0, 252]
       },
       {
         :species => :TOGEKISS,
@@ -45786,7 +45809,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [104, 0, 0, 0, 252, 152]
+        :ev => [104, 0, 252, 0, 0, 152]
       },
       {
         :species => :ESPEON,
@@ -45796,7 +45819,7 @@ TEAMARRAY = [
         :ability => :MAGICBOUNCE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [4, 0, 0, 252, 252, 0]
+        :ev => [4, 0, 252, 252, 0, 0]
       },
       {
         :species => :LUNALA,
@@ -45806,7 +45829,7 @@ TEAMARRAY = [
         :ability => :SHADOWSHIELD,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [200, 0, 0, 252, 4, 52]
+        :ev => [200, 0, 4, 252, 0, 52]
       }
     ]
   },
@@ -45837,7 +45860,7 @@ TEAMARRAY = [
         :species => :RAYQUAZA,
         :level => 100,
         :item => :TELLURICSEED,
-        :moves => [:TWISTER, :ICYWIND, :THUNDER, :GUST],
+        :moves => [:TWISTER, :ICYWIND, :THUNDER, :ANCIENTPOWER],
         :ability => :AIRLOCK,
         :nature => :TIMID,
         :iv => 31,
@@ -45897,7 +45920,7 @@ TEAMARRAY = [
         :ability => :MERCILESS,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :NIHILEGO,
@@ -45917,7 +45940,7 @@ TEAMARRAY = [
         :ability => :TOXICBOOST,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :BRELOOM,
@@ -45927,7 +45950,7 @@ TEAMARRAY = [
         :ability => :POISONHEAL,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :VENOMOTH,
@@ -45937,7 +45960,7 @@ TEAMARRAY = [
         :ability => :SHIELDDUST,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -45965,7 +45988,7 @@ TEAMARRAY = [
         :ability => :POISONPOINT,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :DRAGONITE,
@@ -45995,7 +46018,7 @@ TEAMARRAY = [
         :ability => :AIRLOCK,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :CROBAT,
@@ -46005,7 +46028,7 @@ TEAMARRAY = [
         :ability => :INFILTRATOR,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -46031,7 +46054,7 @@ TEAMARRAY = [
         :form => 1,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :DECIDUEYE,
@@ -46041,7 +46064,7 @@ TEAMARRAY = [
         :ability => :LONGREACH,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :TOXICROAK,
@@ -46051,7 +46074,7 @@ TEAMARRAY = [
         :ability => :ANTICIPATION,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :CROBAT,
@@ -46086,7 +46109,7 @@ TEAMARRAY = [
         :ability => :FLOWERVEIL,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 0, 4, 252, 0]
+        :ev => [252, 0, 252, 4, 0, 0]
       },
       {
         :species => :WHIMSICOTT,
@@ -46107,7 +46130,7 @@ TEAMARRAY = [
         :ability => :FLOWERVEIL,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :LILLIGANT,
@@ -46128,13 +46151,13 @@ TEAMARRAY = [
         :ability => :GRASSYSURGE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :ROSERADE,
         :level => 100,
         :item => :CHOICESPECS,
-        :moves => [:SLUDGEWAVE, :GIGADRAIN, :EXTRASENSORY, :HIDDENPOWER],
+        :moves => [:SLUDGEBOMB, :GIGADRAIN, :EXTRASENSORY, :HIDDENPOWER],
         :hptype => :FIRE,
         :ability => :NATURALCURE,
         :nature => :TIMID,
@@ -46164,7 +46187,7 @@ TEAMARRAY = [
         :ability => :QUEENLYMAJESTY,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :KARTANA,
@@ -46184,7 +46207,7 @@ TEAMARRAY = [
         :ability => :INTIMIDATE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :MAGEARNA,
@@ -46249,7 +46272,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 56, 0, 200, 0]
+        :ev => [252, 0, 200, 0, 56, 0]
       },
       {
         :species => :SIMISAGE,
@@ -46258,7 +46281,7 @@ TEAMARRAY = [
         :moves => [:KNOCKOFF, :HIDDENPOWER, :GIGADRAIN, :ROCKSLIDE],
         :hptype => :PSYCHIC,
         :ability => :GLUTTONY,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
         :ev => [0, 128, 0, 128, 0, 252]
       },
@@ -46270,7 +46293,7 @@ TEAMARRAY = [
         :ability => :PRISMARMOR,
         :nature => :MODEST,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       }
     ]
   },
@@ -46285,7 +46308,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :STAKATAKA,
@@ -46295,7 +46318,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :SASSY,
         :iv => 32,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :STAKATAKA,
@@ -46305,7 +46328,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :STAKATAKA,
@@ -46315,7 +46338,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :STAKATAKA,
@@ -46325,7 +46348,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :SASSY,
         :iv => 32,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :STAKATAKA,
@@ -46335,7 +46358,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       }
     ]
   },
@@ -46350,7 +46373,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :STAKATAKA,
@@ -46360,7 +46383,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :SASSY,
         :iv => 32,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :STAKATAKA,
@@ -46370,7 +46393,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :STAKATAKA,
@@ -46380,7 +46403,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :STAKATAKA,
@@ -46390,7 +46413,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :SASSY,
         :iv => 32,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :STAKATAKA,
@@ -46400,7 +46423,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       }
     ]
   },
@@ -46418,7 +46441,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :AERODACTYL,
@@ -46448,7 +46471,7 @@ TEAMARRAY = [
         :ability => :FLAMEBODY,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :HOOH,
@@ -46468,7 +46491,7 @@ TEAMARRAY = [
         :ability => :MAGICIAN,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -46486,7 +46509,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :AERODACTYL,
@@ -46516,7 +46539,7 @@ TEAMARRAY = [
         :ability => :FLAMEBODY,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :HOOH,
@@ -46536,7 +46559,7 @@ TEAMARRAY = [
         :ability => :MAGICIAN,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -46559,7 +46582,7 @@ TEAMARRAY = [
         :item => :LIFEORB,
         :moves => [:HYPERVOICE, :ANCIENTPOWER, :BRAVEBIRD, :SACREDFIRE],
         :ability => :REGENERATOR,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
         :ev => [0, 56, 0, 200, 0, 252]
       },
@@ -46571,7 +46594,7 @@ TEAMARRAY = [
         :ability => :POISONHEAL,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 56, 0, 200, 0]
+        :ev => [252, 0, 200, 0, 56, 0]
       },
       {
         :species => :ZAPDOS,
@@ -46581,7 +46604,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :CRADILY,
@@ -46591,7 +46614,7 @@ TEAMARRAY = [
         :ability => :STORMDRAIN,
         :nature => :IMPISH,
         :iv => 31,
-        :ev => [252, 0, 200, 0, 56, 0]
+        :ev => [252, 0, 56, 0, 200, 0]
       },
       {
         :species => :CHARIZARD,
@@ -46601,7 +46624,7 @@ TEAMARRAY = [
         :ability => :SOLARPOWER,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -46624,7 +46647,7 @@ TEAMARRAY = [
         :item => :LIFEORB,
         :moves => [:HYPERVOICE, :ANCIENTPOWER, :BRAVEBIRD, :SACREDFIRE],
         :ability => :REGENERATOR,
-        :nature => :SERIOUS,
+        :nature => :NAIVE,
         :iv => 31,
         :ev => [0, 56, 0, 200, 0, 252]
       },
@@ -46636,7 +46659,7 @@ TEAMARRAY = [
         :ability => :POISONHEAL,
         :nature => :CAREFUL,
         :iv => 31,
-        :ev => [252, 0, 56, 0, 200, 0]
+        :ev => [252, 0, 200, 0, 56, 0]
       },
       {
         :species => :ZAPDOS,
@@ -46646,7 +46669,7 @@ TEAMARRAY = [
         :ability => :PRESSURE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :CRADILY,
@@ -46656,7 +46679,7 @@ TEAMARRAY = [
         :ability => :STORMDRAIN,
         :nature => :IMPISH,
         :iv => 31,
-        :ev => [252, 0, 200, 0, 56, 0]
+        :ev => [252, 0, 56, 0, 200, 0]
       },
       {
         :species => :CHARIZARD,
@@ -46666,7 +46689,7 @@ TEAMARRAY = [
         :ability => :SOLARPOWER,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -46681,7 +46704,7 @@ TEAMARRAY = [
         :ability => :SWEETVEIL,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :GARCHOMP,
@@ -46711,7 +46734,7 @@ TEAMARRAY = [
         :ability => :STANCECHANGE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :LUCARIO,
@@ -46731,7 +46754,7 @@ TEAMARRAY = [
         :ability => :KEENEYE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -46746,7 +46769,7 @@ TEAMARRAY = [
         :ability => :SWEETVEIL,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :GARCHOMP,
@@ -46776,7 +46799,7 @@ TEAMARRAY = [
         :ability => :STANCECHANGE,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [252, 252, 4, 0, 0, 0]
+        :ev => [252, 252, 0, 0, 4, 0]
       },
       {
         :species => :LUCARIO,
@@ -46792,11 +46815,11 @@ TEAMARRAY = [
         :species => :CHATOT,
         :level => 100,
         :item => :ELEMENTALSEED,
-        :moves => [:HURRICANE, :BOOMBURST, :HEATWAVE, :NASTYPLOT],
+        :moves => [:CHATTER, :BOOMBURST, :HEATWAVE, :NASTYPLOT],
         :ability => :KEENEYE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       }
     ]
   },
@@ -46821,7 +46844,7 @@ TEAMARRAY = [
         :ability => :JUSTIFIED,
         :nature => :ADAMANT,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :GALLADE,
@@ -46831,7 +46854,7 @@ TEAMARRAY = [
         :ability => :JUSTIFIED,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :LUCARIO,
@@ -46851,7 +46874,7 @@ TEAMARRAY = [
         :ability => :JUSTIFIED,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :KELDEO,
@@ -46917,7 +46940,7 @@ TEAMARRAY = [
         :ability => :HYPERCUTTER,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :MEDICHAM,
@@ -46952,7 +46975,7 @@ TEAMARRAY = [
         :ability => :PUREPOWER,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :TSAREENA,
@@ -46982,7 +47005,7 @@ TEAMARRAY = [
         :ability => :TECHNICIAN,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 0, 0, 4, 252]
+        :ev => [0, 252, 4, 0, 0, 252]
       },
       {
         :species => :INCINEROAR,
@@ -47014,12 +47037,12 @@ TEAMARRAY = [
         :species => :ESCAVALIER,
         :level => 100,
         :item => :ASSAULTVEST,
-        :moves => [:SMARTSTRIKE, :MEGAHORN, :EARTHQUAKE, :KNOCKOFF],
+        :moves => [:SMARTSTRIKE, :MEGAHORN, :POISONJAB, :KNOCKOFF],
         :ability => :OVERCOAT,
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :CHANDELURE,
@@ -47036,12 +47059,12 @@ TEAMARRAY = [
         :species => :GOLISOPOD,
         :level => 100,
         :item => :ASSAULTVEST,
-        :moves => [:FIRSTIMPRESSION, :STRENGTH, :LIQUIDATION, :KNOCKOFF],
+        :moves => [:FIRSTIMPRESSION, :SUCKERPUNCH, :LIQUIDATION, :KNOCKOFF],
         :ability => :EMERGENCYEXIT,
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :HEATRAN,
@@ -47052,7 +47075,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :TYPHLOSION,
@@ -47089,7 +47112,7 @@ TEAMARRAY = [
         :ability => :BEASTBOOST,
         :nature => :HASTY,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :BUZZWOLE,
@@ -47100,7 +47123,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 0, 56, 0, 200, 0]
+        :ev => [252, 0, 200, 0, 56, 0]
       },
       {
         :species => :SCIZOR,
@@ -47111,7 +47134,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 255,
-        :ev => [252, 252, 0, 0, 4, 0]
+        :ev => [252, 252, 4, 0, 0, 0]
       },
       {
         :species => :LILLIGANT,
@@ -47169,7 +47192,7 @@ TEAMARRAY = [
         :ability => :SHIELDDUST,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :GENESECT,
@@ -47180,7 +47203,7 @@ TEAMARRAY = [
         :form => 2,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 0, 252]
+        :ev => [252, 0, 0, 0, 4, 252]
       },
       {
         :species => :VOLCARONA,
@@ -47216,7 +47239,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :DELPHOX,
@@ -47227,7 +47250,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :HOOPA,
@@ -47237,7 +47260,7 @@ TEAMARRAY = [
         :ability => :MAGICIAN,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :GARDEVOIR,
@@ -47248,7 +47271,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :GALLADE,
@@ -47259,7 +47282,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :NECROZMA,
@@ -47285,7 +47308,7 @@ TEAMARRAY = [
         :ability => :MAGICGUARD,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :LUGIA,
@@ -47296,7 +47319,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :CALM,
         :iv => 31,
-        :ev => [252, 0, 252, 0, 4, 0]
+        :ev => [252, 0, 4, 0, 252, 0]
       },
       {
         :species => :VICTINI,
@@ -47306,7 +47329,7 @@ TEAMARRAY = [
         :ability => :VICTORYSTAR,
         :nature => :JOLLY,
         :iv => 31,
-        :ev => [0, 252, 4, 0, 0, 252]
+        :ev => [0, 252, 0, 0, 4, 252]
       },
       {
         :species => :DELPHOX,
@@ -47317,7 +47340,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :ALAKAZAM,
@@ -47328,7 +47351,7 @@ TEAMARRAY = [
         :ability => :MAGICGUARD,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :REUNICLUS,
@@ -47340,7 +47363,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 4, 0, 252, 0]
+        :ev => [252, 0, 252, 0, 4, 0]
       }
     ]
   },
@@ -47355,7 +47378,7 @@ TEAMARRAY = [
         :ability => :ILLUSION,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :GENGAR,
@@ -47365,7 +47388,7 @@ TEAMARRAY = [
         :ability => :CURSEDBODY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :ZOROARK,
@@ -47375,7 +47398,7 @@ TEAMARRAY = [
         :ability => :ILLUSION,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :GENGAR,
@@ -47385,7 +47408,7 @@ TEAMARRAY = [
         :ability => :CURSEDBODY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :ZOROARK,
@@ -47395,7 +47418,7 @@ TEAMARRAY = [
         :ability => :ILLUSION,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :GENGAR,
@@ -47405,7 +47428,7 @@ TEAMARRAY = [
         :ability => :CURSEDBODY,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -47420,7 +47443,7 @@ TEAMARRAY = [
         :ability => :TORRENT,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 0, 252, 4, 0]
+        :ev => [252, 0, 4, 252, 0, 0]
       },
       {
         :species => :XERNEAS,
@@ -47430,7 +47453,7 @@ TEAMARRAY = [
         :ability => :FAIRYAURA,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [200, 0, 0, 0, 56, 252]
+        :ev => [200, 0, 56, 0, 0, 252]
       },
       {
         :species => :MINIOR,
@@ -47454,7 +47477,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :RASH,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :LUNALA,
@@ -47476,7 +47499,7 @@ TEAMARRAY = [
         :gender => "M",
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -47491,7 +47514,7 @@ TEAMARRAY = [
         :ability => :MAGICGUARD,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 4, 252, 0, 252]
+        :ev => [0, 0, 0, 252, 4, 252]
       },
       {
         :species => :BISHARP,
@@ -47512,7 +47535,7 @@ TEAMARRAY = [
         :ability => :LEVITATE,
         :nature => :BRAVE,
         :iv => 32,
-        :ev => [252, 0, 156, 0, 100, 0]
+        :ev => [252, 0, 100, 0, 156, 0]
       },
       {
         :species => :NECROZMA,
@@ -47545,7 +47568,7 @@ TEAMARRAY = [
         :shiny => true,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -47560,7 +47583,7 @@ TEAMARRAY = [
         :ability => :SNOWCLOAK,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :UMBREON,
@@ -47570,7 +47593,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :BOLD,
         :iv => 31,
-        :ev => [252, 0, 56, 0, 200, 0]
+        :ev => [252, 0, 200, 0, 56, 0]
       },
       {
         :species => :ESPEON,
@@ -47580,7 +47603,7 @@ TEAMARRAY = [
         :ability => :SYNCHRONIZE,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :GARCHOMP,
@@ -47612,7 +47635,7 @@ TEAMARRAY = [
         :ability => :TANGLEDFEET,
         :nature => :TIMID,
         :iv => 31,
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       }
     ]
   },
@@ -47650,7 +47673,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "orcas",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SILVALLY,
@@ -47661,7 +47684,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :name => "keys",
-        :ev => [0, 0, 0, 252, 4, 252]
+        :ev => [0, 0, 4, 252, 0, 252]
       },
       {
         :species => :SILVALLY,
@@ -49223,7 +49246,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Eclipse",
-        :ev => [2520, 252, 582, 2520, 692, 416]
+        :ev => [2520, 252, 692, 2520, 582, 416]
       }
     ]
   },
@@ -49307,7 +49330,7 @@ TEAMARRAY = [
         :nature => :TIMID,
         :iv => 31,
         :name => "Eclipse",
-        :ev => [2520, 252, 582, 2520, 692, 416]
+        :ev => [2520, 252, 692, 2520, 582, 416]
       }
     ]
   },
@@ -49462,7 +49485,7 @@ TEAMARRAY = [
         :iv => 32,
         :happiness => 255,
         :name => "iron bar",
-        :ev => [252, 252, 0, 252, 252, 252]
+        :ev => [252, 252, 252, 252, 0, 252]
       }
     ]
   },
@@ -49480,7 +49503,7 @@ TEAMARRAY = [
         :nature => :ADAMANT,
         :iv => 31,
         :happiness => 0,
-        :ev => [628, 732, 636, 252, 560, 1020]
+        :ev => [628, 732, 560, 252, 636, 1020]
       },
       {
         :species => :SKITTY,
@@ -49492,7 +49515,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :happiness => 0,
-        :ev => [312, 980, 740, 252, 644, 1024]
+        :ev => [312, 980, 644, 252, 740, 1024]
       },
       {
         :species => :EEVEE,
@@ -49504,7 +49527,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :happiness => 0,
-        :ev => [312, 912, 492, 252, 484, 692]
+        :ev => [312, 912, 484, 252, 492, 692]
       },
       {
         :species => :FENNEKIN,
@@ -49516,7 +49539,7 @@ TEAMARRAY = [
         :nature => :MODEST,
         :iv => 31,
         :happiness => 0,
-        :ev => [532, 252, 372, 728, 508, 604]
+        :ev => [532, 252, 508, 728, 372, 604]
       },
       {
         :species => :GLAMEOW,
@@ -49528,7 +49551,7 @@ TEAMARRAY = [
         :nature => :JOLLY,
         :iv => 31,
         :happiness => 0,
-        :ev => [780, 860, 516, 252, 596, 292]
+        :ev => [780, 860, 596, 252, 516, 292]
       },
       {
         :species => :ABSOL,

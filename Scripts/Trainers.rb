@@ -14,6 +14,19 @@ def pbLoadTrainer(type, name, id)
   for poke in trainer[1]
     species = poke[:species]
     level = poke[:level]
+    if $game_switches[2316]
+      # For FEAR Pokemon
+      if level == 1
+        level = 1
+      # The password only applies once you have more than one badge.
+      elsif $Trainer.numbadges > 0
+        # If the opponent Pokemon's level is less than the previous non-postgame level cap (caps at 95), plus the
+        # extended maximum level from the postgame, then it increased to equal that
+        if level < LEVELCAPS[$Trainer.numbadges - 1] + $game_variables[:Extended_Max_Level]
+          level = LEVELCAPS[$Trainer.numbadges - 1] + $game_variables[:Extended_Max_Level]
+        end
+      end
+    end
     form = poke[:form] ? poke[:form] : 0
     pokemon = PokeBattle_Pokemon.new(species, level, opponent, false, form)
     pokemon.setItem(poke[:item])
@@ -99,11 +112,10 @@ end
 def pbMissingTrainer(trainerid, trainername, trainerparty)
   traineridstring = "#{trainerid}"
   if $DEBUG
-    message = ""
     if trainerparty != 0
-      message = (_INTL("Add new trainer ({1}, {2}, ID {3})?", traineridstring, trainername, trainerparty))
+      message = _INTL("Add new trainer ({1}, {2}, ID {3})?", traineridstring, trainername, trainerparty)
     else
-      message = (_INTL("Add new trainer ({1}, {2})?", traineridstring, trainername))
+      message = _INTL("Add new trainer ({1}, {2})?", traineridstring, trainername)
     end
     cmd = Kernel.pbMessage(message, [_INTL("Yes"), _INTL("No")], 2)
     if cmd == 0
@@ -168,6 +180,7 @@ def pbDoubleTrainerBattle(
   # ##Yumil - 15 - NPC Reaction - Begin
   battle = PokeBattle_Battle.new(scene, playerparty, combinedParty, playertrainer, [trainer1[0], trainer2[0]], recorded)
   # ##Yumil - 15 - NPC Reaction - End
+  battle.controlPlayer = $game_switches[:AI_Play] || $game_switches[:Forced_AI_Play]
   trainerbgm = pbGetTrainerBattleBGM([trainer1[0], trainer2[0]])
   battle.fullparty1 = fullparty1
   battle.fullparty2 = true
@@ -191,7 +204,7 @@ def pbDoubleTrainerBattle(
     $game_switches[:In_Battle] = false
     return true
   end
-  if (Reborn && $game_switches[:No_Battles_Pass])
+  if Reborn && $game_switches[:No_Battles_Pass]
     Kernel.pbMessage(_INTL("Skipping battle..."))
     Kernel.pbMessage("After losing: ")
     Kernel.pbMessage(battle.endspeech)
@@ -324,6 +337,7 @@ def pbTrainerBattle(trainerid, trainername, endspeech, doublebattle = false, tra
     scene = pbNewBattleScene
     battle = PokeBattle_Battle.new(scene, playerparty, combinedParty, playertrainer, [$PokemonTemp.waitingTrainer[0][0], trainer[0]], recorded)
     trainerbgm = pbGetTrainerBattleBGM([$PokemonTemp.waitingTrainer[0][0], trainer[0]])
+    battle.controlPlayer = $game_switches[:AI_Play] || $game_switches[:Forced_AI_Play]
     battle.fullparty1 = fullparty1
     battle.fullparty2 = fullparty2
     battle.doublebattle = true
@@ -345,6 +359,7 @@ def pbTrainerBattle(trainerid, trainername, endspeech, doublebattle = false, tra
     else
       battle = PokeBattle_Battle.new(scene, playerparty, trainer[2], playertrainer, trainer[0], recorded)
     end
+    battle.controlPlayer = $game_switches[:AI_Play] || $game_switches[:Forced_AI_Play]
     battle.fullparty1 = fullparty1
     battle.doublebattle = doublebattle ? true : false
     battle.endspeech = trainer[0].defeatline
@@ -368,7 +383,7 @@ def pbTrainerBattle(trainerid, trainername, endspeech, doublebattle = false, tra
     $game_switches[:In_Battle] = false
     return true
   end
-  if (Reborn && $game_switches[:No_Battles_Pass])
+  if Reborn && $game_switches[:No_Battles_Pass]
     Kernel.pbMessage(_INTL("Skipping battle..."))
     Kernel.pbMessage(_INTL("After losing: "))
     Kernel.pbMessage(battle.endspeech)
@@ -514,6 +529,7 @@ def pbTrainerBattle100(trainerid, trainername, endspeech, doublebattle = false, 
     scene = pbNewBattleScene
     battle = PokeBattle_Battle.new(scene, playerparty, combinedParty, playertrainer, [$PokemonTemp.waitingTrainer[0][0], trainer[0]])
     trainerbgm = pbGetTrainerBattleBGM([$PokemonTemp.waitingTrainer[0][0], trainer[0]])
+    battle.controlPlayer = $game_switches[:AI_Play] || $game_switches[:Forced_AI_Play]
     battle.fullparty1 = fullparty1
     battle.fullparty2 = fullparty2
     battle.doublebattle = true
@@ -531,6 +547,7 @@ def pbTrainerBattle100(trainerid, trainername, endspeech, doublebattle = false, 
   else
     scene = pbNewBattleScene
     battle = PokeBattle_Battle.new(scene, playerparty, trainer[2], playertrainer, trainer[0])
+    battle.controlPlayer = $game_switches[:AI_Play] || $game_switches[:Forced_AI_Play]
     battle.fullparty1 = fullparty1
     battle.doublebattle = doublebattle ? true : false
     battle.endspeech = trainer[0].defeatline
@@ -674,6 +691,7 @@ def pbDoubleTrainerBattle100(
   scene = pbNewBattleScene
   battle = PokeBattle_Battle.new(scene, playerparty, combinedParty, playertrainer, [trainer1[0], trainer2[0]])
   trainerbgm = pbGetTrainerBattleBGM([trainer1[0], trainer2[0]])
+  battle.controlPlayer = $game_switches[:AI_Play] || $game_switches[:Forced_AI_Play]
   battle.fullparty1 = fullparty1
   battle.fullparty2 = true
   battle.doublebattle = true

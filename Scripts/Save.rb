@@ -151,6 +151,7 @@ def saveNew
     $game_variables[:Randomizer_Seed] = $Randomizer.settings.random.seed
     $game_variables[:Randomizer_Settings] = $Randomizer.settings.to_s
   end
+  $game_system.game_version = GAMEVERSION
   $game_system.save_count += 1
   playtime = Graphics.time_passed + 40 * (Process.clock_gettime(Process::CLOCK_MONOTONIC) - Graphics.start_playing).to_i # turn into frames
   savehash = {}

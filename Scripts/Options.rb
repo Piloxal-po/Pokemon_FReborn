@@ -214,6 +214,7 @@ class PokemonOptions
   attr_accessor :bagsorttype
   attr_accessor :battlescene
   attr_accessor :battlestyle
+  attr_accessor :nicknames
   attr_accessor :frame
   attr_accessor :textskin
   attr_accessor :font
@@ -235,6 +236,7 @@ class PokemonOptions
   attr_accessor :audiotype
   attr_accessor :turboSpeedMultiplier
   attr_accessor :discordRPC
+  attr_accessor :frameskip
   attr_accessor :firstTime
 
   def initialize
@@ -251,6 +253,7 @@ class PokemonOptions
     @bagsorttype = 0 if @bagsorttype.nil? # Bag sorting (0=by name, 1=by type)
     @battlescene = 0 if @battlescene.nil? # Battle scene (animations) (0=on, 1=off)
     @battlestyle = 0 if @battlestyle.nil? # Battle style (0=shift, 1=set)
+    @nicknames   = 0 if @nicknames.nil? # Give nicknames (0=on, 1=off)
     @frame       = 0 if @frame.nil? # Default window frame (see also TextFrames)
     @textskin    = 0 if @textskin.nil? # Speech frame
     @font        = 0 if @font.nil? # Font (see also VersionStyles)
@@ -270,7 +273,8 @@ class PokemonOptions
     @unrealTimeTimeScale      = 30 if @unrealTimeTimeScale.nil? # Unreal Time Timescale (default 30x real time)
     @turboSpeedMultiplier     = 3.0 if @turboSpeedMultiplier.nil? # Game speed multiplier in turbo mode
     @discordRPC               = 1 if @discordRPC.nil? # Controls Discord rich presence updates (0=off, 1=on)
-    @firstTime      = true if @firstTime.nil? 
+    @frameskip                = 0 if @frameskip.nil? # mkxp-z frameskip feature (0=off, 1=on)
+    @firstTime      = true if @firstTime.nil?
   end
 end
 
@@ -353,6 +357,12 @@ class PokemonOptionScene
       proc { |value| $Settings.battlestyle = value }
     )
     optionList.push EnumOption.new(
+      _INTL("Give Nicknames"), [_INTL("On"), _INTL("Off")],
+      proc { $Settings.nicknames },
+      proc { |value| $Settings.nicknames = value },
+      "Choose whether to be prompted to give a nickname to a Pokémon when you obtain it."
+    )
+    optionList.push EnumOption.new(
       _INTL("Photosensitivity"), [_INTL("Off"), _INTL("On")],
       proc { $Settings.photosensitive },
       proc { |value| $Settings.photosensitive = value },
@@ -382,6 +392,15 @@ class PokemonOptionScene
           value == 1 ? RTP.makePortable : RTP.makeNonPortable
         },
         _INTL("Keeps save data in the game EXE folder.")
+      )
+      optionList.push EnumOption.new(
+        _INTL("Frame skip"), [_INTL("Off"), _INTL("On")],
+        proc { $Settings.frameskip },
+        proc { |value|
+          $Settings.frameskip = value
+          Graphics.frameskip = value == 1
+        },
+        "Allows turbo speed to go beyond refresh rate by skipping frames."
       )
     end
     optionList.push NumberOption.new(
@@ -580,144 +599,6 @@ class PokemonOptionScene
     pbDisposeSpriteHash(@sprites)
     pbRefreshSceneMap
     @viewport.dispose
-  end
-end
-
-$ResizeFactor = 1.0
-$ResizeFactorMul = 100
-$ResizeOffsetX = 0 if !defined?($ResizeOffsetX)
-$ResizeOffsetY = 0 if !defined?($ResizeOffsetY)
-$ResizeFactorSet = false if !defined?($ResizeFactorSet)
-$HaveResizeBorder = false if !defined?($HaveResizeBorder)
-
-def pbSetResizeFactor(factor)
-  begin
-    if factor < 0 || factor == 4
-      setScreenBorder
-      Graphics.resize_screen(DEFAULTSCREENWIDTH + 2 * $ResizeOffsetX, DEFAULTSCREENHEIGHT + 2 * $ResizeOffsetY)
-      setScreenBorderName("border")
-      Graphics.fullscreen = true if !Graphics.fullscreen
-      resizeSpritesAndViewports
-    else
-      setScreenBorder
-      Graphics.resize_screen(DEFAULTSCREENWIDTH + 2 * $ResizeOffsetX, DEFAULTSCREENHEIGHT + 2 * $ResizeOffsetY)
-      Graphics.center
-      setScreenBorderName("border")
-      resizeSpritesAndViewports
-      Graphics.fullscreen = false if Graphics.fullscreen
-      Graphics.scale = [0.5, 1, 1.5, 2.0][factor]
-      Graphics.center
-    end
-  rescue
-    factor = 2
-    Graphics.fullscreen = false if Graphics.fullscreen
-    Graphics.scale = [0.5, 1, 1.5, 2.0][factor]
-    Graphics.center
-  end
-end
-
-def resizeSpritesAndViewports
-  # Resize every sprite and viewport
-  ObjectSpace.each_object(Sprite) { |o|
-    next if o.disposed?
-
-    o.x = o.x
-    o.y = o.y
-    o.ox = o.ox
-    o.oy = o.oy
-    o.zoom_x = o.zoom_x
-    o.zoom_y = o.zoom_y
-  }
-  ObjectSpace.each_object(Viewport) { |o|
-    next if o.disposed?
-
-    begin
-      o.rect = o.rect
-      o.ox = o.ox
-      o.oy = o.oy
-    rescue RGSSError
-    end
-  }
-end
-
-def setScreenBorder
-  $ResizeBorder = ScreenBorder.new if !$ResizeBorder || $ResizeBorder.sprite.disposed?
-  $ResizeBorder.refresh
-  border = $Settings.border
-  $ResizeOffsetX = [0, BORDERWIDTH][border]
-  $ResizeOffsetY = [0, BORDERHEIGHT][border]
-end
-
-def setScreenBorderName(border)
-  $ResizeBorder = ScreenBorder.new
-  $HaveResizeBorder = true
-  $ResizeBorder.bordername = border
-end
-
-class ScreenBorder
-  attr_accessor :sprite
-
-  def initialize
-    initializeInternal
-    refresh
-  end
-
-  def initializeInternal
-    @maximumZ = 500000
-    @bordername = ""
-    @sprite = IconSprite.new(0, 0) rescue Sprite.new
-    @defaultwidth = 640
-    @defaultheight = 480
-    @defaultbitmap = Bitmap.new(@defaultwidth, @defaultheight)
-  end
-
-  def dispose
-    @borderbitmap.dispose if @borderbitmap
-    @defaultbitmap.dispose
-    @sprite.dispose
-  end
-
-  def adjustZ(z)
-    if z >= @maximumZ
-      @maximumZ = z + 1
-      @sprite.z = @maximumZ
-    end
-  end
-
-  def bordername=(value)
-    @bordername = value
-    refresh
-  end
-
-  def refresh
-    @sprite.z = @maximumZ
-    @sprite.x = -BORDERWIDTH
-    @sprite.y = -BORDERHEIGHT
-    @sprite.visible = ($Settings && $Settings.border == 1)
-    @sprite.bitmap = nil
-    if @sprite.visible
-      if @bordername != nil && @bordername != ""
-        setSpriteBitmap("Graphics/Pictures/" + @bordername)
-      else
-        setSpriteBitmap(nil)
-        @sprite.bitmap = @defaultbitmap
-      end
-    end
-    @defaultbitmap.clear
-    @defaultbitmap.fill_rect(0, 0, @defaultwidth, $ResizeOffsetY, Color.new(0, 0, 0))
-    @defaultbitmap.fill_rect(0, $ResizeOffsetY, $ResizeOffsetX, @defaultheight - $ResizeOffsetY, Color.new(0, 0, 0))
-    @defaultbitmap.fill_rect(@defaultwidth - $ResizeOffsetX, $ResizeOffsetY, $ResizeOffsetX, @defaultheight - $ResizeOffsetY, Color.new(0, 0, 0))
-    @defaultbitmap.fill_rect($ResizeOffsetX, @defaultheight - $ResizeOffsetY, @defaultwidth - $ResizeOffsetX * 2, $ResizeOffsetY, Color.new(0, 0, 0))
-  end
-
-  private
-
-  def setSpriteBitmap(x)
-    if (@sprite.is_a?(IconSprite) rescue false)
-      @sprite.setBitmap(x)
-    else
-      @sprite.bitmap = x ? RPG::Cache.load_bitmap("", x) : nil
-    end
   end
 end
 

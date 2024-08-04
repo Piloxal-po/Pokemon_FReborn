@@ -85,10 +85,12 @@ class PokemonEggHatchScene
       Graphics.update
     end
     Kernel.pbMessage(_INTL("\\se[]{1} hatched from the Egg!\\wt[80]", @pokemon.name))
-    if Kernel.pbConfirmMessage(_INTL("Would you like to nickname the newly hatched {1}?", @pokemon.name))
-      species = getMonName(@pokemon.species, @pokemon.form)
-      nickname = pbEnterPokemonName(_INTL("{1}'s nickname?", @pokemon.name), 0, 12, "", @pokemon)
-      @pokemon.name = nickname if nickname != ""
+    if $Settings.nicknames == 0
+      if Kernel.pbConfirmMessage(_INTL("Would you like to nickname the newly hatched {1}?", @pokemon.name))
+        species = getMonName(@pokemon.species, @pokemon.form)
+        nickname = pbEnterPokemonName(_INTL("{1}'s nickname?", @pokemon.name), 0, 12, "", @pokemon)
+        @pokemon.name = nickname if nickname != ""
+      end
     end
   end
 
@@ -209,7 +211,7 @@ Events.onStepTaken += proc { |sender, e|
     if egg.eggsteps > 0
       egg.eggsteps -= 1
       for i in $Trainer.party
-        if !i.isEgg? && ((i.ability == :FLAMEBODY) || (i.ability == :MAGMAARMOR) || (i.ability == :STEAMENGINE))
+        if !i.isEgg? && (i.ability == :FLAMEBODY || i.ability == :MAGMAARMOR || i.ability == :STEAMENGINE)
           egg.eggsteps -= 1
           break
         end

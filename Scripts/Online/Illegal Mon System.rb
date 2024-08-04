@@ -1,5 +1,6 @@
 ################################################################################
-# Form Check                                                                                                                                                              By Marcello & Kurotsune
+# Form Check
+# By Marcello & Kurotsune
 ################################################################################
 def isLegalForm?(pkmn)
   return true unless Reborn # TODO: Handle Rejuv/Deso
@@ -48,39 +49,14 @@ def isLegalForm?(pkmn)
 end
 
 ################################################################################
-# Move Check                                                                                                                                                              This is by Marcello & Kurotsune too
+# Move Check
+# This is by Marcello & Kurotsune too
 ################################################################################
 def preEvoLearnsetCheck(move, pkmn)
-  pre_evo = pbGetPreviousForm(pkmn.species, pkmn.form)
-  if pre_evo == [pkmn.species, pkmn.form]
-    return false
-  else
-    pre_evo = PokeBattle_Pokemon.new(pre_evo[0], 1, $Trainer, false, pre_evo[1])
-    return false if !pre_evo.SpeciesCompatible?(move)
-
-    pre_pre_evo = pbGetPreviousForm(pre_evo.species, pre_evo.form)
-    if pre_pre_evo != [pre_evo.species, pre_evo.form]
-      pre_pre_evo = PokeBattle_Pokemon.new(pre_pre_evo[0], 1, $Trainer, false, pre_pre_evo[1])
-      return false if !pre_pre_evo.SpeciesCompatible?(move)
-    end
-  end
-  return true
-end
-
-def isFormMove?(move, pkmn)
-  return false if ![:ROTOM, :NECROZMA].include?(pkmn.species)
-  if pkmn.species == :ROTOM
-    return true if pkmn.form == 1 && move == :OVERHEAT
-    return true if pkmn.form == 2 && move == :HYDROPUMP
-    return true if pkmn.form == 3 && move == :BLIZZARD
-    return true if pkmn.form == 4 && move == :AIRSLASH
-    return true if pkmn.form == 5 && move == :LEAFSTORM
-  end
-  if pkmn.species == :NECROZMA
-    return true if pkmn.form == 1 && move == :SUNSTEELSTRIKE
-    return true if pkmn.form == 2 && move == :MOONGEISTBEAM
-  end
-  return false
+  previous = pbGetPreviousForm(pkmn.species, pkmn.form)
+  return false if previous == [pkmn.species, pkmn.form]
+  pre_evo = PokeBattle_Pokemon.new(previous[0], 1, $Trainer, false, previous[1])
+  return pre_evo.SpeciesCompatible?(move) || preEvoLearnsetCheck(move, pre_evo)
 end
 
 def isSmeargleMove?(move, pkmn)
@@ -97,7 +73,6 @@ def isLegalMoves?(pkmn)
       return false if pkmn.moves[i].move == pkmn.moves[j].move
     end
     if !pkmn.SpeciesCompatible?(pkmn.moves[i].move)
-      next if isFormMove?(pkmn.moves[i].move, pkmn)
       next if isSmeargleMove?(pkmn.moves[i].move, pkmn)
       next if preEvoLearnsetCheck(pkmn.moves[i].move, pkmn)
 

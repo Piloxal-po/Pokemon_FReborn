@@ -430,14 +430,6 @@ class PokemonLoad
     end
   end
 
-  def pbLoadAndReturnFile(savefile)
-    file = nil
-    File.open(savefile, "rb") { |f|
-      file = Marshal.load(f)
-    }
-    return file
-  end
-
   def pbStartDeleteScreen
     savefile = RTP.getSaveFileName("Game.rxdata")
     @scene.pbStartDeleteScene
@@ -481,6 +473,10 @@ class PokemonLoad
 
     if safeExists?(savefile)
       pbTryLoadFile(savefile)
+      if !@currentsave.is_a?(Hash)
+        print "Corrupted save file: " + File.realpath(savefile)
+        exit
+      end
       trainer = @currentsave[:Trainer]
       framecount = @currentsave[:playtime]
       $game_system = @currentsave[:system]
@@ -612,10 +608,7 @@ class PokemonLoad
               next if !file.start_with?("Anna's Wish")
               next if !safeExists?(d.path + "/" + file)
 
-              savefile = pbLoadAndReturnFile(d.path + "/" + file)
-              next if savefile.nil?
-
-              info = " - #{savefile.name}"
+              info = saveinfo(d.path + file)
               savenumber = file.scan(/\d+/)[0].to_i
               slotname = "Anna's Wish" + info
               anna_saves.push([savenumber, slotname, false, true, nil, file])
@@ -628,6 +621,7 @@ class PokemonLoad
           anna_saves.sort_by! { |arr| arr[0] }
           saveslots += anna_saves
         end
+
         if saveslots.length == 0
           Kernel.pbMessage(_INTL("You don't have any other save files"))
           next
@@ -701,9 +695,7 @@ class PokemonLoad
         elsif System.platform[/Linux/]
           folderpath = RTP.getSaveFolder
           # System.open(folderpath)
-          # Nautilus -s navigates to the parent folder, so...
-          errorLogFile = "#{folderpath}/errorlog.txt"
-          system("touch '#{errorLogFile}' && nautilus -s '#{errorLogFile}'")
+          system("xdg-open '#{folderpath}'")
         end
       elsif cmdLanguage >= 0 && command == cmdLanguage
         @scene.pbEndScene
@@ -727,14 +719,10 @@ class PokemonLoad
       pbPlayBuzzerSE()
       return false
     end
+    pbTryLoadFile(savefile) # Needed for Anna's Wish
     startTimer
     @scene.pbEndScene
-    metadata = nil
     $Trainer = @currentsave[:Trainer]
-    $Trainer.pokedex.updateGenderFormEntries # ensure things are updated, remove after a bit ig
-    if Rejuv
-      $Trainer.achievements = Achievements.new() if !$Trainer.achievements
-    end
     playtime = @currentsave[:playtime]
     if playtime.bit_length < 31
       Graphics.frame_count  = playtime
@@ -750,13 +738,8 @@ class PokemonLoad
     $PokemonMap             = @currentsave[:PokemonMap]
     $PokemonBag             = @currentsave[:PokemonBag]
     $PokemonStorage         = @currentsave[:PokemonStorage]
-    # updating storage boxes, can be removed after a while
-    if $PokemonStorage && $PokemonStorage.boxes.length < STORAGEBOXES
-      $PokemonStorage.upTotalBoxes(STORAGEBOXES)
-    end
     map = @currentsave[:Map]
-    tempConvertNatures
-    powerconstructhunt($PokemonStorage, $Trainer.party, $PokemonGlobal.daycare) if Rejuv # no power construct does not exist go away
+
 
     $MapFactory = PokemonMapFactory.new()
     $MapFactory.setup(@currentsave[:map_id], true)
@@ -770,57 +753,12 @@ class PokemonLoad
         $MapFactory.loadMap(map)
       end
     end
-    $game_map            = $MapFactory.map
+    $game_map = $MapFactory.map
 
     Graphics.time_passed = Graphics.frame_count.clone + playtime
     Graphics.start_playing = Process.clock_gettime(Process::CLOCK_MONOTONIC)
 
-    if $game_switches[:Randomized_Challenge] && !$game_system.game_version
-      Kernel.pbMessage("Note: The game has detected you were previously playing a randomizer. Your old randomizer data will no longer function.")
-      if Kernel.pbConfirmMessage("Would you like to re-randomize your game?")
-        pbFadeOutIn(99999) {
-          RandomizerScene.new(RandomizerSettings.new)
-          $Randomizer.randomize if $game_switches[:Randomized_Challenge]
-        }
-      else
-        if Kernel.pbConfirmMessageSerious("You will still be unable to access any online features. Are you sure you wish to continue without randomizing?")
-          $game_switches[:Disabled_Randomizer] = true
-        else
-          pbFadeOutIn(99999) {
-            RandomizerScene.new(RandomizerSettings.new)
-            $Randomizer.randomize if $game_switches[:Randomized_Challenge]
-          }
-        end
-      end
-    end
-    $game_system.game_version = GAMEVERSION if !$game_system.game_version
-    enforceTrainerType
-    if !$game_switches[:Disabled_Randomizer]
-      if $game_switches[:Randomized_Challenge]
-        if File.exists?("Randomizer Data/settings.txt")
-          str = File.read("Randomizer Data/settings.txt")
-          settings = RandomizerSettings.new()
-          settings.load(str)
-          regenerate = (settings.to_s == $game_variables[:Randomizer_Settings] && settings.to_s == $game_variables[:Randomizer_Seed])
-          $Randomizer = Randomizer.new(settings)
-          if regenerate
-            Kernel.pbMessage("The game will now generate your randomizer files.")
-            $Randomizer.randomize
-            Kernel.pbMessage("The game has finished generating your randomizer files.")
-          end
-          $rndcache = Cache_Randomizer.new()
-        else
-          settings = RandomizerSettings.new()
-          str = "#{$game_variables[:Randomizer_Settings]}\n#{$game_variables[:Randomizer_Seed]}\n#{$game_variables[:Randomizer_Items]}"
-          settings.load(str)
-          $Randomizer = Randomizer.new(settings)
-          Kernel.pbMessage("The game will now generate your randomizer files.")
-          $Randomizer.randomize
-          Kernel.pbMessage("The game has finished generating your randomizer files.")
-          $rndcache = Cache_Randomizer.new()
-        end
-      end
-    end
+    checkConversions
     getNGPData
     $PokemonBag.initTrackerData if !$PokemonBag.itemtracker
 
@@ -844,7 +782,6 @@ class PokemonLoad
     $PokemonEncounters.setup($game_map.map_id)
     pbAutoplayOnSave
     $game_map.update
-    auto = (auto == nil) ? false : auto
     # some bullshit, don't worry about it
     if $game_variables[:Some_Bullshit] > 0
       $game_variables[:Some_Bullshit] += 1
@@ -861,6 +798,9 @@ class PokemonLoad
     end
     if Reborn && $game_switches[1305] # postgame active
       $Trainer.postgame = $game_variables[569]
+    end
+    if !$game_screen.shakeX || !$game_screen.shakeY
+      $game_screen.initAddedVars
     end
     # end bullshit
     for event in $game_map.events.values
@@ -881,13 +821,17 @@ def saveinfo(savefile)
     File.open(savefile, "rb") { |f|
       data = Marshal.load(f)
     }
-    trainer = data[:Trainer]
-    if trainer.postgame != nil
-      info = " - #{trainer.name} - #{trainer.postgame} legendaries"
+    if data.is_a?(Hash)
+      trainer = data[:Trainer]
+      if trainer.postgame != nil
+        info = " - #{trainer.name} - #{trainer.postgame} legendaries"
+      else
+        info = " - #{trainer.name} - #{trainer.numbadges} badges"
+      end
+      return info
     else
-      info = " - #{trainer.name} - #{trainer.numbadges} badges"
+      info = " - legacy save file"
     end
-    return info
   rescue
     if data.is_a?(Hash)
       info = " - save corrupted"
@@ -901,4 +845,146 @@ end
 def pbStoredLastPlayed(savenum)
   $Unidata[:saveslot] = savenum
   saveClientData
+end
+
+def checkConversions
+  # This method is used for system changes that require saved data to be altered in some way,
+  # regardless of whether or not it's game breaking.
+
+  if $Trainer.trainertype.is_a?(Integer)
+    enforceTrainerType
+  end
+
+  # Restrict online play
+  $game_switches[:No_Online_Randbats] = true if [$game_switches[:No_Total_EV_Cap], $game_switches[:MiniDebug_Pass]].any?
+  $game_switches[:No_Online_Trades] = true if [$game_switches[:Full_IVs], $game_switches[:No_Total_EV_Cap], $game_switches[:MiniDebug_Pass]].any?
+
+  # Last check through for old temp conversions, most of these methods should be able to be
+  # safely removed after a while.
+  if !$game_system.game_version
+    # updating storage boxes, can be removed after a while
+    if $PokemonStorage && $PokemonStorage.boxes.length < STORAGEBOXES
+      $PokemonStorage.upTotalBoxes(STORAGEBOXES)
+    end
+    tempConvertNatures
+    if Rejuv
+      $Trainer.achievements = Achievements.new() if !$Trainer.achievements
+      powerconstructhunt($PokemonStorage, $Trainer.party, $PokemonGlobal.daycare)
+    end
+    $Trainer.pokedex.updateGenderFormEntries # ensure things are updated, remove after a bit ig
+
+    if $game_switches[:Randomized_Challenge]
+      Kernel.pbMessage("Note: The game has detected you were previously playing a randomizer. Your old randomizer data will no longer function.")
+      if Kernel.pbConfirmMessage("Would you like to re-randomize your game?")
+        pbFadeOutIn(99999) {
+          RandomizerScene.new(RandomizerSettings.new)
+          $Randomizer.randomize if $game_switches[:Randomized_Challenge]
+        }
+      else
+        if Kernel.pbConfirmMessageSerious("You will still be unable to access any online features. Are you sure you wish to continue without randomizing?")
+          $game_switches[:Disabled_Randomizer] = true
+        else
+          pbFadeOutIn(99999) {
+            RandomizerScene.new(RandomizerSettings.new)
+            $Randomizer.randomize if $game_switches[:Randomized_Challenge]
+          }
+        end
+      end
+    end
+  end
+
+  if !$game_switches[:Disabled_Randomizer]
+    if $game_switches[:Randomized_Challenge]
+      $rndcache = nil
+      if File.exists?("Randomizer Data/settings.txt")
+        str = File.read("Randomizer Data/settings.txt")
+        settings = RandomizerSettings.new()
+        settings.load(str)
+        regenerate = (settings.to_s != $game_variables[:Randomizer_Settings] || settings.random.seed != $game_variables[:Randomizer_Seed])
+        $Randomizer = Randomizer.new(settings)
+        if regenerate
+          Kernel.pbMessage("The game will now generate your randomizer files.")
+          $Randomizer.randomize
+          Kernel.pbMessage("The game has finished generating your randomizer files.")
+        end
+        $rndcache = Cache_Randomizer.new()
+      else
+        settings = RandomizerSettings.new()
+        str = "#{$game_variables[:Randomizer_Settings]}\n#{$game_variables[:Randomizer_Seed]}\n#{$game_variables[:Randomizer_Items]}"
+        settings.load(str)
+        $Randomizer = Randomizer.new(settings)
+        Kernel.pbMessage("The game will now generate your randomizer files.")
+        $Randomizer.randomize
+        Kernel.pbMessage("The game has finished generating your randomizer files.")
+        $rndcache = Cache_Randomizer.new()
+      end
+    end
+  end
+
+  # New conversions based on game version.
+  if Reborn
+    # Relocating the Red and Blue Orbs to the Enhancements pocket (Mega Stones, Z-Crystals, Crests)
+    if $PokemonBag.pockets[1].include?(:REDORB)
+      $PokemonBag.pockets[1].delete(:REDORB)
+      $PokemonBag.pockets[6].push(:REDORB)
+    end
+    if $PokemonBag.pockets[1].include?(:BLUEORB)
+      $PokemonBag.pockets[1].delete(:BLUEORB)
+      $PokemonBag.pockets[6].push(:BLUEORB)
+    end
+
+    # Moving tutored move IDs into Trainer tutor list, convert into symbols
+    $Trainer.tutorlist = [] if !$Trainer.tutorlist
+    if $PokemonGlobal.tutoredMoves && !$PokemonGlobal.tutoredMoves.empty?
+      $PokemonGlobal.tutoredMoves.length().times do
+        $Trainer.tutorlist.push($PokemonGlobal.tutoredMoves.shift())
+      end
+    end
+    if $Trainer.tutorlist.any? { |i| i.is_a?(Integer) }
+      for i in 0...$Trainer.tutorlist.length
+        next if !$Trainer.tutorlist[i].is_a?(Integer)
+
+        for j in $cache.moves.keys
+          if $cache.moves[j].checkFlag?(:ID) == $Trainer.tutorlist[i]
+            $Trainer.tutorlist[i] = $cache.moves[j].move
+          end
+        end
+      end
+    end
+    reorderTutorMoves
+
+    # Convert the stored movesets from the Moveset Restorer
+    if $PokemonGlobal.storedMovesets && !$PokemonGlobal.storedMovesets.empty?
+      for moveset in $PokemonGlobal.storedMovesets
+        moveset[:moves].each_with_index { |move, i|
+          next if move.is_a?(Hash)
+
+          found = $cache.moves.find { |m, data|
+            hasID = data.checkFlag?(:ID) == move.instance_variable_get(:@id) # 19.0.16
+            hasmove = m == move.move # 19.5.0-rc.13
+            hasID || hasmove
+          }
+
+          if found
+            movename = found[1].checkFlag?(:ID) == move.instance_variable_get(:@id) ? found[1].move : move.move
+            moveset[:moves][i] = { move: movename, ppup: move.ppup }
+          end
+        }
+        $cache.pkmn.each { |mon, data|
+          if data[0].dexnum == moveset[:id]
+            moveset[:id] = mon
+            break
+          end
+        }
+      end
+    end
+  end
+
+  if Rejuv
+
+  end
+
+  if Desolation
+
+  end
 end

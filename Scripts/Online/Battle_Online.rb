@@ -17,7 +17,6 @@ end
 ################################################################################
 $OnlineBattle = nil
 class PokeBattle_OnlineBattle < PokeBattle_Battle
-  attr_accessor(:battleRandom)
   attr_accessor(:tiebreak) # for speed ties
 
   include PokeBattle_BattleCommon
@@ -150,9 +149,7 @@ class PokeBattle_OnlineBattle < PokeBattle_Battle
       if @opponent
         return 0
       else
-        @choices[i][0] = 5 # run
-        @choices[i][1] = 0
-        @choices[i][2] = nil
+        @choices[i] = :run
         return -1
       end
     end
@@ -194,7 +191,7 @@ class PokeBattle_OnlineBattle < PokeBattle_Battle
         PBDebug.logonerr {
           pbCommandPhase
         }
-        # need to quickly delete this or else it chashes bc of size
+        # need to quickly delete this or else it crashes bc of size
         for i in 0...4
           @battlers[0].moves[i].battle = nil if @battlers[0].moves[i]
           @battlers[2].moves[i].battle = nil if @battlers[2].moves[i] && @doublebattle
@@ -257,15 +254,15 @@ class PokeBattle_OnlineBattle < PokeBattle_Battle
         end
         # register action of opponent correctly if necessary
         if @choices[1][2] && @choices[1][2].move != :STRUGGLE && @zMove[1][0] < 0
-          @choices[1][2] = @battlers[1].moves[@choices[1][1]] if @choices[1][0] == 1 # Need to reset move object
-          @choices[1][3] = @choices[1][3] ^ 1 if @doublebattle && @choices[1][0] == 1 && @choices[1][3] >= 0 # reset target
-          @battlers[1].selectedMove = @battlers[1].moves[@choices[1][1]].move if @choices[1][0] == 1
+          @choices[1][2] = @battlers[1].moves[@choices[1][1]] if @choices[1][0] == :move # Need to reset move object
+          @choices[1][3] = @choices[1][3] ^ 1 if @doublebattle && @choices[1][0] == :move && @choices[1][3] >= 0 # reset target
+          @battlers[1].selectedMove = @battlers[1].moves[@choices[1][1]].move if @choices[1][0] == :move
         end
 
         if @choices[3][2] && @choices[3][2].move != :STRUGGLE && @zMove[3][0] < 0
-          @choices[3][2] = @battlers[3].moves[@choices[3][1]] if @choices[3][0] == 1 # Need to reset move object
-          @choices[3][3] = @choices[3][3] ^ 1 if @doublebattle && @choices[3][0] == 1 && @choices[3][3] >= 0 # reset target
-          @battlers[3].selectedMove = @battlers[3].moves[@choices[3][1]].move if @choices[3][0] == 1
+          @choices[3][2] = @battlers[3].moves[@choices[3][1]] if @choices[3][0] == :move # Need to reset move object
+          @choices[3][3] = @choices[3][3] ^ 1 if @doublebattle && @choices[3][0] == :move && @choices[3][3] >= 0 # reset target
+          @battlers[3].selectedMove = @battlers[3].moves[@choices[3][1]].move if @choices[3][0] == :move
         end
 
         break if @decision > 0

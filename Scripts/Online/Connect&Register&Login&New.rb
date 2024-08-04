@@ -43,25 +43,29 @@ class Connect
       $scene = Scene_Map.new
       return
     end
-    if $game_switches && ($game_switches[:Randomized_Challenge] || $game_switches[:Disabled_Randomizer])
-      Kernel.pbMessage(_INTL("Unfortunately, online features cannot be used in Randomizer playthroughs."))
-      $scene = Scene_Map.new
-      return
+    if $game_switches
+      if $game_switches[:Randomized_Challenge] || $game_switches[:Disabled_Randomizer]
+        Kernel.pbMessage(_INTL("Unfortunately, online features cannot be used in Randomizer playthroughs."))
+        $scene = Scene_Map.new
+        return
+      end
+      # Restrict online play
+      $game_switches[:No_Online_Randbats] = true if [$game_switches[:No_Total_EV_Cap], $game_switches[:MiniDebug_Pass]].any?
+      $game_switches[:No_Online_Trades] = true if [$game_switches[:Full_IVs], $game_switches[:No_Total_EV_Cap], $game_switches[:MiniDebug_Pass]].any?
+      if $game_switches[:No_Online_Randbats]
+        Kernel.pbMessage(_INTL("Random battles are restricted on this save file."))
+        @allowrandbat = false
+      end
+      if $game_switches[:No_Online_Trades]
+        Kernel.pbMessage(_INTL("Trades are restricted on this save file."))
+        @allowtrade = false
+      end
     end
     if !isLegalParty?($Trainer.party)
       Kernel.pbMessage(_INTL("Illegal Pokémon have been detected in your party."))
       Kernel.pbMessage(_INTL("Random battles and trades are restricted until the illegal Pokémon are removed."))
-      @allowrandbattrade = false
-    end
-    if $game_switches && ($game_switches[:Full_IVs] || $game_switches[:No_Total_EV_Cap] || $game_switches[:MiniDebug_Pass])
-      Kernel.pbMessage(_INTL("Online features are restricted when using the following passwords:"))
-      pws = []
-      pws.push(_INTL("Full IVs restricts trading")) if $game_switches[:Full_IVs]
-      pws.push(_INTL("No Total EV Cap restricts random battles and trading")) if $game_switches[:No_Total_EV_Cap]
-      pws.push(_INTL("Mini Debug restricts random battles and trading")) if $game_switches[:MiniDebug_Pass]
-      Kernel.pbMessage("#{pws.join(", ")}")
-      @allowrandbat = false if $game_switches[:No_Total_EV_Cap] || $game_switches[:MiniDebug_Pass]
-      @allowtrade = false # All three passwords
+      @allowrandbat = false
+      @allowtrade = false
     end
     if !nicknameFilterCheck($Trainer)
       $scene = Scene_Map.new

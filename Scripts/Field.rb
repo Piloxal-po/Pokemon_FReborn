@@ -1685,7 +1685,7 @@ end
 def pbFieldDamage
   flashed = false
   for i in $Trainer.party
-    if i.hp > 0 && !i.isEgg? && !(i.ability == :MAGICGUARD) &&
+    if i.hp > 0 && !i.isEgg? && i.ability != :MAGICGUARD &&
        !($game_switches[:Devon_Panel_Puzzle] && (i.ability == :VOLTABSORB ||
        i.ability == :MOTORDRIVE || i.ability == :LIGHTNINGROD || i.hasType?(:GROUND)))
       if !flashed
@@ -1712,7 +1712,7 @@ Events.onStepTakenTransferPossible += proc { |sender, e|
   if $PokemonGlobal.stepcount % 4 == 0 && POISONINFIELD && $game_switches[:Overworld_Poison_Password] != true
     flashed = false
     for i in $Trainer.party
-      if i.status == :POISON && i.hp > 0 && !i.isEgg? && !(i.ability == :POISONHEAL) && !(i.ability == :MAGICGUARD) && !(i.species == :ZANGOOSE && i.item == :ZANGCREST)
+      if i.status == :POISON && i.hp > 0 && !i.isEgg? && i.ability != :POISONHEAL && i.ability != :MAGICGUARD && !(i.species == :ZANGOOSE && i.item == :ZANGCREST)
         if defined?(POISON_ANIMATION_ID) && !flashed
           # $scene.spriteset.addUserAnimation(20,$game_player.x,$game_player.y,true) if $scene.is_a?(Scene_Map)
           $game_player.animation_id = POISON_ANIMATION_ID
@@ -1770,7 +1770,7 @@ Events.onStepTakenFieldMovement += proc { |sender, e|
   end
 }
 
-def pbBattleOnStepTaken(repel = false)
+def pbBattleOnStepTaken()
   return if Desolation && $game_switches[:WildBattles]
   return if $Trainer.ablePokemonCount == 0
 
@@ -1892,7 +1892,7 @@ def pbFishingBegin
   $PokemonGlobal.fishing = true
   if !pbCommonEvent(FISHINGBEGINCOMMONEVENT)
     patternb = 2 * $game_player.direction - 1
-    graphic = ($PokemonGlobal.surfing) ? :surffish : :fishing
+    graphic = $PokemonGlobal.surfing ? :surffish : :fishing
     # no encounters while lavasurfing
     charset = pbGetPlayerCharset(graphic)
     4.times do |pattern|
@@ -1909,7 +1909,7 @@ end
 def pbFishingEnd
   if !pbCommonEvent(FISHINGENDCOMMONEVENT)
     patternb = 2 * ($game_player.direction - 2)
-    graphic = ($PokemonGlobal.surfing) ? :surffish : :fishing
+    graphic = $PokemonGlobal.surfing ? :surffish : :fishing
     # no encounters while lavasurfing
     charset = pbGetPlayerCharset(graphic)
     4.times do |pattern|
@@ -1927,8 +1927,8 @@ end
 def pbFishing(hasencounter, rodtype = 1)
   bitechance = 50 + (15 * rodtype) # 65, 80, 95
   if $Trainer.party.length > 0 && !$Trainer.party[0].isEgg?
-    bitechance *= 2 if ($Trainer.party[0].ability == :STICKYHOLD)
-    bitechance *= 2 if ($Trainer.party[0].ability == :SUCTIONCUPS)
+    bitechance *= 2 if $Trainer.party[0].ability == :STICKYHOLD
+    bitechance *= 2 if $Trainer.party[0].ability == :SUCTIONCUPS
   end
   hookchance = 100
   oldpattern = $game_player.fullPattern
@@ -2150,7 +2150,6 @@ def pbCaveEntranceEx(exiting)
   bandheight = ((Graphics.height / 2) - 10).to_f / totalBands
   bandwidth = ((Graphics.width / 2) - 12).to_f / totalBands
   grays = []
-  tbm1 = totalBands - 1
   for i in 0...totalBands
     grays.push(exiting ? 0 : 255)
   end
@@ -2384,7 +2383,7 @@ def Kernel.pbItemBall(item, quantity = 1, plural = nil)
     if pbIsTM?(item)
       Kernel.pbMessage(_INTL("\\se[itemlevel]{1} found \\c[1]{2}\\c[0]!\\nIt contained \\c[1]{3}\\c[0].\\wtnp[30]", $Trainer.name, itemname, pbGetMachineMoveName(item)))
       Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}\\c[0]\r\nin the <icon=bagPocket{4}>\\c[1]{3}\\c[0] Pocket.", $Trainer.name, itemname, PokemonBag.pocketNames()[pocket], pocket))
-    elsif (item == :LEFTOVERS)
+    elsif item == :LEFTOVERS
       Kernel.pbMessage(_INTL("\\se[itemlevel]{1} found some \\c[1]{2}\\c[0]!\\wtnp[30]", $Trainer.name, itemname))
       Kernel.pbMessage(_INTL("{1} put the \\c[1]{2}\\c[0]\r\nin the <icon=bagPocket{4}>\\c[1]{3}\\c[0] Pocket.", $Trainer.name, itemname, PokemonBag.pocketNames()[pocket], pocket))
     else
@@ -2405,7 +2404,7 @@ def Kernel.pbItemBall(item, quantity = 1, plural = nil)
   else # Can't add the item
     if pbIsTM?(item)
       Kernel.pbMessage(_INTL("{1} found \\c[1]{2}\\c[0]!\\wtnp[20]", $Trainer.name, itemname))
-    elsif (item == :LEFTOVERS)
+    elsif item == :LEFTOVERS
       Kernel.pbMessage(_INTL("{1} found some \\c[1]{2}\\c[0]!\\wtnp[20]", $Trainer.name, itemname))
     else
       if quantity > 1
@@ -2430,7 +2429,7 @@ def Kernel.pbReceiveItem(item, quantity = 1, plural = nil)
   pocket = pbGetPocket(item)
   if pbIsTM?(item)
     Kernel.pbMessage(_INTL("\\se[itemlevel]Obtained \\c[1]{1}\\c[0]!\\nIt contained \\c[1]{2}\\c[0].\\wtnp[30]", itemname, pbGetMachineMoveName(item)))
-  elsif (item == :LEFTOVERS)
+  elsif item == :LEFTOVERS
     Kernel.pbMessage(_INTL("\\se[itemlevel]Obtained some \\c[1]{1}\\c[0]!\\wtnp[30]", itemname))
   elsif quantity > 1
     if plural
@@ -2505,7 +2504,7 @@ def pbEventCanReachPlayer?(event, player, distance)
   end
   return false if !found
 
-  # Check passibility
+  # Check passability
   curx = event.x
   cury = event.y
   for i in 0...realdist
@@ -2823,8 +2822,8 @@ def pbToneChangeAll(tone, duration)
   end
 end
 
-def pbShake(power, speed, frames)
-  $game_screen.start_shake(power, speed, frames * 2)
+def pbShake(power, speed, frames, axis = :x)
+  $game_screen.start_shake(power, speed, frames * 2, axis)
 end
 
 def pbFlash(color, frames)

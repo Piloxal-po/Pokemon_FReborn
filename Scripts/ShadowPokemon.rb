@@ -44,10 +44,12 @@ def pbPurify(pokemon, scene)
       pokemon.exp = newexp
     end
     speciesname = getMonName(pokemon.species, pokemon.form)
-    if scene.pbConfirm(_INTL("Would you like to give a nickname to {1}?", speciesname))
-      helptext = _INTL("{1}'s nickname?", speciesname)
-      newname = pbEnterPokemonName(helptext, 0, 10, "", pokemon)
-      pokemon.name = newname if newname != ""
+    if $Settings.nicknames == 0
+      if scene.pbConfirm(_INTL("Would you like to give a nickname to {1}?", speciesname))
+        helptext = _INTL("{1}'s nickname?", speciesname)
+        newname = pbEnterPokemonName(helptext, 0, 10, "", pokemon)
+        pokemon.name = newname if newname != ""
+      end
     end
   end
 end

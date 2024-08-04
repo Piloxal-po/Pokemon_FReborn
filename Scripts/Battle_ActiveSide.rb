@@ -68,6 +68,7 @@ class Battle_Global
     # either active or isn't
     @effects[:HeavyRain]          = false
     @effects[:HarshSunlight]      = false
+    @effects[:Round]              = false
   end
 end
 

@@ -124,7 +124,7 @@ end
 
 # Important items can't be sold, given to hold, or tossed.
 def pbIsImportantItem?(item)
-  return (pbIsKeyItem?(item) || pbIsTM?(item) || (pbIsZCrystal?(item)) || $cache.items[item].checkFlag?(:repeatableUse))
+  return pbIsKeyItem?(item) || pbIsTM?(item) || pbIsZCrystal?(item) || $cache.items[item].checkFlag?(:repeatableUse)
 end
 
 def pbIsTM?(item)

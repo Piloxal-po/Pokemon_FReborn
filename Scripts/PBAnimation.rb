@@ -391,15 +391,35 @@ end
 class PBAnimations < Array
   include Enumerable
   attr_reader :array
-  attr_accessor :selected
+  attr_reader :selected
+  attr_reader :loaded
 
   def initialize(size = 1)
     @array = []
+    @loaded = [0]
     @selected = 0
     size = 1 if size < 1 # Always create at least one animation
     size.times do
       @array.push(PBAnimation.new)
     end
+  end
+
+  def reload(index)
+    select(index)
+    Dir.glob(sprintf("Animations/Anim%04d*.rb", index)).each do |file|
+      return @array[index] = (AnimationFactory.new).evaluate(File.read(file))
+    end
+    return @array[index]
+  end
+
+  def select(index)
+    @selected = index
+    @loaded = [] if @loaded.nil?
+    @loaded.push index unless @loaded.include?(index)
+  end
+
+  def clearLoaded
+    @loaded = [0]
   end
 
   def length
@@ -571,8 +591,7 @@ class PBAnimation < Array
     return @array.delete_at(*arg)
   end
 
-  def playTiming(frame, bgGraphic, bgColor, foGraphic, foColor, oldbg = [], oldfo = [], user = nil, target = nil,
-                 autoopp = false)
+  def playTiming(frame, bgGraphic, bgColor, foGraphic, foColor, oldbg = [], oldfo = [], user = nil, target = nil, autoopp = false)
     for i in @timing
       if i.frame == frame
         case i.timingType
@@ -953,9 +972,9 @@ class PBAnimationPlayerX
     return if @frame < 0
 
     if (@frame >> 1) >= @animation.length
-      @frame = (@looping) ? 0 : -1
+      @frame = @looping ? 0 : -1
       if @frame < 0
-        unless (@user).nil?
+        unless @user.nil?
           unless defined?(@user.effects).nil?
             if @user.effects[:UsingSubstituteRightNow] == true
               @scene.pbSubstituteSprite(@user, @user.pbIsOpposing?(1))
@@ -1082,8 +1101,8 @@ class PBAnimationPlayerX
       # Add bullshit for making both targets move if doubles
       if @partnerbs
         ptargetbullshit = @realtarget.index # Adding this to the arson list
-        ptargetbullshit += 1 if ((@realtarget.index == 0 || @realtarget.index == 2) && !@isOppMove)
-        ptargetbullshit -= 1 if ((@realtarget.index == 1 || @realtarget.index == 3) && @isOppMove)
+        ptargetbullshit += 1 if (@realtarget.index == 0 || @realtarget.index == 2) && !@isOppMove
+        ptargetbullshit -= 1 if (@realtarget.index == 1 || @realtarget.index == 3) && @isOppMove
         cel = thisframe[ptargetbullshit - 2] if ptargetbullshit > 1
         cel = thisframe[ptargetbullshit] if ptargetbullshit < 2 # cel of target
         pbSpriteSetAnimFrame(@animpartner, cel, @usersprite, @animpartner)
@@ -1197,5 +1216,291 @@ class PBAnimationPlayerX
       @animation.playTiming(@frame >> 1, @bgGraphic, @bgColor, @foGraphic, @foColor, @oldbg, @oldfo, @user, @target, @isAutoOpp)
     end
     @frame += 1
+  end
+end
+
+# Basically https://github.com/enumag/eevee for battle animations
+class AnimationDumper
+  INDENT_SIZE = 2
+
+  def indent(level)
+    return ' ' * level * INDENT_SIZE
+  end
+
+  def dump(animation, level = 0)
+    value = indent(level) + "anim(\n"
+    value += indent(level + 1) + "id: " + animation.id.inspect + ",\n" if animation.id != -1
+    value += indent(level + 1) + "name: " + animation.name.inspect + ",\n" if animation.name != ""
+    value += indent(level + 1) + "position: " + AnimationFactory::POSITION[animation.position].inspect + ",\n" if animation.position != 4
+    value += indent(level + 1) + "targets: " + AnimationFactory::TARGETS[animation.targets].inspect + ",\n" if animation.targets != 0
+    value += indent(level + 1) + "graphic: " + animation.graphic.inspect + ",\n" if animation.graphic != ""
+    value += indent(level + 1) + "hue: " + animation.hue.inspect + ",\n" if animation.hue != 0
+    value += indent(level + 1) + "speed: " + animation.speed.inspect + ",\n" if animation.speed != 20
+    value += indent(level + 1) + "flip_target: " + animation.oppflip.inspect + ",\n" if animation.oppflip != true
+    value += indent(level + 1) + "flip_movement: " + animation.foreflip.inspect + ",\n" if animation.foreflip != false
+
+    value += indent(level + 1) + "frames: [\n"
+    animation.array.each_with_index do |frame, i|
+      value += indent(level + 2) + "[\n"
+      frame.each_with_index do |cel, j|
+        if cel.nil?
+          # According to Cass nil cels represent things that were set up in a previous frame and are unchanged in the current frame.
+          # As such they are actually important and can't be simply removed.
+          value += indent(level + 3) + "nil,\n"
+          next
+        end
+        if cel.length != 20
+          raise sprintf('Animation "%s", frame %d, cel %d has unexpected length %d instead of the expected length 20.', animation.name, i, j, cel.length)
+        end
+        value += cel(cel, level + 3) + "\n"
+      end
+      value += indent(level + 2) + "],\n"
+    end
+    value += indent(level + 1) + "],\n"
+
+    if animation.timing.length > 0
+      value += indent(level + 1) + "timings: [\n"
+      animation.timing.each do |timing|
+        value += timing(timing, level + 2) + "\n"
+      end
+      value += indent(level + 1) + "],\n"
+    end
+
+    value += indent(level) + ")\n"
+    return value
+  end
+
+  def cel(cel, level)
+    value = indent(level) + "cel("
+    # value += "x: " + cel[AnimFrame::X].round.inspect + ", "
+    # value += "y: " + cel[AnimFrame::Y].round.inspect + ", "
+    value += "x: " + cel[AnimFrame::X].inspect + ", "
+    value += "y: " + cel[AnimFrame::Y].inspect + ", "
+    value += "focus: " + AnimationFactory::POSITION[cel[AnimFrame::FOCUS]].inspect + ", "
+    # Can't use != 0 because sometimes it was nil. Or rather the array was shorter than 20 values.
+    value += "locked: " + (cel[AnimFrame::LOCKED] == 1 ? "true" : "false") + ", " if cel[AnimFrame::LOCKED] == 1
+    value += "flip: " + (cel[AnimFrame::MIRROR] != 0 ? "true" : "false") + ", " if cel[AnimFrame::MIRROR] != 0
+    value += "priority: " + AnimationFactory::PRIORITY[cel[AnimFrame::PRIORITY]].inspect + ", " if cel[AnimFrame::PRIORITY] != 1
+    value += "blending: " + AnimationFactory::BLENDING[cel[AnimFrame::BLENDTYPE]].inspect + ", " if cel[AnimFrame::BLENDTYPE] != 0
+    value += "zoomx: " + cel[AnimFrame::ZOOMX].inspect + ", " if cel[AnimFrame::ZOOMX] != 100
+    value += "zoomy: " + cel[AnimFrame::ZOOMY].inspect + ", " if cel[AnimFrame::ZOOMY] != 100
+    value += "angle: " + cel[AnimFrame::ANGLE].inspect + ", " if cel[AnimFrame::ANGLE] != 0
+    # pattern -1 and -2 seem to be the battlers but not sure which is which
+    # animation can't move partners in doubles so this doesn't go to -4
+    # 0 and above refers to image in the animation graphic
+    value += "pattern: " + cel[AnimFrame::PATTERN].inspect + ", " if cel[AnimFrame::PATTERN] != -1
+    value += "opacity: " + cel[AnimFrame::OPACITY].inspect + ", " if cel[AnimFrame::OPACITY] != 255
+    color = [cel[AnimFrame::COLORRED], cel[AnimFrame::COLORGREEN], cel[AnimFrame::COLORBLUE], cel[AnimFrame::COLORALPHA]]
+    tone  = [cel[AnimFrame::TONERED], cel[AnimFrame::TONEGREEN], cel[AnimFrame::TONEBLUE], cel[AnimFrame::TONEGRAY]]
+    value += "color: " + color.inspect + ", " if color != [0, 0, 0, 0]
+    value += "tone: " + tone.inspect + ", " if tone != [0, 0, 0, 0]
+    value = value[..-3]
+    value += "),"
+    return value
+  end
+
+  def timing(timing, level)
+    value = indent(level) + "timing("
+    value += "frame: " + timing.frame.inspect + ", "
+    value += "type: " + AnimationFactory::TIMING_TYPE[timing.timingType].inspect + ", " if timing.timingType != 0
+    value += "name: " + timing.name.inspect + ", " if timing.name != ""
+    value += "volume: " + timing.volume.inspect + ", " if timing.timingType == 0 && timing.volume != 100
+    value += "volume: " + timing.volume.inspect + ", " if timing.timingType == 1 && timing.volume != 80
+    value += "pitch: " + timing.pitch.inspect + ", " if timing.pitch != 100
+    value += "x: " + timing.bgX.inspect + ", " if timing.bgX != nil
+    value += "y: " + timing.bgY.inspect + ", " if timing.bgY != nil
+    value += "opacity: " + timing.opacity.inspect + ", " if timing.opacity != nil
+    value += "red: " + timing.colorRed.inspect + ", " if timing.colorRed != nil
+    value += "green: " + timing.colorGreen.inspect + ", " if timing.colorGreen != nil
+    value += "blue: " + timing.colorBlue.inspect + ", " if timing.colorBlue != nil
+    value += "alpha: " + timing.colorAlpha.inspect + ", " if timing.colorAlpha != nil
+    value += "duration: " + timing.duration.inspect + ", " if timing.duration != 5
+    value += "flash_scope: " + timing.flashScope.inspect + ", " if timing.flashScope != 0
+    value += "flash_color: " + color(timing.flashColor) + ", " if timing.flashColor != AnimationFactory::WHITE
+    value += "flash_duration: " + timing.flashDuration.inspect + ", " if timing.flashDuration != 5
+    value = value[..-3]
+    value += "),"
+    return value
+  end
+
+  def color(color)
+    return sprintf("color(%d, %d, %d, %d)", color.red, color.green, color.blue, color.alpha)
+  end
+end
+
+class AnimationFactory
+  WHITE = Color.new(255, 255, 255, 255)
+
+  POSITION = {
+    1 => :target,
+    2 => :user,
+    3 => :both,
+    4 => :screen,
+  }
+
+  POSITION_INVERSE = POSITION.invert
+
+  TARGETS = {
+    0 => :single_target,
+    1 => :both_opponents,
+    2 => :all_targets,
+    3 => :hide_partners,
+  }
+
+  TARGETS_INVERSE = TARGETS.invert
+
+  PRIORITY = {
+    0 => :back,
+    1 => :front,
+    2 => :below_focus,
+    3 => :above_focus,
+    4 => :between_sides,
+    5 => :behind_pokemon,
+  }
+
+  PRIORITY_INVERSE = PRIORITY.invert
+
+  BLENDING = {
+    0 => :normal,
+    1 => :add,
+    2 => :subtract,
+  }
+
+  BLENDING_INVERSE = BLENDING.invert
+
+  TIMING_TYPE = {
+    0 => :play_se,
+    1 => :set_bg,
+    2 => :mod_bg,
+    3 => :set_fg,
+    4 => :mod_fg,
+  }
+
+  TIMING_TYPE_INVERSE = TIMING_TYPE.invert
+
+  def evaluate(script)
+    return eval(script)
+  end
+
+  def anim(
+    id: -1,
+    name: "",
+    position: :screen,
+    graphic: "",
+    hue: 0,
+    speed: 20,
+    targets: :single_target,
+    flip_target: true,
+    flip_movement: false,
+    frames:,
+    timings: []
+  )
+    animation = PBAnimation.new
+    animation.id = id
+    animation.name = name
+    animation.position = POSITION_INVERSE[position]
+    animation.graphic = graphic
+    animation.hue = hue
+    animation.speed = speed
+    animation.targets = TARGETS_INVERSE[targets]
+    animation.oppflip = flip_target
+    animation.foreflip = flip_movement
+
+    i = 0
+    for frame in frames
+      animation.array[i] = frame
+      i += 1
+    end
+
+    i = 0
+    for timing in timings
+      animation.timing[i] = timing
+      i += 1
+    end
+
+    return animation
+  end
+
+  def cel(
+    x:,
+    y:,
+    focus:,
+    locked: false,
+    flip: false,
+    priority: :front,
+    blending: :normal,
+    zoomx: 100,
+    zoomy: 100,
+    angle: 0,
+    pattern: -1,
+    opacity: 255,
+    color: [0, 0, 0, 0],
+    tone: [0, 0, 0, 0]
+  )
+    cel = []
+    cel[AnimFrame::X] = x
+    cel[AnimFrame::Y] = y
+    cel[AnimFrame::ZOOMX] = zoomx
+    cel[AnimFrame::ANGLE] = angle
+    cel[AnimFrame::MIRROR] = flip ? 1 : 0
+    cel[AnimFrame::BLENDTYPE] = BLENDING_INVERSE[blending]
+    cel[AnimFrame::PATTERN] = pattern
+    cel[AnimFrame::OPACITY] = opacity
+    cel[AnimFrame::ZOOMY] = zoomy
+    cel[AnimFrame::COLORRED] = color[0]
+    cel[AnimFrame::COLORGREEN] = color[1]
+    cel[AnimFrame::COLORBLUE] = color[2]
+    cel[AnimFrame::COLORALPHA] = color[3]
+    cel[AnimFrame::TONERED] = tone[0]
+    cel[AnimFrame::TONEGREEN] = tone[1]
+    cel[AnimFrame::TONEBLUE] = tone[2]
+    cel[AnimFrame::TONEGRAY] = tone[3]
+    cel[AnimFrame::LOCKED] = locked ? 1 : 0
+    cel[AnimFrame::PRIORITY] = PRIORITY_INVERSE[priority]
+    cel[AnimFrame::FOCUS] = POSITION_INVERSE[focus]
+    return cel
+  end
+
+  def timing(
+    frame:,
+    type: :play_se,
+    name: "",
+    volume: nil,
+    pitch: 100,
+    x: nil,
+    y: nil,
+    opacity: nil,
+    red: nil,
+    green: nil,
+    blue: nil,
+    alpha: nil,
+    duration: 5,
+    flash_scope: 0,
+    flash_color: WHITE,
+    flash_duration: 5
+  )
+    volume = type == :play_se ? 100 : 80 if volume.nil?
+    timing = PBAnimTiming.new
+    timing.frame = frame
+    timing.timingType = TIMING_TYPE_INVERSE[type]
+    timing.name = name
+    timing.volume = volume
+    timing.pitch = pitch
+    timing.bgX = x
+    timing.bgY = y
+    timing.opacity = opacity
+    timing.colorRed = red
+    timing.colorGreen = green
+    timing.colorBlue = blue
+    timing.colorAlpha = alpha
+    timing.duration = duration
+    timing.flashScope = flash_scope
+    timing.flashColor = flash_color
+    timing.flashDuration = flash_duration
+    return timing
+  end
+
+  def color(red, green, blue, alpha)
+    return Color.new(red, green, blue, alpha)
   end
 end

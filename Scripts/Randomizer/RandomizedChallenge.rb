@@ -1371,7 +1371,7 @@ def Kernel.pbItemBall(item, quantity = 1, plural = nil)
         _INTL("{1} put the \\c[1]{2}\\c[0]\r\nin the <icon=bagPocket#{pocket}>\\c[1]{3}\\c[0] Pocket.",
               $Trainer.name, itemname, PokemonBag.pocketNames()[pocket])
       )
-    elsif (item == :LEFTOVERS)
+    elsif item == :LEFTOVERS
       Kernel.pbMessage(_INTL("\\se[itemlevel]{1} found some \\c[1]{2}\\c[0]!\\wtnp[30]", $Trainer.name, itemname))
       Kernel.pbMessage(
         _INTL(
@@ -1412,7 +1412,7 @@ def Kernel.pbItemBall(item, quantity = 1, plural = nil)
   else # Can't add the item
     if $cache.items[item][ITEMUSE] == 3 || $cache.items[item][ITEMUSE] == 4
       Kernel.pbMessage(_INTL("{1} found \\c[1]{2}\\c[0]!\\wtnp[20]", $Trainer.name, itemname))
-    elsif (item == :LEFTOVERS)
+    elsif item == :LEFTOVERS
       Kernel.pbMessage(_INTL("{1} found some \\c[1]{2}\\c[0]!\\wtnp[20]", $Trainer.name, itemname))
     else
       if quantity > 1
@@ -1452,7 +1452,7 @@ def Kernel.pbReceiveItem(item, quantity = 1, plural = nil)
       _INTL("\\se[itemlevel]Obtained \\c[1]{1}\\c[0]!\\nIt contained \\c[1]{2}\\c[0].\\wtnp[30]", itemname,
             getMoveName($cache.items[item].checkFlag?(:tm)))
     )
-  elsif (item == :LEFTOVERS)
+  elsif item == :LEFTOVERS
     Kernel.pbMessage(_INTL("\\se[itemlevel]Obtained some \\c[1]{1}\\c[0]!\\wtnp[30]", itemname))
   elsif quantity > 1
     if plural

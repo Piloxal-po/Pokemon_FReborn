@@ -13,6 +13,13 @@ def pbGetRelearnableMoves(pokemon)
   return [] if !pokemon || pokemon.isEgg? || (pokemon.isShadow? rescue false)
 
   moves = []
+  relearnmoves = pokemon.getRelearnList
+  for move in relearnmoves
+    if !pokemon.knowsMove?(move)
+      moves.push(move) if !moves.include?(move)
+    end
+  end
+
   pbEachNaturalMove(pokemon) { |move, level|
     if level <= pokemon.level && !pokemon.knowsMove?(move)
       moves.push(move) if !moves.include?(move)
@@ -189,6 +196,11 @@ class MoveRelearnerScreen
   end
 
   def pbStartScreen(pokemon)
+    if $game_variables[:E4_Tracker] > 0
+      Kernel.pbMessage(_INTL("Cannot use the Move Relearn here."))
+      return false
+    end
+
     moves = pbGetRelearnableMoves(pokemon)
     @scene.pbStartScene(pokemon, moves)
     loop do
@@ -203,6 +215,7 @@ class MoveRelearnerScreen
       else
         if @scene.pbConfirm(_INTL("Teach {1}?", getMoveName(move)))
           if pbLearnMove(pokemon, move)
+            pokemon.updateRelearnBar if !pokemon.canRelearnAll? && !Desolation
             @scene.pbEndScene
             return true
           end

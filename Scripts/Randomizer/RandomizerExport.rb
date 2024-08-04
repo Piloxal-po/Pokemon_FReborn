@@ -44,6 +44,13 @@ def randomizerPrint(pkmn)
           exporttext += "      :form => #{mon.formData.dig(mon.forms[form], :preevo)[:form]}\n"
           exporttext += "    },\n"
         end
+        if mon.formData.dig(mon.forms[form], :RelearnerMoves)
+          exporttext += "    :RelearnerMoves => ["
+          for j in mon.formData.dig(mon.forms[form], :RelearnerMoves)
+            exporttext += ":#{j},"
+          end
+          exporttext += "],\n"
+        end
         if mon.formData.dig(mon.forms[form], :Moveset)
           exporttext += "    :Moveset => [\n"
           for move in mon.formData.dig(mon.forms[form], :Moveset)
@@ -116,7 +123,7 @@ def randomizerPrint(pkmn)
     exporttext += "},\n\n"
 
   end
-  exporttext += "}"
+  exporttext += "}\n"
   cprint "Successfully dumped Pokemon data        \n"
   File.open("Scripts/" + GAMEFOLDER + "/montextconverter.rb", "w") { |f|
     f.write(exporttext)

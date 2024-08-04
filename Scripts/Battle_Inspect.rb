@@ -45,7 +45,7 @@ PokeBattle_Battler.class_eval {
     if self.ability == :PLUS || self.ability == :MINUS
       if self.pbPartner.ability == :PLUS || self.pbPartner.ability == :MINUS
         atkmult = (atkmult * 1.5).round
-      elsif @battle.FE == :SHORTCIRCUIT || (Rejuv && @battle.FE == :ELECTERRAIN)
+      elsif @battle.FE == :SHORTCIRCUIT || (Rejuv && @battle.FE == :ELECTERRAIN) || @battle.state.effects[:ELECTERRAIN] > 0
         atkmult = (atkmult * 1.5).round
       end
     end
@@ -134,6 +134,7 @@ PokeBattle_Battler.class_eval {
   def pbCalcAcc()
     accstage = self.stages[PBStats::ACCURACY]
     accuracy = accstage >= 0 ? (accstage + 3) * 100 / 3 : 300 / (3 - accstage)
+    accuracy *= 1.67 if @battle.state.effects[:Gravity] != 0
     accuracy *= 1.3 if self.ability == :COMPOUNDEYES
     accuracy *= 1.1 if self.ability == :VICTORYSTAR
     accuracy *= 1.1 if self.pbPartner && self.pbPartner.ability == :VICTORYSTAR
@@ -144,8 +145,6 @@ PokeBattle_Battler.class_eval {
 
   def pbCalcEva()
     evastage = self.stages[PBStats::EVASION]
-    evastage -= 2 if @battle.state.effects[:Gravity] != 0
-    evastage = evastage.clamp(-6, 6)
     evastage = 0 if self.effects[:Foresight] || self.effects[:MiracleEye]
     evasion = evastage >= 0 ? (evastage + 3) * 100 / 3 : 300 / (3 - evastage)
     evasion *= 1.2 if self.ability == :TANGLEDFEET && self.effects[:Confusion] > 0
@@ -212,8 +211,10 @@ def pbShowBattleStats(pkmn)
 
   stastr = [] # 0 = hp, 1 = atk, 2 = def, 3 = spa, 4 = spd, 5 = spe, 6 = acc, 7 = eva, 8 = crit
 
-  stastr[0] = "HP:                           {1}/{2}" if (@battle.pbOwnedByPlayer?(pkmn.index) && @battle.doublebattle) || $DEBUG
-  if Rejuv || @battle.pbOwnedByPlayer?(pkmn.index) || $DEBUG
+  if ((@battle.pbOwnedByPlayer?(pkmn.index) || @battle.pbOwnedByAIPartner?(pkmn.index)) && @battle.doublebattle) || $DEBUG
+    stastr[0] = "HP:                           {1}/{2}"
+  end
+  if Rejuv || @battle.pbOwnedByPlayer?(pkmn.index) || @battle.pbOwnedByAIPartner?(pkmn.index) || $DEBUG
     stastr[1] = "Attack:               "
     stastr[2] = "Defense:            "
     stastr[3] = "Sp.Attack:        "
@@ -223,7 +224,7 @@ def pbShowBattleStats(pkmn)
     stastr[7] = "Evasion:       {1}%"
   end
   for i in 1..5
-    stastr[i] += (@battle.pbOwnedByPlayer?(pkmn.index) || $DEBUG ? "{1}  " : "     ") if !stastr[i].nil?
+    stastr[i] += (@battle.pbOwnedByPlayer?(pkmn.index) || @battle.pbOwnedByAIPartner?(pkmn.index) || $DEBUG ? "{1}  " : "     ") if !stastr[i].nil?
   end
   for i in 1..7
     stastr[i] += " {2}{3}" if Rejuv
@@ -231,7 +232,7 @@ def pbShowBattleStats(pkmn)
   stastr[8] = "Crit. Rate:    {1}%    +{2}/3"
 
   report.push(_INTL(stastr[0], pkmn.hp, pkmn.totalhp)) if !stastr[0].nil?
-  if Rejuv || @battle.pbOwnedByPlayer?(pkmn.index) || $DEBUG
+  if Rejuv || @battle.pbOwnedByPlayer?(pkmn.index) || @battle.pbOwnedByAIPartner?(pkmn.index) || $DEBUG
     report.push(
       _INTL(stastr[1], pkmn.pbCalcAttack(), atksbl, pkmn.stages[PBStats::ATTACK]),
       _INTL(stastr[2], pkmn.pbCalcDefense(), defsbl, pkmn.stages[PBStats::DEFENSE]),
@@ -245,7 +246,7 @@ def pbShowBattleStats(pkmn)
   report.push(_INTL(stastr[8], crit, c))
   if !@battle.pbOwnedByPlayer?(pkmn.index)
     moves = pkmn.moves
-    if @battle.pbOwnedByPlayer?(pkmn.pbPartner.index)
+    if @battle.pbOwnedByAIPartner?(pkmn.index)
       # player should have access to partner moves
       report.push(_INTL("Moves Remaining:"))
     elsif $DEBUG
@@ -260,6 +261,13 @@ def pbShowBattleStats(pkmn)
       report.push(_INTL("{1}:  {2} PP left", move.name, move.pp))
     end
   end
+
+  if @battle.pbOwnedByPlayer?(pkmn.index) || @battle.pbOwnedByAIPartner?(pkmn.index) || $DEBUG
+    report.push(_INTL("Ability: {1}", pkmn.ability.nil? ? "Ability Negated" : getAbilityName(shownmon.ability)))
+  end
+  report.push(_INTL("Wonder Room Stat Swap active")) if pkmn.wonderroom == true
+  report.push(_INTL("Chess Piece: {1}", pkmn.pokemon.piece.to_s.capitalize)) if @battle.field.effect == :CHESS
+
   dur = @battle.weatherduration
   dur = "Permanent" if @battle.weatherduration < 0
   turns = "turns"
@@ -351,13 +359,10 @@ def pbShowBattleStats(pkmn)
   report.push(_INTL("Stealth Rock active")) if pkmn.pbOwnSide.effects[:StealthRock]
   report.push(_INTL("Sticky Web active")) if pkmn.pbOwnSide.effects[:StickyWeb]
   report.push()
-  report.push(_INTL("Ability: {1}", pkmn.ability.nil? ? "Ability Negated" : getAbilityName(shownmon.ability)))
-  report.push(_INTL("Wonder Room Stat Swap active")) if pkmn.wonderroom == true
   report.push(_INTL("Field Effect: {1}", PokeBattle_Field.getFieldName(@battle.field.effect)))
   report.push(_INTL("Field Duration: {1}", "#{@battle.field.duration} turns")) if @battle.field.duration > 0
   sublayer = PokeBattle_Field.getFieldName(@battle.field.layer[-2]) if @battle.field.layer.length > 1
   report.push(_INTL("Sub-layer: {1}", sublayer)) if sublayer && sublayer != "No Field"
-  report.push(_INTL("Chess Piece: {1}", pkmn.pokemon.piece.to_s.capitalize)) if @battle.field.effect == :CHESS
   @participants = @battle.pbPartySingleOwner(pkmn.index).find_all { |mon| mon && !mon.isEgg? && mon.hp > 0 }
   report.push(_INTL("Remaining Pokémon: {1} ", @participants.length))
 

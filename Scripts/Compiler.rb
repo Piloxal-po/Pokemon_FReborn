@@ -1942,44 +1942,6 @@ begin
     end
   end
 
-  def pbCompileAnimations
-    begin
-      pbanims = load_data("Data/PkmnAnimations.rxdata")
-    rescue
-      pbanims = PBAnimations.new
-    end
-    move2anim = [{}, {}]
-    for i in 0...pbanims.length
-      next if !pbanims[i]
-
-      if pbanims[i].name[/^OppMove\:\s*(.*)$/]
-        if $cache.moves.key?(pbanims[i].name.split(":")[1].intern)
-          moveid = pbanims[i].name.split(":")[1].intern
-          move2anim[1][moveid.intern] = i
-        end
-      elsif pbanims[i].name[/^Move\:\s*(.*)$/]
-        if $cache.moves.key?(pbanims[i].name.split(":")[1].intern)
-          moveid = pbanims[i].name.split(":")[1].intern
-          move2anim[0][moveid.intern] = i
-        end
-      end
-    end
-    save_data(move2anim, "Data/move2anim.dat")
-    save_data(pbanims, "Data/PkmnAnimations.rxdata")
-    animExpander
-  end
-
-  def animExpander
-    for i in 0...$cache.animations.length
-      for j in 1...$cache.animations[i].length
-        for k in 0...$cache.animations[i][j].length
-          if $cache.animations[i][j][k] == 0
-            $cache.animations[i][j][k] = $cache.animations[i][j - 1][k].clone
-          end
-        end
-      end
-    end
-  end
 =begin
 def pbCompileAllData(mustcompile)
   compilerruntime = Time.now
@@ -2071,9 +2033,9 @@ rescue Exception
   end
 end
 
-def quickCompile
-  msgwindow = Kernel.pbCreateMessageWindow
-  pbCompileAllData(true) { |msg|
-    Kernel.pbMessageDisplay(msgwindow, msg, false)
-  }
-end
+# def quickCompile
+#   msgwindow = Kernel.pbCreateMessageWindow
+#   pbCompileAllData(true) { |msg|
+#     Kernel.pbMessageDisplay(msgwindow, msg, false)
+#   }
+# end

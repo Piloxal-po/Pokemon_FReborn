@@ -301,17 +301,7 @@ class PokemonBag_Scene
     sortindex = -1
     pbDetermineTMmenu(itemwindow)
     pbActivateWindow(@sprites, "itemwindow") {
-      if pbIsTM?(itemwindow.item)
-        tts(getItemName(itemwindow.item) + pbGetMachineMoveName(itemwindow.item))
-      elsif itemwindow.item
-        if @bag.contents[itemwindow.item] > 1
-          tts(@bag.contents[itemwindow.item].to_s + " " + getItemName(itemwindow.item) + "s")
-        else
-          tts(getItemName(itemwindow.item))
-        end
-      else
-        tts("Close bag")
-      end
+      ttsItem(itemwindow.item)
       lastread = itemwindow.item
       loop do
         Graphics.update
@@ -331,17 +321,7 @@ class PokemonBag_Scene
           @sprites["icon"].setBitmap(filename)
           @sprites["itemtextwindow"].text = (itemwindow.item.nil?) ? _INTL("Close bag.") : getItemDescription(itemwindow.item)
           if itemwindow.item != lastread
-            if pbIsTM?(itemwindow.item)
-              tts(getItemName(itemwindow.item) + pbGetMachineMoveName(itemwindow.item))
-            elsif itemwindow.item
-              if @bag.contents[itemwindow.item] > 1
-                tts(@bag.contents[itemwindow.item].to_s + " " + getItemName(itemwindow.item) + "s")
-              else
-                tts(getItemName(itemwindow.item))
-              end
-            else
-              tts("Close bag")
-            end
+            ttsItem(itemwindow.item)
             lastread = itemwindow.item
           end
           pbDetermineTMmenu(itemwindow)
@@ -359,17 +339,7 @@ class PokemonBag_Scene
             pbRefresh
             pbDetermineTMmenu(itemwindow)
             tts(PokemonBag.pocketNames()[itemwindow.pocket] + " Pocket")
-            if pbIsTM?(itemwindow.item)
-              tts(getItemName(itemwindow.item) + pbGetMachineMoveName(itemwindow.item))
-            elsif itemwindow.item
-              if @bag.contents[itemwindow.item] > 1
-                tts(@bag.contents[itemwindow.item].to_s + " " + getItemName(itemwindow.item) + "s")
-              else
-                tts(getItemName(itemwindow.item))
-              end
-            else
-              tts("Close bag")
-            end
+            ttsItem(itemwindow.item)
             lastread = itemwindow.item
           end
         elsif Input.trigger?(Input::RIGHT)
@@ -379,17 +349,7 @@ class PokemonBag_Scene
             pbRefresh
             pbDetermineTMmenu(itemwindow)
             tts(PokemonBag.pocketNames()[itemwindow.pocket] + " Pocket")
-            if pbIsTM?(itemwindow.item)
-              tts(getItemName(itemwindow.item) + pbGetMachineMoveName(itemwindow.item))
-            elsif itemwindow.item
-              if @bag.contents[itemwindow.item] > 1
-                tts(@bag.contents[itemwindow.item].to_s + " " + getItemName(itemwindow.item) + "s")
-              else
-                tts(getItemName(itemwindow.item))
-              end
-            else
-              tts("Close bag")
-            end
+            ttsItem(itemwindow.item)
             lastread = itemwindow.item
           end
         end
@@ -475,7 +435,7 @@ class PokemonBag_Scene
 
   def pbHandleSortByType(pocket)
     # Returns true if the default sorting should be used
-    return true if !pbShouldSortByType?
+    return true if !pbShouldSortByType?(pocket)
 
     items = @bag.getPocketItems(pocket)
     if pocket == TMPOCKET
@@ -486,7 +446,7 @@ class PokemonBag_Scene
     return false
   end
 
-  def pbShouldSortByType?
+  def pbShouldSortByType?(pocket)
     return $Settings.bagsorttype == 1
   end
 
@@ -543,7 +503,20 @@ class PokemonBag_Scene
     end
     @sortOrderMapping = result
     return @sortOrderMapping
-    return result
+  end
+
+  def ttsItem(item)
+    if pbIsTM?(item)
+      tts(getItemName(item) + " " + pbGetMachineMoveName(item))
+    elsif item
+      if @bag.contents[item] > 1 && !pbIsImportantItem?(item)
+        tts(@bag.contents[item].to_s + " " + getItemName(item) + "s")
+      else
+        tts(getItemName(item))
+      end
+    else
+      tts("Close bag")
+    end
   end
 
   def pbGetSortOrderByType
@@ -975,7 +948,7 @@ class PokemonBag
 
     @contents[item] = 0 if @contents[item].nil?
     @pockets[pbGetPocket(item)].push(item) if @contents[item] == 0
-    @contents[item] = [BAGMAXPERSLOT, @contents[item] + qty].min
+    @contents[item] = pbIsTM?(item) || pbIsZCrystal?(item) ? 1 : [BAGMAXPERSLOT, @contents[item] + qty].min
     return true
   end
 

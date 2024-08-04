@@ -189,7 +189,7 @@ class Scene_PulseDex_Info
       @index += increment
       if @index >= getPulseInfo.length
         @index = 0
-      elsif @index == 0
+      elsif @index < 0
         @index = getPulseInfo.length - 1
       end
       break unless !$game_switches[getPulseInfo[@index][0]]

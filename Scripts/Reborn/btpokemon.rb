@@ -1665,7 +1665,7 @@ BTMONS = {
   ],
   :HITMONTOP => [
     { item: :LEFTOVERS, nature: :ADAMANT, moves: [:HIJUMPKICK, :BULKUP, :EARTHQUAKE, :STONEEDGE],
-      ev: [0, 255, 255, 0, 0, 0], ability: :TECHNICIAN },
+      ev: [0, 255, 255, 0, 0, 0], ability: :INTIMIDATE },
     { item: :ASSAULTVEST, nature: :CAREFUL, moves: [:BULLDOZE, :CLOSECOMBAT, :FAKEOUT, :THIEF],
       ev: [0, 255, 0, 0, 255, 0], ability: :TECHNICIAN },
     { item: :LIFEORB, nature: :JOLLY, moves: [:EARTHQUAKE, :CLOSECOMBAT, :STONEEDGE, :BULLETPUNCH],
@@ -3715,7 +3715,7 @@ BTMONS = {
   ],
   :TURTONATOR => [
     { item: :WHITEHERB, nature: :TIMID, moves: [:SHELLSMASH, :FIREBLAST, :DRACOMETEOR, :FLASHCANNON],
-      ev: [0, 255, 0, 0, 0, 255], ability: :SHELLARMOR },
+      ev: [0, 0, 0, 252, 0, 255], ability: :SHELLARMOR },
     { item: :ASSAULTVEST, nature: :CALM, moves: [:SHELLTRAP, :DRAGONPULSE, :CHARGEBEAM, :FOCUSBLAST],
       ev: [255, 0, 0, 0, 255, 0], ability: :SHELLARMOR },
   ],

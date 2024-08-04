@@ -25,7 +25,7 @@ def abilDump
     exporttext += "  :desc => \"#{pbGetMessage(MessageTypes::AbilityDescs, i)}\"\n" # kill this
     exporttext += "},\n\n"
   end
-  exporttext += "}"
+  exporttext += "}\n"
   File.open("Scripts/" + GAMEFOLDER + "/abiltext.rb", "w") { |f|
     f.write(exporttext)
   }
@@ -86,7 +86,7 @@ def metaDump
     exporttext += "  :MapSize => #{map.MapSize},\n" if map.MapSize
     exporttext += "},\n\n"
   end
-  exporttext += "}"
+  exporttext += "}\n"
   File.open("Scripts/" + GAMEFOLDER + "/metatext.rb", "w") { |f|
     f.write(exporttext)
   }
@@ -143,7 +143,7 @@ def metaConvert
     exporttext += "  :MapSize => #{metadata[i][MetadataMapSize]},\n" if metadata[i][MetadataMapSize]
     exporttext += "},\n\n"
   end
-  exporttext += "}"
+  exporttext += "}\n"
   File.open("Scripts/" + GAMEFOLDER + "/metatext.rb", "w") { |f|
     f.write(exporttext)
   }
@@ -163,7 +163,7 @@ def trainTypesDump
     exporttext += "  :winBGM => \"#{ttype[5]}\",\n" if ttype[5]
     exporttext += "},\n\n"
   end
-  exporttext += "}"
+  exporttext += "}\n"
   File.open("Scripts/" + GAMEFOLDER + "/ttypetext.rb", "w") { |f|
     f.write(exporttext)
   }
@@ -269,7 +269,7 @@ def itemDump
     end
     exporttext += "},\n\n"
   end
-  exporttext += "}"
+  exporttext += "}\n"
   File.open("Scripts/" + GAMEFOLDER + "/itemtext.rb", "w") { |f|
     f.write(exporttext)
   }
@@ -455,7 +455,7 @@ def itemDumpCurrent
     exporttext += "  :legendary => true,\n" if item.checkFlag?(:legendary) || legendary.include?(item.checkFlag?(:ID))
     exporttext += "},\n\n"
   end
-  exporttext += "}"
+  exporttext += "}\n"
   File.open("Scripts/" + GAMEFOLDER + "/itemtext.rb", "w") { |f|
     f.write(exporttext)
   }
@@ -511,6 +511,13 @@ def monDump(monhash = $cache.pkmn)
           exporttext += "      :species => :#{mon.formData.dig(mon.forms[form], :preevo)[:species]},\n"
           exporttext += "      :form => #{mon.formData.dig(mon.forms[form], :preevo)[:form]}\n"
           exporttext += "    },\n"
+        end
+        if mon.formData.dig(mon.forms[form], :RelearnerMoves)
+          exporttext += "    :RelearnerMoves => ["
+          for j in mon.formData.dig(mon.forms[form], :RelearnerMoves)
+            exporttext += ":#{j},"
+          end
+          exporttext += "],\n"
         end
         if mon.formData.dig(mon.forms[form], :Moveset)
           exporttext += "    :Moveset => [\n"
@@ -590,7 +597,7 @@ def monDump(monhash = $cache.pkmn)
     exporttext += "},\n\n"
 
   end
-  exporttext += "}"
+  exporttext += "}\n"
   cprint "Successfully dumped Pokemon data        \n"
   File.open("Scripts/" + GAMEFOLDER + "/montext.rb", "w") { |f|
     f.write(exporttext)
@@ -606,7 +613,7 @@ def monDump(mons = $cache.pkmn, game:GAMEFOLDER)
     exporttext += wrapper.export
     cprint "             \r"
   }
-  exporttext += "}"
+  exporttext += "}\n"
   cprint "Success.                                                \n".green
   File.open("Scripts/" + game + "/montext.rb", "w") { |f|
     f.write(exporttext)
@@ -637,7 +644,6 @@ def moveDump
     exporttext += "  :magiccoat => true,\n" if move.checkFlag?(:magiccoat)
     exporttext += "  :snatchable => true,\n" if move.checkFlag?(:snatchable)
     exporttext += "  :nonmirror => true,\n" if move.checkFlag?(:nonmirror)
-    exporttext += "  :kingrock => true,\n" if move.checkFlag?(:kingrock)
     exporttext += "  :defrost => true,\n" if move.checkFlag?(:defrost)
     exporttext += "  :highcrit => true,\n" if move.checkFlag?(:highcrit)
     exporttext += "  :healingmove => true,\n" if move.checkFlag?(:healingmove)
@@ -645,16 +651,12 @@ def moveDump
     exporttext += "  :soundmove => true,\n" if move.checkFlag?(:soundmove)
     exporttext += "  :gravityblocked => true,\n" if move.checkFlag?(:gravityblocked)
     exporttext += "  :beammove => true,\n" if move.checkFlag?(:beammove)
-    case move.function # function code flag additions
-      when 0xFA then exporttext += "  :recoil => 0.25,\n"
-      when 0xFB, 0xFD, 0xFE then exporttext += "  :recoil => 0.33,\n"
-      when 0xFC then exporttext += "  :recoil => 0.5,\n"
-    end
+    exporttext += "  :recoil => #{move.checkFlag?(:recoil)},\n"
     exporttext += "  :desc => \"#{move.desc}\"\n"
     exporttext += "},\n\n"
     System.set_window_title("Move line #{i}")
   end
-  exporttext += "}"
+  exporttext += "}\n"
   File.open("Scripts/" + GAMEFOLDER + "/movetext.rb", "w") { |f|
     f.write(exporttext)
   }
@@ -719,7 +721,7 @@ def encDump
     end
     exporttext += "},\n"
   }
-  exporttext += "}"
+  exporttext += "}\n"
   File.open("Scripts/" + GAMEFOLDER + "/enctext.rb", "w") { |f|
     f.write(exporttext)
   }
@@ -853,7 +855,7 @@ def dumpTeams
     end
     exporttext += "]},\n"
   end
-  exporttext += "]"
+  exporttext += "]\n"
   File.open("Scripts/" + GAMEFOLDER + "/trainertext.rb", "w") { |f|
     f.write(exporttext)
   }
@@ -911,7 +913,7 @@ def connectionsConvert
     exporttext += "],\n"
     exporttext += "},\n"
   }
-  exporttext += "}"
+  exporttext += "}\n"
   File.open("Scripts/" + GAMEFOLDER + "/mapconnections.rb", "w") { |f|
     f.write(exporttext)
   }
@@ -935,7 +937,7 @@ def connectionsDump
     exporttext += "  ],\n"
     exporttext += "},\n"
   }
-  exporttext += "}"
+  exporttext += "}\n"
   File.open("Scripts/" + GAMEFOLDER + "/mapconnections.rb", "w") { |f|
     f.write(exporttext)
   }
@@ -966,7 +968,7 @@ def bttDump
     exporttext += "],\n"
     exporttext += "},\n"
   end
-  exporttext += "]"
+  exporttext += "]\n"
   File.open("Scripts/" + GAMEFOLDER + "/btttext.rb", "w") { |f|
     f.write(exporttext)
   }
@@ -1477,7 +1479,7 @@ def dumpNatures
 end
 
 def convertBTMons
-  # Only works if all sets of the same mon are contiguous in the PBS. -Cad48
+  # Only works if all sets of the same mon are contiguous in the PBS. -Orsan
   File.open("Scripts/ConversionClasses.rb") { |f| eval(f.read) }
   output = "BTMONS = {\n"
   lastmon = nil
