@@ -252,8 +252,8 @@ The Misty Terrain weakened the attack!
 The Misty Terrain weakened the attack!
 The mist was blown away!|The mist was corroded!
 The mist was blown away!|The mist was corroded!
-A wish was made for {1}!
-A wish was made for {1}!
+
+
 5
 Darkness is gathering...
 Darkness is gathering...
@@ -318,8 +318,8 @@ The rainbow energized the attack!
 The rainbow energized the attack!
 The rainbow was consumed!
 The rainbow was consumed!
-A wish was made for {1}!
-A wish was made for {1}!
+
+
 11
 The field is corrupted!
 The field is corrupted!
@@ -340,8 +340,8 @@ The toxic mist caught flame!
 The toxic mist caught flame!
 The mist was blown away!|The polluted mist was purified!|The toxic mist collected on the ground!
 The mist was blown away!|The polluted mist was purified!|The toxic mist collected on the ground!
-{1} was badly poisoned!
-{1} was badly poisoned!
+
+
 13
 The field is rife with sand.
 The field is rife with sand.
@@ -362,8 +362,8 @@ The cold strengthened the attack!|The cold softened the attack...
 The cold strengthened the attack!|The cold softened the attack...
 The ice melted away!|The quake broke up the ice and revealed the water beneath!|The hot water melted the ice!
 The ice melted away!|The quake broke up the ice and revealed the water beneath!|The hot water melted the ice!
-{1} was hurt by icy Spikes!
-{1} was hurt by icy Spikes!
+
+
 15
 The field is littered with rocks.
 The field is littered with rocks.
@@ -373,8 +373,8 @@ The field strengthened the attack!
 The field strengthened the attack!
 
 
-{1} was hurt by Stealth Rocks!
-{1} was hurt by Stealth Rocks!
+
+
 16
 The field is abound with trees.
 The field is abound with trees.
@@ -472,8 +472,8 @@ The cave choked out the air!|The cavern strengthened the attack!
 The cave choked out the air!|The cavern strengthened the attack!
 The cave was littered with crystals!
 The cave was littered with crystals!
-{1} was hurt by Stealth Rocks!
-{1} was hurt by Stealth Rocks!
+
+
 25
 1n!taliz3 .b//////attl3
 1n!taliz3 .b//////attl3
@@ -637,8 +637,8 @@ Starlight supercharged the attack!|The night sky boosted the attack!|The astral 
 Starlight supercharged the attack!|The night sky boosted the attack!|The astral energy boosted the attack!
 The cosmic light was consumed!
 The cosmic light was consumed!
-A wish was made for {1}!
-A wish was made for {1}!
+
+
 40
 From darkness, from stardust,|From memories of eons past and visions yet to come...
 From darkness, from stardust,|From memories of eons past and visions yet to come...
@@ -670,5 +670,5 @@ The Psychic Terrain strengthened the attack!
 The Psychic Terrain strengthened the attack!
 
 
-{1} became confused!
-{1} became confused!
+
+

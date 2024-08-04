@@ -252,8 +252,8 @@ The Misty Terrain weakened the attack!
 Le Champ Brumeux affaiblit l'attaque!
 The mist was blown away!|The mist was corroded!
 La brume se dissipe!|La brume est intoxiquée!
-A wish was made for {1}!
-Un voeu a été fait pour {1}!
+
+
 5
 Darkness is gathering...
 L'obscurité s'amasse...
@@ -318,8 +318,8 @@ The rainbow energized the attack!
 L'arc-en-ciel énergise l'attaque!
 The rainbow was consumed!
 L'arc-en-ciel a été consumé!
-A wish was made for {1}!
-Un voeu a été fait pour {1}!
+
+
 11
 The field is corrupted!
 Le terrain est intoxiqué!
@@ -340,8 +340,8 @@ The toxic mist caught flame!
 La brume toxique prend feu!
 The mist was blown away!|The polluted mist was purified!|The toxic mist collected on the ground!
 La brume se dissipe!|The polluted mist was purified!|La brume toxique s'amasse sur le sol!
-{1} was badly poisoned!
-{1} est gravement empoisonné!
+
+
 13
 The field is rife with sand.
 Le terrain est recouvert de sable.
@@ -362,8 +362,8 @@ The cold strengthened the attack!|The cold softened the attack...
 Le froid renforce l'attaque!|Le froid affaiblit l'attaque...
 The ice melted away!|The quake broke up the ice and revealed the water beneath!|The hot water melted the ice!
 La glace fond!|La secousse brise la glace et révèle l'eau en-dessous!|L'eau brûlante fait fondre la glace!
-{1} was hurt by icy Spikes!
-{1} est blessé par des Pics Glacés!
+
+
 15
 The field is littered with rocks.
 Le terrain est parsemé de rochers.
@@ -373,8 +373,8 @@ The field strengthened the attack!
 Le terrain renforce l'attaque!
 
 
-{1} was hurt by Stealth Rocks!
-{1} est blessé par Piège de roc!
+
+
 16
 The field is abound with trees.
 Promenons-nous dans les bois...
@@ -472,8 +472,8 @@ The cave choked out the air!|The cavern strengthened the attack!
 La caverne étouffe le courant d'air!|La caverne renforce l'attaque!
 The cave was littered with crystals!
 La caverne se couvre de cristaux!
-{1} was hurt by Stealth Rocks!
-{1} est blessé par Piège de roc!
+
+
 25
 1n!taliz3 .b//////attl3
 d38ut .//////c0mb4t!
@@ -637,8 +637,8 @@ Starlight supercharged the attack!|The night sky boosted the attack!|The astral 
 La lumière des étoiles surcharge l'attaque!|Le ciel nocturne renforce l'attaque!|L'énergie astrale amplifie l'attaque!
 The cosmic light was consumed!
 La lumière cosmique a été consumée!
-A wish was made for {1}!
-Un voeu a été fait pour {1}!
+
+
 40
 From darkness, from stardust,|From memories of eons past and visions yet to come...
 Du néant, des étoiles,|Avec les mémoires des éternités passées, et les visions des éternités à venir...
@@ -670,5 +670,5 @@ The Psychic Terrain strengthened the attack!
 Le Terrain Psychique renforce l'attaque!
 
 
-{1} became confused!
-Cela rend {1} confus!
+
+

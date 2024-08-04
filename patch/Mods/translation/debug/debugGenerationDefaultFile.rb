@@ -248,7 +248,13 @@ def generateTrainersDebugConvertTranslationFile
       name = trainer[:teamid][0]
       pkmn = trainer[:mons]
       defeat = trainer[:defeat] ? Messages.normalizeValue(trainer[:defeat]) : ""
-      defeat2 = trainer[:defeat] ? dict[i][0][1] : ""
+      if i == 512
+        defeat2 = defeat
+      elsif i > 512
+        defeat2 = trainer[:defeat] ? dict[i-1][0][1] : ""
+      else
+        defeat2 = trainer[:defeat] ? dict[i][0][1] : ""
+      end
 
       names += i.to_s + "\n" + normalizeData(name) + "\n" + normalizeData(name) + "\n"
       names += normalizeData(defeat) + "\n" + normalizeData(defeat2) + "\n"
@@ -256,8 +262,8 @@ def generateTrainersDebugConvertTranslationFile
         pokeSpecies = value[:species].to_s
         pokeName = value[:name] ? value[:name] : ""
         pokeGender = value[:gender] ? value[:gender] : ""
-        pokeHpType = value[:hptype] ? value[:hptype].to_s : ""
         pokeItem = value[:item] ? value[:item].to_s : ""
+        pokeHpType = value[:hptype] ? value[:hptype].to_s : ""
         pokeNature = value[:nature] ? value[:nature].to_s : ""
         pokeAbility = value[:ability] ? value[:ability].to_s : ""
         pokeMoves = value[:moves] ? value[:moves].join("|") : ""
